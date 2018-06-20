@@ -4,7 +4,7 @@ This GitHub repository contains the new revision of the [OGC](http://opengeospat
 
 ## Overview
 
-A catalogue service is a standard API for retrieving and managing metadata about
+A Catalogue Service is a standard API for retrieving and managing metadata about
  geospatial data and services.
 
 ```
@@ -21,7 +21,7 @@ Lists all the metadata records that describe objects in the New Zealand economic
 
 The response format is determined using standard [HTTP content negotiation](https://restfulapi.net/content-negotiation/).
 
-Data is returned in pageable chunks, with each response containing a `next` linkpointing to the next set of response records.  The core specification supports a basic set of filters roughly analogous to the OpenSearch query parameters.
+Data is returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core specification supports a basic set of filters roughly analogous to the [OpenSearch](http://www.opensearch.org/Home) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
 
 ```
 GET /records/{id}
