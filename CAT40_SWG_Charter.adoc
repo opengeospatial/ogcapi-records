@@ -121,6 +121,7 @@ The following persons support this SWG and are committed to the Charter and proj
 
 === Conveners
 
+   * Chris Holmes
    * Tom Kralidis
    * Angelos Tsotsos
    * Panagiotis (Peter) A. Vretanos
