@@ -1,12 +1,11 @@
 ﻿= Catalogue Services 4.0 SWG
 
-
 == Purpose of the Standards Working Group
 
 The purpose of this Standards Working Group is to develop a new version of the catalogue service specification (HTTP Protocol Binding).
 Scope of Work
 
-The current versions of the catalogue standards (i.e. CAT 2.0, CAT 3.0) -- developed in the early 2000s -- use a Remote-Procedure-Call-over-HTTP architectural style using XML for any payloads.  This was considered state-of-the art at the time but this legacy is now badly outdated and does not conform to normal web development practices.
+The current versions of the catalogue standards (i.e. CAT 2.0, CAT 3.0) -- developed in the early 2000s -- use a Remote-Procedure-Call-over-HTTP architectural style using XML for any payloads.  This was considered state-of-the art at the time but this legacy is now badly outdated and does not conform to current web development practices.
 
 The next version (CAT 4.0) is intended to break free of this legacy and will specify a modernized service that aligns with the current architecture of the Web and the Spatial Data on the Web Best Practices (https://www.w3.org/TR/sdw-bp/). The key changes shall be:
 
@@ -14,10 +13,10 @@ The next version (CAT 4.0) is intended to break free of this legacy and will spe
 CAT 4.0 shall support and be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for CAT messages. In addition, the resources provided by the service shall include hypermedia controls in their representations to guide the user of a catalogue.
 
 * Encodings: +
-Previous versions were strongly tied to XML (Capabilities documents, XML schemas, Filter Encoding expressions, etc.). This version shall be written with HTML, JSON and XML as encodings in mind, because these are common encodings today, but no encoding shall be mandatory and other encodings may be used as well. HTTP is designed to support the use of multiple formats and defines rules about how servers can return the encoding that the client can best handle (“content negotiation”).
+Previous versions were strongly tied to XML (Capabilities documents, XML schemas, Filter Encoding expressions, etc.). This version shall be written with JSON, HTML, and XML as primary encodings in mind, given these are common encodings today.  No encoding shall be mandatory and other encodings may be used as well. HTTP is designed to support the use of multiple formats and defines rules about how servers can return the encoding that the client can best handle (“content negotiation”).
 
 * Basic information model: +
-Previous versions of the CAT 3.0 standard used the Dublin Core set of metadata (encoded as XML) as the basic,  cross-platform, information model that all implementations needed to support.  CAT 4.0 will review the use of this model and  strongly consider using DCAT (https://www.w3.org/TR/vocab-dcat/) instead.
+Previous versions of the CAT 3.0 standard used the Dublin Core set of metadata (encoded as XML) as the basic, cross-platform, information model that all implementations needed to support.  CAT 4.0 will review the use of this model and strongly consider using DCAT (https://www.w3.org/TR/vocab-dcat/) instead.
 
 * Reuse: +
 The use of CAT-specific resources or components will be minimized and, where available, existing industry-standards that are commonly used by developers shall be used instead. The most important example for this is the use of an OpenAPI definition instead of OGC-specific "Capabilities" documents.
@@ -40,7 +39,6 @@ T.B.D.
 
 The starting point for the work shall be the "OGC® Catalogue Services 3.0 Specification - HTTP Protocol Binding", OGC 12-176r7.  The work shall also be informed by the following specifications and by recommendations found in:
 
-
    * OGC/W3C Spatial Data Working Group on the Web Best Practices (https://www.w3.org/TR/sdw-bp/)
    * OGC Geospatial API White Paper
    * FGDC Application Programming Interface (API) assessment
@@ -53,7 +51,8 @@ In addition, the following metadata standards shall be reviewed:
    * Data Catalogue Vocabulary (DCAT) (https://www.w3.org/TR/vocab-dcat/)
    * Geographic information -- Metadata -- XML schema implementation (ISO/TS 19130:2007)
    * ebXML Registry Information Model, Version 3.0 (http://docs.oasis-open.org/regrep/regrep-rim/v3.0/regrep-rim-3.0-os.pdf)
-How to Determine when Work of SWG has been Completed
+
+== How to Determine when Work of SWG has been Completed
 
 The goal is to develop part 1 of CAT 4.0, the foundation for the new version, as quickly as possible and work on additional parts after that, driven by community interest.
 
@@ -61,14 +60,14 @@ An important aspect is to ensure that implementing the standard will lead to eff
 
 This has several aspects:
 
-Before finalizing parts of the next version of CAT 4.0, it must be verified that these goals are met. I.e.
-  - working implementations of all capabilities must be available and tested
-  - Implementation feedback must be taken into account.
+Before finalizing parts of the next version of CAT 4.0, it must be verified that these goals are met, i.e.:
+
+  * working implementations of all capabilities must be available and tested
+  * Implementation feedback must be taken into account
 
 A consequence of this is that the period between the availability of what is considered a mature draft and the finalization of the specification may be longer than in the past, depending on the availability of evidence about the suitability of the specification based on implementations.
 
 Developers, including those that are not active in OGC or ISO/TC 211, should be encouraged as early as possible to implement the draft and provide feedback. An aspect of this is public access to drafts from the beginning.
-
 
 To this end, the SWG intends to use GitHub in the development of this standard as this is the environment may developer are familiar with and user on a daily basis.
 
@@ -76,8 +75,8 @@ To this end, the SWG intends to use GitHub in the development of this standard a
 
 The following deliverables will result from the work of this SWG:
 
-   * A final version of the Catalogue Services Version 4.0 Standard document for submission to the TC.
-   * At least three prototype implementations of the core based on the standard -- although more would be preferred.
+   * A final version of the Catalogue Services Version 4.0 Standard document for submission to the TC
+   * At least three prototype implementations of the core based on the standard -- although more would be preferred
 
 == IPR Policy for this SWG
 
@@ -114,7 +113,7 @@ The following persons support this SWG and are committed to the Charter and proj
 |Name |Organization 
 
 |Chris Holmes |Planet Labs
-|Tom Kralidis |Environment and Climate Change Canada
+|Tom Kralidis |Environment and Climate Change Canada, Meteorological Service of Canada
 |Angelos Tsotsos |
 |Panagiotis (Peter) A. Vretanos |CubeWerx Inc.
 |===
