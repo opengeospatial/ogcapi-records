@@ -114,7 +114,7 @@ The following persons support this SWG and are committed to the Charter and proj
 
 |Chris Holmes |Planet Labs
 |Tom Kralidis |Environment and Climate Change Canada, Meteorological Service of Canada
-|Angelos Tsotsos |
+|Angelos Tzotsos |Open Source Geospatial Foundation
 |Panagiotis (Peter) A. Vretanos |CubeWerx Inc.
 |===
 
@@ -122,6 +122,6 @@ The following persons support this SWG and are committed to the Charter and proj
 
    * Chris Holmes
    * Tom Kralidis
-   * Angelos Tsotsos
+   * Angelos Tzotsos
    * Panagiotis (Peter) A. Vretanos
 
