@@ -113,9 +113,10 @@ The following persons support this SWG and are committed to the Charter and proj
 |===
 |Name |Organization 
 
-|Panagiotis (Peter) A. Vretanos |CubeWerx Inc.
+|Chris Holmes |Planet Labs
 |Tom Kralidis |Environment and Climate Change Canada
 |Angelos Tsotsos |
+|Panagiotis (Peter) A. Vretanos |CubeWerx Inc.
 |===
 
 === Conveners
