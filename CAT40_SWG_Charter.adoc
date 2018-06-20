@@ -1,0 +1,126 @@
+﻿= Catalogue Services 4.0 SWG
+
+
+== Purpose of the Standards Working Group
+
+The purpose of this Standards Working Group is to develop a new version of the catalogue service specification (HTTP Protocol Binding).
+Scope of Work
+
+The current versions of the catalogue standards (i.e. CAT 2.0, CAT 3.0) -- developed in the early 2000s -- use a Remote-Procedure-Call-over-HTTP architectural style using XML for any payloads.  This was considered state-of-the art at the time but this legacy is now badly outdated and does not conform to normal web development practices.
+
+The next version (CAT 4.0) is intended to break free of this legacy and will specify a modernized service that aligns with the current architecture of the Web and the Spatial Data on the Web Best Practices (https://www.w3.org/TR/sdw-bp/). The key changes shall be:
+
+* Architecture: +
+CAT 4.0 shall support and be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for CAT messages. In addition, the resources provided by the service shall include hypermedia controls in their representations to guide the user of a catalogue.
+
+* Encodings: +
+Previous versions were strongly tied to XML (Capabilities documents, XML schemas, Filter Encoding expressions, etc.). This version shall be written with HTML, JSON and XML as encodings in mind, because these are common encodings today, but no encoding shall be mandatory and other encodings may be used as well. HTTP is designed to support the use of multiple formats and defines rules about how servers can return the encoding that the client can best handle (“content negotiation”).
+
+* Basic information model: +
+Previous versions of the CAT 3.0 standard used the Dublin Core set of metadata (encoded as XML) as the basic,  cross-platform, information model that all implementations needed to support.  CAT 4.0 will review the use of this model and  strongly consider using DCAT (https://www.w3.org/TR/vocab-dcat/) instead.
+
+* Reuse: +
+The use of CAT-specific resources or components will be minimized and, where available, existing industry-standards that are commonly used by developers shall be used instead. The most important example for this is the use of an OpenAPI definition instead of OGC-specific "Capabilities" documents.
+
+* Modularization: +
+The CAT 3.0 standard, together with the Filter Encoding 2.0 standard, specifies a powerful, but complex service interface. In order to better support implementations that only need a relatively simple service or client, the next version shall be modularized into multiple parts. The first part (the "core") shall specify a simple interface to access metadata from catalogues that is sufficient for cases that do not require support for transactions, complex data structures, rich queries, etc. Additional parts will specify extensions to this part to meet the needs of use cases that require such capabilities.
+
+* Security: +
+CAT 3.0, like many other OGC web standards, does not specify how services may be secured and some requirements are incompatible with secured services that still conform to the standard. The use of OpenAPI would address this issue, too. Catalogues Services may be secured using security schemes that are commonly used on the Web today (e.g., OAuth2) and that developers are familiar with.
+
+As a result of this modernization, CAT 4.0 implementations will not be backwards compatible with CAT 3.0 implementations per se. However, it is a design goal to define CAT 4.0 in a way so that the CAT 4.0 interface can be mapped to a CAT 3.0 or CAT 2.0  implementation - at least for the capabilities that were already in scope for those standards.
+
+CAT 4.0 is intended to be simpler and more modern, but still an evolution from the previous versions and their implementations.
+
+== What is out of scope?
+
+T.B.D.
+
+== Specific Existing Work Used as Starting Point
+
+The starting point for the work shall be the "OGC® Catalogue Services 3.0 Specification - HTTP Protocol Binding", OGC 12-176r7.  The work shall also be informed by the following specifications and by recommendations found in:
+
+
+   * OGC/W3C Spatial Data Working Group on the Web Best Practices (https://www.w3.org/TR/sdw-bp/)
+   * OGC Geospatial API White Paper
+   * FGDC Application Programming Interface (API) assessment
+   * OGC Web Feature Service 3.0: Part 1 - Core standard, OGC 17-069
+   * SpatioTemporal Asset Catalog API Specification (https://github.com/radiantearth/stac-spec)
+
+Each of these documents recommends an emphasis on resource oriented APIs in future OGC standards development including use of tools such as OpenAPI.
+In addition, the following metadata standards shall be reviewed:
+
+   * Data Catalogue Vocabulary (DCAT) (https://www.w3.org/TR/vocab-dcat/)
+   * Geographic information -- Metadata -- XML schema implementation (ISO/TS 19130:2007)
+   * ebXML Registry Information Model, Version 3.0 (http://docs.oasis-open.org/regrep/regrep-rim/v3.0/regrep-rim-3.0-os.pdf)
+How to Determine when Work of SWG has been Completed
+
+The goal is to develop part 1 of CAT 4.0, the foundation for the new version, as quickly as possible and work on additional parts after that, driven by community interest.
+
+An important aspect is to ensure that implementing the standard will lead to efficient implementations, happy developers of both server and client components, and satisfied users of such components.
+
+This has several aspects:
+
+Before finalizing parts of the next version of CAT 4.0, it must be verified that these goals are met. I.e.
+  - working implementations of all capabilities must be available and tested
+  - Implementation feedback must be taken into account.
+
+A consequence of this is that the period between the availability of what is considered a mature draft and the finalization of the specification may be longer than in the past, depending on the availability of evidence about the suitability of the specification based on implementations.
+
+Developers, including those that are not active in OGC or ISO/TC 211, should be encouraged as early as possible to implement the draft and provide feedback. An aspect of this is public access to drafts from the beginning.
+
+
+To this end, the SWG intends to use GitHub in the development of this standard as this is the environment may developer are familiar with and user on a daily basis.
+
+== Description of deliverables
+
+The following deliverables will result from the work of this SWG:
+
+   * A final version of the Catalogue Services Version 4.0 Standard document for submission to the TC.
+   * At least three prototype implementations of the core based on the standard -- although more would be preferred.
+
+== IPR Policy for this SWG
+
+RAND-Royalty Free
+
+== Anticipated Audience
+
+Since we want implementations to proliferate the primary audience for the CAT 4.0 standard shall be developers implementing servers. Additionally, target audiences of the CAT 3.0 standard shall include:
+
+   * developers and deployers of catalogue services profiles
+   * users of catalogue services
+
+== Other informative information about the work of this SWG
+
+=== Collaboration
+
+The SWG intends to use the following GitHub report for the development of the new standard: https://github.com/opengeospatial/CAT4.0.
+
+Like the WFS 3.0 SWG, the CAT 4.0 SWG intends to make the GitHub repo open to the public to solicit participation and feedback from OGC and non-OGC members.
+
+=== Details of first meeting
+
+The first meeting of the SWG will be T.B.D.
+
+=== Projected on-going meeting schedule
+
+The work of this SWG will be carried out primarily on github and via email, conference calls, with potential face-to-face meetings at OGC TC meetings as agreed to by the SWG members. The teleconference calls will be scheduled as-needed and posted to the OGC portal.
+
+=== Supporters of this Charter
+
+The following persons support this SWG and are committed to the Charter and projected meeting schedule.
+
+|===
+|Name |Organization 
+
+|Panagiotis (Peter) A. Vretanos |CubeWerx Inc.
+|Tom Kralidis |Environment and Climate Change Canada
+|Angelos Tsotsos |
+|===
+
+=== Conveners
+
+   * Tom Kralidis
+   * Angelos Tsotsos
+   * Panagiotis (Peter) A. Vretanos
+
