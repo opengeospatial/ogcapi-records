@@ -418,11 +418,11 @@
               "valueReference": "title",
               "literalValue": "*elevation*"
            },
-           "eq {
+           "eq": {
               "valueReference": "type",
               "literalValue": "service"
            },
-           "eqgt {
+           "eqgt": {
               "valueReference": "modified",
               "literalValue": "2004-03-01"
            },
