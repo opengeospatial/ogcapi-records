@@ -412,17 +412,17 @@
      {
         "and": {
            "isLike": {
-              "escapeChar": "\",
+              "escapeChar": "\\",
               "singleChar": "?",
               "wildCard": "*",
               "valueReference": "title",
               "literalValue": "*elevation*"
            },
-           "eq": {
+           "=": {
               "valueReference": "type",
               "literalValue": "service"
            },
-           "eqgt": {
+           ">=": {
               "valueReference": "modified",
               "literalValue": "2004-03-01"
            },
