@@ -220,7 +220,7 @@
               },
               "links": [
                  {
-                    "href": "http://demo.cubewerx.com/cubewerx/cubeserv/default/csw/4.0/collections/ogc_catalogue/items/search",
+                    "href": "http://demo.cubewerx.com/cubewerx/cubeserv/default/csw/4.0/collections/ogc_catalogue/search",
                     "rel": "search",
                     "title": "Complex Search Endpoint"
                  }
@@ -276,7 +276,7 @@
         ],
         "links": [
            {
-              "href": "http://demo.cubewerx.com/cubewerx/cubeserv/default/csw/4.0/collections/ogc_catalogue/items/search",
+              "href": "http://demo.cubewerx.com/cubewerx/cubeserv/default/csw/4.0/collections/ogc_catalogue/search",
               "rel": "search",
               "title": "Complex Search Endpoint"
            }
@@ -408,7 +408,8 @@
 .Example complex query (using the JSON encoding for OGC filter)
 [source,json]
 ----
-     POST /collections/{collectionsId}/search
+     POST /collections/ogc_catalogue/search
+
      {
         "and": {
            "isLike": {
