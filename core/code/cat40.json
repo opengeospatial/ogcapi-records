@@ -78,7 +78,7 @@
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/landingPage-xml"
+                  "type": "string"
                 }
               },
               "text/html": {
@@ -149,7 +149,7 @@
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/conformancePage-xml"
+                  "type": "string"
                 }
               },
               "text/html": {
@@ -220,7 +220,7 @@
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/catalogueIdList-xml"
+                  "type": "string"
                 }
               },
               "text/html": {
@@ -289,12 +289,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/collectionsInfo-json"
+                  "$ref": "#/components/schemas/catalogueInfo-json"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/collectionsInfo-xml"
+                  "type": "string"
                 }
               },
               "text/html": {
@@ -337,6 +337,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/catalogueId"
+          },
+          {
             "$ref": "#/components/parameters/f"
           }
         ],
@@ -351,7 +354,7 @@
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/queryables-xml"
+                  "type": "string"
                 }
               },
               "text/html": {
@@ -456,7 +459,7 @@
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/records-array-xml"
+                  "type": "string"
                 }
               },
               "text/html": {
@@ -519,7 +522,7 @@
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/record-xml"
+                  "type": "string"
                 }
               },
               "text/html": {
@@ -758,7 +761,7 @@
         "schema": {
           "type": "string",
           "enum": [
-            "interests",
+            "intersects",
             "equals",
             "disjoint",
             "youches",
@@ -826,9 +829,27 @@
         },
         "style": "simple",
         "explode": false
+      },
+      "recordId": {
+        "name": "recordId",
+        "in": "path",
+        "description": "Identifier for a catalogue record",
+        "required": true,
+        "allowEmptyValue": false,
+        "schema": {
+          "type": "string"
+        },
+        "style": "simple",
+        "explode": false
       }
     },
     "schemas": {
+      "links-array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/link"
+        }
+      },
       "link": {
         "type": "object",
         "required": [
@@ -893,39 +914,6 @@
           }
         }
       },
-      "landingPage-xml": {
-        "type": "object",
-        "required": [
-          "service",
-          "version",
-          "links"
-        ],
-        "xml": {
-          "name": "LandingPage",
-          "namespace": "http://www.opengis.net/cat/4.0"
-        },
-        "properties": {
-          "service": {
-            "type": "string",
-            "xml": {
-              "attribute": true
-            }
-          },
-          "version": {
-            "type": "string",
-            "pattern": "(3\\.0)(\\.\\d)?",
-            "xml": {
-              "attribute": true
-            }
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/link"
-            }
-          }
-        }
-      },
       "conformancePage-json": {
         "type": "object",
         "required": [
@@ -936,39 +924,6 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
-          }
-        }
-      },
-      "conformancePage-xml": {
-        "type": "object",
-        "required": [
-          "service",
-          "version",
-          "links"
-        ],
-        "xml": {
-          "name": "ConformsTo",
-          "namespace": "http://www.opengis.net/cat/4.0"
-        },
-        "properties": {
-          "service": {
-            "type": "string",
-            "xml": {
-              "attribute": true
-            }
-          },
-          "version": {
-            "type": "string",
-            "pattern": "(3\\.0)(\\.\\d)?",
-            "xml": {
-              "attribute": true
-            }
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/link"
             }
           }
         }
@@ -994,51 +949,7 @@
           }
         }
       },
-      "catalogueIdList-xml": {
-        "type": "object",
-        "required": [
-          "service",
-          "version",
-          "links",
-          "catalogues"
-        ],
-        "xml": {
-          "name": "Collections",
-          "namespace": "http://www.opengis.net/cat/4.0"
-        },
-        "properties": {
-          "service": {
-            "type": "string",
-            "xml": {
-              "attribute": true
-            }
-          },
-          "version": {
-            "type": "string",
-            "pattern": "(4\\.0)(\\.\\d)?",
-            "xml": {
-              "attribute": true
-            }
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/link"
-            }
-          },
-          "catalogues": {
-            "type": "array",
-            "xml": {
-              "name": "Catalogues",
-              "wrapped": true
-            },
-            "items": {
-              "$ref": "#/components/schemas/collectionsInfo-xml"
-            }
-          }
-        }
-      },
-      "cataloguesInfo-json": {
+      "catalogueInfo-json": {
         "required": [
           "version",
           "identifier",
@@ -1072,43 +983,6 @@
             "items": {
               "type": "string"
             }
-          }
-        }
-      },
-      "cataloguesInfo-xml": {
-        "type": "object",
-        "required": [
-          "version",
-          "Identifier",
-          "Links"
-        ],
-        "xml": {
-          "name": "Catalogues"
-        },
-        "properties": {
-          "version": {
-            "type": "string",
-            "xml": {
-              "attribute": true
-            }
-          },
-          "Identifier": {
-            "type": "string"
-          },
-          "Title": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/link"
-            }
-          },
-          "extent-xml": {
-            "$ref": "#/components/schemas/extent-xml"
           }
         }
       },
@@ -1153,114 +1027,6 @@
             "items": {
               "type": "string",
               "format": "date-time"
-            }
-          }
-        }
-      },
-      "extent-xml": {
-        "type": "object",
-        "xml": {
-          "name": "Extent"
-        },
-        "properties": {
-          "spatialExtents": {
-            "type": "array",
-            "xml": {
-              "name": "SpatialExtent"
-            },
-            "items": {
-              "type": "object",
-              "properties": {
-                "crs": {
-                  "type": "string",
-                  "xml": {
-                    "attribute": true
-                  },
-                  "format": "uri",
-                  "default": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-                },
-                "dimensions": {
-                  "type": "integer",
-                  "xml": {
-                    "attribute": true
-                  },
-                  "minimum": 2,
-                  "default": 2
-                },
-                "LowerCorner": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "double"
-                  }
-                },
-                "UpperCorner": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "double"
-                  }
-                }
-              }
-            }
-          },
-          "temporalExtents": {
-            "type": "array",
-            "xml": {
-              "name": "TemporalExtent"
-            },
-            "items": {
-              "type": "object",
-              "properties": {
-                "trs": {
-                  "type": "string",
-                  "xml": {
-                    "attribute": true
-                  },
-                  "format": "uri",
-                  "default": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
-                },
-                "begin": {
-                  "type": "object",
-                  "properties": {
-                    "inclusive": {
-                      "type": "boolean"
-                    },
-                    "#text": {
-                      "type": "string",
-                      "format": "date-time"
-                    }
-                  }
-                },
-                "end": {
-                  "type": "object",
-                  "properties": {
-                    "inclusive": {
-                      "type": "boolean"
-                    },
-                    "#text": {
-                      "type": "string",
-                      "format": "date-time"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "DefaultCRS": {
-            "type": "string",
-            "format": "uri",
-            "default": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-          },
-          "OtherCRS": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri",
-              "enum": [
-                "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-              ],
-              "default": "http://www.opengis.net/def/crs/EPSG/1.3/CRS84"
             }
           }
         }
@@ -1335,32 +1101,6 @@
           }
         }
       },
-      "referenceXlink": {
-        "type": "object",
-        "required": [
-          "href"
-        ],
-        "properties": {
-          "href": {
-            "type": "string",
-            "xml": {
-              "namespace": "http://www.w3.org/1999/xlink",
-              "prefix": "xlink",
-              "attribute": true,
-              "wrapped": false
-            }
-          },
-          "title": {
-            "type": "string",
-            "xml": {
-              "namespace": "http://www.w3.org/1999/xlink",
-              "prefix": "xlink",
-              "attribute": true,
-              "wrapped": false
-            }
-          }
-        }
-      },
       "queryables-json": {
         "type": "object",
         "required": [
@@ -1396,7 +1136,7 @@
           }
         }
       },
-      "records-array": {
+      "records-array-json": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/record-json"
@@ -1486,7 +1226,7 @@
         "type": "object",
         "properties": {
           "publisher": {
-            "$ref": "#/components/schemas/publisher--prop"
+            "$ref": "#/components/schemas/publisher-prop"
           },
           "keywords": {
             "$ref": "#/components/schemas/keywords-array"
@@ -1548,7 +1288,7 @@
       },
       "theme-prop": {
         "type": "object",
-        "required": [
+        "required": ["theme"
         ],
         "properties": {
           "theme": {
@@ -1606,7 +1346,7 @@
       },
       "size-prop": {
         "type": "number",
-        "descrption": "The size of the resource in bytes"
+        "description": "The size of the resource in bytes"
       },
       "homepg-prop": {
         "type": "string",
@@ -1680,72 +1420,6 @@
                 "default": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
               }
             }
-          }
-        }
-      },
-      "links-array": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/link-prop"
-        }
-      },
-      "link-prop": {
-        "type": "object",
-        "required": [
-          "href"
-        ],
-        "properties": {
-          "href": {
-            "type": "string",
-            "format": "url"
-          },
-          "rel": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "hrefLang": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "length": {
-            "type": "integer"
-          }
-        }
-      },
-      "links-array": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/link-prop"
-        }
-      },
-      "link-prop": {
-        "type": "object",
-        "required": [
-          "href"
-        ],
-        "properties": {
-          "href": {
-            "type": "string",
-            "format": "url"
-          },
-          "rel": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "hrefLang": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "length": {
-            "type": "integer"
           }
         }
       }
