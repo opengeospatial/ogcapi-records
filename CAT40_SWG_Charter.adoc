@@ -1,13 +1,45 @@
-﻿= Catalogue Services 4.0 SWG
+﻿= Catalogue Services 4.0 Standards Working Group Charter
+*Author Name(s):*
+*Email:*
+*DATE:*
+*CATEGORY:* SWG Charter
+
+To:  OGC members & interested parties
+
+A new OGC Standards Working Group (SWG) is being formed. The OGC members listed below have proposed the OGC Catalogue Services 4.0 SWG.  The SWG proposal provided in this document meets the requirements of the OGC Technical Committee (TC) Policies and Procedures.
+
+The SWG name, statement of purpose, scope, list of deliverables, audience, and language specified in the proposal will constitute the SWG's official charter. Technical discussions may occur no sooner than the SWG's first meeting.
+
+This SWG will operate under the OGC IPR Policy. The eligibility requirements for becoming a participant in the SWG at the first meeting (see details below) are that:
+
+* You must be an employee of an OGC member organization or an individual
+member of OGC;
+
+* The OGC member must have signed the OGC Membership agreement;
+
+* You must notify the SWG chair of your intent to participate to the first meeting. Members may do so by logging onto the OGC Portal and navigating to the Observer page and clicking on the link for the SWG they wish to join and;
+
+* You must attend meetings of the SWG. The first meeting of this SWG is at the time and date fixed below. Attendance may be by teleconference.
+
+Of course, participants also may join the SWG at any time. The OGC and the SWG welcomes all interested parties.
+
+Non-OGC members who wish to participate may contact us about joining the OGC. In addition, the public may access some of the resources maintained for each SWG: the SWG public description, the SWG Charter, Change Requests, and public comments, which will be linked from the SWG’s page.
+
+Please feel free to forward this announcement to any other appropriate lists. The OGC is an open standards organization; we encourage your feedback.
 
 == Purpose of the Standards Working Group
 
-The purpose of this Standards Working Group is to develop a new version of the catalogue service specification (HTTP Protocol Binding).
-Scope of Work
+The purpose of this Standards Working Group is to develop a new version of the Catalogue Service standard (HTTP Protocol Binding).
+
+== Business Value Proposition
+
+// This section provides a statement describing the value of this standards activity in relation to the OGC Membership, the geospatial community, and the wider IT community. This statement can be in terms of the interoperability problem being solved, processing Change requests to meet market (and Member requirements), a policy requirement and/or some other business value proposition. The proposition described in this section does not have to be in economic terms.
+
+== Scope of Work
 
 The current versions of the catalogue standards (i.e. CAT 2.0, CAT 3.0) -- developed in the early 2000s -- use a Remote-Procedure-Call-over-HTTP architectural style using XML for any payloads.  This was considered state-of-the art at the time but this legacy is now badly outdated and does not conform to current web development practices.
 
-The next version (CAT 4.0) is intended to break free of this legacy and will specify a modernized service that aligns with the current architecture of the Web and the Spatial Data on the Web Best Practices (https://www.w3.org/TR/sdw-bp/). The key changes shall be:
+The next version (CAT 4.0) is intended to break free of this legacy and will specify a modernized service that aligns with the current architecture of the Web and the Spatial Data on the Web Best Practices (https://www.w3.org/TR/sdw-bp/). The key changes shall be as follows.
 
 * Architecture: +
 CAT 4.0 shall support and be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for CAT messages. In addition, the resources provided by the service shall include hypermedia controls in their representations to guide the user of a catalogue.
@@ -31,7 +63,29 @@ As a result of this modernization, CAT 4.0 implementations will not be backwards
 
 CAT 4.0 is intended to be simpler and more modern, but still an evolution from the previous versions and their implementations.
 
-== What is out of scope?
+The goal is to develop part 1 of CAT 4.0, the foundation for the new version, as quickly as possible and work on additional parts after that, driven by community interest.
+
+An important aspect is to ensure that implementing the standard will lead to efficient implementations, happy developers of both server and client components, and satisfied users of such components.
+
+This has several aspects:
+
+Before finalizing parts of the next version of CAT 4.0, it must be verified that these goals are met, i.e.:
+
+  * working implementations of all capabilities must be available and tested; and
+
+  * Implementation feedback must be taken into account.
+
+A consequence of this is that the period between the availability of what is considered a mature draft and the finalization of the specification may be longer than in the past, depending on the availability of evidence about the suitability of the specification based on implementations.
+
+Developers, including those that are not active in OGC or ISO/TC 211, should be encouraged as early as possible to implement the draft and provide feedback. An aspect of this is public access to drafts from the beginning.
+
+To this end, the SWG intends to use GitHub in the development of this standard as this is the environment may developer are familiar with and user on a daily basis.
+
+== Statement of relationship of planned work to the current OGC standards baseline
+
+This standard is intended to be a major revision to the Catalogue Services standards published by OGC. This revision will take advantage of Web API patterns identified in the OGC API standards efforts (e.g., OGC API - Features, AKA WFS3) to better align with current and emerging IT practices. CAT 4.0 does overlap in scope with the existing OGC Catalogue Services standards.
+
+== What is Out of Scope?
 
 T.B.D.
 
@@ -39,20 +93,35 @@ T.B.D.
 
 The starting point for the work shall be the "OGC® Catalogue Services 3.0 Specification - HTTP Protocol Binding", OGC 12-176r7.  The work shall also be informed by the following specifications and by recommendations found in:
 
-   * OGC/W3C Spatial Data Working Group on the Web Best Practices (https://www.w3.org/TR/sdw-bp/)
-   * OGC Geospatial API White Paper
-   * FGDC Application Programming Interface (API) assessment
-   * OGC Web Feature Service 3.0: Part 1 - Core standard, OGC 17-069
-   * SpatioTemporal Asset Catalog API Specification (https://github.com/radiantearth/stac-spec)
+   * OGC/W3C Spatial Data Working Group on the Web Best Practices (https://www.w3.org/TR/sdw-bp/);
+
+   * OGC Geospatial API White Paper;
+
+   * FGDC Application Programming Interface (API) assessment;
+
+   * OGC Web Feature Service 3.0: Part 1 - Core standard, OGC 17-069; and
+
+   * SpatioTemporal Asset Catalog API Specification (https://github.com/radiantearth/stac-spec).
 
 Each of these documents recommends an emphasis on resource oriented APIs in future OGC standards development including use of tools such as OpenAPI.
 In addition, the following metadata standards shall be reviewed:
 
-   * Data Catalogue Vocabulary (DCAT) (https://www.w3.org/TR/vocab-dcat/)
-   * Geographic information -- Metadata -- XML schema implementation (ISO/TS 19130:2007)
-   * ebXML Registry Information Model, Version 3.0 (http://docs.oasis-open.org/regrep/regrep-rim/v3.0/regrep-rim-3.0-os.pdf)
+   * Data Catalogue Vocabulary (DCAT) (https://www.w3.org/TR/vocab-dcat/);
 
-== How to Determine when Work of SWG has been Completed
+   * Geographic information -- Metadata -- XML schema implementation (ISO/TS 19130:2007);
+
+   * ebXML Registry Information Model, Version 3.0 (http://docs.oasis-open.org/regrep/regrep-rim/v3.0/regrep-rim-3.0-os.pdf).
+
+== Is This a Persistent SWG
+
+YES
+
+== When can the SWG be Inactivated
+
+The SWG can be inactivated once the final standard and any extensions are developed and change requests become minimal or not applicable for consideration. The SWG can be re-activated at any time.
+
+////
+*moved to end of Scope of Work* can delete this commented text if you agree
 
 The goal is to develop part 1 of CAT 4.0, the foundation for the new version, as quickly as possible and work on additional parts after that, driven by community interest.
 
@@ -62,32 +131,40 @@ This has several aspects:
 
 Before finalizing parts of the next version of CAT 4.0, it must be verified that these goals are met, i.e.:
 
-  * working implementations of all capabilities must be available and tested
-  * Implementation feedback must be taken into account
+  * working implementations of all capabilities must be available and tested; and
+
+  * Implementation feedback must be taken into account.
 
 A consequence of this is that the period between the availability of what is considered a mature draft and the finalization of the specification may be longer than in the past, depending on the availability of evidence about the suitability of the specification based on implementations.
 
 Developers, including those that are not active in OGC or ISO/TC 211, should be encouraged as early as possible to implement the draft and provide feedback. An aspect of this is public access to drafts from the beginning.
 
 To this end, the SWG intends to use GitHub in the development of this standard as this is the environment may developer are familiar with and user on a daily basis.
+////
 
 == Description of deliverables
 
 The following deliverables will result from the work of this SWG:
 
-   * A final version of the Catalogue Services Version 4.0 Standard document for submission to the TC
-   * At least three prototype implementations of the core based on the standard -- although more would be preferred
+   * A final version of the Catalogue Services Version 4.0 Standard document for submission to the TC; and
+
+   * At least three prototype implementations of the core based on the standard -- although more would be preferred.
 
 == IPR Policy for this SWG
 
 RAND-Royalty Free
 
-== Anticipated Audience
+== Anticipated Audience / Participants
 
 Since we want implementations to proliferate the primary audience for the CAT 4.0 standard shall be developers implementing servers. Additionally, target audiences of the CAT 3.0 standard shall include:
 
-   * developers and deployers of catalogue services profiles
-   * users of catalogue services
+   * developers and deployers of catalogue services profiles; and
+
+   * users of catalogue services.
+
+== Domain Working Group Endorsement
+
+// The SWG will list all Domain Working Groups (DWGs) in which the SWG formation was discussed and/or chartered. If a DWG has specifically endorsed the formation of the SWG, then a statement of endorsement should be included.
 
 == Other informative information about the work of this SWG
 
@@ -97,9 +174,13 @@ The SWG intends to use the following GitHub report for the development of the ne
 
 Like the WFS 3.0 SWG, the CAT 4.0 SWG intends to make the GitHub repo open to the public to solicit participation and feedback from OGC and non-OGC members.
 
+=== Similar or Applicable Standards Work (OGC and Elsewhere)
+
+// CSW 2, CSW 3, OpenSearch Geo, DCAT, etc.
+
 === Details of first meeting
 
-The first meeting of the SWG will be T.B.D.
+The first meeting of the SWG will be within four weeks of approval of the SWG.
 
 === Projected on-going meeting schedule
 
@@ -110,7 +191,7 @@ The work of this SWG will be carried out primarily on github and via email, conf
 The following persons support this SWG and are committed to the Charter and projected meeting schedule.
 
 |===
-|Name |Organization 
+|Name |Organization
 |Paul van Genuchten | Geocat
 |Chris Holmes |Planet Labs
 |Frederic Houbie |Hexagon
@@ -125,4 +206,3 @@ The following persons support this SWG and are committed to the Charter and proj
    * Tom Kralidis
    * Angelos Tzotsos
    * Panagiotis (Peter) A. Vretanos
-
