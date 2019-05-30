@@ -27,11 +27,15 @@
    * CAT 4.0 conformance classes are:
    ** core
    *** read-only catalogue with limited query capability
-   ** OpenSearch query
+   ** text search query parameters
+   *** ability to perform text search 
+   ** OpenSearch query parameters
    *** ability to search the catalogue using extended OpenSearch Geo parameters
-   ** complex query
+   ** complex query parameters
+   *** support for complex query predicates use HTTP query parameters
+   ** complex query resource
    *** ability to search the catalogue using complex predicates
-   ** classification query
+   ** classification query parameters
    *** ability to perform a taxonomy search on the catalogue
    ** transactions
    *** ability to add, modify and remove records from the catalogue
@@ -97,7 +101,6 @@
    ** this is only a recommendation because in some cases the number of links in the payload may be large and thus not feasibly included in the headers or the links may not be known at the time the headers are being written
 
 == RESOURCE PATHS
-
 [reftext='{table-caption} {counter:table-num}']
 .API resource paths
 [cols="60%,40%",width="85%",options="header",align="center"]
@@ -114,9 +117,8 @@
 |===
 
 == METHODS (by path)
-
 [reftext='{table-caption} {counter:table-num}']
-.API resource paths
+.HTTP methods per resource path
 [cols="25%,15%,45%,15%",width="85%",options="header",align="center"]
 |===      
 |Path |Method |Description |Conformance class
@@ -364,6 +366,17 @@
      }
 ----
 
+== TEXT SEARCH CONFORMANCE CLASS
+   * a parameter to support text searches
+
+[reftext='{table-caption} {counter:table-num}']
+.Text search query parameters
+[cols="25%,75%",width="85%",options="header",align="center"]
+|===      
+|PARAMETER |DESCRIPTION
+|q |text search (i.e. contains)
+|===      
+
 == OPENSEARCH QUERY CONFORMANCE CLASS
    * this standard defines a set of, optional, additional parameters that
      allow for richer catalogue queries then those supported by "OGC API - Features"
@@ -373,26 +386,34 @@
      OpenSearch query conformance class
 
 [reftext='{table-caption} {counter:table-num}']
-.API resource paths
+.Extended OpenSearch query parameters
 [cols="25%,75%",width="85%",options="header",align="center"]
 |===      
 |PARAMETER |DESCRIPTION
-|q |text search (i.e. contains)
 |geometry |WKT geometry
 |geometry_crs |geometry CRS
 |gRelation |one of: "intersects", "equals", "disjoint", "touches", "within", "overlaps", "crosses", "contains" (default: intersects)
 |lat,lon,radius |proximity search 
+|time |as per WFS 3.0
 |tRelation |one of: "tEquals", "anyInteracts", "after", "before", "begins", "begunBy", "tContains", "during", "endedBy", "ends", "meets", "metBy", "tOverlaps", "overlappedBy" (default: anyInteracts)
+|===      
+
+== COMPLEX QUERY PARAMETERS CONFORMANCE CLASS
+   * the following HTTP query parameters are defined to support complex
+     query predicates encoded using some predicate language such as CQL
+
+[reftext='{table-caption} {counter:table-num}']
+.Complex query parameters
+[cols="25%,75%",width="85%",options="header",align="center"]
+|===      
 |filter |query predicate in some language 
 |filter_language |language used in filter parameter
 |===      
 
-== COMPLEX QUERY CONFORMANCE CLASS
-   * this standard also defines a method for supporting complex catalogue
-     queries using some predicate language such as OGC filter or CQL
-   * if a server support complex queries then it SHALL declare, in its 
-     conformance document (obtains via the /conformance path), that it
-     supports the complex query conformance class
+=== COMPLEX QUERY RESOURCE CONFORMANCE CLASS
+   * if a server supports complex queries via POST then it SHALL declare,
+     in its conformance document (obtains via the /conformance path), that
+     it supports the complex query conformance class
    * if a server indicates in its conformance document that it supports
      complex queries then it SHALL, in the catalogue's metadata (obtained
      via the /collections  or /collection/{cataglogueId} paths),
@@ -533,3 +554,6 @@
    ** /queryables
    *** returns the set of queryables that may be used across all catalogues
    *** behaved like the /collections/\{catalogueId\}/queryables path
+
+== STATIC CATALOGUE
+   * T.B.D. need to "steal" this concept from STAC
