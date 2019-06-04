@@ -27,8 +27,8 @@
    * CAT 4.0 conformance classes are:
    ** core
    *** read-only catalogue with limited query capability
-   ** text search query parameters
-   *** ability to perform text search 
+   ** full text search query parameters
+   *** ability to perform full text search
    ** OpenSearch query parameters
    *** ability to search the catalogue using extended OpenSearch Geo parameters
    ** complex query parameters
@@ -366,15 +366,15 @@
      }
 ----
 
-== TEXT SEARCH CONFORMANCE CLASS
+== FULL TEXT SEARCH CONFORMANCE CLASS
    * a parameter to support text searches
 
 [reftext='{table-caption} {counter:table-num}']
-.Text search query parameters
+.Full Text search query parameters
 [cols="25%,75%",width="85%",options="header",align="center"]
 |===      
 |PARAMETER |DESCRIPTION
-|q |text search (i.e. contains)
+|q |full text search (i.e. contains)
 |===      
 
 == OPENSEARCH QUERY CONFORMANCE CLASS
