@@ -4,23 +4,23 @@
 == INTRODUCTION
    * a catalogue is a curated collection of metadata records about resources
    * a resource can be anything that can be discovered
-   ** e.g. features, coverages, services, widgets, etc.
-   * a catalogue may implement any underlying data model that it wants
-       (e.g.  ebRIM, ISO19115/ISO19119, etc.) however, all internal data
+   ** e.g. features, coverages, services, processes, widgets, etc.
+   * a catalogue may implement any underlying data model 
+       (e.g. ebRIM, ISO19115/ISO19119, etc.). However, all internal data
        models must be mapped to the record schema defined in this standard
-   ** of course, a catalogue implementation may choose to directly implement
-      the record schema defined in this standard as its information model
+   ** a catalogue implementation may choose to directly implement
+      the record schema defined in this standard as its underlying data model
    ** this record schemas shall be referred to as the "standard record"
       in this document
-   * the standard record is based on DCAT and looks similar to GeoJSON but
-     is not GeoJSON (since GeoJSON is specifically for geographic features)
+   * the standard record is based on DCAT (which is a JSON dialect) which
+     provdies a suitable information model for describing resources
    ** there are also some hints of STAC thrown in for good measure! ;)
-   * besides the properties defined for the standard record, a server may
+   * in addition to the properties defined for the standard record, a server may
      also expose additional properties that may be used to query the catalogue
    ** e.g. specialized catalogues such as imagery catalogues may expose
       additional query properties such as cloud_cover or albedo
-   * the catalogue API is based on OGC API suite of APIs
-     (i.e. OGC API - Features)
+   * the catalogue API is based on the OGC suite of APIs
+     (OGC API - Features, OGC API - Coverages, etc.)
 
 == CONFORMANCE CLASSES
 
@@ -47,16 +47,17 @@
    *** HTML representation of a standard catalogue record
 
 == CONTENT NEGOTIATION
-   * done using the Accept and Content-Type HTTP headers
-   * servers can also mint their own URLs that include a format parameter (e.g. "OGC API - Features" servers use "f" for format)
-   ** servers, would of course, include any such parameter in their OpenAPI document
+   * done using HTTP standard Accept and Content-Type headers
+   * servers can also mint their own URLs that include a format parameter (e.g. "OGC API - Features" servers use "f=" for format)
+   ** servers would naturally include any such parameter in their OpenAPI document
 
 == LANGUAGE NEGOTIATION
-   * done using the Accept-Language and Content-Language HTTP headers
+   * done using the HTTP standard Accept-Language and Content-Language headers
    * server can also mint their own URLs that include a language parameter
    ** (e.g. ...&lang=en...)
+   *** servers would naturally include any such parameter in their OpenAPI document
    * languages shall be specified as per RFC 1766 (which is based on ISO 639)
-   ** e.g. en for English, el for Greek
+   ** e.g. en for English, el for Greek, fr for French
 
 == HTTP 1.1             
    * servers SHALL conform to HTTP 1.1
@@ -96,7 +97,7 @@
    ** JSON, XML and HTML
 
 == WEB LINKING         
-   * "links" sections are included all over the place in response messages defined in this standard to allow web linking
+   * "links" sections are included throughout response messages defined in this standard to allow web linking
    * "links" in payloads SHOULD also be included in the headers using the Link header
    ** this is only a recommendation because in some cases the number of links in the payload may be large and thus not feasibly included in the headers or the links may not be known at the time the headers are being written
 
@@ -106,14 +107,14 @@
 [cols="60%,40%",width="85%",options="header",align="center"]
 |===
 |Path                                        |Description
-|/                                           |Landing page
-|/api                                        |API definition
-|/conformance                                |Conformance declaration
-|/collections                                |List of available catalogues
-|/collections/\{catalogueId\}                |Metadata about a catalogue
-|/collections/\{catalogueId\}/items          |Access path to catalogue records
-|/collections/\{catalogueId\}/items/\{recordId\} |Access to a specific record
-|/collections/\{catalogueId\}/queryables       |List of catalogue's queryables (i.e. record properties that can be query predicate)
+|`/`                                           |Landing page
+|`/api`                                        |API definition
+|`/conformance`                                |Conformance declaration
+|`/collections`                                |List of available catalogues
+|`/collections/\{catalogueId\}`                |Metadata about a catalogue
+|`/collections/\{catalogueId\}/items`          |Access path to catalogue records
+|`/collections/\{catalogueId\}/items/\{recordId\}` |Access to a specific record
+|`/collections/\{catalogueId\}/queryables`       |List of catalogue's queryables (i.e. record properties that can be query predicate)
 |===
 
 == METHODS (by path)
@@ -166,25 +167,25 @@
 |DELETE  |undefined |
 |===
 
-== / path
+== `/` path
    * as per "OGC API - Features"
 
-== /api path
+== `/api` path
    * as per "OGC API - Features"
 
-== /conformance path
+== `/conformance` path
    * as per "OGC API - Features" (with CAT 4.0 conformance classes of course)
 
-== /collections 
+== `/collections`
    * a catalogue is a "collection" of metadata records
    * a catalogue end point may offer a SINGLE collection of metadata records or it may offer multiple collections of metadata records
    ** e.g. a feature catalogue and an imagery catalogue
    * a CAT 4.0 catalogue shall offer at least ONE collection of metadata records
-   * a successful GET operation on the /collection path shall return a response with a 200 HTTP status code
+   * a successful GET operation on the `/collection` path shall return a response with a 200 HTTP status code
    * the content of the response shall be an array of objects each describing a catalogue that is available at this end point
    * the content of the response SHALL a self link (i.e. rel="self") and zero or more links (rel="alternate") pointing to the alternate representations of the response that the server support (e.g. HTML, XML, etc.)
 
-.Example /collections response
+.Example `/collections` response
 [source,json]
 ----
      GET /collections
@@ -232,7 +233,7 @@
      }
 ----
 
-== /collections/\{catalogueId\} 
+== `/collections/\{catalogueId\} `
    * metadata about a single collection of metadata records (i.e. catalogue)
    * the available \{catalogueId\} values are the set of "identifier" values
      in the /collections response (i.e. $.collections[*].id)
@@ -243,7 +244,7 @@
    * the response here should be the same as the metadata about the catalogue
      presented in the /collections response
 
-.Example /collections/\{catalogueId\} response
+.Example `/collections/\{catalogueId\}` response
 [source,json]
 ----
      GET /collections/ogc_catalogue
@@ -286,7 +287,7 @@
      }
 ----
 
-== /collections/\{catalogueId\}/items/\{recordId\}
+== `/collections/\{catalogueId\}/items/\{recordId\}`
    * access path for a single record in a catalogue
    * the available \{catalogueId\} values are the set of "identifier" values
      in the /collections response (i.e. $.collections[*].id)
@@ -337,7 +338,7 @@
      }
 ----
 
-== /collections/\{catalogueId\}/items
+== `/collections/\{catalogueId\}/items`
    * the access path for the collection of records
    * the following parameters may be specified on the 
      /collections/{catalogueId}/items path:
@@ -503,7 +504,7 @@
    ** GET ...&classifiedAs=B&scope=narrow ...  will find records classified as  B and A
    ** GET ...&classifiedAs=B&scope=exact ...  will find records classified as  B
 
-== /collections/\{catalogueId\}/queryables
+== `/collections/\{catalogueId\}/queryables`
    * access path for get the set of additional queryables from a catalogue
    * the available \{catalogueId\} values are the set of "identifier" values
      in the /collections response (i.e. $.collections[*].id)
