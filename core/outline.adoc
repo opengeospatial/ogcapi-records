@@ -1,7 +1,8 @@
 
-= Draft Outline for OGC API - Catalogue  
+= Draft Outline for OGC API - Catalogue - Part 1: Core
 
 == INTRODUCTION
+   * current title: OGC API - Catalogues 
    * a catalogue is a curated collection of metadata records about resources
    * a resource can be anything that can be discovered
    ** e.g. features, coverages, assets, services, widgets, etc.
