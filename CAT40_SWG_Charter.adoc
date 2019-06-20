@@ -192,10 +192,11 @@ The following persons support this SWG and are committed to the Charter and proj
 
 |===
 |Name |Organization
-|Paul van Genuchten | Geocat
+|Paul van Genuchten |Geocat
 |Chris Holmes |Planet Labs
 |Frederic Houbie |Hexagon
 |Tom Kralidis |Environment and Climate Change Canada, Meteorological Service of Canada
+|Clemens Portele |interactive instruments
 |Angelos Tzotsos |Open Source Geospatial Foundation
 |Panagiotis (Peter) A. Vretanos |CubeWerx Inc.
 |===
