@@ -1,4 +1,4 @@
-﻿= OGC API - Catalogues Standards Working Group Charter
+﻿= OGC API - Catalogues Standards Working Group Charter (CAT 4.0 SWG, OGC 19-039)
 *Author Name(s):* Panagiotis (Peter) A. Vretanos, Tom Kralidis
 *Email:* pvretano@cubewerx.com, tom.kralidis@canada.ca
 *DATE:* 19-JUN-2018
@@ -33,19 +33,21 @@ The purpose of this Standards Working Group is to develop a new version of the C
 
 == Business Value Proposition
 
-In order to able to exploit geospatial resources, end-users must be able to
-discover those resources.  The proposed catalogue provides the methods
-and apparatus to support such discovery by standardizing the way collections 
-of descriptive information (metadata) about geospatial resources are exposed.
-For providers of geospatial resources who need to catalogue their holdings,
-the catalogue provides a uniform mean for indexing those resources.  For
-developers building infrastructures to host, harvest and/or manage collections
-of geospatial resources, the catalogue standard defines the bare minimum needed
-to describe those resources and is customizable for particular domains of
-interest.  Finally, users of geospatial resources are often in a position of 
-having to construct specialized processing flows for each different collection
-of geospatial resources that they consume.  The catalogue is defined to
-complexity and encourage the use of common tooling.
+In order to be able to exploit geospatial resources (e.g. feature collections, 
+coverages, etc.) and other related resources (code lists, etc.) , end-users
+must be able to discover those resources. The proposed catalogue provides
+the methods and apparatus to support such discovery by standardizing the way
+collections of descriptive information (metadata, code lists, etc.) about
+resources are exposed. For providers of geospatial resources who need to
+catalogue their holdings, the catalogue provides a uniform means for indexing
+those resources. For developers building infrastructures to host, harvest
+and/or manage collections of geospatial resources, the catalogue standard
+defines the bare minimum needed to describe those resources and is customizable
+for particular domains of interest.  Finally, users of geospatial resources are
+often in a position of having to construct specialized processing flows for
+each different collection of geospatial resources that they consume. The
+catalogue is defined to reduce such complexity and encourage the use of common
+tooling.
 
 == Scope of Work
 
@@ -56,6 +58,14 @@ The next version ("OGC API - Catalogues") is intended to break free of this lega
 * Name: +
 The formal proposed name of the new standard is "OGC API - Catalogues - Part 1: Core".  However, one of the first actions of the SWG shall be to settle on a name.  Other proposed names include "OGC API - Metadata" and "OGC API - Records".
 
+* Scope: +
+Catalogues have, in the geospatial domain, traditionally been used to access
+collections of formal metadata such as FGDC, ISO19115 or ISO19119 metadata
+documents.  While the intent of the CAT4.0 SWG is to preserve this functionality
+going forward, there is also a desire to broaden the scope so that a catalogue
+can also act as a registry of other types of descriptive metadata about 
+resources such as code lists.
+
 * Architecture: +
 "OGC API - Catalogues" shall support and be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for CAT messages. In addition, the resources provided by the service shall include hypermedia controls in their representations to guide the user of a catalogue.
 
@@ -63,7 +73,7 @@ The formal proposed name of the new standard is "OGC API - Catalogues - Part 1: 
 Previous versions were strongly tied to XML (Capabilities documents, XML schemas, Filter Encoding expressions, etc.). This version shall be written with JSON, HTML, and XML as primary encodings in mind, given these are common encodings today.  No encoding shall be mandatory and other encodings may be used as well. HTTP is designed to support the use of multiple formats and defines rules about how servers can return the encoding that the client can best handle (“content negotiation”).
 
 * Basic information model: +
-Previous versions of the CAT 3.0 standard used the Dublin Core set of metadata (encoded as XML) as the basic, cross-platform, information model that all implementations needed to support.  "OGC API - Catalogues" will review the use of this model and strongly consider using DCAT (https://www.w3.org/TR/vocab-dcat/) instead.
+Previous versions of the CAT 3.0 standard used the Dublin Core set of metadata (encoded as XML) as the basic, cross-platform, information model or set of queryables that all implementations needed to support.  "OGC API - Catalogues" will review the use of this model and strongly consider using DCAT (https://www.w3.org/TR/vocab-dcat/) instead.
 
 * Reuse: +
 The use of CAT-specific resources or components will be minimized and, where available, existing industry-standards that are commonly used by developers shall be used instead. The most important example for this is the use of an OpenAPI definition instead of OGC-specific "Capabilities" documents.
@@ -186,9 +196,12 @@ Since we want implementations to proliferate the primary audience for the "OGC A
 
 === Collaboration
 
-The SWG intends to use the following GitHub report for the development of the new standard: https://github.com/opengeospatial/CAT4.0.
+The SWG intends to use the following GitHub repository for the development of the new standard: https://github.com/opengeospatial/CAT4.0.
 
 Like the work done by the WFS/FES SWG, the "OGC API - Catalogues SWG" intends to make the GitHub repo open to the public to solicit participation and feedback from OGC and non-OGC members.
+
+Additional collaboration resources include periodic teleconferences, email
+and/or a gitter channel.
 
 === Similar or Applicable Standards Work (OGC and Elsewhere)
 
@@ -216,6 +229,7 @@ The following persons support this SWG and are committed to the Charter and proj
 
 |===
 |Name |Organization
+|Roger Bracklin |Envitia
 |Paul van Genuchten |Geocat
 |Chris Holmes |Planet Labs
 |Frederic Houbie |Hexagon
@@ -225,9 +239,6 @@ The following persons support this SWG and are committed to the Charter and proj
 |Panagiotis (Peter) A. Vretanos |CubeWerx Inc.
 |===
 
-=== Conveners
+=== Convener
 
-   * Chris Holmes
-   * Tom Kralidis
-   * Angelos Tzotsos
    * Panagiotis (Peter) A. Vretanos
