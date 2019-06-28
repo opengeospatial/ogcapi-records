@@ -28,6 +28,7 @@
    * CAT 4.0 conformance classes are:
    ** core
    *** read-only catalogue with limited query capability
+   *** bbox=, time=, q=, type=
    ** full text search query parameters
    *** ability to perform full text search
    ** OpenSearch query parameters
