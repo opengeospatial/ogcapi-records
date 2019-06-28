@@ -545,17 +545,37 @@
 
 == CROSS CATALOGUE QUERIES
    * there might be a need to execute queries across all the catalogues 
-     offered by an endpoint
-   * the following paths are defined for this purpose:
-   ** /items 
-   *** path to all records in all catalogues offered by this endpoint
-   *** behaves like the /collections/\{catalogueId\}/items path
-   ** /items/\{recordId\}
-   *** path to a records in all catalogues offered by this endpoint
-   *** behaves like the /collections/{catalougeId}/items/\{recordId\} path
-   ** /queryables
-   *** returns the set of queryables that may be used across all catalogues
-   *** behaved like the /collections/\{catalogueId\}/queryables path
+     offered at an endpoint
+   * in this case, an endpoint could be defined as a "super" catalogue that
+     is identical to any other catalogue but just happens to aggregate
+     the records of the catalogues at the endpoint
+   * for example, consider the following
+   ** /collections/resources
+   ** /collections/services
+   ** /collections/series
+   ** this example is taken from the TB15 EOPAD thread
+   ** in this example, /resources is a "super" catalogue endpoint that
+      aggregates the records of the /services and /series endpoints
+   *** so "/resources?q=seabed" would return all service and series records
+       that contain the term "seabed"
+   * other benefits of this approach include:
+   ** you can have several "super" catalogue endpoints that aggregate 
+      records is different ways
+   ** from an implemenation standpoint, such "super" catalogue endpoints 
+      can be implemented as federating nodes with distributed endpoints
+      for scaling purposes
+
+----
+                              /resources
+                                (node A)
+                                /     \
+                               /       \
+                              /         \
+                             /           \
+                             |           |
+                    /services            /series
+                     (node B)             (node C)
+----
 
 == STATIC CATALOGUE
    * T.B.D. need to "steal" this concept from STAC
