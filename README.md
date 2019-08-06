@@ -1,4 +1,4 @@
-# Catalogue Services 4.0
+# OGC API - Catalogues
 
 This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Catalogue Services standard for querying geospatial metadata on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components with responses in JSON, XML and HTML.
 
@@ -8,13 +8,13 @@ A Catalogue Service is a standard API for retrieving and managing metadata about
  geospatial data and services.
 
 ```
-GET /records
+GET /collections/myCatalogue/items
 ```
 
 Lists all the metadata records in the catalogue.
 
 ```
-GET /records?bbox=160.6,-55.95,-170,-25.89
+GET /collections/myCatalogue/items?bbox=160.6,-55.95,-170,-25.89
 ```
 
 Lists all the metadata records that describe objects in the New Zealand economic zone.
@@ -24,7 +24,7 @@ The response format is determined using standard [HTTP content negotiation](http
 Data is returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core specification supports a basic set of filters roughly analogous to the [OpenSearch](http://www.opensearch.org/Home) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
 
 ```
-GET /records/{id}
+GET /collections/myCatalogue/items/{recordId}
 ```
 
 Returns a specific metadata record.
