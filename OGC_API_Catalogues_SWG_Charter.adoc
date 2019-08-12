@@ -1,9 +1,9 @@
-﻿= OGC API - Catalogues Standards Working Group Charter (CAT 4.0 SWG, OGC 19-039r1)
+﻿= OGC API - Catalogues Standards Working Group Charter, OGC 19-039r2
 
-*Author Name(s):* Panagiotis (Peter) A. Vretanos, Tom Kralidis, Clemens Portele
-*Email:* pvretano@cubewerx.com, tom.kralidis@canada.ca, portele@interactive-instruments.de
-*DATE:* 28-JUN-2019
-*CATEGORY:* SWG Charter
+* *Author Name(s):* Panagiotis (Peter) A. Vretanos, Tom Kralidis, Clemens Portele
+* *Email:* pvretano@cubewerx.com, tom.kralidis@canada.ca, portele@interactive-instruments.de
+* *DATE:* 28-JUN-2019
+* *CATEGORY:* SWG Charter
 
 To:  OGC members & interested parties
 
@@ -30,7 +30,13 @@ Please feel free to forward this announcement to any other appropriate lists. Th
 
 == Purpose of the Standards Working Group
 
-The purpose of this Standards Working Group is to develop a new version of the Catalogue Service standard (HTTP Protocol Binding) as a Web API.
+The purpose of this Standards Working Group is to:
+
+   * develop a new version of the Catalogue Service standard
+     (HTTP Protocol Binding) as a Web API.
+   * develop new parts of the OGC API Catalogues multipart standard
+   * develop corrigenda for previous versions of the catalogue
+     standard(s) 
 
 == Business Value Proposition
 
@@ -39,28 +45,24 @@ coverages, etc.) and other related resources (code lists, definitions, etc.),
 end-users must be able to discover and fetch those resources. The proposed
 Web API provides the methods and apparatus to support
 
-* discovery of geospatial resources by standardizing the way
-collections of descriptive information about the resources (metadata)
-are exposed;
-* discovery and sharing of related resources that may be referenced
-from geospatial resources or their metadata by standardizing the way
-how all kinds of records are exposed and managed.
+* discovery of geospatial resources by standardizing the way collections of descriptive information about the resources (metadata) are exposed;
 
-For providers of geospatial resources who need to
-catalogue their holdings, the catalogue provides a uniform means for indexing
-those resources as metadata records. The same uniform interface may be used
-for managing and sharing the related resources.
+* discovery and sharing of related resources that may be referenced from geospatial resources or their metadata by standardizing the way all kinds of records are exposed and managed.
 
-For developers building infrastructures to host, harvest
-and/or manage collections of geospatial resources, the standard
-defines the bare minimum needed to describe those resources. It is customizable
-for particular domains of interest.
+For providers of geospatial resources who need to catalogue their holdings,
+the catalogue provides a uniform means for indexing those resources as
+metadata records. The same uniform interface may be used for managing and
+sharing the related resources.
 
-Finally, users of geospatial resources are
-often in a position of having to construct specialized processing flows for
-each different collection of geospatial resources that they consume. The
-catalogue is defined to reduce such complexity and encourage the use of common
-tooling.
+For developers building infrastructures to host, harvest and/or manage
+collections of geospatial resources, the standard defines the bare minimum
+needed to describe those resources. It is customizable for particular
+domains of interest.
+
+Finally, users of geospatial resources are often in a position of having to
+construct specialized processing flows for each different collection of
+geospatial resources that they consume. The catalogue is defined to reduce
+such complexity and encourage the use of common tooling.
 
 == Scope of Work
 
@@ -125,7 +127,18 @@ This standard is intended to be a major revision to the Catalogue Services stand
 
 == What is Out of Scope?
 
-T.B.D.
+Standards are important for interoperability. At the same time, it is important
+that standards only state requirements that are important for a significantly
+large group of users.  Proposals for new parts of OGC API Catalogues or change
+requests to existing parts must identify the user group that will benefit from
+the proposal and include the commitment for three independent implementations
+for each proposed conformance class; otherwise the proposal will be considered
+out-of-scope. 
+
+OGC API Catalogues is a modular, multi-part standard. Developing profiles of
+OGC API Catalogues should not be necessary and is, therefore, out-of-scope
+for the SWG. If a community has a need to develop a profile, the profile should
+be specified and governed by that community.
 
 == Specific Existing Work Used as Starting Point
 
@@ -155,28 +168,6 @@ YES
 == When can the SWG be Inactivated
 
 The SWG can be inactivated once the final multipart standard has been developed and change requests become minimal or not applicable for consideration. The SWG can be re-activated at any time.
-
-////
-*moved to end of Scope of Work* can delete this commented text if you agree
-
-The goal is to develop part 1 of "OGC API - Catalogues", the foundation for the new version, as quickly as possible and work on additional parts after that, driven by community interest.
-
-An important aspect is to ensure that implementing the standard will lead to efficient implementations, happy developers of both server and client components, and satisfied users of such components.
-
-This has several aspects:
-
-Before finalizing parts of the next version of "OGC API - Catalogues", it must be verified that these goals are met, i.e.:
-
-  * working implementations of all capabilities must be available and tested; and
-
-  * Implementation feedback must be taken into account.
-
-A consequence of this is that the period between the availability of what is considered a mature draft and the finalization of the specification may be longer than in the past, depending on the availability of evidence about the suitability of the specification based on implementations.
-
-Developers, including those that are not active in OGC or ISO/TC 211, should be encouraged as early as possible to implement the draft and provide feedback. An aspect of this is public access to drafts from the beginning.
-
-To this end, the SWG intends to use GitHub in the development of this standard as this is the environment may developer are familiar with and user on a daily basis.
-////
 
 == Description of deliverables
 
@@ -229,13 +220,8 @@ proposed SWG:
 
    * OpenGIS Catalogue Service Implementation Specification	 07-006r1
    * OGC® Catalogue Services 3.0 - General Model	12-168r6
-   * OGC® Catalogue Services 3.0 Specification - HTTP Protocol Binding	12-176r7
    * OGC® OpenSearch Geo and Time Extensions	 10-032r8
    * OGC OpenSearch Extension for Earth Observation	 13-026r8
-   * Data Catalog Vocabulary (DCAT) (https://www.w3.org/TR/vocab-dcat/)
-   * SpatioTemporal Asset Catalogs (https://stacspec.org/)
-
-CAUTION: Some of these are also listed above and should be deleted here.
 
 === Details of first meeting
 
