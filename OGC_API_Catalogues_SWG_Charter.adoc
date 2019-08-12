@@ -1,4 +1,4 @@
-﻿= OGC API - Catalogues Standards Working Group Charter, OGC 19-039r2
+﻿= OGC API - Catalogues Standards Working Group Charter, OGC 19-060
 
 * *Author Name(s):* Panagiotis (Peter) A. Vretanos, Tom Kralidis, Clemens Portele
 * *Email:* pvretano@cubewerx.com, tom.kralidis@canada.ca, portele@interactive-instruments.de
