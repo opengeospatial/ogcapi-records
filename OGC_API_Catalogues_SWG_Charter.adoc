@@ -32,43 +32,48 @@ Please feel free to forward this announcement to any other appropriate lists. Th
 
 The purpose of this Standards Working Group is to:
 
-   * develop a new version of the Catalogue Service standard
-     (HTTP Protocol Binding) as a Web API.
-   * develop new parts of the OGC API Catalogues multipart standard
-   * develop corrigenda for previous versions of the catalogue
+   * Develop a new version of the HTTP Protocol Binding for the OGC Catalogue Service standard
+     as a Web API.
+   * Develop new parts of the OGC API Catalogues multipart standard
+   * Develop corrigenda for previous versions of the catalogue
      standard(s) 
 
 == Business Value Proposition
 
 In order to be able to exploit geospatial resources (e.g., feature collections,
 coverages, etc.) and other related resources (code lists, definitions, etc.),
-end-users must be able to discover and fetch those resources. The proposed
+end-users must be able to discover and fetch those resources. The proposed _Catalogue_
 Web API provides the methods and apparatus to support
 
-* discovery of geospatial resources by standardizing the way collections of descriptive information about the resources (metadata) are exposed;
+* Discovery of geospatial resources by standardizing the way collections of descriptive information about the resources (metadata) are exposed;
 
-* discovery and sharing of related resources that may be referenced from geospatial resources or their metadata by standardizing the way all kinds of records are exposed and managed.
+* Discovery and sharing of related resources that may be referenced from geospatial resources or their metadata by standardizing the way all kinds of records are exposed and managed.
 
 For providers of geospatial resources who need to catalogue their holdings,
 the catalogue provides a uniform means for indexing those resources as
 metadata records. The same uniform interface may be used for managing and
 sharing the related resources.
 
+```
+The following paragraph needs a bit more work. You say "the standard". What standard?
+Also, perhaps provide examples of what is meant by "bare minimum". Finally, the sentence that starts with "it". What does "it" refer to? Best not to start sentences with "it" :-)
+```
+
 For developers building infrastructures to host, harvest and/or manage
 collections of geospatial resources, the standard defines the bare minimum
 needed to describe those resources. It is customizable for particular
-domains of interest.
+domains of interest. 
 
 Finally, users of geospatial resources are often in a position of having to
 construct specialized processing flows for each different collection of
-geospatial resources that they consume. The catalogue is defined to reduce
+geospatial resources that they consume. The Catalogue API will be defined to reduce
 such complexity and encourage the use of common tooling.
 
 == Scope of Work
 
 The current versions of the catalogue standards (i.e. CAT 2.0, CAT 3.0) -- developed in the early 2000s -- use a Remote-Procedure-Call-over-HTTP architectural style using XML for any payloads.  This was considered state-of-the art at the time but this legacy is now badly outdated and does not conform to current web development practices.
 
-The next version ("OGC API - Catalogues") is intended to break free of this legacy and will specify a modernized service that aligns with the current architecture of the Web and the Spatial Data on the Web Best Practices (https://www.w3.org/TR/sdw-bp/). The key changes shall be as follows.
+The definition of an "OGC API - Catalogues" is intended to break free of this legacy and will specify a modernized service that aligns with the current architecture of the Web and the Spatial Data on the Web Best Practices (https://www.w3.org/TR/sdw-bp/). The key changes shall be as follows.
 
 * Name: +
 The formal proposed name of the new standard is "OGC API - Catalogues - Part 1: Core".  However, one of the first actions of the SWG shall be to settle on a name.  Other proposed names include "OGC API - Metadata" and "OGC API - Records".
@@ -84,8 +89,16 @@ resources such as code lists.
 * Architecture: +
 "OGC API - Catalogues" shall support and be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for CAT messages. In addition, the resources provided by the service shall include hypermedia controls in their representations to guide the user of a catalogue.
 
+```
+Note for above. I would not use the word "shall" in this context. Sounds like procurement language and not definition of scope in an OGC SWG charter.  Better to reword such as "The definition of the "OGC API - Catalogues" will be consistent with HTTP and HTTPS." Further, would it not be better to define the API at an abstract level and then specify the HTTP instantiation of that model? Using an abstract approach would allow for implementation of the API in other platforms and infrastructures.
+```
+
 * Encodings: +
 Previous versions were strongly tied to XML (Capabilities documents, XML schemas, Filter Encoding expressions, etc.). This version shall be written with JSON, HTML, and XML as primary encodings in mind, given these are common encodings today.  No encoding shall be mandatory and other encodings may be used as well. HTTP is designed to support the use of multiple formats and defines rules about how servers can return the encoding that the client can best handle (“content negotiation”).
+
+```
+Same comments are for Architecture. Need to make sure the scope wording focuses on the decisions that the SWG will make and not overly restrict discussions.
+```
 
 * Basic information model: +
 Previous versions of the CAT 3.0 standard used the Dublin Core set of metadata (encoded as XML) as the basic, cross-platform, information model or set of queryables that all implementations needed to support.  "OGC API - Catalogues" will review the use of this model and strongly consider using DCAT (https://www.w3.org/TR/vocab-dcat/) instead.
@@ -96,12 +109,20 @@ The use of CAT-specific resources or components will be minimized and, where ava
 * Modularization: +
 The CAT 3.0 standard, together with the Filter Encoding 2.0 standard, specifies a powerful, but complex service interface. In order to better support implementations that only need a relatively simple service or client, the next version shall be modularized into multiple parts. The first part (the "core") shall specify a simple interface to access metadata from catalogues that is sufficient for cases that do not require support for transactions, complex data structures, rich queries, etc. Additional parts will specify extensions to this part to meet the needs of use cases that require such capabilities.
 
+```
+Same issue with the word "shall". I would reword "the next version shall be modularized into multiple parts. The first part (the "core") shall specify a simple interface to access metadata from catalogues that is sufficient . .  "
+
+as
+
+". . . the intent is to modularized the next version of the standard into multiple parts. The first part (the "core") will specify a simple interface to access metadata from catalogues that is sufficient . . ."
+```
+
 * Security: +
 CAT 3.0, like many other OGC web standards, does not specify how services may be secured and some requirements are incompatible with secured services that still conform to the standard. The use of OpenAPI would address this issue, too. Catalogues Services may be secured using security schemes that are commonly used on the Web today (e.g., OAuth2) and that developers are familiar with.
 
-As a result of this modernization, "OGC API - Catalogues" implementations will not be backwards compatible with CAT 3.0 implementations per se. However, it is a design goal to define "OGC API - Catalogues" in a way so that the interface can be mapped to a CAT 3.0 or CAT 2.0  implementations - at least for the capabilities that were already in scope for those standards.
+As a result of the planned modernization of the current Catalogue Standard, "OGC API - Catalogues" implementations will not be backwards compatible with CAT 3.0 implementations per se. However, a design goal is to define "OGC API - Catalogues" in a way so that the interface can be mapped to a CAT 3.0 or CAT 2.0  implementations - at least for the capabilities that were already in scope for those standards.
 
-"OGC API - Catalogues" is intended to be simpler and more modern, but still an evolution from the previous versions and their implementations.
+"OGC API - Catalogues" is intended to be simpler and more modern, but still be an evolution from the previous versions and their implementations.
 
 The goal is to develop part 1 of "OGC API - Catalogues", the foundation for the new version, as quickly as possible and work on additional parts after that, driven by community interest.
 
@@ -111,13 +132,13 @@ This has several aspects:
 
 Before finalizing parts of the next version of "OGC API - Catalogues", it must be verified that these goals are met, i.e.:
 
-  * working implementations of all capabilities must be available and tested; and
+  * Working implementations of all capabilities must be available and tested; and
 
   * Implementation feedback must be taken into account.
 
-A consequence of this is that the period between the availability of what is considered a mature draft and the finalization of the specification may be longer than in the past, depending on the availability of evidence about the suitability of the specification based on implementations.
+A consequence of this is that the period between the availability of what is considered a mature draft and the finalization of the official Member approved OGC Standard may be longer than in the past, depending on the availability of evidence about the suitability of the candidate standard based on implementations.
 
-Developers, including those that are not active in OGC or ISO/TC 211, should be encouraged as early as possible to implement the draft and provide feedback. An aspect of this is public access to drafts from the beginning.
+Developers, including those that are not active in OGC or ISO/TC 211, should be encouraged as early as possible to implement the draft Catalogue API standard and provide feedback. An aspect of this is public access to drafts from the beginning.
 
 To this end, the SWG intends to use GitHub in the development of this standard as this is the environment may developer are familiar with and user on a daily basis.
 
@@ -142,7 +163,7 @@ be specified and governed by that community.
 
 == Specific Existing Work Used as Starting Point
 
-The starting point for the work shall be the "OGC® Catalogue Services 3.0 Specification - HTTP Protocol Binding", OGC 12-176r7.  The work shall also be informed by the following specifications and by recommendations found in:
+The starting point for the work will be the "OGC® Catalogue Services 3.0 Specification - HTTP Protocol Binding", OGC 12-176r7.  The work shall also be informed by the following documents and by recommendations found in:
 
    * OGC/W3C Spatial Data Working Group on the Web Best Practices (https://www.w3.org/TR/sdw-bp/);
 
@@ -151,15 +172,24 @@ The starting point for the work shall be the "OGC® Catalogue Services 3.0 Speci
    * OGC API - Features - Part 1: Core candidate standard, OGC 17-069r2; and
 
    * SpatioTemporal Asset Catalog API Specification (https://github.com/radiantearth/stac-spec).
+   
+```
+Just be aware that STAC cannot be referenced as normative or used in normative language in an OGC standard. STAC can only be referenced as informative. This is an OGC policy directive WRT documents and specs developed by groups external to the OGC that are not recognized as formal SDOs.
+```
 
 Each of these documents recommends an emphasis on resource oriented APIs in future OGC standards development including use of tools such as OpenAPI.
-In addition, the following metadata standards shall be reviewed:
+
+In addition, the following metadata standards will be reviewed:
 
    * Data Catalogue Vocabulary (DCAT) (https://www.w3.org/TR/vocab-dcat/);
 
    * Geographic information -- Metadata -- XML schema implementation (ISO/TS 19139:2007);
 
    * ebXML Registry Information Model, Version 3.0 (http://docs.oasis-open.org/regrep/regrep-rim/v3.0/regrep-rim-3.0-os.pdf).
+   
+```
+FYI - The CDB SWG did a detailed review/analysis of 8 or so metadata standards and profiles of those standard. There is a SWG discussion paper as well as other information resources developed by the SWG. These documents may be useful in the planned work of this proposed SWG. These documents are on the CDB SWG portal project.
+```
 
 == Is This a Persistent SWG
 
@@ -193,9 +223,9 @@ RAND-Royalty Free
 
 Since we want implementations to proliferate the primary audience for the "OGC API - Catalogues" suite of standards shall be developers implementing servers. Additionally, target audiences of the standard shall include:
 
-   * deployers of catalogue services profiles; and
+   * Deployers of catalogue services profiles; and
 
-   * users of catalogue services.
+   * Dsers of catalogue services.
 
 == Domain Working Group Endorsement
 
@@ -204,6 +234,10 @@ Since we want implementations to proliferate the primary audience for the "OGC A
 == Other informative information about the work of this SWG
 
 === Collaboration
+
+```
+I would note that all votes on any issues or motions need to be SWG members only.  This includes making anything public. While the Git repo may be public and open, the actual day to day work of the SWG is not open. Obviously, input can be requested and the results of votes shared but only OGC SWG Members can vote.
+```
 
 The SWG intends to use the following GitHub repository for the development of the new standard: https://github.com/opengeospatial/CAT4.0.
 
