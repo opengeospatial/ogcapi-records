@@ -86,13 +86,16 @@ that a catalogue can also act as a registry of other types of descriptive
 metadata about resources such as code lists.
 
 * Architecture: +
-The definition of the "OGC API - Catalogues" will be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for RPC-like request messages. In addition, the resources provided by the service will be strongly encouraged to include hypermedia controls in their representations to guide the user accessing a catalogue and to link related resources together.
+The definition of the "OGC API - Catalogues" will be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for RPC-like request messages. 
 
 * Encodings: +
 Previous versions of the OGC catalogue standards were strongly tied to XML (Capabilities documents, XML schemas, Filter Encoding expressions, etc.).  The definition of the "OGC API - Catalogues" standard will not define mandatory encodings and will allow clients and servers to negotiate a mutually agreeable output formats using standard HTTP content negotiation rules.  Because they are in common use today, the definition of the "OGC API - Catalogues" standard will include conformance classes for JSON, HTML and XML encodings.  Other encodings may also be defined as extensions in future parts of the standard.
 
 * Basic information model: +
 Previous versions of the OGC Catalogue Standard used the Dublin Core set of metadata (encoded as XML) as the basic, cross-platform, information model or set of queryables that all implementations needed to support.  "OGC API - Catalogues" will review the use of this model and strongly consider using DCAT (https://www.w3.org/TR/vocab-dcat/) or GeoDCAT (https://inspire.ec.europa.eu/good-practice/geodcat-ap), which are extensions to the Dublin Core model, for this purpose.
+
+* Linked data: +
+The use of links or hypermedia controls to guide users accessing the catalogue and to link related resources together will be strongly encouraged in the proposed standard.  Wherever possible, provisions will be made to include "links" sections to accomodate the use of such hypermedia or linking elements.
 
 * Reuse: +
 The use of OGC Catalogue-specific resources or components will be minimized and, where available, existing industry-standards that are commonly used by developers will be considered instead. The most important example for this is the use of an OpenAPI definition instead of OGC-specific "Capabilities" documents.
@@ -224,8 +227,7 @@ Since we want implementations to proliferate the primary audience for the "OGC A
 
 == Domain Working Group Endorsement
 
-// The SWG will list all Domain Working Groups (DWGs) in which the SWG formation was discussed and/or chartered. If a DWG has specifically endorsed the formation of the SWG, then a statement of endorsement should be included.
-
+The proposed SWG will report to the Metadata and Catalog Domain Working Group.
 
 == Other informative information about the work of this SWG
 
