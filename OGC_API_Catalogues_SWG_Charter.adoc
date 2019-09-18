@@ -86,7 +86,7 @@ that a catalogue can also act as a registry of other types of descriptive
 metadata about resources such as code lists.
 
 * Architecture: +
-The definition of the "OGC API - Catalogues" will be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for RPC-like request messages. In addition, the resources provided by the service may include hypermedia controls in their representations to guide the user accessing a catalogue.
+The definition of the "OGC API - Catalogues" will be consistent with HTTP and HTTPS. In previous versions, HTTP has been used mainly as a tunnel for RPC-like request messages. In addition, the resources provided by the service will be strongly encouraged to include hypermedia controls in their representations to guide the user accessing a catalogue and to link related resources together.
 
 * Encodings: +
 Previous versions of the OGC catalogue standards were strongly tied to XML (Capabilities documents, XML schemas, Filter Encoding expressions, etc.).  The definition of the "OGC API - Catalogues" standard will not define mandatory encodings and will allow clients and servers to negotiate a mutually agreeable output formats using standard HTTP content negotiation rules.  Because they are in common use today, the definition of the "OGC API - Catalogues" standard will include conformance classes for JSON, HTML and XML encodings.  Other encodings may also be defined as extensions in future parts of the standard.
@@ -176,11 +176,15 @@ In addition, the following metadata standards will be reviewed:
 
    * ISO 19115-3:2016 Geographic Information -- Metadata -- Part 3: XML Schema Implementation for Fundamental Concepts
 
+   * ISO 19135-1:2015: Geographic information -- Procedures for item registration -- Part 1: Fundamentals
+
    * CDB SWG Metadata Analysis Spreadsheet (https://portal.opengeospatial.org/files/?artifact_id=73769)
 
    * DRAFT OGC CDB Metadata Enhancements: Background and Recommendations (https://portal.opengeospatial.org/files/?artifact_id=73767)
 
    * Security in your OpenAPI Specification (https://hackernoon.com/security-in-your-openapi-specification-94d081603950)
+
+   * https://schema.org
 
 == Is This a Persistent SWG
 
