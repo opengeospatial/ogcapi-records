@@ -130,7 +130,7 @@ To this end, the SWG intends to use GitHub in the development of this standard a
 
 == Statement of relationship of planned work to the current OGC standards baseline
 
-This standard is intended to be a major revision to the Catalogue Services standards published by OGC. This revision will take advantage of Web API patterns identified in the OGC API standards efforts (e.g., OGC API - Features, AKA WFS 3.0) to better align with current and emerging IT practices. "OGC API - Catalogues" does overlap in scope with the existing OGC Catalogue Services standards.
+This standard is intended to be a major revision to the Catalogue Services standards published by OGC. This revision will take advantage of Web API patterns identified in the OGC API standards efforts (e.g., OGC API - Features, AKA WFS 3.0) to better align with current and emerging IT practices. "OGC API - Catalogues" does overlap in scope with the existing OGC Catalogue Services standards.  In addition, the SWG will coordinate with the EO Product Metadata and OpenSearch SWG on potential alignment of efforts.
 
 == What is Out of Scope?
 
@@ -155,13 +155,20 @@ The starting point for the work will be the "OGC® Catalogue Services 3.0 Specif
 
    * OGC Geospatial API White Paper (OGC 16-019r4);
 
-   * OGC API - Features - Part 1: Core candidate standard, OGC 17-069r2; and
+   * OGC API - Features - Part 1: Core candidate standard, OGC 17-069r2; 
+
+   * OGC® OpenSearch Geo and Time Extensions, OGC 10-032r8;
+
 
    * SpatioTemporal Asset Catalog API Specification (https://github.com/radiantearth/stac-spec).
 
 Each of these documents recommends an emphasis on resource oriented APIs in future OGC standards development including use of tools such as OpenAPI.
 
 In addition, the following metadata standards will be reviewed:
+
+   * Earth Observation Process and Application Discovery (https://portal.opengeospatial.org/files/?artifact_id=82290#EOPAD)
+
+   * OGC OpenSearch Extension for Earth Observation, OGC 13-026r8;
 
    * Data Catalogue Vocabulary (DCAT) (https://www.w3.org/TR/vocab-dcat/);
 
