@@ -279,6 +279,7 @@ The following persons support this SWG and are committed to the Charter and proj
 |Name |Organization
 |Roger Bracklin |Envitia
 |Paul van Genuchten |Geocat
+|Pedro Pereira Goncalves |Terradue
 |Chris Holmes |Planet Labs
 |Frederic Houbie |Hexagon
 |Tom Kralidis |Environment and Climate Change Canada, Meteorological Service of Canada
