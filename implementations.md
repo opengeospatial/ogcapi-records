@@ -38,7 +38,7 @@ Describe cwcat catalogue:
 
 Records:
 
-* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/cwtepcat/items?limit=10
+* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/cwtepcat/items?limit=10&f=json
 
 * http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/cwtepcat/items?limit=500&f=json&bbox=-68.301,40.136,-64.214,45.189
 
