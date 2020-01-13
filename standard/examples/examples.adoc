@@ -1,0 +1,31 @@
+== Examples
+
+This section contains examples for coverage access, subsetting, and encoding. It assumes a service endpoint of http://acme.com/oapi/[http://acme.com/oapi/] .
+
+=== Service Metadata
+
+The first part is about service metadata. Currently this is wild speculation as it will mainly be defined through https://github.com/opengeospatial/oapi_common[OGC API - Common].
+
+*   http://acme.com/oapi/servicedescription/formatssupported[http://acme.com/oapi/servicedescription/formatssupported]  -- returns a list of formats in which coverage representations can be requested
+
+=== Coverage Finding
+
+*   http://acme.com/oapi/collections[http://acme.com/oapi/collections]  -- returns a list of all collection identifiers
+*   http://acme.com/oapi/collections?bbox=160.6,-55.95,-170,-25.89[http://acme.com/oapi/collections?bbox=160.6,-55.95,-170,-25.89]
+  -- returns a list of all collection identifiers intersecting with the
+New Zealand economic zone (any time, any elevation, etc.); the CRS inwhich the bbox parameters are expressed is WGS84, defined in OGC API -Common and likely in a future OGC API - Catalog
+*   http://acme.com/oapi/collections/%7Bcoverageid%7D[http://acme.com/oapi/collections/{coverageid}]  -- returns the description of a specific collection including links to available sub-paths like /coverage, /tiles, or /map
+*   http://acme.com/oapi/collections/%7Bcoverageid%7D/coverage[http://acme.com/oapi/collections/{coverageid}/coverage]
+  -- returns a general description of the coverage represented by
+`coverageid` containing the coverage's envelope (the full domainset might be huge and thus is omitted here), rangetype, and service metadata
+ like the coverage's native format
+
+Notes:
+
+*   all list results include links (cf. OGC API - Common)
+*   "coverage" is a specialization of "items"; further names could be defined in future (RectifiedGridCoverage, features, ...)
+*   "description of collection" to be clarified (defined in OGC API - Common?)
+*   bbox is OGC API - Common syntax
+**   in OGC API - Coverages Core, no subsetting on vertical and time coordinates
+**   horizontal coordinates: all filtering is evaluated in WGS84 (may require bounding box translation before intersecting)
+**   if filtering dimension is not present in coverage to be tested (due to above restriction not an issue currently): coverage will be discarded from result
