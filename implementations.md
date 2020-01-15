@@ -34,14 +34,14 @@ List of catalogues:
 * http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections?f=json
 
 Describe cwcat catalogue:
-* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/cwcat?f=json
+* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat?f=json
 
 Records:
 
-* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/cwtepcat/items?limit=10&f=json
+* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat/items?limit=100&f=json
 
-* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/cwtepcat/items?limit=500&f=json&bbox=-68.301,40.136,-64.214,45.189
+* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63
 
-* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/cwtepcat/items?limit=500&f=json&bbox=-68.301,40.136,-64.214,45.189&time=20171101/20171231
+* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&time=2020-01-11T00:00:00/2020-01-12T00:00:00
 
-* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/cwtepcat/items?limit=500&f=json&bbox=-68.301,40.136,-64.214,45.189&time=20171101/20171231&filter-lang=CQL&filter=passDirection%3D%27Ascending%27
+* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&time=2020-01-11T00:00:00/2020-01-12T00:00:00&filter-lang=CQL&filter=passDirection%3D%27Ascending%27
