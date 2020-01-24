@@ -1,0 +1,43 @@
+== Terms and Definitions
+This document uses the terms defined in Sub-clause 5 of https://github.com/opengeospatial/oapi_common/blob/master/19-072.pdf[OGC API-Common Part 1] (OGC 19-072), which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+
+For the purposes of this document, the following additional terms and definitions apply.
+
+=== Conformance Module; Conformance Test Module
+set of related tests, all within a single conformance test class (<<ogc08-131,OGC 08-131>>)
+
+ NOTE: When no ambiguity is possible, the word `test` may be omitted. i.e. conformance test module is the same as conformance module. Conformance modules may be nested in a hierarchical way.
+
+=== Conformance Class; Conformance Test Class
+set of conformance test modules that must be applied to receive a single certificate of conformance (<<ogc08-131,OGC 08-131>>)
+
+ NOTE: When no ambiguity is possible, the word _test_ may be left out, so conformance test class maybe called a conformance class.
+
+=== dataset
+collection of data, published or curated by a single agent, and available for access or download in one or more formats (DCAT)
+
+=== Distribution
+represents an accessible form of a *dataset* (DCAT)
+
+EXAMPLE: a downloadable file, an RSS feed or a web service that provides the data.
+
+=== Executable Test Suite (ETS)
+A set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.opengeospatial.org/files/?artifact_id=55234[(OGC 08-134)]
+
+=== Recommendation
+expression in the content of a document conveying that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is deprecated but not prohibited (<<ogc08-131,OGC 08-131>>) 
+
+=== Requirement
+expression in the content of a document conveying criteria to be fulfilled if compliance with the document is to be claimed and from which no deviation is permitted (<<ogc08-131,OGC 08-131>>)
+
+=== Requirements Class
+aggregate of all requirement modules that must all be satisfied to satisfy a conformance test class (<<ogc08-131,OGC 08-131>>)
+
+=== Requirements Module
+aggregate of requirements and recommendations of a specification against a single standardization target type (<<ogc08-131,OGC 08-131>>)
+
+=== Standardization Target
+entity to which some requirements of a standard apply (<<ogc08-131,OGC 08-131>>)
+
+ NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
+

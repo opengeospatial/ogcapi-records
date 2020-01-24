@@ -1,0 +1,39 @@
+=== JSON examples for CIS
+http://schemas.opengis.net/cis/1.1/json/examples/00_metadata.json[Metadata]
+
+http://schemas.opengis.net/cis/1.1/json/examples/05_2D_index.json[2D Index]
+
+http://schemas.opengis.net/cis/1.1/json/examples/10_2D_regular.json[2D Regular]
+
+http://schemas.opengis.net/cis/1.1/json/examples/11_2D_regular_fileref.json[2D Regular Fileref]
+
+http://schemas.opengis.net/cis/1.1/json/examples/12_2D_regular_fileref_multiband.json[2D Regular Filerer Multiband]
+
+http://schemas.opengis.net/cis/1.1/json/examples/15_with-envelope.json[with Envelope]
+
+http://schemas.opengis.net/cis/1.1/json/examples/20_3D_height.json[3D Height]
+
+http://schemas.opengis.net/cis/1.1/json/examples/25_3D_time.json[3D Time]
+
+http://schemas.opengis.net/cis/1.1/json/examples/30_4D_height+time.json[4D Height + Time]
+
+http://schemas.opengis.net/cis/1.1/json/examples/40_1D_regular.json[1D Regular]
+
+http://schemas.opengis.net/cis/1.1/json/examples/45_2D_distorted.json[2D Distorted]
+
+http://schemas.opengis.net/cis/1.1/json/examples/46_irregular+distorted.json[Irreguar + Distorted]
+
+http://schemas.opengis.net/cis/1.1/json/examples/50_3D_partitioned-1.json[3D Partitioned]
+
+http://schemas.opengis.net/cis/1.1/json/examples/55_1D_timeseries-partitioned.json[1D Timeseries Partioned]
+
+http://schemas.opengis.net/cis/1.1/json/examples/60_3D_timeseries-multipart.json[3D Timeseries Multipart]
+
+http://schemas.opengis.net/cis/1.1/json/examples/65_1D_timeseries-interleaved.json[1D Timeseries Interleaved]
+
+http://schemas.opengis.net/cis/1.1/json/examples/70_2D_interpolation.json[2D Interpolation]
+
+http://schemas.opengis.net/cis/1.1/json/examples/80_sensormodel.json[Sensor Model]
+
+http://schemas.opengis.net/cis/1.1/json/examples/90_point-cloud.json[Point Cloud]
+

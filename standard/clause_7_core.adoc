@@ -1,0 +1,327 @@
+== Requirements Class "Core"
+
+[[core-overview]]
+=== Overview
+
+include::requirements/requirements_class_core.adoc[]
+
+The `Core` Requirements Class defines the requirements for locating, understanding, and accessing Record resources. The `Core` Requirements Class is presented in five sections:
+
+. <<api-platform-section,API Platform>>: a set of common capabilities
+. <<collection-access-section,Collection Access>>: operations for accessing collections of `Records`
+. <<records-access-section,Records Access>>: operations for accessing `Record` resources
+. <<parameters-section,Parameters>>: parameters for use in the API-Records operations.
+. <<general-section,General>>: general principles for use with this standard.
+
+[[core-dependencies-section]]
+=== Dependencies
+
+The OGC API-Records standard is an extension of the OGC API-Common standard. Therefore, an implementation of API-Records must first satisfy the appropriate Requirements Classes from API-Common.
+
+include::requirements/core/REQ_api-common.adoc[]
+
+[[api-platform-section]]
+=== Platform
+
+API-Common defines a set of common capabilities which are applicable to any OGC Web API. Those capabilities provide the platform upon which resource-specific APIs can be built. This section describes those capabilities and any modifications needed to better support Record resources.
+
+[[landing-page]]
+==== API landing page
+
+The landing page provides links to start exploration of the resources offered by an API. Its most important component is a list of links. OGC API-Common already requires some common links. Those links are sufficient for this standard.
+
+.Dependencies
+[width="90%"]
+|====
+|http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core
+|====
+
+===== Operation
+
+The `Landing Page` operation is defined in the `Core` conformance class of API-Common. No modifications are needed to support `Record` resources. The `Core` conformance class specifies only one way of performing this operation:
+
+. Issue a `GET` request on the `{root}/` path
+
+Support for `GET` on the `{root}/` path is required by API-Common.
+
+===== Response
+
+A successful response to the `Landing Page` operation is defined in API-Common. The schema for this resource is provided in <<landingPage-schema>>.
+
+[#landingPage-schema,reftext='Landing Page Response Schema']
+.Landing Page Response Schema
+[source,yaml]
+----
+include::openapi/schemas/common/landingPage.yaml[]
+----
+
+The following JSON fragment is an example of a response to an OGC API-Records Landing Page operation.
+
+[#landingPage-example,reftext=`Landing Page Example`]
+.Landing Page Example
+[source,json]
+----
+include::examples/JSON/landingPage_example.json[]
+----
+
+===== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+[[api-definition]]
+==== API definition
+
+Every API is required to provide a definition document that describes the capabilities of that API. This definition document can be used by developers to understand the API, by software clients to connect to the server, or by development tools to support the implementation of servers and clients.
+
+.Dependencies
+[width="90%"]
+|====
+|http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core
+|====
+
+===== Operation
+
+This operation is defined in the `Core` conformance class of API-Common. No modifications are needed to support `Records` resources. The `Core` conformance class describes two ways of performing this operation:
+
+. Issue a `GET` request on the `{root}/api` path
+. Follow the `service-desc` or `service-doc` link on the landing page
+
+Only the link is required by API-Common.
+
+===== Response
+
+A successful response to the API Definition request is a resource which documents the design of the API. API-Common leaves the selection of format for the API Definition response to the API implementor. However, the options are limited to those which have been defined in the API-Common standard. At this time OpenAPI 3.0 is the only option provided.
+
+===== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+[[conformance-classes]]
+==== Declaration of conformance classes
+
+To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server, the API has to declare the conformance classes it claims to have implemented.
+
+.Dependencies
+[width="90%"]
+|====
+|http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core
+|====
+
+===== Operation
+
+This operation is defined in the `Core` conformance class of API-Common. No modifications are needed to support `Records` resources. The `Core` conformance class describes two ways of performing this operation:
+
+. Issue a `GET` request on the `{root}/conformance` path
+. Follow the `conformance` link on the landing page
+
+Both techniques are required by API-Common.
+
+===== Response
+
+A successful response to the Conformance operation is a list of URLs. Each URL identifies an OGC Conformance Class for which this API claims conformance. The schema for this resource is defined in API-Common and provided for reference in <<conformance-schema>>.
+
+include::requirements/core/REQ_core_conformance.adoc[]
+
+[#conformance-schema,reftext='Conformance Response Schema']
+.Conformance Response Schema
+[source,yaml]
+----
+include::openapi/schemas/common/confClasses.yaml[]
+----
+
+The following JSON fragment is an example of a response to an OGC API-Records conformance operation.
+
+[#conformance-example,reftext=`Conformance Information Example`]
+.Conformance Information Example
+[source,json]
+----
+include::examples/JSON/conformance_example.json[]
+----
+
+===== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+[[collection-access-section]]
+=== Collection Access
+
+API-Common starts with the assumption that spatial resources are organized into collections. An API will expose one or more collections. The API-Common Collections Conformance Class defines how to organize and provide access to a collection of collections.
+
+This standard extends the API-Common `Collections` conformance class to support collections of records, then extends that class to support `Record` unique capabilities.
+
+[[collections]]
+==== Collections
+
+The `Collections` operation returns a set of metadata which describes the collections available from this API.
+
+.Dependencies
+[width="90%"]
+|====
+|http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections
+|====
+
+===== Operation
+
+This operation is defined in the `Collections` conformance class of API-Common. No modifications are needed to support `Record` resources. The `Collections` conformance class describes two ways of performing this operation:
+
+. Issue a `GET` request on `{root}/collections` path
+. Follow the `data` link on the landing page
+
+Support for both the `{root}/collections` path and the `data` link is required by API-Common.
+
+===== Response
+
+A successful response to the `Collections Operation` is a document which includes summary metadata for each collection accessible though the API.
+
+[#collections-schema,reftext='Collections Response Schema']
+.Collections Response Schema
+[source,yaml]
+----
+include::openapi/schemas/common/collections.yaml[]
+----
+
+The following JSON fragment is an example of a response to an OGC API-Records Collections operation.
+
+[#conllections-example,reftext=`Collections Example`]
+.Collections Example
+[source,json]
+----
+include::examples/JSON/collections_example.json[]
+----
+
+===== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+[[collectionInfo]]
+==== Collection Information
+
+Collection Information is the set of metadata which describes a single collection. An abbreviated copy of this information is returned for each Collection in the `/collections` response.
+
+.Dependencies
+[width="90%"]
+|====
+|http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections
+|====
+
+===== Operation
+
+This operation is defined in the `Collections` conformance class of API-Common. No modifications are required to support `Records` resources.
+
+. Issue a `GET` request on the `{root}/collections/{collectionid}` path
+
+The {collectionid} parameter is the unique identifier for a single collection on the API. The list of valid values for {collectionid} is provided in the /collections response.
+
+Support for the `/collections/{collectionid}` path is required by API-Common.
+
+===== Response
+
+A successful response to the Collection Operation is a set of metadata which describes the collection identified by the {collectionid} parameter.
+
+[#collectionInfo-schema,reftext='Collection Information Response Schema']
+.Collection Information Response Schema
+[source,yaml]
+----
+include::openapi/schemas/common/collectionInfo.yaml[]
+----
+
+The following JSON fragment is an example of a response to an OGC API-Records Collection Information operation.
+
+[#collection-info-example,reftext=`Collection Information Example`]
+.Collection Information Example
+[source,json]
+----
+include::examples/JSON/collection_info_example.json[]
+----
+
+===== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+[[record-access-section]]
+=== Record Access
+
+In this clause, API-Common is extended to support `Record` resources.
+
+NOTE: The Records specific requirements go here.
+
+[[parameters-section]]
+=== Parameters
+The API-Records standard inherits basic query and subsetting parameters from API-Common. This section provides a short description of each parameter and identifies the relevant requirements.
+
+All of the permissions and recommendations in API-Common regarding the these parameters also apply to API-Records implementations.
+
+==== Parameter bbox
+
+The Bounding Box (bbox) parameter is defined in API-Common. The following requirement governs use of that parameter in a Records API.
+
+include::requirements/core/REQ_rec-bbox-parameter.adoc[]
+
+==== Parameter datetime
+
+The Date-Time (datetime) parameter is defined in API-Common. The following requirement governs use of that parameter in a Records API.
+
+include::requirements/core/REQ_rec-datetime-parameter.adoc[]
+
+==== Parameter Limit
+
+The Limit (limit) parameter is defined in API-Common. The following requirement governs use of that parameter in a Records API.
+
+include::requirements/core/REQ_rec-limit-parameter.adoc[]
+
+==== Combinations of Filter Parameters
+
+Any combination of `bbox`, `datetime` and `limit` parameters for filtering on Record properties is allowed. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is 'AND.'
+
+==== Paged Response
+
+One consequence of the Limit parameter is that the full result set is not delivered to the user. However, users frequently want to know how big the result set it and how to access the rest of it. The following requirement add information to the response to address that need.
+
+include::requirements/core/REQ_rec-paged-response.adoc[]
+
+[[general-section]]
+=== General
+
+[[http-response]]
+==== HTTP Response
+Each HTTP request shall result in a response that meets the following requirement.
+
+include::requirements/core/REQ_http-response.adoc[]
+
+The YAML schema for these results is provided in <<http-response-schema>>.
+
+[#http-response-schema,reftext='HTTP Response Schema']
+.HTTP Response Schema
+[source,yaml]
+----
+include::openapi/schemas/common/exception.yaml[]
+----
+
+[[http-status-codes]]
+==== HTTP status codes
+
+The *Status Codes* listed in <<status_codes>> are of particular relevance to implementors of this standard. Status codes 200, 400, and 404 are called out in API requirements. Therefore, support for these status codes is mandatory for all compliant implementations. The remainder of the status codes in <<status_codes>> are not mandatory, but are important for the implementation of a well functioning API. Support for these status codes is strongly encouraged for both client and server implementations.
+
+[#status_codes,reftext='{table-caption} {counter:table-num}']
+.Typical HTTP status codes[[table_2]]
+[cols="15,85",options="header"]
+!===
+|Status code |Description
+|`200` |A successful request.
+|`304` |An <<web_caching,entity tag was provided in the request>> and the resource has not been changed since the previous request.
+|`400` |The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.
+|`401` |The request requires user authentication. The response includes a `WWW-Authenticate` header field containing a challenge applicable to the requested resource.
+|`403` |The server understood the request, but is refusing to fulfill it. While status code `401` indicates missing or bad authentication, status code `403` indicates that authentication is not the issue, but the client is not authorised to perform the requested operation on the resource.
+|`404` |The requested resource does not exist on the server. For example, a path parameter had an incorrect value.
+|`405` |The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.
+|`406` |The `Accept` header submitted in the request did not support any of the media types supported by the server for the requested resource.
+|`500` |An internal error occurred in the server.
+!===
+
+More specific guidance is provided for each resource, where applicable.
+
+The API Description Document describes the HTTP status codes generated by that API. This should not be an exhaustive list of all possible status codes. It is not reasonable to expect an API designer to control the use of HTTP status codes which are not generated by their software. Therefore, it is recommended that the API Description Document limit itself to describing HTTP status codes relevant to the proper operation of the API application logic. Client implementations should be prepared to receive HTTP status codes in addition to those described in the API Description Document.
+
+include::recomendations/core/PER_additional-status-codes.adoc[]
+
+

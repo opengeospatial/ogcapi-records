@@ -1,0 +1,10 @@
+[[rc_oas30]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-coverages/1.0/req/oas30
+|Target type |Web API
+|Dependency |<<rc_core,Conformance Class "Core">>
+|Dependency |<<Common,OGC API-Common Standard 1.0>>
+|Dependency |<<OpenAPI,OpenAPI Specification 3.0.2>>
+|===

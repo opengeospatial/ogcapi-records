@@ -1,0 +1,29 @@
+[[requirements-class-json-clause]]
+== Requirements Class JSON
+
+The following requirements apply to an OGC API-Records implementation when the following conditions apply:
+
+. The API advertises conformance to the JSON Conformance Class
+. The client negotiates a JSON or GeoJSON format
+
+The JSON Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the HTTP response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
+
+include::requirements/requirements_class_json.adoc[]
+
+=== Common
+
+This section covers the requirements inherited from the API-Common standard. Its scope includes responses for the following operations:
+
+* `{root}/`: Landing Page
+* `{root}/api`: API Description
+* `{root}/conformance`: Conformance Classes
+* `{root}/collections`: Collections
+* `{root}/collections/{collectionid}`: Collection Information
+
+include::requirements/json/REQ_api-common.adoc[]
+
+It is also necessary to advertise conformance with this Requirements Class.
+
+include::requirements/json/REQ_json-conformance.adoc[]
+
+
