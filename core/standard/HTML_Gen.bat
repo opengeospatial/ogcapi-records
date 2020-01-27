@@ -1,1 +1,1 @@
-asciidoctor --trace -o ../20-004.html OAPI_Records.adoc
+asciidoctor --trace -o ../20-004.html 20-004.adoc
