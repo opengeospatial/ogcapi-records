@@ -1,0 +1,15 @@
+type: object
+required:
+  - links
+properties:
+  title:
+    description: The title of the API
+    type: string
+  description:
+    description: A textual description of the API
+    type: string
+  links:
+    description: Links to the resources exposed through this API.
+    type: array
+    items:
+      $ref: link.yaml

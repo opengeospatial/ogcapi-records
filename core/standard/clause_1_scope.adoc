@@ -1,0 +1,2 @@
+== Scope
+This OGC API Records (https://github.com/opengeospatial/ogcapi-records[https://github.com/opengeospatial/ogcapi-records]) specification { _expand on the scope of this standard here}__

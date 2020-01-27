@@ -1,0 +1,6 @@
+[[rec_core_geojson]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/geojson*
+^|A |If the resource can be represented for the intended use in GeoJSON, implementations SHOULD consider to support GeoJSON as an encoding.
+|===

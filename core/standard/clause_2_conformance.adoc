@@ -1,0 +1,46 @@
+== Conformance
+Conformance with this standard shall be checked using the tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+
+The one Standardization Target for this standard is Web APIs.
+
+OGC API-Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to API-Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of API-Common. 
+
+This standard identifies eleven (11) Conformance Classes. The Conformance Classes implemented by an API are advertised through the `/conformance` path on the landing page. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+
+The Requirements Classes for OGC API-Records are:
+
+* *Core*
+* *FullTextQuery*
+* *OpenSearchQuery*
+* *ComplexQueryParameters*
+* *ComplexQueryResource*
+* *ClassificationQuery*
+* *Transaction*
+* *JSON-Record*
+* *XML-Record*
+* *HTML-Record*
+* *OpenAPI 3.0*
+
+The _Core_ Requirements Class is the minimal useful service interface for an OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API-Records.
+
+The _FullTextQuery_ Requirements Class defines the requirements needed to perform a full text search query.
+
+The _OpenSearchQuery_ Requirements Class defines the requirements needed to perform an OpenSearch query.
+
+The _ComplexQueryParameters_ Requirements Class defines the requirements to use complex query predicates as HTTP query parameters.
+
+The _ComplexQueryResource_ Requirements Class defines the requirements needed to search the catalogue using complex predicates.
+
+The _ClassificationQuery_ Requirements Class defines the requirements needed to perform a taxonomy search on the catalogue.
+
+The _Transaction_ Requirements Class defines the requirements needed to add, modify and remove records from the catalogue.
+
+The _JSON-Record_ Requirements Class defines the requirements for a JSON representation of a standard catalogue record.
+
+The _XML-Record_ Requirements Class defines the requirements for an XML representation of a standard catalogue record.
+
+The _HTML-Record_ Requirements Class defines the requirements for an HTML representation of a standard catalogue record.
+
+The _OpenAPI 3.0_ Requirements Class addresses the use of the OpenAPI 3.0 standard to document and communicate the API Definition. 
+
+
