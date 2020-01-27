@@ -1,9 +1,0 @@
-[[rc_core]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-coverages-1/1.0/req/core
-|Target type |Web API
-|Dependency |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core
-|Dependency |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections
-|===

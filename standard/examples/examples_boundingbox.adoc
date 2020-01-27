@@ -1,2 +1,0 @@
-
-*   Using OAPI-Common bbox syntax (fixed, 2D axis sequence): http://acme.com/oapi/collections?bbox=160.6,-55.95,-170,-25.89  -- returns a list of all collections intersecting that is in the New Zealand economic zone.
