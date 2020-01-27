@@ -1,2 +1,2 @@
 
-*   Using OAPI-Common bbox syntax (fixed, 2D axis sequence): http://acme.com/oapi/collections?bbox=160.6,-55.95,-170,-25.89  -- returns a list of all collections intersecting that is in the New Zealand economic zone.
+* Query for catalogue records within a specific bounding box: http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat/items?f=json&limit=100&bbox=-69.64,37.76,-56.12,46.63

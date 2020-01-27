@@ -102,7 +102,9 @@ include::clause_10_HTML.adoc[]
 
 include::clause_11_JSON.adoc[]
 
-include::clause_12_oas.adoc[]
+include::clause_12_XML.adoc[]
+
+include::clause_13_oas.adoc[]
 
 include::annex_ats.adoc[]
 

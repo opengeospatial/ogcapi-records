@@ -1,6 +1,101 @@
 {
-  "TBD": [
-    "filler1",
-    "filler2"
+  "id": "sentinel1cat",
+  "type": "catalogue",
+  "title": "CubeWerx Sentinel-1 Catalogue",
+  "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+  "language": "en",
+  "links": [
+    {
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/sentinel1cat",
+      "rel": "collection",
+      "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+    }
+  ],
+  "queryables": [
+    {
+      "queryable": "id",
+      "type": "string"
+    },
+    {
+      "queryable": "type",
+      "type": "string"
+    },
+    {
+      "queryable": "cwtime",
+      "type": "dateTime"
+    },
+    {
+      "queryable": "description",
+      "type": "string"
+    },
+    {
+      "queryable": "productId",
+      "type": "string"
+    },
+    {
+      "queryable": "path",
+      "type": "string"
+    },
+    {
+      "queryable": "missionId",
+      "type": "string"
+    },
+    {
+      "queryable": "mode",
+      "type": "string"
+    },
+    {
+      "queryable": "productType",
+      "type": "string"
+    },
+    {
+      "queryable": "resolutionClass",
+      "type": "string"
+    },
+    {
+      "queryable": "processingLevel",
+      "type": "string"
+    },
+    {
+      "queryable": "productClass",
+      "type": "string"
+    },
+    {
+      "queryable": "polarization",
+      "type": "string"
+    },
+    {
+      "queryable": "startTime",
+      "type": "dataTime"
+    },
+    {
+      "queryable": "stopTime",
+      "type": "dataTime"
+    },
+    {
+      "queryable": "absoluteOrbitNumber",
+      "type": "integer"
+    },
+    {
+      "queryable": "missionDataTakeId",
+      "type": "integer"
+    },
+    {
+      "queryable": "productUniqueIdentifier",
+      "type": "integer"
+    },
+    {
+      "queryable": "sciHubIngestion",
+      "type": "dateTime"
+    },
+    {
+      "queryable": "sciHubIngestion",
+      "type": "dateTime"
+    },
+    {
+      "queryable": "passDirection",
+      "type": "string"
+    }
   ]
 }
+
