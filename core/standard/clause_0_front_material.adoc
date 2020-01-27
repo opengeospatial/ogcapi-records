@@ -23,11 +23,13 @@ The following organizations submitted this Document to the Open Geospatial Conso
 
 Organization name(s)
 
+* CubeWerx Inc.
+
 [big]*v.     Submitters*
 
 All questions regarding this submission should be directed to the editor or the submitters:
 
 |===
 ^|Name  ^|Affiliation
-| |
+| Panagiotis (Peter) A. Vretanos (editor) | CubeWerx Inc.
 |===
