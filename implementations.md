@@ -21,7 +21,7 @@ needs quite a bit of work but feel free to play with it.
 I have currently harvested a bunch of RADARSAT metadata and will shortly have 
 harvested all the SENTINEL-1 metadata that is available on AWS.
 
-Langing page:
+Landing page:
 * http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0?f=json
 
 API document:
