@@ -1,9 +1,7 @@
 {
   "id": "36486763-db57-43b1-9af7-b7ecc3c318f2",
-  "title": "The Resource's Title",
-  "description": "Some human readable description of the resource.",
-  "language": "en",
-  "type": "some_resource_type",
+  "type": "Feature",
+  "@type": "some_resource_type",
   "geometry": {
     "type": "Polygon",
     "coordinates": [
@@ -12,6 +10,11 @@
         [10,10],[-6,-7],[-10,-10]
       ]
     ]
+  },
+  "properties": {
+    "title": "The Resource's Title",
+    "description": "Some human readable description of the resource.",
+    "language": "en"
   },
   "extents": [
     {

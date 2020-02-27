@@ -1,40 +1,53 @@
 {
   "__comment__": "This JSON file is here to highlight the CAT 4.0 record schema so that you don't need to go hunting for it inside the cat40.json file where the normative record schema lives",
-
-  "record": {
+  "record-json": {
     "type": "object",
     "required": [
       "id",
-      "title",
-      "type"
+      "type",
+      "geojson-feature-type-prop",
+      "geometry",
+      "properties"
     ],
     "properties": {
       "id": {
-        "$ref": "#/components/schemas/id-prop"
+        "type": "string",
+        "description": "A unique identifier of the catalogue record.",
+        "format": "uri"
       },
       "type": {
-        "$ref": "#/components/schemas/type-prop"
+        "type": "string",
+        "description": "Fixed value as required by RFC7946.",
+        "enum": [
+          "Feature"
+        ]
       },
-      "title": {
-        "$ref": "#/components/schemas/title-prop"
-      },
-      "description": {
-        "$ref": "#/components/schemas/description-prop"
-      },
-      "language": {
-        "$ref": "#/components/schemas/language-prop"
-      },
-      "issued": {
-        "$ref": "#/components/schemas/issued-prop"
-      },
-      "modified": {
-        "$ref": "#/components/schemas/modified-prop"
+      "@type": {
+        "type": "string",
+        "description": "The nature or genre of the resource being described by this record.",
+        "format": "uri"
       },
       "geometry": {
-        "$ref": "#/components/schemas/geom-prop"
+        "oneOf": [
+          {
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "$ref": "#/components/schemas/geom-prop"
+          }
+        ]
       },
       "properties": {
-        "$ref": "#/components/schemas/properties-prop"
+        "oneOf": [
+          {
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "$ref": "#/components/schemas/properties-prop"
+          }
+        ]
       },
       "extents": {
         "$ref": "#/components/schemas/extents-array"
@@ -44,111 +57,113 @@
       }
     }
   },
-  "id-prop": {
-    "type": "string",
-    "description": "A unique identifier of the catalogue record.",
-    "format": "uri"
-  },
-  "type-prop": {
-    "type": "string",
-    "description": "The nature or genre of the resource being described by this record.",
-    "format": "uri"
-  },
-  "title-prop": {
-    "type": "string",
-    "description": "A name given to the resource."
-  },
-  "description-prop": {
-    "type": "string",
-    "description": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource being described by this record."
-  },
-  "language-prop": {
-    "type": "string",
-    "description": "The language used in the textual metadata describing titles, descriptions, etc. of the resource in the catalog.  ISO 639-1/639-2 codes should be used.",
-     "default": "en"
-  },
-  "issued-prop": {
-    "type": "string",
-    "description": "Date of formal issuance (e.g., publication) of the resource being described by this record.",
-    "format": "date-time"
-  },
-  "modified-prop": {
-    "type": "string",
-    "description": "Most recent date on which the resource being described by this record was changed, updated or modified.",
-    "format": "date-time"
-  },
   "geom-prop": {
-     "type": "object",
-     "description": "Defines the footprint of the resource, formatted according to RFC 7946, section 3.1. The footprint should be the default GeoJSON geometry, though additional geometries can be included. Specified in Longitude/Latitude based on EPSG:4326."
+    "type": "object",
+    "description": "Defines the footprint of the resource, formatted according to RFC 7946, section 3.1. The footprint should be the default GeoJSON geometry, though additional geometries can be included. Specified in Longitude/Latitude based on EPSG:4326."
   },
   "properties-prop": {
     "type": "object",
+    "required": [
+      "title"
+    ],
     "properties": {
+      "title": {
+        "type": "string",
+        "description": "A name given to the resource."
+      },
+      "description": {
+        "type": "string",
+        "description": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource being described by this record."
+      },
+      "language": {
+        "type": "string",
+        "description": "The language used in the textual metadata describing titles, descriptions, etc. of the resource in the catalog.  ISO 639-1/639-2 codes should be used.",
+        "default": "en"
+      },
+      "issued": {
+        "type": "string",
+        "description": "Date of formal issuance (e.g., publication) of the resource being described by this record.",
+        "format": "date-time"
+      },
+      "modified": {
+        "type": "string",
+        "description": "Most recent date on which the resource being described by this record was changed, updated or modified.",
+        "format": "date-time"
+      },
       "publisher": {
-        "$ref": "#/components/schemas/publisher--prop"
+        "type": "string",
+        "description": "Link to entity responsible for making the resource available using VCard (see http://www.w3.org/TR/vcard-rdf/)",
+        "format": "uri"
       },
       "keywords": {
-        "$ref": "#/components/schemas/keywords-array"
+        "type": "array",
+        "description": "The topic or topics of the resource. Typically represented using keywords, tags, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary.",
+        "items": {
+          "type": "string"
+        }
       },
       "themes": {
-        "$ref": "#/components/schemas/themes-array"
+        "type": "array",
+        "description": "One or more categories used to classify the resource.",
+        "items": {
+          "$ref": "#/components/schemas/theme-prop"
+        }
       },
       "contactPoint": {
-        "$ref": "#/components/schemas/contact-prop"
+        "type": "string",
+        "description": "Link to relevant contact information which is provided using VCard (see http://www.w3.org/TR/vcard-rdf/)",
+        "format": "uri"
       },
       "accrualPeriodicity": {
-        "$ref": "#/components/schemas/freq-prop"
+        "type": "string",
+        "description": "The frequency at which the resource is published"
       },
       "landingPage": {
-        "$ref": "#/components/schemas/landingpg-prop"
+        "type": "string",
+        "description": "A Web page that can be navigated to in a Web browser to gain access to the resource, its representations, distributions and/or additional information.",
+        "format": "uri"
       },
       "license": {
-        "$ref": "#/components/schemas/license-prop"
+        "type": "string",
+        "description": "A reference to the license document under which the resource is made available.",
+        "format": "uri"
       },
       "rights": {
-        "$ref": "#/components/schemas/rights-prop"
+        "type": "string",
+        "description": "This describes the rights under which the resource can be used/reused."
       },
       "accessURL": {
-        "$ref": "#/components/schemas/accessurl-prop"
+        "type": "string",
+        "description": "A reference to a landing page, feed, SPARQL endpoint or other type of non-downloadable resource that gives access to the resource being described by this record.",
+        "format": "uri"
       },
       "downloadURL": {
-        "$ref": "#/components/schemas/downloadurl-prop"
+        "type": "string",
+        "description": "A reference that gives direct, download access to the resource being described by this record.",
+        "format": "uri"
       },
       "formats": {
-        "$ref": "#/components/schemas/formats-array"
+        "type": "array",
+        "description": "The file format, physical medium, or dimensions of the resource. Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        }
       },
       "byteSize": {
-        "$ref": "#/components/schemas/size-prop"
+        "type": "number",
+        "description": "The size of the resource in bytes"
       },
       "homepage": {
-        "$ref": "#/components/schemas/homepg-prop"
+        "type": "string",
+        "description": "If applicable, a reference to the home page of the resource",
+        "format": "uri"
       }
     },
     "additionalProperties": true
   },
-  "publisher-prop": {
-    "type": "string",
-    "description": "Link to entity responsible for making the resource available using VCard (see http://www.w3.org/TR/vcard-rdf/)",
-    "format": "uri"
-  },
-  "keywords-array": {
-    "type": "array",
-    "description": "The topic or topics of the resource. Typically represented using keywords, tags, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary.",
-    "items": {
-      "type": "string"
-    }
-  },
-  "themes-array": {
-    "type": "array",
-    "description": "One or more categories used to classify the resource.",
-    "items": {
-      "$ref": "#/components/schemas/theme-prop"
-    }
-  },
   "theme-prop": {
     "type": "object",
-    "required": [
-    ],
     "properties": {
       "theme": {
         "type": "string",
@@ -161,56 +176,6 @@
         "format": "uri"
       }
     }
-  },
-  "contact-prop": {
-    "type": "string",
-    "description": "Link to relevant contact information which is provided using VCard (see http://www.w3.org/TR/vcard-rdf/)",
-    "format": "uri"
-  },
-  "freq-prop": {
-    "type": "string",
-    "description": "The frequency at which the resource is published"
-  },
-  "landingpg-prop": {
-    "type": "string",
-    "description": "A Web page that can be navigated to in a Web browser to gain access to the resource, its representations, distributions and/or additional information.",
-    "format": "uri"
-  },
-  "license-prop": {
-    "type": "string",
-    "description": "A reference to the license document under which the resource is made available.",
-    "format": "uri"
-  },
-  "rights-prop": {
-    "type": "string",
-    "description": "This describes the rights under which the resource can be used/reused."
-  },
-  "accessurl-prop": {
-    "type": "string",
-    "description": "A reference to a landing page, feed, SPARQL endpoint or other type of non-downloadable resource that gives access to the resource being described by this record.",
-    "format": "uri"
-  },
-  "downloadurl-prop": {
-    "type": "string",
-    "description": "A reference that gives direct, download access to the resource being described by this record.",
-    "format": "uri"
-  },
-  "formats-array": {
-    "type": "array",
-    "description": "The file format, physical medium, or dimensions of the resource. Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types",
-    "items": {
-      "type": "string",
-      "format": "uri"
-    }
-  },
-  "size-prop": {
-    "type": "number",
-    "descrption": "The size of the resource in bytes"
-  },
-  "homepg-prop": {
-    "type": "string",
-    "description": "If applicable, a reference to the home page of the resource",
-    "format": "uri"
   },
   "extents-array": {
     "type": "array",
@@ -285,33 +250,56 @@
   "links-array": {
     "type": "array",
     "items": {
-      "$ref": "#/components/schemas/link-prop"
+      "$ref": "#/components/schemas/link"
     }
   },
-  "link-prop": {
+  "link": {
     "type": "object",
     "required": [
       "href"
     ],
+    "xml": {
+      "name": "link",
+      "namespace": "http://www.w3.org/2005/Atom",
+      "prefix": "atom"
+    },
     "properties": {
       "href": {
         "type": "string",
-        "format": "url"
+        "format": "url",
+        "xml": {
+          "attribute": true
+        }
       },
       "rel": {
-        "type": "string"
+        "type": "string",
+        "xml": {
+          "attribute": true
+        }
       },
       "type": {
-        "type": "string"
+        "type": "string",
+        "xml": {
+          "attribute": true
+        }
       },
       "hrefLang": {
-        "type": "string"
+        "type": "string",
+        "xml": {
+          "attribute": true
+        }
       },
       "title": {
-        "type": "string"
+        "type": "string",
+        "xml": {
+          "attribute": true
+        }
       },
       "length": {
-        "type": "integer"
+        "type": "integer",
+        "xml": {
+          "attribute": true
+        }
       }
     }
   }
