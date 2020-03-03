@@ -36,6 +36,10 @@ List of catalogues:
 Describe cwcat catalogue:
 * http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat?f=json
 
+Queryables:
+
+* http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat/queryables?f=json
+
 Records:
 
 * http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat/items?limit=100&f=json
