@@ -10,25 +10,25 @@ The `Core` Requirements Class defines the requirements for locating, understandi
 . <<api-platform-section,API Platform>>: a set of common capabilities
 . <<collection-access-section,Collection Access>>: operations for accessing collections of `Records`
 . <<records-access-section,Records Access>>: operations for accessing `Record` resources
-. <<parameters-section,Parameters>>: parameters for use in the API-Records operations.
+. <<parameters-section,Parameters>>: parameters for use in the API - Records operations.
 . <<general-section,General>>: general principles for use with this standard.
 
 [[core-dependencies-section]]
 === Dependencies
 
-The OGC API-Records standard is an extension of the OGC API-Common standard. Therefore, an implementation of API-Records must first satisfy the appropriate Requirements Classes from API-Common.
+The OGC API - Records standard is an extension of the OGC API - Common standard. Therefore, an implementation of API - Records must first satisfy the appropriate Requirements Classes from API - Common.
 
 include::requirements/core/REQ_api-common.adoc[]
 
 [[api-platform-section]]
 === Platform
 
-API-Common defines a set of common capabilities which are applicable to any OGC Web API. Those capabilities provide the platform upon which resource-specific APIs can be built. This section describes those capabilities and any modifications needed to better support Record resources.
+API - Common defines a set of common capabilities which are applicable to any OGC Web API. Those capabilities provide the platform upon which resource-specific APIs can be built. This section describes those capabilities and any modifications needed to better support Record resources.
 
 [[landing-page]]
 ==== API landing page
 
-The landing page provides links to start exploration of the resources offered by an API. Its most important component is a list of links. OGC API-Common already requires some common links. Those links are sufficient for this standard.
+The landing page provides links to start exploration of the resources offered by an API. Its most important component is a list of links. OGC API - Common already requires some common links. Those links are sufficient for this standard.
 
 .Dependencies
 [width="90%"]
@@ -38,30 +38,30 @@ The landing page provides links to start exploration of the resources offered by
 
 ===== Operation
 
-The `Landing Page` operation is defined in the `Core` conformance class of API-Common. No modifications are needed to support `Record` resources. The `Core` conformance class specifies only one way of performing this operation:
+The `Landing Page` operation is defined in the `Core` conformance class of API - Common. No modifications are needed to support `Record` resources. The `Core` conformance class specifies only one way of performing this operation:
 
 . Issue a `GET` request on the `{root}/` path
 
-Support for `GET` on the `{root}/` path is required by API-Common.
+Support for `GET` on the `{root}/` path is required by API - Common.
 
 ===== Response
 
-A successful response to the `Landing Page` operation is defined in API-Common. The schema for this resource is provided in <<landingPage-schema>>.
+A successful response to the `Landing Page` operation is defined in API - Common. The schema for this resource is provided in <<landingPage-schema>>.
 
 [#landingPage-schema,reftext='Landing Page Response Schema']
 .Landing Page Response Schema
 [source,yaml]
 ----
-include::openapi/schemas/common/landingPage.yaml[]
+include::../openapi/schemas/common/landingPage.yaml[]
 ----
 
-The following JSON fragment is an example of a response to an OGC API-Records Landing Page operation.
+The following JSON fragment is an example of a response to an OGC API - Records Landing Page operation.
 
 [#landingPage-example,reftext=`Landing Page Example`]
 .Landing Page Example
 [source,json]
 ----
-include::examples/JSON/landingPage_example.json[]
+include::../examples/JSON/landingPage_example.json[]
 ----
 
 ===== Error situations
@@ -81,16 +81,16 @@ Every API is required to provide a definition document that describes the capabi
 
 ===== Operation
 
-This operation is defined in the `Core` conformance class of API-Common. No modifications are needed to support `Records` resources. The `Core` conformance class describes two ways of performing this operation:
+This operation is defined in the `Core` conformance class of API - Common. No modifications are needed to support `Records` resources. The `Core` conformance class describes two ways of performing this operation:
 
 . Issue a `GET` request on the `{root}/api` path
 . Follow the `service-desc` or `service-doc` link on the landing page
 
-Only the link is required by API-Common.
+Only the link is required by API - Common.
 
 ===== Response
 
-A successful response to the API Definition request is a resource which documents the design of the API. API-Common leaves the selection of format for the API Definition response to the API implementor. However, the options are limited to those which have been defined in the API-Common standard. At this time OpenAPI 3.0 is the only option provided.
+A successful response to the API Definition request is a resource which documents the design of the API. API - Common leaves the selection of format for the API Definition response to the API implementor. However, the options are limited to those which have been defined in the API - Common standard. At this time OpenAPI 3.0 is the only option provided.
 
 ===== Error situations
 
@@ -109,16 +109,16 @@ To support "generic" clients that want to access multiple OGC API standards and 
 
 ===== Operation
 
-This operation is defined in the `Core` conformance class of API-Common. No modifications are needed to support `Records` resources. The `Core` conformance class describes two ways of performing this operation:
+This operation is defined in the `Core` conformance class of API - Common. No modifications are needed to support `Records` resources. The `Core` conformance class describes two ways of performing this operation:
 
 . Issue a `GET` request on the `{root}/conformance` path
 . Follow the `conformance` link on the landing page
 
-Both techniques are required by API-Common.
+Both techniques are required by API - Common.
 
 ===== Response
 
-A successful response to the Conformance operation is a list of URLs. Each URL identifies an OGC Conformance Class for which this API claims conformance. The schema for this resource is defined in API-Common and provided for reference in <<conformance-schema>>.
+A successful response to the Conformance operation is a list of URLs. Each URL identifies an OGC Conformance Class for which this API claims conformance. The schema for this resource is defined in API - Common and provided for reference in <<conformance-schema>>.
 
 include::requirements/core/REQ_core_conformance.adoc[]
 
@@ -126,16 +126,16 @@ include::requirements/core/REQ_core_conformance.adoc[]
 .Conformance Response Schema
 [source,yaml]
 ----
-include::openapi/schemas/common/confClasses.yaml[]
+include::../openapi/schemas/common/confClasses.yaml[]
 ----
 
-The following JSON fragment is an example of a response to an OGC API-Records conformance operation.
+The following JSON fragment is an example of a response to an OGC API - Records conformance operation.
 
 [#conformance-example,reftext=`Conformance Information Example`]
 .Conformance Information Example
 [source,json]
 ----
-include::examples/JSON/conformance_example.json[]
+include::../examples/JSON/conformance_example.json[]
 ----
 
 ===== Error situations
@@ -145,9 +145,9 @@ The requirements for handling unsuccessful requests are provided in <<http-respo
 [[collection-access-section]]
 === Collection Access
 
-API-Common starts with the assumption that spatial resources are organized into collections. An API will expose one or more collections. The API-Common Collections Conformance Class defines how to organize and provide access to a collection of collections.
+API - Common starts with the assumption that spatial resources are organized into collections. An API will expose one or more collections. The API - Common Collections Conformance Class defines how to organize and provide access to a collection of collections.
 
-This standard extends the API-Common `Collections` conformance class to support collections of records, then extends that class to support `Record` unique capabilities.
+This standard extends the API - Common `Collections` conformance class to support collections of records, then extends that class to support `Record` unique capabilities.
 
 [[collections]]
 ==== Collections
@@ -162,12 +162,12 @@ The `Collections` operation returns a set of metadata which describes the collec
 
 ===== Operation
 
-This operation is defined in the `Collections` conformance class of API-Common. No modifications are needed to support `Record` resources. The `Collections` conformance class describes two ways of performing this operation:
+This operation is defined in the `Collections` conformance class of API - Common. No modifications are needed to support `Record` resources. The `Collections` conformance class describes two ways of performing this operation:
 
 . Issue a `GET` request on `{root}/collections` path
 . Follow the `data` link on the landing page
 
-Support for both the `{root}/collections` path and the `data` link is required by API-Common.
+Support for both the `{root}/collections` path and the `data` link is required by API - Common.
 
 ===== Response
 
@@ -177,16 +177,16 @@ A successful response to the `Collections Operation` is a document which include
 .Collections Response Schema
 [source,yaml]
 ----
-include::openapi/schemas/common/collections.yaml[]
+include::../openapi/schemas/common/collections.yaml[]
 ----
 
-The following JSON fragment is an example of a response to an OGC API-Records Collections operation.
+The following JSON fragment is an example of a response to an OGC API - Records Collections operation.
 
 [#conllections-example,reftext=`Collections Example`]
 .Collections Example
 [source,json]
 ----
-include::examples/JSON/collections_example.json[]
+include::../examples/JSON/collections_example.json[]
 ----
 
 ===== Error situations
@@ -206,13 +206,13 @@ Collection Information is the set of metadata which describes a single collectio
 
 ===== Operation
 
-This operation is defined in the `Collections` conformance class of API-Common. No modifications are required to support `Records` resources.
+This operation is defined in the `Collections` conformance class of API - Common. No modifications are required to support `Records` resources.
 
 . Issue a `GET` request on the `{root}/collections/{collectionid}` path
 
 The {collectionid} parameter is the unique identifier for a single collection on the API. The list of valid values for {collectionid} is provided in the /collections response.
 
-Support for the `/collections/{collectionid}` path is required by API-Common.
+Support for the `/collections/{collectionid}` path is required by API - Common.
 
 ===== Response
 
@@ -222,16 +222,16 @@ A successful response to the Collection Operation is a set of metadata which des
 .Collection Information Response Schema
 [source,yaml]
 ----
-include::openapi/schemas/common/collectionInfo.yaml[]
+include::../openapi/schemas/common/collectionInfo.yaml[]
 ----
 
-The following JSON fragment is an example of a response to an OGC API-Records Collection Information operation.
+The following JSON fragment is an example of a response to an OGC API - Records Collection Information operation.
 
 [#collection-info-example,reftext=`Collection Information Example`]
 .Collection Information Example
 [source,json]
 ----
-include::examples/JSON/collection_info_example.json[]
+include::../examples/JSON/collection_info_example.json[]
 ----
 
 ===== Error situations
@@ -241,37 +241,43 @@ The requirements for handling unsuccessful requests are provided in <<http-respo
 [[record-access-section]]
 === Record Access
 
-In this clause, API-Common is extended to support `Record` resources.
+In this clause, API - Common is extended to support `Record` resources.
 
 NOTE: The Records specific requirements go here.
 
 [[parameters-section]]
 === Parameters
-The API-Records standard inherits basic query and subsetting parameters from API-Common. This section provides a short description of each parameter and identifies the relevant requirements.
+The API - Records standard inherits basic query and subsetting parameters from API - Common. This section provides a short description of each parameter and identifies the relevant requirements.
 
-All of the permissions and recommendations in API-Common regarding the these parameters also apply to API-Records implementations.
+All of the permissions and recommendations in API - Common regarding the these parameters also apply to API - Records implementations.
 
 ==== Parameter bbox
 
-The Bounding Box (bbox) parameter is defined in API-Common. The following requirement governs use of that parameter in a Records API.
+The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
 include::requirements/core/REQ_rec-bbox-parameter.adoc[]
 
 ==== Parameter datetime
 
-The Date-Time (datetime) parameter is defined in API-Common. The following requirement governs use of that parameter in a Records API.
+The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
 include::requirements/core/REQ_rec-datetime-parameter.adoc[]
 
 ==== Parameter Limit
 
-The Limit (limit) parameter is defined in API-Common. The following requirement governs use of that parameter in a Records API.
+The Limit (limit) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
 include::requirements/core/REQ_rec-limit-parameter.adoc[]
 
+==== Parameter q
+
+The Q (q) parameter is a core defined in API - Common. The following requirement governs use of that parameter in a Records API.
+
+include::requirements/core/REQ_rec-q-parameter.adoc[]
+
 ==== Combinations of Filter Parameters
 
-Any combination of `bbox`, `datetime` and `limit` parameters for filtering on Record properties is allowed. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is 'AND.'
+Any combination of `bbox`, `datetime`, `q` and `limit` parameters for filtering on Record properties is allowed. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is 'AND' (exclusive).
 
 ==== Paged Response
 
@@ -294,7 +300,7 @@ The YAML schema for these results is provided in <<http-response-schema>>.
 .HTTP Response Schema
 [source,yaml]
 ----
-include::openapi/schemas/common/exception.yaml[]
+include::../openapi/schemas/common/exception.yaml[]
 ----
 
 [[http-status-codes]]

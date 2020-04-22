@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/rec-paged-response*
-^|A |Responses to a filtered operation that only return a portion of the full selected resource set SHALL comply with API-Common requirements:
+^|A |Responses to a filtered operation that only return a portion of the full selected resource set SHALL comply with API - Common requirements:
 
 * `/req/core/rc-response`
 * `/req/core/fc-links`

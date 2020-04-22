@@ -3,8 +3,8 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/rec-limit-parameter*
 ^|A |A Records API SHALL support the Limit (limit) parameter for `/collections` and `/collections/{collectionid}` requests.
-^|B |Requests which include the Limit parameter SHALL comply with API-Common requirement `/req/core/rc-limit-definition`.
-^|C |Responses to Limit requests SHALL comply with API-Common requirements:
+^|B |Requests which include the Limit parameter SHALL comply with API - Common requirement `/req/core/rc-limit-definition`.
+^|C |Responses to Limit requests SHALL comply with API - Common requirements:
 
 * `/req/core/rc-limit-response`
 * `/req/core/rc-numberReturned`

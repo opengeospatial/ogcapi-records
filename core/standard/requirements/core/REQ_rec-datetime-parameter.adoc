@@ -3,6 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/rec-datetime-parameter*
 ^|A |A Records API SHALL support the Date-Time (datetime) parameter for `/collections` and `/collections/{collectionid}` requests.
-^|B |Requests which include the Date-Time parameter SHALL comply with API-Common requirement `/req/core/rc-time-definition`.
-^|C |Responses to Date-Time requests SHALL comply with API-Common requirement `/req/core/rc-time-response`.
+^|B |Requests which include the Date-Time parameter SHALL comply with API - Common requirement `/req/core/rc-time-definition`.
+^|C |Responses to Date-Time requests SHALL comply with API - Common requirement `/req/core/rc-time-response`.
 |===

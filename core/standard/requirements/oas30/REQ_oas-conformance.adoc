@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/oas30/conformance*
 2+|The list of Conformance Classes advertised by the API SHALL include:
-^|A |http://www.opengis.net/spec/ogcapi-coverages-1/1.0/conf/oas30
+^|A |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
 |===

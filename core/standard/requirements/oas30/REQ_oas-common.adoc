@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/oas30/oas-common* 
 ^|**Extends** |/req/core/api-common
-^|A |The API SHALL demonstrate conformance with the following Requirements Class of the OGC API-Common version 1.0 Standard. http://www.opengis.net/spec/ogcapi-common-1/1.0/req/oas30.
+^|A |The API SHALL demonstrate conformance with the following Requirements Class of the OGC API - Common version 1.0 Standard. http://www.opengis.net/spec/ogcapi-common-1/1.0/req/oas30.
 |===
