@@ -3,11 +3,11 @@ Conformance with this standard shall be checked using the tests specified in Ann
 
 The one Standardization Target for this standard is Web APIs.
 
-OGC API-Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to API-Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of API-Common. 
+OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of API - Common. 
 
 This standard identifies eleven (11) Conformance Classes. The Conformance Classes implemented by an API are advertised through the `/conformance` path on the landing page. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
 
-The Requirements Classes for OGC API-Records are:
+The Requirements Classes for OGC API - Records are:
 
 * *Core*
 * *FullTextQuery*
@@ -21,7 +21,7 @@ The Requirements Classes for OGC API-Records are:
 * *HTML-Record*
 * *OpenAPI 3.0*
 
-The _Core_ Requirements Class is the minimal useful service interface for an OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API-Records.
+The _Core_ Requirements Class is the minimal useful service interface for an OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.
 
 The _FullTextQuery_ Requirements Class defines the requirements needed to perform a full text search query.
 

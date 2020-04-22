@@ -3,6 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/rec-bbox-parameter*
 ^|A |A Records API SHALL support the Bounding Box (bbox) parameter for `/collections` and `/collections/{collectionid}` requests.
-^|B |Requests which include the Bounding Box parameter SHALL comply with API-Common requirement `/req/core/rc-bbox-definition`.
-^|C |Responses to Bounding Box requests SHALL comply with API-Common requirement `/req/core/rc-bbox-response`.
+^|B |Requests which include the Bounding Box parameter SHALL comply with API - Common requirement `/req/core/rc-bbox-definition`.
+^|C |Responses to Bounding Box requests SHALL comply with API - Common requirement `/req/core/rc-bbox-response`.
 |===

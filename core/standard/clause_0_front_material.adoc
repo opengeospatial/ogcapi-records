@@ -32,4 +32,5 @@ All questions regarding this submission should be directed to the editor or the 
 |===
 ^|Name  ^|Affiliation
 | Panagiotis (Peter) A. Vretanos (editor) | CubeWerx Inc.
+| Tom Kralidis (editor) | Meteorological Service of Canada
 |===

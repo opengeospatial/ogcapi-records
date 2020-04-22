@@ -1,7 +1,7 @@
 [[requirements-class-xml-clause]]
 == Requirements Class XML
 
-The following requirements apply to an OGC API-Records implementation when the following conditions apply:
+The following requirements apply to an OGC API - Records implementation when the following conditions apply:
 
 . The API advertises conformance to the XML Conformance Class
 . The client negotiates a XML format
@@ -12,7 +12,7 @@ include::requirements/requirements_class_xml.adoc[]
 
 === Common
 
-This section covers the requirements inherited from the API-Common standard. Its scope includes responses for the following operations:
+This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:
 
 * `{root}/`: Landing Page
 * `{root}/api`: API Description

@@ -1,2 +1,10 @@
 == Scope
-This OGC API Records (https://github.com/opengeospatial/ogcapi-records[https://github.com/opengeospatial/ogcapi-records]) specification { _expand on the scope of this standard here}__
+This document specifies the behaviour of Web APIs the provide discovery capabilities to the existence of resources (data,
+services, styles, processes, etc.) in a manner which is independent of the underlying repository.  This standard defines
+discovery and search operations.
+
+Discovery operations enable clients to interrogate the API to determine its capabilities and retrieve information about
+this distribution of the dataset, including the API definition and metadata about the record collections provided by the API.
+
+Search operations enable clients to interrogate the API with mass-market / search engine style parameters to facilitate
+further lowering the barrier to finding the existence of spatial resources on the Web.
