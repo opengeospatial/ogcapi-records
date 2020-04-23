@@ -1,0 +1,102 @@
+type: object
+required:
+- id
+- type
+- geometry
+- properties
+- extents
+properties:
+  id:
+    type: string
+    description: A unique identifier of the catalogue record.
+    format: uri
+  type:
+    $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureGeoJSON.yaml#/properties/type
+  geometry:
+    $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml
+  extents:
+    $ref: https://raw.githubusercontent.com/opengeospatial/oapi_common/master/standard/openapi/schemas/extent.yaml
+  properties:
+    title:
+      type: string
+      description: A name given to the resource.
+    description:
+      type: string
+      description: "Description may include but is not limited to: an abstract, a\ntable of contents, a graphical representation, or a free-text account of the\nresource being described by this record."
+    language:
+      type: string
+      description: The language used in the textual metadata describing titles, descriptions,\netc. of the resource in the catalog.  ISO 639-1/639-2 codes should be used.
+      default: en
+    issued:
+      type: string
+      description: Date of formal issuance (e.g., publication) of the resource being\ndescribed by this record.
+      format: date-time
+    modified:
+      type: string
+      description: Most recent date on which the resource being described by this\nrecord was changed, updated or modified.
+      format: date-time
+    publisher:
+      type: string
+      description: Link to entity responsible for making the resource available using\nVCard (see http://www.w3.org/TR/vcard-rdf/).
+      format: uri
+    keywords:
+      type: array
+      description: The topic or topics of the resource. Typically represented using\nkeywords, tags, key phrases, or classification codes. Recommended best practice\nis to use a controlled vocabulary.
+    themes:
+      type: array
+      description: One or more categories used to classify the resource.
+      items:
+        type: object
+        properties:
+          theme:
+            type: string
+            description: A category of the resource.
+            format: uri
+          taxonomy:
+            type: string
+            description: The knowledge organization system used to classify the resource.
+            format: uri
+    contactPoint:
+      type: string
+      description: Link to relevant contact information which is provided using VCard\n(see http://www.w3.org/TR/vcard-rdf/).
+      format: uri
+    accrualPeriodicity:
+      type: string
+      description: 'The frequency at which the resource is published'
+    landingPage:
+      type: string
+      description: A Web page that can be navigated to in a Web browser to gain access\nto the resource, its representations, distributions and/or additional information.
+      format: uri
+    license:
+      type: string
+      description: A reference to the license document under which the resource is\nmade available.
+      format: uri
+    rights:
+      type: string
+      description: This describes the rights under which the resource can be used/reused.
+    accessURL:
+      type: string
+      description: A reference to a landing page, feed, SPARQL endpoint or other type\nof non-downloadable resource that gives access to the resource being described\nby this record.
+      format: uri
+    downloadURL:
+      type: string
+      description: A reference that gives direct, download access to the resource\nbeing described by this record.
+      format: uri
+    formats:
+      type: array
+      description: The file format, physical medium, or dimensions of the resource.\nExamples of dimensions include size and duration. Recommended best practice\nis to use a controlled vocabulary such as the list of Internet Media Types.
+      items:
+        type: string
+        format: uri
+    byteSize:
+      type: number
+      description: The size of the resource in bytes
+    homepage:
+      type: string
+      description: If applicable, a reference to the home page of the resource
+      format: uri
+    additionalProperties: true
+  links:
+    type: array
+    items:
+      $ref: https://github.com/opengeospatial/oapi_common/blob/master/standard/openapi/schemas/link.yaml
