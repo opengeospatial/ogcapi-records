@@ -22,26 +22,40 @@ properties:
       description: A name given to the resource.
     description:
       type: string
-      description: "Description may include but is not limited to: an abstract, a\ntable of contents, a graphical representation, or a free-text account of the\nresource being described by this record."
+      description: >
+        Description may include but is not limited to: an abstract, a
+        table of contents, a graphical representation, or a free-text account of the
+        resource being described by this record.
     language:
       type: string
-      description: The language used in the textual metadata describing titles, descriptions,\netc. of the resource in the catalog.  ISO 639-1/639-2 codes should be used.
+      description: >
+        The language used in the textual metadata describing titles, descriptions,
+        etc. of the resource in the catalog.  ISO 639-1/639-2 codes should be used.
       default: en
     issued:
       type: string
-      description: Date of formal issuance (e.g., publication) of the resource being\ndescribed by this record.
+      description: >
+        Date of formal issuance (e.g., publication) of the resource being
+        described by this record.
       format: date-time
     modified:
       type: string
-      description: Most recent date on which the resource being described by this\nrecord was changed, updated or modified.
+      description: >
+        Most recent date on which the resource being described by this
+        record was changed, updated or modified.
       format: date-time
     publisher:
       type: string
-      description: Link to entity responsible for making the resource available using\nVCard (see http://www.w3.org/TR/vcard-rdf/).
+      description: >
+        Link to entity responsible for making the resource available using
+        VCard (see http://www.w3.org/TR/vcard-rdf/).
       format: uri
     keywords:
       type: array
-      description: The topic or topics of the resource. Typically represented using\nkeywords, tags, key phrases, or classification codes. Recommended best practice\nis to use a controlled vocabulary.
+      description: >
+        The topic or topics of the resource. Typically represented using
+        keywords, tags, key phrases, or classification codes. Recommended best practice
+        is to use a controlled vocabulary.
     themes:
       type: array
       description: One or more categories used to classify the resource.
@@ -58,33 +72,46 @@ properties:
             format: uri
     contactPoint:
       type: string
-      description: Link to relevant contact information which is provided using VCard\n(see http://www.w3.org/TR/vcard-rdf/).
+      description: >
+        Link to relevant contact information which is provided using VCard
+        (see http://www.w3.org/TR/vcard-rdf/).
       format: uri
     accrualPeriodicity:
       type: string
       description: 'The frequency at which the resource is published'
     landingPage:
       type: string
-      description: A Web page that can be navigated to in a Web browser to gain access\nto the resource, its representations, distributions and/or additional information.
+      description: >
+        Web page that can be navigated to in a Web browser to gain access
+        to the resource, its representations, distributions and/or additional information.
       format: uri
     license:
       type: string
-      description: A reference to the license document under which the resource is\nmade available.
+      description: >
+        A reference to the license document under which the resource is made available.
       format: uri
     rights:
       type: string
       description: This describes the rights under which the resource can be used/reused.
     accessURL:
       type: string
-      description: A reference to a landing page, feed, SPARQL endpoint or other type\nof non-downloadable resource that gives access to the resource being described\nby this record.
+      description: >
+        A reference to a landing page, feed, SPARQL endpoint or other type
+        of non-downloadable resource that gives access to the resource being described
+        by this record.
       format: uri
     downloadURL:
       type: string
-      description: A reference that gives direct, download access to the resource\nbeing described by this record.
+      description: >
+        A reference that gives direct, download access to the resource
+        being described by this record.
       format: uri
     formats:
       type: array
-      description: The file format, physical medium, or dimensions of the resource.\nExamples of dimensions include size and duration. Recommended best practice\nis to use a controlled vocabulary such as the list of Internet Media Types.
+      description: >
+        The file format, physical medium, or dimensions of the resource.
+        Examples of dimensions include size and duration. Recommended best practice
+        is to use a controlled vocabulary such as the list of Internet Media Types.
       items:
         type: string
         format: uri
