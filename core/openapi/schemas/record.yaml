@@ -3,8 +3,8 @@ required:
 - id
 - type
 - geometry
-- properties
 - extents
+- properties
 properties:
   id:
     type: string
