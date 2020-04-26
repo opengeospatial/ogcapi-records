@@ -5,6 +5,5 @@
 ^|A |A Records API SHALL support the Q (q) parameter for `/collections/{collectionid}/items` requests.
 ^|B |Requests which include the Q parameter SHALL comply with API - Records requirement `/req/core/rc-q-definition`.
 ^|C |Servers implementing the Q parameter SHOULD interpret the semantic "find all records that contain the specified terms".  Implementation is left at the discretion of the server implementation (full text search, SQL LIKE, etc.)
-^|D |Server implementing the Q parameter SHOULD provide further information on semantics in <TODO in queryables? somewhere else?>
-^|E |Responses to Q Limit requests SHALL comply with API - Records requirement `/req/core/rc-q-response`.
+^|D |Responses to Q Limit requests SHALL comply with API - Records requirement `/req/core/rc-q-response`.
 |===
