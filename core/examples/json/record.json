@@ -77,7 +77,7 @@
       },
       "language": {
         "type": "string",
-        "description": "The language used in the textual metadata describing titles, descriptions, etc. of the resource in the catalog.  ISO 639-1/639-2 codes should be used.",
+        "description": "The language used in the textual metadata describing titles, descriptions, etc. of the resource in the catalogue.  ISO 639-1/639-2 codes should be used.",
         "default": "en"
       },
       "issued": {
