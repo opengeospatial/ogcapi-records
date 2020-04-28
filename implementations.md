@@ -12,6 +12,7 @@ Servers:
 * [pygeoapi](#pygeoapi)
 
 Clients:
+* [OWSLib](#owslib)
 
 ## CubeWerx Inc.
 
@@ -54,11 +55,11 @@ Records:
 
 ## pygeoapi
 
-The [pygeoapi](https://pygeoapi.io) project implements most of the current OGC API - Records
-draft (note: work in progress can be found on [GitHub](https://github.com/tomkralidis/pygeoapi/tree/oarec)).
+The [pygeoapi](https://pygeoapi.io) project implements most of the current
+OGC API - Records draft (note: work in progress can be found on [GitHub](https://github.com/tomkralidis/pygeoapi/tree/oarec)).
 
-A sample instance is deployed using discovery metadata from the Meteorological Service of Canada as part
-of the WMO Information System.
+A sample instance is deployed using discovery metadata from the
+Meteorological Service of Canada as part of the WMO Information System.
 
 Landing page:
 
@@ -105,3 +106,8 @@ Single record:
 
 * http://52.170.144.218:8000/collections/msc-wis-dcpc/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2
 * http://52.170.144.218:8000/collections/msc-wis-dcpc/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2&f=json
+
+## OWSLib
+
+[OWSLib](https://geopython.github.io/OWSLib/) is an OGC Web Services client
+written in Python which also implements the evolving OGC API standards.
