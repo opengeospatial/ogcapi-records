@@ -13,4 +13,4 @@ gem install asciidoctor --pre
 gem install asciidoctor-pdf --pre
 ```
 
-From here, run `HTML_gen.bat and `PDF_gen.bat` accordingly.  Outputs are written to the parent directory.
+From here, run `HTML_gen.bat` and `PDF_gen.bat` accordingly.  Outputs are written to the parent directory.
