@@ -908,6 +908,9 @@ further lowering the barrier to finding the existence of spatial resources on th
 <p><a id="RDF"></a> W3C, <strong>RDF 1.1 Semantics</strong>, February 2014, <a href="https://www.w3.org/TR/rdf11-mt/" class="bare">https://www.w3.org/TR/rdf11-mt/</a></p>
 </li>
 <li>
+<p><a id="xml"></a> W3C, <strong>Extensible Markup Language (XML) 1.0 (Fifth Edition)</strong>, November 2008, <a href="https://www.w3.org/TR/xml/" class="bare">https://www.w3.org/TR/xml/</a></p>
+</li>
+<li>
 <p>OGC: OGC 07-036, Geography Markup Language (GML) Encoding Standard, version 3.2.1, 2007</p>
 </li>
 <li>
@@ -1480,7 +1483,18 @@ properties:
 <div id="landingPage-example" class="listingblock">
 <div class="title">Landing Page Example</div>
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">Unresolved directive in clause_7_core.adoc - include::../examples/JSON/landingPage_example.json[]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "links": [
+    { "href": "http://data.example.org/",
+      "rel": "self", "type": "application/json", "title": "this document" },
+    { "href": "http://data.example.org/api",
+      "rel": "service-desc", "type": "application/openapi+json;version=3.0", "title": "the API definition" },
+    { "href": "http://data.example.org/conformance",
+      "rel": "conformance", "type": "application/json", "title": "OGC conformance classes implemented by this API" },
+    { "href": "http://data.example.org/collections",
+      "rel": "data", "type": "application/json", "title": "Metadata about the resource collections" }
+  ]
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1634,7 +1648,18 @@ properties:
 <div id="conformance-example" class="listingblock">
 <div class="title">Conformance Information Example</div>
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">Unresolved directive in clause_7_core.adoc - include::../examples/JSON/conformance_example.json[]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections",
+    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/oas3",
+
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/xml",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/core"
+  ]
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1718,7 +1743,58 @@ properties:
 <div id="conllections-example" class="listingblock">
 <div class="title">Collections Example</div>
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">Unresolved directive in clause_7_core.adoc - include::../examples/JSON/collections_example.json[]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "links": [
+    {
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections?f=application%2Fjson",
+      "rel": "self",
+      "type": "application/json",
+      "title": "this document"
+    },
+    {
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections?f=text%2Fxml",
+      "rel": "alternate",
+      "type": "text/xml",
+      "title": "this document as XML"
+    },
+    {
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections?f=text%2Fhtml",
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "this document as HTML"
+    }
+  ],
+  "collections": [
+    {
+      "id": "radarsat2cat",
+      "type": "catalogue",
+      "title": "CubeWerx RADARSAT-2 Catalogue",
+      "description": "A sample catalogue of RADARSAT-2 products stored in S3 on AWS.",
+      "language": "en",
+      "links": [
+        {
+          "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/s1tepcat",
+          "rel": "collection",
+          "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+        }
+      ]
+    },
+    {
+      "id": "sentinel1cat",
+      "type": "catalogue",
+      "title": "CubeWerx Sentinel-1 Catalogue",
+      "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+      "language": "en",
+      "links": [
+        {
+          "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/sentinel1cat",
+          "rel": "collection",
+          "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+        }
+      ]
+    }
+  ]
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1820,7 +1896,106 @@ properties:
 <div id="collection-info-example" class="listingblock">
 <div class="title">Collection Information Example</div>
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">Unresolved directive in clause_7_core.adoc - include::../examples/JSON/collection_info_example.json[]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "id": "sentinel1cat",
+  "type": "catalogue",
+  "title": "CubeWerx Sentinel-1 Catalogue",
+  "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+  "language": "en",
+  "links": [
+    {
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/sentinel1cat",
+      "rel": "collection",
+      "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+    }
+  ],
+  "queryables": [
+    {
+      "queryable": "id",
+      "type": "string"
+    },
+    {
+      "queryable": "type",
+      "type": "string"
+    },
+    {
+      "queryable": "cwtime",
+      "type": "dateTime"
+    },
+    {
+      "queryable": "description",
+      "type": "string"
+    },
+    {
+      "queryable": "productId",
+      "type": "string"
+    },
+    {
+      "queryable": "path",
+      "type": "string"
+    },
+    {
+      "queryable": "missionId",
+      "type": "string"
+    },
+    {
+      "queryable": "mode",
+      "type": "string"
+    },
+    {
+      "queryable": "productType",
+      "type": "string"
+    },
+    {
+      "queryable": "resolutionClass",
+      "type": "string"
+    },
+    {
+      "queryable": "processingLevel",
+      "type": "string"
+    },
+    {
+      "queryable": "productClass",
+      "type": "string"
+    },
+    {
+      "queryable": "polarization",
+      "type": "string"
+    },
+    {
+      "queryable": "startTime",
+      "type": "dataTime"
+    },
+    {
+      "queryable": "stopTime",
+      "type": "dataTime"
+    },
+    {
+      "queryable": "absoluteOrbitNumber",
+      "type": "integer"
+    },
+    {
+      "queryable": "missionDataTakeId",
+      "type": "integer"
+    },
+    {
+      "queryable": "productUniqueIdentifier",
+      "type": "integer"
+    },
+    {
+      "queryable": "sciHubIngestion",
+      "type": "dateTime"
+    },
+    {
+      "queryable": "sciHubIngestion",
+      "type": "dateTime"
+    },
+    {
+      "queryable": "passDirection",
+      "type": "string"
+    }
+  ]
+}</code></pre>
 </div>
 </div>
 </div>
@@ -2618,9 +2793,41 @@ properties:
 <div class="paragraph">
 <p>The XML Requirements Class restricts requirements defined in the <code>Core</code> Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the HTTP response payloads. The sections below identify the scope of each new requirement and the <code>Core</code> requirements which lay within each scope.</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in clause_12_XML.adoc - include::requirements/requirements_class_xml.adoc[]</p>
-</div>
+<table id="rc_xml" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirements Class</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/xml" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/xml</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Target type</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Web API</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#rc_core">Requirements Class "API - Common Core"</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi_common-1/1.0/req/geojson">API - Common GeoJSON</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#xml">Extensible Markup Lanugage (XML) 1.0 (Fifth Edition)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Pre-conditions</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1) The API advertises conformance to the XML Conformance Class<br>
+2) The client negotiates use of the XML encoding.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="_common_3"><a class="anchor" href="#_common_3"></a>11.1. Common</h3>
 <div class="paragraph">
@@ -2645,15 +2852,61 @@ properties:
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in clause_12_XML.adoc - include::requirements/xml/REQ_api-common.adoc[]</p>
-</div>
+<table id="req_xml_api-common" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 14</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/xml/api-common</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Extends</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>/req/core/api-common</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock">The API SHALL demonstrate conformance with the following Requirements Class of the OGC API - Common version 1.0 Standard.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><a href="http://www.opengis.net/spec/ogcapi_common-1/1.0/req/xml" class="bare">http://www.opengis.net/spec/ogcapi_common-1/1.0/req/xml</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>It is also necessary to advertise conformance with this Requirements Class.</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in clause_12_XML.adoc - include::requirements/xml/REQ_xml-conformance.adoc[]</p>
-</div>
+<table id="req_xml_conformance" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 15</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/xml/conformance</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock">The list of Conformance Classes advertised by the API SHALL include:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/xml" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/xml</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -2700,7 +2953,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 14</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 16</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>/req/oas30/oas-common</strong></p></td>
 </tr>
 <tr>
@@ -2723,7 +2976,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 15</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 17</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/oas30/conformance</strong></p>
 </div></div></td>
@@ -2856,7 +3109,7 @@ Ensure that there is a conformance class for each requirements class and a test 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-21 08:44:11 -0400
+Last updated 2020-05-21 11:52:17 -0400
 </div>
 </div>
 </body>
