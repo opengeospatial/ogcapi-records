@@ -61,7 +61,7 @@ The following JSON fragment is an example of a response to an OGC API - Records 
 .Landing Page Example
 [source,json]
 ----
-include::../examples/JSON/landingPage_example.json[]
+include::../examples/json/landingPage_example.json[]
 ----
 
 ===== Error situations
@@ -135,7 +135,7 @@ The following JSON fragment is an example of a response to an OGC API - Records 
 .Conformance Information Example
 [source,json]
 ----
-include::../examples/JSON/conformance_example.json[]
+include::../examples/json/conformance_example.json[]
 ----
 
 ===== Error situations
@@ -186,7 +186,7 @@ The following JSON fragment is an example of a response to an OGC API - Records 
 .Collections Example
 [source,json]
 ----
-include::../examples/JSON/collections_example.json[]
+include::../examples/json/collections_example.json[]
 ----
 
 ===== Error situations
@@ -231,7 +231,7 @@ The following JSON fragment is an example of a response to an OGC API - Records 
 .Collection Information Example
 [source,json]
 ----
-include::../examples/JSON/collection_info_example.json[]
+include::../examples/json/collection_info_example.json[]
 ----
 
 ===== Error situations

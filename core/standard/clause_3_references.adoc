@@ -14,6 +14,7 @@ The following normative documents contain provisions that, through reference in 
 * [[schema.org]] *Schema.org*: http://schema.org/docs/schemas.html[Schema.org]
 * [[HTML5]] W3C: *HTML5*, W3C Recommendation, http://www.w3.org/TR/html5/[HTML5]
 * [[RDF]] W3C, *RDF 1.1 Semantics*, February 2014, https://www.w3.org/TR/rdf11-mt/
+* [[xml]] W3C, *Extensible Markup Language (XML) 1.0 (Fifth Edition)*, November 2008, https://www.w3.org/TR/xml/
 * OGC: OGC 07-036, Geography Markup Language (GML) Encoding Standard, version 3.2.1, 2007
 * OGC: OGC 10-129r1, OGC® Geography Markup Language (GML) – Extended schemas and encoding rules (GML 3.3), version 3.3, 2012
 * W3C: W3C Recommendation, XML Path Language (XPath), version 2, 2007
