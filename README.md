@@ -1,6 +1,6 @@
-# OGC API - Records
+:warning: **The OGC API - Records specification is still a work in progress.  Please be aware that the specification document that is in this repository is not yet in a state that could be useful to anyone who has not been attending the bi-weekly standards working group (SWG) meetings and/or who is not actively working on the document.  The SWG is working diligently to update the specification so please refer back to this readme periodically for any status updates.**
 
-This GitHub repository contains the new revision of the [OGC](https://opengeospatial.org)'s Catalogue Services standard for querying geospatial metadata on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](https://openapis.org) components with responses in JSON, XML and HTML.
+# OGC API - Records
 
 ## Overview
 
