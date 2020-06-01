@@ -63,49 +63,49 @@ Meteorological Service of Canada as part of the WMO Information System.
 
 Landing page:
 
-* http://52.170.144.218:8000
-* http://52.170.144.218:8000/?f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/?f=json
 
 API document:
 
-* http://52.170.144.218:8000/openapi
-* http://52.170.144.218:8000/openapi?f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/openapi
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/openapi?f=json
 
 Conformance page:
 
-* http://52.170.144.218:8000/conformance
-* http://52.170.144.218:8000/conformance?f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/conformance
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/conformance?f=json
 
 List of catalogues:
 
-* http://52.170.144.218:8000/collections
-* http://52.170.144.218:8000/collections?f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections?f=json
 
 Describe MSC discovery metadata catalogue
 
-* http://52.170.144.218:8000/collections/msc-wis-dcpc
-* http://52.170.144.218:8000/collections/msc-wis-dcpc?f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata?f=json
 
 Queryables:
 
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/queryables
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/queryables
 
 Records:
 
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items?title=metar
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items?title=metar&f=json
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&title=pilot
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&title=pilot&f=json
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&datetime=2000-11-11/..
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&datetime=2000-11-11/..&f=json
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items?q=forecast
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items?q=forecast&f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?title=metar
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?title=metar&f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?bbox=-100,40,-80,50&title=pilot
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?bbox=-100,40,-80,50&title=pilot&f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?bbox=-100,40,-80,50&datetime=2000-11-11/..
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?bbox=-100,40,-80,50&datetime=2000-11-11/..&f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?q=forecast
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?q=forecast&f=json
 
 Single record:
 
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2
-* http://52.170.144.218:8000/collections/msc-wis-dcpc/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2&f=json
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2
+* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2&f=json
 
 ## OWSLib
 
