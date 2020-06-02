@@ -800,10 +800,13 @@ further lowering the barrier to finding the existence of spatial resources on th
 <p><strong>Core</strong></p>
 </li>
 <li>
+<p><strong>Sort</strong></p>
+</li>
+<li>
 <p><strong>FullTextQuery</strong></p>
 </li>
 <li>
-<p><strong>OpenSearchQuery</strong></p>
+<p><strong>OpenSearch</strong></p>
 </li>
 <li>
 <p><strong>ComplexQueryParameters</strong></p>
@@ -813,6 +816,9 @@ further lowering the barrier to finding the existence of spatial resources on th
 </li>
 <li>
 <p><strong>ClassificationQuery</strong></p>
+</li>
+<li>
+<p><strong>Collections</strong></p>
 </li>
 <li>
 <p><strong>Transaction</strong></p>
@@ -835,10 +841,14 @@ further lowering the barrier to finding the existence of spatial resources on th
 <p>The <em>Core</em> Requirements Class is the minimal useful service interface for an OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.</p>
 </div>
 <div class="paragraph">
+<p>The <em>Sort</em> Requirement Class defined requirements needed to perform sorting of
+search results.</p>
+</div>
+<div class="paragraph">
 <p>The <em>FullTextQuery</em> Requirements Class defines the requirements needed to perform a full text search query.</p>
 </div>
 <div class="paragraph">
-<p>The <em>OpenSearchQuery</em> Requirements Class defines the requirements needed to perform an OpenSearch query.</p>
+<p>The <em>OpenSearch</em> Requirements Class defines the requirements needed to support OpenSearch queries.</p>
 </div>
 <div class="paragraph">
 <p>The <em>ComplexQueryParameters</em> Requirements Class defines the requirements to use complex query predicates as HTTP query parameters.</p>
@@ -848,6 +858,10 @@ further lowering the barrier to finding the existence of spatial resources on th
 </div>
 <div class="paragraph">
 <p>The <em>ClassificationQuery</em> Requirements Class defines the requirements needed to perform a taxonomy search on the catalogue.</p>
+</div>
+<div class="paragraph">
+<p>The <em>Collections</em> Requirements Class defines requirements for making the
+<code>/collections</code> endpoint of any OGC Web API searchable.</p>
 </div>
 <div class="paragraph">
 <p>The <em>Transaction</em> Requirements Class defines the requirements needed to add, modify and remove records from the catalogue.</p>
@@ -3115,7 +3129,7 @@ Ensure that there is a conformance class for each requirements class and a test 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-31 22:24:13 -0400
+Last updated 2020-06-01 22:26:01 -0400
 </div>
 </div>
 </body>
