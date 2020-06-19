@@ -110,4 +110,5 @@ Single record:
 ## OWSLib
 
 [OWSLib](https://geopython.github.io/OWSLib/) is an OGC Web Services client
-written in Python which also implements the evolving OGC API standards.
+written in Python which also implements the evolving OGC API standards.  See the
+[documentation](https://geopython.github.io/OWSLib/#ogc-api-records-1-0) for example workflow.
