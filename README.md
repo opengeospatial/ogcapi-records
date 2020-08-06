@@ -13,6 +13,8 @@
 
 OGC API - Records provides discovery and access to metadata about geospatial data and services.
 
+[OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs in a consistent way. [OpenAPI](http://openapis.org) is used to define the reusable API building blocks.
+
 ```
 GET /collections/myCatalogue/items
 ```
