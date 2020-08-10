@@ -79,3 +79,5 @@ The OGC API Records Standards Working Group (SWG) is the group at OGC responsibl
 * [Open issues](https://github.com/opengeospatial/ogcapi-records/issues)
 * [Proposing changes](https://github.com/opengeospatial/ogcapi-records/wiki/Propose-a-change-to-a-draft-of-a-CAT40-specification-document)
 * [Copy of License Language](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/LICENSE)
+
+Pull Requests from contributors are welcomed. However, please note that by sending a Pull Request or Commit to this GitHub repository, you are agreeing to the terms in the Observer Agreement https://portal.ogc.org/files/?artifact_id=92169
