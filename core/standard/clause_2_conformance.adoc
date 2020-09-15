@@ -1,4 +1,5 @@
 == Conformance
+
 Conformance with this standard shall be checked using the tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 
 The one Standardization Target for this standard is Web APIs.
@@ -10,18 +11,11 @@ This standard identifies eleven (11) Conformance Classes. The Conformance Classe
 The Requirements Classes for OGC API - Records are:
 
 * *Core*
-* *Sort*
-* *FullTextQuery*
-* *OpenSearch*
-* *ComplexQueryParameters*
-* *ComplexQueryResource*
-* *ClassificationQuery*
 * *Collections*
-* *Transaction*
+* *OpenSearch*
 * *JSON-Record*
-* *XML-Record*
+* *ATOM-Record*
 * *HTML-Record*
-* *OpenAPI 3.0*
 
 // P.A.V.
 // Core includes: the parameters  -> bbox [bbox_crs], time, limit, offset, 
@@ -30,42 +24,9 @@ The Requirements Classes for OGC API - Records are:
 //                                   publisher(o), themes(o), license(o),
 //                                   rights(o), links(o)
 // Question: Should CQL be part of the core?
-The _Core_ Requirements Class is the minimal useful service interface for an OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.
+The _Core_ Requirements Class is the minimal useful service interface for the OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.  The core defines a set of mandatory properties (core queryables) that every record must contain, a set of core query parameters that support bounding box spatial queries, temporal queries, full text searching, parameters for sorting responses.
 
-// P.A.V.
-// Question: should sorting be part of the core?
-// Uwe proposal: - each sort key is composed of a comma-separated list of up
-//                 to 4 components: p[,d[,c[,m]]]
-//                      <PropertyName> = Name of property to sort on
-//                      <Direction> = ascending(1) or descending(0)
-//                      <CaseSensitivity> = case sensitive(1) or not (0)
-//                      <MissingValue> = one of the literals: "abort",
-//                                                            "highValue",
-//                                                            "lowValue",
-//                                                            "omit" or
-//                                                            <value>
-//               - the sort parameter its is composed of a space separated list
-//                 of groups of these components
-//               - example:
-//                 sortKey = publisher,1,0,lowValue title
-//
-The _Sort_ Requirement Class defined requirements needed to perform sorting of
-search results.
-
-// P.A.V.
-// Question: should this be part of the core?  I think so.
-The _FullTextQuery_ Requirements Class defines the requirements needed to perform a full text search query.
-
-The _OpenSearch_ Requirements Class defines the requirements needed to support OpenSearch queries.
-
-// P.A.V.
-// I think these next two requirements classes should be collapsed into one
-// class for supporting enhanced query capabilities (i.e. CQL).
-The _ComplexQueryParameters_ Requirements Class defines the requirements to use complex query predicates as HTTP query parameters.
-
-The _ComplexQueryResource_ Requirements Class defines the requirements needed to search the catalogue using complex predicates.
-
-The _ClassificationQuery_ Requirements Class defines the requirements needed to perform a taxonomy search on the catalogue.
+The _OpenSearch_ Requirements Class defines the requirements to support query by OpenSearch clients.
 
 // P.A.V.
 // This requirements class makes the /collections end point of a service
@@ -91,15 +52,8 @@ The _ClassificationQuery_ Requirements Class defines the requirements needed to 
 The _Collections_ Requirements Class defines requirements for making the 
 `/collections` endpoint of any OGC Web API searchable.
 
-The _Transaction_ Requirements Class defines the requirements needed to add, modify and remove records from the catalogue.
+The _JSON_ Requirements Class defines the requirements for a GeoJSON (see RFC 7946) representation of a standard catalogue record.
 
-The _JSON-Record_ Requirements Class defines the requirements for a JSON representation of a standard catalogue record.
+The _ATOM_ Requirements Class defines the requirements for an ATOM representation of a standard catalogue record.
 
-// P.A.V.
-// Do we need this any longer?
-The _XML-Record_ Requirements Class defines the requirements for an XML representation of a standard catalogue record.
-
-The _HTML-Record_ Requirements Class defines the requirements for an HTML representation of a standard catalogue record.
-
-The _OpenAPI 3.0_ Requirements Class addresses the use of the OpenAPI 3.0 standard to document and communicate the API Definition. 
-
+The _HTML_ Requirements Class defines the requirements for an HTML representation of a standard catalogue record.

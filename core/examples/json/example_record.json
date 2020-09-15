@@ -14,7 +14,7 @@
   "properties": {
     "title": "The Resource's Title",
     "description": "Some human readable description of the resource.",
-    "language": "en"
+    "keywords": [ "keyword1","keyword2","keyword3"]
   },
   "extents": [
     {

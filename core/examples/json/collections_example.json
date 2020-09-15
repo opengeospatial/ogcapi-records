@@ -25,7 +25,6 @@
       "type": "catalogue",
       "title": "CubeWerx RADARSAT-2 Catalogue",
       "description": "A sample catalogue of RADARSAT-2 products stored in S3 on AWS.",
-      "language": "en",
       "links": [
         {
           "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/s1tepcat",
@@ -39,7 +38,6 @@
       "type": "catalogue",
       "title": "CubeWerx Sentinel-1 Catalogue",
       "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
-      "language": "en",
       "links": [
         {
           "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/sentinel1cat",

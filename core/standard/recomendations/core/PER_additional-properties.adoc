@@ -1,0 +1,7 @@
+[[per_core_additional-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/core/additional-properties*
+^|A |Each record in the response MAY contain zero or more of the optional properties listed in the <<core-queryables-table,Table of Core Queryables>>.
+^|B |Each record in the response MAY contain any number of additional domain-specific properties but the meaning of those properties is not specified in this document.
+|===

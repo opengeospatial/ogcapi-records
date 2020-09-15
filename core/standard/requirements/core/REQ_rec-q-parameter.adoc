@@ -1,9 +1,0 @@
-[[req_core_rec-q-parameter]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/rec-q-parameter*
-^|A |A Records API SHALL support the Q (q) parameter for `/collections/{collectionid}/items` requests.
-^|B |Requests which include the Q parameter SHALL comply with API - Records requirement `/req/core/rc-q-definition`.
-^|C |Servers implementing the Q parameter SHOULD interpret the semantic "find all records that contain the specified terms".  Implementation is left at the discretion of the server implementation (full text search, SQL LIKE, etc.)
-^|D |Responses to Q Limit requests SHALL comply with API - Records requirement `/req/core/rc-q-response`.
-|===

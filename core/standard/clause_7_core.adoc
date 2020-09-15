@@ -8,10 +8,10 @@ include::requirements/requirements_class_core.adoc[]
 The `Core` Requirements Class defines the requirements for locating, understanding, and accessing Record resources. The `Core` Requirements Class is presented in five sections:
 
 . <<api-platform-section,API Platform>>: a set of common capabilities
-. <<collection-access-section,Collection Access>>: operations for accessing collections of `Records`
-. <<records-access-section,Records Access>>: operations for accessing `Record` resources
-. <<parameters-section,Parameters>>: parameters for use in the API - Records operations.
-. <<general-section,General>>: general principles for use with this standard.
+. <<collection-access,Collection Access>>: operations for accessing information about collections of records
+. <<records-access,Records Access>>: operations for accessing record resources
+. <<record-access,Record Access>>: operations for accessing a single record
+. <<general-section,General>>: general principles for use with this standard
 
 [[core-dependencies-section]]
 === Dependencies
@@ -120,7 +120,9 @@ Both techniques are required by API - Common.
 
 A successful response to the Conformance operation is a list of URLs. Each URL identifies an OGC Conformance Class for which this API claims conformance. The schema for this resource is defined in API - Common and provided for reference in <<conformance-schema>>.
 
-include::requirements/core/REQ_core_conformance.adoc[]
+include::requirements/core/REQ_conformance.adoc[]
+
+include::recomendations/core/PER_additional-conformance.adoc[]
 
 [#conformance-schema,reftext='Conformance Response Schema']
 .Conformance Response Schema
@@ -142,7 +144,7 @@ include::../examples/json/conformance_example.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-[[collection-access-section]]
+[[collection-access]]
 === Collection Access
 
 API - Common starts with the assumption that spatial resources are organized into collections. An API will expose one or more collections. The API - Common Collections Conformance Class defines how to organize and provide access to a collection of collections.
@@ -150,7 +152,7 @@ API - Common starts with the assumption that spatial resources are organized int
 This standard extends the API - Common `Collections` conformance class to support collections of records, then extends that class to support `Record` unique capabilities.
 
 [[collections]]
-==== Collections
+==== Record Collections
 
 The `Collections` operation returns a set of metadata which describes the collections available from this API.
 
@@ -238,52 +240,142 @@ include::../examples/json/collection_info_example.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-[[record-access-section]]
-=== Record Access
+[[records-access]]
+=== Records Access
 
-In this clause, API - Common is extended to support `Record` resources.
+==== Operation
 
-NOTE: The Records specific requirements go here.
+include::requirements/core/REQ_rc-op.adoc[]
 
 [[parameters-section]]
-=== Parameters
-The API - Records standard inherits basic query and subsetting parameters from API - Common. This section provides a short description of each parameter and identifies the relevant requirements.
+==== Parameters
 
-All of the permissions and recommendations in API - Common regarding the these parameters also apply to API - Records implementations.
+===== Overview
 
-==== Parameter bbox
+The following tables list the set mandatory query parameters.
+
+[[core-query-parameters-table]]
+[#core-query-parameters-table,reftext='{table-caption} {counter:table-num}']
+.Table of Query Parameters
+[cols="15,85",options="header"]
+|===
+|bbox |A bounding box. If the spatial extent of the record intersects the specified bounding box then the record shall be presented in the response document.
+|datetime |A time instance or time period. If the temporal extent of the record intersects the specified data/time value then the record shall be presented in the response document.
+|limit |The number of records to be presented in a response document.
+|type |A resource type. Only records of the specified type shall be presented in the response document.
+|q |A space-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed then this records hall appear in the response set.
+|externalIds |A comma-separated list of external identifiers. Only records with the specified names shall appear in the response document.
+|sortby |A comma-separated list of queryables specifying how the records in the response shall be ordered for presentation.
+|===
+
+The query parameters `bbox`, `datetime` and `limit` are inherited from API -Common.  All requirements and recommendations in API - Common regarding these parameters also apply for API - Records.
+
+The query parameters `type`, `q`, `externalids` and `sortby` are specific to API - Records.
+
+This clause provides a brief description of the query parameters inherited from API - Common and requirements for the API - Records-specific parameters.
+
+===== Parameter bbox
 
 The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
-include::requirements/core/REQ_rec-bbox-parameter.adoc[]
+include::requirements/core/REQ_rc-bbox-parameter.adoc[]
 
-==== Parameter datetime
+===== Parameter datetime
 
 The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
-include::requirements/core/REQ_rec-datetime-parameter.adoc[]
+include::requirements/core/REQ_rc-datetime-parameter.adoc[]
 
-==== Parameter Limit
+===== Parameter limit
 
-The Limit (limit) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
+The limit parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
-include::requirements/core/REQ_rec-limit-parameter.adoc[]
+include::requirements/core/REQ_rc-limit-parameter.adoc[]
 
-==== Parameter q
+===== Parameter type
 
-The Q (q) parameter is a core defined in API - Common. The following requirement governs use of that parameter in a Records API.
+include::requirements/core/REQ_rc-type-definition.adoc[]
 
-include::requirements/core/REQ_rec-q-parameter.adoc[]
+include::requirements/core/REQ_rc-type-response.adoc[]
 
-==== Combinations of Filter Parameters
+===== Parameter q
+
+include::requirements/core/REQ_rc-q-definition.adoc[]
+
+include::requirements/core/REQ_rc-q-case-definition.adoc[]
+
+include::requirements/core/REQ_rc-q-response.adoc[]
+
+===== Parameter externalids
+
+include::requirements/core/REQ_rc-extids-definition.adoc[]
+
+include::requirements/core/REQ_rc-extids-response.adoc[]
+
+===== Parameter sortby
+
+include::requirements/core/REQ_rc-sortby-definition.adoc[]
+
+include::requirements/core/REQ_rc-sortby-response.adoc[]
+
+include::requirements/core/REQ_sortables-op.adoc[]
+
+include::requirements/core/REQ_sortables-success.adoc[]
+
+===== Combinations of Filtering Parameters
+
+Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> may be specified for filtering.
 
 Any combination of `bbox`, `datetime`, `q` and `limit` parameters for filtering on Record properties is allowed. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is 'AND' (exclusive).
+
+==== Response
+
+include::requirements/core/REQ_rc-response.adoc[]
+
+include::recomendations/core/PER_additional-properties.adoc[]
+
+[[core-queryables-table]]
+[#core-queryables,reftext='{table-caption} {counter:table-num}']
+.Table of Core Queryables
+[cols="20,40,40",options="header"]
+|===
+|Queryables |Requirement |Description
+|recordid |M |A unique record identifier assigned by the server.
+|recordcreated |M |The date this record was created in the server.
+|recordmodified |M |The most recent date on which the record was changed.
+|title |M |A human-readable name given to the resource.
+|description |M |A free-text description of the resource.
+|keywords |M |A list of keywords or tag associated with the resource.
+|type |M |The nature or genre of the resource.
+|externalid |O |An identifier for the resource assigned by an external entity.
+|modified |O |The more recent date on which the resource was changed.
+|publisher |O |The entity making the resource available.
+|themes |O |A knowledge orgnaization system used to classify the resource.
+|formats |O |
+|contactpoint |O |An entity to contact about the resource.
+|license |O |A legal document under which the resource is made available.
+|rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|extent |O |The spatio-temporal coverage of the resource.
+|links |O |A list of links for navigating the API.
+|associations |O |A list of links for accessing the resource or links to other resources associated with this resource.
+|===
 
 ==== Paged Response
 
 One consequence of the Limit parameter is that the full result set is not delivered to the user. However, users frequently want to know how big the result set it and how to access the rest of it. The following requirement add information to the response to address that need.
 
-include::requirements/core/REQ_rec-paged-response.adoc[]
+include::requirements/core/REQ_rc-paged-response.adoc[]
+
+[[record-access]]
+=== Record Access
+
+==== Operation
+
+include::requirements/core/REQ_record-op.adoc[]
+
+==== Response
+
+include::requirements/core/REQ_record-success.adoc[]
 
 [[general-section]]
 === General
