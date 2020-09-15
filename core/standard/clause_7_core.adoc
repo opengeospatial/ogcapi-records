@@ -322,6 +322,20 @@ include::requirements/core/REQ_sortables-op.adoc[]
 
 include::requirements/core/REQ_sortables-success.adoc[]
 
+[#sortby-example,reftext=`SortBy Example`]
+.sortby Example
+[source]
+----
+.../collections/mycat/items?...&sortby=modified:desc,recordid&...
+----
+
+[#sortby-extent-example,reftext=`SortBy Extent Example`]
+.sortby Extent Example
+[source]
+----
+.../collections/mycat/items?...&sortby=extent:asc&...
+----
+
 ===== Combinations of Filtering Parameters
 
 Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> may be specified for filtering.
