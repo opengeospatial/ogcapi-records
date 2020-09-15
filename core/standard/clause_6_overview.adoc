@@ -57,6 +57,14 @@ https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard vers
 
 Discussion has shown that the API model also assumes underlying service and object descriptions, so a convergence seems possible. In any case, it will be advantageous to have a similar "mental model" of the server store organization on hand to explain the various functionalities introduced below.
 
+=== Search
+
+TBD: Want to include a discussion about the levels of search that a catalogue might offer.
+
+* Level 1: bbox, datetime, q, type, externalIds
+* Level 2: OpenSearch
+* Level 3: CQL
+
 [[dependencies-overview]]
 === Dependencies
 
