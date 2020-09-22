@@ -81,3 +81,10 @@ The OGC API Records Standards Working Group (SWG) is the group at OGC responsibl
 * [Copy of License Language](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/LICENSE)
 
 Pull Requests from contributors are welcomed. However, please note that by sending a Pull Request or Commit to this GitHub repository, you are agreeing to the terms in the Observer Agreement https://portal.ogc.org/files/?artifact_id=92169
+
+## Nightly Build
+
+The latest drafts of each standard in this repository are built daily (based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file):
+
+* [Part 1: Core](https://htmlpreview.github.io/?https://github.com/opengeospatial/ogcapi-records/blob/master/20-004.html)
+
