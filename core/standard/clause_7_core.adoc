@@ -361,11 +361,12 @@ include::recomendations/core/PER_additional-properties.adoc[]
 |description |M |A free-text description of the resource.
 |keywords |M |A list of keywords or tag associated with the resource.
 |type |M |The nature or genre of the resource.
+|language |M |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
 |externalid |O |An identifier for the resource assigned by an external entity.
 |modified |O |The more recent date on which the resource was changed.
 |publisher |O |The entity making the resource available.
 |themes |O |A knowledge orgnaization system used to classify the resource.
-|formats |O |
+|formats |O |A list of available distributions for the resource.
 |contactpoint |O |An entity to contact about the resource.
 |license |O |A legal document under which the resource is made available.
 |rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement.
