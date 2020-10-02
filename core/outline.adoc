@@ -1,3 +1,4 @@
+WARNING: **The OGC API - Records specification is still a work in progress.  Please be aware that the specification document in this directory is not yet in a state that could be useful to anyone who has not been attending the bi-weekly standards working group (SWG) meetings and/or who is not actively working on the document.  The SWG is working diligently to update the specification so please refer back to this readme periodically for any status updates.**
 
 = Draft Outline for OGC API - Catalogue
 
@@ -13,8 +14,8 @@
       the record schema defined in this standard as its underlying data model
    ** this record schemas shall be referred to as the "standard record"
       in this document
-   * the standard record is based on DCAT (which is a JSON dialect) which
-     provdies a suitable information model for describing resources
+   * the standard record is based on DCAT (which is a RDF dialect) which
+     provides a suitable information model for describing resources
    ** there are also some hints of STAC thrown in for good measure! ;)
    * in addition to the properties defined for the standard record, a server may
      also expose additional properties that may be used to query the catalogue

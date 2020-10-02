@@ -1,0 +1,8 @@
+[[req_core_rc-bbox-parameter]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/rc-bbox-parameter*
+^|A |A Records API SHALL support the Bounding Box (bbox) parameter for `/collections/{catalogueId}` requests.
+^|B |Requests which include the Bounding Box parameter SHALL comply with API - Common requirement `/req/core/rc-bbox-definition`.
+^|C |Responses to Bounding Box requests SHALL comply with API - Common requirement `/req/core/rc-bbox-response`.
+|===

@@ -1,0 +1,7 @@
+[[req_core_sortables-op]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/sortables-op*
+^|A |For every collection (path `/collections/{catalogueId}`), the server SHALL support the HTTP GET operation at the path `/collections/{catalogueId}/sortables`.
+^|B |The parameter `catalogue` is each `id` property in the collections response (JSONPath: `$.collections[*].id`) where the item type is specified as `record`.
+|===

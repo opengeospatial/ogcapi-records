@@ -1,0 +1,9 @@
+== Requirements Class "Collections"
+
+[[collections-overview]]
+=== Overview
+
+include::requirements/requirements_class_collections.adoc[]
+
+=== Heading
+

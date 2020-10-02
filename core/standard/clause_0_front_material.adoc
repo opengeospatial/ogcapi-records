@@ -1,6 +1,19 @@
 [big]*i.     Abstract*
 
-<Insert Abstract Text here>
+Blah, blah, blah, simple access API, blah, blah, blah, making resources discoveryable , blah, blah, blah, associations, blah, blah, blah, core queryables, blah, blah, core query prameters, blah, blah, blah, OpenAPI to support developers, blah, blah, blah.
+
+[#tldr,reftext='{table-caption} {counter:table-num}']
+.Overview of resources, applicable HTTP methods and links to the document sections[[table_1]][[tldnr]]
+[cols="25,35,10,20",options="header"]
+|===
+|Resource |Path |HTTP method |Document reference
+|Landing page |`/` |GET |<<landing_page,API landing page>>
+|Conformance declaration |`/conformance` |GET |<<conformance_classes,Declaration of Conformance Classes>>
+|Record collections |`/collections` |GET |<<collections-access,Collection Access>>
+|Record collection |`/collections/{catalogueId}` |GET |<<collectionInfo,Collection Information>>
+|Records |`/collections/{catalogueId}/items` |GET |<<records-access,Records Access>>
+|Record |`/collections/{catalogueId}/items/{recordId}` |GET |<<record-access,Record Access>>
+|===
 
 [big]*ii.    Keywords*
 
@@ -32,4 +45,5 @@ All questions regarding this submission should be directed to the editor or the 
 |===
 ^|Name  ^|Affiliation
 | Panagiotis (Peter) A. Vretanos (editor) | CubeWerx Inc.
+| Tom Kralidis (editor) | Meteorological Service of Canada
 |===

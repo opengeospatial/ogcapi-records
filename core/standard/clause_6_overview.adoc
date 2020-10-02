@@ -4,10 +4,10 @@
 [[general-overview]]
 === General
 
-The OGC API family of standards enable access to resources using the HTTP protocol and its' associated operations (GET, PUT, POST, etc.). OGC API-Common defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API-Common with features specific to a resource type. This OGC API-Records standard defines an API with two goals:
+The OGC API family of standards enable access to resources using the HTTP protocol and its' associated operations (GET, PUT, POST, etc.). OGC API - Common defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API - Common with features specific to a resource type. This OGC API - Records standard defines an API with two goals:
 
-. { __TBD__}
-. Provide functionality comparable to that of the <<web-coverage-service-overview,OGC WCS standard>>.
+. Provide modern API patterns and encodings to facilitiate further lowering the barrier to finding the existence of spatial resources on the Web.
+. Provide functionality comparable to that of the <<api-behavior-model-overview,OGC Catalogue Service (CSW) standard>>.
 
 Resources exposed through an OGC API may be accessed through a Universal Resource Identifier <<rfc3986,(URI).>> URIs are composed of three sections:
 
@@ -21,7 +21,7 @@ Some resources are also accessible through links on previously accessed resource
 
 [#records-paths,reftext='{table-caption} {counter:table-num}']
 .Record API Paths
-[width="90%",cols="2,^1,4",options="header"]
+[width="90%",cols="40,20,40",options="header"]
 |===
 ^|**Path Template** ^|**Relation** ^|**Resource** 
 3+^|**Common**
@@ -31,42 +31,50 @@ or +
 `service-doc` |API Description (optional)
 |<<conformance-classes,{root}/conformance>> |`conformance` |Conformance Classes
 |<<collections,{root}/collections>> |`data` |Metadata describing the spatial collections available from this API.
-|<<collectionInfo,{root}/collections/{coverageid}>> | |Metadata describing the collection which has the unique identifier `{collectionid}`
+|<<collectionInfo,{root}/collections/{collectionid}>> | |Metadata describing the collection which has the unique identifier `{collectionid}`
 3+^|**Records**
-|<<record-clause,{root}/collections/{coverageid}/record>> |`items` |TBD.
+|<<record-clause,{root}/collections/{collectionid}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
+|<<record-clause,{root}/collections/{collectionid}/items/{recordid}>> |`item` |Record of metadata which has the unique identifier `{recordid}`.
 |===
 
 Where:
 
 * {root} = Base URI for the API server
 * {collectionid} = an identifier for a specific collection
+* {recordid} = an identifier for a specific record within a collection
 
 [[record-schema-overview]]
 === Record Schema
 
-NOTE: insert a _Discussion of the Record resource_
-
 [[api-behavior-model-overview]]
 === API Behavior Model
 
-The Record API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CS-W). This allows API-Record and CS-W implementations to co-exist in a single processing environment.
+The Record API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows API - Record and CSW implementations to co-exist in a single processing environment.
 
-NOTE: Replace the following with a discussion of CS-W and API-Record
+NOTE: Replace the following with a discussion of CSW and API - Record
 
-https://www.opengeospatial.org/standards/wcs[OGC Web Coverage Service standard version 2] has an internal model of its storage organization based on which the classic operations GetCapabilities, DescribeCoverage, and GetCoverage can be explained naturally. This model consists of a single CoverageOffering resembling the complete WCS data store. It holds some service metadata describing service qualities (such as WCS extensions, encodings, CRSs, and interpolations supported, etc.). At its heart, this offering holds any number of OfferedCoverages. These contain the coverage payload to be served, but in addition can hold coverage-specific service-related metadata (such as the coverage's Native CRS).
+https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (data, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
 
 Discussion has shown that the API model also assumes underlying service and object descriptions, so a convergence seems possible. In any case, it will be advantageous to have a similar "mental model" of the server store organization on hand to explain the various functionalities introduced below.
+
+=== Search
+
+TBD: Want to include a discussion about the levels of search that a catalogue might offer.
+
+* Level 1: bbox, datetime, q, type, externalIds
+* Level 2: OpenSearch
+* Level 3: CQL
 
 [[dependencies-overview]]
 === Dependencies
 
-The OGC API-Records standard is an extension of the OGC API-Common standard. Therefore, an implementation of API-Records must first satisfy the appropriate Requirements Classes from API-Common. <<mapping-to-common>> Identifies the API-Common Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
+The OGC API - Records standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from API - Common. <<mapping-to-common>> Identifies the OGC API - Common Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
 
 [#mapping-to-common,reftext='{table-caption} {counter:table-num}']
-.Mapping API-Records Sections to API-Common Requirements Classes
+.Mapping API - Records Sections to API - Common Requirements Classes
 [width="90%",cols="2,6"]
 |====
-^|*API-Record Section* ^|*API-Common Requirements Class*
+^|*API - Record Section* ^|*API - Common Requirements Class*
 |<<landing-page,API Landing Page>>| http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core
 |<<api-definition,API Definition>>| http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core
 |<<conformance-classes,Declaration of Conformance Classes>>| http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core

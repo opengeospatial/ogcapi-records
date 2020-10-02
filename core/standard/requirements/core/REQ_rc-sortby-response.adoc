@@ -1,0 +1,7 @@
+[[req_core_rc-sortby-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/rc-sortby-response*
+^|A |If the `sortby` parameter is specified, then the records in a response SHALL be order by the keys and sort directions (i.e. `asc` or `desc`) specified.
+^|A |The specific set of keys that may used for sorting SHALL be specified by the `/collections/{catalogueId}/sortables` resource.
+|===

@@ -1,0 +1,1404 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CubeSERV CAT 4.0",
+    "version": "4.0.0",
+    "description": "Catalogue 4.0 server offered by CubeWerx Inc.",
+    "contact": {
+      "name": "CubeWerx Inc.",
+      "url": "http://www.cubewerx.com/",
+      "email": "pvretano@cubewerx.com",
+      "x-details": {
+        "name": "Panagiotis (Peter) A. Vretanos",
+        "positionName": "CTO / Senior Developer",
+        "phone": "(416)701-1985",
+        "facsimile": "(819) 771-8388",
+        "deliveryPoint": "815 boulevard de la Carrière, bureau 202",
+        "city": "Gatineau",
+        "administrativeArea": "Québec",
+        "postalCode": "J8Y 6T4",
+        "country": "Canada"
+      }
+    },
+    "license": {
+      "name": "T.B.D"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://eratosthenes.pvretano.com/path/default/cat/4.0"
+    }
+  ],
+  "security": [
+    {
+      "cwApiKeyQuery": [
+      ]
+    },
+    {
+      "cwApiKeyHeader": [
+      ]
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": " The landing page of the API.",
+        "description": "The landing page provides links to the API definition, links to the conformance statment, links to catalogues metadata and links to other resources offered by the service.",
+        "operationId": "getLandingPage",
+        "tags": [
+          "LandingPage"
+        ],
+        "parameters": [
+          {
+            "name": "f",
+            "in": "query",
+            "description": "A MIME type indicating the representation of the resources to be presented (e.g. application/json).",
+            "required": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "xml",
+                "html"
+              ]
+            },
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The landing page encoded as JSON.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/landingPage-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": " The landing page encoded as XML.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-xml"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/conformance": {
+      "get": {
+        "summary": "Undefined message",
+        "description": "Undefined message",
+        "operationId": "getConformanceClasses",
+        "tags": [
+          "Conformance"
+        ],
+        "parameters": [
+          {
+            "name": "f",
+            "in": "query",
+            "description": "A MIME type indicating the representation of the resources to be presented (e.g. application/json).",
+            "required": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "xml",
+                "html"
+              ]
+            },
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/conformancePage-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-xml"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collections": {
+      "get": {
+        "summary": "The set of catalogues offered at this endpoint.",
+        "description": "A catalogue is a collection of records that describe a set of things.  A catalogue end point may may offer a single collection of records (the usual case) but may offer more that one collection of records each describing different things (e.g. a catalogue of imagery and a catalogue of vector data). The /collections endpoint provides metadata about the list of available record collections.",
+        "operationId": "describeCatalogues",
+        "tags": [
+          "Catalogues"
+        ],
+        "parameters": [
+          {
+            "name": "f",
+            "in": "query",
+            "description": "A MIME type indicating the representation of the resources to be presented (e.g. application/json).",
+            "required": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "xml",
+                "html"
+              ]
+            },
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/catalogueIdList-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-xml"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collections/{catalogueId}": {
+      "get": {
+        "summary": "Undefined message",
+        "description": "Provides metadata about a specific collection of records.  Same output as generated for /collections but specific to the indicated catalogueId",
+        "operationId": "describeCatalogue",
+        "tags": [
+          "Catalogue"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/catalogueId"
+          },
+          {
+            "name": "f",
+            "in": "query",
+            "description": "A MIME type indicating the representation of the resources to be presented.",
+            "required": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "xml",
+                "html"
+              ]
+            },
+            "style": "form",
+            "explode": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/catalogueInfo-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-xml"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collections/{catalogueId}/queryables": {
+      "get": {
+        "summary": "Get the list of queryables for this catalogue",
+        "description": "Undefined message",
+        "operationId": "getQueryables",
+        "tags": [
+          "Queryables"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/catalogueId"
+          },
+          {
+            "$ref": "#/components/parameters/f"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/queryables-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-xml"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collections/{catalogueId}/items": {
+      "get": {
+        "summary": "Undefined message",
+        "description": "Undefined message",
+        "operationId": "getRecords",
+        "tags": [
+          "Records"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/catalogueId"
+          },
+          {
+            "$ref": "#/components/parameters/f"
+          },
+          {
+            "$ref": "#/components/parameters/crs"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/q"
+          },
+          {
+            "$ref": "#/components/parameters/bbox"
+          },
+          {
+            "$ref": "#/components/parameters/geometry"
+          },
+          {
+            "$ref": "#/components/parameters/geometry_crs"
+          },
+          {
+            "$ref": "#/components/parameters/gRelation"
+          },
+          {
+            "$ref": "#/components/parameters/lat"
+          },
+          {
+            "$ref": "#/components/parameters/lon"
+          },
+          {
+            "$ref": "#/components/parameters/radius"
+          },
+          {
+            "$ref": "#/components/parameters/time"
+          },
+          {
+            "$ref": "#/components/parameters/tRelation"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/filter_language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/records-array-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-xml"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collections/{catalogueId}/items/{recordId}": {
+      "get": {
+        "summary": "Undefined message",
+        "description": "Undefined message",
+        "operationId": "getRecord",
+        "tags": [
+          "Record"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/catalogueId"
+          },
+          {
+            "$ref": "#/components/parameters/recordId"
+          },
+          {
+            "$ref": "#/components/parameters/f"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/record-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Undefined message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/exception-xml"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "f": {
+        "name": "f",
+        "in": "query",
+        "description": "A MIME type indicating the representation of the resources to be presented (e.g. application/xml).",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "html",
+            "xml",
+            "json"
+          ]
+        },
+        "style": "form",
+        "explode": true
+      },
+      "offset": {
+        "name": "offset",
+        "in": "query",
+        "description": "The optional startIndex parameter indicates the index within the result set from which the server shall begin presenting results in the response document.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "integer",
+          "default": 0
+        },
+        "style": "form",
+        "explode": true
+      },
+      "limit": {
+        "name": "limit",
+        "in": "query",
+        "description": "The optional limit parameter limits the number of records that are presented in the response document.  Only records are counted that are on the first level of the collection in\nthe response document. Nested objects contained within the explicitly requested records shall not be counted.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 10
+        },
+        "style": "form",
+        "explode": true
+      },
+      "bbox": {
+        "name": "bbox",
+        "in": "query",
+        "description": "Only records that have a geometry that intersects the bounding box are selected. The bounding box is provided as four or six numbers, depending on whether the coordinate reference system includes a vertical axis (elevation or depth): * Lower left corner, coordinate axis 1 * Lower left corner, coordinate axis 2 * Lower left corner, coordinate axis 3 (optional) * Upper right corner, coordinate axis 1 * Upper right corner, coordinate axis 2 * Upper right corner, coordinate axis 3 (optional) The coordinate reference system of the values is WGS84 longitude/latitude (http://www.opengis.net/def/crs/OGC/1.3/CRS84) unless a different coordinate reference system is specified in the parameter `bbox-crs`. For WGS84 longitude/latitude the values are in most cases the sequence of minimum longitude, minimum latitude, maximum longitude and maximum latitude. However, in cases where the box spans the antimeridian the first value (west-most box edge) is larger than the third value (east-most box edge). If a record has multiple spatial geometry properties, it is the decision of the server whether only a single spatial geometry property is used to determine the extent or all relevant geometries.",
+        "required": false,
+        "schema": {
+          "type": "array",
+          "items": {
+            "maximum": 180,
+            "minimum": 180,
+            "maxItems": 4,
+            "minItems": 4,
+            "type": "number"
+          }
+        },
+        "style": "form",
+        "explode": false
+      },
+      "time": {
+        "name": "time",
+        "in": "query",
+        "description": "Temporal constraint to be applied to a query; may be a time instance or a temporal period as per ISO8601.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "tRelation": {
+        "name": "tRelation",
+        "in": "query",
+        "description": "Temporal operator to use for temporal contstraint",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "format": "date-time",
+          "enum": [
+            "tEquals",
+            "anyInteracts",
+            "after",
+            "before",
+            "begins",
+            "begunBy",
+            "tContains",
+            "during",
+            "endedBy",
+            "ends",
+            "meets",
+            "metBy",
+            "tOverlaps",
+            "overlappedBy"
+          ],
+          "default": "anyInteracts"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "responseHandler": {
+        "name": "responseHandler",
+        "in": "query",
+        "description": "Tiggers asynchronous processing of the request; notification is sent to the endpoint specified as the value of the parameter.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "crs": {
+        "name": "crs",
+        "in": "query",
+        "description": "Asserts the CRS to use for encoding records in the response document.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "filter": {
+        "name": "filter",
+        "in": "query",
+        "description": "A query filter specified is some predicate encoding language supported by the server",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "filter_language": {
+        "name": "filter_language",
+        "in": "query",
+        "description": "An identifier indicating the predicate language used to express the value of the \"filter\" parameter",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "q": {
+        "name": "q",
+        "in": "query",
+        "description": "A space seperated list of search terms to be applied to text fields in a record.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "geometry": {
+        "name": "geometry",
+        "in": "query",
+        "description": "The geometry of an area of interest specified using WKT.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "format": "wkt"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "geometry_crs": {
+        "name": "geometry_crs",
+        "in": "query",
+        "description": "The CRS used to encode the coordinates of the \"geometry\" parameter.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "gRelation": {
+        "name": "gRelation",
+        "in": "query",
+        "description": "The spatial operator to apply when testing a record's geometry against the area of interest encoded using the \"geometry\" parameter.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "intersects",
+            "equals",
+            "disjoint",
+            "youches",
+            "within",
+            "overlaps",
+            "crosses",
+            "contains"
+          ],
+          "default": "intersects"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "lat": {
+        "name": "lat",
+        "in": "query",
+        "description": "The latitude of the center point of a proximity search.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "number",
+          "format": "double"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "lon": {
+        "name": "lon",
+        "in": "query",
+        "description": "The longitude of the center point of a proximity search.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "number",
+          "format": "double"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "radius": {
+        "name": "radius",
+        "in": "query",
+        "description": "The search radius in meters of a proximity search.",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "number",
+          "format": "double"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "catalogueId": {
+        "name": "catalogueId",
+        "in": "path",
+        "description": "Identifier of a catalogue offered by the service",
+        "required": true,
+        "allowEmptyValue": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "ogcCore",
+            "ebRIM"
+          ]
+        },
+        "style": "simple",
+        "explode": false
+      },
+      "recordId": {
+        "name": "recordId",
+        "in": "path",
+        "description": "Identifier for a catalogue record",
+        "required": true,
+        "allowEmptyValue": false,
+        "schema": {
+          "type": "string"
+        },
+        "style": "simple",
+        "explode": false
+      }
+    },
+    "schemas": {
+      "links-array": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/link"
+        }
+      },
+      "link": {
+        "type": "object",
+        "required": [
+          "href"
+        ],
+        "xml": {
+          "name": "link",
+          "namespace": "http://www.w3.org/2005/Atom",
+          "prefix": "atom"
+        },
+        "properties": {
+          "href": {
+            "type": "string",
+            "format": "url",
+            "xml": {
+              "attribute": true
+            }
+          },
+          "rel": {
+            "type": "string",
+            "xml": {
+              "attribute": true
+            }
+          },
+          "type": {
+            "type": "string",
+            "xml": {
+              "attribute": true
+            }
+          },
+          "hrefLang": {
+            "type": "string",
+            "xml": {
+              "attribute": true
+            }
+          },
+          "title": {
+            "type": "string",
+            "xml": {
+              "attribute": true
+            }
+          },
+          "length": {
+            "type": "integer",
+            "xml": {
+              "attribute": true
+            }
+          }
+        }
+      },
+      "landingPage-json": {
+        "type": "object",
+        "required": [
+          "links"
+        ],
+        "properties": {
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/link"
+            }
+          }
+        }
+      },
+      "conformancePage-json": {
+        "type": "object",
+        "required": [
+          "conformsTo"
+        ],
+        "properties": {
+          "conformsTo": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "catalogueIdList-json": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "recordId",
+            "links"
+          ],
+          "properties": {
+            "recordId": {
+              "type": "string"
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/link"
+              }
+            }
+          }
+        }
+      },
+      "catalogueInfo-json": {
+        "required": [
+          "version",
+          "identifier",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/link"
+            }
+          },
+          "extent-json": {
+            "$ref": "#/components/schemas/extent-json"
+          },
+          "crs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "extent-json": {
+        "type": "object",
+        "required": [
+          "spatial"
+        ],
+        "properties": {
+          "crs": {
+            "type": "string",
+            "description": "Coordinate reference system of the coordinates in the spatial extent (property `spatial`).",
+            "enum": [
+              "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+            ],
+            "default": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+          },
+          "spatial": {
+            "type": "array",
+            "description": "West, north, east, south edges of the spatial extent.",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            }
+          },
+          "trs": {
+            "type": "string",
+            "description": "Temporal reference systems for the coordinates in the temporal extent.",
+            "enum": [
+              "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+            ],
+            "default": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "temporal": {
+            "type": "array",
+            "description": "Start time/end time of temporal extext.",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "exception-json": {
+        "type": "object",
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "exception-xml": {
+        "type": "object",
+        "required": [
+          "version",
+          "Exception"
+        ],
+        "xml": {
+          "name": "ExceptionReport",
+          "namespace": "http://www.opengis.net/cat/4.0"
+        },
+        "properties": {
+          "version": {
+            "type": "string",
+            "pattern": "(3\\.0)(\\.\\d)?",
+            "xml": {
+              "attribute": true
+            }
+          },
+          "lang": {
+            "type": "string",
+            "xml": {
+              "prefix": "xml",
+              "attribute": true
+            }
+          },
+          "Exception": {
+            "type": "array",
+            "required": [
+              "exceptionCode"
+            ],
+            "items": {
+              "type": "object",
+              "properties": {
+                "exceptionCode": {
+                  "type": "string",
+                  "xml": {
+                    "attribute": true
+                  }
+                },
+                "locator": {
+                  "type": "string",
+                  "xml": {
+                    "attribute": true
+                  }
+                },
+                "ExceptionText": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "queryables-json": {
+        "type": "object",
+        "required": [
+          "identifier",
+          "title",
+          "datatype"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "datatype": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "reference": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      },
+      "records-array-json": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/record-json"
+        }
+      },
+      "record-json": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "geojson-feature-type-prop",
+          "geometry",
+          "properties"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "A unique identifier of the catalogue record.",
+            "format": "uri"
+          },
+          "type": {
+            "type": "string",
+            "description": "Fixed value as required by RFC7946.",
+            "enum": ["Feature"]
+          },
+          "@type": {
+            "type": "string",
+            "description": "The nature or genre of the resource being described by this record.",
+            "format": "uri"
+          },
+          "geometry": {
+            "oneOf": [
+              {
+                "type": "string",
+                "nullable": true
+              },
+              {
+                "$ref": "#/components/schemas/geom-prop"
+              }
+            ]
+          },
+          "properties": {
+            "oneOf": [
+              {
+                "type": "string",
+                "nullable": true
+              },
+              {
+                "$ref": "#/components/schemas/properties-prop"
+              }
+            ]
+          },
+          "extents": {
+            "$ref": "#/components/schemas/extents-array"
+          },
+          "links": {
+            "$ref": "#/components/schemas/links-array"
+          }
+        }
+      },
+      "geom-prop": {
+        "type": "object",
+        "description": "Defines the footprint of the resource, formatted according to RFC 7946, section 3.1. The footprint should be the default GeoJSON geometry, though additional geometries can be included. Specified in Longitude/Latitude based on EPSG:4326."
+      },
+      "properties-prop": {
+        "type": "object",
+        "required": [
+          "title"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "A name given to the resource."
+          },
+          "description": {
+            "type": "string",
+            "description": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource being described by this record."
+          },
+          "language": {
+            "type": "string",
+            "description": "The language used in the textual metadata describing titles, descriptions, etc. of the resource in the catalogue.  ISO 639-1/639-2 codes should be used.",
+            "default": "en"
+          },
+          "issued": {
+            "type": "string",
+            "description": "Date of formal issuance (e.g., publication) of the resource being described by this record.",
+            "format": "date-time"
+          },
+          "modified": {
+            "type": "string",
+            "description": "Most recent date on which the resource being described by this record was changed, updated or modified.",
+            "format": "date-time"
+          },
+          "publisher": {
+            "type": "string",
+            "description": "Link to entity responsible for making the resource available using VCard (see http://www.w3.org/TR/vcard-rdf/)",
+            "format": "uri"
+          },
+          "keywords": {
+            "type": "array",
+            "description": "The topic or topics of the resource. Typically represented using keywords, tags, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "themes": {
+            "type": "array",
+            "description": "One or more categories used to classify the resource.",
+            "items": {
+              "$ref": "#/components/schemas/theme-prop"
+            }
+          },
+          "contactPoint": {
+            "type": "string",
+            "description": "Link to relevant contact information which is provided using VCard (see http://www.w3.org/TR/vcard-rdf/)",
+            "format": "uri"
+          },
+          "accrualPeriodicity": {
+            "type": "string",
+            "description": "The frequency at which the resource is published"
+          },
+          "landingPage": {
+            "type": "string",
+            "description": "A Web page that can be navigated to in a Web browser to gain access to the resource, its representations, distributions and/or additional information.",
+            "format": "uri"
+          },
+          "license": {
+            "type": "string",
+            "description": "A reference to the license document under which the resource is made available.",
+            "format": "uri"
+          },
+          "rights": {
+            "type": "string",
+            "description": "This describes the rights under which the resource can be used/reused."
+          },
+          "accessURL": {
+            "type": "string",
+            "description": "A reference to a landing page, feed, SPARQL endpoint or other type of non-downloadable resource that gives access to the resource being described by this record.",
+            "format": "uri"
+          },
+          "downloadURL": {
+            "type": "string",
+            "description": "A reference that gives direct, download access to the resource being described by this record.",
+            "format": "uri"
+          },
+          "formats": {
+            "type": "array",
+            "description": "The file format, physical medium, or dimensions of the resource. Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "byteSize": {
+            "type": "number",
+            "description": "The size of the resource in bytes"
+          },
+          "homepage": {
+            "type": "string",
+            "description": "If applicable, a reference to the home page of the resource",
+            "format": "uri"
+          }
+        },
+        "additionalProperties": true
+      },
+      "theme-prop": {
+        "type": "object",
+        "properties": {
+          "theme": {
+            "type": "string",
+            "description": "A category of the resource.",
+            "format": "uri"
+          },
+          "taxonomy": {
+            "type": "string",
+            "description": "The knowledge organization system used to classify the resource.",
+            "format": "uri"
+          }
+        }
+      },
+      "extents-array": {
+        "type": "array",
+        "description": "An array of extents describing the spatial, temporal or other space that the resource described by this record covers.",
+        "items": {
+          "$ref": "#/components/schemas/extent-prop"
+        }
+      },
+      "extent-prop": {
+        "type": "object",
+        "description": "The extent of the resource. Extensions may add additional members to represent other extents, for example, thermal or pressure ranges.",
+        "properties": {
+          "spatial": {
+            "type": "object",
+            "description": "The spatial extent of the resource being described by this record.",
+            "properties": {
+              "bbox": {
+                "type": "array",
+                "description": "One or more bounding boxes that describe the spatial extent of the resource.",
+                "minItems": 1,
+                "items": {
+                  "description": "West, south, east, north edges of the bounding box. The coordinates are in the coordinate reference system specified in `crs`. By default this is WGS 84 longitude/latitude.",
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "crs": {
+                "type": "string",
+                "description": "Coordinate reference system of the coordinates in the spatial extent (property `bbox`). The default reference system is WGS 84 longitude/latitude.",
+                "enum": [
+                  "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                ],
+                "default": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+              }
+            }
+          },
+          "temporal": {
+            "type": "object",
+            "description": "The temporal extent of the resource.",
+            "properties": {
+              "interval": {
+                "type": "array",
+                "description": "One or more time intervals that describe the temporal extent of the resource. The value `null` is supported and indicates an open time interval.",
+                "minItems": 1,
+                "items": {
+                  "type": "array",
+                  "description": "Begin and end times of the time interval. The timestamps are in the coordinate reference system specified in `trs`. By default this is the Gregorian calendar.",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  }
+                }
+              },
+              "trs": {
+                "description": "Coordinate reference system of the coordinates in the temporal extent (property `interval`). The default reference system is the Gregorian calendar.",
+                "type": "string",
+                "enum": [
+                  "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+                ],
+                "default": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+              }
+            }
+          }
+        }
+      },
+    },
+    "securitySchemes": {
+      "cwApiKeyQuery": {
+        "type": "apiKey",
+        "name": "apiKey",
+        "in": "query"
+      },
+      "cwApiKeyHeader": {
+        "type": "apiKey",
+        "name": "CubeWerx-API-Key",
+        "in": "header"
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "36486763-db57-43b1-9af7-b7ecc3c318f2",
+  "type": "Feature",
+  "@type": "some_resource_type",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [-10,-10],[-5,0],[0,0],
+        [10,10],[-6,-7],[-10,-10]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "The Resource's Title",
+    "description": "Some human readable description of the resource.",
+    "keywords": [ "keyword1","keyword2","keyword3"]
+  },
+  "extents": [
+    {
+      "spatial": {
+        "bbox": [-10,-10,10,10],
+        "crs": "http://www.opengis.net/def/crs/EPSG/0/4326"
+      },
+      "temporal": {
+        "interval": [
+          "2019-05-21T07:05:35",
+          "2019-05-21T07:07:08"
+        ],
+        "trs": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+      }
+    }
+  ],
+  "links": [
+    {
+      "href": "http://demo.cubewerx.com/cubewerx/cubeserv/default/csw/4.0/ogc_catalogue/RID574",
+      "rel": "related",
+      "title": "Some related record in this catalogue."
+    }
+  ]
+}

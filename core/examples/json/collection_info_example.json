@@ -1,0 +1,13 @@
+{
+  "recordid": "sentinel1cat",
+  "type": "catalogue",
+  "title": "CubeWerx Sentinel-1 Catalogue",
+  "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+  "links": [
+    {
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/sentinel1cat",
+      "rel": "collection",
+      "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+    }
+  ]
+}

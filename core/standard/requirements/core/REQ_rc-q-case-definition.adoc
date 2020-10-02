@@ -1,0 +1,19 @@
+[[req_core_rc-q-case-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/rc-q-case-definition*
+^|A |The operation SHALL support a parameter `q-case` with the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: q-case
+in: query
+required: false
+schema:
+  type: boolean
+  default: flase
+style: form
+explode: false
+----
+^|B |A value of `true` indicates that the search SHALL be case sensitive; a value of `false` indicates that the search shall be case in-sensitive.
+|===

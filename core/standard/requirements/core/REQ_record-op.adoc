@@ -1,0 +1,7 @@
+[[req_core_record-op]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/record-op*
+^|A |For every record in a record collection (path `/collections/{catalogueId}`), the server SHALL support the HTTP GET operation at the path `/collections/{catalogueId}/items/{recordId}`.
+^|B |The parameter `cataloagueId` is each `id` property in the collections response (JSONPath: `$.collections[*].id`) where the item type is specified as `record`. `recordId` is a local identifier of the record.
+|===

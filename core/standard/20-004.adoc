@@ -1,11 +1,11 @@
-:Title: OGC API - Records - Part 1: Core
-:titletext: OGC API - Records - Part 1: Core
+:Title: DRAFT OGC API - Records - Part 1: Core
+:titletext: DRAFT OGC API - Records - Part 1: Core
 :doctype: book
 :encoding: utf-8
 :lang: en
 :toc:
 :toc-placement!:
-:toclevels: 3
+:toclevels: 4
 :sectnums:
 :sectnumlevels: 4
 :sectanchors:
@@ -29,7 +29,7 @@
 |Internal reference number of this OGC(R) document: 20-004
 |Version: 0.0.1
 |Category: OGC(R) Implementation Specification
-|Editor: Charles Heazel, Panagiotis (Peter) A. Vretanos
+|Editors: Charles Heazel, Tom Kralidis, Panagiotis (Peter) A. Vretanos
 |===
 
 [cols = "^", frame = "none"]
@@ -48,6 +48,8 @@
 |===
 |*Warning*
 |===
+
+The OGC API - Records specification is still a work in progress. Please be aware that the specification document that is in this repository is not yet in a state that could be useful to anyone who has not been attending the bi-weekly standards working group (SWG) meetings and/or who is not actively working on the document. The SWG is working diligently to update the specification so please refer back to this readme periodically for any status updates.
 
 This document is not an OGC Standard. This document is distributed for review and comment. This document is subject to change without notice and may not be referred to as an OGC Standard.
 
@@ -96,20 +98,16 @@ include::clause_6_overview.adoc[]
 
 include::clause_7_core.adoc[]
 
-include::clause_8_media_types.adoc[]
+include::clause_8_collections.adoc[]
 
-include::clause_10_HTML.adoc[]
+include::clause_9_opensearch.adoc[]
 
-include::clause_11_JSON.adoc[]
+include::clause_10_encodings.adoc[]
 
-include::clause_12_XML.adoc[]
+include::clause_11_oas.adoc[]
 
-include::clause_13_oas.adoc[]
+include::clause_12_media_types.adoc[]
 
-include::annex_ats.adoc[]
-
-include::annex_history.adoc[]
-
-include::annex_bibliography.adoc[]
+include::clause_13_security.adoc[]
 
 <<<

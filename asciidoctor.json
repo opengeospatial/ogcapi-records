@@ -1,0 +1,17 @@
+{
+        "0":  {
+                "OGC_doc_number": "20-004",
+                "urn":"http://www.opengis.net/doc/is/ogcapi-records-1/1.0",
+                "title":"OGC API - Records - Part 1: Core",
+                "path":"core/standard/20-004.adoc",
+                "options": ["--trace"],
+                "a":[
+                        "data-uri",
+                        "stylesdir=./resources/stylesheets",
+                        "dot=/usr/bin/dot"
+                ],
+                "r":[
+                        "asciidoctor-diagram"
+                ]
+        }
+}

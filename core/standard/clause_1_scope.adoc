@@ -1,2 +1,11 @@
 == Scope
-This OGC API Records (https://github.com/opengeospatial/ogcapi-records[https://github.com/opengeospatial/ogcapi-records]) specification { _expand on the scope of this standard here}__
+
+This document specifies the behaviour of an API that supports the ability to
+search collections of descriptive information, called records, about resources
+such as data collections, services, processes, styles, code lists and other
+related resources.  Records represent resource characteristics that can be
+queried and presented for evaluation and further processing by both humans
+and software.
+
+This specification defines a list of core queryables and a set of core query
+parameter organized into X conformance classes.
