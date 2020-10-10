@@ -128,7 +128,7 @@ List of catalogues:
 
 * http://geoss.esri.com/ogcrecords/collections
 
-Describe MSC discovery metadata catalogue
+Describe geoportal_264 catalogue:
 
 * TODO - geoss.esri.com/ogcrecords/master 
 
