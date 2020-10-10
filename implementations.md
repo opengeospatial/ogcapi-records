@@ -10,6 +10,7 @@ Servers:
 
 * [CubeWerx Inc.](#cubewerx-inc)
 * [pygeoapi](#pygeoapi)
+* [Esri Inc.](#esri-inc)
 
 Clients:
 * [OWSLib](#owslib)
@@ -106,6 +107,39 @@ Single record:
 
 * https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2
 * https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2&f=json
+
+## Esri Inc
+
+This Esri Geoportal Server 2.6.4 [http://geoss.esri.com/geoportal_264](public sanbox) has now been extended with a work-in-progress implementation of the OGC Records API.
+
+Landing page:
+
+* http://geoss.esri.com/ogcrecords
+
+API document:
+
+* http://geoss.esri.com/ogcrecords/api
+
+Conformance page:
+
+* http://geoss.esri.com/ogcrecords/conformance
+
+List of catalogues:
+
+* http://geoss.esri.com/ogcrecords/collections
+
+Describe MSC discovery metadata catalogue
+
+* TODO - geoss.esri.com/ogcrecords/master 
+
+Queryables:
+
+* TODO - geoss.esri.com/ogcrecords/collections/master/queryables
+
+Records:
+
+* http://geoss.esri.com/ogcrecords/collections/master/items
+
 
 ## OWSLib
 
