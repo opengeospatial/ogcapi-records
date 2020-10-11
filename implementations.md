@@ -114,19 +114,19 @@ This Esri Geoportal Server 2.6.4 [public sanbox](http://geoss.esri.com/geoportal
 
 Landing page:
 
-* http://geoss.esri.com/ogcrecords
+* https://geoss.esri.com/ogcrecords
 
 API document:
 
-* http://geoss.esri.com/ogcrecords/api
+* https://geoss.esri.com/ogcrecords/api
 
 Conformance page:
 
-* http://geoss.esri.com/ogcrecords/conformance
+* https://geoss.esri.com/ogcrecords/conformance
 
 List of catalogues:
 
-* http://geoss.esri.com/ogcrecords/collections
+* https://geoss.esri.com/ogcrecords/collections
 
 Describe geoportal_264 catalogue:
 
@@ -138,7 +138,7 @@ Queryables:
 
 Records:
 
-* http://geoss.esri.com/ogcrecords/collections/master/items
+* https://geoss.esri.com/ogcrecords/collections/master/items
 
 
 ## OWSLib
