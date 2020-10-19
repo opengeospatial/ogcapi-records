@@ -274,30 +274,35 @@ The query parameters `type`, `q`, `externalids` and `sortby` are specific to API
 
 This clause provides a brief description of the query parameters inherited from API - Common and requirements for the API - Records-specific parameters.
 
+[[core-query-parameters-bbox]]
 ===== Parameter bbox
 
 The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
 include::requirements/core/REQ_rc-bbox-parameter.adoc[]
 
+[[core-query-parameters-datetime]]
 ===== Parameter datetime
 
 The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
 include::requirements/core/REQ_rc-datetime-parameter.adoc[]
 
+[[core-query-parameters-limit]]
 ===== Parameter limit
 
 The limit parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
 
 include::requirements/core/REQ_rc-limit-parameter.adoc[]
 
+[[core-query-parameters-type]]
 ===== Parameter type
 
 include::requirements/core/REQ_rc-type-definition.adoc[]
 
 include::requirements/core/REQ_rc-type-response.adoc[]
 
+[[core-query-parameters-q]]
 ===== Parameter q
 
 include::requirements/core/REQ_rc-q-definition.adoc[]
@@ -312,6 +317,7 @@ include::requirements/core/REQ_rc-extids-definition.adoc[]
 
 include::requirements/core/REQ_rc-extids-response.adoc[]
 
+[[core-query-parameters-sortby]]
 ===== Parameter sortby
 
 include::requirements/core/REQ_rc-sortby-definition.adoc[]
@@ -354,14 +360,14 @@ include::recomendations/core/PER_additional-properties.adoc[]
 [cols="20,40,40",options="header"]
 |===
 |Queryables |Requirement |Description
-|recordid |M |A unique record identifier assigned by the server.
-|recordcreated |M |The date this record was created in the server.
-|recordmodified |M |The most recent date on which the record was changed.
+|id |M |A unique record identifier assigned by the server.
+|created |M |The date this record was created in the server.
+|changed |M |The most recent date on which the record was changed.
 |title |M |A human-readable name given to the resource.
 |description |M |A free-text description of the resource.
 |keywords |M |A list of keywords or tag associated with the resource.
 |type |M |The nature or genre of the resource.
-|language |M |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
+|language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
 |externalid |O |An identifier for the resource assigned by an external entity.
 |modified |O |The more recent date on which the resource was changed.
 |publisher |O |The entity making the resource available.
