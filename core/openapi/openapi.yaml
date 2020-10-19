@@ -171,11 +171,11 @@ paths:
   '/collections/{collectionId}/sortables':
     get:
       tags:
-        - Collection
-      summary: 'description of the sorting capabilities offerec on the collection in the catalog'
+        - Sortable
+      summary: 'description of the sorting capabilities offered on the collection in the catalog'
       description: |-
         List of sortable fields in this collection.
-      operationId: getCoverageOffering
+      operationId: getSortables
       parameters:
         - name: collectionId
           in: path
