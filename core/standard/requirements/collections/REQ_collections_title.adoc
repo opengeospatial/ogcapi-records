@@ -1,0 +1,6 @@
+[[req_collections_title]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/collections/title*
+^|A |The `title` property shall be present in the collection information object.
+|===

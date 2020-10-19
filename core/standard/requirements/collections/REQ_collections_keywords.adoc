@@ -1,0 +1,7 @@
+[[req_collections_keywords]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/collections/keywords*
+^|A |The `keywords` property shall be present in the collection information object.
+^|B |The value of the `keywords` property shall be a list of keywords or tags associated with the collection.
+|===

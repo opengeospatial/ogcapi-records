@@ -1,0 +1,6 @@
+[[req_collections_description]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/collections/description*
+^|A |The `description` property shall be present in the collection information object.
+|===
