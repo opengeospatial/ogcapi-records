@@ -656,13 +656,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#parameters-section">7.5.2. Parameters</a>
 <ul class="sectlevel4">
 <li><a href="#_overview">7.5.2.1. Overview</a></li>
-<li><a href="#_parameter_bbox">7.5.2.2. Parameter bbox</a></li>
-<li><a href="#_parameter_datetime">7.5.2.3. Parameter datetime</a></li>
-<li><a href="#_parameter_limit">7.5.2.4. Parameter limit</a></li>
-<li><a href="#_parameter_type">7.5.2.5. Parameter type</a></li>
-<li><a href="#_parameter_q">7.5.2.6. Parameter q</a></li>
+<li><a href="#core-query-parameters-bbox">7.5.2.2. Parameter bbox</a></li>
+<li><a href="#core-query-parameters-datetime">7.5.2.3. Parameter datetime</a></li>
+<li><a href="#core-query-parameters-limit">7.5.2.4. Parameter limit</a></li>
+<li><a href="#core-query-parameters-type">7.5.2.5. Parameter type</a></li>
+<li><a href="#core-query-parameters-q">7.5.2.6. Parameter q</a></li>
 <li><a href="#_parameter_externalids">7.5.2.7. Parameter externalids</a></li>
-<li><a href="#_parameter_sortby">7.5.2.8. Parameter sortby</a></li>
+<li><a href="#core-query-parameters-sortby">7.5.2.8. Parameter sortby</a></li>
 <li><a href="#_combinations_of_filtering_parameters">7.5.2.9. Combinations of Filtering Parameters</a></li>
 </ul>
 </li>
@@ -687,13 +687,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_requirements_class_collections">8. Requirements Class "Collections"</a>
 <ul class="sectlevel2">
 <li><a href="#collections-overview">8.1. Overview</a></li>
-<li><a href="#_heading">8.2. Heading</a></li>
+<li><a href="#_collections_metadata">8.2. Collections Metadata</a></li>
+<li><a href="#_collection_information">8.3. Collection information</a></li>
+<li><a href="#_examples_2">8.4. Examples</a></li>
 </ul>
 </li>
 <li><a href="#_requirements_class_opensearch">9. Requirements Class "OpenSearch"</a>
 <ul class="sectlevel2">
 <li><a href="#opensearch-overview">9.1. Overview</a></li>
-<li><a href="#_heading_2">9.2. Heading</a></li>
+<li><a href="#_heading">9.2. Heading</a></li>
 </ul>
 </li>
 <li><a href="#requirements-class-json-clause">10. Requirements Class JSON</a>
@@ -2163,7 +2165,7 @@ properties:
 </div>
 </div>
 <div class="sect4">
-<h5 id="_parameter_bbox"><a class="anchor" href="#_parameter_bbox"></a>7.5.2.2. Parameter bbox</h5>
+<h5 id="core-query-parameters-bbox"><a class="anchor" href="#core-query-parameters-bbox"></a>7.5.2.2. Parameter bbox</h5>
 <div class="paragraph">
 <p>The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.</p>
 </div>
@@ -2201,7 +2203,7 @@ properties:
 </table>
 </div>
 <div class="sect4">
-<h5 id="_parameter_datetime"><a class="anchor" href="#_parameter_datetime"></a>7.5.2.3. Parameter datetime</h5>
+<h5 id="core-query-parameters-datetime"><a class="anchor" href="#core-query-parameters-datetime"></a>7.5.2.3. Parameter datetime</h5>
 <div class="paragraph">
 <p>The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.</p>
 </div>
@@ -2239,7 +2241,7 @@ properties:
 </table>
 </div>
 <div class="sect4">
-<h5 id="_parameter_limit"><a class="anchor" href="#_parameter_limit"></a>7.5.2.4. Parameter limit</h5>
+<h5 id="core-query-parameters-limit"><a class="anchor" href="#core-query-parameters-limit"></a>7.5.2.4. Parameter limit</h5>
 <div class="paragraph">
 <p>The limit parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.</p>
 </div>
@@ -2290,7 +2292,7 @@ properties:
 </table>
 </div>
 <div class="sect4">
-<h5 id="_parameter_type"><a class="anchor" href="#_parameter_type"></a>7.5.2.5. Parameter type</h5>
+<h5 id="core-query-parameters-type"><a class="anchor" href="#core-query-parameters-type"></a>7.5.2.5. Parameter type</h5>
 <table id="req_core_rc-type-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -2344,7 +2346,7 @@ explode: false</code></pre>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_parameter_q"><a class="anchor" href="#_parameter_q"></a>7.5.2.6. Parameter q</h5>
+<h5 id="core-query-parameters-q"><a class="anchor" href="#core-query-parameters-q"></a>7.5.2.6. Parameter q</h5>
 <table id="req_core_rc-q-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -2510,7 +2512,7 @@ explode: false</code></pre>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_parameter_sortby"><a class="anchor" href="#_parameter_sortby"></a>7.5.2.8. Parameter sortby</h5>
+<h5 id="core-query-parameters-sortby"><a class="anchor" href="#core-query-parameters-sortby"></a>7.5.2.8. Parameter sortby</h5>
 <table id="req_core_rc-sortby-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -2734,17 +2736,17 @@ items:
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">recordid</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A unique record identifier assigned by the server.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">recordcreated</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">created</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The date this record was created in the server.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">recordmodified</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">changed</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The most recent date on which the record was changed.</p></td>
 </tr>
@@ -2770,7 +2772,7 @@ items:
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">language</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.</p></td>
 </tr>
 <tr>
@@ -3102,10 +3104,549 @@ properties:
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The purpose of the conformance class is to specify requirements that extend
+the behaviour at the <code>/collections</code> endpoint to make it queryable by
+OGC API Records clients.</p>
+</div>
+<div class="paragraph">
+<p>The conformance class defines the following extensions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>It extends the set of query parameters defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#11-collections-metadata">Collections Metadata</a> section to support the richer set of query parameters defined in the <a href="#parameters-section">Parameters</a> clause of this specification.</p>
+</li>
+<li>
+<p>It extends the schema of the collection information object defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#12-collection-information">Collection Information</a> clause of the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension to add additional keys/properties that are required by OGC API Records.</p>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_heading"><a class="anchor" href="#_heading"></a>8.2. Heading</h3>
+<h3 id="_collections_metadata"><a class="anchor" href="#_collections_metadata"></a>8.2. Collections Metadata</h3>
+<div class="paragraph">
+<p>The <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#11-collections-metadata">Collections Metadata</a> clause of the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension defines the <code>bbox</code>, <code>datetime</code> and 'limit' query parameters for the <code>/collections</code> resource.</p>
+</div>
+<table id="req_collections_query-params" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 23</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/query-params</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The HTTP GET operation at the <code>/collections</code> path shall support the following additional query parameters defined in the <a href="#parameters-section">Parameters</a> section:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#core-query-parameters-type">type</a></p>
+</li>
+<li>
+<p><a href="#core-query-parameters-q">q</a></p>
+</li>
+<li>
+<p><a href="#core-query-parameters-sortby">sortby</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The collections metadata (i.e. HTTP GET on the <code>/collections</code> path) is defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response">Collections Metadata</a> clause of the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension.</p>
+</div>
+<table id="req_collections_query-response" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 24</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/query-response</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The response shall only contain those collection information objects that satisfy all the query parameters specified with the HTTP GET operation (i.e. one or more of bbox, datetime, limit, type, q, sortby).</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_collection_information"><a class="anchor" href="#_collection_information"></a>8.3. Collection information</h3>
+<div class="paragraph">
+<p>The collection infromation object is defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#12-collection-information">Collection Information</a> clause of the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension.</p>
+</div>
+<div class="paragraph">
+<p>The following table cross-walks the properties of the collection information
+object with the core queryables.</p>
+</div>
+<table id="record-collection-crosswalk" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 13. Crosswalk of core queryables with collection information object properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Collection property</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Requirement</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Core Queryable</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">itemType</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">extent</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">extent</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">crs</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following requirements specify additional properties that a compliant
+implementation of this conformance class must add to the collection
+information object.</p>
+</div>
+<table id="req_collections_title" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 25</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/title</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>title</code> property shall be present in the collection information object.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="req_collections_description" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 26</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/description</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>description</code> property shall be present in the collection information object.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>No additional requirements are necessary for the <code>extent</code> property.</p>
+</div>
+<div class="paragraph">
+<p>No additional requirements are necessary to the <code>links</code> property.  Since the
+<code>links</code> property is mandatory for the collection information object, it will
+always be present but because it is an optional core queryables, catalogue
+clients will either know how to handle it or they will ignore it.</p>
+</div>
+<table id="req_collections_type" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 27</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/type</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>type</code> property shall be present in the collection information object.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The value of the <code>type</code> property shall be the same as the value of the <code>itemType</code> property if the later is present.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>Otherwise, the value of the <code>type</code> property shall denote the resource type of the collection (e.g. feature, coverage, map, etc.).</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="req_collections_created" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 28</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/created</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>created</code> property shall be present in the collection information object.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The value of the <code>created</code> property shall conform to the date-time production of <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The value of the <code>created</code> property shall indicate the date-time the collection was created.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="req_collections_changed" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 29</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/created</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>changed</code> property shall be present in the collection information object.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The value of the <code>changed</code> property shall conform to the date-time production of <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The value of the <code>changed</code> property shall indicate the  most recent date on which the collection was changed.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Adding, modifying, or deleting items from a collections are all examples of changes to that collection.
+</td>
+</tr>
+</table>
+</div>
+<table id="req_collections_keywords" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 30</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/keywords</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>keywords</code> property shall be present in the collection information object.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The value of the <code>keywords</code> property shall be a list of keywords or tags associated with the collection.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="rec_collections_additional-properties" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 1</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/rec/collections/additional-properties</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <a href="#collection-additional-properties">Table 9</a> table contains a list of recommended additional properties that may be added to a collection information object to enhance the searchability of the collections offered at an OGC API endpoint.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="collection-additional-properties" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 14. Additional collection information properties</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Property</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">language</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">publisher</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The entity making the resource available.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">themes</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A knowledge orgnaization system used to classify the resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">formats</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of available distributions for the resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">contactpoint</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">An entity to contact about the resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A legal document under which the resource is made available.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">rights</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A statement that concerns all rights not addressed by the license such as a copyright statement.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">associations</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for accessing the resource or links to other resources associated with this resource.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The collections metadata response is defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response">Collections Metadata</a> clause on the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension.</p>
+</div>
+<table id="req_collections_schema" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 31</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/collections/response</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The content of that response shall be based upon the following OpenAPI 3.0 schema that extends the schema of the collection information object as defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response-1">Collection Information</a> clause of the  <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> specification:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">    collection:
+      type: object
+      required:
+        - id
+        - created
+        - changed
+        - title
+        - description
+        - keywords
+        - type
+      properties:
+        id:
+          description: identifier of the collection
+          type: string
+        created:
+          description: the date this collection was created in the server
+          type: string
+          format: date-time
+        changed:
+          description: the most recent date on which the collection was changed
+          type: string
+          format: date-time
+        title:
+          description: human readable title of the collection
+          type: string
+        description:
+          description: a description of the features in the collection
+          type: string
+        keywords:
+          description: A list of keywords or tag associated with the collection
+          type: array
+          items:
+           type: string
+        type:
+          description: the nature or genre of the items of the collections (e.g. feature, coverage)
+          type: string
 
+
+        itemType:
+          description: indicator about the type of the items in the collection (the default value is 'feature').
+          type: string
+          default: feature
+        language:
+          description: refers to the natural language used for textual values (i.e. titles, descriptions, etc) of items in the collection
+          type: string
+
+        publisher:
+          description: the entity making the collection available
+          type: string
+        themes:
+          description: list of classifications association with the collection from a knowlege organization system
+          type: array
+          items:
+             type: string
+             format: uri
+        formats:
+          description: list of available distributions for the collection
+          type: array
+          items:
+            type: string
+        contactpoint:
+          description: entity to contact about the collection
+          type: object
+        license:
+          description: legal document under which the collection is made available.
+          type: string
+        rights:
+          description: a statement that concerns all rights not addressed by the license such as a copyright statement.
+          type: string
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/link"
+        associations:
+          type: array
+          items:
+            $ref: "#/components/schemas/link"
+        extent:
+          $ref: "#/components/schemas/extent"
+        crs:
+          description: the list of coordinate reference systems supported by the service
+          type: array
+          items:
+            type: string
+          default:
+            - http://www.opengis.net/def/crs/OGC/1.3/CRS84</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_2"><a class="anchor" href="#_examples_2"></a>8.4. Examples</h3>
+<div class="paragraph">
+<p>Example 1: List all the collections that lie within a specific bounding box and contains the the keyword <code>weather</code>.</p>
+</div>
+<hr>
+<div class="literalblock">
+<div class="content">
+<pre>   Client                                                          Server
+     |                                                               |
+     |   GET /collections?bbox=￼41.875315,-96.767601,56.732861,-73.47|
+     |                          6586&amp;q=weather   HTTP/1.1            |
+     |   Accept: application/json                                    |
+     |--------------------------------------------------------------&gt;|
+     |                                                               |
+     |   HTTP/1.1 200 OK                                             |
+     |   Content-Type: application/json                              |
+     |                                                               |
+     |   Need example output here...                                 |
+     |&lt;--------------------------------------------------------------|
+---</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3142,7 +3683,7 @@ properties:
 </table>
 </div>
 <div class="sect2">
-<h3 id="_heading_2"><a class="anchor" href="#_heading_2"></a>9.2. Heading</h3>
+<h3 id="_heading"><a class="anchor" href="#_heading"></a>9.2. Heading</h3>
 
 </div>
 </div>
@@ -3232,7 +3773,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 23</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 32</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/json/api-common</strong></p>
 </div></div></td>
@@ -3264,7 +3805,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 24</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 33</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/json/conformance</strong></p>
 </div></div></td>
@@ -3373,7 +3914,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 25</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 34</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/html/api-common</strong></p>
 </div></div></td>
@@ -3405,7 +3946,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 26</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 35</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/html/conformance</strong></p>
 </div></div></td>
@@ -3511,7 +4052,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 27</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 36</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/xml/api-common</strong></p>
 </div></div></td>
@@ -3543,7 +4084,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 28</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 37</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/xml/conformance</strong></p>
 </div></div></td>
@@ -3611,7 +4152,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 29</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 38</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>/req/oas30/oas-common</strong></p></td>
 </tr>
 <tr>
@@ -3634,7 +4175,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 30</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 39</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/oas30/conformance</strong></p>
 </div></div></td>
@@ -3698,10 +4239,10 @@ properties:
 <div class="sect2">
 <h3 id="_media_types"><a class="anchor" href="#_media_types"></a>14.3. Media Types</h3>
 <div class="paragraph">
-<p>A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <a href="#api-records-mime-types">Table 8</a>.</p>
+<p>A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <a href="#api-records-mime-types">Table 10</a>.</p>
 </div>
 <table id="api-records-mime-types" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 13. API - Records MIME Types</caption>
+<caption class="title">Table 15. API - Records MIME Types</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3742,7 +4283,7 @@ properties:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 31</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 40</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/rc-mediatype-default</strong></p>
 </div></div></td>
@@ -3789,7 +4330,7 @@ properties:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-18 22:21:58 -0400
+Last updated 2020-10-19 22:22:32 -0400
 </div>
 </div>
 </body>
