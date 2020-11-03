@@ -2540,17 +2540,16 @@ schema:
   minItems: 1
   items:
     type: string
-    pattern: [A-Za-z_][A-Za-z_0-9]*[:]?([Aa][Ss][Cc]</code></pre>
+    pattern: [A-Za-z_][A-Za-z_0-9]*[:]?([Aa][Ss][Cc]|[Dd][Ee][Ss][Cc])?
+style: form
+explode: false</code></pre>
 </div>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">[Dd][Ee][Ss][Cc])?
-style: form
-explode: false
-----</p></td>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>B</p>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The default sort order SHALL be ascending.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2570,11 +2569,11 @@ explode: false
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>If the <code>sortby</code> parameter is specified, then the records in a response SHALL be order by the keys and sort directions (i.e. <code>asc</code> or <code>desc</code>) specified.</p>
+<p>If the <code>sortby</code> parameter is specified, then the records in a response SHALL be ordered by the keys and sort directions (i.e. <code>asc</code> or <code>desc</code>) specified.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p>The specific set of keys that may used for sorting SHALL be specified by the <code>/collections/{catalogueId}/sortables</code> resource.</p>
 </div></div></td>
@@ -4330,7 +4329,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-01 22:22:20 -0500
+Last updated 2020-11-02 22:22:46 -0500
 </div>
 </div>
 </body>
