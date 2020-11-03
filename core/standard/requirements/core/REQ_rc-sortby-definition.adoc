@@ -5,7 +5,7 @@
 ^|A |The operation SHALL support a parameter `sorby` with the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
 [source,YAML]
-----
+-----
 name: sortby
 in: query
 required: false
@@ -14,9 +14,10 @@ schema:
   minItems: 1
   items:
     type: string
-    pattern: [A-Za-z_][A-Za-z_0-9]*[:]?([Aa][Ss][Cc]|[Dd][Ee][Ss][Cc])?
+    pattern: [A-Za-z_][A-Za-z_0-9]*[:]?([Aa][Ss][Cc]\|[Dd][Ee][Ss][Cc])?
 style: form
 explode: false
-----
+-----
+
 ^|B |The default sort order SHALL be ascending.
 |===
