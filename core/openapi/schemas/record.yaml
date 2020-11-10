@@ -43,6 +43,12 @@ properties:
       keywords:
         type: array
         description: The topic or topics of the resource. Typically represented using keywords, tags, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary.
+        items:
+           type: string
+      keywords-codespace:
+         type: string
+         description: A reference to a controlled vocabulary used for the keywords.
+         format: uri
       type:
         type: string
         description: The nature or genre of the resource.
