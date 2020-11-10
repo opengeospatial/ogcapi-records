@@ -16,7 +16,7 @@ properties:
     $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml
   created:
     type: string
-    description: The of creation of this record.
+    description: Date of creation of this record.
     format: date-time
   modified:
     type: string
