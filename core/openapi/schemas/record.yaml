@@ -75,7 +75,7 @@ properties:
         items:
           type: object
           properties:
-            theme:
+            category:
               type: string
               description: A category of the resource.
               format: uri
@@ -99,14 +99,14 @@ properties:
       rights:
         type: string
         description: A statement that concerns all rights not addresses by the license such as a copyright statement.
+      associations:
+        type: array
+        description: A list of links for accessing the resource (e.g. download link, access link) in one of the supported distribution formats and/or links to other resources associated with this resource.
+        items:
+          $ref: https://github.com/opengeospatial/oapi_common/blob/master/standard/openapi/schemas/link.yaml
       additionalProperties: true
   links:
     type: array
     description: A list of links for navigating the API (e.g. prev, next, etc.).
-    items:
-      $ref: https://github.com/opengeospatial/oapi_common/blob/master/standard/openapi/schemas/link.yaml
-  associations:
-    type: array
-    description: A list of links for accessing the resource (e.g. download link, access link) in one of the supported distribution formats and/or links to other resources associated with this resource.
     items:
       $ref: https://github.com/opengeospatial/oapi_common/blob/master/standard/openapi/schemas/link.yaml
