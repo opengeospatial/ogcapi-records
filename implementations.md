@@ -11,6 +11,7 @@ Servers:
 * [CubeWerx Inc.](#cubewerx-inc)
 * [pygeoapi](#pygeoapi)
 * [Esri Inc.](#esri-inc)
+* [GeoNetwork opensource](#geonetwork-opensource)
 
 Clients:
 * [OWSLib](#owslib)
@@ -140,6 +141,14 @@ Records:
 
 * https://geoss.esri.com/ogcrecords/collections/master/items
 * https://geoss.esri.com/ogcrecords/collections/master/items/89ed638c5eed41df9fe25473677d9df4 - get individual item based on item identifier
+
+## GeoNetwork opensource
+
+[GeoNetwork](https//geonetwork-opensource.org) is a java/xml oriented catalogue application. As part of an ongoing effort, the GeoNetwork API component is extended to support OGC API Records. The work in progress is available at https://github.com/geonetwork/geonetwork-microservices/pull/23.
+
+GeoNetwork has a concept of [sub-portals](https://geonetwork-opensource.org/manuals/trunk/en/administrator-guide/configuring-the-catalog/portal-configuration.html). In the OGC API Records implementation these subportals are available as collections of records. GeoNetwork uses an [Elastic Search](https://elastic.co) backend, supporting a configurable set of queryables. Records are available in various encodings, such as text/html, application/geo+json, application/dcat.ld+json, application/iso19139+xml, application/iso19115-3+xml, application/dublin-core+xml, application/datacite+xml, through the accept-header mechanism. The html encoding of records contains an embedded schema-org json-ld snippet to facilitate search engines. A [Sitemap](https://sitemaps.org) endpoint is available to notify the search engine of available records.
+
+GeoNetwork supports basic authentication, but can also be set up with alternative authentication mechanisms to facilitate autorisation on subsets of records.
 
 ## OWSLib
 
