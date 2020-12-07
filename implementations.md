@@ -65,49 +65,49 @@ Meteorological Service of Canada as part of the WMO Information System.
 
 Landing page:
 
-* https://dev.api.weather.gc.ca/msc-wis-dcpc
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/?f=json
+* http://147.102.109.27/pygeoapi-oarec
+* http://147.102.109.27/pygeoapi-oarec/?f=json
 
 API document:
 
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/openapi
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/openapi?f=json
+* http://147.102.109.27/pygeoapi-oarec/openapi
+* http://147.102.109.27/pygeoapi-oarec/openapi?f=json
 
 Conformance page:
 
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/conformance
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/conformance?f=json
+* http://147.102.109.27/pygeoapi-oarec/conformance
+* http://147.102.109.27/pygeoapi-oarec/conformance?f=json
 
 List of catalogues:
 
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections?f=json
+* http://147.102.109.27/pygeoapi-oarec/collections
+* http://147.102.109.27/pygeoapi-oarec/collections?f=json
 
 Describe MSC discovery metadata catalogue
 
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata?f=json
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc?f=json
 
 Queryables:
 
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/queryables
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/queryables
 
 Records:
 
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?title=metar
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?title=metar&f=json
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?bbox=-100,40,-80,50&title=pilot
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?bbox=-100,40,-80,50&title=pilot&f=json
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?bbox=-100,40,-80,50&datetime=2000-11-11/..
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?bbox=-100,40,-80,50&datetime=2000-11-11/..&f=json
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?q=forecast
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items?q=forecast&f=json
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?title=metar
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?title=metar&f=json
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&title=pilot
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&title=pilot&f=json
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&datetime=2000-11-11/..
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&datetime=2000-11-11/..&f=json
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?q=forecast
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?q=forecast&f=json
 
 Single record:
 
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2
-* https://dev.api.weather.gc.ca/msc-wis-dcpc/collections/discovery-metadata/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2&f=json
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2
+* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2&f=json
 
 ## Esri Inc
 
