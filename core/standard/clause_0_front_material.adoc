@@ -1,6 +1,8 @@
 [big]*i.     Abstract*
 
-Blah, blah, blah, simple access API, blah, blah, blah, making resources discoveryable , blah, blah, blah, associations, blah, blah, blah, core queryables, blah, blah, core query prameters, blah, blah, blah, OpenAPI to support developers, blah, blah, blah.
+The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, etc.), but define resource-centric APIs that take advantage of modern web development practices. 
+
+This document defines the OGC API for Records. A Record is a way of making a resource discoverable. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, assets, services or widgets. The OGC API - Records provides a way to query or browse a curated set of Records known as a catalogue. 
 
 [#tldr,reftext='{table-caption} {counter:table-num}']
 .Overview of resources, applicable HTTP methods and links to the document sections[[table_1]][[tldnr]]
@@ -19,7 +21,7 @@ Blah, blah, blah, simple access API, blah, blah, blah, making resources discover
 
 The following are keywords to be used by search engines and document catalogues.
 
-ogcdoc, OGC document,  <tags separated by commas>
+ogcdoc, OGC document, OGC API, catalogue, record, resource
 
 [big]*iii.   Preface*
 
