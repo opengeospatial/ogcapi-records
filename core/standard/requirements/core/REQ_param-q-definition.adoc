@@ -1,0 +1,20 @@
+[[req_core_param-q-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/param-q-definition*
+^|A |A Records API SHALL support the Keyword Search (q) parameter for the operation.
+^|B |The `q` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: q
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+----
+^|B |Keyword searches using the `q` parameter shall be case insensitive.
+|===

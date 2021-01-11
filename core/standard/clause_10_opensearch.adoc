@@ -1,0 +1,6 @@
+== Requirements Class "OpenSearch"
+
+[[opensearch-overview]]
+=== Overview
+
+include::requirements/requirements_class_opensearch.adoc[]

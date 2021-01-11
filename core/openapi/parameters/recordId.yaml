@@ -1,0 +1,6 @@
+name: recordId
+in: path
+description: local identifier of a record
+required: true
+schema:
+  type: string

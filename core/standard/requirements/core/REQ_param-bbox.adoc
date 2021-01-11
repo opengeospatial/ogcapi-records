@@ -1,0 +1,8 @@
+[[req_core_param-bbox]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/param-bbox*
+^|A |A Records API SHALL support the Bounding Box (bbox) parameter for the operation.
+^|B |Requests which include the Bounding Box parameter SHALL comply with API - Common requirement `http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-definition`.
+^|C |Responses to Bounding Box requests SHALL comply with API - Common requirement `http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-response`.
+|===

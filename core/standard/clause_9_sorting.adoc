@@ -1,0 +1,112 @@
+== Requirements Class "Sorting"
+
+[[sorting-overview]]
+=== Overview
+
+include::requirements/requirements_class_sorting.adoc[]
+
+The `Sorting` Requirements Class defines the requirements for specifying how records in a response should be ordered for presentation.
+
+[[sorting-parameter-sortby]]
+=== Parameter sortby
+
+include::requirements/sorting/REQ_sortby-definition.adoc[]
+
+NOTE: The core definition of the `sortby` parameter only defines a single directive that controls the sort order of the corresponding property.  It is anticipated extensions would add additional search facets such as directives for:
+handling missing values; specifying a high value indicating that the corresponding property be sorted as if it were the highest possible value; specifying a low value indicating that the corresponding property be sorted as if it were the lowest possible value; allowing records to be omitted from the result set based on their sort order; specify a fixed value  and a fixed value that sorts the corresponding property as if it were the specified fixed value.
+
+include::requirements/sorting/REQ_sortby-response.adoc[]
+
+include::requirements/sorting/REQ_sortables-op.adoc[]
+
+include::requirements/sorting/REQ_sortables-success.adoc[]
+
+[[schema_sortables]]
+.link:http://fix.me/sortables.yaml[Schema for the list of sortables (sortables.yaml)]
+[source,YAML]
+----
+type: object
+required:
+- sortables   
+properties:
+   sortables:
+      type: array
+      items:
+         $ref: sortable.yaml
+----
+
+[[schema_sortable]]
+.link:http://fix.me/sortable.yaml[Schema for a sortable description(sortable.yaml)]
+[source,YAML]
+----
+type: object
+required:
+   - id   
+   - type
+properties:
+   id:
+      description: the identifier/name for the sortable
+      type: string
+   title:
+      description: a human readable title for the sortable
+      type: string
+   description:
+      description: a human-readable narrative describing the sortable
+      type: string
+   language:
+      description: the language used for the title and description
+      type: string
+   type:
+      description: the data type of the sortable
+      type: string
+      enum:
+      - string
+      - number
+      - integer
+      - boolean
+      - spatial
+      - temporal
+   spatial-types:
+      description: the list of allowed spatial geometry types, if known
+      type: string
+      enum:
+      - point
+      - multi-point
+      - curve
+      - multi-curve
+      - surface
+      - multi-surface
+      - solid
+      - multi-solid
+      - aggregate
+      - any
+   temporal-types:
+      description: the list of allowed temporal geometry types, if known
+      type: string
+      enum:
+      - instant
+      - interval
+   links:
+      description: additional links, e.g. to documentation or to the schema of t
+he values
+      type: array
+      items:
+         $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features
+/master/core/openapi/ogcapi-features-1.yaml#/components/schemas/link'
+----
+
+== Examples
+
+[#sortby-example,reftext=`SortBy Example`]
+.sortby Example
+[source]
+----
+.../collections/mycat/items?...&sortby=-updated,recordid&...
+----
+
+[#sortby-extent-example,reftext=`SortBy Extent Example`]
+.sortby Extent Example
+[source]
+----
+.../collections/mycat/items?...&sortby=+extent&...
+----

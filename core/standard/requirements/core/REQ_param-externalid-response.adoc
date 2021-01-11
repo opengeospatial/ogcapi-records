@@ -1,0 +1,6 @@
+[[req_core_param-externalid-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/param-type-response*
+^|A |If the `externalid` parameter is provided by the client, only records whose external identifier, as indicated by the value of the `externalid` core queryable, is equal to one of the listed values SHALL be in the result set.
+|===
