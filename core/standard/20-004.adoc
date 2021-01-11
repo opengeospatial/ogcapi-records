@@ -29,7 +29,7 @@
 |Internal reference number of this OGC(R) document: 20-004
 |Version: 0.0.1
 |Category: OGC(R) Implementation Specification
-|Editors: Charles Heazel, Tom Kralidis, Panagiotis (Peter) A. Vretanos
+|Editors:  Panagiotis (Peter) A. Vretanos, Tom Kralidis, Charles Heazel
 |===
 
 [cols = "^", frame = "none"]
@@ -78,6 +78,7 @@ Recipients of this document are invited to submit, with their comments, notifica
 [small]#Except as contained in this notice, the name of LICENSOR or of any other holder of a copyright in all or part of the Intellectual Property shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Intellectual Property without prior written authorization of LICENSOR or such copyright holder. LICENSOR is and shall at all times be the sole entity that may authorize you or any third party to use certification marks, trademarks or other special designations to indicate compliance with any LICENSOR standards or specifications. This Agreement is governed by the laws of the Commonwealth of Massachusetts. The application to this Agreement of the United Nations Convention on Contracts for the International Sale of Goods is hereby expressly excluded. In the event any provision of this Agreement shall be deemed unenforceable, void or invalid, such provision shall be modified so as to make it valid and enforceable, and as so modified the entire Agreement shall remain in full force and effect. No decision, action or inaction by LICENSOR shall be construed to be a waiver of any rights or remedies available to it.#
 
 <<<
+
 toc::[]
 
 <<<
@@ -98,16 +99,24 @@ include::clause_6_overview.adoc[]
 
 include::clause_7_core.adoc[]
 
-include::clause_8_collections.adoc[]
+// include::clause_8_collections.adoc[]
 
-include::clause_9_opensearch.adoc[]
+include::clause_9_sorting.adoc[]
 
-include::clause_10_encodings.adoc[]
+include::clause_10_opensearch.adoc[]
 
-include::clause_11_oas.adoc[]
+include::clause_11_encodings.adoc[]
 
-include::clause_12_media_types.adoc[]
+include::clause_12_oas.adoc[]
 
-include::clause_13_security.adoc[]
+include::clause_13_media_types.adoc[]
+
+include::clause_14_security.adoc[]
+
+include::annex_ats.adoc[]
+
+include::annex_bibliography.adoc[]
+
+include::annex_history.adoc[]
 
 <<<

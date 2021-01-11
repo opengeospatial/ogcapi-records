@@ -34,7 +34,7 @@ The following table cross-walks the properties of the collection information
 object with the core queryables.
 
 [[record-collection-crosswalk]]
-[#record-collection-crosswalk,reftext='{table-caption} {counter:table-num}']
+[reftext='{table-caption} {counter:table-num}']
 .Crosswalk of core queryables with collection information object properties
 [cols="25,25,25,25",options="header"]
 |===
@@ -67,7 +67,7 @@ include::requirements/collections/REQ_collections_type.adoc[]
 
 include::requirements/collections/REQ_collections_created.adoc[]
 
-include::requirements/collections/REQ_collections_changed.adoc[]
+include::requirements/collections/REQ_collections_updated.adoc[]
 
 NOTE: Adding, modifying, or deleting items from a collections are all examples of changes to that collection.
 

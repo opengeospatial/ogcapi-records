@@ -2,7 +2,7 @@
 
 Blah, blah, blah, simple access API, blah, blah, blah, making resources discoveryable , blah, blah, blah, associations, blah, blah, blah, core queryables, blah, blah, core query prameters, blah, blah, blah, OpenAPI to support developers, blah, blah, blah.
 
-[#tldr,reftext='{table-caption} {counter:table-num}']
+[reftext='{table-caption} {counter:table-num}']
 .Overview of resources, applicable HTTP methods and links to the document sections[[table_1]][[tldnr]]
 [cols="25,35,10,20",options="header"]
 |===

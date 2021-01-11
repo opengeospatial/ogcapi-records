@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/rc-op*
-^|A |A Records API implementation SHALL comply with the API - Common requirement `/req/collections/rc-op`.
+^|A |A Records API implementation SHALL comply with the API - Common requirement `http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-op`.
 ^|B |For API - Records, the API - Common `/req/collections/rc-op` requirement SHALL only apply to collections where the `itemType` is specified as `records`.
 |===

@@ -6,7 +6,7 @@
 |===
 
 [[collection-additional-properties]]
-[#collection-additional-properties,reftext='{table-caption} {counter:table-num}']
+[reftext='{table-caption} {counter:table-num}']
 .Additional collection information properties
 [cols="30,70",options="header"]
 |===

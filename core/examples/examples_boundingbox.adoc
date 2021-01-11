@@ -1,2 +1,0 @@
-
-* Query for catalogue records within a specific bounding box: http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections/sentinel1cat/items?f=json&limit=100&bbox=-69.64,37.76,-56.12,46.63

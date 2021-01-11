@@ -17,9 +17,10 @@ Resources exposed through an OGC API may be accessed through a Universal Resourc
 
 Some resources are also accessible through links on previously accessed resources. Unique relation types are used for each resource.
 
-<<records-paths>> summarizes the access paths and relation types defined in this standard.
+The following table, <<records-paths,Record API Paths>>, summarizes the access paths and relation types defined in this standard.
 
-[#records-paths,reftext='{table-caption} {counter:table-num}']
+[[records-paths]]
+[reftext='{table-caption} {counter:table-num}']
 .Record API Paths
 [width="90%",cols="40,20,40",options="header"]
 |===
@@ -49,7 +50,7 @@ Where:
 [[api-behavior-model-overview]]
 === API Behavior Model
 
-The Record API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows API - Record and CSW implementations to co-exist in a single processing environment.
+The Records API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows API - Record and CSW implementations to co-exist in a single processing environment.
 
 NOTE: Replace the following with a discussion of CSW and API - Record
 
@@ -59,18 +60,24 @@ Discussion has shown that the API model also assumes underlying service and obje
 
 === Search
 
-TBD: Want to include a discussion about the levels of search that a catalogue might offer.
+The Records API offers various levels of search capability of escalating complexity and capability.  At the core is the ability to search the catalogue by specifying:
 
-* Level 1: bbox, datetime, q, type, externalIds
-* Level 2: OpenSearch
-* Level 3: CQL
+* a bounding box
+* a time instant or time period
+* keywords
+* equality predicates based on a subset of core queryables (e.g. by resource type, by external identifier)
+
+This specification also includes a conformance class that allows a catalogue to be searched using  https://portal.opengeospatial.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.
+
+Finally extensions, such as the http://docs.opengeospatial.org/DRAFTS/19-079.html[OGC API - Features - Part 3: Filter and the Common Query Language (CQL)], may be used with the Records API to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.
 
 [[dependencies-overview]]
 === Dependencies
 
-The OGC API - Records standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from API - Common. <<mapping-to-common>> Identifies the OGC API - Common Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
+The OGC API - Records standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from API - Common. The following table, <<mapping-to-common,Mapping API - Records Sections to API - Common Requirements Classes>>, identifies the OGC API - Common Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
 
-[#mapping-to-common,reftext='{table-caption} {counter:table-num}']
+[[mapping-to-common]]
+[reftext='{table-caption} {counter:table-num}']
 .Mapping API - Records Sections to API - Common Requirements Classes
 [width="90%",cols="2,6"]
 |====

@@ -1,7 +1,0 @@
-[[req_core_rc-q-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/rc-q-response*
-^|A |If the `q` parameter is provided by the client, only records whose text fields contains one or more of the specified search terms SHALL be in the result set.
-^|B |The specific set of text keys/fields/properties of a record to which the `q` operator be applied is left to the discretion of the implementation.
-|===

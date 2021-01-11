@@ -30,7 +30,7 @@ Further, in any class where an attribute name or association role name is identi
 
 UML diagrams and XML code fragments adhere to the namespace conventions shown in <<namespace-mapping-conventions>>. The namespace prefixes used in this document are not normative and are merely chosen for convenience. The namespaces to which the prefixes correspond are normative, however.
 
-[#namespace-mapping-conventions,reftext='{table-caption} {counter:table-num}']
+[reftext='{table-caption} {counter:table-num}']
 .Namespace mapping conventions
 [width="90%",cols="^2,^2,6,6",options="header"]
 |====

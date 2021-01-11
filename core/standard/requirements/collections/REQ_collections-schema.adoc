@@ -24,8 +24,8 @@
           description: the date this collection was created in the server
           type: string
           format: date-time
-        changed:
-          description: the most recent date on which the collection was changed
+        updated:
+          description: the most recent date on which the collection was updated
           type: string
           format: date-time
         title:
@@ -42,8 +42,6 @@
         type:
           description: the nature or genre of the items of the collections (e.g. feature, coverage)
           type: string
-
-
         itemType:
           description: indicator about the type of the items in the collection (the default value is 'feature').
           type: string
@@ -51,7 +49,6 @@
         language:
           description: refers to the natural language used for textual values (i.e. titles, descriptions, etc) of items in the collection
           type: string
-
         publisher:
           description: the entity making the collection available
           type: string

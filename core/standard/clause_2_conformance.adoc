@@ -6,27 +6,51 @@ The one Standardization Target for this standard is Web APIs.
 
 OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of API - Common. 
 
-This standard identifies eleven (11) Conformance Classes. The Conformance Classes implemented by an API are advertised through the `/conformance` path on the landing page. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+This standard identifies six (6) Conformance Classes. The Conformance Classes implemented by an API are advertised through the `/conformance` path on the landing page. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
 
 The Requirements Classes for OGC API - Records are:
 
 * *Core*
-* *Collections*
+// * *Collections*
+* *Sorting*
 * *OpenSearch*
 * *JSON-Record*
 * *ATOM-Record*
 * *HTML-Record*
 
 // P.A.V.
-// Core includes: the parameters  -> bbox [bbox_crs], time, limit, offset, 
-//                core queryables -> id(m), title(m), description(m),
-//                                   keywords(m), extent(o), modified(o),
-//                                   publisher(o), themes(o), license(o),
-//                                   rights(o), links(o)
-// Question: Should CQL be part of the core?
+// Core includes: the parameters  -> bbox,
+//                                   datetime,
+//                                   limit,
+//                                   type,
+//                                   q,
+//                                   externalIds
+//                                   sortby
+//
+//                core queryables -> recordId (m),
+//                                   type(m),
+//                                   title(m),
+//                                   description(o),
+//                                   keywords(o),
+//                                   externalId(o),
+//                                   recordcreated(o),
+//                                   recordmodified(o),
+//                                   language(o),
+//                                   modified(o),
+//                                   publisher(o),
+//                                   themes(o),
+//                                   formats(o),
+//                                   contactPoint(o),
+//                                   license(o),
+//                                   rights(o),
+//                                   extent(o),
+//                                   links(o),
+//                                   associations(o)
+//
+// m = mandatory queryable
+// o = optional queryable
+//
 The _Core_ Requirements Class is the minimal useful service interface for the OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.  The core defines a set of mandatory properties (core queryables) that every record must contain, a set of core query parameters that support bounding box spatial queries, temporal queries, full text searching, parameters for sorting responses.
-
-The _OpenSearch_ Requirements Class defines the requirements to support query by OpenSearch clients.
 
 // P.A.V.
 // This requirements class makes the /collections end point of a service
@@ -49,8 +73,12 @@ The _OpenSearch_ Requirements Class defines the requirements to support query by
 // 5. The response is exactly what it would be if you fetched the /collections
 //    resource but the only collections listed would be the ones that satisfy
 //    the query predicates
-The _Collections_ Requirements Class defines requirements for making the 
-`/collections` endpoint of any OGC Web API searchable.
+// The _Collections_ Requirements Class defines requirements for making the 
+// `/collections` endpoint of any OGC Web API searchable.
+
+The _Sorting_ Requirements Class defined the requirements to support sorting of records in a query response.
+
+The _OpenSearch_ Requirements Class defines the requirements to support query by OpenSearch clients.
 
 The _JSON_ Requirements Class defines the requirements for a GeoJSON (see RFC 7946) representation of a standard catalogue record.
 

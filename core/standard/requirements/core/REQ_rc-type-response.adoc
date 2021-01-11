@@ -1,6 +1,0 @@
-[[req_core_rc-type-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/rc-type-response*
-^|A |If the `type` parameter is provided by the client, only records where type of the resource (i.e. record property `type`) exactly matches the specified value SHALL be included in the result set.
-|===

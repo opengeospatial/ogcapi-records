@@ -4,6 +4,7 @@ required:
 properties:
   href:
     type: string
+    format: url
     example: http://data.example.com/buildings/123
   rel:
     type: string

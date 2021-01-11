@@ -1,6 +1,0 @@
-[[req_core_rc-extids-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/rc-extids-response*
-^|A |If the `externalids` parameter is provided by the client, only records whose external identifiers (i.e. record property `externalId`) exactly match one of the values specified for this parameter SHALL be included in the result set.
-|===

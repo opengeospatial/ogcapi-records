@@ -1,12 +1,6 @@
 name: q
 in: query
-description: |-
-  The optional q parameter provides full text search capability against a given catalogue.
-
-  Servers implementing the Q parameter SHOULD interpret the semantic "find all records
-  that contain the specified terms". Implementation is left at the discretion of the server
-  implementation (full text search, SQL LIKE, etc.)
-
+description: The optional q parameter provides full text search capability against a given catalogue.  Servers implementing the q parameter SHOULD interpret the semantic "find all records that contain the specified terms". Implementation is left at the discretion of the server implementation (full text search, SQL LIKE, etc.)
 required: false
 schema:
   type: string

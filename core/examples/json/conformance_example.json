@@ -4,10 +4,10 @@
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections",
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/oas3",
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/oas30",
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html",
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/search",
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/opensearch",
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom"
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html"
   ]
 }

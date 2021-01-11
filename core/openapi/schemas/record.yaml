@@ -14,14 +14,6 @@ properties:
     $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureGeoJSON.yaml#/properties/type
   geometry:
     $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml
-  created:
-    type: string
-    description: Date of creation of this record.
-    format: date-time
-  modified:
-    type: string
-    description: The most recent date on which the record was changed.
-    format: date-time
   extents:
     $ref: https://raw.githubusercontent.com/opengeospatial/oapi_common/master/standard/openapi/schemas/extent.yaml
   properties:
@@ -57,11 +49,19 @@ properties:
         type: string
         description: The natural language used for textual values (e.g. titles, descriptions, etc.) of the resource. ISO 639-1/639-2 codes should be used.
         default: en
+      record-created:
+        type: string
+        description: Date of creation of this record.
+        format: date-time
+      record-updated:
+        type: string
+        description: The most recent date on which the record was changed.
+        format: date-time
       created:
         type: string
         description: Date of creation of the resource.
         format: date-time
-      modified:
+      updated:
         type: string
         description: Most recent date on which the resource was changed.
         format: date-time

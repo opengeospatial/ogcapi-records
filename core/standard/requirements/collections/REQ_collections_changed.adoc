@@ -1,8 +1,0 @@
-[[req_collections_changed]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/collections/created*
-^|A |The `changed` property shall be present in the collection information object.
-^|B |The value of the `changed` property shall conform to the date-time production of https://tools.ietf.org/html/rfc3339#section-5.6[RFC 3339].
-^|B |The value of the `changed` property shall indicate the  most recent date on which the collection was changed.
-|===
