@@ -477,7 +477,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Category: OGC&#174; Implementation Specification</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Editors: Charles Heazel, Tom Kralidis, Panagiotis (Peter) A. Vretanos</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Editors:  Panagiotis (Peter) A. Vretanos, Tom Kralidis, Charles Heazel</p></td>
 </tr>
 </tbody>
 </table>
@@ -659,11 +659,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#core-query-parameters-bbox">7.5.2.2. Parameter bbox</a></li>
 <li><a href="#core-query-parameters-datetime">7.5.2.3. Parameter datetime</a></li>
 <li><a href="#core-query-parameters-limit">7.5.2.4. Parameter limit</a></li>
-<li><a href="#core-query-parameters-type">7.5.2.5. Parameter type</a></li>
-<li><a href="#core-query-parameters-q">7.5.2.6. Parameter q</a></li>
-<li><a href="#_parameter_externalids">7.5.2.7. Parameter externalids</a></li>
-<li><a href="#core-query-parameters-sortby">7.5.2.8. Parameter sortby</a></li>
-<li><a href="#_combinations_of_filtering_parameters">7.5.2.9. Combinations of Filtering Parameters</a></li>
+<li><a href="#core-query-parameters-q">7.5.2.5. Parameter q</a></li>
+<li><a href="#core-query-parameters-type">7.5.2.6. Parameter type</a></li>
+<li><a href="#core-query-parameters-externalid">7.5.2.7. Parameter externalid</a></li>
+<li><a href="#_combinations_of_filtering_parameters">7.5.2.8. Combinations of Filtering Parameters</a></li>
 </ul>
 </li>
 <li><a href="#_response_6">7.5.3. Response</a></li>
@@ -684,52 +683,62 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#_requirements_class_collections">8. Requirements Class "Collections"</a>
+<li><a href="#_requirements_class_sorting">8. Requirements Class "Sorting"</a>
 <ul class="sectlevel2">
-<li><a href="#collections-overview">8.1. Overview</a></li>
-<li><a href="#_collections_metadata">8.2. Collections Metadata</a></li>
-<li><a href="#_collection_information">8.3. Collection information</a></li>
-<li><a href="#_examples_2">8.4. Examples</a></li>
+<li><a href="#sorting-overview">8.1. Overview</a></li>
+<li><a href="#sorting-parameter-sortby">8.2. Parameter sortby</a></li>
 </ul>
 </li>
-<li><a href="#_requirements_class_opensearch">9. Requirements Class "OpenSearch"</a>
+<li><a href="#_examples_2">9. Examples</a></li>
+<li><a href="#_requirements_class_opensearch">10. Requirements Class "OpenSearch"</a>
 <ul class="sectlevel2">
-<li><a href="#opensearch-overview">9.1. Overview</a></li>
-<li><a href="#_heading">9.2. Heading</a></li>
+<li><a href="#opensearch-overview">10.1. Overview</a></li>
 </ul>
 </li>
-<li><a href="#requirements-class-json-clause">10. Requirements Class JSON</a>
+<li><a href="#requirements-class-json-clause">11. Requirements Class JSON</a>
 <ul class="sectlevel2">
-<li><a href="#_common">10.1. Common</a></li>
-<li><a href="#_record">10.2. Record</a></li>
+<li><a href="#_common">11.1. Common</a></li>
+<li><a href="#_record">11.2. Record</a></li>
 </ul>
 </li>
-<li><a href="#requirements-class-html-clause">11. Requirements Class HTML</a>
+<li><a href="#requirements-class-html-clause">12. Requirements Class HTML</a>
 <ul class="sectlevel2">
-<li><a href="#_common_2">11.1. Common</a></li>
-<li><a href="#_record_2">11.2. Record</a></li>
+<li><a href="#_common_2">12.1. Common</a></li>
+<li><a href="#_record_2">12.2. Record</a></li>
 </ul>
 </li>
-<li><a href="#requirements-class-xml-clause">12. Requirements Class XML</a>
+<li><a href="#requirements-class-atom-clause">13. Requirements Class ATOM</a>
 <ul class="sectlevel2">
-<li><a href="#_common_3">12.1. Common</a></li>
-<li><a href="#_record_3">12.2. Record</a></li>
+<li><a href="#_common_3">13.1. Common</a></li>
+<li><a href="#_record_3">13.2. Record</a></li>
 </ul>
 </li>
-<li><a href="#requirements-class-openapi_3_0-clause">13. Requirements class "OpenAPI 3.0"</a></li>
-<li><a href="#media-types-section">14. Media Types</a>
+<li><a href="#requirements-class-openapi_3_0-clause">14. Requirements class "OpenAPI 3.0"</a></li>
+<li><a href="#media-types-section">15. Media Types</a>
 <ul class="sectlevel2">
-<li><a href="#_html_encoding">14.1. HTML Encoding</a></li>
-<li><a href="#_json_encoding">14.2. JSON Encoding</a>
+<li><a href="#_html_encoding">15.1. HTML Encoding</a></li>
+<li><a href="#_json_encoding">15.2. JSON Encoding</a>
 <ul class="sectlevel3">
-<li><a href="#_geojson">14.2.1. GeoJSON</a></li>
+<li><a href="#_geojson">15.2.1. GeoJSON</a></li>
 </ul>
 </li>
-<li><a href="#_media_types">14.3. Media Types</a></li>
-<li><a href="#media-type-defaults">14.4. Default Encodings</a></li>
+<li><a href="#_media_types">15.3. Media Types</a></li>
+<li><a href="#media-type-defaults">15.4. Default Encodings</a></li>
 </ul>
 </li>
-<li><a href="#security-section">15. Security Considerations</a></li>
+<li><a href="#security-section">16. Security Considerations</a></li>
+<li><a href="#_conformance_class_abstract_test_suite_normative">Annex A: Conformance Class Abstract Test Suite (Normative)</a>
+<ul class="sectlevel2">
+<li><a href="#_conformance_class_a">A.1. Conformance Class A</a>
+<ul class="sectlevel3">
+<li><a href="#_requirement_1">A.1.1. Requirement 1</a></li>
+<li><a href="#_requirement_2">A.1.2. Requirement 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#Bibliography">Annex B: Bibliography</a></li>
+<li><a href="#_revision_history">Annex C: Revision History</a></li>
 </ul>
 </div>
 <div style="page-break-after: always;"></div>
@@ -742,7 +751,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>This document defines the OGC API for Records. A Record is a way of making a resource discoverable. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, assets, services or widgets. The OGC API - Records provides a way to query or browse a curated set of Records known as a catalogue.</p>
 </div>
-<table id="tldr" class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Overview of resources, applicable HTTP methods and links to the document sections<a id="table_1"></a><a id="tldnr"></a></caption>
 <colgroup>
 <col style="width: 27.7777%;">
@@ -901,7 +910,7 @@ parameter organized into X conformance classes.</p>
 <p>OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of API - Common.</p>
 </div>
 <div class="paragraph">
-<p>This standard identifies eleven (11) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <code>/conformance</code> path on the landing page. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.</p>
+<p>This standard identifies six (6) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <code>/conformance</code> path on the landing page. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.</p>
 </div>
 <div class="paragraph">
 <p>The Requirements Classes for OGC API - Records are:</p>
@@ -912,7 +921,7 @@ parameter organized into X conformance classes.</p>
 <p><strong>Core</strong></p>
 </li>
 <li>
-<p><strong>Collections</strong></p>
+<p><strong>Sorting</strong></p>
 </li>
 <li>
 <p><strong>OpenSearch</strong></p>
@@ -932,11 +941,10 @@ parameter organized into X conformance classes.</p>
 <p>The <em>Core</em> Requirements Class is the minimal useful service interface for the OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.  The core defines a set of mandatory properties (core queryables) that every record must contain, a set of core query parameters that support bounding box spatial queries, temporal queries, full text searching, parameters for sorting responses.</p>
 </div>
 <div class="paragraph">
-<p>The <em>OpenSearch</em> Requirements Class defines the requirements to support query by OpenSearch clients.</p>
+<p>The <em>Sorting</em> Requirements Class defined the requirements to support sorting of records in a query response.</p>
 </div>
 <div class="paragraph">
-<p>The <em>Collections</em> Requirements Class defines requirements for making the
-<code>/collections</code> endpoint of any OGC Web API searchable.</p>
+<p>The <em>OpenSearch</em> Requirements Class defines the requirements to support query by OpenSearch clients.</p>
 </div>
 <div class="paragraph">
 <p>The <em>JSON</em> Requirements Class defines the requirements for a GeoJSON (see RFC 7946) representation of a standard catalogue record.</p>
@@ -1185,9 +1193,9 @@ parameter organized into X conformance classes.</p>
 <div class="sect2">
 <h3 id="_namespace_prefix_conventions"><a class="anchor" href="#_namespace_prefix_conventions"></a>5.5. Namespace Prefix Conventions</h3>
 <div class="paragraph">
-<p>UML diagrams and XML code fragments adhere to the namespace conventions shown in <a href="#namespace-mapping-conventions">Table 2</a>. The namespace prefixes used in this document are not normative and are merely chosen for convenience. The namespaces to which the prefixes correspond are normative, however.</p>
+<p>UML diagrams and XML code fragments adhere to the namespace conventions shown in <a href="#namespace-mapping-conventions">[namespace-mapping-conventions]</a>. The namespace prefixes used in this document are not normative and are merely chosen for convenience. The namespaces to which the prefixes correspond are normative, however.</p>
 </div>
-<table id="namespace-mapping-conventions" class="tableblock frame-all grid-all" style="width: 90%;">
+<table class="tableblock frame-all grid-all" style="width: 90%;">
 <caption class="title">Table 2. Namespace mapping conventions</caption>
 <colgroup>
 <col style="width: 12.5%;">
@@ -1259,7 +1267,7 @@ parameter organized into X conformance classes.</p>
 <p>Some resources are also accessible through links on previously accessed resources. Unique relation types are used for each resource.</p>
 </div>
 <div class="paragraph">
-<p><a href="#records-paths">Table 3</a> summarizes the access paths and relation types defined in this standard.</p>
+<p>The following table, <a href="#records-paths">Record API Paths</a>, summarizes the access paths and relation types defined in this standard.</p>
 </div>
 <table id="records-paths" class="tableblock frame-all grid-all" style="width: 90%;">
 <caption class="title">Table 3. Record API Paths</caption>
@@ -1345,7 +1353,7 @@ or<br>
 <div class="sect2">
 <h3 id="api-behavior-model-overview"><a class="anchor" href="#api-behavior-model-overview"></a>6.3. API Behavior Model</h3>
 <div class="paragraph">
-<p>The Record API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows API - Record and CSW implementations to co-exist in a single processing environment.</p>
+<p>The Records API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows API - Record and CSW implementations to co-exist in a single processing environment.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1369,26 +1377,35 @@ Replace the following with a discussion of CSW and API - Record
 <div class="sect2">
 <h3 id="_search"><a class="anchor" href="#_search"></a>6.4. Search</h3>
 <div class="paragraph">
-<p>TBD: Want to include a discussion about the levels of search that a catalogue might offer.</p>
+<p>The Records API offers various levels of search capability of escalating complexity and capability.  At the core is the ability to search the catalogue by specifying:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Level 1: bbox, datetime, q, type, externalIds</p>
+<p>a bounding box</p>
 </li>
 <li>
-<p>Level 2: OpenSearch</p>
+<p>a time instant or time period</p>
 </li>
 <li>
-<p>Level 3: CQL</p>
+<p>keywords</p>
+</li>
+<li>
+<p>equality predicates based on a subset of core queryables (e.g. by resource type, by external identifier)</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>This specification also includes a conformance class that allows a catalogue to be searched using  <a href="https://portal.opengeospatial.org/files/?artifact_id=56866">OpenSearch Geo</a>.  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.</p>
+</div>
+<div class="paragraph">
+<p>Finally extensions, such as the <a href="http://docs.opengeospatial.org/DRAFTS/19-079.html">OGC API - Features - Part 3: Filter and the Common Query Language (CQL)</a>, may be used with the Records API to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="dependencies-overview"><a class="anchor" href="#dependencies-overview"></a>6.5. Dependencies</h3>
 <div class="paragraph">
-<p>The OGC API - Records standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from API - Common. <a href="#mapping-to-common">Table 4</a> Identifies the OGC API - Common Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.</p>
+<p>The OGC API - Records standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from API - Common. The following table, <a href="#mapping-to-common">Mapping API - Records Sections to API - Common Requirements Classes</a>, identifies the OGC API - Common Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.</p>
 </div>
 <table id="mapping-to-common" class="tableblock frame-all grid-all" style="width: 90%;">
 <caption class="title">Table 4. Mapping API - Records Sections to API - Common Requirements Classes</caption>
@@ -1458,10 +1475,6 @@ Replace the following with a discussion of CSW and API - Record
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections" class="bare">http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1594,13 +1607,25 @@ properties:
 <pre class="highlight"><code class="language-json" data-lang="json">{
   "links": [
     { "href": "http://data.example.org/",
-      "rel": "self", "type": "application/json", "title": "this document" },
+      "rel": "self",
+      "type": "application/json",
+      "title": "This Document" },
     { "href": "http://data.example.org/api",
-      "rel": "service-desc", "type": "application/openapi+json;version=3.0", "title": "the API definition" },
+      "rel": "service-desc",
+      "type": "application/openapi+json;version=3.0",
+      "title": "The API Definition" },
+    { "href": "http://data.example.org/api",
+      "rel": "service-doc",
+      "type": "text/html",
+      "title": "The API Document" },
     { "href": "http://data.example.org/conformance",
-      "rel": "conformance", "type": "application/json", "title": "OGC conformance classes implemented by this API" },
+      "rel": "conformance",
+      "type": "application/json",
+      "title": "OGC Conformance Classes Implemented by this API" },
     { "href": "http://data.example.org/collections",
-      "rel": "data", "type": "application/json", "title": "Metadata about the resource collections" }
+      "rel": "data",
+      "type": "application/json",
+      "title": "Metadata About the Resource Collections" }
   ]
 }</code></pre>
 </div>
@@ -1754,7 +1779,7 @@ properties:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html</a></p>
+<p><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/opensearch" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/opensearch</a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1766,23 +1791,17 @@ properties:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/opensearch" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/opensearch</a></p>
+<p><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom</a></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">D</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom</a></p>
+<p><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html</a></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">E</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/collections" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/collections</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><a href="http://www.opengis.net/spec/ogcapi-records/1.0/req/oas30" class="bare">http://www.opengis.net/spec/ogcapi-records/1.0/req/oas30</a></p>
 </div></div></td>
@@ -1815,11 +1834,11 @@ properties:
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections",
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/oas3",
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/oas30",
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html",
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/search",
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/opensearch",
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom"
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html"
   ]
 }</code></pre>
 </div>
@@ -1881,6 +1900,9 @@ properties:
 <div class="paragraph">
 <p>A successful response to the <code>Collections Operation</code> is a document which includes summary metadata for each collection accessible though the API.</p>
 </div>
+<div class="paragraph">
+<p>In a typical deployment the collections response will list collections of all offered resource types.  The collections labeled with an <code>itemType</code> of <code>record</code> are catalogues (i.e. collections of records).</p>
+</div>
 <div id="collections-schema" class="listingblock">
 <div class="title">Collections Response Schema</div>
 <div class="content">
@@ -1908,51 +1930,60 @@ properties:
 <pre class="highlight"><code class="language-json" data-lang="json">{
   "links": [
     {
-      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections?f=application%2Fjson",
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=application%2Fjson",
       "rel": "self",
       "type": "application/json",
       "title": "this document"
     },
     {
-      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections?f=text%2Fxml",
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=text%2Fxml",
       "rel": "alternate",
       "type": "text/xml",
       "title": "this document as XML"
     },
     {
-      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/wrs/4.0/collections?f=text%2Fhtml",
+      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=text%2Fhtml",
       "rel": "alternate",
       "type": "text/html",
       "title": "this document as HTML"
     }
   ],
   "collections": [
+    .
+    .
+    .
     {
       "id": "radarsat2cat",
-      "type": "catalogue",
+      "itemType": "record",
       "title": "CubeWerx RADARSAT-2 Catalogue",
       "description": "A sample catalogue of RADARSAT-2 products stored in S3 on AWS.",
       "links": [
         {
-          "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/s1tepcat",
+          "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/s1tepcat",
           "rel": "collection",
           "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
         }
       ]
     },
+    .
+    .
+    .
     {
       "id": "sentinel1cat",
-      "type": "catalogue",
+      "itemType": "record",
       "title": "CubeWerx Sentinel-1 Catalogue",
       "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
       "links": [
         {
-          "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/sentinel1cat",
+          "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat",
           "rel": "collection",
           "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
         }
       ]
-    }
+    },
+    .
+    .
+    .
   ]
 }</code></pre>
 </div>
@@ -2057,17 +2088,16 @@ properties:
 <div class="title">Collection Information Example</div>
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
-  "recordid": "sentinel1cat",
-  "type": "catalogue",
-  "title": "CubeWerx Sentinel-1 Catalogue",
-  "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
-  "links": [
-    {
-      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/csw/4.0/collections/sentinel1cat",
-      "rel": "collection",
-      "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
-    }
-  ]
+   "id": "sentinel1cat",
+   "title": "Sentinel-1 Catalogue",
+   "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+   "links": [
+      {
+         "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items",
+         "rel": "items",
+         "title": "Catalogue records describing SENTINEL-1 products."
+      }
+   ]
 }</code></pre>
 </div>
 </div>
@@ -2099,7 +2129,7 @@ properties:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A Records API implementation SHALL comply with the API - Common requirement <code>/req/collections/rc-op</code>.</p>
+<p>A Records API implementation SHALL comply with the API - Common requirement <code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-op" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-op</a></code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2126,11 +2156,15 @@ properties:
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">bbox</th>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">A bounding box. If the spatial extent of the record intersects the specified bounding box then the record shall be presented in the response document.</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Parameter name</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Description</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">bbox</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A bounding box. If the spatial extent of the record intersects the specified bounding box then the record shall be presented in the response document.</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">datetime</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A time instance or time period. If the temporal extent of the record intersects the specified data/time value then the record shall be presented in the response document.</p></td>
@@ -2140,20 +2174,16 @@ properties:
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The number of records to be presented in a response document.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A resource type. Only records of the specified type shall be presented in the response document.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">q</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A space-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed then this records hall appear in the response set.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A comma-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed then this records shall appear in the response set.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">externalIds</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A comma-separated list of external identifiers. Only records with the specified names shall appear in the response document.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">An equality predicate consistent of a comma-separated list of resource types.  Only records of the listed type shall appear in the resource set.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">sortby</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A comma-separated list of queryables specifying how the records in the response shall be ordered for presentation.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">externalid</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">An equality predicate consistent of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2161,10 +2191,8 @@ properties:
 <p>The query parameters <code>bbox</code>, <code>datetime</code> and <code>limit</code> are inherited from API -Common.  All requirements and recommendations in API - Common regarding these parameters also apply for API - Records.</p>
 </div>
 <div class="paragraph">
-<p>The query parameters <code>type</code>, <code>q</code>, <code>externalids</code> and <code>sortby</code> are specific to API - Records.</p>
-</div>
-<div class="paragraph">
-<p>This clause provides a brief description of the query parameters inherited from API - Common and requirements for the API - Records-specific parameters.</p>
+<p>The query parameters <code>q</code>, <code>type</code> and <code>externalid</code> are specific to API - Records.
+This clause provides a brief description of the query parameters inherited from API - Common and requirements for the API - Records-specific parameters.</p>
 </div>
 </div>
 <div class="sect4">
@@ -2172,7 +2200,7 @@ properties:
 <div class="paragraph">
 <p>The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.</p>
 </div>
-<table id="req_core_rc-bbox-parameter" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_core_param-bbox" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2181,25 +2209,25 @@ properties:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 4</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-bbox-parameter</strong></p>
+<p><strong>/req/core/param-bbox</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A Records API SHALL support the Bounding Box (bbox) parameter for <code>/collections/{catalogueId}</code> requests.</p>
+<p>A Records API SHALL support the Bounding Box (bbox) parameter for the operation.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Requests which include the Bounding Box parameter SHALL comply with API - Common requirement <code>/req/core/rc-bbox-definition</code>.</p>
+<p>Requests which include the Bounding Box parameter SHALL comply with API - Common requirement <code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-definition" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-definition</a></code>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Responses to Bounding Box requests SHALL comply with API - Common requirement <code>/req/core/rc-bbox-response</code>.</p>
+<p>Responses to Bounding Box requests SHALL comply with API - Common requirement <code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-response" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-response</a></code>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2210,7 +2238,7 @@ properties:
 <div class="paragraph">
 <p>The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.</p>
 </div>
-<table id="req_core_rc-datetime-parameter" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_core_param-datetime" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2219,25 +2247,25 @@ properties:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 5</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-datetime-parameter</strong></p>
+<p><strong>/req/core/param-datetime</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A Records API SHALL support the Date-Time (datetime) parameter for <code>/collections</code> and <code>/collections/{collectionid}</code> requests.</p>
+<p>A Records API SHALL support the Date-Time (datetime) parameter for the operation.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Requests which include the Date-Time parameter SHALL comply with API - Common requirement <code>/req/core/rc-time-definition</code>.</p>
+<p>Requests which include the Date-Time parameter SHALL comply with API - Common requirement <code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-definition" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-definition</a></code>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Responses to Date-Time requests SHALL comply with API - Common requirement <code>/req/core/rc-time-response</code>.</p>
+<p>Responses to Date-Time requests SHALL comply with API - Common requirement <code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-response" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-response</a></code>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2248,7 +2276,7 @@ properties:
 <div class="paragraph">
 <p>The limit parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.</p>
 </div>
-<table id="req_core_rc-limit-parameter" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_core_param-limit" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2257,19 +2285,19 @@ properties:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 6</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-limit-parameter</strong></p>
+<p><strong>/req/core/param-limit</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A Records API SHALL support the Limit (limit) parameter for <code>/collections</code> and <code>/collections/{collectionid}</code> requests.</p>
+<p>A Records API SHALL support the Limit (limit) parameter for the operation.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Requests which include the Limit parameter SHALL comply with API - Common requirement <code>/req/core/rc-limit-definition</code>.</p>
+<p>Requests which include the Limit parameter SHALL comply with API - Common requirement <code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-definition" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-definition</a></code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2280,13 +2308,13 @@ properties:
 <div class="ulist">
 <ul>
 <li>
-<p><code>/req/core/rc-limit-response</code></p>
+<p><code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-response" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-response</a></code></p>
 </li>
 <li>
-<p><code>/req/core/rc-numberReturned</code></p>
+<p><code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-numberReturned" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-numberReturned</a></code></p>
 </li>
 <li>
-<p><code>/req/core/rc-numberMatched</code></p>
+<p><code><a href="http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-numberMatched" class="bare">http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-numberMatched</a></code></p>
 </li>
 </ul>
 </div></div></td>
@@ -2295,8 +2323,8 @@ properties:
 </table>
 </div>
 <div class="sect4">
-<h5 id="core-query-parameters-type"><a class="anchor" href="#core-query-parameters-type"></a>7.5.2.5. Parameter type</h5>
-<table id="req_core_rc-type-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<h5 id="core-query-parameters-q"><a class="anchor" href="#core-query-parameters-q"></a>7.5.2.5. Parameter q</h5>
+<table id="req_core_param-q-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2305,67 +2333,19 @@ properties:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 7</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-type-definition</strong></p>
+<p><strong>/req/core/param-q-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The operation SHALL support a parameter <code>type</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-YAML" data-lang="YAML">name: type
-in: query
-required: false
-schema:
-  type: string
-style: form
-explode: false</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="req_core_rc-type-response" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 8</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-type-response</strong></p>
+<p>A Records API SHALL support the Keyword Search (q) parameter for the operation.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>If the <code>type</code> parameter is provided by the client, only records where type of the resource (i.e. record property <code>type</code>) exactly matches the specified value SHALL be included in the result set.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="core-query-parameters-q"><a class="anchor" href="#core-query-parameters-q"></a>7.5.2.6. Parameter q</h5>
-<table id="req_core_rc-q-definition" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 9</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-q-definition</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The operation SHALL support a parameter <code>q</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
+<p>The <code>q</code> parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2374,11 +2354,8 @@ in: query
 required: false
 schema:
   type: array
-  minItems: 1
-  maxItems: 10
   items:
     type: string
-style: spaceDelimited
 explode: false</code></pre>
 </div>
 </div></div></td>
@@ -2386,59 +2363,21 @@ explode: false</code></pre>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The query parameter <a href="#q-case">req_core_rc-q-case-definition</a> may be used concurently with the <code>q</code> parameter to qualify the search as case sensitive or case in-sensitive.</p>
+<p>Keyword searches using the <code>q</code> parameter shall be case insensitive.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table id="req_core_rc-q-case-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_core_param-q-response" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 10</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 8</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-q-case-definition</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The operation SHALL support a parameter <code>q-case</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-YAML" data-lang="YAML">name: q-case
-in: query
-required: false
-schema:
-  type: boolean
-  default: flase
-style: form
-explode: false</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A value of <code>true</code> indicates that the search SHALL be case sensitive; a value of <code>false</code> indicates that the search shall be case in-sensitive.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="req_core_rc-q-response" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 11</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-q-response</strong></p>
+<p><strong>/req/core/param-q-response</strong></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2450,15 +2389,114 @@ explode: false</code></pre>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The specific set of text keys/fields/properties of a record to which the <code>q</code> operator be applied is left to the discretion of the implementation.</p>
+<p>The specific set of text keys/fields/properties of a record to which the <code>q</code> operator is applied SHALL be left to the discretion of the implementation.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_parameter_externalids"><a class="anchor" href="#_parameter_externalids"></a>7.5.2.7. Parameter externalids</h5>
-<table id="req_core_rc-extids-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<h5 id="core-query-parameters-type"><a class="anchor" href="#core-query-parameters-type"></a>7.5.2.6. Parameter type</h5>
+<table id="req_core_param-type-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 9</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/core/param-type-definition</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A Records API SHALL support the search by Type (type) parameter for the operation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>type</code> parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-YAML" data-lang="YAML">name: type
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="req_core_param-type-response" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 10</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/core/param-type-response</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>If the <code>type</code> parameter is provided by the client, only records whose type, as indicated by the value of the <code>type</code> core queryable, is equal to one of the listed values SHALL be in the result set.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="core-query-parameters-externalid"><a class="anchor" href="#core-query-parameters-externalid"></a>7.5.2.7. Parameter externalid</h5>
+<table id="req_core_param-externalid-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 11</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/core/param-externalid-definition</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A Records API SHALL support the search by External Identifier (externalid) parameter for the operation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>externalid</code> parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-YAML" data-lang="YAML">name: externalid
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="req_core_param-externalid-response" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2467,205 +2505,32 @@ explode: false</code></pre>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 12</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-extids-definition</strong></p>
+<p><strong>/req/core/param-type-response</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The operation SHALL support a parameter <code>externalids</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-YAML" data-lang="YAML">name: externalids
-in: query
-required: false
-schema:
-  type: array
-  minItems: 1
-  maxItems: 10
-  items:
-    type: string
-style: form
-explode: false</code></pre>
-</div>
+<p>If the <code>externalid</code> parameter is provided by the client, only records whose external identifier, as indicated by the value of the <code>externalid</code> core queryable, is equal to one of the listed values SHALL be in the result set.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table id="req_core_rc-extids-response" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
+<div class="admonitionblock note">
+<table>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 13</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-extids-response</strong></p>
-</div></div></td>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+I have chosen a small subset of core queryables (type, externalId) and mapped them as URL query parameters.  We could generalize this and say that any core queryable can be included as a URL query parameter.  Should we do this instead?
+</td>
 </tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>If the <code>externalids</code> parameter is provided by the client, only records whose external identifiers (i.e. record property <code>externalId</code>) exactly match one of the values specified for this parameter SHALL be included in the result set.</p>
-</div></div></td>
-</tr>
-</tbody>
 </table>
-</div>
-<div class="sect4">
-<h5 id="core-query-parameters-sortby"><a class="anchor" href="#core-query-parameters-sortby"></a>7.5.2.8. Parameter sortby</h5>
-<table id="req_core_rc-sortby-definition" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 14</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-sortby-definition</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The operation SHALL support a parameter <code>sortby</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-YAML" data-lang="YAML">name: sortby
-in: query
-required: false
-schema:
-  type: array
-  minItems: 1
-  items:
-    type: string
-    pattern: [A-Za-z_][A-Za-z_0-9]*[:]?([Aa][Ss][Cc]|[Dd][Ee][Ss][Cc])?
-style: form
-explode: false</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The default sort order SHALL be ascending.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="req_core_rc-sortby-response" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 15</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/rc-sortby-response</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>If the <code>sortby</code> parameter is specified, then the records in a response SHALL be ordered by the keys and sort directions (i.e. <code>asc</code> or <code>desc</code>) specified.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The specific set of keys that may used for sorting SHALL be specified by the <code>/collections/{catalogueId}/sortables</code> resource.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="req_core_sortables-op" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 16</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/sortables-op</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For every collection (path <code>/collections/{catalogueId}</code>), the server SHALL support the HTTP GET operation at the path <code>/collections/{catalogueId}/sortables</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The parameter <code>catalogue</code> is each <code>id</code> property in the collections response (JSONPath: <code>$.collections[*].id</code>) where the item type is specified as <code>record</code>.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="req_core_sortables-success" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 17</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/sortables-success</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A successful execution of the operation SHALL be reported as a response with a HTTP status code <code>200</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The content of that response SHALL be based upon the following OpenAPI 3.0 schema:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-YAML" data-lang="YAML">type: array
-items:
-   type: object
-   required:
-     - name
-   properties:
-     name:
-       type: string
-     title:
-       type: string
-     description:
-       type: string</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div id="sortby-example" class="listingblock">
-<div class="title">sortby Example</div>
-<div class="content">
-<pre class="highlight"><code>.../collections/mycat/items?...&amp;sortby=modified:desc,recordid&amp;...</code></pre>
-</div>
-</div>
-<div id="sortby-extent-example" class="listingblock">
-<div class="title">sortby Extent Example</div>
-<div class="content">
-<pre class="highlight"><code>.../collections/mycat/items?...&amp;sortby=extent:asc&amp;...</code></pre>
-</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_combinations_of_filtering_parameters"><a class="anchor" href="#_combinations_of_filtering_parameters"></a>7.5.2.9. Combinations of Filtering Parameters</h5>
+<h5 id="_combinations_of_filtering_parameters"><a class="anchor" href="#_combinations_of_filtering_parameters"></a>7.5.2.8. Combinations of Filtering Parameters</h5>
 <div class="paragraph">
 <p>Any combination of query parameters from the <a href="#core-query-parameters-table">Table of Query Parameters</a> may be specified for filtering.</p>
 </div>
@@ -2683,7 +2548,7 @@ items:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 18</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 13</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/rc-response</strong></p>
 </div></div></td>
@@ -2691,7 +2556,7 @@ items:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Each record in the response SHALL contain the mandatory properties listed in the <a href="#core-queryables-table">Table of Core Queryables</a>.</p>
+<p>Each record in the response SHALL contain the mandatory properties listed in the <a href="#core-queryables-record-table">Table of Core Queryables related to the catalogue record</a> and the <a href="#core-queryables-resource-table">Table of Core Queryables related to the resource</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2711,126 +2576,172 @@ items:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Each record in the response MAY contain zero or more of the optional properties listed in the <a href="#core-queryables-table">Table of Core Queryables</a>.</p>
+<p>Each record in the response MAY contain zero or more of the optional properties listed in the <a href="#core-queryables-record-table">Table of Core Queryables related to the catalogue record</a> and the <a href="#core-queryables-resource-table">Table of Core Queryables related to the resource</a>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Each record in the response MAY contain any number of additional domain-specific properties but the meaning of those properties is not specified in this document.</p>
+<p>Each record in the response MAY contain any number of additional domain-specific properties not listed in the <a href="#core-queryables-record-table">Table of Core Queryables related to the catalogue record</a> and the <a href="#core-queryables-resource-table">Table of Core Queryables related to the resource</a>.  The meaning of these additional properties is not specified in this document.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table id="core-queryables" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. Table of Core Queryables</caption>
+<table id="core-queryables-record-table" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 11. Table of Core Queryables related to the catalogue record</caption>
 <colgroup>
 <col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
+<col style="width: 5%;">
+<col style="width: 55%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Queryables</th>
 <th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Requirement</th>
 <th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">GeoJSON key</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">recordId</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A unique record identifier assigned by the server.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">created</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">record-created</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The date this record was created in the server.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">created</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">changed</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">record-updated</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The most recent date on which the record was changed.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">updated</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for navigating the API (e.g. link to previous or next pages; links to alterntive representations, etc.)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
+</tr>
+</tbody>
+</table>
+<table id="core-queryables-resource-table" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 12. Table of Core Queryables related to the resource</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 5%;">
+<col style="width: 55%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Queryables</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Requirement</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">GeoJSON key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The nature or genre of the resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">title</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A human-readable name given to the resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.title</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A free-text description of the resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.description</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">keywords</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of keywords or tag associated with the resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The nature or genre of the resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.keyword</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">language</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.language</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">externalid</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">An identifier for the resource assigned by an external entity.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.externalid</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">modified</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The date the resource was created.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">updated</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The more recent date on which the resource was changed.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.updated</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">publisher</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The entity making the resource available.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.publisher</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">themes</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A knowledge orgnaization system used to classify the resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.themes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">formats</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of available distributions for the resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.formats</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">contactpoint</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">An entity to contact about the resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.contactpoint</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">license</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A legal document under which the resource is made available.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.license</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">rights</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A statement that concerns all rights not addressed by the license such as a copyright statement.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.rights</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">extent</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The spatio-temporal coverage of the resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for navigating the API.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.extent</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">associations</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for accessing the resource or links to other resources associated with this resource.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for accessing the resource, links to other resources associated with this resource, etc.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.associatations</p></td>
 </tr>
 </tbody>
 </table>
@@ -2847,7 +2758,7 @@ items:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 19</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 14</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/rc-paged-response</strong></p>
 </div></div></td>
@@ -2895,7 +2806,7 @@ items:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 20</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 15</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/record-op</strong></p>
 </div></div></td>
@@ -2924,7 +2835,7 @@ items:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 21</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 16</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/record-success</strong></p>
 </div></div></td>
@@ -2953,7 +2864,7 @@ items:
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 22</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 17</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/http-response</strong></p>
 </div></div></td>
@@ -2992,10 +2903,10 @@ properties:
 <div class="sect3">
 <h4 id="http-status-codes"><a class="anchor" href="#http-status-codes"></a>7.7.2. HTTP status codes</h4>
 <div class="paragraph">
-<p>The <strong>Status Codes</strong> listed in <a href="#status_codes">Table 7</a> are of particular relevance to implementors of this standard. Status codes 200, 400, and 404 are called out in API requirements. Therefore, support for these status codes is mandatory for all compliant implementations. The remainder of the status codes in <a href="#status_codes">Table 7</a> are not mandatory, but are important for the implementation of a well functioning API. Support for these status codes is strongly encouraged for both client and server implementations.</p>
+<p>The <strong>Status Codes</strong> listed in <a href="#status_codes">[status_codes]</a> are of particular relevance to implementors of this standard. Status codes 200, 400, and 404 are called out in API requirements. Therefore, support for these status codes is mandatory for all compliant implementations. The remainder of the status codes in <a href="#status_codes">[status_codes]</a> are not mandatory, but are important for the implementation of a well functioning API. Support for these status codes is strongly encouraged for both client and server implementations.</p>
 </div>
-<table id="status_codes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. Typical HTTP status codes<a id="table_2"></a></caption>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 13. Typical HTTP status codes</caption>
 <colgroup>
 <col style="width: 15%;">
 <col style="width: 85%;">
@@ -3066,7 +2977,7 @@ properties:
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Servers MAY support other capabilities of the HTTP protocol and, therefore, MAY return other status codes than those listed in <a href="#status_codes">Table 7</a>, too.</p>
+<p>Servers MAY support other capabilities of the HTTP protocol and, therefore, MAY return other status codes than those listed in <a href="#status_codes">[status_codes]</a>, too.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -3076,11 +2987,11 @@ properties:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_requirements_class_collections"><a class="anchor" href="#_requirements_class_collections"></a>8. Requirements Class "Collections"</h2>
+<h2 id="_requirements_class_sorting"><a class="anchor" href="#_requirements_class_sorting"></a>8. Requirements Class "Sorting"</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="collections-overview"><a class="anchor" href="#collections-overview"></a>8.1. Overview</h3>
-<table id="rc_collections" class="tableblock frame-all grid-all" style="width: 90%;">
+<h3 id="sorting-overview"><a class="anchor" href="#sorting-overview"></a>8.1. Overview</h3>
+<table id="rc_sorting" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -3090,7 +3001,7 @@ properties:
 <td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirements Class</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/collections" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/collections</a></p></td>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting" class="bare">http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Target type</p></td>
@@ -3098,311 +3009,53 @@ properties:
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections" class="bare">http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi_common-1/1.0/req/sorting" class="bare">http://www.opengis.net/spec/ogcapi_common-1/1.0/req/sorting</a></p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The purpose of the conformance class is to specify requirements that extend
-the behaviour at the <code>/collections</code> endpoint to make it queryable by
-OGC API Records clients.</p>
-</div>
-<div class="paragraph">
-<p>The conformance class defines the following extensions:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>It extends the set of query parameters defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#11-collections-metadata">Collections Metadata</a> section to support the richer set of query parameters defined in the <a href="#parameters-section">Parameters</a> clause of this specification.</p>
-</li>
-<li>
-<p>It extends the schema of the collection information object defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#12-collection-information">Collection Information</a> clause of the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension to add additional keys/properties that are required by OGC API Records.</p>
-</li>
-</ol>
+<p>The <code>Sorting</code> Requirements Class defines the requirements for specifying how records in a response should be ordered for presentation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_collections_metadata"><a class="anchor" href="#_collections_metadata"></a>8.2. Collections Metadata</h3>
-<div class="paragraph">
-<p>The <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#11-collections-metadata">Collections Metadata</a> clause of the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension defines the <code>bbox</code>, <code>datetime</code> and 'limit' query parameters for the <code>/collections</code> resource.</p>
-</div>
-<table id="req_collections_query-params" class="tableblock frame-all grid-all" style="width: 90%;">
+<h3 id="sorting-parameter-sortby"><a class="anchor" href="#sorting-parameter-sortby"></a>8.2. Parameter sortby</h3>
+<table id="req_sorting_sortby-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 23</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 18</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/query-params</strong></p>
+<p><strong>/req/sorting/sortby-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The HTTP GET operation at the <code>/collections</code> path shall support the following additional query parameters defined in the <a href="#parameters-section">Parameters</a> section:</p>
+<p>The operation SHALL support a parameter <code>sortby</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#core-query-parameters-type">type</a></p>
-</li>
-<li>
-<p><a href="#core-query-parameters-q">q</a></p>
-</li>
-<li>
-<p><a href="#core-query-parameters-sortby">sortby</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The collections metadata (i.e. HTTP GET on the <code>/collections</code> path) is defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response">Collections Metadata</a> clause of the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-YAML" data-lang="YAML">name: sortby
+in: query
+required: false
+schema:
+  type: array
+  minItems: 1
+  items:
+    type: string
+    pattern: [+-]?[A-Za-z_][A-Za-z0-9]*
+style: form
+explode: false</code></pre>
 </div>
-<table id="req_collections_query-response" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 24</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/query-response</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The response shall only contain those collection information objects that satisfy all the query parameters specified with the HTTP GET operation (i.e. one or more of bbox, datetime, limit, type, q, sortby).</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_collection_information"><a class="anchor" href="#_collection_information"></a>8.3. Collection information</h3>
-<div class="paragraph">
-<p>The collection infromation object is defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#12-collection-information">Collection Information</a> clause of the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension.</p>
-</div>
-<div class="paragraph">
-<p>The following table cross-walks the properties of the collection information
-object with the core queryables.</p>
-</div>
-<table id="record-collection-crosswalk" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. Crosswalk of core queryables with collection information object properties</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Collection property</th>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Requirement</th>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Core Queryable</th>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Requirement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">itemType</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">extent</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">extent</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">crs</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The following requirements specify additional properties that a compliant
-implementation of this conformance class must add to the collection
-information object.</p>
-</div>
-<table id="req_collections_title" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 25</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/title</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>title</code> property shall be present in the collection information object.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="req_collections_description" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 26</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/description</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>description</code> property shall be present in the collection information object.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>No additional requirements are necessary for the <code>extent</code> property.</p>
-</div>
-<div class="paragraph">
-<p>No additional requirements are necessary to the <code>links</code> property.  Since the
-<code>links</code> property is mandatory for the collection information object, it will
-always be present but because it is an optional core queryables, catalogue
-clients will either know how to handle it or they will ignore it.</p>
-</div>
-<table id="req_collections_type" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 27</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/type</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>type</code> property shall be present in the collection information object.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The value of the <code>type</code> property shall be the same as the value of the <code>itemType</code> property if the later is present.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Otherwise, the value of the <code>type</code> property shall denote the resource type of the collection (e.g. feature, coverage, map, etc.).</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="req_collections_created" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 28</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/created</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>created</code> property shall be present in the collection information object.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The value of the <code>created</code> property shall conform to the date-time production of <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The value of the <code>created</code> property shall indicate the date-time the collection was created.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="req_collections_changed" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 29</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/created</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>changed</code> property shall be present in the collection information object.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The value of the <code>changed</code> property shall conform to the date-time production of <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The value of the <code>changed</code> property shall indicate the  most recent date on which the collection was changed.</p>
+<p>The default sort order SHALL be ascending (i.e. <code>+</code>).</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -3414,249 +3067,187 @@ clients will either know how to handle it or they will ignore it.</p>
 <div class="title">Note</div>
 </td>
 <td class="content">
-Adding, modifying, or deleting items from a collections are all examples of changes to that collection.
+The core definition of the <code>sortby</code> parameter only defines a single directive that controls the sort order of the corresponding property.  It is anticipated extensions would add additional search facets such as directives for:
+handling missing values; specifying a high value indicating that the corresponding property be sorted as if it were the highest possible value; specifying a low value indicating that the corresponding property be sorted as if it were the lowest possible value; allowing records to be omitted from the result set based on their sort order; specify a fixed value  and a fixed value that sorts the corresponding property as if it were the specified fixed value.
 </td>
 </tr>
 </table>
 </div>
-<table id="req_collections_keywords" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_sorting_sortby-response" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 30</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 19</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/keywords</strong></p>
+<p><strong>/req/core/rc-sortby-response</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>keywords</code> property shall be present in the collection information object.</p>
+<p>If the <code>sortby</code> parameter is specified, then the records in a response SHALL be ordered by the keys and sort directions (i.e. ascending or descending) specified.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The value of the <code>keywords</code> property shall be a list of keywords or tags associated with the collection.</p>
+<p>The specific set of keys that may used for sorting SHALL be specified by the <code>/collections/{catalogueId}/sortables</code> resource.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table id="rec_collections_additional-properties" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_sorting_sortables-op" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 1</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 20</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/rec/collections/additional-properties</strong></p>
+<p><strong>/req/sorting/sortables-op</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <a href="#collection-additional-properties">Table 9</a> table contains a list of recommended additional properties that may be added to a collection information object to enhance the searchability of the collections offered at an OGC API endpoint.</p>
+<p>For every collection (path <code>/collections/{catalogueId}</code>), the server SHALL support the HTTP GET operation at the path <code>/collections/{catalogueId}/sortables</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The parameter <code>catalogue</code> is each <code>id</code> property in the collections response (JSONPath: <code>$.collections[*].id</code>) where the item type is specified as <code>record</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table id="collection-additional-properties" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. Additional collection information properties</caption>
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Property</th>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">language</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">publisher</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The entity making the resource available.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">themes</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A knowledge orgnaization system used to classify the resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">formats</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of available distributions for the resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">contactpoint</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">An entity to contact about the resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">license</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A legal document under which the resource is made available.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">rights</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A statement that concerns all rights not addressed by the license such as a copyright statement.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">associations</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for accessing the resource or links to other resources associated with this resource.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The collections metadata response is defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response">Collections Metadata</a> clause on the <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> extension.</p>
-</div>
-<table id="req_collections_schema" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_core_sortables-success" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 31</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 21</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/collections/response</strong></p>
+<p><strong>/req/core/sortables-success</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The content of that response shall be based upon the following OpenAPI 3.0 schema that extends the schema of the collection information object as defined in the <a href="https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response-1">Collection Information</a> clause of the  <a href="https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc">OGC API - Common - Part 2: Geospatial Data</a> specification:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">    collection:
-      type: object
-      required:
-        - id
-        - created
-        - changed
-        - title
-        - description
-        - keywords
-        - type
-      properties:
-        id:
-          description: identifier of the collection
-          type: string
-        created:
-          description: the date this collection was created in the server
-          type: string
-          format: date-time
-        changed:
-          description: the most recent date on which the collection was changed
-          type: string
-          format: date-time
-        title:
-          description: human readable title of the collection
-          type: string
-        description:
-          description: a description of the features in the collection
-          type: string
-        keywords:
-          description: A list of keywords or tag associated with the collection
-          type: array
-          items:
-           type: string
-        type:
-          description: the nature or genre of the items of the collections (e.g. feature, coverage)
-          type: string
-
-
-        itemType:
-          description: indicator about the type of the items in the collection (the default value is 'feature').
-          type: string
-          default: feature
-        language:
-          description: refers to the natural language used for textual values (i.e. titles, descriptions, etc) of items in the collection
-          type: string
-
-        publisher:
-          description: the entity making the collection available
-          type: string
-        themes:
-          description: list of classifications association with the collection from a knowlege organization system
-          type: array
-          items:
-             type: string
-             format: uri
-        formats:
-          description: list of available distributions for the collection
-          type: array
-          items:
-            type: string
-        contactpoint:
-          description: entity to contact about the collection
-          type: object
-        license:
-          description: legal document under which the collection is made available.
-          type: string
-        rights:
-          description: a statement that concerns all rights not addressed by the license such as a copyright statement.
-          type: string
-        links:
-          type: array
-          items:
-            $ref: "#/components/schemas/link"
-        associations:
-          type: array
-          items:
-            $ref: "#/components/schemas/link"
-        extent:
-          $ref: "#/components/schemas/extent"
-        crs:
-          description: the list of coordinate reference systems supported by the service
-          type: array
-          items:
-            type: string
-          default:
-            - http://www.opengis.net/def/crs/OGC/1.3/CRS84</code></pre>
-</div>
+<p>A successful execution of the operation SHALL be reported as a response with a HTTP status code <code>200</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The content of that response SHALL contain a document that validates against the OpenAPI 3.0 schema document <code>sortables.yaml</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect2">
-<h3 id="_examples_2"><a class="anchor" href="#_examples_2"></a>8.4. Examples</h3>
-<div class="paragraph">
-<p>Example 1: List all the collections that lie within a specific bounding box and contains the the keyword <code>weather</code>.</p>
-</div>
-<hr>
-<div class="literalblock">
+<div id="schema_sortables" class="listingblock">
+<div class="title"><a href="http://fix.me/sortables.yaml">Schema for the list of sortables (sortables.yaml)</a></div>
 <div class="content">
-<pre>   Client                                                          Server
-     |                                                               |
-     |   GET /collections?bbox=￼41.875315,-96.767601,56.732861,-73.47|
-     |                          6586&amp;q=weather   HTTP/1.1            |
-     |   Accept: application/json                                    |
-     |--------------------------------------------------------------&gt;|
-     |                                                               |
-     |   HTTP/1.1 200 OK                                             |
-     |   Content-Type: application/json                              |
-     |                                                               |
-     |   Need example output here...                                 |
-     |&lt;--------------------------------------------------------------|
----</pre>
+<pre class="highlight"><code class="language-YAML" data-lang="YAML">type: object
+required:
+- sortables
+properties:
+   sortables:
+      type: array
+      items:
+         $ref: sortable.yaml</code></pre>
+</div>
+</div>
+<div id="schema_sortable" class="listingblock">
+<div class="title"><a href="http://fix.me/sortable.yaml">Schema for a sortable description(sortable.yaml)</a></div>
+<div class="content">
+<pre class="highlight"><code class="language-YAML" data-lang="YAML">type: object
+required:
+   - id
+   - type
+properties:
+   id:
+      description: the identifier/name for the sortable
+      type: string
+   title:
+      description: a human readable title for the sortable
+      type: string
+   description:
+      description: a human-readable narrative describing the sortable
+      type: string
+   language:
+      description: the language used for the title and description
+      type: string
+   type:
+      description: the data type of the sortable
+      type: string
+      enum:
+      - string
+      - number
+      - integer
+      - boolean
+      - spatial
+      - temporal
+   spatial-types:
+      description: the list of allowed spatial geometry types, if known
+      type: string
+      enum:
+      - point
+      - multi-point
+      - curve
+      - multi-curve
+      - surface
+      - multi-surface
+      - solid
+      - multi-solid
+      - aggregate
+      - any
+   temporal-types:
+      description: the list of allowed temporal geometry types, if known
+      type: string
+      enum:
+      - instant
+      - interval
+   links:
+      description: additional links, e.g. to documentation or to the schema of t
+he values
+      type: array
+      items:
+         $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features
+/master/core/openapi/ogcapi-features-1.yaml#/components/schemas/link'</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_requirements_class_opensearch"><a class="anchor" href="#_requirements_class_opensearch"></a>9. Requirements Class "OpenSearch"</h2>
+<h2 id="_examples_2"><a class="anchor" href="#_examples_2"></a>9. Examples</h2>
+<div class="sectionbody">
+<div id="sortby-example" class="listingblock">
+<div class="title">sortby Example</div>
+<div class="content">
+<pre class="highlight"><code>.../collections/mycat/items?...&amp;sortby=-updated,recordid&amp;...</code></pre>
+</div>
+</div>
+<div id="sortby-extent-example" class="listingblock">
+<div class="title">sortby Extent Example</div>
+<div class="content">
+<pre class="highlight"><code>.../collections/mycat/items?...&amp;sortby=+extent&amp;...</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requirements_class_opensearch"><a class="anchor" href="#_requirements_class_opensearch"></a>10. Requirements Class "OpenSearch"</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="opensearch-overview"><a class="anchor" href="#opensearch-overview"></a>9.1. Overview</h3>
+<h3 id="opensearch-overview"><a class="anchor" href="#opensearch-overview"></a>10.1. Overview</h3>
 <table id="rc_opensearch" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 20%;">
@@ -3684,14 +3275,10 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_heading"><a class="anchor" href="#_heading"></a>9.2. Heading</h3>
-
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements-class-json-clause"><a class="anchor" href="#requirements-class-json-clause"></a>10. Requirements Class JSON</h2>
+<h2 id="requirements-class-json-clause"><a class="anchor" href="#requirements-class-json-clause"></a>11. Requirements Class JSON</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following requirements apply to an OGC API - Records implementation when the following conditions apply:</p>
@@ -3745,7 +3332,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_common"><a class="anchor" href="#_common"></a>10.1. Common</h3>
+<h3 id="_common"><a class="anchor" href="#_common"></a>11.1. Common</h3>
 <div class="paragraph">
 <p>This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:</p>
 </div>
@@ -3775,7 +3362,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 32</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 22</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/json/api-common</strong></p>
 </div></div></td>
@@ -3807,7 +3394,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 33</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 23</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/json/conformance</strong></p>
 </div></div></td>
@@ -3825,7 +3412,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </table>
 </div>
 <div class="sect2">
-<h3 id="_record"><a class="anchor" href="#_record"></a>10.2. Record</h3>
+<h3 id="_record"><a class="anchor" href="#_record"></a>11.2. Record</h3>
 <div class="paragraph">
 <p>TBD: Requirements for the GeoJSON encoding of a record.</p>
 </div>
@@ -3833,7 +3420,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements-class-html-clause"><a class="anchor" href="#requirements-class-html-clause"></a>11. Requirements Class HTML</h2>
+<h2 id="requirements-class-html-clause"><a class="anchor" href="#requirements-class-html-clause"></a>12. Requirements Class HTML</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following requirements apply to an OGC API - Records implementation when the following conditions apply:</p>
@@ -3886,7 +3473,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_common_2"><a class="anchor" href="#_common_2"></a>11.1. Common</h3>
+<h3 id="_common_2"><a class="anchor" href="#_common_2"></a>12.1. Common</h3>
 <div class="paragraph">
 <p>This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:</p>
 </div>
@@ -3916,7 +3503,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 34</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 24</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/html/api-common</strong></p>
 </div></div></td>
@@ -3948,7 +3535,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 35</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 25</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/html/conformance</strong></p>
 </div></div></td>
@@ -3966,7 +3553,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </table>
 </div>
 <div class="sect2">
-<h3 id="_record_2"><a class="anchor" href="#_record_2"></a>11.2. Record</h3>
+<h3 id="_record_2"><a class="anchor" href="#_record_2"></a>12.2. Record</h3>
 <div class="paragraph">
 <p>RBDL Requirements for the HTML encoding of a record.</p>
 </div>
@@ -3974,7 +3561,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements-class-xml-clause"><a class="anchor" href="#requirements-class-xml-clause"></a>12. Requirements Class XML</h2>
+<h2 id="requirements-class-atom-clause"><a class="anchor" href="#requirements-class-atom-clause"></a>13. Requirements Class ATOM</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following requirements apply to an OGC API - Records implementation when the following conditions apply:</p>
@@ -3982,15 +3569,15 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The API advertises conformance to the XML Conformance Class</p>
+<p>The API advertises conformance to the ATOM Conformance Class</p>
 </li>
 <li>
-<p>The client negotiates a XML format</p>
+<p>The client negotiates a ATOM format</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>The XML Requirements Class restricts requirements defined in the <code>Core</code> Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the HTTP response payloads. The sections below identify the scope of each new requirement and the <code>Core</code> requirements which lay within each scope.</p>
+<p>The ATOM Requirements Class restricts requirements defined in the <code>Core</code> Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the HTTP response payloads. The sections below identify the scope of each new requirement and the <code>Core</code> requirements which lay within each scope.</p>
 </div>
 <table id="rc_atom" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -4024,7 +3611,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_common_3"><a class="anchor" href="#_common_3"></a>12.1. Common</h3>
+<h3 id="_common_3"><a class="anchor" href="#_common_3"></a>13.1. Common</h3>
 <div class="paragraph">
 <p>This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:</p>
 </div>
@@ -4054,7 +3641,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 36</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 26</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/xml/api-common</strong></p>
 </div></div></td>
@@ -4086,7 +3673,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 37</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 27</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/xml/conformance</strong></p>
 </div></div></td>
@@ -4104,7 +3691,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </table>
 </div>
 <div class="sect2">
-<h3 id="_record_3"><a class="anchor" href="#_record_3"></a>12.2. Record</h3>
+<h3 id="_record_3"><a class="anchor" href="#_record_3"></a>13.2. Record</h3>
 <div class="paragraph">
 <p>TBD: Requirements for the ATOM encoding of a record.</p>
 </div>
@@ -4112,7 +3699,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements-class-openapi_3_0-clause"><a class="anchor" href="#requirements-class-openapi_3_0-clause"></a>13. Requirements class "OpenAPI 3.0"</h2>
+<h2 id="requirements-class-openapi_3_0-clause"><a class="anchor" href="#requirements-class-openapi_3_0-clause"></a>14. Requirements class "OpenAPI 3.0"</h2>
 <div class="sectionbody">
 <table id="rc_oas30" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -4154,7 +3741,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 38</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 28</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>/req/oas30/oas-common</strong></p></td>
 </tr>
 <tr>
@@ -4177,7 +3764,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 39</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 29</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/oas30/conformance</strong></p>
 </div></div></td>
@@ -4196,7 +3783,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </div>
 </div>
 <div class="sect1">
-<h2 id="media-types-section"><a class="anchor" href="#media-types-section"></a>14. Media Types</h2>
+<h2 id="media-types-section"><a class="anchor" href="#media-types-section"></a>15. Media Types</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This standard does not mandate any particular encoding or format. However, it does provide extensions for encodings which are commonly used in OGC APIs. These extensions include:</p>
@@ -4215,13 +3802,13 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 <p>Neither of these encodings are mandatory. An implementor of this standard may choose to implement neither of them, selecting different encodings instead.</p>
 </div>
 <div class="sect2">
-<h3 id="_html_encoding"><a class="anchor" href="#_html_encoding"></a>14.1. HTML Encoding</h3>
+<h3 id="_html_encoding"><a class="anchor" href="#_html_encoding"></a>15.1. HTML Encoding</h3>
 <div class="paragraph">
 <p>Support for HTML is recommended. HTML is the core language of the World Wide Web. An API that supports HTML will support browsing the spatial resources with a web browser and will also enable search engines to crawl and index those resources.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_json_encoding"><a class="anchor" href="#_json_encoding"></a>14.2. JSON Encoding</h3>
+<h3 id="_json_encoding"><a class="anchor" href="#_json_encoding"></a>15.2. JSON Encoding</h3>
 <div class="paragraph">
 <p>Support for JSON is recommended. JSON is a commonly used format that is simple to understand and well supported by tools and software libraries.</p>
 </div>
@@ -4229,7 +3816,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 <p>JSON structures documented in this standard are defined using JSON Schema. These schema are available in JSON and YAML formats from <a href="http://schemas.opengis.net/tbd">http://schemas.opengis.net/tbd</a></p>
 </div>
 <div class="sect3">
-<h4 id="_geojson"><a class="anchor" href="#_geojson"></a>14.2.1. GeoJSON</h4>
+<h4 id="_geojson"><a class="anchor" href="#_geojson"></a>15.2.1. GeoJSON</h4>
 <div class="paragraph">
 <p>"GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the manner in which they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <a href="#GeoJSON">IETF RFC 7946</a></p>
 </div>
@@ -4239,12 +3826,12 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </div>
 </div>
 <div class="sect2">
-<h3 id="_media_types"><a class="anchor" href="#_media_types"></a>14.3. Media Types</h3>
+<h3 id="_media_types"><a class="anchor" href="#_media_types"></a>15.3. Media Types</h3>
 <div class="paragraph">
-<p>A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <a href="#api-records-mime-types">Table 10</a>.</p>
+<p>A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <a href="#api-records-mime-types">[api-records-mime-types]</a>.</p>
 </div>
-<table id="api-records-mime-types" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 15. API - Records MIME Types</caption>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 14. API - Records MIME Types</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4274,7 +3861,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </table>
 </div>
 <div class="sect2">
-<h3 id="media-type-defaults"><a class="anchor" href="#media-type-defaults"></a>14.4. Default Encodings</h3>
+<h3 id="media-type-defaults"><a class="anchor" href="#media-type-defaults"></a>15.4. Default Encodings</h3>
 <div class="paragraph">
 <p>The media type used to encode a response to a request shall be determined through the HTTP content negotiation protocol as specified in API - Common. However, content negotiation is not required by the HTTP standard. So default encodings must be established.</p>
 </div>
@@ -4285,7 +3872,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 40</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 30</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/rc-mediatype-default</strong></p>
 </div></div></td>
@@ -4308,7 +3895,7 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </div>
 </div>
 <div class="sect1">
-<h2 id="security-section"><a class="anchor" href="#security-section"></a>15. Security Considerations</h2>
+<h2 id="security-section"><a class="anchor" href="#security-section"></a>16. Security Considerations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>TBD: Discuss any security considerations.</p>
@@ -4326,13 +3913,124 @@ Adding, modifying, or deleting items from a collections are all examples of chan
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conformance_class_abstract_test_suite_normative"><a class="anchor" href="#_conformance_class_abstract_test_suite_normative"></a>Annex A: Conformance Class Abstract Test Suite (Normative)</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_conformance_class_a"><a class="anchor" href="#_conformance_class_a"></a>A.1. Conformance Class A</h3>
+<div class="sect3">
+<h4 id="_requirement_1"><a class="anchor" href="#_requirement_1"></a>A.1.1. Requirement 1</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Test id:</p></th>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">/conf/conf-class-a/req-name-1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement:</p></th>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">/req/req-class-a/req-name-1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Test purpose:</p></th>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Verify that&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Test method:</p></th>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Inspect&#8230;&#8203;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_requirement_2"><a class="anchor" href="#_requirement_2"></a>A.1.2. Requirement 2</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Bibliography"><a class="anchor" href="#Bibliography"></a>Annex B: Bibliography</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a id="SDWBP"></a> W3C/OGC: Spatial Data on the Web Best Practices, W3C Working Group Note 28 September 2017, <a href="https://www.w3.org/TR/sdw-bp/" class="bare">https://www.w3.org/TR/sdw-bp/</a></p>
+</li>
+<li>
+<p><a id="DWBP"></a> W3C: Data on the Web Best Practices, W3C Recommendation 31 January 2017, <a href="https://www.w3.org/TR/dwbp/" class="bare">https://www.w3.org/TR/dwbp/</a></p>
+</li>
+<li>
+<p><a id="DCAT"></a> W3C: Data Catalog Vocabulary, W3C Recommendation 16 January 2014, <a href="https://www.w3.org/TR/vocab-dcat/" class="bare">https://www.w3.org/TR/vocab-dcat/</a></p>
+</li>
+<li>
+<p><a id="link-relations"></a> IANA: Link Relation Types, <a href="https://www.iana.org/assignments/link-relations/link-relations.xml" class="bare">https://www.iana.org/assignments/link-relations/link-relations.xml</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_revision_history"><a class="anchor" href="#_revision_history"></a>Annex C: Revision History</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12%;">
+<col style="width: 18%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 46%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Date</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Release</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Editor</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Primary clauses modified</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2020-01-13</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Template</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C. Heazel</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">initial template</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2020-04-22</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1.0-dev</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">T. Kralidis</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">changes to reflect Records, editorial updates, add Q parameter to clause 7</p></td>
+</tr>
+</tbody>
+</table>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-10 22:23:25 -0500
+Last updated 2021-01-11 22:22:42 -0500
 </div>
 </div>
 </body>
