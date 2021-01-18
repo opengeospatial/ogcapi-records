@@ -1,0 +1,7 @@
+[[rec_record_associations]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-associations*
+^|A |Implementations SHOULD use the record `properties.associations` property to provide a list of relevant resources.
+^|B |Implementations SHOULD use the optional `templated: true` property to identify a URI template as part of an association link.
+|===
