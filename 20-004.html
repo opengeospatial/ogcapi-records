@@ -666,7 +666,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_response_6">7.5.3. Response</a></li>
-<li><a href="#_paged_response">7.5.4. Paged Response</a></li>
+<li><a href="#_associations_and_links">7.5.4. Associations and Links</a></li>
+<li><a href="#_paged_response">7.5.5. Paged Response</a></li>
 </ul>
 </li>
 <li><a href="#record-access">7.6. Record Access</a>
@@ -1605,28 +1606,38 @@ properties:
 <div class="title">Landing Page Example</div>
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
-  "links": [
-    { "href": "http://data.example.org/",
-      "rel": "self",
-      "type": "application/json",
-      "title": "This Document" },
-    { "href": "http://data.example.org/api",
-      "rel": "service-desc",
-      "type": "application/openapi+json;version=3.0",
-      "title": "The API Definition" },
-    { "href": "http://data.example.org/api",
-      "rel": "service-doc",
-      "type": "text/html",
-      "title": "The API Document" },
-    { "href": "http://data.example.org/conformance",
-      "rel": "conformance",
-      "type": "application/json",
-      "title": "OGC Conformance Classes Implemented by this API" },
-    { "href": "http://data.example.org/collections",
-      "rel": "data",
-      "type": "application/json",
-      "title": "Metadata About the Resource Collections" }
-  ]
+    "links": [
+        {
+            "href": "http://data.example.org/",
+            "rel": "self",
+            "type": "application/json",
+            "title": "This Document"
+        },
+        {
+            "href": "http://data.example.org/api",
+            "rel": "service-desc",
+            "type": "application/openapi+json;version=3.0",
+            "title": "The API Definition"
+        },
+        {
+            "href": "http://data.example.org/api",
+            "rel": "service-doc",
+            "type": "text/html",
+            "title": "The API Document"
+        },
+        {
+            "href": "http://data.example.org/conformance",
+            "rel": "conformance",
+            "type": "application/json",
+            "title": "OGC Conformance Classes Implemented by this API"
+        },
+        {
+            "href": "http://data.example.org/collections",
+            "rel": "data",
+            "type": "application/json",
+            "title": "Metadata About the Resource Collections"
+        }
+    ]
 }</code></pre>
 </div>
 </div>
@@ -1928,63 +1939,54 @@ properties:
 <div class="title">Collections Example</div>
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
-  "links": [
-    {
-      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=application%2Fjson",
-      "rel": "self",
-      "type": "application/json",
-      "title": "this document"
-    },
-    {
-      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=text%2Fxml",
-      "rel": "alternate",
-      "type": "text/xml",
-      "title": "this document as XML"
-    },
-    {
-      "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=text%2Fhtml",
-      "rel": "alternate",
-      "type": "text/html",
-      "title": "this document as HTML"
-    }
-  ],
-  "collections": [
-    .
-    .
-    .
-    {
-      "id": "radarsat2cat",
-      "itemType": "record",
-      "title": "CubeWerx RADARSAT-2 Catalogue",
-      "description": "A sample catalogue of RADARSAT-2 products stored in S3 on AWS.",
-      "links": [
+    "links": [
         {
-          "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/s1tepcat",
-          "rel": "collection",
-          "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
-        }
-      ]
-    },
-    .
-    .
-    .
-    {
-      "id": "sentinel1cat",
-      "itemType": "record",
-      "title": "CubeWerx Sentinel-1 Catalogue",
-      "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
-      "links": [
+            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=application%2Fjson",
+            "rel": "self",
+            "type": "application/json",
+            "title": "this document"
+        },
         {
-          "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat",
-          "rel": "collection",
-          "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=text%2Fxml",
+            "rel": "alternate",
+            "type": "text/xml",
+            "title": "this document as XML"
+        },
+        {
+            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=text%2Fhtml",
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "this document as HTML"
         }
-      ]
-    },
-    .
-    .
-    .
-  ]
+    ],
+    "collections": [
+        {
+            "id": "radarsat2cat",
+            "itemType": "record",
+            "title": "CubeWerx RADARSAT-2 Catalogue",
+            "description": "A sample catalogue of RADARSAT-2 products stored in S3 on AWS.",
+            "links": [
+                {
+                    "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/s1tepcat",
+                    "rel": "collection",
+                    "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+                }
+            ]
+        },
+        {
+            "id": "sentinel1cat",
+            "itemType": "record",
+            "title": "CubeWerx Sentinel-1 Catalogue",
+            "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+            "links": [
+                {
+                    "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat",
+                    "rel": "collection",
+                    "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+                }
+            ]
+        }
+    ]
 }</code></pre>
 </div>
 </div>
@@ -2088,16 +2090,16 @@ properties:
 <div class="title">Collection Information Example</div>
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
-   "id": "sentinel1cat",
-   "title": "Sentinel-1 Catalogue",
-   "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
-   "links": [
-      {
-         "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items",
-         "rel": "items",
-         "title": "Catalogue records describing SENTINEL-1 products."
-      }
-   ]
+    "id": "sentinel1cat",
+    "title": "Sentinel-1 Catalogue",
+    "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+    "links": [
+        {
+            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items",
+            "rel": "items",
+            "title": "Catalogue records describing SENTINEL-1 products."
+        }
+    ]
 }</code></pre>
 </div>
 </div>
@@ -2625,7 +2627,7 @@ I have chosen a small subset of core queryables (type, externalId) and mapped th
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for navigating the API (e.g. link to previous or next pages; links to alterntive representations, etc.)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">links</p></td>
 </tr>
 </tbody>
@@ -2741,15 +2743,37 @@ I have chosen a small subset of core queryables (type, externalId) and mapped th
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">associations</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A list of links for accessing the resource, links to other resources associated with this resource, etc.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.associatations</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">properties.associations</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_paged_response"><a class="anchor" href="#_paged_response"></a>7.5.4. Paged Response</h4>
+<h4 id="_associations_and_links"><a class="anchor" href="#_associations_and_links"></a>7.5.4. Associations and Links</h4>
 <div class="paragraph">
-<p>One consequence of the Limit parameter is that the full result set is not delivered to the user. However, users frequently want to know how big the result set it and how to access the rest of it. The following requirement add information to the response to address that need.</p>
+<p>A record object contains both <code>links</code> and <code>properties.associations</code> properties.  The following
+recommendations provide clarification on where and how to use these properties in a record.</p>
+</div>
+<div id="association-uri-template-example" class="listingblock">
+<div class="title">Association URI Template Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">Unresolved directive in clause_7_core.adoc - include::../examples/json/associations-uri-templates.json[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following recommendations provide clarification on where and how to use these properties in a record.</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in clause_7_core.adoc - include::recommendations/core/REC_record-links.adoc[]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in clause_7_core.adoc - include::recommendations/core/REC_record-associations.adoc[]</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_paged_response"><a class="anchor" href="#_paged_response"></a>7.5.5. Paged Response</h4>
+<div class="paragraph">
+<p>One consequence of the Limit parameter is that the full result set is not delivered to the user. However, users frequently want to know how big the result set it and how to access the rest of it. The following requirement adds information to the response to address that need.</p>
 </div>
 <table id="req_core_rc-paged-response" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -4030,7 +4054,7 @@ Ensure that there is a conformance class for each requirements class and a test 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-16 22:37:39 -0500
+Last updated 2021-01-17 22:22:43 -0500
 </div>
 </div>
 </body>
