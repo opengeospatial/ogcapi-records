@@ -2757,18 +2757,64 @@ recommendations provide clarification on where and how to use these properties i
 <div id="association-uri-template-example" class="listingblock">
 <div class="title">Association URI Template Example</div>
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">Unresolved directive in clause_7_core.adoc - include::../examples/json/associations-uri-templates.json[]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "rel": "item",
+    "type": "image/png",
+    "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
+    "href": "https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={miny},{minx},{maxy},{maxx}&amp;layers=stations&amp;width={width}&amp;height={height}&amp;format=image/png",
+    "templated": "true"
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>The following recommendations provide clarification on where and how to use these properties in a record.</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in clause_7_core.adoc - include::recommendations/core/REC_record-links.adoc[]</p>
-</div>
-<div class="paragraph">
-<p>Unresolved directive in clause_7_core.adoc - include::recommendations/core/REC_record-associations.adoc[]</p>
-</div>
+<table id="rec_record_links" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 1</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/rec/core/record-links</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>Implementations SHOULD use the record <code>links</code> property to provide hypermedia for navigation and alternate representations.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="rec_record_associations" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 2</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/rec/core/record-associations</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>Implementations SHOULD use the record <code>properties.associations</code> property to provide a list of relevant resources.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>Implementations SHOULD use the optional <code>templated: true</code> property to identify a URI template as part of an association link.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_paged_response"><a class="anchor" href="#_paged_response"></a>7.5.5. Paged Response</h4>
@@ -4054,7 +4100,7 @@ Ensure that there is a conformance class for each requirements class and a test 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-17 22:22:43 -0500
+Last updated 2021-01-18 22:22:58 -0500
 </div>
 </div>
 </body>
