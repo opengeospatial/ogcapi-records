@@ -370,15 +370,16 @@ include::recommendations/core/PER_additional-properties.adoc[]
 
 ==== Associations and Links
 
-A record object contains both `links` and `properties.associations` properties.  The following
-recommendations provide clarification on where and how to use these properties in a record.
+A record object contains both `links` and `properties.associations` properties which serve
+different purposes.  The following provides an example of using assocaitions for related
+resources of a record, as both traditional link relations as well as API resources via URI
+templates.
 
-
-[#association-uri-template-example,reftext=`Association URI Template Example`]
-.Association URI Template Example
+[#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
+.Associations simple and URI Template Example
 [source,json]
 ----
-include::../examples/json/association-uri-template.json[]
+include::../examples/json/associations-simple-and-uri-template.json[]
 ----
 
 The following recommendations provide clarification on where and how to use these properties in a record.
