@@ -1,0 +1,29 @@
+[[rec_core_additional-query-parameters]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/additional-query-parameters*
+^|A |If any <<per_core_additional-properties,additional record property>> is expected to be useful for applications using the service to filter records in a collection based on this property, a parameter with the name of the property SHOULD be supported.
+^|B |If the parameter has a simple value (e.g. a string or interger) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+in: query
+required: false
+style: form
+explode: false
+----
+
+^|C |If the parameter is an array of simple values then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: q
+in: query
+required: false
+schema:
+  type: array
+explode: false
+----
+
+^|D |The `schema` property SHOULD be the same as the definition of the <<per_core_additional-properties,additional record property>> in the response schema.
+|===

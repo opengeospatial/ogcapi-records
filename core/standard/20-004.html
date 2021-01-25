@@ -662,17 +662,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#core-query-parameters-q">7.5.2.5. Parameter q</a></li>
 <li><a href="#core-query-parameters-type">7.5.2.6. Parameter type</a></li>
 <li><a href="#core-query-parameters-externalid">7.5.2.7. Parameter externalid</a></li>
-<li><a href="#_combinations_of_filtering_parameters">7.5.2.8. Combinations of Filtering Parameters</a></li>
+<li><a href="#additional-query-parameters">7.5.2.8. Additional query parameters</a></li>
+<li><a href="#_combinations_of_filtering_parameters">7.5.2.9. Combinations of Filtering Parameters</a></li>
 </ul>
 </li>
-<li><a href="#_response_6">7.5.3. Response</a></li>
+<li><a href="#query-response">7.5.3. Response</a></li>
 <li><a href="#_paged_response">7.5.4. Paged Response</a></li>
 </ul>
 </li>
 <li><a href="#record-access">7.6. Record Access</a>
 <ul class="sectlevel3">
 <li><a href="#_operation_7">7.6.1. Operation</a></li>
-<li><a href="#_response_7">7.6.2. Response</a></li>
+<li><a href="#_response_6">7.6.2. Response</a></li>
 </ul>
 </li>
 <li><a href="#general-section">7.7. General</a>
@@ -2516,31 +2517,89 @@ explode: false</code></pre>
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-I have chosen a small subset of core queryables (type, externalId) and mapped them as URL query parameters.  We could generalize this and say that any core queryable can be included as a URL query parameter.  Should we do this instead?
-</td>
-</tr>
-</table>
-</div>
 </div>
 <div class="sect4">
-<h5 id="_combinations_of_filtering_parameters"><a class="anchor" href="#_combinations_of_filtering_parameters"></a>7.5.2.8. Combinations of Filtering Parameters</h5>
+<h5 id="additional-query-parameters"><a class="anchor" href="#additional-query-parameters"></a>7.5.2.8. Additional query parameters</h5>
 <div class="paragraph">
-<p>Any combination of query parameters from the <a href="#core-query-parameters-table">Table of Query Parameters</a> may be specified for filtering.</p>
+<p>This standard defines the following URL query parameters based on the set of
+<a href="#core-queryables-record-table">core queryables</a>:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#core-query-parameters-type">type</a></p>
+</li>
+<li>
+<p><a href="#core-query-parameters-externalid">externalId</a></p>
+</li>
+</ul>
+</div>
+<table id="rec_core_additional-query-parameters" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 1</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/rec/core/additional-query-parameters</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>If any <a href="#per_core_additional-properties">additional record property</a> is expected to be useful for applications using the service to filter records in a collection based on this property, a parameter with the name of the property SHOULD be supported.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>If the parameter has a simple value (e.g. a string or interger) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-YAML" data-lang="YAML">in: query
+required: false
+style: form
+explode: false</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>If the parameter is an array of simple values then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-YAML" data-lang="YAML">name: q
+in: query
+required: false
+schema:
+  type: array
+explode: false</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>schema</code> property SHOULD be the same as the definition of the <a href="#per_core_additional-properties">additional record property</a> in the response schema.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_combinations_of_filtering_parameters"><a class="anchor" href="#_combinations_of_filtering_parameters"></a>7.5.2.9. Combinations of Filtering Parameters</h5>
 <div class="paragraph">
-<p>Any combination of <code>bbox</code>, <code>datetime</code>, <code>q</code> and <code>limit</code> parameters for filtering on Record properties is allowed. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is 'AND' (exclusive).</p>
+<p>Any combination of query parameters from the <a href="#core-query-parameters-table">Table of Query Parameters</a> and any <a href="#additional-query-parameters">additional query parameters</a> may be specified for filtering. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is <strong>AND</strong> (exclusive).</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_6"><a class="anchor" href="#_response_6"></a>7.5.3. Response</h4>
+<h4 id="query-response"><a class="anchor" href="#query-response"></a>7.5.3. Response</h4>
 <table id="req_core_rc-response" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -2555,6 +2614,12 @@ I have chosen a small subset of core queryables (type, externalId) and mapped th
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The response SHALL only include records selected by the request.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p>Each record in the response SHALL contain the mandatory properties listed in the <a href="#core-queryables-record-table">Table of Core Queryables related to the catalogue record</a> and the <a href="#core-queryables-resource-table">Table of Core Queryables related to the resource</a>.</p>
 </div></div></td>
@@ -2827,7 +2892,7 @@ I have chosen a small subset of core queryables (type, externalId) and mapped th
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_7"><a class="anchor" href="#_response_7"></a>7.6.2. Response</h4>
+<h4 id="_response_6"><a class="anchor" href="#_response_6"></a>7.6.2. Response</h4>
 <table id="req_core_record-success" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">

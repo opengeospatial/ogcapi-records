@@ -317,14 +317,22 @@ include::requirements/core/REQ_param-externalid-definition.adoc[]
 
 include::requirements/core/REQ_param-externalid-response.adoc[]
 
-NOTE: I have chosen a small subset of core queryables (type, externalId) and mapped them as URL query parameters.  We could generalize this and say that any core queryable can be included as a URL query parameter.  Should we do this instead?
+[[additional-query-parameters]]
+===== Additional query parameters
+
+This standard defines the following URL query parameters based on the set of 
+<<core-queryables-record-table,core queryables>>:
+
+* <<core-query-parameters-type,type>>
+* <<core-query-parameters-externalid,externalId>>
+
+include::recomendations/core/REC_additional-query-parameters.adoc[]
 
 ===== Combinations of Filtering Parameters
 
-Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> may be specified for filtering.
+Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> may be specified for filtering. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is **AND** (exclusive).
 
-Any combination of `bbox`, `datetime`, `q` and `limit` parameters for filtering on Record properties is allowed. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is 'AND' (exclusive).
-
+[[query-response]]
 ==== Response
 
 include::requirements/core/REQ_rc-response.adoc[]
