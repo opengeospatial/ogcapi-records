@@ -17,7 +17,7 @@ This specification addresses only those parts of an API which are specific to Re
 
 The latest drafts of each standard in this repository are built daily (based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file):
 
-* [Part 1: Core](https://htmlpreview.github.io/?https://github.com/opengeospatial/ogcapi-records/blob/master/20-004.html)
+* [Part 1: Core](https://htmlpreview.github.io/?https://github.com/opengeospatial/ogcapi-records/blob/master/core/standard/20-004.html)
 
 To generate HTML and PDF representations of the standard yourself, asciidoctor is required.  To install:
 
