@@ -1,3 +1,4 @@
+[[clause-core]]
 == Requirements Class "Core"
 
 [[core-overview]]

@@ -1,0 +1,33 @@
+[[clause-cql-filter]]
+== Requirements Class "CQL Filter"
+
+[[cql-filter-overview]]
+=== Overview
+
+include::requirements/requirements_class_cql-filter.adoc[]
+
+This clause defines the binding to the filter parameters defined in the http://docs.opengeospatial.org/DRAFTS/19-079.html#_requirements_class_filter[OGC API - Features - Part 3: Filter and the Common Query Language (CQL), Requirements Class "Filter"] clause.
+
+=== Records
+
+==== Operation
+
+As specified in the <<records-access,Reccords Access>> clause, records are accessed using the HTTP GET method via the `/collections/{collectionId}/items` path.  The following additional requirements bind the parameters http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-param[filter], http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-lang-param[filter-lang] and http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-filter-crs[filter-crs] to the GET operation on this path.
+
+include::requirements/cql-filter/REQ_filter-param.adoc[]
+
+include::requirements/cql-filter/REQ_filter-lang-param.adoc[]
+
+include::recommendations/cql-filter/REC_text-encoding.adoc[]
+
+include::recommendations/cql-filter/REC_json-encoding.adoc[]
+
+// TODO include::requirements/cql-filter/REQ_cql-atom.adoc[]
+// TODO include::requirements/cql-filter/REQ_cql-html.adoc[]
+
+include::requirements/cql-filter/REQ_filter-crs-param.adoc[]
+
+==== Response
+
+include::requirements/cql-filter/REQ_response.adoc[]
+~                                                              

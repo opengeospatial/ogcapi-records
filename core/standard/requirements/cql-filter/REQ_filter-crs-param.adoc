@@ -1,0 +1,7 @@
+[[req_cql-filter_filter-crs-param]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/cql-filter/filter-crs-param*
+^|Condition |Server implements <<OAFeat-2,OGC API - Features - Part 2: Coordinate Reference Systems by Reference>>
+^|A |The HTTP GET operation on the `/collections/{collectionId}/items` path SHALL support the `filter-crs` parameter as defined in http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-filter-crs[Parameter filter-crs].
+|===

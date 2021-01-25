@@ -1,0 +1,6 @@
+[[rec_cql-filter_JSON-encoding]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/cql-filter/JSON-encoding*
+^|A |If a filter expression can be represented for its intended use as JSON, servers SHOULD consider supporting the http://docs.opengeospatial.org/DRAFTS/19-079.html#cql-json[CQL JSON] encoding.
+|===

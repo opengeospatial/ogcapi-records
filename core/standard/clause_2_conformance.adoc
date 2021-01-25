@@ -10,13 +10,14 @@ This standard identifies six (6) Conformance Classes. The Conformance Classes im
 
 The Requirements Classes for OGC API - Records are:
 
-* *Core*
+* <<clause-core,Core>>
 // * *Collections*
-* *Sorting*
-* *OpenSearch*
-* *JSON-Record*
-* *ATOM-Record*
-* *HTML-Record*
+* <<clause-sorting,Sorting>>
+* <<clause-cql-filter,Filter using CQL>>
+* <<clause-opensearch,OpenSearch>>
+* <<requirements-class-json-clause,JSON-Record>>
+* <<requirements-class-atom-clause,ATOM-Record>>
+* <<requirements-class-html-clause,HTML-Record>>
 
 // P.A.V.
 // Core includes: the parameters  -> bbox,
@@ -76,7 +77,9 @@ The _Core_ Requirements Class is the minimal useful service interface for the OG
 // The _Collections_ Requirements Class defines requirements for making the 
 // `/collections` endpoint of any OGC Web API searchable.
 
-The _Sorting_ Requirements Class defined the requirements to support sorting of records in a query response.
+The _Sorting_ Requirements Class defines the requirements to support sorting of records in a query response.
+
+The _CQL_ Requirements Class defines the requirements to support filtering using the Common Query Language (CQL).
 
 The _OpenSearch_ Requirements Class defines the requirements to support query by OpenSearch clients.
 

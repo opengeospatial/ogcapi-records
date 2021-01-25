@@ -1,3 +1,4 @@
+[[clause-sorting]]
 == Requirements Class "Sorting"
 
 [[sorting-overview]]
