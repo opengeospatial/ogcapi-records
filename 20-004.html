@@ -937,7 +937,7 @@ parameter organized into X conformance classes.</p>
 <p><a href="#clause-sorting">Sorting</a></p>
 </li>
 <li>
-<p><a href="#clause-cql-filter">Filter using CQL</a></p>
+<p><a href="#clause-cql-filter">Filtering using the Common Query Language (CQL)</a></p>
 </li>
 <li>
 <p><a href="#clause-opensearch">OpenSearch</a></p>
@@ -960,7 +960,7 @@ parameter organized into X conformance classes.</p>
 <p>The <em>Sorting</em> Requirements Class defines the requirements to support sorting of records in a query response.</p>
 </div>
 <div class="paragraph">
-<p>The <em>CQL</em> Requirements Class defines the requirements to support filtering using the Common Query Language (CQL).</p>
+<p>The <em>Filter using the Common Query Language</em> Requirements Class defines the requirements to support record filtering using CQL.</p>
 </div>
 <div class="paragraph">
 <p>The <em>OpenSearch</em> Requirements Class defines the requirements to support query by OpenSearch clients.</p>
@@ -1340,12 +1340,12 @@ or<br>
 <td class="tableblock halign-center valign-top" colspan="3" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Records</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#record-clause">{root}/collections/{collectionid}/items</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#records-access">{root}/collections/{collectionid}/items</a></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>items</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Search results based on querying the service for records satisfying 0..n query parameters.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#record-clause">{root}/collections/{collectionid}/items/{recordid}</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#record-access">{root}/collections/{collectionid}/items/{recordid}</a></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>item</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Record of metadata which has the unique identifier <code>{recordid}</code>.</p></td>
 </tr>

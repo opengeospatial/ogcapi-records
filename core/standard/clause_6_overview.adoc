@@ -34,8 +34,8 @@ or +
 |<<collections,{root}/collections>> |`data` |Metadata describing the spatial collections available from this API.
 |<<collectionInfo,{root}/collections/{collectionid}>> | |Metadata describing the collection which has the unique identifier `{collectionid}`
 3+^|**Records**
-|<<record-clause,{root}/collections/{collectionid}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
-|<<record-clause,{root}/collections/{collectionid}/items/{recordid}>> |`item` |Record of metadata which has the unique identifier `{recordid}`.
+|<<records-access,{root}/collections/{collectionid}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
+|<<record-access,{root}/collections/{collectionid}/items/{recordid}>> |`item` |Record of metadata which has the unique identifier `{recordid}`.
 |===
 
 Where:
