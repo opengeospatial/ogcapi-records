@@ -13,7 +13,7 @@ The Requirements Classes for OGC API - Records are:
 * <<clause-core,Core>>
 // * *Collections*
 * <<clause-sorting,Sorting>>
-* <<clause-cql-filter,Filter using CQL>>
+* <<clause-cql-filter,Filtering using CQL>>
 * <<clause-opensearch,OpenSearch>>
 * <<requirements-class-json-clause,JSON-Record>>
 * <<requirements-class-atom-clause,ATOM-Record>>
