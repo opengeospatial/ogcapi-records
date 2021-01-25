@@ -61,7 +61,7 @@ The following JSON fragment is an example of a response to an OGC API - Records 
 .Landing Page Example
 [source,json]
 ----
-include::../examples/json/landingPage_example.json[]
+include::../examples/json/landingPage.json[]
 ----
 
 ===== Error situations
@@ -122,7 +122,7 @@ A successful response to the Conformance operation is a list of URLs. Each URL i
 
 include::requirements/core/REQ_conformance.adoc[]
 
-include::recomendations/core/PER_additional-conformance.adoc[]
+include::recommendations/core/PER_additional-conformance.adoc[]
 
 [#conformance-schema,reftext='Conformance Response Schema']
 .Conformance Response Schema
@@ -137,7 +137,7 @@ The following JSON fragment is an example of a response to an OGC API - Records 
 .Conformance Information Example
 [source,json]
 ----
-include::../examples/json/conformance_example.json[]
+include::../examples/json/conformance.json[]
 ----
 
 ===== Error situations
@@ -190,7 +190,7 @@ The following JSON fragment is an example of a response to an OGC API - Records 
 .Collections Example
 [source,json]
 ----
-include::../examples/json/collections_example.json[]
+include::../examples/json/collections.json[]
 ----
 
 ===== Error situations
@@ -235,7 +235,7 @@ The following JSON fragment is an example of a response to an OGC API - Records 
 .Collection Information Example
 [source,json]
 ----
-include::../examples/json/collection_info_example.json[]
+include::../examples/json/collection.json[]
 ----
 
 ===== Error situations
@@ -326,7 +326,7 @@ This standard defines the following URL query parameters based on the set of
 * <<core-query-parameters-type,type>>
 * <<core-query-parameters-externalid,externalId>>
 
-include::recomendations/core/REC_additional-query-parameters.adoc[]
+include::recommendations/core/REC_additional-query-parameters.adoc[]
 
 ===== Combinations of Filtering Parameters
 
@@ -337,7 +337,7 @@ Any combination of query parameters from the <<core-query-parameters-table,Table
 
 include::requirements/core/REQ_rc-response.adoc[]
 
-include::recomendations/core/PER_additional-properties.adoc[]
+include::recommendations/core/PER_additional-properties.adoc[]
 
 [[core-queryables-record-table]]
 [reftext='{table-caption} {counter:table-num}']
@@ -348,7 +348,7 @@ include::recomendations/core/PER_additional-properties.adoc[]
 |recordId |M |A unique record identifier assigned by the server. |id
 |record-created |O |The date this record was created in the server. |created
 |record-updated |O |The most recent date on which the record was changed. |updated
-|links |O |A list of links for navigating the API (e.g. link to previous or next pages; links to alterntive representations, etc.) |links
+|links |O |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.) |links
 |===
 
 [[core-queryables-resource-table]]
@@ -373,12 +373,33 @@ include::recomendations/core/PER_additional-properties.adoc[]
 |license |O |A legal document under which the resource is made available. |properties.license
 |rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
 |extent |O |The spatio-temporal coverage of the resource. |properties.extent
-|associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc. |properties.associatations
+|associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc. |properties.associations
 |===
+
+==== Associations and Links
+
+A record object contains both `links` and `properties.associations` properties which serve
+different purposes.  The following provides an example of using assocaitions for related
+resources of a record, as both traditional link relations as well as API resources via URI
+templates.
+
+[#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
+.Associations simple and URI Template Example
+[source,json]
+----
+include::../examples/json/associations-simple-and-uri-template.json[]
+----
+
+The following recommendations provide clarification on where and how to use these properties in a record.
+
+include::recommendations/core/REC_record-links.adoc[]
+
+include::recommendations/core/REC_record-associations.adoc[]
+
 
 ==== Paged Response
 
-One consequence of the Limit parameter is that the full result set is not delivered to the user. However, users frequently want to know how big the result set it and how to access the rest of it. The following requirement add information to the response to address that need.
+One consequence of the Limit parameter is that the full result set is not delivered to the user. However, users frequently want to know how big the result set it and how to access the rest of it. The following requirement adds information to the response to address that need.
 
 include::requirements/core/REQ_rc-paged-response.adoc[]
 
@@ -436,4 +457,4 @@ More specific guidance is provided for each resource, where applicable.
 
 The API Description Document describes the HTTP status codes generated by that API. This should not be an exhaustive list of all possible status codes. It is not reasonable to expect an API designer to control the use of HTTP status codes which are not generated by their software. Therefore, it is recommended that the API Description Document limit itself to describing HTTP status codes relevant to the proper operation of the API application logic. Client implementations should be prepared to receive HTTP status codes in addition to those described in the API Description Document.
 
-include::recomendations/core/PER_additional-status-codes.adoc[]
+include::recommendations/core/PER_additional-status-codes.adoc[]
