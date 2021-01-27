@@ -86,4 +86,4 @@ Pull Requests from contributors are welcomed. However, please note that by sendi
 
 The latest drafts of each standard in this repository are built daily (based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file):
 
-* [Part 1: Core](https://htmlpreview.github.io/?https://github.com/opengeospatial/ogcapi-records/blob/master/20-004.html)
+* [Part 1: Core](http://docs.ogc.org/DRAFTS/20-004.html)
