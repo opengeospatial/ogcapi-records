@@ -61,7 +61,6 @@ The following examples illustrate each of these linking patterns:
 
 [#linking-pattern-1,reftext=`Adding links to the **links** section.`]
 .Adding links to the **links** section
-[source,json]
 ----
 {
    .
@@ -99,7 +98,6 @@ The following examples illustrate each of these linking patterns:
 
 [#linking-pattern-2,reftext=`Adding links to the **associations** section.`]
 .Adding links to the **associations** section
-[source,json]
 ----
 {
    .
@@ -137,7 +135,6 @@ The following examples illustrate each of these linking patterns:
 
 [#linking-pattern-3,reftext=`Adding links to the **properties** section.`]
 .Adding links to the **properties** section
-[source,json]
 ----
 {
    .
@@ -167,7 +164,6 @@ The following examples illustrate each of these linking patterns:
 
 [#linking-pattern-4,reftext=`Adding links to the **properties** section.`]
 .Adding links to the **properties** section
-[source,json]
 ----
 {
    .
@@ -194,28 +190,24 @@ appear in a cataloague record.
 
 [#filter-pattern-1,reftext=`Filtering links in the **links** section.`]
 .Filtering links in the **links** section
-[source,json]
 ----
 links[rel='license'].title LIKE 'CC%'
 ----
 
 [#filter-pattern-2,reftext=`Filtering links in the **associations** section.`]
 .Filtering links in the **associations** section
-[source,json]
 ----
 properties.associations[rel='related'].href LIKE '%/rec15'
 ----
 
 [#filter-pattern-3,reftext=`Filtering links in the **properties** section.`]
 .Filtering links in the **properties** section
-[source,json]
 ----
 properties.related[*].href LIKE '%/rec15' AND properties.license.title LIKE 'CC%'
 ----
 
 [#filter-pattern-4,reftext=`Filtering links in the **properties** section.`]
 .Filtering links in the **properties** section
-[source,json]
 ----
-proerties.related LIKE '%/rec15' AND properties.license LIKE 'https://creativecommons.org/licenses/%'
+properties.related LIKE '%/rec15' AND properties.license LIKE 'https://creativecommons.org/licenses/%'
 ----
