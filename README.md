@@ -41,7 +41,9 @@ Returns a specific metadata record.
 
 A draft of the OGC API - Records standard is available:
 
-* T.B.D.
+* [Part 1: Core](http://docs.ogc.org/DRAFTS/20-004.html)
+
+Draft(s) are built daily based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file.
 
 Those who want to just see the endpoints and responses can explore the generic
 OpenAPI definition on SwaggerHub:
@@ -49,7 +51,7 @@ OpenAPI definition on SwaggerHub:
 * T.B.D.
 
 There have been several implementations of the draft standard, though they are
-still getting up to compliance with the first draft release:
+against different versions of the evolving draft:
 
 * [Implementations of the draft specification / demo services](https://github.com/opengeospatial/ogcapi-records/blob/master/implementations.md)
 
@@ -82,8 +84,3 @@ The OGC API Records Standards Working Group (SWG) is the group at OGC responsibl
 
 Pull Requests from contributors are welcomed. However, please note that by sending a Pull Request or Commit to this GitHub repository, you are agreeing to the terms in the Observer Agreement https://portal.ogc.org/files/?artifact_id=92169
 
-## Nightly Build
-
-The latest drafts of each standard in this repository are built daily (based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file):
-
-* [Part 1: Core](http://docs.ogc.org/DRAFTS/20-004.html)
