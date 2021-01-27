@@ -41,7 +41,7 @@ Returns a specific metadata record.
 
 A draft of the OGC API - Records standard is available:
 
-* [Part 1: Core](http://docs.ogc.org/DRAFTS/20-004.html)
+* [Part 1: Core](https://docs.ogc.org/DRAFTS/20-004.html), also available in [PDF](https://docs.ogc.org/DRAFTS/20-004.pdf)
 
 Draft(s) are built daily based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file.
 
