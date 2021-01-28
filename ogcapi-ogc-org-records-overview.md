@@ -1,10 +1,10 @@
 # OGC API - Records
 
 [OGC API standards](https://ogcapi.ogc.org/) define modular API building blocks to spatially enable Web APIs
-in a consistent way. [OpenAPI](http://openapis.org) is used to define the reusable
+in a consistent way. [OpenAPI](https://openapis.org) is used to define the reusable
 API building blocks with responses in JSON and HTML.
 
-The OGC API family of standards is organized by resource type. The draft OGC API - Records standard defines an API with two goals:
+The OGC API family of standards is organized by resource type. The draft OGC API - Records standard defines a Web API with two goals:
 
 * Provide modern API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
 
@@ -16,9 +16,9 @@ The OGC API family of standards is organized by resource type. The draft OGC API
 GET {root}/
 ```
 
-Retrieves the landing page. The purpose of the landing page is to provide clients with a starting point for using the API. Any resource exposed through an API can be accessed by following paths or links starting from the landing page.
+Retrieves the landing page. The purpose of the landing page is to provide clients with a starting point for using the API. Any resource exposed through a Web API can be accessed by following paths or links starting from the landing page.
 
-The landing page includes three metadata elements; title, description, and attribution. Only the title is required. These three elements describe the API as a whole. Clients can expect to encounter metadata which is more resource-specific as they follow links and paths from the landing page.
+The landing page includes three metadata elements; `title`, `description`, and `links`. Only `links` is required. The `title` and `description` elements describe the API as a whole. Clients can expect to encounter metadata which is more resource-specific by following links and paths from the landing page.
 
 ```
 GET {root}/api
@@ -42,7 +42,7 @@ Metadata describing the spatial collections available from this API.
 GET /collections/{collectionId}
 ```
 
-Metadata describing the collection which has the unique identifier {collectionid}
+Metadata describing the collection which has the unique identifier {collectionId}
 
 
 ```
@@ -53,7 +53,7 @@ Search results based on querying the service for records satisfying 0..n query p
 
 
 ```
-GET {root}/collections/{collectionid}/items/{recordid}
+GET {root}/collections/{collectionid}/items/{recordId}
 ```
 
-Record of metadata which has the unique identifier {recordid}.
+Record of metadata which has the unique identifier {recordId}.
