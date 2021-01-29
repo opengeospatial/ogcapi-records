@@ -3,9 +3,10 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/core/additional-conformance*
 2+|The list of Conformance Classes advertised by the API may additionally include:
-^|A |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/opensearch
-^|B |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json
-^|C |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom
-^|D |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html
-^|E |http://www.opengis.net/spec/ogcapi-records/1.0/req/oas30
+^|A |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
+^|B |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/opensearch
+^|C |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
+^|D |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/xml
+^|E |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
+^|F |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
 |===
