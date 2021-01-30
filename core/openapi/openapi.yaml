@@ -43,17 +43,17 @@ paths:
       tags:
         - Capabilities
       summary: information about standards that this API conforms to
-      description: 'list all requirements classes specified in a standard (e.g., ) that the server conforms to'
-      operationId: getRequirementsClasses
+      description : A list of all conformance classes that the server conforms to.
+      operationId: getConformanceClasses
       responses:
         '200':
-          description: the URIs of all requirements classes supported by the server
+          description: the URIs of all conformance classes supported by the server
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/req-classes'
+                $ref: '#/components/schemas/conf-classes'
         default:
-          description: An error occured.
+          description: An error occurred.
           content:
             application/json:
               schema:
@@ -126,7 +126,7 @@ paths:
               schema:
                 type: string
         default:
-          description: An error occured.
+          description: An error occurred.
           content:
             application/json:
               schema:
@@ -160,7 +160,7 @@ paths:
               schema:
                 type: string
         default:
-          description: An error occured.
+          description: An error occurred.
           content:
             application/json:
               schema:
@@ -196,7 +196,7 @@ paths:
               schema:
                 type: string
         default:
-          description: An error occured.
+          description: An error occurred.
           content:
             application/json:
               schema:
@@ -229,7 +229,7 @@ paths:
         '200':
           description: A successful execution of this operation shall be the requested record returned in the requested media type.
         default:
-          description: An error occured.
+          description: An error occurred.
 
 components:
   schemas:
@@ -266,7 +266,7 @@ components:
               title: Metadata about the resource collections
           items:
             $ref: '#/components/schemas/link'
-    req-classes:
+    conf-classes:
       required:
         - conformsTo
       type: object
