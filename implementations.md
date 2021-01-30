@@ -16,6 +16,9 @@ Servers:
 Clients:
 * [OWSLib](#owslib)
 
+Parsers/Encoders:
+* [pygeometa](#pygeometa)
+
 ## CubeWerx Inc.
 
 The following server implements a good portion of the current draft OpenAPI
@@ -152,3 +155,8 @@ GeoNetwork supports basic authentication, but can also be set up with alternativ
 [OWSLib](https://geopython.github.io/OWSLib/) is an OGC Web Services client
 written in Python which also implements the evolving OGC API standards.  See the
 [documentation](https://geopython.github.io/OWSLib/#ogc-api-records-1-0) for example workflow.
+
+## pygeometa
+
+[pygeometa](https://geopython.github.io/pygeometa) is a Python package to generate
+metadata for geospatial datasets.  Supports OGC API - Records record metadata generation.
