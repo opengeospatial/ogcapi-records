@@ -61,21 +61,21 @@
       "get" : {
         "tags" : [ "Capabilities" ],
         "summary" : "information about standards that this API conforms to",
-        "description" : "list all requirements classes specified in a standard (e.g., ) that the server conforms to",
-        "operationId" : "getRequirementsClasses",
+        "description" : "A list of all conformance classes that the server conforms to.",
+        "operationId" : "getConformanceClasses",
         "responses" : {
           "200" : {
             "description" : "the URIs of all requirements classes supported by the server",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/req-classes"
+                  "$ref" : "#/components/schemas/conf-classes"
                 }
               }
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -148,7 +148,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -198,7 +198,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -249,7 +249,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -309,7 +309,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -369,7 +369,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -411,7 +411,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -453,7 +453,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -502,7 +502,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -572,7 +572,7 @@
             }
           },
           "default" : {
-            "description" : "An error occured.",
+            "description" : "An error occurred.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -635,7 +635,7 @@
           }
         }
       },
-      "req-classes" : {
+      "conf-classes" : {
         "required" : [ "conformsTo" ],
         "type" : "object",
         "properties" : {
