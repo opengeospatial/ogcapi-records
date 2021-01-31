@@ -88,15 +88,14 @@ properties:
       - instant
       - interval
    links:
-      description: additional links, e.g. to documentation or to the schema of t
-he values
+      description: additional links, e.g. to documentation or to the schema of the values
       type: array
       items:
          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features
 /master/core/openapi/ogcapi-features-1.yaml#/components/schemas/link'
 ----
 
-== Examples
+=== Examples
 
 [#sortby-example,reftext=`SortBy Example`]
 .sortby Example
