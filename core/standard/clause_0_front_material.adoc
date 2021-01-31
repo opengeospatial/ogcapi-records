@@ -12,9 +12,9 @@ This document defines the OGC API for Records. A Record is a way of making a res
 |Landing page |`/` |GET |<<landing_page,API landing page>>
 |Conformance declaration |`/conformance` |GET |<<conformance_classes,Declaration of Conformance Classes>>
 |Record collections |`/collections` |GET |<<collections-access,Collection Access>>
-|Record collection |`/collections/{catalogueId}` |GET |<<collectionInfo,Collection Information>>
-|Records |`/collections/{catalogueId}/items` |GET |<<records-access,Records Access>>
-|Record |`/collections/{catalogueId}/items/{recordId}` |GET |<<record-access,Record Access>>
+|Record collection |`/collections/{collectionId}` |GET |<<collectionInfo,Collection Information>>
+|Records |`/collections/{collectionId}/items` |GET |<<records-access,Records Access>>
+|Record |`/collections/{collectionId}/items/{recordId}` |GET |<<record-access,Record Access>>
 |===
 
 [big]*ii.    Keywords*

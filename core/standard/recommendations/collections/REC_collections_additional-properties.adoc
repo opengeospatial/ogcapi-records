@@ -13,7 +13,7 @@
 |Property |Description
 |language |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
 |publisher |The entity making the resource available.
-|themes |A knowledge orgnaization system used to classify the resource.
+|themes |A knowledge organisation system used to classify the resource.
 |formats |A list of available distributions for the resource.
 |contactpoint |An entity to contact about the resource.
 |license |A legal document under which the resource is made available.

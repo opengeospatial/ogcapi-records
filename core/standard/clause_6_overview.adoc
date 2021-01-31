@@ -6,7 +6,7 @@
 
 The OGC API family of standards enable access to resources using the HTTP protocol and its' associated operations (GET, PUT, POST, etc.). OGC API - Common defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API - Common with features specific to a resource type. This OGC API - Records standard defines an API with two goals:
 
-. Provide modern API patterns and encodings to facilitiate further lowering the barrier to finding the existence of spatial resources on the Web.
+. Provide modern API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
 . Provide functionality comparable to that of the <<api-behavior-model-overview,OGC Catalogue Service (CSW) standard>>.
 
 Resources exposed through an OGC API may be accessed through a Universal Resource Identifier <<rfc3986,(URI).>> URIs are composed of three sections:
@@ -32,17 +32,17 @@ or +
 `service-doc` |API Description (optional)
 |<<conformance-classes,{root}/conformance>> |`conformance` |Conformance Classes
 |<<collections,{root}/collections>> |`data` |Metadata describing the spatial collections available from this API.
-|<<collectionInfo,{root}/collections/{collectionid}>> | |Metadata describing the collection which has the unique identifier `{collectionid}`
+|<<collectionInfo,{root}/collections/{collectionId}>> | |Metadata describing the collection which has the unique identifier `{collectionId}`
 3+^|**Records**
-|<<records-access,{root}/collections/{collectionid}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
-|<<record-access,{root}/collections/{collectionid}/items/{recordid}>> |`item` |Record of metadata which has the unique identifier `{recordid}`.
+|<<records-access,{root}/collections/{collectionId}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
+|<<record-access,{root}/collections/{collectionId}/items/{recordId}>> |`item` |Record of metadata which has the unique identifier `{recordId}`.
 |===
 
 Where:
 
 * {root} = Base URI for the API server
-* {collectionid} = an identifier for a specific collection
-* {recordid} = an identifier for a specific record within a collection
+* {collectionId} = an identifier for a specific collection
+* {recordId} = an identifier for a specific record within a collection
 
 [[record-schema-overview]]
 === Record Schema

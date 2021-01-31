@@ -53,7 +53,7 @@
           description: the entity making the collection available
           type: string
         themes:
-          description: list of classifications association with the collection from a knowlege organization system
+          description: list of classifications association with the collection from a knowledge organization system
           type: array
           items:
              type: string

@@ -115,10 +115,10 @@ NOTE: This particular file was the early outline developed for OGC API - Records
 |`/api`                                        |API definition
 |`/conformance`                                |Conformance declaration
 |`/collections`                                |List of available catalogues
-|`/collections/\{catalogueId\}`                |Metadata about a catalogue
-|`/collections/\{catalogueId\}/items`          |Access path to catalogue records
-|`/collections/\{catalogueId\}/items/\{recordId\}` |Access to a specific record
-|`/collections/\{catalogueId\}/queryables`       |List of catalogue's queryables (i.e. record properties that can be query predicate)
+|`/collections/\{collectionId\}`                |Metadata about a catalogue
+|`/collections/\{collectionId\}/items`          |Access path to catalogue records
+|`/collections/\{collectionId\}/items/\{recordId\}` |Access to a specific record
+|`/collections/\{collectionId\}/queryables`       |List of catalogue's queryables (i.e. record properties that can be query predicates)
 |===
 
 == METHODS (by path)
@@ -149,22 +149,22 @@ NOTE: This particular file was the early outline developed for OGC API - Records
 |POST    |undefined (ext: create a new collection?)|
 |PATCH   |undefined |
 |DELETE  |undefined |
-.5+|/collections/\{catalogueId\} |GET |get the record describing the specified catalogue |core
+.5+|/collections/\{collectionId\} |GET |get the record describing the specified catalogue |core
 |PUT     |undefined (ext: update metadata about the catalogue)|
 |POST    |undefined |
 |PATCH   |undefined (ext: update metadata about the catalogue)|
 |DELETE  |undefined (ext: delete the catalogue)|
-.5+|/collections/\{catalogueId\}/items |GET |retrieve a subset of records from the catalogue |core
+.5+|/collections/\{collectionId\}/items |GET |retrieve a subset of records from the catalogue |core
 |PUT     |undefined |
 |POST    |add a new metadata record to the catalogue |tx
 |PATCH   |undefined |
 |DELETE  |undefined |
-.5+|/collections/\{catalogueId\}/items/\{recordId\} |GET |retrieve a specific catalogue record |core
+.5+|/collections/\{collectionId\}/items/\{recordId\} |GET |retrieve a specific catalogue record |core
 |PUT     |replace the specified catalogue record with the one in the request body |tx
 |POST    |undefined |
 |PATCH   |updates a portion of a catalogue record |tx
 |DELETE  |remove the specified record from the catalogue |tx
-.5+|/collections/\{catalogueId\}/queryables |GET |get the list of queryables for the specified catalogue |
+.5+|/collections/\{collectionId\}/queryables |GET |get the list of queryables for the specified catalogue |
 |PUT     |undefined |
 |POST    |undefined |
 |PATCH   |undefined |
@@ -237,18 +237,18 @@ NOTE: This particular file was the early outline developed for OGC API - Records
      }
 ----
 
-== `/collections/\{catalogueId\} `
+== `/collections/\{collectionId\} `
    * metadata about a single collection of metadata records (i.e. catalogue)
-   * the available \{catalogueId\} values are the set of "identifier" values
+   * the available \{collectionId\} values are the set of "identifier" values
      in the /collections response (i.e. $.collections[*].id)
-   * a successful GET operation on the /collection/\{catalogueId\} path shall
+   * a successful GET operation on the /collection/\{collectionId\} path shall
      return a response with a 200 HTTP status code
    * the content of the response shall be a document containing metadata
      about the catalogue 
    * the response here should be the same as the metadata about the catalogue
      presented in the /collections response
 
-.Example `/collections/\{catalogueId\}` response
+.Example `/collections/\{collectionId\}` response
 [source,json]
 ----
      GET /collections/ogc_catalogue
@@ -267,8 +267,8 @@ NOTE: This particular file was the early outline developed for OGC API - Records
         },
         "properties": {
            "publisher": "CubeWerx Inc.",
-           "license": "Some legal giberish about terms of use...",
-           "rights": "More legal giberish about usage rights...",
+           "license": "Some legal gibberish about terms of use...",
+           "rights": "More legal gibberish about usage rights...",
         },
         "extents": [
            {
@@ -291,11 +291,11 @@ NOTE: This particular file was the early outline developed for OGC API - Records
      }
 ----
 
-== `/collections/\{catalogueId\}/items/\{recordId\}`
+== `/collections/\{collectionId\}/items/\{recordId\}`
    * access path for a single record in a catalogue
-   * the available \{catalogueId\} values are the set of "identifier" values
+   * the available \{collectionId\} values are the set of "identifier" values
      in the /collections response (i.e. $.collections[*].id)
-   * a successful GET on the /collection/{catalogueId}/items/\{recordId\} path
+   * a successful GET on the /collection/{collectionId}/items/\{recordId\} path
      shall return a response with a 200 HTTP status code
    * the content of the response shall be a catalogue record encoded according
      to the content negotiation performed between the client and the server
@@ -342,13 +342,13 @@ NOTE: This particular file was the early outline developed for OGC API - Records
      }
 ----
 
-== `/collections/\{catalogueId\}/items`
+== `/collections/\{collectionId\}/items`
    * the access path for the collection of records
    * the following parameters may be specified on the 
-     /collections/{catalogueId}/items path:
+     /collections/{collectionId}/items path:
      limit, bbox, datetime and prop=value for property filtering
    ** see "OGC API - Features" for details
-   * a successful GET operation on the /collection/{catalogueId}/items path
+   * a successful GET operation on the /collection/{collectionId}/items path
      shall return a response with a 200 HTTP status code
    * the content of the response shall be zero or more catalogue record 
      instances
@@ -421,7 +421,7 @@ NOTE: This particular file was the early outline developed for OGC API - Records
      it supports the complex query conformance class
    * if a server indicates in its conformance document that it supports
      complex queries then it SHALL, in the catalogue's metadata (obtained
-     via the /collections  or /collection/{cataglogueId} paths),
+     via the /collections  or /collection/{collectionId} paths),
      include a link (rel="search") defining the complex query endpoint
    * the specific predicate language(s) supported by the server may be
      determined by using the OPTIONS method on the search endpoint
@@ -432,7 +432,7 @@ NOTE: This particular file was the early outline developed for OGC API - Records
      is POST'ed to the search endpoint
    * a JSON-encoding of OGC filter has been developed (for this interested
      is reusing the OGC filter processor)
-   ** of course, you can still use the XML-enocded OGC filter if you set
+   ** of course, you can still use the XML-encoded OGC filter if you set
       the content type header appropriately
 
 .Example complex query (using the JSON encoding for OGC filter)
@@ -508,11 +508,11 @@ NOTE: This particular file was the early outline developed for OGC API - Records
    ** GET ...&classifiedAs=B&scope=narrow ...  will find records classified as  B and A
    ** GET ...&classifiedAs=B&scope=exact ...  will find records classified as  B
 
-== `/collections/\{catalogueId\}/queryables`
+== `/collections/\{collectionId\}/queryables`
    * access path for get the set of additional queryables from a catalogue
-   * the available \{catalogueId\} values are the set of "identifier" values
+   * the available \{collectionId\} values are the set of "identifier" values
      in the /collections response (i.e. $.collections[*].id)
-   * a successful GET on the /collection/\{catalogueId\}/query path
+   * a successful GET on the /collection/\{collectionId\}/query path
      shall return a response with a 200 HTTP status code
    * the content of the response shall be a catalogue record encoded according
      to the content negotiation performed between the client and the server
@@ -564,7 +564,7 @@ NOTE: This particular file was the early outline developed for OGC API - Records
    * other benefits of this approach include:
    ** you can have several "super" catalogue endpoints that aggregate 
       records is different ways
-   ** from an implemenation standpoint, such "super" catalogue endpoints 
+   ** from an implementation standpoint, such "super" catalogue endpoints 
       can be implemented as federating nodes with distributed endpoints
       for scaling purposes
 

@@ -213,15 +213,15 @@ Collection Information is the set of metadata which describes a single collectio
 
 This operation is defined in the `Collections` conformance class of API - Common. No modifications are required to support `Records` resources.
 
-. Issue a `GET` request on the `{root}/collections/{collectionid}` path
+. Issue a `GET` request on the `{root}/collections/{collectionId}` path
 
-The {collectionid} parameter is the unique identifier for a single collection on the API. The list of valid values for {collectionid} is provided in the /collections response.
+The {collectionId} parameter is the unique identifier for a single collection on the API. The list of valid values for {collectionId} is provided in the /collections response.
 
-Support for the `/collections/{collectionid}` path is required by API - Common.
+Support for the `/collections/{collectionId}` path is required by API - Common.
 
 ===== Response
 
-A successful response to the Collection Operation is a set of metadata which describes the collection identified by the {collectionid} parameter.
+A successful response to the Collection Operation is a set of metadata which describes the collection identified by the {collectionId} parameter.
 
 [#collectionInfo-schema,reftext='Collection Information Response Schema']
 .Collection Information Response Schema
@@ -380,7 +380,7 @@ include::recommendations/core/PER_additional-properties.adoc[]
 ==== Associations and Links
 
 A record object contains both `links` and `properties.associations` properties which serve
-different purposes.  The following provides an example of using assocaitions for related
+different purposes.  The following provides an example of using associations for related
 resources of a record, as both traditional link relations as well as API resources via URI
 templates.
 
