@@ -101,7 +101,7 @@ properties:
 .sortby Example
 [source]
 ----
-.../collections/mycat/items?...&sortby=-updated,recordid&...
+.../collections/mycat/items?...&sortby=-updated,recordId&...
 ----
 
 [#sortby-extent-example,reftext=`SortBy Extent Example`]

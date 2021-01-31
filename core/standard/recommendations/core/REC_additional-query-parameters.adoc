@@ -3,7 +3,7 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/additional-query-parameters*
 ^|A |If any <<per_core_additional-properties,additional record property>> is expected to be useful for applications using the service to filter records in a collection based on this property, a parameter with the name of the property SHOULD be supported.
-^|B |If the parameter has a simple value (e.g. a string or interger) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+^|B |If the parameter has a simple value (e.g. a string or integer) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
 [source,YAML]
 ----

@@ -12,7 +12,7 @@ This clause defines the binding to the filter parameters defined in the http://d
 
 ==== Operation
 
-As specified in the <<records-access,Reccords Access>> clause, records are accessed using the HTTP GET method via the `/collections/{collectionId}/items` path.  The following additional requirements bind the parameters http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-param[filter], http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-lang-param[filter-lang] and http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-filter-crs[filter-crs] to the GET operation on this path.
+As specified in the <<records-access,Records Access>> clause, records are accessed using the HTTP GET method via the `/collections/{collectionId}/items` path.  The following additional requirements bind the parameters http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-param[filter], http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-lang-param[filter-lang] and http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-filter-crs[filter-crs] to the GET operation on this path.
 
 include::requirements/cql-filter/REQ_filter-param.adoc[]
 
@@ -186,7 +186,7 @@ The following examples illustrate each of these linking patterns:
 ==== Example CQL filters on links/associations
 
 The following example illustrate how to filter links/associations that may
-appear in a cataloague record.
+appear in a catalogue record.
 
 [#filter-pattern-1,reftext=`Filtering links in the **links** section.`]
 .Filtering links in the **links** section

@@ -58,7 +58,7 @@ The _Core_ Requirements Class is the minimal useful service interface for the OG
 // queryable using the OAPIR core queryables and query API.
 // If a servers wants to make its /collections end point queryable it has
 // to do the following:
-// 1. Add the approriate conformance URIs to is /conformance document.  There
+// 1. Add the appropriate conformance URIs to its /conformance document.  There
 //    may be more than one depending on the level of query capability offered
 //
 //    http://www.opengis.net/spec/ocgapi-records-1/1.0/queryable-collections
