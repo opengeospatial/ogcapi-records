@@ -46,14 +46,14 @@ Metadata describing the collection which has the unique identifier {collectionId
 
 
 ```
-GET {root}/collections/{collectionid}/items
+GET {root}/collections/{collectionId}/items
 ```
 
 Search results based on querying the service for records satisfying 0..n query parameters.
 
 
 ```
-GET {root}/collections/{collectionid}/items/{recordId}
+GET {root}/collections/{collectionId}/items/{recordId}
 ```
 
 Record of metadata which has the unique identifier {recordId}.
