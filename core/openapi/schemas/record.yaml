@@ -3,7 +3,6 @@ required:
   - id
   - type
   - geometry
-  - extents
   - properties
 properties:
   id:
@@ -15,7 +14,7 @@ properties:
   geometry:
     $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml
   extents:
-    $ref: https://raw.githubusercontent.com/opengeospatial/oapi_common/master/standard/openapi/schemas/extent.yaml
+    $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-common/master/collections/openapi/schemas/extent.yaml
   properties:
     type: object
     required:
