@@ -1,0 +1,6 @@
+[[req_core_query-param-value-integer]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/query-param-value-integer* 
+^|A |Integer values SHALL be represented by a finite-length sequence of decimal digits with an optional leading negative "-" sign. Positive values are assumed is the leading sign is omitted. 
+|===

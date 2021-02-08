@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/param-q-definition*
-^|A |A Records API SHALL support the Keyword Search (q) parameter for the operation.
+^|A |A Records API SHALL support the Text Search (q) parameter for the operation.
 ^|B |The `q` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
 [source,YAML]
@@ -17,4 +17,5 @@ schema:
 explode: false
 ----
 ^|B |Keyword searches using the `q` parameter shall be case insensitive.
+^|C |The specific set of text keys/fields/properties of a record to which the `q` operator is applied SHALL be left to the discretion of the implementation.
 |===

@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/record-links*
-^|A |Implementations SHOULD use the record `links` property to provide hypermedia for navigation and alternate representations.
+^|A |Implementations SHOULD use the record `links` property to provide hypermedia for navigation in the API (e.g. next record in a query response ) and alternate representations of the current record.
 |===

@@ -1,0 +1,6 @@
+[[per_core_rc-prev]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/core/rc-prev* 
+^|A |A response to a `next` link MAY include a `prev` link to the resource that included the `next` link.
+|===
