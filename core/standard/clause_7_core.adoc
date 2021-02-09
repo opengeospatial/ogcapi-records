@@ -389,7 +389,7 @@ An implementation could use opaque links that are managed by the server. It is
 up to the server to determine how long these links can be de-referenced.
 Clients should be prepared to receive a 404 response.
 
-Another implementation approach is to use an implementation-specific parameter that specifies the index within the result set from which the server begins presenting results in the response, like the `startIndex` parameter that was used in <<WFS20,WFS 2.0>> (and which may be added again in additional parts of the OGC API Features series).
+Another implementation approach is to use an implementation-specific parameter that specifies the index within the result set from which the server begins presenting results in the response, like the `startIndex` parameter that was used in <<WFS20,WFS 2.0>> (and which may be added again in additional parts of the OGC API - Features series).
 
 The API will return no `next` link, if it has returned all selected record, and the server knows that. However, the server may not be aware that it has already returned all selected records. For example, if the request states `limit=10` and the query to the backend datastore returns 10 records, the server may not know, if there are more records or not (in most cases there will be more records), unless the total number of matches is also computed, which may be too costly. The server will then add the next link, and if there are no more records, dereferencing the next link will return am empty feature collection and no next link. This behavior is consistent with the statements above.
 
@@ -413,6 +413,23 @@ include::requirements/core/REQ_record-collection-numberReturned.adoc[]
 NOTE: The representation of the links and the other properties in the payload depends on the encoding of the feature collection.
 
 include::recommendations/core/PER_additional-properties.adoc[]
+
+[#record-schema,reftext='Record Response Schema']
+.Record Response Schema
+[source,yaml]
+----
+include::../openapi/schemas/record.yaml[]
+----
+
+The following JSON is an example of a response to an OGC API - Records
+query operation.
+
+[#record-example,reftext=`Record Example`]
+.Record Example
+[source,json]
+----
+include::../examples/json/record.json[]
+----
 
 [[core-queryables-record-table]]
 [reftext='{table-caption} {counter:table-num}']

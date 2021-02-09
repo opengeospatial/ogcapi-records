@@ -76,14 +76,20 @@ properties:
         items:
           type: object
           properties:
-            category:
+            scheme:
               type: string
-              description: A category of the resource.
-              format: uri
-            taxonomy:
-              type: string
-              description: The knowledge organization system used to classify the resource.
-              format: uri
+              description: |-
+                 An identifier for the knowledge organization
+                 system used to classify the resource.  It is recommended that the
+                 identifier by a resolvable URI.
+            concepts:
+              type: array
+              description: |-
+                 One or more entity/concept identifers from
+                 this knowledge system. it is recommended that a resolvable URI be used
+                 for each entity/concept identifier.
+              items:
+                type: string
       formats:
         type: array
         description: A list of available distributions of the resource.

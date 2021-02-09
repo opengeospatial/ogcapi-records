@@ -48,6 +48,31 @@
         "created": "2015-01-23",
         "updated": "2015-01-23",
         "publisher": "https://woudc.org",
+        "themes": [
+            {
+                "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode",
+                "concepts": [
+                    "dobson",
+                    "brewer",
+                    "vassey",
+                    "pion",
+                    "microtops",
+                    "spectral",
+                    "hoelper",
+                    "saoz",
+                    "filter"
+                ]
+            },
+            {
+                "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode",
+                "concepts": [
+                    "atmosphericComposition",
+                    "pollution",
+                    "observationPlatform",
+                    "rocketSounding"
+                ]
+            }
+        ],
         "formats": [
             "CSV",
             "GeoJSON"
