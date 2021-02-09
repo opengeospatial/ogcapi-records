@@ -4,6 +4,8 @@
 ^|*Requirement {counter:req-id}* |*/req/collections/response*
 ^|A |The content of that response shall be based upon the following OpenAPI 3.0 schema that extends the schema of the collection information object as defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response-1[Collection Information] clause of the  https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] specification:
 
+include::../examples/json/record.json[]
+
 [source,yaml]
 ----
     collection:

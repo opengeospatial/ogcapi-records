@@ -1,72 +1,122 @@
 {
-   "id": "rid67",
-   "type": "Feature",
-   "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-            [[-10,-10],[-5,0],[0,0],[10,10],[-6,-7],[-10,-10]]
+    "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -180,
+                    -90
+                ],
+                [
+                    -180,
+                    90
+                ],
+                [
+                    180,
+                    90
+                ],
+                [
+                    180,
+                    -90
+                ],
+                [
+                    -180,
+                    -90
+                ]
+            ]
         ]
     },
     "properties": {
-       "type": "some_resource_type",
-       "recordcreated": "2020-03-06T00:00:00Z",
-       "recordupdated": "2020-05-17T10:34:39Z",
-       "title": "The Resource's Title",
-       "description": "Some human readable description of the resource.",
-       "keywords": [
-          "keyword1",
-          "keyword2",
-          "keyword3"
-       ],
-       "extents": [
-          {
-             "spatial": {
-                "bbox": [-10,-10,10,10],
-                "crs": "http://www.opengis.net/def/crs/EPSG/0/4326"
-             },
-             "temporal": {
-                "interval": ["2019-05-21T07:05:35","2019-05-21T07:07:08"],
-                "trs": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
-             }
-          }
-       ],
-       "associations": [
-          {
-             "rel": "related",
-             "title": "Some related record in this catalogue.",
-             "href": "http://demo.server.com/collations/ogccat/items/rid574"
-          },
-          {
-             "rel": "related",
-             "title": "Some related record in another catalogue.",
-             "href": "http://other.server.com/collations/catalogue/items/id6574"
-          },
-          {
-             "rel": "search",
-             "type": "text/html",
-             "title": "WOUDC - Data - Station List",
-             "href": "https://woudc.org/data/stations"
-          },
-          {
-             "rel": "item",
-             "type": "image/png",
-             "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
-             "href": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={miny},{minx},{maxy},{maxx}&layers=stations&width={width}&height={height}&format=image/png",
-            "templated": "true"
-          }
-       ]
-    },
-    "links": [
-       {
-          "rel": "alternate",
-          "type": "application/atom+xml",
-          "title": "This records encoded as ATOM/XML.",
-          "href": "http://demo.server.com/collations/ogccat/items/rid67.xml"
-       },
-       {
-          "rel": "next",
-          "title": "The next record in this result set.",
-          "href": "http://demo.server.com/collations/ogccat/items/rid53"
-       }
-    ]
+        "record-created": "2021-02-08",
+        "record-updated": "2021-02-08",
+        "type": "dataset",
+        "title": "Total Ozone - daily observations",
+        "description": "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily",
+        "keywords": [
+            "total",
+            "ozone",
+            "level 1.0",
+            "column",
+            "dobson",
+            "brewer",
+            "saoz"
+        ],
+        "language": "en",
+        "externalId": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
+        "created": "2015-01-23",
+        "updated": "2015-01-23",
+        "publisher": "https://woudc.org",
+        "formats": [
+            "CSV",
+            "GeoJSON"
+        ],
+        "contactPoint": "https://woudc.org/contact.php",
+        "license": "https://woudc.org/about/data-policy.php",
+        "rights": null,
+        "extent": [
+            {
+                "spatial": {
+                    "bbox": [
+                        -180,
+                        -90,
+                        180,
+                        90
+                    ],
+                    "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                },
+                "temporal": {
+                    "interval": [
+                        [
+                            "1924-08-18",
+                            null
+                        ]
+                    ],
+                    "trs": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+                }
+            }
+        ],
+        "associations": [
+            {
+                "rel": "item",
+                "type": "image/png",
+                "title": "OGC Web Map Service (WMS)",
+                "href": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={miny},{minx},{maxy},{maxx}&layers=totalozone&width={width}&height={height}&format=image/png",
+                "templated": true
+            },
+            {
+                "rel": "enclosure",
+                "type": "text/html",
+                "title": "Web Accessible Folder (WAF)",
+                "href": "https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1"
+            },
+            {
+                "rel": "search",
+                "type": "text/html",
+                "title": "Data Search / Download User Interface",
+                "href": "https://woudc.org/data/explore.php?dataset=totalozone"
+            },
+            {
+                "rel": "enclosure",
+                "type": "application/zip",
+                "title": "Static dataset archive file",
+                "href": "https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip"
+            },
+            {
+                "rel": "service",
+                "type": "application/xml",
+                "title": "OGC Web Feature Service (WFS)",
+                "href": "https://geo.woudc.org/ows"
+            }
+        ],
+        "links": [
+            {
+                "rel": "alternate",
+                "type": "text/html",
+                "title": "This document as HTML",
+                "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
+            }
+        ]
+    }
 }
