@@ -18,7 +18,7 @@ This section covers the requirements inherited from the API - Common standard. I
 * `{root}/api`: API Description
 * `{root}/conformance`: Conformance Classes
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionId}`: Collection Information
+* `{root}/collections/{collectionid}`: Collection Information
 
 include::requirements/json/REQ_api-common.adoc[]
 
@@ -28,7 +28,15 @@ include::requirements/json/REQ_json-conformance.adoc[]
 
 === Record 
 
+GeoJSON is a commonly used format that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format supporting GeoJSON is recommended, if the feature data can be represented in GeoJSON for the intended use.
+
+
+
 TBD: Requirements for the GeoJSON encoding of a record.
+
+
+
+
 
 [[requirements-class-html-clause]]
 == Requirements Class HTML
@@ -50,7 +58,7 @@ This section covers the requirements inherited from the API - Common standard. I
 * `{root}/api`: API Description
 * `{root}/conformance`: Conformance Classes
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionId}`: Collection Information
+* `{root}/collections/{collectionid}`: Collection Information
 
 include::requirements/html/REQ_api-common.adoc[]
 
@@ -68,7 +76,7 @@ RBDL Requirements for the HTML encoding of a record.
 The following requirements apply to an OGC API - Records implementation when the following conditions apply:
 
 . The API advertises conformance to the ATOM Conformance Class
-. The client negotiates a ATOM format
+. The client negotiates an ATOM format
 
 The ATOM Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the HTTP response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
 
@@ -82,7 +90,7 @@ This section covers the requirements inherited from the API - Common standard. I
 * `{root}/api`: API Description
 * `{root}/conformance`: Conformance Classes
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionId}`: Collection Information
+* `{root}/collections/{collectionid}`: Collection Information
 
 include::requirements/atom/REQ_api-common.adoc[]
 
@@ -93,6 +101,3 @@ include::requirements/atom/REQ_xml-conformance.adoc[]
 === Record 
 
 TBD: Requirements for the ATOM encoding of a record.
-
-
-

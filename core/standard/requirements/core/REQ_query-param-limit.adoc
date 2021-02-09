@@ -1,0 +1,9 @@
+[[req_core_param-limit]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/param-limit*
+^|A |A Records API SHALL support the Limit (limit) parameter for the operation.
+^|B |Requests which include the Limit parameter SHALL comply with API - Common requirement http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-definition`].
+^|C |Responses to Limit requests SHALL comply with API - Common requirements:
+* http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-response`]
+|===

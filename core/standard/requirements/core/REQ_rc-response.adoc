@@ -1,7 +1,0 @@
-[[req_core_rc-response]] 
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/rc-response* 
-^|A |The response SHALL only include records selected by the request.
-^|B |Each record in the response SHALL contain the mandatory properties listed in the <<core-queryables-record-table,Table of Core Queryables related to the catalogue record>> and the <<core-queryables-resource-table,Table of Core Queryables related to the resource>>.
-|===

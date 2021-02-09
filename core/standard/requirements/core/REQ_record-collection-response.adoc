@@ -1,0 +1,8 @@
+[[req_core_rc-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/rc-response*
+^|A |A successful execution of the operation SHALL be resported as a response with a HTTP status code `200`.
+^|B |The response SHALL only include records selected by the request.
+^|C |Each record in the response SHALL include the mandatory properties listed in the <<core-queryables-record-table,Table of Core Queryables related to the catalogue record>> and the <<core-queryables-resource-table,Table of Core Queryables related to the resource>>.
+|===

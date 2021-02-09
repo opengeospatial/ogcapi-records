@@ -1,0 +1,6 @@
+[[req_core_rc-rel-type]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/rc-rel-type* 
+^|A |All links SHALL include the `rel` and `type` link parameters.
+|===

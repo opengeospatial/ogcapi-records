@@ -1,0 +1,11 @@
+[[req_core_query-param-value-decimal]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/query-param-value-decimal* 
+^|A |Decimal values SHALL be represented by a finite-length sequence of decimal digits separated by a period as a decimal indicator. 
+
+* An optional leading negative sign ("-") is allowed.
+* If the sign is omitted, positive ("+") is assumed. 
+* Leading and trailing zeroes are optional. 
+* If the fractional part is zero, the period and following zero(es) can be omitted. 
+|===

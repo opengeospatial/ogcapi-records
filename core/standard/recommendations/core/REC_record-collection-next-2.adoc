@@ -1,0 +1,7 @@
+[[rec_core_rc-next-2]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/rc-next-2* 
+^|A |Dereferencing a `next` link SHOULD return additional records from the set of selected records that have not yet been returned.
+|===
+

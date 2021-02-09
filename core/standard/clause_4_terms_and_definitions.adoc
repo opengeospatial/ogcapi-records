@@ -22,7 +22,10 @@ represents an accessible form of a *dataset* (DCAT)
 EXAMPLE: a downloadable file, an RSS feed or a web service that provides the data.
 
 === Executable Test Suite (ETS)
-A set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.opengeospatial.org/files/?artifact_id=55234[(OGC 08-134)]
+set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.opengeospatial.org/files/?artifact_id=55234[(OGC 08-134)]
+
+=== Record
+atomic unit of information of a catalogue that is used to provide information about a particular resource
 
 === Recommendation
 expression in the content of a document conveying that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is deprecated but not prohibited (<<ogc08-131,OGC 08-131>>) 
@@ -36,8 +39,12 @@ aggregate of all requirement modules that must all be satisfied to satisfy a con
 === Requirements Module
 aggregate of requirements and recommendations of a specification against a single standardization target type (<<ogc08-131,OGC 08-131>>)
 
+=== Resource
+an asset of interest that may be described by metadata in a catalogue for the purpose of discovery and access (i.e. binding)
+
 === Standardization Target
 entity to which some requirements of a standard apply (<<ogc08-131,OGC 08-131>>)
 
  NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
+
 

@@ -110,7 +110,9 @@ To support "generic" clients that want to access multiple OGC API standards and 
 
 ===== Operation
 
-This operation is defined in the `Core` conformance class of API - Common. No modifications are needed to support `Records` resources. The `Core` conformance class describes two ways of performing this operation:
+This operation is defined in the `Core` conformance class of API - Common. No
+modifications are needed to support `Records` resources. The `Core` conformance
+class describes two ways of performing this operation:
 
 . Issue a `GET` request on the `{root}/conformance` path
 . Follow the `conformance` link on the landing page
@@ -148,14 +150,20 @@ The requirements for handling unsuccessful requests are provided in <<http-respo
 [[collection-access]]
 === Collection Access
 
-API - Common starts with the assumption that spatial resources are organized into collections. An API will expose one or more collections. The API - Common Collections Conformance Class defines how to organize and provide access to a collection of collections.
+API - Common starts with the assumption that spatial resources are organized
+into collections. An API will expose one or more collections. The API - Common
+Collections Conformance Class defines how to organize and provide access to a
+collection of collections.
 
-This standard extends the API - Common `Collections` conformance class to support collections of records, then extends that class to support `Record` unique capabilities.
+This standard extends the API - Common `Collections` conformance class to
+support collections of records, then extends that class to support `Record`
+unique capabilities.
 
-[[collections]]
-==== Record Collections
+[[collections-metadata]]
+==== Collections Metadata
 
-The `Collections` operation returns a set of metadata which describes the collections available from this API.
+The `Collections` operation returns a metadata document that describes the
+collections available from this API.
 
 .Dependencies
 [width="90%"]
@@ -163,20 +171,29 @@ The `Collections` operation returns a set of metadata which describes the collec
 |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections
 |====
 
+[[collections-meta-operation]]
 ===== Operation
 
-This operation is defined in the `Collections` conformance class of API - Common. No modifications are needed to support `Record` resources. The `Collections` conformance class describes two ways of performing this operation:
+This operation is defined in the `Collections` conformance class of API - Common.
+No modifications are required to support `Record` resources. The `Collections`
+conformance class describes two ways of performing this operation:
 
 . Issue a `GET` request on `{root}/collections` path
-. Follow the `data` link on the landing page
+. Follow the `rel=data` link on the landing page
 
-Support for both the `{root}/collections` path and the `data` link is required by API - Common.
+Support for both the `{root}/collections` path and the `rel=data` link is
+required by API - Common.
 
+[[collections-meta-response]]
 ===== Response
 
-A successful response to the `Collections Operation` is a document which includes summary metadata for each collection accessible though the API.
+A successful response to the <<collections-meta-operation,Collections Operation>>
+ is a document that contains summary metadata for each collection accessible though the API.
 
-In a typical deployment the collections response will list collections of all offered resource types.  The collections labeled with an `itemType` of `record` are catalogues (i.e. collections of records).
+In a typical API deployment the <<collection-meta-operation,collections response>>
+will list collections of all offered resource types.  The collections where
+the value of the `itemType` property (JSONPath: `$.collections[*].itemType`)
+is `record` are collections of records (i.e. catalogues).
 
 [#collections-schema,reftext='Collections Response Schema']
 .Collections Response Schema
@@ -185,7 +202,8 @@ In a typical deployment the collections response will list collections of all of
 include::../openapi/schemas/common/collections.yaml[]
 ----
 
-The following JSON fragment is an example of a response to an OGC API - Records Collections operation.
+The following JSON document is an example of a response to an OGC API - Records
+<<collections-meta-operation,Collections>> operation.
 
 [#conllections-example,reftext=`Collections Example`]
 .Collections Example
@@ -198,10 +216,12 @@ include::../examples/json/collections.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-[[collectionInfo]]
+[[collection-information]]
 ==== Collection Information
 
-Collection Information is the set of metadata which describes a single collection. An abbreviated copy of this information is returned for each Collection in the `/collections` response.
+Collection Information is the set of metadata that describes a single
+collection. An abbreviated copy of this information is returned for each
+Collection in the <<collections-metadata,`/collections`>> response.
 
 .Dependencies
 [width="90%"]
@@ -209,19 +229,27 @@ Collection Information is the set of metadata which describes a single collectio
 |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections
 |====
 
+[[collection-info-operation]]
 ===== Operation
 
-This operation is defined in the `Collections` conformance class of API - Common. No modifications are required to support `Records` resources.
+This operation is defined in the `Collections` conformance class of API - Common.
+No modifications are required to support `Records` resources.
 
-. Issue a `GET` request on the `{root}/collections/{collectionId}` path
+. Issue a `GET` request on the `{root}/collections/{collectionid}` path
 
-The {collectionId} parameter is the unique identifier for a single collection on the API. The list of valid values for {collectionId} is provided in the /collections response.
+[[collection-identifier]]
+The {collectionid} parameter is the unique identifier for a single collection 
+offered by the API. The list of valid values for `{collectionid}` is provided
+in the <<collections-metadata,`/collections`>> response.
 
-Support for the `/collections/{collectionId}` path is required by API - Common.
+Support for the `/collections/{collectionid}` path is required by API - Common.
 
+[[collection-info-response]]
 ===== Response
 
-A successful response to the Collection Operation is a set of metadata which describes the collection identified by the {collectionId} parameter.
+A successful response to the <<collection-info-operation,Collection>> operation
+is a set of metadata that describes the collection identified by the
+<<collection-identifier,`{collectionid}`>> parameter.
 
 [#collectionInfo-schema,reftext='Collection Information Response Schema']
 .Collection Information Response Schema
@@ -230,7 +258,8 @@ A successful response to the Collection Operation is a set of metadata which des
 include::../openapi/schemas/common/collectionInfo.yaml[]
 ----
 
-The following JSON fragment is an example of a response to an OGC API - Records Collection Information operation.
+The following JSON fragment is an example of a response to an OGC API - Records
+Collection Information operation.
 
 [#collection-info-example,reftext=`Collection Information Example`]
 .Collection Information Example
@@ -248,14 +277,18 @@ The requirements for handling unsuccessful requests are provided in <<http-respo
 
 ==== Operation
 
-include::requirements/core/REQ_rc-op.adoc[]
+Catalogue records are  accessed at the `/collections/{collectionId}/items`
+endpoint.
+
+include::requirements/core/REQ_record-collection-op.adoc[]
 
 [[parameters-section]]
 ==== Parameters
 
 ===== Overview
 
-The following tables list the set mandatory query parameters.
+The following tables list the set mandatory query parameters that must be 
+supported at the `/collections/{collectionId}/items` endpoint.
 
 [[core-query-parameters-table]]
 [reftext='{table-caption} {counter:table-num}']
@@ -271,58 +304,61 @@ The following tables list the set mandatory query parameters.
 |externalid |An equality predicate consistent of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
 |===
 
-The query parameters `bbox`, `datetime` and `limit` are inherited from API -Common.  All requirements and recommendations in API - Common regarding these parameters also apply for API - Records.
+The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from API -Common.  All requirements and recommendations in API - Common regarding these parameters also apply for API - Records.
 
 The query parameters `q`, `type` and `externalid` are specific to API - Records.
-This clause provides a brief description of the query parameters inherited from API - Common and requirements for the API - Records-specific parameters.
 
 [[core-query-parameters-bbox]]
 ===== Parameter bbox
 
-The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
+The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
 
-include::requirements/core/REQ_param-bbox.adoc[]
+include::requirements/core/REQ_query-param-bbox.adoc[]
 
 [[core-query-parameters-datetime]]
 ===== Parameter datetime
 
-The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
+The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
 
-include::requirements/core/REQ_param-datetime.adoc[]
+include::requirements/core/REQ_query-param-datetime.adoc[]
 
 [[core-query-parameters-limit]]
 ===== Parameter limit
 
-The limit parameter is defined in API - Common. The following requirement governs use of that parameter in a Records API.
+The limit parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
 
-include::requirements/core/REQ_param-limit.adoc[]
+include::requirements/core/REQ_query-param-limit.adoc[]
 
 [[core-query-parameters-q]]
 ===== Parameter q
 
-include::requirements/core/REQ_param-q-definition.adoc[]
+include::requirements/core/REQ_query-param-q-definition.adoc[]
 
-include::requirements/core/REQ_param-q-response.adoc[]
+include::recommendations/core/REC_param-q.adoc[]
+
+include::requirements/core/REQ_query-param-q-response.adoc[]
 
 [[core-query-parameters-type]]
 ===== Parameter type
 
-include::requirements/core/REQ_param-type-definition.adoc[]
+include::requirements/core/REQ_query-param-type-definition.adoc[]
 
-include::requirements/core/REQ_param-type-response.adoc[]
+include::requirements/core/REQ_query-param-type-response.adoc[]
 
 [[core-query-parameters-externalid]]
 ===== Parameter externalid
 
-include::requirements/core/REQ_param-externalid-definition.adoc[]
+include::requirements/core/REQ_query-param-externalid-definition.adoc[]
 
-include::requirements/core/REQ_param-externalid-response.adoc[]
+include::requirements/core/REQ_query-param-externalid-response.adoc[]
 
 [[additional-query-parameters]]
 ===== Additional query parameters
 
-This standard defines the following URL query parameters based on the set of 
-<<core-queryables-record-table,core queryables>>:
+This standard defines the following URL query parameters based on the set of
+<<core-queryables-record-table,core queryables>> to support record selection
+based on the resource type and/or an external identifier associated with the
+resource.
 
 * <<core-query-parameters-type,type>>
 * <<core-query-parameters-externalid,externalId>>
@@ -336,7 +372,45 @@ Any combination of query parameters from the <<core-query-parameters-table,Table
 [[query-response]]
 ==== Response
 
-include::requirements/core/REQ_rc-response.adoc[]
+include::requirements/core/REQ_record-collection-response.adoc[]
+
+include::requirements/core/REQ_record-collection-links.adoc[]
+
+include::recommendations/core/REC_record-collection-next-1.adoc[]
+
+include::recommendations/core/REC_record-collection-next-2.adoc[]
+
+include::recommendations/core/REC_record-collection-next-3.adoc[]
+
+This document does not mandate any specific implementation approach for the
+`next` links.
+
+An implementation could use opaque links that are managed by the server. It is
+up to the server to determine how long these links can be de-referenced.
+Clients should be prepared to receive a 404 response.
+
+Another implementation approach is to use an implementation-specific parameter that specifies the index within the result set from which the server begins presenting results in the response, like the `startIndex` parameter that was used in <<WFS20,WFS 2.0>> (and which may be added again in additional parts of the OGC API Features series).
+
+The API will return no `next` link, if it has returned all selected record, and the server knows that. However, the server may not be aware that it has already returned all selected records. For example, if the request states `limit=10` and the query to the backend datastore returns 10 records, the server may not know, if there are more records or not (in most cases there will be more records), unless the total number of matches is also computed, which may be too costly. The server will then add the next link, and if there are no more records, dereferencing the next link will return am empty feature collection and no next link. This behavior is consistent with the statements above.
+
+Clients should not assume that paging is safe against changes to dataset while a client iterates through `next` links. If a server provides opaque links these could be safe and maintain the dataset state during the original request. Using a parameter for the start index, however, will not be safe.
+
+NOTE: Additional requirements classes for safe paging or an index parameter
+may be added in extensions to this specification.
+
+include::recommendations/core/PER_record-collection-prev.adoc[]
+
+Providing `prev` links supports navigating back and forth between pages, but depending on the implementation approach it may be too complex to implement.
+
+include::requirements/core/REQ_record-collection-rel-type.adoc[]
+
+include::requirements/core/REQ_record-collection-timeStamp.adoc[]
+
+include::requirements/core/REQ_record-collection-numberMatched.adoc[]
+
+include::requirements/core/REQ_record-collection-numberReturned.adoc[]
+
+NOTE: The representation of the links and the other properties in the payload depends on the encoding of the feature collection.
 
 include::recommendations/core/PER_additional-properties.adoc[]
 
@@ -379,10 +453,10 @@ include::recommendations/core/PER_additional-properties.adoc[]
 
 ==== Associations and Links
 
-A record object contains both `links` and `properties.associations` properties which serve
-different purposes.  The following provides an example of using associations for related
-resources of a record, as both traditional link relations as well as API resources via URI
-templates.
+A record contains both `links` and `properties.associations` properties which
+serve different purposes.  The following provides an example of using
+associations for related resources of a record, as both traditional link
+relations as well as API resources via URI templates.
 
 [#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
 .Associations simple and URI Template Example
@@ -391,18 +465,32 @@ templates.
 include::../examples/json/associations-simple-and-uri-template.json[]
 ----
 
-The following recommendations provide clarification on where and how to use these properties in a record.
+The following recommendations provide clarification on where and how to use
+these properties in a record.
 
 include::recommendations/core/REC_record-links.adoc[]
 
 include::recommendations/core/REC_record-associations.adoc[]
 
+NOTE: The representation of links in the payload will depend on the encoding of the record.
 
-==== Paged Response
+[[example_11]]
+.Links in a record payload
+====
+The links in a record could be (in this example represented as link headers):
 
-One consequence of the Limit parameter is that the full result set is not delivered to the user. However, users frequently want to know how big the result set it and how to access the rest of it. The following requirement adds information to the response to address that need.
+[source]
+----
+Link: <http://data.example.org/collections/my_catalogue/items/record_123.json>; rel="self"; type="application/geo+json"
+Link: <http://data.example.org/collections/my_catalogue/items/record_123.html>; rel="alternate"; type="text/html"
+Link: <http://data.example.org/collections/my_catalogue.json>; rel="collection"; type="application/json"
+Link: <http://data.example.org/collections/my_catalogue.html>; rel="collection"; type="text/html"
+----
+====
 
-include::requirements/core/REQ_rc-paged-response.adoc[]
+===== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
 [[record-access]]
 === Record Access
@@ -415,47 +503,144 @@ include::requirements/core/REQ_record-op.adoc[]
 
 include::requirements/core/REQ_record-success.adoc[]
 
-[[general-section]]
-=== General
+===== Error situations
 
-[[http-response]]
-==== HTTP Response
-Each HTTP request shall result in a response that meets the following requirement.
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-include::requirements/core/REQ_http-response.adoc[]
+[[general-requirements-section]]
+=== General Requirements
 
-The YAML schema for these results is provided in <<http-response-schema>>.
+The following requirements and recommentations are applicable to all OGC Records APIs.
 
-[#http-response-schema,reftext='HTTP Response Schema']
-.HTTP Response Schema
-[source,yaml]
-----
-include::../openapi/schemas/common/exception.yaml[]
-----
+[[http-protocol]]
+==== HTTP 1.1
+
+This standard uses the https://tools.ietf.org/rfc/rfc2616.txt[HTTP protocol]. Therefore, conformance with HTTP or a closely related protocol is required.
+
+include::requirements/core/REQ_http.adoc[]
 
 [[http-status-codes]]
-==== HTTP status codes
+==== HTTP Status Codes
 
-The *Status Codes* listed in <<status_codes>> are of particular relevance to implementors of this standard. Status codes 200, 400, and 404 are called out in API requirements. Therefore, support for these status codes is mandatory for all compliant implementations. The remainder of the status codes in <<status_codes>> are not mandatory, but are important for the implementation of a well functioning API. Support for these status codes is strongly encouraged for both client and server implementations.
+<<status-codes>> lists the main HTTP status codes that clients should be prepared to receive. This includes support for specific security schemes or URI redirection. In addition, other error situations may occur in the transport layer outside of the server.
 
-[reftext='{table-caption} {counter:table-num}']
+[#status-codes,reftext='{table-caption} {counter:table-num}']
 .Typical HTTP status codes
 [cols="15,85",options="header"]
-|===
+!===
 |Status code |Description
 |`200` |A successful request.
-|`304` |An <<web_caching,entity tag was provided in the request>> and the resource has not been changed since the previous request.
+|`302` |The target resource was found but resides temporarily under a different URI. A 302 response is not evidence that the operation has been successfully completed.
+|`303` |The server is redirecting the user agent to a different resource. A 303 response is not evidence that the operation has been successfully completed.
+|`304` |An <<web-caching,entity tag>> was provided in the request and the resource has not changed since the previous request.
+|`307` |The target resource resides temporarily under a different URI and the user agent MUST NOT change the request method if it performs an automatic redirection to that URI.
+|`308` |Indicates that the target resource has been assigned a new permanent URI and any future references to this resource ought to use one of the enclosed URIs.
 |`400` |The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.
 |`401` |The request requires user authentication. The response includes a `WWW-Authenticate` header field containing a challenge applicable to the requested resource.
-|`403` |The server understood the request, but is refusing to fulfill it. While status code `401` indicates missing or bad authentication, status code `403` indicates that authentication is not the issue, but the client is not authorised to perform the requested operation on the resource.
+|`403` |The server understood the request, but is refusing to fulfill it. While status code `401` indicates missing or bad authentication, status code `403` indicates that authentication is not the issue, but the client is not authorized to perform the requested operation on the resource.
 |`404` |The requested resource does not exist on the server. For example, a path parameter had an incorrect value.
 |`405` |The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.
-|`406` |The `Accept` header submitted in the request did not support any of the media types supported by the server for the requested resource.
+|`406` |Content negotiation failed. For example, the `Accept` header submitted in the request did not support any of the media types supported by the server for the requested resource.
 |`500` |An internal error occurred in the server.
-|===
+!===
 
-More specific guidance is provided for each resource, where applicable.
-
-The API Description Document describes the HTTP status codes generated by that API. This should not be an exhaustive list of all possible status codes. It is not reasonable to expect an API designer to control the use of HTTP status codes which are not generated by their software. Therefore, it is recommended that the API Description Document limit itself to describing HTTP status codes relevant to the proper operation of the API application logic. Client implementations should be prepared to receive HTTP status codes in addition to those described in the API Description Document.
+The return status codes described in <<status-codes>> do not cover all possible conditions. 
 
 include::recommendations/core/PER_additional-status-codes.adoc[]
+
+When a server encounters an error in the processing of a request, it may wish to include information in addition to the status code in the response. Since Web API interactions are often machine-to-machine, a machine-readable report would be prefered. <<rfc7807,IETF RFC 7807>> addresses this need by providing "Problem Details" response schemas for both JSON and XML.
+
+include::recommendations/core/REC_problem-details.adoc[]
+
+[[query-parameter-requirements]]
+==== Query parameters
+
+include::requirements/core/REQ_query-param-unknown.adoc[]
+
+include::requirements/core/REQ_query-param-invalid.adoc[]
+
+The criteria for a parameter to be "specified" in the API definition depends on the API definition language used, the complexity of the resources exposed, and the abilty of the API server to tolerate errors. 
+
+A service implementer should endeavour to provide as much detail in the server's API definition as the API definition language allows. However, there is no requirement for it to list every endpoint for which there is a non-404 behaviour, for it to list every possible query parameter that might affect the behaviour of an endpoint, or for it to list every possible value that each query parameter might accept.
+
+include::recommendations/core/PER_query-param-specified.adoc[]
+
+include::recommendations/core/PER_query-param-tolerance.adoc[]
+
+[[web-caching-section]]
+==== Web Caching
+
+Entity tags are a mechanism for web cache validation and for supporting conditional requests to reduce network traffic. Entity tags are specified by <<rfc7232,HTTP/1.1 (RFC 7232)>>.
+
+include::recommendations/core/REC_etag.adoc[]
+
+[[cross-origin-section]]
+==== Support for Cross-Origin Requests
+
+If the data is located on another host than the webpage ("same-origin policy"), access to data from a HTML page is by default prohibited for security reasons. A typical example is a web-application accessing feature data from multiple distributed datasets.
+
+include::recommendations/core/REC_cross-origin.adoc[]
+
+Two common mechanisms to support cross-origin requests are:
+
+* link:https://en.wikipedia.org/wiki/Cross-origin_resource_sharing[Cross-origin resource sharing (CORS)]
+* link:https://en.wikipedia.org/wiki/JSONP[JSONP (JSON with padding)]
+
+[[parameter-encoding-section]]
+==== Parameter Encoding
+
+The following sections provide the requirements and guidelines for encoding parameters for use in an OGC Web API request. 
+
+OGC Web API requests are issued using a Uniform Resource Identifier (URI). The URI syntax is defined in <<rfc3986,IETF RFC 3986>>. Rules for building URI Templates can be found in <<rfc6570,IETF RFC 6570>>. 
+
+The Backus-Naur Form (BNF) definition of a URI is provided in <<uri-bnf-annex,Annex F>>. 
+
+===== Capitalization
+
+<<rfc3986,IETF RFC 3986>> sections 6.2.2.1 and 2.1 provide the requirements for capitalization in URIs.
+
+include::requirements/core/REQ_query-param-capitalization.adoc[]
+
+===== Parameter Value Lists
+
+Parameters may pass more than one value. These lists of parameter values may be passed in two ways.
+
+. Repeated name:value pairs where the parameter name is repeated for each value in the list
+. A parameter name followed by a delimited list of values.
+
+The folowing requirements define how to encode a delimited list (case 2) of parameter values. They do not apply if replication (case 1) is used.
+
+include::requirements/core/REQ_query-param-list-delimiter.adoc[]
+
+include::requirements/core/REQ_query-param-list-escape.adoc[]
+
+include::requirements/core/REQ_query-param-list-empty.adoc[]
+
+Thus, two successive commas indicates an empty item, as does a leading comma or a trailing comma. An empty list ("") can either be interpreted as a list containing no items or as a list containing a single empty item, depending on the context.
+
+===== Numeric and Boolean Values
+
+Geospatial is a mathematical discipline. The clear and accurate exchange of mathematical values is essential. The encoding rules in this section standarize the encoding of numeric and boolean primitives when included in a URL. These rules are based on the computer science basic data types identified by <<k-and-r-1978,Kernighan and Ritchie>>.   
+
+Boolean values conform to the following requirement.
+
+include::requirements/core/REQ_query-param-value-boolean.adoc[]
+
+Integer values conform to the following requirement.
+
+include::requirements/core/REQ_query-param-value-integer.adoc[]
+
+Real numbers can be represented using either the decimal or double (exponential) format. The decimal format is typically used except for very large or small values.
+
+Decimal values conform to the following requirement. 
+
+include::requirements/core/REQ_query-param-value-decimal.adoc[]
+
+Double values conform to the following requirement. 
+
+include::requirements/core/REQ_query-param-value-double.adoc[]
+
+Special values conform to the following requirement. 
+
+include::requirements/core/REQ_query-param-value-special.adoc[]
+

@@ -1,0 +1,6 @@
+[rec_core_rc-next-3]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/rc-next-3* 
+^|A |The number of records in a response to a `next` link SHOULD follow the same rules as for the response to the original query and again include a `next` link, if there are more features in the selection that have not yet been returned.
+|===

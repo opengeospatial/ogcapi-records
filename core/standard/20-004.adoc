@@ -109,8 +109,6 @@ include::clause_11_opensearch.adoc[]
 
 include::clause_12_encodings.adoc[]
 
-include::clause_13_oas.adoc[]
-
 include::clause_14_media_types.adoc[]
 
 include::clause_15_security.adoc[]
