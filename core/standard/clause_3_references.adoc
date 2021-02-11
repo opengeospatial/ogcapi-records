@@ -15,6 +15,7 @@ The following normative documents contain provisions that, through reference in 
 * [[HTML5]] W3C: *HTML5*, W3C Recommendation, http://www.w3.org/TR/html5/[HTML5]
 * [[RDF]] W3C, *RDF 1.1 Semantics*, February 2014, https://www.w3.org/TR/rdf11-mt/
 * [[xml]] W3C, *Extensible Markup Language (XML) 1.0 (Fifth Edition)*, November 2008, https://www.w3.org/TR/xml/
+* [[opensearch]] OASIS, https://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part4-opensearch/searchRetrieve-v1.0-os-part4-opensearch.html#_Toc313525766[searchRerieve: Part 4. APD Binding for OpenSearch Version 1.0]
 * OGC: OGC 07-036, Geography Markup Language (GML) Encoding Standard, version 3.2.1, 2007
 * OGC: OGC 10-129r1, OGC® Geography Markup Language (GML) – Extended schemas and encoding rules (GML 3.3), version 3.3, 2012
 * W3C: W3C Recommendation, XML Path Language (XPath), version 2, 2007

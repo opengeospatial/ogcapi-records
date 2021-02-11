@@ -30,7 +30,6 @@ include::requirements/cql-filter/REQ_filter-crs-param.adoc[]
 ==== Response
 
 include::requirements/cql-filter/REQ_response.adoc[]
-~                                                              
 
 === Filtering on links/associations
 
