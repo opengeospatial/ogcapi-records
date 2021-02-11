@@ -8,5 +8,4 @@
 ^|C |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 ^|D |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/xml
 ^|E |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
-^|F |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
 |===
