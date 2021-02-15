@@ -328,10 +328,10 @@ components:
     collectionInfo:
       required:
         - links
-        - name
+        - id
       type: object
       properties:
-        name:
+        id:
           type: string
           description: 'identifier of the collection used, for example, in URIs'
           example: buildings

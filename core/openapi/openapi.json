@@ -704,10 +704,10 @@
         }
       },
       "collectionInfo" : {
-        "required" : [ "links", "name" ],
+        "required" : [ "links", "id" ],
         "type" : "object",
         "properties" : {
-          "name" : {
+          "id" : {
             "type" : "string",
             "description" : "identifier of the collection used, for example, in URIs",
             "example" : "buildings"
