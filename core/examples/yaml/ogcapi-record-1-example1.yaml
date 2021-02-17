@@ -114,6 +114,22 @@ paths:
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/sortby'
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/collectionId'
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/recordId'
+        - myRecordProperty:
+            name: my-record-prop
+            in: query
+            description: |-
+              The optional my-record-prop parameter supports equality searching
+              using an additional record property named my-record-prop.  Only
+              records whose value for the my-record-prop property is equal to
+              the specified value shall be selected. This parameter is an
+               example of adding additional query parameters.
+            required: false
+            schema:
+              type: array
+              items:
+                type: string
+            explode: false
+            style: form
       responses:
         '200':
           $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/Records'
