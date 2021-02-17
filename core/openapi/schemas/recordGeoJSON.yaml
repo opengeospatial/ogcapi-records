@@ -14,7 +14,7 @@ properties:
     enum: 
       - Feature
   geometry:
-    $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml
+    $ref: geometryGeoJSON.yaml
   properties:
     type: object
     required:
@@ -56,8 +56,10 @@ properties:
         description: The natural language used for textual values (e.g. titles, descriptions, etc.) of the resource. ISO 639-1/639-2 codes should be used.
         default: en
       externalId:
-        type: string
+        type: array
         description: An identifier for the resource assigned by an external (to the catalogue) entity.
+        items:
+           type: string
       created:
         type: string
         description: Date of creation of the resource.
@@ -107,15 +109,15 @@ properties:
         type: string
         description: A statement that concerns all rights not addresses by the license such as a copyright statement.
       extent:
-         $ref: ./extent.yaml
+         $ref: common/extent.yaml
       associations:
         type: array
         description: A list of links for accessing the resource (e.g. download link, access link) in one of the supported distribution formats and/or links to other resources associated with this resource.
         items:
-          $ref: https://github.com/opengeospatial/oapi_common/blob/master/standard/openapi/schemas/link.yaml
+          $ref: common/link.yaml
       additionalProperties: true
   links:
     type: array
     description: A list of links for navigating the API (e.g. prev, next, etc.).
     items:
-      $ref: https://github.com/opengeospatial/oapi_common/blob/master/standard/openapi/schemas/link.yaml
+      $ref: common/link.yaml

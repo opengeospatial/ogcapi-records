@@ -1,8 +1,8 @@
 type: object
 required:
-- sortables   
+  - sortables   
 properties:
-   sortables:
-      type: array
-      items:
-         $ref: sortable.yaml
+  sortables:
+    type: array
+    items:
+      $ref: sortable.yaml

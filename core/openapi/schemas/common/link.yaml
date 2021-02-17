@@ -5,19 +5,13 @@ properties:
   href:
     type: string
     format: url
-    example: http://data.example.com/buildings/123
   rel:
     type: string
-    example: alternate
   type:
     type: string
-    example: application/geo+json
   hreflang:
     type: string
-    example: en
   title:
     type: string
-    example: Trierer Strasse 70, 53115 Bonn
   templated:
     type: boolean
-    example: true

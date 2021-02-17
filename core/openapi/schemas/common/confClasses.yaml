@@ -6,4 +6,3 @@ properties:
     type: array
     items:
       type: string
-      example: "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core"
