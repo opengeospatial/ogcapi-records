@@ -164,7 +164,7 @@ components:
         minItems: 1
         items:
           type: string
-          pattern: [+|-][A-Za-z_][A-Za-z_0-9]*
+          pattern: '[+|-][A-Za-z_][A-Za-z_0-9]*'
       style: form
       explode: false
     collectionId:
