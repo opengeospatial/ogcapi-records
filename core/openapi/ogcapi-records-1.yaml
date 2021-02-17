@@ -230,7 +230,7 @@ components:
         collections:
           type: array
           items:
-            $ref: "#/components/schemas/collection"
+            $ref: "#/components/schemas/collectionInfo"
     confClasses:
       type: object
       required:
@@ -817,7 +817,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/collection'
+            $ref: '#/components/schemas/collectionInfo'
         text/html:
           schema:
             type: string
