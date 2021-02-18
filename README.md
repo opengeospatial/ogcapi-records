@@ -70,7 +70,6 @@ Also a non-normative document, the "OGC API - Records User's Guide", is planned.
 The current expectation is to have a stable version of the Core specification in 2020. We want to wait for sufficient implementation feedback, mature implementations including a test suite, results from OGC testbeds and experience with draft extensions first.
 
 * [Charter for this SWG](OGC_API_Catalogues_SWG_Charter.adoc)
-* [OGC API Records - Part 1: Core, Editor's Draft](https://github.com/opengeospatial/ogcapi-records/blob/master/core/outline.adoc)
 
 ## Contributing
 
