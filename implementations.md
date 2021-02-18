@@ -12,6 +12,7 @@ Servers:
 * [pygeoapi](#pygeoapi)
 * [Esri Inc.](#esri-inc)
 * [GeoNetwork opensource](#geonetwork-opensource)
+* [ldproxy](#ldproxy)
 
 Clients:
 * [OWSLib](#owslib)
@@ -144,11 +145,59 @@ Records:
 
 ## GeoNetwork opensource
 
-[GeoNetwork](https//geonetwork-opensource.org) is a java/xml oriented catalogue application. As part of an ongoing effort, the GeoNetwork API component is extended to support OGC API Records. The work in progress is available at https://github.com/geonetwork/geonetwork-microservices/pull/23.
+[GeoNetwork](https://geonetwork-opensource.org) is a java/xml oriented catalogue application. As part of an ongoing effort, the GeoNetwork API component is extended to support OGC API Records. The work in progress is available at https://github.com/geonetwork/geonetwork-microservices/pull/23.
 
 GeoNetwork has a concept of [sub-portals](https://geonetwork-opensource.org/manuals/trunk/en/administrator-guide/configuring-the-catalog/portal-configuration.html). In the OGC API Records implementation these subportals are available as collections of records. GeoNetwork uses an [Elastic Search](https://elastic.co) backend, supporting a configurable set of queryables. Records are available in various encodings, such as text/html, application/geo+json, application/dcat.ld+json, application/iso19139+xml, application/iso19115-3+xml, application/dublin-core+xml, application/datacite+xml, through the accept-header mechanism. The html encoding of records contains an embedded schema-org json-ld snippet to facilitate search engines. A [Sitemap](https://sitemaps.org) endpoint is available to notify the search engine of available records.
 
 GeoNetwork supports basic authentication, but can also be set up with alternative authentication mechanisms to facilitate autorisation on subsets of records.
+
+## ldproxy
+
+[ldproxy](https://github.com/interactive-instruments/ldproxy) supports (most of) the core/cql/json/html conformance classes of the current draft of OGC API Records.
+
+A sample instance with enumerations and codelists from the data specification of the German mapping and cadastral authorities for topographic, cadastral, geodetic, land use and land cover data ("GeoInfoDok NEU") is available at https://geoinfodok.ldproxy.net/geoinfodok. Sample URLs are shown below, to override content negotiation use `f=html` for HTML and `f=json` for JSON.
+
+Landing page:
+
+* https://geoinfodok.ldproxy.net/geoinfodok
+
+API definition / documentation:
+
+* https://geoinfodok.ldproxy.net/geoinfodok/api
+
+Conformance declaration:
+
+* https://geoinfodok.ldproxy.net/geoinfodok/conformance
+
+List of collections (each enumeration or codelists is a collection):
+
+* https://geoinfodok.ldproxy.net/geoinfodok/collections
+
+Landing page of the AX_Gebaeudefunktion enumeration (building functions):
+
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion
+
+Queryables:
+
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/queryables
+
+Response schema (not part of OGC API Records, JSON Schema only):
+
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/schema
+
+Records (enums in the AX_Gebaeudefunktion enumeration):
+
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?title=Brauerei
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLM250
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLKM%20(Grunddatenbestand)
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=Tier
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=DLM250,Tier
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?filter=theme.concept='DLKM%20(Grunddatenbestand)'%20AND%20title%20LIKE%20'Wohn%'
+
+Single record (enum):
+
+* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items/2113
 
 ## OWSLib
 
