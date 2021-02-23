@@ -1,0 +1,36 @@
+{
+    "keywords": [
+        "total",
+        "ozone",
+        "level 1.0",
+        "column",
+        "dobson",
+        "brewer",
+        "saoz"
+    ],
+    "themes": [
+        {
+            "concepts": [
+                "dobson",
+                "brewer",
+                "vassey",
+                "pion",
+                "microtops",
+                "spectral",
+                "hoelper",
+                "saoz",
+                "filter"
+            ],
+            "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
+        },
+        {
+            "concepts": [
+                "atmosphericComposition",
+                "pollution",
+                "observationPlatform",
+                "rocketSounding"
+            ],
+            "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"
+        }
+    ]
+}

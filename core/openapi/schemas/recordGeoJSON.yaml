@@ -78,12 +78,6 @@ properties:
         items:
           type: object
           properties:
-            scheme:
-              type: string
-              description: |-
-                 An identifier for the knowledge organization
-                 system used to classify the resource.  It is recommended that the
-                 identifier by a resolvable URI.
             concepts:
               type: array
               description: |-
@@ -92,6 +86,12 @@ properties:
                  for each entity/concept identifier.
               items:
                 type: string
+            scheme:
+              type: string
+              description: |-
+                 An identifier for the knowledge organization
+                 system used to classify the resource.  It is recommended that the
+                 identifier by a resolvable URI.
       formats:
         type: array
         description: A list of available distributions of the resource.
