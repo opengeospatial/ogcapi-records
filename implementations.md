@@ -155,49 +155,49 @@ GeoNetwork supports basic authentication, but can also be set up with alternativ
 
 [ldproxy](https://github.com/interactive-instruments/ldproxy) supports (most of) the core/cql/json/html conformance classes of the current draft of OGC API Records.
 
-A sample instance with enumerations and codelists from the data specification of the German mapping and cadastral authorities for topographic, cadastral, geodetic, land use and land cover data ("GeoInfoDok NEU") is available at https://geoinfodok.ldproxy.net/geoinfodok. Sample URLs are shown below, to override content negotiation use `f=html` for HTML and `f=json` for JSON.
+A sample instance with enumerations and codelists from the data specification of the German mapping and cadastral authorities for topographic, cadastral, geodetic, land use and land cover data ("GeoInfoDok NEU") is available at https://demo.ldproxy.net/geoinfodok. Sample URLs are shown below, to override content negotiation use `f=html` for HTML and `f=json` for JSON.
 
 Landing page:
 
-* https://geoinfodok.ldproxy.net/geoinfodok
+* https://demo.ldproxy.net/geoinfodok
 
 API definition / documentation:
 
-* https://geoinfodok.ldproxy.net/geoinfodok/api
+* https://demo.ldproxy.net/geoinfodok/api
 
 Conformance declaration:
 
-* https://geoinfodok.ldproxy.net/geoinfodok/conformance
+* https://demo.ldproxy.net/geoinfodok/conformance
 
 List of collections (each enumeration or codelists is a collection):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections
+* https://demo.ldproxy.net/geoinfodok/collections
 
 Landing page of the AX_Gebaeudefunktion enumeration (building functions):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion
 
 Queryables:
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/queryables
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/queryables
 
 Response schema (not part of OGC API Records, JSON Schema only):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/schema
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/schema
 
 Records (enums in the AX_Gebaeudefunktion enumeration):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?title=Brauerei
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLM250
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLKM%20(Grunddatenbestand)
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=Tier
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=DLM250,Tier
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?filter=theme.concept='DLKM%20(Grunddatenbestand)'%20AND%20title%20LIKE%20'Wohn%'
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?title=Brauerei
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLM250
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLKM%20(Grunddatenbestand)
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=Tier
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=DLM250,Tier
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?filter=theme.concept='DLKM%20(Grunddatenbestand)'%20AND%20title%20LIKE%20'Wohn%'
 
 Single record (enum):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items/2113
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items/2113
 
 ## OWSLib
 
