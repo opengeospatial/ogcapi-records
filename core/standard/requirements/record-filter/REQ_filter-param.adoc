@@ -1,4 +1,4 @@
-[[req_cql-filter_filter-param]]
+[[req_record-filter_filter-param]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/features-filter/filter-param*

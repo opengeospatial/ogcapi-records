@@ -6,9 +6,11 @@ The following normative documents contain provisions that, through reference in 
 * [[rfc3339]] Klyne, G., Newman, C.: IETF RFC 3339, *Date and Time on the Internet: Timestamps*, http://tools.ietf.org/rfc/rfc3339.txt[RFC 3339]
 * [[rfc3986]] Berners-Lee, T., Fielding, R., Masinter, L.: IETF RFC 3986, *Uniform Resource Identifier (URI): Generic Syntax*, https://tools.ietf.org/html/rfc3986[RFC 3986]
 * [[rfc3987]] Duerst, M., Suignard, M.: IETF RFC 3987, *Internationalized Resource Identifiers (IRIs)*, https://tools.ietf.org/html/rfc3987[RFC 3987]
+* [[rfc4287]] Nottingham, M., Sayre, R.: IETF RFC 4287, *The Atom Syndication Format*, https://tools.ietf.org/html/rfc4287[RFC 4287]
 * [[rfc6570]] Gregorio, J., Fielding, R., Hadley, M., Nottingham, M., Orchard, D.: IETF RFC 6570, *URI Template*, https://tools.ietf.org/html/rfc6570[RFC 6570]
 * [[GeoJSON]] IETF RFC 7946: *The GeoJSON Format*, https://tools.ietf.org/rfc/rfc7946.txt[eoJSON]
 * [[rfc8288]] Nottingham, M.: IETF RFC 8288, *Web Linking*, http://tools.ietf.org/rfc/rfc8288.txt[RFC 8288]
+
 * [[OAPI_Common]] OGC 19-072: *OGC API (OAPI) Common Specification*, (Draft) https://github.com/opengeospatial/oapi_common[API Common]
 * [[OpenAPI]] Open API Initiative: *OpenAPI Specification 3.0.2*, https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md[OpenAPI]
 * [[schema.org]] *Schema.org*: http://schema.org/docs/schemas.html[Schema.org]
