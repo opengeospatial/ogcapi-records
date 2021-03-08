@@ -65,6 +65,7 @@ The Records API offers various levels of search capability of escalating complex
 * a bounding box
 * a time instant or time period
 * keywords
+* free text
 * equality predicates based on a subset of core queryables (e.g. by resource type, by external identifier)
 
 This specification also includes a conformance class that allows a catalogue to be searched using  https://portal.opengeospatial.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.

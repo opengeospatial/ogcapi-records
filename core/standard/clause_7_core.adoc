@@ -460,6 +460,25 @@ The following YAML fragment defines the schema of a single record in a query res
 include::../openapi/schemas/recordGeoJSON.yaml[]
 ----
 
+==== Keywords and Themes
+
+A record allows for one ``properties.keywords`` and 0..n ``properties.themes``
+properties.  The following provides an example of using keywords for free
+form terms (e.g. tags) as well as themes to articulate terms from formal
+vocabularies.
+
+[#keywords-themes-example,reftext=`Keywords and themes Example`]
+.Keywords and themes Example
+[source,json]
+----
+include::../examples/json/keywords-themes.json[]
+----
+
+The following recommendations provide clarification on where and how to use
+these properties in a record.
+
+include::recommendations/core/REC_record-keywords-themes.adoc[]
+
 ==== Associations and Links
 
 A record contains both `links` and `properties.associations` properties which
