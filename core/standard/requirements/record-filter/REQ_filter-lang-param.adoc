@@ -1,6 +1,6 @@
-[[req_cql-filter_filter-lang-param]]
+[[req_record-filter_filter-lang-param]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/cql-filter/filter-lang-param*
+^|*Requirement {counter:req-id}* |*/req/record-filter/filter-lang-param*
 ^|A |The HTTP GET operation on the `/collections/{collectionId}/items` path SHALL support the `filter-lang` parameter as defined in http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-lang-param[Parameter filter-lang].
 |===

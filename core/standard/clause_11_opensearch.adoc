@@ -4,4 +4,40 @@
 [[opensearch-overview]]
 === Overview
 
+OpenSearch is a standard that allows websites and search engines to publish
+search results in a standard and accessible format suitable for syndication
+and aggregation.
+
+The OpenSearch standard define the following components:
+
+* the OpenSearch description document,
+* the OpenSearch Query element,
+* the OpenSearch URL template syntax, and
+* the OpenSearch response elements.
+
 include::requirements/requirements_class_opensearch.adoc[]
+
+=== OpenSearch description document
+
+The OpenSearch description ducment describes the web interface of a search 
+engine.
+
+include::requirements/opensearch/REQ_opensearch_descriptiondoc-op.adoc[]
+
+include::requirements/opensearch/REQ_opensearch_descriptiondoc-response.adoc[]
+
+=== Query element
+
+T.B.D.
+
+=== URL template
+
+T.B.D.
+
+=== Response element
+
+T.B.D.
+
+=== Autodiscovery
+
+T.B.D.

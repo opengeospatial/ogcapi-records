@@ -58,57 +58,54 @@ Records:
 
 ## pygeoapi
 
-The [pygeoapi](https://pygeoapi.io) project implements most of the current
-OGC API - Records draft (note: work in progress can be found on [GitHub](https://github.com/tomkralidis/pygeoapi/tree/oarec)).
+The [pygeoapi](https://pygeoapi.io) project implements most of the current OGC API - Records draft.
 
-A sample instance is deployed using discovery metadata from the
-Meteorological Service of Canada as part of the WMO Information System.
+A sample instance is deployed using sample metadata records from
+the [Dutch Nationaal georegister](https://www.nationaalgeoregister.nl).
 
 Landing page:
 
-* http://147.102.109.27/pygeoapi-oarec
-* http://147.102.109.27/pygeoapi-oarec/?f=json
+* https://demo.pygeoapi.io/master
+* https://demo.pygeoapi.io/master/?f=json
 
 API document:
 
-* http://147.102.109.27/pygeoapi-oarec/openapi
-* http://147.102.109.27/pygeoapi-oarec/openapi?f=json
+* https://demo.pygeoapi.io/master/openapi
+* https://demo.pygeoapi.io/master/openapi?f=json
 
 Conformance page:
 
-* http://147.102.109.27/pygeoapi-oarec/conformance
-* http://147.102.109.27/pygeoapi-oarec/conformance?f=json
+* https://demo.pygeoapi.io/master/conformance
+* https://demo.pygeoapi.io/master/conformance?f=json
 
 List of catalogues:
 
-* http://147.102.109.27/pygeoapi-oarec/collections
-* http://147.102.109.27/pygeoapi-oarec/collections?f=json
+* https://demo.pygeoapi.io/master/collections
+* https://demo.pygeoapi.io/master/collections?f=json
 
-Describe MSC discovery metadata catalogue
+Describe sample metadata records from Dutch Nationaal georegister
 
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc?f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata
+* https://demo.pygeoapi.io/master/collections/dutch-metadata?f=json
 
 Queryables:
 
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/queryables
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/queryables
 
 Records:
 
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?title=metar
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?title=metar&f=json
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&title=pilot
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&title=pilot&f=json
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&datetime=2000-11-11/..
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?bbox=-100,40,-80,50&datetime=2000-11-11/..&f=json
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?q=forecast
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items?q=forecast&f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Luchtfoto%202015%20Almelo%20service
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Luchtfoto%202015%20Almelo%20service&f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?bbox=4,51,7,53
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?bbox=4,51,7,53&f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Natuurmeting
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Natuurmeting&f=json
 
 Single record:
 
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2
-* http://147.102.109.27/pygeoapi-oarec/collections/msc-wis-dcpc/items/urn:x-wmo:md:int.wmo.wis::ca.gc.ec.msc-1.1.10.2&f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/554a799c-ed4e-4a8d-82f3-efb9c72247e4
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/554a799c-ed4e-4a8d-82f3-efb9c72247e4?f=json
 
 ## Esri Inc
 
@@ -155,49 +152,49 @@ GeoNetwork supports basic authentication, but can also be set up with alternativ
 
 [ldproxy](https://github.com/interactive-instruments/ldproxy) supports (most of) the core/cql/json/html conformance classes of the current draft of OGC API Records.
 
-A sample instance with enumerations and codelists from the data specification of the German mapping and cadastral authorities for topographic, cadastral, geodetic, land use and land cover data ("GeoInfoDok NEU") is available at https://geoinfodok.ldproxy.net/geoinfodok. Sample URLs are shown below, to override content negotiation use `f=html` for HTML and `f=json` for JSON.
+A sample instance with enumerations and codelists from the data specification of the German mapping and cadastral authorities for topographic, cadastral, geodetic, land use and land cover data ("GeoInfoDok NEU") is available at https://demo.ldproxy.net/geoinfodok. Sample URLs are shown below, to override content negotiation use `f=html` for HTML and `f=json` for JSON.
 
 Landing page:
 
-* https://geoinfodok.ldproxy.net/geoinfodok
+* https://demo.ldproxy.net/geoinfodok
 
 API definition / documentation:
 
-* https://geoinfodok.ldproxy.net/geoinfodok/api
+* https://demo.ldproxy.net/geoinfodok/api
 
 Conformance declaration:
 
-* https://geoinfodok.ldproxy.net/geoinfodok/conformance
+* https://demo.ldproxy.net/geoinfodok/conformance
 
 List of collections (each enumeration or codelists is a collection):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections
+* https://demo.ldproxy.net/geoinfodok/collections
 
 Landing page of the AX_Gebaeudefunktion enumeration (building functions):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion
 
 Queryables:
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/queryables
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/queryables
 
 Response schema (not part of OGC API Records, JSON Schema only):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/schema
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/schema
 
 Records (enums in the AX_Gebaeudefunktion enumeration):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?title=Brauerei
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLM250
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLKM%20(Grunddatenbestand)
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=Tier
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=DLM250,Tier
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?filter=theme.concept='DLKM%20(Grunddatenbestand)'%20AND%20title%20LIKE%20'Wohn%'
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?title=Brauerei
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLM250
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?theme.concept=DLKM%20(Grunddatenbestand)
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=Tier
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?q=DLM250,Tier
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items?filter=theme.concept='DLKM%20(Grunddatenbestand)'%20AND%20title%20LIKE%20'Wohn%'
 
 Single record (enum):
 
-* https://geoinfodok.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items/2113
+* https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items/2113
 
 ## OWSLib
 

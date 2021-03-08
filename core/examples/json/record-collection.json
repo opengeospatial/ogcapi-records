@@ -1,0 +1,72 @@
+{
+  "type": "FeatureCollection",
+  "timeStamp": "2021-03-06T07:10:00",
+  "numberReturned": 10,
+  "numberMatched": 347,
+  "features": [
+     { ... },
+     { ... },
+     { ... },
+     { ... },
+     { ... },
+     ...
+  ],
+  "links": [
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue?f=json...",
+       "rel": "collection",
+       "type": "application/geo+json",
+       "title": "Link to the containing collection in JSON."
+    },
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue?f=html...",
+       "rel": "collection",
+       "type": "text/html",
+       "title": "Link to the containing collection in HTML."
+    },
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue?f=xml...",
+       "rel": "collection",
+       "type": "text/xml",
+       "title": "Link to the containing collection in XML."
+    },
+
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue/items?f=json&...",
+       "rel": "self",
+       "type": "application/geo+json",
+       "title": "Link to this response."
+    },
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue/items?f=html&...",
+       "rel": "alternate",
+       "type": "text/html",
+       "title": "Link to this response in HTML."
+    },
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue/items?f=atom&...",
+       "rel": "alternate",
+       "type": "application/atom+xml",
+       "title": "Link to this response in ATOM (i.e. as an ATOM feed)."
+    },
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue/items?f=json&startIndex=20&limit=10...",
+       "rel": "next",
+       "type": "application/geo+json",
+       "title": "Link to the next set of records in GeoJSON."
+    },
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue/items?f=html&startIndex=20&limit=10...",
+       "rel": "next",
+       "type": "text/html",
+       "title": "Link to the next set of records in HTML."
+    },
+    {
+       "href": "http://www.someserver.com/collections/myCatalogue/items?f=atom&startIndex=20&limit=10...",
+       "rel": "next",
+       "type": "application/atom+xml",
+       "title": "Link to the next set of records in ATOM (i.e. as an ATOM feed)."
+    }
+  ]
+}
+

@@ -414,23 +414,6 @@ NOTE: The representation of the links and the other properties in the payload de
 
 include::recommendations/core/PER_additional-properties.adoc[]
 
-[#record-schema,reftext='Record Response Schema']
-.Record Response Schema
-[source,yaml]
-----
-include::../openapi/schemas/recordGeoJSON.yaml[]
-----
-
-The following JSON is an example of a response to an OGC API - Records
-query operation.
-
-[#record-example,reftext=`Record Example`]
-.Record Example
-[source,json]
-----
-include::../examples/json/record.json[]
-----
-
 [[core-queryables-record-table]]
 [reftext='{table-caption} {counter:table-num}']
 .Table of Core Queryables related to the catalogue record
@@ -467,6 +450,15 @@ include::../examples/json/record.json[]
 |extent |O |The spatio-temporal coverage of the resource. |properties.extent
 |associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc. |properties.associations
 |===
+
+The following YAML fragment defines the schema of a single record in a query response.
+
+[#record-schema,reftext='Record Response Schema']
+.Record Response Schema
+[source,yaml]
+----
+include::../openapi/schemas/recordGeoJSON.yaml[]
+----
 
 ==== Keywords and Themes
 
@@ -524,9 +516,26 @@ Link: <http://data.example.org/collections/my_catalogue.html>; rel="collection";
 ----
 ====
 
-===== Error situations
+==== Error situations
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+==== Examples
+
+The following is an example of a response to an OGC API - Records query
+operation (path: `/collections/{collectionId}/items`).  This example shows
+a JSON response and the response container is a GeoJSON feature collection.
+Specific records are not presented in this example in order to illustrate
+the structure of the response container in GeoJSON.
+
+[#records-example,reftext=`Records Example`]
+.Records Example in GeoJSON
+[source,json]
+----
+include::../examples/json/record-collection.json[]
+----
+
+See <<record-example>> for an example of a single catalogue record.
 
 [[record-access]]
 === Record Access
@@ -539,9 +548,23 @@ include::requirements/core/REQ_record-op.adoc[]
 
 include::requirements/core/REQ_record-success.adoc[]
 
-===== Error situations
+==== Error situations
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+==== Examples
+
+The following is an example of a single catalogue record encoded in GeoJSON.
+Such a record might appears in the `features` array of a
+<<records-example,query response>> or it may be the response when a specific,
+single record is accessed (path: `/collections/{collectionId}/items/{recordId}`).
+
+[#record-example,reftext=`Record Example`]
+.Record Example in GeoJSON
+[source,json]
+----
+include::../examples/json/record.json[]
+----
 
 [[general-requirements-section]]
 === General Requirements
