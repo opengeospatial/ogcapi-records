@@ -1,0 +1,7 @@
+[[rec_opensearch_param-inputencoding]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-inputencoding*
+^|A |A Records API SHOULD support the input encoding (`inputencoding`) parameter for the search operation (method: GET, path: /collections/{collectionId}/items).
+^|B |If implemented, the list of supported input encodings SHALL be listed in the server's <<clause-opensearch-description-document,OpenSearch description document>>.
+|===

@@ -1,0 +1,6 @@
+[[rec_opensearch_param-startPage]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-startPage*
+^|A |A Records API SHOULD support the start page (`startPage`) parameter for the search operation (method: GET, path: /collections/{collectionId}/items).
+|===

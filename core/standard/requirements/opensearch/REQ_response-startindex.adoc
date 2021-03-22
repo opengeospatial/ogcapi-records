@@ -1,0 +1,9 @@
+[[req_opensearch_response-startindex]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/opensearch/response-startindex*
+^|Condition |Server implements recommendation <<rec_opensearch_param-startindex,/rec/opensearch/param-startindex>>.
+^|Condition |This is the second or greater page of response records.
+^|A |The query response shall include the OpenSearch `startIndex` response eleme
+nt.
+|===

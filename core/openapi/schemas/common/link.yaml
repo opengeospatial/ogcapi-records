@@ -15,3 +15,5 @@ properties:
     type: string
   templated:
     type: boolean
+  variables:
+    type: object

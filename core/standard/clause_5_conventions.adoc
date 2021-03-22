@@ -37,4 +37,5 @@ UML diagrams and XML code fragments adhere to the namespace conventions shown in
 |*UML prefix* |*GML prefix* ^|*Namespace URL* ^|*Description*
 |GML |gml |http://www.opengis.net/gml/3.2 |GML 3.2.1
 |GML33 |gml33 |http://www.opengis.net/gml/3.3 |GML 3.3
+|OpenSearch |os |http://a9.com/-/spec/opensearch/1.1/ |OpenSearach namespace
 |====

@@ -8,36 +8,98 @@ OpenSearch is a standard that allows websites and search engines to publish
 search results in a standard and accessible format suitable for syndication
 and aggregation.
 
-The OpenSearch standard define the following components:
-
-* the OpenSearch description document,
-* the OpenSearch Query element,
-* the OpenSearch URL template syntax, and
-* the OpenSearch response elements.
-
 include::requirements/requirements_class_opensearch.adoc[]
 
+[[clause-opensearch-description-document]]
 === OpenSearch description document
 
-The OpenSearch description ducment describes the web interface of a search 
+The OpenSearch description document describes the web interface of a search 
 engine.
 
-include::requirements/opensearch/REQ_opensearch_descriptiondoc-op.adoc[]
+include::requirements/opensearch/REQ_descriptiondoc-op.adoc[]
 
-include::requirements/opensearch/REQ_opensearch_descriptiondoc-response.adoc[]
+include::requirements/opensearch/REQ_descriptiondoc-response.adoc[]
 
-=== Query element
+include::requirements/opensearch/REQ_descriptiondoc-response-lang.adoc[]
 
-T.B.D.
+include::requirements/opensearch/REQ_descriptiondoc-response-inputenc.adoc[]
 
-=== URL template
+include::requirements/opensearch/REQ_descriptiondoc-response-outputenc.adoc[]
 
-T.B.D.
+include::requirements/opensearch/REQ_descriptiondoc-response-self-link.adoc[]
 
-=== Response element
+include::requirements/opensearch/REQ_descriptiondoc-response-alt-links.adoc[]
 
-T.B.D.
+include::requirements/opensearch/REQ_descriptiondoc-response-example-qry.adoc[]
+
+=== Substitution variables
+
+The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md[OpenSearch] and https://portal.ogc.org/files/?artifact_id=56866[OpenSearch Geo and Time Extensions] define a set of substitution variables (template parameters) that can used in the https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-url-element[Url element] or https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-query-element[Query element] of OpenSearch.
+
+The following table maps the <<core-query-parameters-table,core query parameters>> to their equivalent https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-11-parameters[OpenSearch] or https://portal.ogc.org/files/?artifact_id=56866[OpenSearch Geo and Time Extensions] substitution variables.
+
+[[query-parameter-mapping-table]]
+[reftext='{table-caption} {counter:table-num}']
+.Mapping of Core Query Parameters to OS & OS Geo substitution variables
+[cols="33,33,34",options="header",width=70%]
+|===
+|Core Query Parameter |OpenSearch Parameter |OpenSearch Geo Parameter
+|bbox |n/a |geo:box
+|datetime |n/a |time:start, time:end
+|limit |count |n/a
+|q |searchTerms |n/a
+|{recordId} |n/a |uid
+|===
+
+=== Parameter recommendations
+
+The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md[OpenSearch] specification defines a set of https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-11-parameters[query parameters].  Some of these parameters are mapped to the <<core-query-parameters-table,core query queryables>> in <<query-parameter-mapping-table>>.  However, there are not corresponding <<core-query-parameters-table,core query parameters>> that can be mapped into each https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-11-parameters[OpenSearch query parameter].  This sections, thus, recommends that servers that implement this conformance class also implement the following additional query parameters which can then be mapped 1:1 to the corresponding OpenSearch parameters.
+
+include::recommendations/opensearch/REC_param-startindex.adoc[]
+
+include::requirements/opensearch/REQ_param-startindex-response.adoc[]
+
+include::recommendations/opensearch/REC_param-startpage.adoc[]
+
+include::requirements/opensearch/REQ_param-startpage-response.adoc[]
+
+include::recommendations/opensearch/REC_param-language.adoc[]
+
+include::requirements/opensearch/REQ_param-language-response.adoc[]
+
+include::recommendations/opensearch/REC_param-inputencoding.adoc[]
+
+include::recommendations/opensearch/REC_param-outputencoding.adoc[]
+
+include::requirements/opensearch/REQ_param-outputencoding-response.adoc[]
+
+include::recommendations/opensearch/PER_additional-query-parameters.adoc[]
 
 === Autodiscovery
 
-T.B.D.
+Server that implement this conformance class can assist search clients in the
+discovery of OpenSearch interfaces through the use of link elements in the
+<<collection-info-response,collection information object>>.
+
+include::requirements/opensearch/REQ_autodiscovery-link.adoc[]
+
+=== Response elements
+
+The following table maps the <<query-response, query response>> elements to
+the https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#elements[OpenSearch response elements].
+
+[[query-response-elements-mapping-table]]
+[reftext='{table-caption} {counter:table-num}']
+.Mapping query response elements to OpenSearch response elements
+[cols="50,50",options="header",width=70%]
+|===
+|Query Response Parameter |OpenSearch Response Element 
+|numberMatched |totalResults
+|numberReturned |itemsPerPage
+|===
+
+If the server implements the recommended `startIndex` parameter then the
+following requirement applies:
+
+include::requirements/opensearch/REQ_response-startindex.adoc[]
+
