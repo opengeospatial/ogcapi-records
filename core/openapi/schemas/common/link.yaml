@@ -16,4 +16,5 @@ properties:
   templated:
     type: boolean
   variables:
+    description: This object contains one key per substitution variable in a templated href.  Each key defines the schema of one substitution variable using a JSON Schema fragment and can thus include things like the data type of the variable, enumerations, minimum values, maximum values, etc.  In combination with a templated href, the variables section should provide enough information to bind to the target resource (e.g. a WMS).
     type: object
