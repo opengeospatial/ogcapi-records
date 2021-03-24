@@ -1,7 +1,6 @@
 type: object
 required:
   - id   
-  - type
 properties:
   id:
     description: the identifier/name for the sortable
@@ -15,36 +14,6 @@ properties:
   language:
     description: the language used for the title and description
     type: string
-  type:
-    description: the data type of the sortable
-    type: string
-    enum:
-      - string
-      - number
-      - integer
-      - boolean
-      - spatial
-      - temporal
-  spatial-types:
-    description: the list of allowed spatial geometry types, if known
-    type: string
-    enum:
-      - point
-      - multi-point
-      - curve
-      - multi-curve
-      - surface
-      - multi-surface
-      - solid
-      - multi-solid
-      - aggregate
-      - any
-  temporal-types:
-    description: the list of allowed temporal geometry types, if known
-    type: string
-    enum:
-      - instant
-      - interval
   links:
     description: |-
       additional links, e.g. to documentation or to the schema of the values

@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: "A sample API conforming to the draft standard OGC API - Records - Part 1: Core"
+  title: "OGC API - Records - Part 1: Core"
   version: '1.0.0'
   description: |-
     This is a sample OpenAPI definition that conforms to the conformance
@@ -86,6 +86,38 @@ paths:
       responses:
         '200':
           $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/Collection'
+        '404':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/NotFound'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/ServerError'
+  '/collections/{collectionId}/api':
+    get:
+      tags:
+        - OpenSearchDescriptionDocument
+      summary: |-
+       get the OpenSearchDescriptionDocument for the record collection with id  `collectionId`
+      operationId: getOpenSearchDescriptionDocument
+      parameters:
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/collectionId'
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/OpenSearchDescriptionDocument'
+        '404':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/NotFound'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/ServerError'
+  '/collections/{collectionId}/sortables':
+    get:
+      tags:
+        - Sortables
+      summary: |-
+       get the list of sortable properties
+      operationId: getSortables
+      parameters:
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/collectionId'
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/Sortables'
         '404':
           $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/responses/NotFound'
         '500':

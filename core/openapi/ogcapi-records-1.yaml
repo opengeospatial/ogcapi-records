@@ -723,6 +723,27 @@ components:
               minItems: 2
               items:
                 type: number
+    sortable:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          description: the identifier/name for the sortable
+          type: string
+        title:
+          description: a human readable title for the sortable
+          type: string
+        description:
+          description: a human-readable narrative describing the sortable
+          type: string
+        language:
+          description: the language used for the title and description
+          type: string
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/link"
     timeStamp:
       description: |-
         This property indicates the time and date when the response was
@@ -842,6 +863,8 @@ components:
         Each page may include information about the number of selected and
         returned records (`numberMatched` and `numberReturned`) as well as
         links to support paging (link relation `next`).
+
+        The XML representation of the response document is an ATOM feed.
       content:
         application/geo+json:
           schema:
@@ -849,15 +872,33 @@ components:
         text/html:
           schema:
             type: string
+        application/atom+xml:
+          schema:
+            type: string
     Record:
       description: |-
         Fetch the record with id `recordId` in the record collection
-        with id `collectionId`
+        with id `collectionId`.  The XML representation of a record
+        is an ATOM entry.
       content:
         application/geo+json:
           schema:
             $ref: '#/components/schemas/recordGeoJSON'
         text/html:
+          schema:
+            type: string
+        application/atom+xml:
+          schema:
+            type: string
+    Sortables:
+      type: array
+      items:
+        $ref: "#/components/schemas/sortable"
+    OpenSearchDescriptionDocument:
+      description: |-
+        description document for OpenSearch clients
+      content:
+        application/opensearchdescription+xml:
           schema:
             type: string
     InvalidParameter:

@@ -5,4 +5,4 @@ properties:
   sortables:
     type: array
     items:
-      $ref: sortable.yaml
+      $ref: ../schemas/sortable.yaml

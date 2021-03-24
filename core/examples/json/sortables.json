@@ -1,0 +1,21 @@
+[
+   {
+      "id": "recordId",
+      "title": "Record Identifier",
+      "description": "A unique record identifier assigned by the server.",
+      "language": "en"
+   },
+   {
+      "id": "updated",
+      "title": "Updated",
+      "description": "The more recent date on which the resource was changed.",
+      "language": "en"
+   },
+   {
+      "id": "extent",
+      "title": "Spatio-Temporal Extent",
+      "description": "The spatio-temporal coverage of the resource.",
+      "language": "en"
+   }
+]
+
