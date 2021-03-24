@@ -14,9 +14,10 @@ schema:
   minItems: 1
   items:
     type: string
-    pattern: [+-]?[A-Za-z_][A-Za-z0-9]*
-style: form
+    pattern: '[+\|-]?[A-Za-z_].*'
 explode: false
+style: form
 ----
+
 ^|B |The default sort order SHALL be ascending (i.e. `+`).
 |===

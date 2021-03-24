@@ -52,8 +52,6 @@ Where:
 
 The Records API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows API - Record and CSW implementations to co-exist in a single processing environment.
 
-NOTE: Replace the following with a discussion of CSW and API - Record
-
 https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (data, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
 
 Discussion has shown that the API model also assumes underlying service and object descriptions, so a convergence seems possible. In any case, it will be advantageous to have a similar "mental model" of the server store organization on hand to explain the various functionalities introduced below.
