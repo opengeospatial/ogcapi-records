@@ -13,6 +13,7 @@ Servers:
 * [Esri Inc.](#esri-inc)
 * [GeoNetwork opensource](#geonetwork-opensource)
 * [ldproxy](#ldproxy)
+* [pycsw](#pycsw)
 
 Clients:
 * [OWSLib](#owslib)
@@ -195,6 +196,41 @@ Records (enums in the AX_Gebaeudefunktion enumeration):
 Single record (enum):
 
 * https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/items/2113
+
+## pycsw
+
+[pycsw](https://pycsw.org/) is an OGC CSW server implementation written in Python.
+Implementation of OGC API - Records is a work in progress for pycsw.
+
+Landing page:
+
+* http://147.102.109.27:8000/
+
+Conformance page:
+
+* http://147.102.109.27:8000/conformance
+
+List of catalogues:
+
+* http://147.102.109.27:8000/collections
+
+Describe sample metadata records from CSW CITE tests
+
+* http://147.102.109.27:8000/collections/metadata:main
+
+Queryables:
+
+* http://147.102.109.27:8000/collections/metadata:main/queryables
+
+Records:
+
+* http://147.102.109.27:8000/collections/metadata:main/items
+* http://147.102.109.27:8000/collections/metadata:main/items?cql=type%20=%20%22dataset%22
+
+Single record:
+
+* http://147.102.109.27:8000/collections/metadata:main/items/S2B_MSIL2A_20200902T090559_N0214_R050_T35SKD_20200902T113910
+
 
 ## OWSLib
 
