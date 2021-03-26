@@ -75,14 +75,14 @@ include::../examples/json/sortables.json[]
 ----
 
 [#sortby-example,reftext=`SortBy Example`]
-.sortby Example
+.sortby Example of descending sort by updated date and ascending sort of record identifier.
 [source]
 ----
-.../collections/mycat/items?...&sortby=-updated,recordId&...
+.../collections/mycat/items?...&sortby=-updated,id&...
 ----
 
 [#sortby-extent-example,reftext=`SortBy Extent Example`]
-.sortby Extent Example
+.sortby Example of an ascending sort be extent (i.e. smaller area first)
 [source]
 ----
 .../collections/mycat/items?...&sortby=+extent&...
