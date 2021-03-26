@@ -10,4 +10,4 @@ properties:
   geometries:
     type: array
     items:
-      $ref: 'geometryGeoJSON.yaml'
+      $ref: geometryGeoJSON.yaml

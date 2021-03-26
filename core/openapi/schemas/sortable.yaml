@@ -1,6 +1,6 @@
 type: object
 required:
-  - id   
+  - id
 properties:
   id:
     description: the identifier/name for the sortable

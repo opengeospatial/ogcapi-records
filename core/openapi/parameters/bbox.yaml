@@ -33,13 +33,16 @@ description: |-
   is used to determine the extent or all relevant geometries.
 required: false
 schema:
-  type: array
-    oneOf:
-      - minItems: 4
-        maxItems: 4
-      - minItems: 6
-        maxItems: 6
-    items:
-      type: number
+  oneOf:
+    - type: array
+      minItems: 4
+      maxItems: 4
+      items:
+        type: number
+    - type: array
+      minItems: 6
+      maxItems: 6
+      items:
+        type: number
 explode: false
 style: form

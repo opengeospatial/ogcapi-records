@@ -1,6 +1,6 @@
 type: object
 required:
-  - sortables   
+  - sortables
 properties:
   sortables:
     type: array
