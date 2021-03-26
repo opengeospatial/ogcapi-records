@@ -11,7 +11,6 @@ This standard identifies six (6) Conformance Classes. The Conformance Classes im
 The Requirements Classes for OGC API - Records are:
 
 * <<clause-core,Core>>
-// * *Collections*
 * <<clause-sorting,Sorting>>
 * <<clause-cql-filter,Filtering using the Common Query Language (CQL)>>
 * <<clause-opensearch,OpenSearch>>
@@ -19,63 +18,7 @@ The Requirements Classes for OGC API - Records are:
 * <<requirements-class-atom-clause,ATOM-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 
-// P.A.V.
-// Core includes: the parameters  -> bbox,
-//                                   datetime,
-//                                   limit,
-//                                   type,
-//                                   q,
-//                                   externalIds
-//                                   sortby
-//
-//                core queryables -> recordId (m),
-//                                   type(m),
-//                                   title(m),
-//                                   description(o),
-//                                   keywords(o),
-//                                   externalId(o),
-//                                   recordcreated(o),
-//                                   recordmodified(o),
-//                                   language(o),
-//                                   modified(o),
-//                                   publisher(o),
-//                                   themes(o),
-//                                   formats(o),
-//                                   contactPoint(o),
-//                                   license(o),
-//                                   rights(o),
-//                                   extent(o),
-//                                   links(o),
-//                                   associations(o)
-//
-// m = mandatory queryable
-// o = optional queryable
-//
 The _Core_ Requirements Class is the minimal useful service interface for the OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.  The core defines a set of mandatory properties (core queryables) that every record must contain, a set of core query parameters that support bounding box spatial queries, temporal queries, full text searching, parameters for sorting responses.
-
-// P.A.V.
-// This requirements class makes the /collections end point of a service
-// queryable using the OAPIR core queryables and query API.
-// If a servers wants to make its /collections end point queryable it has
-// to do the following:
-// 1. Add the appropriate conformance URIs to its /conformance document.  There
-//    may be more than one depending on the level of query capability offered
-//
-//    http://www.opengis.net/spec/ocgapi-records-1/1.0/queryable-collections
-//    http://www.opengis.net/spec/ocgapi-records-1/1.0/cql-queryable-collections
-//
-// 2. Add the mandatory core queryables as keys in the collection object
-//    if those keys are not already there
-//
-// 3. Add zero or more optional core queryables to the collection object
-//
-// 4. Implement the query parameters of the /collection end-point (core+).
-//
-// 5. The response is exactly what it would be if you fetched the /collections
-//    resource but the only collections listed would be the ones that satisfy
-//    the query predicates
-// The _Collections_ Requirements Class defines requirements for making the 
-// `/collections` endpoint of any OGC Web API searchable.
 
 The _Sorting_ Requirements Class defines the requirements to support sorting of records in a query response.
 
