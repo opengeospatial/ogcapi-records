@@ -225,7 +225,7 @@ Queryables:
 Records:
 
 * http://147.102.109.27:8000/collections/metadata:main/items
-* http://147.102.109.27:8000/collections/metadata:main/items?cql=type%20=%20%22dataset%22
+* http://147.102.109.27:8000/collections/metadata:main/items?filter=type%20=%20%22dataset%22
 
 Single record:
 
