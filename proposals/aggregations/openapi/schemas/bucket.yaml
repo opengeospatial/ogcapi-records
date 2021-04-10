@@ -1,0 +1,12 @@
+type: object
+description: A bucket is the number of items sharing a certain value for a property
+required:
+   - key
+   - count
+properties:
+   key:
+     type: string
+     description: Bucket value
+   count:
+     type: number
+     description: Number of hits for this value

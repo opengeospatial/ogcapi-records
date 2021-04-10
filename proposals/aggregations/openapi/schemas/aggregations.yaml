@@ -1,0 +1,4 @@
+type: array
+description: List of aggregations
+items:
+  $ref: "./aggregation.yaml"

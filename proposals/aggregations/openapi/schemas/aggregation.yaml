@@ -1,0 +1,18 @@
+Aggregation:
+  type: object
+  description: An aggregation is linked to a item property and contains the top set of occurences (buckets) of values of the property
+  required:
+    - key
+  properties:
+    key: 
+      type: string
+      description: Name of the property
+    next:
+      type: number
+      description: Indication how many additional buckets exist for this property
+    buckets:
+      type: array
+      description: buckets for this property
+      items:
+        $ref: "./bucket.yaml"
+
