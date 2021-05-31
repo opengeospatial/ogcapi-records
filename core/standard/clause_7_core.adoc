@@ -346,7 +346,7 @@ include::requirements/core/REQ_query-param-type-definition.adoc[]
 include::requirements/core/REQ_query-param-type-response.adoc[]
 
 [[core-query-parameters-externalid]]
-===== Parameter externalid
+===== Parameter externalId
 
 include::requirements/core/REQ_query-param-externalid-definition.adoc[]
 
@@ -420,9 +420,9 @@ include::recommendations/core/PER_additional-properties.adoc[]
 [cols="20,5,55,20",options="header"]
 |===
 |Queryables |Requirement |Description |GeoJSON key
-|record-id |M |A unique record identifier assigned by the server. |id
-|record-created |O |The date this record was created in the server. |created
-|record-updated |O |The most recent date on which the record was changed. |updated
+|recordId |M |A unique record identifier assigned by the server. |id
+|recordCreated |O |The date this record was created in the server. |created
+|recordUpdated |O |The most recent date on which the record was changed. |updated
 |links |O |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.) |links
 |===
 
@@ -437,14 +437,15 @@ include::recommendations/core/PER_additional-properties.adoc[]
 
 |description |O |A free-text description of the resource. |properties.description
 |keywords |O |A list of keywords or tag associated with the resource. |properties.keyword
+|keywordsCodespace |O |A reference to a controlled vocabulary used for the keywords property. |properties.keyword-codespace
 |language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource. |properties.language
-|externalid |O |An identifier for the resource assigned by an external entity. |properties.externalid
+|externalId |O |An identifier for the resource assigned by an external entity. |properties.externalid
 |created |O |The date the resource was created. |properties.created
 |updated |O |The more recent date on which the resource was changed. |properties.updated
 |publisher |O |The entity making the resource available. |properties.publisher
 |themes |O |A knowledge orgnaization system used to classify the resource. |properties.themes
 |formats |O |A list of available distributions for the resource. |properties.formats
-|contactpoint |O |An entity to contact about the resource. |properties.contactpoint
+|contactPoint |O |An entity to contact about the resource. |properties.contactpoint
 |license |O |A legal document under which the resource is made available. |properties.license
 |rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
 |extent |O |The spatio-temporal coverage of the resource. |properties.extent
@@ -515,6 +516,16 @@ Link: <http://data.example.org/collections/my_catalogue.json>; rel="collection";
 Link: <http://data.example.org/collections/my_catalogue.html>; rel="collection"; type="text/html"
 ----
 ====
+
+==== Language negotiation
+
+Two kinds of languages are handled in this specification.  The language
+associated with the resource and the language associated with the record
+that describes the resource in the catalogue.
+
+The language associated with the resource is specified using the <<core-queryables-resource-table,language>> property of a catalogue record.  This indicates the language associated with the resource that the record described.
+
+The language for the record itself is negotiated between a client and the servers using the https://tools.ietf.org/html/rfc7231#section-5.3.5[Accept-Language] header of https://tools.ietf.org/html/rfc7231[HTTP].  Records in a response document can only be presented in a single negotiated language.  There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple lanugages would require multiple requests to the server each nagotiating to a desired language.
 
 ==== Error situations
 
