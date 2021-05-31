@@ -1,5 +1,10 @@
 name: sortby
 in: query
+description: |-
+  Specifies a comma-separated list of property names by which the response shall
+  be sorted.  If the property name is preceeded by a plus (+) sign it inidicates
+  an ascending sort for that property.  If the property name is preceeded by a
+  minus (-) sigh it inidicates a descending sort for that property.
 required: false
 schema:
   type: array
