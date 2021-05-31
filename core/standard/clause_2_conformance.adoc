@@ -47,7 +47,7 @@ OGC Compliance Testing web site.
 |<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
 |<<ats_cql,CQL>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
 |<<ats_opensearch,OpenSearch>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/opensearch
-|<<ats_json,JSON>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/JSON
-|<<ats_atom,ATOM>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/atom
-|<<ats_atom,HTML>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
+|<<ats_json,JSON-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/JSON
+|<<ats_atom,ATOM-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/atom
+|<<ats_atom,HTML-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 |===
