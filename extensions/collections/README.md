@@ -1,7 +1,7 @@
 
-# OGC API - Records - Part 1: Core
+# OGC API - Records - Part 2: Collections
 
-This folder contains the content for the OGC API - Records - Part 1: Core standard.
+This folder contains the content for the OGC API - Records - Part 2: Collection standard.  This standard makes the `/collections` endpoing queryable as a catalogue of resource offered by an OGC API endpoint.
 
 The repo is organized as follows:
 
