@@ -43,16 +43,11 @@ OGC Compliance Testing web site.
 [cols="40,60",options="header"]
 |===
 |Conformance class |URI
-|<<ats_filter,Filter>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter
-|<<ats_features-filter,Features Filter>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter
-|<<ats_simple-cql,Simple CQL>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/simple-cql
-|<<ats_enhanced-spatial-operators,Enhanced Spatial Operators>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/enhanced-spatial-operators
-|<<ats_enhanced-temporal-operators,Enhanced Temporal Operators>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/enhanced-temporal-operators
-|<<ats_functions,Functions>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/functions
-|<<ats_arithmetic,Arithmetic>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/arithmetic
-|<<ats_arrays,Arrays>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/arrays
-|<<ats_cql-text,CQL Text encoding>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/cql-text
-|<<ats_cql-json,CQL JSON encoding>> |http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/cql-json
+|<<ats_core,Core>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/core
+|<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
+|<<ats_cql,CQL>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
+|<<ats_opensearch,OpenSearch>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/opensearch
+|<<ats_json,JSON>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/JSON
+|<<ats_atom,ATOM>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/atom
+|<<ats_atom,HTML>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 |===
-
-
