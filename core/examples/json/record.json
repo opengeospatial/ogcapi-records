@@ -6,8 +6,8 @@
         "coordinates": [[[-180,-90 ],[-180,90],[180,90],[180,-90],[-180,-90]]]
     },
     "properties": {
-        "record-created": "2021-02-08",
-        "record-updated": "2021-02-08",
+        "recordCreated": "2021-02-08",
+        "recordUpdated": "2021-02-08",
         "type": "dataset",
         "title": "Total Ozone - daily observations",
         "description": "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily",
@@ -138,13 +138,13 @@
                 "href": "https://geo.woudc.org/ows"
             }
         ],
-        "links": [
-            {
-                "rel": "alternate",
-                "type": "text/html",
-                "title": "This document as HTML",
-                "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
-            }
-        ]
-    }
+    },
+    "links": [
+      {
+        "rel": "alternate",
+        "type": "text/html",
+        "title": "This document as HTML",
+        "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
+      }
+    ]
 }
