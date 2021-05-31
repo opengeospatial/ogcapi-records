@@ -139,14 +139,14 @@ components:
           type: string
       explode: false
       style: form
-    externalid:
-      name: externalid
+    externalId:
+      name: externalId
       in: query
       description: |-
-        The optional externalid parameter supports searching by an identifier
+        The optional externalId parameter supports searching by an identifier
         that was not assigned by the catalogue (i.e. an external identifier).
         Only records with an external identifer, as indicated by the value of
-        the externalid core queryable array, that is equal to one of the listed
+        the externalId core queryable array, that is equal to one of the listed
         values shall be selected.
       required: false
       schema:
@@ -420,11 +420,11 @@ components:
             - type
             - title
           properties:
-            record-created:
+            recordCreated:
               type: string
               description: Date of creation of this record.
               format: date-time
-            record-updated:
+            recordUpdated:
               type: string
               description: The most recent date on which the record was changed.
               format: date-time
@@ -446,7 +446,7 @@ components:
                 Recommended best practice is to use a controlled vocabulary.
               items:
                 type: string
-            keywords-codespace:
+            keywordsCodespace:
               type: string
               description: |-
                 A reference to a controlled vocabulary used for the keywords.
