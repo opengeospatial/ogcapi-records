@@ -16,6 +16,7 @@ schema:
     type: string
 explode: false
 ----
-^|B |Keyword searches using the `q` parameter shall be case insensitive.
-^|C |The specific set of text keys/fields/properties of a record to which the `q` operator is applied SHALL be left to the discretion of the implementation.
+
+^|C |Keyword searches using the `q` parameter shall be case insensitive.
+^|D |The specific set of text keys/fields/properties of a record to which the `q` operator is applied SHALL be left to the discretion of the implementation.
 |===
