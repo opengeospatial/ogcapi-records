@@ -1,0 +1,12 @@
+[[rc_atom]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/atom
+|Target type |Web API
+|Dependency |<<rc_core,Requirements Class "API - Common Core">>
+|Dependency |<<rfc4287,The Atom Syndication Format>>
+|Pre-conditions |
+1) The API advertises conformance to the ATOM Conformance Class +
+2) The client negotiates use of an ATOM or XML encoding.
+|===

@@ -1,0 +1,91 @@
+== Requirements Class "Collections"
+
+[[collections-overview]]
+=== Overview
+
+include::requirements/requirements_class_collections.adoc[]
+
+The purpose of the conformance class is to specify requirements that extend
+the behaviour at the `/collections` endpoint to make it queryable by
+OGC API - Records clients.
+
+The conformance class defines the following extensions:
+
+1. It extends the set of query parameters defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#11-collections-metadata[Collections Metadata] section to support the richer set of query parameters defined in the <<parameters-section,Parameters>> clause of this specification.
+
+2. It extends the schema of the collection information object defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#12-collection-information[Collection Information] clause of the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension to add additional keys/properties that are required by OGC API - Records.
+
+
+=== Collections Metadata
+
+The https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#11-collections-metadata[Collections Metadata] clause of the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension defines the `bbox`, `datetime` and 'limit' query parameters for the `/collections` resource. 
+
+include::requirements/collections/REQ_collections_query-params.adoc[]
+
+The collections metadata (i.e. HTTP GET on the `/collections` path) is defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response[Collections Metadata] clause of the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension.  
+
+include::requirements/collections/REQ_collections_query-response.adoc[]
+
+=== Collection information
+
+The collection information object is defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#12-collection-information[Collection Information] clause of the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension.
+
+The following table cross-walks the properties of the collection information
+object with the core queryables.
+
+[[record-collection-crosswalk]]
+[reftext='{table-caption} {counter:table-num}']
+.Crosswalk of core queryables with collection information object properties
+[cols="25,25,25,25",options="header"]
+|===
+|Collection property |Requirement |Core Queryable |Requirement
+|id                  |M           |id             |M
+|title               |O           |title          |M
+|description         |O           |description    |M
+|itemType            |O           |type           |M
+|extent              |O           |extent         |O
+|links               |M           |links          |O
+|crs                 |O           |--             |--
+|===
+
+The following requirements specify additional properties that a compliant
+implementation of this conformance class must add to the collection 
+information object.
+
+No additional requirements are necessary to the `links` property.  Since the
+`links` property is mandatory for the collection information object, it will
+always be present but because it is an optional core queryables, catalogue
+clients will either know how to handle it or they will ignore it.
+
+include::recommendations/collections/REC_collections_additional-properties.adoc[]
+
+The collections metadata response is defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response[Collections Metadata] clause on the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension.
+
+include::requirements/collections/REQ_collections-schema.adoc[]
+
+[[link-schema]]
+.link:../openapi/schemas/exetendedCollectionInfo.yaml[The following is the schema for the extended collection info object (extendedCollectionInfo.yaml).]
+[source,yaml]
+----
+include::../openapi/schemas/extendedCollectionInfo.yaml[]
+----
+
+
+=== Examples
+
+Example 1: List all the collections that lie within a specific bounding box and contains the the keyword `weather`.
+
+---
+   Client                                                          Server
+     |                                                               |
+     |   GET /collections?bbox=￼41.875315,-96.767601,56.732861,-73.47|
+     |                          6586&q=weather   HTTP/1.1            |
+     |   Accept: application/json                                    |
+     |-------------------------------------------------------------->|
+     |                                                               |
+     |   HTTP/1.1 200 OK                                             | 
+     |   Content-Type: application/json                              |
+     |                                                               |
+     |   Need example output here...                                 |
+     |<--------------------------------------------------------------|
+---

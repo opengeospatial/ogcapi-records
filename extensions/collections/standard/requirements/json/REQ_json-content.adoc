@@ -1,0 +1,13 @@
+[[req_son_content]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/geojson/content*
+^|A |Every 200-response with the media type `application/json` SHALL be
+
+* a an array of `collectionInfo` objects for a collections response, and
+* a `collectionInfo` object for a collection response
+
+^|B |The links specified in the requirements <<req_core_rc-links,/req/core/rc-links>> and <<req_core_record-links,/req/core/record-links>> SHALL be added in a extension property (foreign member) with the name `links`.
+^|C |All collections responses SHALL validate against the `collections.yaml` schema.
+^|D |All collection responses SHALL validate against the `extendedCollectionInfo.yaml` schema.
+|===

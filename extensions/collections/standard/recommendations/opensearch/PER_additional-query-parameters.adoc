@@ -1,0 +1,6 @@
+[[per_opensearch_additional-query-parameters]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/opensearch/additional-query-parameters*
+^|A |Servers MAY support additional query prameters that can be mapped to https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-11-parameters[OpenSearch] and https://portal.ogc.org/files/?artifact_id=56866[OGC OpenSearch Geo and Time Extensions] substitution variables not listed in <<query-parameter-mapping-table>>.
+|===

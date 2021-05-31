@@ -1,0 +1,51 @@
+[big]*i.     Abstract*
+
+The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, etc.), but define resource-centric APIs that take advantage of modern web development practices. 
+
+This document defines "OGC API - Records - Part 2: Collections" that extends the the schema of and available operators at the `/collections` endpoint to allow it to be queried as a `mini` catalogue of resources offered by an OGC API endpoing.
+
+The most common use case motivating this standard is that of a provider that deploys thousands of OGC API resources (i.e. feature collections, coverages, etc.) making accessing the `/collections` endpoint inconvenient due to the sheer size the response.  Offer a catalogue-like capability in such cases allows access to the `/collections` endpoint to be targeted to specific resources of interest rather that the entire collections list.
+
+Of course an endpoint can deploy a full-featured catalogue as defined by "OGC API - Records - Part 1: Core" that describes the endpoint's collections too but the intent of part 2 is to defined a light-weight catalogue capability that offers the same query and sorting functionality as a full catalogue but is easier to implement and is integrated into the `/collections` endpoint in a manner that consistent with the way OGC APIs are currently defined and used.  The implication is that the only resources that can be registered in such as catalogue are the collections offered by the deployed OGC API endpoint.  You could not, for example, register legacy OGC Web Services in such a catalogue.  This is not a general discovery catalogue but rather a catalogue focused specifically on the resources accessible via the `/collections` endpoint.
+
+[reftext='{table-caption} {counter:table-num}']
+.Overview of resources, applicable HTTP methods and links to the document sections[[table_1]][[tldnr]]
+[cols="25,35,10,20",options="header"]
+|===
+|Resource |Path |HTTP method |Document reference
+|Record collections |`/collections` |GET |<<collections-access,Collection Access>>
+|Record collection |`/collections/{collectionId}` |GET |<<collectionInfo,Collection Information>>
+|===
+
+[big]*ii.    Keywords*
+
+The following are keywords to be used by search engines and document catalogues.
+
+ogcdoc, OGC document, OGC API, catalogue, record, resource
+
+[big]*iii.   Preface*
+
+[NOTE]
+====
+Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work. >
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+====
+[big]*iv.    Submitting organizations*
+
+The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
+
+Organization name(s)
+
+* CubeWerx Inc.
+
+[big]*v.     Submitters*
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+^|Name  ^|Affiliation
+| Panagiotis (Peter) A. Vretanos (editor) | CubeWerx Inc.
+| Tom Kralidis (editor) | Meteorological Service of Canada
+|===

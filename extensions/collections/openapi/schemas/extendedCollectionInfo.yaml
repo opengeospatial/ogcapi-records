@@ -1,0 +1,116 @@
+allOf:
+  $ref: "collectionInfo.yaml"
+  type: object
+  required:
+    - title
+    - itemType
+  properties:
+    recordCreated:
+      type: string
+      description: |-
+        Date of creation of this record.
+      format: date-time
+    recordUpdated:
+      type: string
+      description: |-
+        The most recent date on which the record was changed.
+      format: date-time
+    type:
+      type: string
+      description: |-
+        The nature or genre of the resource.
+      format: uri
+    keywords:
+      type: array
+      description: |-
+        The topic or topics of the resource. Typically represented using
+        keywords, tags, key phrases, or classification codes. Recommended
+        best practice is to use a controlled vocabulary.
+      items:
+        type: string
+    keywordsCodespace:
+      type: string
+      description: |-
+        A reference to a controlled vocabulary used for the keywords
+        parameter.  If a reference is not provided then the value of
+        the keyword parameter should be considered a free list of
+        tokens associated with the record.
+      format: uri
+    language:
+      type: string
+      description: |-
+        The natural language used for textual values (e.g. titles,
+        descriptions, etc.) of the resource. ISO 639-1/639-2 codes
+        should be used.
+      default: en
+    externalId:
+      type: array
+      description: |-
+        An identifier for the resource assigned by an external (to the
+        catalogue) entity.
+      items:
+        type: string
+    created:
+      type: string
+      description: |-
+        Date of creation of the resource.
+      format: date-time
+    updated:
+      type: string
+      description: |-
+        Most recent date on which the resource was changed.
+      format: date-time
+    publisher:
+      $ref: responsibleParty.yaml
+      description: |-
+        Link to the entity making the resource available.
+    themes:
+      type: array
+      description: |-
+        A knowledge organization system used to classify the resource.
+      items:
+        type: object
+        properties:
+          concepts:
+            type: array
+            description: |-
+              One or more entity/concept identifers from this knowledge
+              system. it is recommended that a resolvable URI be used
+              for each entity/concept identifier.
+            items:
+              type: string
+          scheme:
+            type: string
+            description: |-
+               An identifier for the knowledge organization system used
+               to classify the resource.  It is recommended that the
+               identifier by a resolvable URI.
+    formats:
+      type: array
+      description: |-
+        A list of available distributions of the resource.
+      items:
+        type: string
+    contactPoint:
+      $ref: responsibleParty.yaml
+      description: |-
+        Link to relevant contact information.
+    license:
+      type: string
+      description: |-
+        A legal document under which the resource is made available.
+      format: uri
+    rights:
+      type: string
+      description: |-
+        A statement that concerns all rights not addresses by the license
+        such as a copyright statement.
+    associations:
+      type: array
+      description: |-
+        A list of links for accessing the resource (e.g. download link,
+        access link) in one of the supported distribution formats and/or
+        links to other resources associated with this resource.
+      items:
+        $ref: common/link.yaml
+    additionalProperties: true

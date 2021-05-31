@@ -1,0 +1,8 @@
+[[rec_opensearch_param-outputencoding]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-outputencoding*
+^|A |A Records API SHOULD support the output encoding (`outputencoding`) parameter for the search operation (method: GET, path: `/collections`).
+^|B |If implemented, the list of supported output encodings SHALL be listed in the server's <<clause-opensearch-description-document,OpenSearch description document>>.
+^|C |If implemented and specified on a search request, the value of this parameter SHALL override any value specified for the request using the https://tools.ietf.org/html/rfc7231#section-5.3.4[Accept-Encoding] HTTP header.
+|===

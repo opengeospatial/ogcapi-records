@@ -1,0 +1,4 @@
+== Scope
+
+This document specifies the behaviour of an API that supports the ability to
+search the `/collections` endpoint and only present the subset of collectionInfo objects that satisfy the specififed query predicates.

@@ -1,0 +1,8 @@
+[[req_json_geojson-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/json/geojson-definition*
+^|A |200-responses of the server SHALL support the following media type:
+
+* `application/json` for resources that include record content.
+|===
