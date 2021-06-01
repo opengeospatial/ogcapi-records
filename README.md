@@ -56,11 +56,9 @@ Most all work on the specification takes place in [GitHub issues](https://github
 
 ## Additional Information
 
-* [Checklist for implementers](guide/conformance_checklist.md)
+A non-normative document, the "OGC API - Records User's Guide", is planned.
 
-Also a non-normative document, the "OGC API - Records User's Guide", is planned.
-
-The current expectation is to have a stable version of the Core specification in 2020. We want to wait for sufficient implementation feedback, mature implementations including a test suite, results from OGC testbeds and experience with draft extensions first.
+The current expectation is to have a stable version of the Core specification in 2021. We want to wait for sufficient implementation feedback, mature implementations including a test suite, results from OGC testbeds and experience with draft extensions first.
 
 * [Charter for this SWG](OGC_API_Catalogues_SWG_Charter.adoc)
 
