@@ -204,32 +204,32 @@ Implementation of OGC API - Records is a work in progress for pycsw.
 
 Landing page:
 
-* http://147.102.109.27:8000/
+* https://demo.pycsw.org/gisdata
 
 Conformance page:
 
-* http://147.102.109.27:8000/conformance
+* https://demo.pycsw.org/gisdata/conformance
 
 List of catalogues:
 
-* http://147.102.109.27:8000/collections
+* https://demo.pycsw.org/gisdata/collections
 
 Describe sample metadata records from CSW CITE tests
 
-* http://147.102.109.27:8000/collections/metadata:main
+* https://demo.pycsw.org/gisdata/collections/metadata:main
 
 Queryables:
 
-* http://147.102.109.27:8000/collections/metadata:main/queryables
+* https://demo.pycsw.org/gisdata/collections/metadata:main/queryables
 
 Records:
 
-* http://147.102.109.27:8000/collections/metadata:main/items
-* http://147.102.109.27:8000/collections/metadata:main/items?filter=type%20=%20%22dataset%22
+* https://demo.pycsw.org/gisdata/collections/metadata:main/items
+* https://demo.pycsw.org/gisdata/collections/metadata:main/items?filter=type%20=%20%22vector%20digital%20data%22
 
 Single record:
 
-* http://147.102.109.27:8000/collections/metadata:main/items/S2B_MSIL2A_20200902T090559_N0214_R050_T35SKD_20200902T113910
+* https://demo.pycsw.org/gisdata/collections/metadata:main/items/urn:uuid:dc9e3c58-932a-11ea-ad6f-823cf448c401
 
 
 ## OWSLib
