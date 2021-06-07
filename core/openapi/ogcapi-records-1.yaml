@@ -524,7 +524,7 @@ components:
                 A statement that concerns all rights not addresses by the
                 license such as a copyright statement.
             extent:
-              $ref: ./extent.yaml
+              $ref: "#/components/schemas/extent"
             associations:
               type: array
               description: |-
