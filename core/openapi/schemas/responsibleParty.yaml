@@ -14,13 +14,13 @@ oneOf:
         description: |-
           Name of the responsible person.  Recommend surname, given name,
           title separated by a demiliter.
-      organization-name:
+      organizationName:
         type: string
         description: Name of the responsible organization
-      position-name:
+      positionName:
         type: string
         description: Role or position of the responsible person.
-      contact-info:
+      contactInfo:
         type: object
         description: |-
           Information required to enable contact with the responsible party.
@@ -70,15 +70,15 @@ oneOf:
                   country:
                     type: string
                     description: Country of the physical address.
-          online-resource:
+          onlineResource:
             $ref: link.yaml
             description: On-line information about the responsible party.
-          hours-of-service:
+          hoursOfService:
             type: string
             description: |-
               Time period (including time zone) when the resposible party
               can be contacted.
-          contact-instructions:
+          contactInstructions:
             type: string
             description: |-
               Supplemental instructions on how or when to contact the
