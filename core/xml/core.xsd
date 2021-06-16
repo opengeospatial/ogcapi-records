@@ -267,7 +267,6 @@
    <!-- = FOREIGN ATOM ELEMENTS                                  = -->
    <!-- ========================================================== -->
    <xsd:element name="TimeStamp" type="xsd:dataTime"/>
-   <xsd:element name="NumberMatched" type="xsd:nonNegativeInteger"/>
    <xsd:element name="NumberReturned" type="xsd:nonNegativeInteger"/>
 
 </xsd:schema>

@@ -26,6 +26,7 @@ Diagrams using the Unified Modeling Language (UML) adhere to the following conve
 
 Further, in any class where an attribute name or association role name is identical to a name in some superclass the local definition overrides the superclass definition.
 
+[[namespace-prefixes]]
 === Namespace Prefix Conventions
 
 UML diagrams and XML code fragments adhere to the namespace conventions shown in <<namespace-mapping-conventions>>. The namespace prefixes used in this document are not normative and are merely chosen for convenience. The namespaces to which the prefixes correspond are normative, however.
@@ -34,8 +35,15 @@ UML diagrams and XML code fragments adhere to the namespace conventions shown in
 .Namespace mapping conventions
 [width="90%",cols="^2,^2,6,6",options="header"]
 |====
-|*UML prefix* |*GML prefix* ^|*Namespace URL* ^|*Description*
-|GML |gml |http://www.opengis.net/gml/3.2 |GML 3.2.1
-|GML33 |gml33 |http://www.opengis.net/gml/3.3 |GML 3.3
-|OpenSearch |os |http://a9.com/-/spec/opensearch/1.1/ |OpenSearach namespace
+|*GML/XML prefix* ^|*Namespace URL* ^|*Description*
+
+|atom |http://www.w3.org/2005/Atom |ATOM namespace
+|core |http://www.opengis.net/ogcapi-record-1/1.0 |OGC API Records core elements
+|dc |http://purl.org/dc/elements/1.1/ |Dublin core elements
+|dcat |http://www.w3.org/ns/dcat# |DCAT vocabulary
+|dct |http://purl.org/dc/terms/ |Dublin core terms
+|gml |http://www.opengis.net/gml/3.2 |GML 3.2.1
+|gml33 |http://www.opengis.net/gml/3.3 |GML 3.3
+|os |http://a9.com/-/spec/opensearch/1.1/ |OpenSearach namespace
+|xlink |http://www.w3.org/1999/xlink |XLink namespace
 |====

@@ -2,6 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/opensearch/descriptiondoc-op*
-^|A |For every feature collection identified in the feature collections response (path `/collections`), the server SHALL support the HTTP GET operation at the path `/collections/{collectionId}/api`.
-^|B |The parameter `collectionId` is each `id` property in the feature collections response (JSONPath: `$.collections[*].id`).
+^|A |The HTTP GET operation SHALL be supported at the <<api-definition,`service-desc`>> endpoint specified in the server's <<landing-page,landing page>>.
 |===

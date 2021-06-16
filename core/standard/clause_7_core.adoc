@@ -148,7 +148,7 @@ include::../examples/json/conformance.json[]
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
 [[collection-access]]
-=== Collection Access
+=== Collection access
 
 API - Common starts with the assumption that spatial resources are organized
 into collections. An API will expose one or more collections. The API - Common
@@ -273,7 +273,29 @@ include::../examples/json/collection.json[]
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
 [[records-access]]
-=== Records Access
+=== Records access
+
+==== Overview
+
+The primary unit of information in a catalogue is a record. Tables <<core-queryables-record-table>> and <<core-queryables-resource-table>> in this clause present a generic set of properties, called _**core queryables**_, that may be included in a catalogue record.  The choice of which properties to include in the set of core queryables was primarily informed by the following record models:
+
+* The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalogue schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
+* the https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabular (DCAT) - Version 2] specification.
+* and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specification.
+
+It is expected that the information necessary to populate the core queryables is readily available for any resource that is being registered in the catalogue.  
+
+This basic set of properties can be extended by information communities wishing to enrich the information content of the record to suit their needs.
+
+Although this document does not mandate any particular encoding for a record, the document does define conformance classes for three encodings:
+
+* A <<record_json_encoding,GeoJSON>> record encoding,
+* an <<record_atom_encoding,ATOM>> record encoding,
+* and an <<record_html_encoding,HTML>> encoding.
+
+Other encoding are allow but are not described in this document.
+
+This clause describes how to search a catalogue to retreive a subset of record that satsify zero or more query criteria.
 
 ==== Operation
 
@@ -549,7 +571,7 @@ include::../examples/json/record-collection.json[]
 See <<record-example>> for an example of a single catalogue record.
 
 [[record-access]]
-=== Record Access
+=== Record access
 
 ==== Operation
 
@@ -578,7 +600,7 @@ include::../examples/json/record.json[]
 ----
 
 [[general-requirements-section]]
-=== General Requirements
+=== General requirements
 
 The following requirements and recommentations are applicable to all OGC Records APIs.
 

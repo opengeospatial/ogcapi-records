@@ -4,4 +4,5 @@
 ^|*Requirement {counter:req-id}* |*/req/opensearch/startpage-response*
 ^|Condition |Server implements recommendation <<rec_opensearch_param-startPage,/rec/opensearch/param-startPage>>.
 ^|A |The server SHALL begin presenting response records starting at the specified page offset.
+^|B |The start page of the first page of responses SHALL be counted as 1.
 |===

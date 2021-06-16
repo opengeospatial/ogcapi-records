@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/atom/common-content*
 ^|A |<<xml_content>> specifies the XML document root element that the server SHALL return in a `200`-response for each resource defined in http://docs.opengeospatial.org/DRAFTS/19-072.html[OGC API - Common - Part 1: Core] and http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Collections].
-^|B |The schema of all responses with a root element in the `core` namespace SHALL validate against the link:http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API Records Core XML Schema].
+^|B |The schema of all responses with a root element in the `core` namespace SHALL validate against the link:https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/xml/core.xsd[OGC API Records Core XML Schema].
 |===

@@ -1,7 +1,0 @@
-[[req_opensearch_descriptiondoc-response-alt-links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/descriptiondoc-alt-links*
-^|A |The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-description-document[OpenSearch description document] SHALL include one https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-url-element[Url element] that generates search results in each record representation (relation: `results`) supported by the server.
-^|B |The media type of the response SHALL be specified using the https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-url-element[type] attribute.
-|===

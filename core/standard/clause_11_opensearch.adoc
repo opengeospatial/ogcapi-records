@@ -20,18 +20,81 @@ include::requirements/opensearch/REQ_descriptiondoc-op.adoc[]
 
 include::requirements/opensearch/REQ_descriptiondoc-response.adoc[]
 
+include::requirements/opensearch/REQ_descriptiondoc-response-self-link.adoc[]
+
+include::requirements/opensearch/REQ_descriptiondoc-response-collection-links.adoc[]
+
+include::requirements/opensearch/REQ_descriptiondoc-response-results-links.adoc[]
+
+include::requirements/opensearch/REQ_descriptiondoc-response-example-qry.adoc[]
+
 include::requirements/opensearch/REQ_descriptiondoc-response-lang.adoc[]
 
 include::requirements/opensearch/REQ_descriptiondoc-response-inputenc.adoc[]
 
 include::requirements/opensearch/REQ_descriptiondoc-response-outputenc.adoc[]
 
-include::requirements/opensearch/REQ_descriptiondoc-response-self-link.adoc[]
+.The following is an example of retrieving an OpenSearch description document.
+[source, json]
+=====
+ Client                                                                   Server
+   |                                                                         |
+   |   GET /api       HTTP/1.1                                               |
+   |   Accept: application/opensearchdescription+xml                         |
+   |------------------------------------------------------------------------>|
+   |                                                                         |
+   |   HTTP/1.1 204 OK                                                       |
+   |   Content-Type: application/opensearchdescription+xml                   |
+   |                                                                         |
+   |   <?xml version="1.0" encoding="UTF-8"?>                                |
+   |   <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">  |
+   |      <ShortName>OGC API Records Search</ShortName>                      |
+   |      <Description>Resource discovery using the OpenSearch interface of  |
+   |                   OGC API Records - Part 1: Core</Description>          |
+   |      <Tags>OGC API Records search resource discovery</Tags>             |
+   |      <Contact>admin@example.com</Contact>                               |
+   |      <Url rel="collection"                                              |
+   |           template="http://example.com/collections/mycatalog"/>         |
+   |      <Url rel="self"                                                    |
+   |           type="application/opensearchdescription+xml"                  |
+   |           template="http://example.com/api?f=osdescd"/>                 |
+   |      <Url rel="results"                                                 |
+   |           type="application/atom+xml"                                   |
+   |           template="http://example.com/oapir/collections/mycatalog/items?
+   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;      |
+   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;|
+   |           f=atom"/>                                                     |
+   |      <Url rel="results"                                                 |
+   |           type="application/geo+json"                                   |
+   |           template="http://example.com/oapir/collections/mycatalog/items?
+   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;      |
+   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;|
+   |           f=json>                                                       |
+   |      <Url rel="results"                                                 |
+   |           type="text/html"                                              |
+   |           template="http://example.com/oapir/collections/mycatalog/items?
+   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;      |
+   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;|
+   |           f=html"/>                                                     |
+   |      <Query role="example" searchTerms="dataset"/>                      |
+   |      <LongName>OGC API Records Search</LongName>                        |
+   |      <Image height="64" width="64" type="image/png">                    |
+   |         http://example.com/websearch.png</Image>                        |
+   |      <Image height="16" width="16" type="image/vnd.microsoft.icon">     |
+   |         http://example.com/websearch.ico</Image>                        |
+   |      <Developer>OGC</Developer>                                         |
+   |      <Attribution>Search data Copyright 2021, Example.com, Inc.,        |
+   |                   All Rights Reserved</Attribution>                     |
+   |      <SyndicationRight>open</SyndicationRight>                          |
+   |      <AdultContent>false</AdultContent>                                 |
+   |      <Language>en-us</Language>                                         |
+   |      <OutputEncoding>UTF-8</OutputEncoding>                             |
+   |      <InputEncoding>UTF-8</InputEncoding>                               |
+   |   </OpenSearchDescription>                                              |
+   |<------------------------------------------------------------------------|
+=====
 
-include::requirements/opensearch/REQ_descriptiondoc-response-alt-links.adoc[]
-
-include::requirements/opensearch/REQ_descriptiondoc-response-example-qry.adoc[]
-
+[[sc-substitution-variable]]
 === Substitution variables
 
 The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md[OpenSearch] and https://portal.ogc.org/files/?artifact_id=56866[OpenSearch Geo and Time Extensions] define a set of substitution variables (template parameters) that can used in the https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-url-element[Url element] or https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-query-element[Query element] of OpenSearch.
@@ -48,12 +111,14 @@ The following table maps the <<core-query-parameters-table,core query parameters
 |datetime |n/a |time:start, time:end
 |limit |count |n/a
 |q |searchTerms |n/a
-|{recordId} |n/a |uid
+|type |n/a |n/a
+|{recordId} |n/a |geo:uid
 |===
 
-=== Parameter recommendations
+[[sc-os-query-parameters]]
+=== OpenSearch parameters
 
-The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md[OpenSearch] specification defines a set of https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-11-parameters[query parameters].  Some of these parameters are mapped to the <<core-query-parameters-table,core query queryables>> in <<query-parameter-mapping-table>>.  However, there are not corresponding <<core-query-parameters-table,core query parameters>> that can be mapped into each https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-11-parameters[OpenSearch query parameter].  This sections, thus, recommends that servers that implement this conformance class also implement the following additional query parameters which can then be mapped 1:1 to the corresponding OpenSearch parameters.
+The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md[OpenSearch] specification defines a set of https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-11-parameters[query parameters].  Some of these parameters are mapped to their corresponding <<core-query-parameters-table,core query parameters>> in <<query-parameter-mapping-table>>.  This section make recommendations for additional query parameters that servers can implement for the <<records-access,search operation>> that can be mapped to the remaining https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-11-parameters[OpenSearch query parameters].
 
 include::recommendations/opensearch/REC_param-startindex.adoc[]
 
@@ -65,15 +130,44 @@ include::requirements/opensearch/REQ_param-startpage-response.adoc[]
 
 include::recommendations/opensearch/REC_param-language.adoc[]
 
+include::requirements/opensearch/REQ_param-language.adoc[]
+
 include::requirements/opensearch/REQ_param-language-response.adoc[]
 
 include::recommendations/opensearch/REC_param-inputencoding.adoc[]
 
 include::recommendations/opensearch/REC_param-outputencoding.adoc[]
 
+include::requirements/opensearch/REQ_param-outputencoding.adoc[]
+
 include::requirements/opensearch/REQ_param-outputencoding-response.adoc[]
 
 include::recommendations/opensearch/PER_additional-query-parameters.adoc[]
+
+[[sc-osgeo-query-parameters]]
+=== OpenSearch Geo parameters
+
+The https://portal.ogc.org/files/?artifact_id=56866[OpenSearch Geo and Time Extensions] specification defines a set of query parameters.  Some of these parameters are mapped to their corresponding <<core-query-parameters-table,core query parameters>> in <<query-parameter-mapping-table>>.  This section makes recommendations for additional query parameters that servers can implement for the <<records-access,search operation>> that can be mapped to the remaining https://portal.ogc.org/files/?artifact_id=56866[OpenSearch Geo and Time Extensions] query parameters.
+
+include::recommendations/opensearch/REC_param-geometry.adoc[]
+
+include::requirements/opensearch/REQ_param-geometry-response.adoc[]
+
+include::recommendations/opensearch/REC_param-proximity.adoc[]
+
+include::requirements/opensearch/REQ_param-proximity-response.adoc[]
+
+include::recommendations/opensearch/REC_param-geo-name.adoc[]
+
+include::requirements/opensearch/REQ_param-geo-name-response.adoc[]
+
+include::recommendations/opensearch/REC_param-geo-relation.adoc[]
+
+include::requirements/opensearch/REQ_param-geo-relation.adoc[]
+
+include::recommendations/opensearch/REC_param-time-relation.adoc[]
+
+include::requirements/opensearch/REQ_param-time-relation.adoc[]
 
 === Autodiscovery
 
@@ -85,21 +179,55 @@ include::requirements/opensearch/REQ_autodiscovery-link.adoc[]
 
 === Response elements
 
-The following table maps the <<query-response, query response>> elements to
-the https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#elements[OpenSearch response elements].
+==== OpenSearch response elements
 
-[[query-response-elements-mapping-table]]
+The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md[OpenSearch] specification defines a set of https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-response-elements[response elements].  In an https://datatracker.ietf.org/doc/html/rfc4287[ATOM] response, these elements appear as children of the https://datatracker.ietf.org/doc/html/rfc4287#section-4.1.1[atom:feed] element.
+
+The following table maps the <<query-response,query response>> properties defined in this document to these https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-response-elements[OpenSearch response elements].
+
+[[query-response-os-elements-mapping-table]]
 [reftext='{table-caption} {counter:table-num}']
 .Mapping query response elements to OpenSearch response elements
 [cols="50,50",options="header",width=70%]
 |===
-|Query Response Parameter |OpenSearch Response Element 
-|numberMatched |totalResults
-|numberReturned |itemsPerPage
+|OpenSearch response element  |Query response property
+|os:totalResults |<<req_core_rc-numberMatched,numberMatched>>
+|os:startIndex |<<rec_opensearch_param-startIndex,startIndex>>
+|os:itemsPerPage |<<req_core_param-limit,limit>>
+|os:Query |N/A
 |===
 
-If the server implements the recommended `startIndex` parameter then the
-following requirement applies:
+include::recommendations/opensearch/REC_response-query.adoc[]
 
-include::requirements/opensearch/REQ_response-startindex.adoc[]
+[[sc_atom-response-elements]]
+==== ATOM response elements
 
+The following table maps the <<query-response,core query response properties>> to the elements of an https://datatracker.ietf.org/doc/html/rfc4287#section-4.1.2[ATOM entry].
+
+[[query-response-atom-elements-mapping-table]]
+[reftext='{table-caption} {counter:table-num}']
+.Mapping query response elements to ATOM entry elements
+[cols="50,50",options="header",width=70%]
+|===
+|Core query response property |ATOM entry element
+|recordId           |atom:entry/atom:id
+|recordCreated      |dct:issued
+|recordUpdated      |dct:modified
+|links              |atom:link
+|type               |dc:type
+|title              |atom:entry/atom:title
+|description        |atom:entry/atom:summary
+|keywords           |atom:entry/atom:category
+|keywordsCodespace  |atom:entry/atom:category/@scheme
+|language           |dct:language
+|externalId         |n/a
+|created            |atom:entry/atom:published
+|updated            |atom:entry/atom:modified
+|publisher          |atom:entry/atom:creator
+|themes             |atom:entry/atom:category
+|formats            |atom/entry/atom:link[@rel="enclosure"]/@type
+|contactPoint       |dcat:contactPoint
+|license            |atom:link[@rel="license"]
+|rights             |atom:entry/atom:rights
+|extent             |atom:entry/georss:*
+|===

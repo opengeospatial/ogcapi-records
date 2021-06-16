@@ -11,7 +11,7 @@ The following requirements apply to an OGC API - Records implementation when the
 . The API advertises conformance to the JSON Conformance Class
 . The client negotiates a JSON or GeoJSON format
 
-The JSON Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the HTTP response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
+The JSON Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the JSON response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
 
 include::requirements/requirements_class_json.adoc[]
 
@@ -31,6 +31,7 @@ It is also necessary to advertise conformance with this Requirements Class.
 
 include::requirements/json/REQ_json-conformance.adoc[]
 
+[[record_json_encoding]]
 ==== Record 
 
 GeoJSON is a commonly used format that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format supporting GeoJSON is recommended, if record data can be represented in GeoJSON for the intended use.
@@ -76,6 +77,7 @@ It is also necessary to advertise conformance with this Requirements Class.
 
 include::requirements/html/REQ_html-conformance.adoc[]
 
+[[record_html_encoding]]
 ==== Record
 
 Catalogue information that is only accessible in formats primarily intended to
@@ -103,9 +105,9 @@ include::recommendations/html/REC_schema-org.adoc[]
 The following requirements apply to an OGC API - Records implementation when the following conditions apply:
 
 . The API advertises conformance to the ATOM Conformance Class
-. The client negotiates an ATOM format
+. The client negotiates to an ATOM format
 
-The ATOM Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the HTTP response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
+The ATOM Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the XML response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
 
 include::requirements/requirements_class_atom.adoc[]
 
@@ -137,17 +139,10 @@ include::requirements/atom/REQ_common-content.adoc[]
 (resource collection with `itemType=record`) |`/collections/{collectionId}` |`core:Collections`, with just one entry for the collection `collectionId`
 |===
 
-The namespace prefixes used above and in the OGC API Records Core XML schema is:
+[[record_atom_encoding]]
+==== Record
 
-* `core`: `http://www.opengis.net/ogcapi-record-1/1.0`
-
-* `atom`: `http://www.w3.org/2005/Atom`
-
-* `xlink`: `http://www.w3.org/1999/xlink`
-
-==== Records
-
-In addition to HTML and GeoJSON, a significant volume of record data, especially in the Earth Observation space, is available in XML-based formats, notably https://tools.ietf.org/html/rfc4287[ATOM]. Therefore, this standard specifies requirements classes for https://tools.ietf.org/html/rfc4287[ATOM].
+In addition to HTML and GeoJSON, a significant volume of record data, especially in the Earth Observation domain, is available in XML-based formats, notably https://tools.ietf.org/html/rfc4287[ATOM]. Therefore, this standard specifies requirements classes for https://tools.ietf.org/html/rfc4287[ATOM].
 
 include::requirements/atom/REQ_media-type.adoc[]
 
@@ -163,3 +158,5 @@ include::requirements/atom/REQ_content.adoc[]
 |Records |`/collections/{collectionId}/items` |`atom:feed`
 |Record |`/collections/{collectionId}/items/{recordId}` |`atom:entry`
 |===
+
+include::recommendations/atom/PER_foreign-markup.adoc[]

@@ -5,5 +5,6 @@
 ^|A |<<atom_content>> specifies the XML document root element that the server SHALL return in a `200`-response for each record resource.
 ^|B |Every representation of a collection or records SHALL conform to the <<ATOM,The Atom Syndication Format>> and be encoded as an  `atom:feed` element.
 ^|C |Every representation of a record SHALL conform to the <<ATOM,The Atom Syndication Format>> and be encoded as an `atom:entry` element.
+^|D |<<core-queryables-record-table,Core query response properties>> SHALL be mapped to https://datatracker.ietf.org/doc/html/rfc4287#section-4.1.2[ATOM entry elements] as defined in the section <<sc_atom-response-elements>>.
 |===
 

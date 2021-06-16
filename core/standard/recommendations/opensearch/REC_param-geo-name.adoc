@@ -1,0 +1,6 @@
+[[rec_opensearch_param-geo-name]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-geo-name*
+^|A |Servers SHOULD support the place name search parameter (`geo:name`) for the search operation (method: GET, path: /collections/{collectionId}/items).
+|===
