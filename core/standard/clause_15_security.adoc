@@ -1,8 +1,6 @@
 [[security-section]]
 == Security Considerations
 
-TBD: Discuss any security considerations.
-
 See:
 
 * https://github.com/opengeospatial/oapi_common/blob/master/core/clause_12_security_considerations.adoc
