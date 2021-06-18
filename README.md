@@ -21,7 +21,7 @@ Lists all the metadata records that describe objects in the New Zealand economic
 
 The response format is determined using standard [HTTP content negotiation](https://restfulapi.net/content-negotiation/).
 
-Data is returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core specification supports a basic set of filters roughly analogous to the [OpenSearch](https://opensearch.org) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
+Data is returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core specification supports a basic set of filters roughly analogous to the [OpenSearch](https://opensearch.org) and OGC OpenSearch Geo (https://portal.ogc.org/files/?artifact_id=56866) query parameters.
 
 ```
 GET /collections/myCatalogue/items/{recordId}

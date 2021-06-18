@@ -18,11 +18,11 @@ The Requirements Classes for OGC API - Records are:
 * <<requirements-class-atom-clause,ATOM-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 
-The _Core_ Requirements Class is the minimal useful service interface for OGC API - Records. The requirements specified in this class are mandatory for all implementations of this standard. The core defines a baseline record schema, resource paths, a set of mandatory properties (core queryables) that every record must contain, a set of core query parameters that support bounding box spatial queries, temporal queries, full-text searching, parameters for sorting responses, and error handling.
+The _Core_ Requirements Class is the minimal useful service interface for OGC API - Records. The requirements specified in this class are mandatory for all implementations of this standard. The core defines a baseline record schema, resource paths, a set of mandatory properties (core queryables) that every record must contain, a set of core query parameters that support bounding box spatial queries, temporal queries, property queries, full-text searching, and error handling.
 
 The _Sorting_ Requirements Class defines the requirements to support sorting of records in a query response.
 
-The _Filter using the Common Query Language_ Requirements Class defines the requirements to support record filtering using CQL.
+The _Filter using the Common Query Language (CQL)_ Requirements Class defines the requirements to support record filtering using CQL.
 
 The _OpenSearch_ Requirements Class defines the requirements to support query by OpenSearch clients.
 
@@ -47,7 +47,7 @@ OGC Compliance Testing web site.
 |<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
 |<<ats_cql,CQL>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
 |<<ats_opensearch,OpenSearch>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/opensearch
-|<<ats_json,JSON-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/JSON
+|<<ats_json,JSON-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 |<<ats_atom,ATOM-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/atom
 |<<ats_atom,HTML-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 |===

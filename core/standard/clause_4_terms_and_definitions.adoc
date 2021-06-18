@@ -1,5 +1,5 @@
 == Terms and Definitions
-This document uses the terms defined in Sub-clause 5 of https://github.com/opengeospatial/oapi_common/blob/master/19-072.pdf[OGC API - Common Part 1] (OGC 19-072), which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+This document uses the terms defined in Sub-clause 5 of https://docs.ogc.org/DRAFTS/19-072.html[OGC API - Common Part 1] (OGC 19-072), which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "shall" (not "must") is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
 
 For the purposes of this document, the following additional terms and definitions apply.
 
@@ -22,7 +22,7 @@ represents an accessible form of a *dataset* (DCAT)
 EXAMPLE: a downloadable file, an RSS feed or a web service that provides the data.
 
 === Executable Test Suite (ETS)
-set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.opengeospatial.org/files/?artifact_id=55234[(OGC 08-134)]
+set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.ogc.org/files/?artifact_id=55234[(OGC 08-134)]
 
 === Record
 atomic unit of information of a catalogue that is used to provide information about a particular resource

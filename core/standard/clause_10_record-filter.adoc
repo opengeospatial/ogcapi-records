@@ -1,12 +1,12 @@
 [[clause-record-filter]]
-== Requirements Class "CQL Filter"
+== Requirements Class "Filtering using the Common Query Language (CQL)"
 
 [[record-filter-overview]]
 === Overview
 
 include::requirements/requirements_class_record-filter.adoc[]
 
-This clause defines the binding to the filter parameters defined in the https://docs.ogc.org/DRAFTS/19-079.html#_requirements_class_filter[OGC API - Features - Part 3: Filter and the Common Query Language (CQL), Requirements Class "Filter"] clause.
+This clause defines the binding to the filter parameters defined in the https://docs.ogc.org/DRAFTS/19-079.html#_requirements_class_filter[OGC API - Features - Part 3: Filtering and the Common Query Language (CQL), Requirements Class "Filter"] clause.
 
 === Records
 

@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-filter/filter-crs-param*
 ^|Condition |Server implements <<OAFeat-2,OGC API - Features - Part 2: Coordinate Reference Systems by Reference>>
-^|A |The HTTP GET operation on the `/collections/{collectionId}/items` path SHALL support the `filter-crs` parameter as defined in https://docs.opengeospatial.org/DRAFTS/19-079.html#filter-filter-crs[Parameter filter-crs].
+^|A |The HTTP GET operation on the `/collections/{collectionId}/items` path SHALL support the `filter-crs` parameter as defined in https://docs.ogc.org/DRAFTS/19-079.html#filter-filter-crs[Parameter filter-crs].
 |===
