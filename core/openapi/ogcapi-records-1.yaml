@@ -478,7 +478,7 @@ components:
               description: |-
                  Link to the entity making the resource available. Recommended
                  best practice is to use a VCard
-                 (see http://www.w3.org/TR/vcard-rdf/).
+                 (see https://www.w3.org/TR/vcard-rdf/).
               format: uri
             themes:
               type: array
@@ -511,7 +511,7 @@ components:
               description: |-
                  Link to relevant contact information.  Recommended best
                  practice is to use a VCard
-                 (see http://www.w3.org/TR/vcard-rdf/).
+                 (see https://www.w3.org/TR/vcard-rdf/).
               format: uri
             license:
               type: string
