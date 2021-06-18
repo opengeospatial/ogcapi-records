@@ -60,7 +60,7 @@ Discussion has shown that the API model also assumes underlying service and obje
 
 === Search
 
-The Records API offers various levels of search capability of escalating complexity and capability.  At the core is the ability to search the catalogue by specifying:
+This standard offers various levels of search capability. At the core is the ability to search the catalogue with the following constructs:
 
 * a bounding box
 * a time instant or time period
@@ -68,14 +68,14 @@ The Records API offers various levels of search capability of escalating complex
 * free text
 * equality predicates based on a subset of core queryables (e.g. by resource type, by external identifier)
 
-This specification also includes a conformance class that allows a catalogue to be searched using  https://portal.ogc.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.
+This standard also includes a conformance class that allows a catalogue to be searched using https://portal.ogc.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the geometry types, that can be used to define an area of interest (i.e. beyond a bounding box).
 
-Finally extensions, such as the https://docs.ogc.org/DRAFTS/19-079.html[OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)], may be used with the Records API to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.
+Finally, extensions such as the https://docs.ogc.org/DRAFTS/19-079.html[OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)], may be used with this standard to support complex search capabilities using a rich set of logically connected search predicates where the user has finer control over a query.
 
 [[dependencies-overview]]
 === Dependencies
 
-The OGC API - Records standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from API - Common. The following table, <<mapping-to-common,Mapping API - Records Sections to API - Common Requirements Classes>>, identifies the OGC API - Common Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
+This standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from OGC API - Common. The following table, <<mapping-to-common,Mapping API - Records Sections to API - Common Requirements Classes>>, identifies the OGC API - Common Requirements Classes which are applicable to each section of this standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
 
 [[mapping-to-common]]
 [reftext='{table-caption} {counter:table-num}']

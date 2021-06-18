@@ -4,8 +4,8 @@
 ^|*Requirement {counter:req-id}* |*/req/core/query-param-value-decimal* 
 ^|A |Decimal values SHALL be represented by a finite-length sequence of decimal digits separated by a period as a decimal indicator. 
 
-* An optional leading negative sign ("-") is allowed.
-* If the sign is omitted, positive ("+") is assumed. 
+* An optional leading negative sign ("`-`") is allowed.
+* If the sign is omitted, positive ("`+`") is assumed. 
 * Leading and trailing zeroes are optional. 
 * If the fractional part is zero, the period and following zero(es) can be omitted. 
 |===

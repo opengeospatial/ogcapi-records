@@ -20,7 +20,7 @@ include::requirements/requirements_class_json.adoc[]
 This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:
 
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionid}`: Collection Information
+* `{root}/collections/{collectionId}`: Collection Information
 
 include::requirements/json/REQ_api-common.adoc[]
 
@@ -54,7 +54,7 @@ include::requirements/requirements_class_html.adoc[]
 This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:
 
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionid}`: Collection Information
+* `{root}/collections/{collectionId}`: Collection Information
 
 include::requirements/html/REQ_api-common.adoc[]
 
@@ -89,7 +89,7 @@ include::requirements/requirements_class_atom.adoc[]
 This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:
 
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionid}`: Collection Information
+* `{root}/collections/{collectionId}`: Collection Information
 
 It is necessary to advertise conformance with this Requirements Class.
 

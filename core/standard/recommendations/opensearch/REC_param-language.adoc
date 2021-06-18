@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-language*
 
-Servers SHOULD support the language (`language`) parameter for the search operation (method: GET, path: /collections/{collectionId}/items).
+Servers SHOULD support the language (`language`) parameter for the search operation (method: GET, path: `/collections/{collectionId}/items`).
 |===

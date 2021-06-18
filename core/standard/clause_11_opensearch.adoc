@@ -38,60 +38,60 @@ include::requirements/opensearch/REQ_descriptiondoc-response-outputenc.adoc[]
 [source, json]
 =====
  Client                                                                   Server
-   |                                                                         |
-   |   GET /api       HTTP/1.1                                               |
-   |   Accept: application/opensearchdescription+xml                         |
-   |------------------------------------------------------------------------>|
-   |                                                                         |
-   |   HTTP/1.1 204 OK                                                       |
-   |   Content-Type: application/opensearchdescription+xml                   |
-   |                                                                         |
-   |   <?xml version="1.0" encoding="UTF-8"?>                                |
-   |   <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">  |
-   |      <ShortName>OGC API Records Search</ShortName>                      |
-   |      <Description>Resource discovery using the OpenSearch interface of  |
-   |                   OGC API Records - Part 1: Core</Description>          |
-   |      <Tags>OGC API Records search resource discovery</Tags>             |
-   |      <Contact>admin@example.com</Contact>                               |
-   |      <Url rel="collection"                                              |
-   |           template="http://example.com/collections/mycatalog"/>         |
-   |      <Url rel="self"                                                    |
-   |           type="application/opensearchdescription+xml"                  |
-   |           template="http://example.com/api?f=osdescd"/>                 |
-   |      <Url rel="results"                                                 |
-   |           type="application/atom+xml"                                   |
-   |           template="http://example.com/oapir/collections/mycatalog/items?
-   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;      |
-   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;|
-   |           f=atom"/>                                                     |
-   |      <Url rel="results"                                                 |
-   |           type="application/geo+json"                                   |
-   |           template="http://example.com/oapir/collections/mycatalog/items?
-   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;      |
-   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;|
-   |           f=json>                                                       |
-   |      <Url rel="results"                                                 |
-   |           type="text/html"                                              |
-   |           template="http://example.com/oapir/collections/mycatalog/items?
-   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;      |
-   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;|
-   |           f=html"/>                                                     |
-   |      <Query role="example" searchTerms="dataset"/>                      |
-   |      <LongName>OGC API Records Search</LongName>                        |
-   |      <Image height="64" width="64" type="image/png">                    |
-   |         http://example.com/websearch.png</Image>                        |
-   |      <Image height="16" width="16" type="image/vnd.microsoft.icon">     |
-   |         http://example.com/websearch.ico</Image>                        |
-   |      <Developer>OGC</Developer>                                         |
-   |      <Attribution>Search data Copyright 2021, Example.com, Inc.,        |
-   |                   All Rights Reserved</Attribution>                     |
-   |      <SyndicationRight>open</SyndicationRight>                          |
-   |      <AdultContent>false</AdultContent>                                 |
-   |      <Language>en-us</Language>                                         |
-   |      <OutputEncoding>UTF-8</OutputEncoding>                             |
-   |      <InputEncoding>UTF-8</InputEncoding>                               |
-   |   </OpenSearchDescription>                                              |
-   |<------------------------------------------------------------------------|
+   |                                                                            |
+   |   GET /api       HTTP/1.1                                                  |
+   |   Accept: application/opensearchdescription+xml                            |
+   |--------------------------------------------------------------------------->|
+   |                                                                            |
+   |   HTTP/1.1 204 OK                                                          |
+   |   Content-Type: application/opensearchdescription+xml                      |
+   |                                                                            |
+   |   <?xml version="1.0" encoding="UTF-8"?>                                   |
+   |   <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">     |
+   |      <ShortName>OGC API - Records Search</ShortName>                       |
+   |      <Description>Resource discovery using the OpenSearch interface of     |
+   |                   OGC API - Records - Part 1: Core</Description>           |
+   |      <Tags>OGC API - Records search resource discovery</Tags>              |
+   |      <Contact>admin@example.com</Contact>                                  |
+   |      <Url rel="collection"                                                 |
+   |           template="https://example.org/collections/mycatalog"/>           |
+   |      <Url rel="self"                                                       |
+   |           type="application/opensearchdescription+xml"                     |
+   |           template="https://example.org/api?f=osdescd"/>                   |
+   |      <Url rel="results"                                                    |
+   |           type="application/atom+xml"                                      |
+   |           template="https://example.org/oapir/collections/mycatalog/items?
+   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;         |
+   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;   |
+   |           f=atom"/>                                                        |
+   |      <Url rel="results"                                                    |
+   |           type="application/geo+json"                                      |
+   |           template="https://example.org/oapir/collections/mycatalog/items?
+   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;         |
+   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;   |
+   |           f=json>                                                          |
+   |      <Url rel="results"                                                    |
+   |           type="text/html"                                                 |
+   |           template="https://example.org/oapir/collections/mycatalog/items?
+   |           bbox={geo:box}&amp;datetime={time:start}/{time:end}&amp;         |
+   |           limit={count}&amp;offset={startIndex}&amp;q={searchTerms}&amp;   |
+   |           f=html"/>                                                        |
+   |      <Query role="example" searchTerms="dataset"/>                         |
+   |      <LongName>OGC API - Records Search</LongName>                         |
+   |      <Image height="64" width="64" type="image/png">                       |
+   |         https://example.org/websearch.png</Image>                          |
+   |      <Image height="16" width="16" type="image/vnd.microsoft.icon">        |
+   |         https://example.org/websearch.ico</Image>                          |
+   |      <Developer>OGC</Developer>                                            |
+   |      <Attribution>Search data Copyright 2021, Example.com, Inc.,           |
+   |                   All Rights Reserved</Attribution>                        |
+   |      <SyndicationRight>open</SyndicationRight>                             |
+   |      <AdultContent>false</AdultContent>                                    |
+   |      <Language>en-us</Language>                                            |
+   |      <OutputEncoding>UTF-8</OutputEncoding>                                |
+   |      <InputEncoding>UTF-8</InputEncoding>                                  |
+   |   </OpenSearchDescription>                                                 |
+   |<---------------------------------------------------------------------------|
 =====
 
 [[sc-substitution-variable]]
@@ -107,12 +107,12 @@ The following table maps the <<core-query-parameters-table,core query parameters
 [cols="33,33,34",options="header",width=70%]
 |===
 |Core Query Parameter |OpenSearch Parameter |OpenSearch Geo Parameter
-|bbox |n/a |geo:box
-|datetime |n/a |time:start, time:end
-|limit |count |n/a
-|q |searchTerms |n/a
-|type |n/a |n/a
-|{recordId} |n/a |geo:uid
+|`bbox` |n/a |`geo:box`
+|`datetime` |n/a |`time:start`, `time:end`
+|`limit` |`count` |n/a
+|`q` |`searchTerms` |n/a
+|`type` |n/a |n/a
+|`{recordId}` |n/a |`geo:uid`
 |===
 
 [[sc-os-query-parameters]]
@@ -191,10 +191,10 @@ The following table maps the <<query-response,query response>> properties define
 [cols="50,50",options="header",width=70%]
 |===
 |OpenSearch response element  |Query response property
-|os:totalResults |<<req_core_rc-numberMatched,numberMatched>>
-|os:startIndex |<<rec_opensearch_param-startIndex,startIndex>>
-|os:itemsPerPage |<<req_core_param-limit,limit>>
-|os:Query |N/A
+|`os:totalResults` |<<req_core_rc-numberMatched,`numberMatched`>>
+|`os:startIndex` |<<rec_opensearch_param-startIndex,`startIndex`>>
+|`os:itemsPerPage` |<<req_core_param-limit,`limit`>>
+|`os:Query` |N/A
 |===
 
 include::recommendations/opensearch/REC_response-query.adoc[]
@@ -210,24 +210,24 @@ The following table maps the <<query-response,core query response properties>> t
 [cols="50,50",options="header",width=70%]
 |===
 |Core query response property |ATOM entry element
-|recordId           |atom:entry/atom:id
-|recordCreated      |dct:issued
-|recordUpdated      |dct:modified
-|links              |atom:link
-|type               |dc:type
-|title              |atom:entry/atom:title
-|description        |atom:entry/atom:summary
-|keywords           |atom:entry/atom:category
-|keywordsCodespace  |atom:entry/atom:category/@scheme
-|language           |dct:language
-|externalId         |n/a
-|created            |atom:entry/atom:published
-|updated            |atom:entry/atom:modified
-|publisher          |atom:entry/atom:creator
-|themes             |atom:entry/atom:category
-|formats            |atom/entry/atom:link[@rel="enclosure"]/@type
-|contactPoint       |dcat:contactPoint
-|license            |atom:link[@rel="license"]
-|rights             |atom:entry/atom:rights
-|extent             |atom:entry/georss:*
+|`recordId`           |`atom:entry/atom:id`
+|`recordCreated`      |`dct:issued`
+|`recordUpdated`      |`dct:modified`
+|`links`              |`atom:link`
+|`type`               |`dc:type`
+|`title`              |`atom:entry/atom:title`
+|`description`        |`atom:entry/atom:summary`
+|`keywords`           |`atom:entry/atom:category`
+|`keywordsCodespace`  |`atom:entry/atom:category/@scheme`
+|`language`           |`dct:language`
+|`externalId`         |n/a`
+|`created`            |`atom:entry/atom:published`
+|`updated`            |`atom:entry/atom:modified`
+|`publisher`          |`atom:entry/atom:creator`
+|`themes`             |`atom:entry/atom:category`
+|`formats`            |`atom/entry/atom:link[@rel="enclosure"]/@type`
+|`contactPoint`       |`dcat:contactPoint`
+|`license`            |`atom:link[@rel="license"]`
+|`rights`             |`atom:entry/atom:rights`
+|`extent`             |`atom:entry/georss:*`
 |===

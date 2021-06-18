@@ -26,43 +26,14 @@ include::requirements/sorting/REQ_sortables-success.adoc[]
 .link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/responses/Sortables.yaml[Schema for the list of sortables (Sortables.yaml)]
 [source,YAML]
 ----
-type: object
-required:
-- sortables   
-properties:
-   sortables:
-      type: array
-      items:
-         $ref: sortable.yaml
+include::../openapi/responses/Sortables.yaml[]
 ----
 
 [[schema_sortable]]
 .link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/sortable.yaml[Schema for a sortable description(sortable.yaml)]
 [source,YAML]
 ----
-type: object
-required:
-   - id   
-   - type
-properties:
-   id:
-      description: the identifier/name for the sortable
-      type: string
-   title:
-      description: a human readable title for the sortable
-      type: string
-   description:
-      description: a human-readable narrative describing the sortable
-      type: string
-   language:
-      description: the language used for the title and description
-      type: string
-   links:
-      description: additional links, e.g. to documentation or to the schema of the values
-      type: array
-      items:
-         $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features
-/master/core/openapi/ogcapi-features-1.yaml#/components/schemas/link'
+include::../openapi/schemas/sortable.yaml[]
 ----
 
 === Examples

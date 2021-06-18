@@ -11,24 +11,24 @@ OGC API - Records clients.
 
 The conformance class defines the following extensions:
 
-1. It extends the set of query parameters defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#11-collections-metadata[Collections Metadata] section to support the richer set of query parameters defined in the <<parameters-section,Parameters>> clause of this specification.
+1. It extends the set of query parameters defined in the https://docs.ogc.org/DRAFTS/20-024.html#collections-metadata[Collections Metadata] section to support the richer set of query parameters defined in the <<parameters-section,Parameters>> clause of this specification.
 
-2. It extends the schema of the collection information object defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#12-collection-information[Collection Information] clause of the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension to add additional keys/properties that are required by OGC API - Records.
+2. It extends the schema of the collection information object defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection Description] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension to add additional keys/properties that are required by OGC API - Records.
 
 
 === Collections Metadata
 
-The https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#11-collections-metadata[Collections Metadata] clause of the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension defines the `bbox`, `datetime` and 'limit' query parameters for the `/collections` resource. 
+The https://docs.ogc.org/DRAFTS/20-024.html#collections-metadata[Collections Metadata] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension defines the `bbox`, `datetime` and 'limit' query parameters for the `/collections` resource. 
 
 include::requirements/collections/REQ_collections_query-params.adoc[]
 
-The collections metadata (i.e. HTTP GET on the `/collections` path) is defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response[Collections Metadata] clause of the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension.  
+The collections metadata (i.e. HTTP GET on the `/collections` path) is defined in the https://docs.ogc.org/DRAFTS/20-024.html#_response[Collections Metadata] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension.  
 
 include::requirements/collections/REQ_collections_query-response.adoc[]
 
-=== Collection information
+=== Collection Description
 
-The collection information object is defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#12-collection-information[Collection Information] clause of the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension.
+The collection information object is defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection Description] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension.
 
 The following table cross-walks the properties of the collection information
 object with the core queryables.
@@ -75,7 +75,7 @@ include::requirements/collections/REQ_collections_keywords.adoc[]
 
 include::recommendations/collections/REC_collections_additional-properties.adoc[]
 
-The collections metadata response is defined in the https://github.com/opengeospatial/oapi_common/blob/master/collections/clause_8_collections.adoc#response[Collections Metadata] clause on the https://github.com/opengeospatial/oapi_common/blob/master/core/OAPI_Common-Core.adoc[OGC API - Common - Part 2: Geospatial Data] extension.
+The collections metadata response is defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-metadata[Collections Metadata] clause on the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension.
 
 include::requirements/collections/REQ_collections-schema.adoc[]
 

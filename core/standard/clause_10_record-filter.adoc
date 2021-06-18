@@ -77,12 +77,12 @@ The following examples illustrate each of these linking patterns:
          {
             "rel" : "alternate",
             "title" : "This records as XML.",
-            "href" : "https://example.com/collections/MyCat/items/rec01.xml"
+            "href" : "https://example.org/collections/mycat/items/rec01.xml"
          },
          {
             "rel": "next",
             "title": "The next record in this result set.",
-            "href" : "https://example.com/collections/MyCat/items/rec02"
+            "href" : "https://example.org/collections/mycat/items/rec02"
          },
          .
          .
@@ -114,7 +114,7 @@ The following examples illustrate each of these linking patterns:
          {
             "rel" : "related",
             "title" : "A related record.",
-            "href" : "https://example.com/collections/YourCat/items/rec15"
+            "href" : "https://example.org/collections/yourcat/items/rec15"
          },
          {
             "rel": "license",
@@ -147,7 +147,7 @@ The following examples illustrate each of these linking patterns:
       "related": [
          {
 		      "title" : "A related record",
-		      "href" : "https://example.com/related-record-path/rec15"
+		      "href" : "https://example.org/related-record-path/rec15"
 	      }
       ],
       "license": {
@@ -173,7 +173,7 @@ The following examples illustrate each of these linking patterns:
       .
       .,
 
-      "related": ["https://example.com/related-record-path/rec15"],
+      "related": ["https://example.org/related-record-path/rec15"],
       "license": "https://creativecommons.org/licenses/by/2.0/",
       .
       .

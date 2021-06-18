@@ -23,7 +23,7 @@ This section covers the requirements inherited from the API - Common standard. I
 * `{root}/api`: API Description
 * `{root}/conformance`: Conformance Classes
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionid}`: Collection Information
+* `{root}/collections/{collectionId}`: Collection Information
 
 include::requirements/json/REQ_api-common.adoc[]
 
@@ -69,7 +69,7 @@ This section covers the requirements inherited from the API - Common standard. I
 * `{root}/api`: API Description
 * `{root}/conformance`: Conformance Classes
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionid}`: Collection Information
+* `{root}/collections/{collectionId}`: Collection Information
 
 include::requirements/html/REQ_api-common.adoc[]
 
@@ -119,7 +119,7 @@ This section covers the requirements inherited from the API - Common standard. I
 * `{root}/api`: API Description
 * `{root}/conformance`: Conformance Classes
 * `{root}/collections`: Collections
-* `{root}/collections/{collectionid}`: Collection Information
+* `{root}/collections/{collectionId}`: Collection Information
 
 It is necessary to advertise conformance with this Requirements Class.
 

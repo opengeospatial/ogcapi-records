@@ -13,59 +13,59 @@
   ],
   "links": [
     {
-       "href": "http://www.someserver.com/collections/myCatalogue?f=json...",
+       "href": "https://example.org/collections/myCatalogue?f=json...",
        "rel": "collection",
        "type": "application/geo+json",
-       "title": "Link to the containing collection in JSON."
+       "title": "Link to the containing collection in JSON"
     },
     {
-       "href": "http://www.someserver.com/collections/myCatalogue?f=html...",
+       "href": "https://example.org/collections/myCatalogue?f=html...",
        "rel": "collection",
        "type": "text/html",
-       "title": "Link to the containing collection in HTML."
+       "title": "Link to the containing collection in HTML"
     },
     {
-       "href": "http://www.someserver.com/collections/myCatalogue?f=xml...",
+       "href": "https://example.org/collections/myCatalogue?f=xml...",
        "rel": "collection",
        "type": "text/xml",
-       "title": "Link to the containing collection in XML."
+       "title": "Link to the containing collection in XML"
     },
 
     {
-       "href": "http://www.someserver.com/collections/myCatalogue/items?f=json&...",
+       "href": "https://example.org/collections/myCatalogue/items?f=json&...",
        "rel": "self",
        "type": "application/geo+json",
-       "title": "Link to this response."
+       "title": "Link to this response"
     },
     {
-       "href": "http://www.someserver.com/collections/myCatalogue/items?f=html&...",
+       "href": "https://example.org/collections/myCatalogue/items?f=html&...",
        "rel": "alternate",
        "type": "text/html",
-       "title": "Link to this response in HTML."
+       "title": "Link to this response in HTML"
     },
     {
-       "href": "http://www.someserver.com/collections/myCatalogue/items?f=atom&...",
+       "href": "https://example.org/collections/myCatalogue/items?f=atom&...",
        "rel": "alternate",
        "type": "application/atom+xml",
-       "title": "Link to this response in ATOM (i.e. as an ATOM feed)."
+       "title": "Link to this response in ATOM (i.e. as an ATOM feed)"
     },
     {
-       "href": "http://www.someserver.com/collections/myCatalogue/items?f=json&startIndex=20&limit=10...",
+       "href": "https://example.org/collections/myCatalogue/items?f=json&startIndex=20&limit=10...",
        "rel": "next",
        "type": "application/geo+json",
-       "title": "Link to the next set of records in GeoJSON."
+       "title": "Link to the next set of records in GeoJSON"
     },
     {
-       "href": "http://www.someserver.com/collections/myCatalogue/items?f=html&startIndex=20&limit=10...",
+       "href": "https://example.org/collections/myCatalogue/items?f=html&startIndex=20&limit=10...",
        "rel": "next",
        "type": "text/html",
-       "title": "Link to the next set of records in HTML."
+       "title": "Link to the next set of records in HTML"
     },
     {
-       "href": "http://www.someserver.com/collections/myCatalogue/items?f=atom&startIndex=20&limit=10...",
+       "href": "https://example.org/collections/myCatalogue/items?f=atom&startIndex=20&limit=10...",
        "rel": "next",
        "type": "application/atom+xml",
-       "title": "Link to the next set of records in ATOM (i.e. as an ATOM feed)."
+       "title": "Link to the next set of records in ATOM (i.e. as an ATOM feed)"
     }
   ]
 }
