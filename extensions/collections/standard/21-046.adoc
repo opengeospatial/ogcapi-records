@@ -41,7 +41,7 @@
 |===
 |*Copyright notice*
 |Copyright (C) 2020 Open Geospatial Consortium
-|To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
+|To obtain additional rights of use, visit https://www.ogc.org/legal/
 |===
 
 [cols = "^", frame = "none"]

@@ -4,9 +4,9 @@
 [[general-overview]]
 === General
 
-The OGC API family of standards enable access to resources using the HTTP protocol and its' associated operations (GET, PUT, POST, etc.). OGC API - Common defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API - Common with features specific to a resource type. 
+The OGC API family of standards enable access to resources using the HTTP protocol and its native operations (GET, PUT, POST, etc.). OGC API - Common defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API - Common with features specific to a resource type. 
 
-This standard, OGC API - Records - Part 1: Core, extends OGC API Common to:
+This standard extends OGC API Common to:
 
 . Provide modern API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
 . Provide functionality comparable to that of the <<api-behavior-model-overview,OGC Catalogue Service (CSW) standard>> so that a facade can be created over legacy services thus allowing them to participate in the new OGC API ecosystem.
@@ -29,11 +29,9 @@ The following table, <<records-paths,Record API Paths>>, summarizes the access p
 ^|**Path Template** ^|**Relation** ^|**Resource** 
 3+^|**Common**
 |<<landing-page,{root}/>> |none |Landing page
-|<<api-definition,{root}/api>> |`service-desc` +
-or +
-`service-doc` |API Description (optional)
-|<<conformance-classes,{root}/conformance>> |`conformance` |Conformance Classes
-|<<collections,{root}/collections>> |`data` |Metadata describing the spatial collections available from this API.
+|<<api-definition,{root}/api>> |`service-desc` or `service-doc` |API Description (optional)
+|<<conformance-classes,{root}/conformance>> | `conformance` |Conformance Classes
+|<<collections,{root}/collections>> | `data` |Metadata describing the spatial collections available from this API.
 |<<collectionInfo,{root}/collections/{collectionId}>> | |Metadata describing the collection which has the unique identifier `{collectionId}`
 3+^|**Records**
 |<<records-access,{root}/collections/{collectionId}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
@@ -42,27 +40,33 @@ or +
 
 Where:
 
-* {root} = Base URI for the API server
-* {collectionId} = an identifier for a specific collection
-* {recordId} = an identifier for a specific record within a collection
+* `{root}` = Base URI for the API server
+* `{collectionId}` = an identifier for a specific collection
+* `{recordId}` = an identifier for a specific record within a collection
 
 [[record-schema-overview]]
 === Record Schema
 
-T.B.D.
+The core information unit in a catalogue is a record.  A record may describe
+any resource (dataset, service, style, etc.). and as such provides a generic
+baseline to ensure broad interoperability.  Note that the record model is also
+extensible, and that it is envisioned that information communities will create
+profiles or extensions. This will ensure broad interoperability to lower the
+barrier to processing and interpretation of record metadata, as well as allow
+for domain-specific representations.
 
 [[api-behavior-model-overview]]
 === API Behavior Model
 
-The Records API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows OGC API - Records implementations and CSW implementations to co-exist in a single processing environment.
+This standard is designed to be compatible (but not conformant) with the OGC Catalogue Service for the Web (CSW). This allows OGC API - Records implementations and CSW implementations to co-exist in a single environment.
 
-The https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (data, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
+The https://www.ogc.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (data, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
 
 Discussion has shown that the API model also assumes underlying service and object descriptions, so a convergence seems possible. In any case, it will be advantageous to have a similar "mental model" of the server store organization on hand to explain the various functionalities introduced below.
 
 === Search
 
-The Records API offers various levels of search capability of escalating complexity and capability.  At the core is the ability to search the catalogue by specifying:
+This standard offers various levels of search capability. At the core is the ability to search the catalogue with the following constructs:
 
 * a bounding box
 * a time instant or time period
@@ -70,14 +74,14 @@ The Records API offers various levels of search capability of escalating complex
 * free text
 * equality predicates based on a subset of core queryables (e.g. by resource type, by external identifier)
 
-This specification also includes a conformance class that allows a catalogue to be searched using  https://portal.opengeospatial.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.
+This standard also includes a conformance class that allows a catalogue to be searched using https://portal.ogc.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the geometry types, that can be used to define an area of interest (i.e. beyond a bounding box).
 
-Finally extensions, such as the http://docs.opengeospatial.org/DRAFTS/19-079.html[OGC API - Features - Part 3: Filter and the Common Query Language (CQL)], may be used with the Records API to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.
+Finally, extensions such as the https://docs.ogc.org/DRAFTS/19-079.html[OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)], may be used with this standard to support complex search capabilities using a rich set of logically connected search predicates where the user has finer control over a query.
 
 [[dependencies-overview]]
 === Dependencies
 
-The OGC API - Records standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from API - Common. The following table, <<mapping-to-common,Mapping API - Records Sections to API - Common Requirements Classes>>, identifies the OGC API - Common Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
+This standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from OGC API - Common. The following table, <<mapping-to-common,Mapping API - Records Sections to API - Common Requirements Classes>>, identifies the OGC API - Common Requirements Classes which are applicable to each section of this standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
 
 [[mapping-to-common]]
 [reftext='{table-caption} {counter:table-num}']

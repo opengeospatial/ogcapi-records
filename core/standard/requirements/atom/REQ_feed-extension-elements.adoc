@@ -2,8 +2,8 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/atom/feed-extension-elements*
-^|A |If a property `timeStamp` is included in the response, its value SHALL be reported using a XML element named `core:TimeStamp` as defined in the link:http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API Records Core XML Schema].
+^|A |If a property `timeStamp` is included in the response, its value SHALL be reported using a XML element named `core:TimeStamp` as defined in the link:http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API - Records Core XML Schema].
 ^|B |If included, the `core:TimeStamp` element is a https://tools.ietf.org/html/rfc4287#section-6.4.1[simple ATOM extension element] that SHALL be included as an immediate child of the `atom:feed` element.
-^|C |If a property `numberReturned` is included in the response, its value SHALL be reported using an XML element named `core:NumberReturned` as defined in the link:http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API Records Core XML Schema].
+^|C |If a property `numberReturned` is included in the response, its value SHALL be reported using an XML element named `core:NumberReturned` as defined in the link:http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API - Records Core XML Schema].
 ^|D |If included, the `core:NumberReturned` element is a https://tools.ietf.org/html/rfc4287#section-6.4.1[simple ATOM extension element] that SHALL be included as an immediate child of the `atom:feed` element.
 |===

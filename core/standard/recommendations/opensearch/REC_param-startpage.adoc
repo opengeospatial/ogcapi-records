@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-startPage*
-^|A |Servers SHOULD support the start page (`startPage`) parameter for the search operation (method: GET, path: /collections/{collectionId}/items).
+^|A |Servers SHOULD support the start page (`startPage`) parameter for the search operation (method: GET, path: `/collections/{collectionId}/items`).
 |===
