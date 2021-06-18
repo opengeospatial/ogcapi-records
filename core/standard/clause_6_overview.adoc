@@ -72,7 +72,7 @@ The Records API offers various levels of search capability of escalating complex
 
 This specification also includes a conformance class that allows a catalogue to be searched using  https://portal.opengeospatial.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.
 
-Finally extensions, such as the http://docs.opengeospatial.org/DRAFTS/19-079.html[OGC API - Features - Part 3: Filter and the Common Query Language (CQL)], may be used with the Records API to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.
+Finally extensions, such as the https://docs.ogc.org/DRAFTS/19-079.html[OGC API - Features - Part 3: Filter and the Common Query Language (CQL)], may be used with the Records API to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.
 
 [[dependencies-overview]]
 === Dependencies

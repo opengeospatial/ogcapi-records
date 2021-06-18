@@ -41,7 +41,7 @@ include::requirements/json/REQ_json-geojson-definition.adoc[]
 include::requirements/json/REQ_json-geojson-content.adoc[]
 
 [[schema_record]]
-.link:http://fix.me/record.yaml[Schema for a catalogue record in JSON(recordGeoJSON.yaml)]
+.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml[Schema for a catalogue record in JSON(recordGeoJSON.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/recordGeoJSON.yaml[]

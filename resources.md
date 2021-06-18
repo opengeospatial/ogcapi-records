@@ -18,7 +18,7 @@ The following set of resource are taking for the list of issues in github.
 ## Standard identifiers for resources
 
 * https://portal.opengeospatial.org/files/?artifact_id=58896&version=1
-* http://docs.opengeospatial.org/per/16-043.html
+* https://docs.ogc.org/per/16-043.html
 * https://github.com/OSGeo/Cat-Interop/LinkPropertyLookupTable.csv
 
 ## OpenSearch Geo
@@ -35,5 +35,5 @@ The following set of resource are taking for the list of issues in github.
 
 ## Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report
 
-* http://docs.opengeospatial.org/per/16-059.html#_semantic_registry_information_model_srim_2
+* https://docs.ogc.org/per/16-059.html#_semantic_registry_information_model_srim_2
 

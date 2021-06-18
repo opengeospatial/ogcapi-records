@@ -29,7 +29,7 @@ It is also necessary to advertise conformance with this Requirements Class.
 include::requirements/json/REQ_json-conformance.adoc[]
 
 [[schema_record]]
-.link:http://fix.me/record.yaml[Schema for an extended collection information object (extendedCollectionInfo.yaml)]
+.link:http://schemas.opengis.net/ogcapi/records/part2/1.0/openapi/schemas/extendedCollectionInfo.yaml[Schema for an extended collection information object (extendedCollectionInfo.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/extendedCollectionInfo.yaml[]

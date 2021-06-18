@@ -1,31 +1,31 @@
 {
     "links": [
         {
-            "href": "http://data.example.org/",
+            "href": "https://example.org/",
             "rel": "self",
             "type": "application/json",
             "title": "This Document"
         },
         {
-            "href": "http://data.example.org/api",
+            "href": "https://example.org/api",
             "rel": "service-desc",
             "type": "application/openapi+json;version=3.0",
             "title": "The API Definition"
         },
         {
-            "href": "http://data.example.org/api",
+            "href": "https://example.org/api",
             "rel": "service-doc",
             "type": "text/html",
             "title": "The API Document"
         },
         {
-            "href": "http://data.example.org/conformance",
+            "href": "https://example.org/conformance",
             "rel": "conformance",
             "type": "application/json",
             "title": "OGC Conformance Classes Implemented by this API"
         },
         {
-            "href": "http://data.example.org/collections",
+            "href": "https://example.org/collections",
             "rel": "data",
             "type": "application/json",
             "title": "Metadata About the Resource Collections"

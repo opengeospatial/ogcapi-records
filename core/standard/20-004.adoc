@@ -27,8 +27,8 @@
 |Publication Date: 2020-01-13
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/is/ogcapi-records-1/1.0
 |Internal reference number of this OGC(R) document: 20-004
-|Version: 0.0.1
-|Category: OGC(R) Implementation Specification
+|Version: 1.0.0-draft.1
+|Category: OGC(R) Implementation Standard
 |Editors:  Panagiotis (Peter) A. Vretanos, Tom Kralidis, Charles Heazel
 |===
 
@@ -54,7 +54,8 @@ Recipients of this document are invited to submit, with their comments, notifica
 
 [width = "50%", grid = "none"]
 |===
-|Document type: OGC(R) Implementation Specification
+|Document type: OGC(R) Standard
+|Document subtype: Interface
 |Document stage: Draft
 |Document language: English
 |===

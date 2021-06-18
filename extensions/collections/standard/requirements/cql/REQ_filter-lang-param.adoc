@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/cql/filter-lang-param*
-^|A |The HTTP GET operation on the `/collections` path SHALL support the `filter-lang` parameter as defined in http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-lang-param[Parameter filter-lang].
+^|A |The HTTP GET operation on the `/collections` path SHALL support the `filter-lang` parameter as defined in https://docs.ogc.org/DRAFTS/19-079.html#filter-lang-param[Parameter filter-lang].
 |===

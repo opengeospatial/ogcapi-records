@@ -2,11 +2,11 @@
 
 Conformance with this standard shall be checked using the tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 
-The one Standardization Target for this standard is Web APIs.
+The standardization targets of all conformance classes are "Web APIs".
 
-OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of API - Common. 
+OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to OGC API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of OGC API - Common.
 
-This standard identifies six (6) Conformance Classes. The Conformance Classes implemented by an API are advertised through the `/conformance` path on the landing page. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+This standard identifies seven (7) Conformance Classes. The Conformance Classes implemented by an API are advertised through the `/conformance` path. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
 
 The Requirements Classes for OGC API - Records are:
 
@@ -18,7 +18,7 @@ The Requirements Classes for OGC API - Records are:
 * <<requirements-class-atom-clause,ATOM-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 
-The _Core_ Requirements Class is the minimal useful service interface for the OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.  The core defines a set of mandatory properties (core queryables) that every record must contain, a set of core query parameters that support bounding box spatial queries, temporal queries, full text searching, parameters for sorting responses.
+The _Core_ Requirements Class is the minimal useful service interface for OGC API - Records. The requirements specified in this class are mandatory for all implementations of this standard. The core defines a baseline record schema, resource paths, a set of mandatory properties (core queryables) that every record must contain, a set of core query parameters that support bounding box spatial queries, temporal queries, full-text searching, parameters for sorting responses, and error handling.
 
 The _Sorting_ Requirements Class defines the requirements to support sorting of records in a query response.
 

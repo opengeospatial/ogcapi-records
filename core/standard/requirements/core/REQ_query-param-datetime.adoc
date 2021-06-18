@@ -3,6 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/param-datetime*
 ^|A |A Records API SHALL support the Date-Time (datetime) parameter for the operation.
-^|B |Requests which include the Date-Time parameter SHALL comply with API - Common requirement http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-definition`].
-^|C |Responses to Date-Time requests SHALL comply with API - Common requirement http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-response`].
+^|B |Requests which include the Date-Time parameter SHALL comply with API - Common requirement https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-definition`].
+^|C |Responses to Date-Time requests SHALL comply with API - Common requirement https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-response`].
 |===
