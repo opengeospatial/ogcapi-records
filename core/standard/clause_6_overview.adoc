@@ -47,12 +47,18 @@ Where:
 [[record-schema-overview]]
 === Record Schema
 
-T.B.D.
+The core information unit in a catalogue is a record.  A record may describe
+any resource (dataset, service, style, etc.). and as such provides a generic
+baseline to ensure broad interoperability.  Note that the record model is also
+extensible, and that it is envisioned that information communities will create
+profiles or extensions. This will ensure broad interoperability to lower the
+barrier to processing and interpretation of record metadata, as well as allow
+for domain-specific representations.
 
 [[api-behavior-model-overview]]
 === API Behavior Model
 
-This standard is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows OGC API - Records implementations and CSW implementations to co-exist in a single environment.
+This standard is designed to be compatible (but not conformant) with the OGC Catalogue Service for the Web (CSW). This allows OGC API - Records implementations and CSW implementations to co-exist in a single environment.
 
 The https://www.ogc.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (data, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
 
