@@ -143,7 +143,7 @@ paths:
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/limit'
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/q'
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/type'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/externalid'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/externalId'
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/sortby'
       responses:
         '200':
