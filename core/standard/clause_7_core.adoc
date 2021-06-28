@@ -9,7 +9,7 @@ include::requirements/requirements_class_core.adoc[]
 The `Core` Requirements Class defines the requirements for locating, understanding, and accessing Record resources. The `Core` Requirements Class is presented in five sections:
 
 . <<api-platform-section,API Platform>>: a set of common capabilities
-. <<collection-access,Collection Access>>: operations for accessing information about collections of records
+. <<record-collection,Collection Access>>: operations for accessing information about collections of records
 . <<records-access,Records Access>>: operations for accessing record resources
 . <<record-access,Record Access>>: operations for accessing a single record
 . <<general-section,General>>: general principles for use with this standard
@@ -147,7 +147,7 @@ include::../examples/json/conformance.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-[[collection-access]]
+[[collections-access]]
 === Collection access
 
 OGC API - Common assumes that spatial resources are organized into collections.
@@ -216,7 +216,7 @@ include::../examples/json/collections.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-[[collection-information]]
+[[collection-info]]
 ==== Collection Information
 
 Collection Information is the set of metadata that describes a single

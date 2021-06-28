@@ -33,7 +33,7 @@ UML diagrams and XML code fragments adhere to the namespace conventions shown in
 
 [reftext='{table-caption} {counter:table-num}']
 .Namespace mapping conventions
-[width="90%",cols="^2,^2,6,6",options="header"]
+[width="90%",cols="4,6,6",options="header"]
 |====
 |*GML/XML prefix* ^|*Namespace URL* ^|*Description*
 
