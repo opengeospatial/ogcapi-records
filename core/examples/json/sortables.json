@@ -1,20 +1,23 @@
-[
-   {
-      "id": "id",
-      "title": "Record Identifier",
-      "description": "A unique record identifier assigned by the server.",
-      "language": "en"
-   },
-   {
-      "id": "updated",
-      "title": "Updated",
-      "description": "The more recent date on which the resource was changed.",
-      "language": "en"
-   },
-   {
-      "id": "extent",
-      "title": "Spatio-Temporal Extent",
-      "description": "The spatio-temporal coverage of the resource.",
-      "language": "en"
+{
+   "$schema": "https://json-schema.org/draft/2019-09/schema",
+   "$id": "https://data.example.com/collections/abc/sortables",
+   "type": "object",
+   "properties": {
+      "id": {
+         "title": "Record Identifier",
+         "description": "A unique record identifier assigned by the server.",
+         "type": "string"
+      },
+      "updated": {
+         "title": "Updated",
+         "description": "The more recent date on which the resource was changed.",
+         "type": "string",
+         "format": "date"
+      },
+      "extent": {
+         "title": "Spatio-Temporal Extent",
+         "description": "The spatio-temporal coverage of the resource.",
+         "type": "object"
+      }   
    }
-]
+ }

@@ -1,8 +1,5 @@
 type: object
-required:
-  - sortables
-properties:
-  sortables:
-    type: array
-    items:
-      $ref: ../schemas/sortable.yaml
+title: Sortables
+description: Describes the properties that can be used to sort the results
+additionalProperties:
+  $ref: 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/schemas/v3.0/schema.json#/definitions/Schema'
