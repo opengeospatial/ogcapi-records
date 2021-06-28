@@ -1,2 +1,3 @@
 core/*.html
 core/*.pdf
+.DS_Store

@@ -18,22 +18,25 @@ handling missing values; specifying a high value indicating that the correspondi
 
 include::requirements/sorting/REQ_sortby-response.adoc[]
 
-include::requirements/sorting/REQ_sortables-op.adoc[]
+include::requirements/sorting/REQ_get-sortables-op.adoc[]
 
-include::requirements/sorting/REQ_sortables-success.adoc[]
+include::requirements/sorting/REQ_get-sortables-success.adoc[]
+
+The response is returned as a JSON Schema document that describes a single JSON object where each property is a sortable. Note that the sortables schema does not specify a schema of any object that can be retrieved from the API. JSON Schema is used for the sortables to have a consistent approach for describing schema information and JSON Schema is/will be used in other parts of OGC API Features to describe schemas for GeoJSON feature content including in OpenAPI documents.
+
+NOTE: The OGC Feature API Standards Working Group has a schema harmonization task that could lead to a future OGC API standard that will deprecate the approach for the sortables resource specified in this document.
+
+To support clients, providing additional detail about the meaning of the sortables is recommended:
+
+include::recommendations/sorting/REC_sortables-schema.adoc[]
+
+In an OpenAPI 3.0 document, the Sortables resources has the following schema:
 
 [[schema_sortables]]
-.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/responses/Sortables.yaml[Schema for the list of sortables (Sortables.yaml)]
+.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/responses/Sortables.yaml[Schema for the list of sortable properties (Sortables.yaml)]
 [source,YAML]
 ----
 include::../openapi/responses/Sortables.yaml[]
-----
-
-[[schema_sortable]]
-.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/sortable.yaml[Schema for a sortable description(sortable.yaml)]
-[source,YAML]
-----
-include::../openapi/schemas/sortable.yaml[]
 ----
 
 === Examples
