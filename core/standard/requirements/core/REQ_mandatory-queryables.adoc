@@ -1,8 +1,7 @@
-[[req_core_api-common]]
+[[req_core_mandatory-queryables]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/api-common*
-2+|The API implementation SHALL demonstrate conformance with the following Requirements Classes of the OGC API - Common version 1.0 Standard.
-^|A |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core
-^|B |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections
+^|*Requirement {counter:req-id}* |*/per/core/mandatory-queryables*
+
+Each record in a response SHALL contain all the mandatory properties listed in  the <<core-queryables-record-table>> and the <<core-queryables-resource-table>>.
 |===

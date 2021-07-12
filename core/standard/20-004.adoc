@@ -112,6 +112,8 @@ include::clause_15_security.adoc[]
 
 include::annex_ats.adoc[]
 
+include::annex_common.adoc[]
+
 include::annex_bibliography.adoc[]
 
 include::annex_history.adoc[]

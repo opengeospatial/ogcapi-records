@@ -29,18 +29,17 @@ Further, in any class where an attribute name or association role name is identi
 [[namespace-prefixes]]
 === Namespace Prefix Conventions
 
-UML diagrams and XML code fragments adhere to the namespace conventions shown in <<namespace-mapping-conventions>>. The namespace prefixes used in this document are not normative and are merely chosen for convenience. The namespaces to which the prefixes correspond are normative, however.
+UML diagrams and XML code fragments adhere to the namespace conventions shown in <<namespaces>>. The namespace prefixes used in this document are not normative and are merely chosen for convenience. The namespaces to which the prefixes correspond are normative, however.
 
-[reftext='{table-caption} {counter:table-num}']
+[#namespaces,reftext='{table-caption} {counter:table-num}']
 .Namespace mapping conventions
-[width="90%",cols="^2,^2,6,6",options="header"]
+[width="90%",cols="2,6,6",options="header"]
 |====
-|*GML/XML prefix* ^|*Namespace URL* ^|*Description*
-
+|*GML/XML prefix* |*Namespace URL* |*Description*
 |atom |http://www.w3.org/2005/Atom |ATOM namespace
 |core |http://www.opengis.net/ogcapi-record-1/1.0 |OGC API Records core elements
 |dc |http://purl.org/dc/elements/1.1/ |Dublin core elements
-|dcat |http://www.w3.org/ns/dcat# |DCAT vocabulary
+|dcat |http://www.w3.org/ns/dcat\# |DCAT vocabulary
 |dct |http://purl.org/dc/terms/ |Dublin core terms
 |gml |http://www.opengis.net/gml/3.2 |GML 3.2.1
 |gml33 |http://www.opengis.net/gml/3.3 |GML 3.3
