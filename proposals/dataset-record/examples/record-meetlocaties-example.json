@@ -1,0 +1,99 @@
+{
+    "id": "de0b0f94-aadb-4db4-a1b5-9a656810682c",
+    "type": "Feature",
+    "created": "2021-02-05",
+    "updated": "2021-02-21T00:14:33Z",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    4.52767,
+                    51.58673
+                ],
+                [
+                    4.52767,
+                    52.0393
+                ],
+                [
+                    6.18931,
+                    52.0393
+                ],
+                [
+                    6.18931,
+                    51.58673
+                ],
+                [
+                    4.52767,
+                    51.58673
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "created": "2018-02-05T08:15:56Z",
+        "updated": "2021-02-21T00:14:33Z",
+        "type": "dataset",
+        "title": "Meetlocaties waterkwantiteit Waterschap Rivierenland",
+        "description": "Binnen het waterschap worden veel oppervlaktewaterpeilen en grondwaterstanden gemeten. De kaart toont waar metingen plaatsvinden en wat voor type meting plaats vindt. Voor meetgegevens of overige informatie over waterkwantiteit kunt u contact opnemen met het waterschap via h.niewold@wsrl.nl",
+        "contactPoint": "Waterschap Rivierenland, info@wsrl.nl",
+        "associations": [
+            {
+                "href": "https://kaarten.wsrl.nl/arcgis/services/Kaarten/Meetlocaties_Waterkwantiteit_WMS_WFS_OD/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+                "rel": "item",
+                "type": "OGC:WMS"
+            },
+            {
+                "href": "https://kaarten.wsrl.nl/arcgis/services/Kaarten/Meetlocaties_Waterkwantiteit_WMS_WFS_OD/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+                "rel": "item",
+                "type": "OGC:WFS"
+            }
+        ],
+        "externalId": "meetlocaties-waterschap-rivierenland",
+        "themes": [
+            {
+                "concepts": [
+                    "waterkwaniteit peil grondwaterstand peilbuis waterpeil peilbesluit waterschap rivierenland"
+                ],
+                "scheme": null
+            }
+        ],
+        "extent": {
+            "spatial": {
+                "bbox": [
+                    [
+                        [
+                            4.52767,
+                            51.58673,
+                            6.18931,
+                            52.0393
+                        ]
+                    ]
+                ],
+                "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+            },
+            "temporal": {
+                "interval": [
+                    null,
+                    null
+                ],
+                "trs": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+            }
+        }
+    },
+    "links": [
+        {
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML",
+            "href": "./meetlocaties.html"
+        },
+        {
+            "rel": "alternate",
+            "type": "application/json",
+            "title": "This document as an OGC Collection",
+            "href": "./collection-meetlocaties-example.json"
+        },
+      
+    ]
+}
