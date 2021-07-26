@@ -1,65 +1,51 @@
 [[overview]]
 == Overview
 
-=== TLDR
+=== tl;dr
 
-In order to implements a catalogue that conforms to the _core_ if this standard:
+. In order to implement a catalogue where records are stored in some backend database and are accessed through an access/search API:
 
 * implmement the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] specification,
 * implement the parameters defined in <<core-query-parameters-table>>,
 * implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
+* extend the record schema to enrich its content as necessary
+
+. In order to implement a static catalogue where records are stored as individual files and can be crawled by simply following hypermedia controls:
+
+* implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
+* extend the record schema to enrich its content as necessary
+* to make a resource discoverable, place a record file in an accessibles location, preferably co-located (e.g. in the same directory or object store location) with the resource that the record is describing
+* optionally define a _collection_ resource that aggregates a set of related _records_
 
 [[general-overview]]
 === General
 
-This standard, OGC API - Records - Part 1: Core, extends https://github.com/opengeospatial/ogcapi-common[OGC API Common] to:
+The atomic unit of information in a catalogue is the _record_.
 
-. Provide modern API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
-. Provide functionality comparable to that of the <<api-behavior-model-overview,OGC Catalogue Service (CSW) standard>> so that a facade can be created over legacy services thus allowing them to participate in the new OGC API ecosystem.
+A _catalogue_ is a collection of _records_.  The terms **collection of records** and **catalogue** are used interchangably in this specification.
 
-Records exposed through this OGC API may be accessed through a Universal Resource Identifier <<rfc3986,(URI)>>. URIs are composed of three sections:
+A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined is this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated that this list of properties would be extended to enhance the information content of a record. 
 
-* Service Offering: The service endpoint (subsequently referred to as Base URI or {root})
-* Access Paths: Unique paths to Resources
-* Query: Parameters to adjust the representation of a Resource or Resources like encoding format or subsetting
+=== Building blocks
 
-Some resources are also accessible through links on previously accessed resources. Unique relation types are used for each resource.
+This standard defines three building blocks that may be used to deploy a catalogue:
 
-Collections of records exposed though this OGC API may be accessed through an https://www.ogc.org/standards/ogcapi-features[OGC API Features API] that has been:
+. The _core_ schema of a record.
+. The definition of a _collection_ resource that groups and describes a set of related records (i.e. a catalogue).
+. An API that allows collections of records (i.e. a catalogue) to be searched using logically connected predicates that can include spatial and/or temporal predicates.
 
-* extended with <<records-access,additional parameters>> at the `/collections/{collectionId}/items` endpoint,
-* and constrained to a single <<record-schema-overview,information model>> (called a **record**) that is extensible by communities of interest or to suite specific needs.
+Using these building blocks a catalogue can be deployed as:
 
-<<record-api-paths>> summarizes the access paths and relation types defined in this standard.
+* a set of static records that can be crawled by a search engine crawler or by using (for example) a web browser
 
-[[records-paths]]
-[#record-api-paths,reftext='{table-caption} {counter:table-num}']
-.Record API Paths
-[width="90%",cols="40,^20,40",options="header"]
-|===
-|**Path Template** |**Relation** |**Resource** 
-|<<landing-page,/>> |none |Landing page
-|<<api-definition,/api>> |`service-desc` +
-or +
-`service-doc` |API Description (optional)
-|<<conformance-classes,/conformance>> |`conformance` |Conformance Classes
-|<<collections,/collections>> |`data` |Metadata describing the spatial collections available from this API.
-|<<collectionInfo,/collections/{collectionId}>> | |Metadata describing the collection which has the unique identifier `{collectionId}`
-|<<records-access,/collections/{collectionId}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
-|<<record-access,/collections/{collectionId}/items/{recordId}>> |`item` |Record of metadata which has the unique identifier `{recordId}`.
-|===
+or as:
 
-Where:
-
-* {collectionId} = an identifier for a specific record collection identifier (i.e. catalogue identifier)
-* {recordId} = an identifier for a specific record within a collection
+* a "classic" catalogue with records that are stored in some back end database and accessed through an API.
 
 [[record-schema-overview]]
 === Record Schema
 
-The atomic unit of information in a catalogue is a record.
-
-The following table lists the set or properties, called _**core queryables**_, that may be included in a catalogue record.
+The following table lists the set or properties, called _**core queryables**_, that may be included in a record.
 
 [#core-queryables-list,reftext='{table-caption} {counter:table-num}']
 .Table of Core Queryables related to the catalogue record
@@ -96,9 +82,9 @@ The choice of which properties to include in the set of core queryables was prim
 * The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalogue schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
 * the https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabular (DCAT) - Version 2] and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specifications.
 
-It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being registered in the catalogue.  
+It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being made discoverable by the record.
 
-It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.
+It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.
 
 Although this document does not mandate any particular encoding for a record, the document does define conformance classes for three encodings:
 
@@ -106,14 +92,94 @@ Although this document does not mandate any particular encoding for a record, th
 * an <<record_atom_encoding,ATOM>> record encoding,
 * and an <<record_html_encoding,HTML>> encoding.
 
-Other encoding are allow but are not described in this document.
+Other encodings are allowed but are not described in this document.
 
-Accessing collections of records through the API defined in this document is described in the <<records-access,Records access>> section.
+Accessing collections of records deployed as static files is described in the <<static-record-deployment,Static records deployment>> clause.
 
-Accessing individual records through the API defined in this document is described in the <<record-access,Record access>> section.
+Accessing collections of records through the API defined in this document is described in the <<records-access,Records access>> and <<record-access,Record access>> sections.
+
+[[record-collection-overview]]
+=== Record collection (catalogue)
+
+A record collection or catalogue is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection object is the primary access point from which a deployed set of records can be accessed.  Having found the collection object (i.e. the catalogue) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
+
+Depending on the deployment pattern, the collection may provide a link to each individual record of the collection or a link to an access point for retrieving sub-sets of records.
+
+<<record-collection-properties>> list the _core_ set of properties that may be used to describe a record collection or catalogue.
+
+[[record-collection-properties]]
+[reftext='{table-caption} {counter:table-num}']
+.Additional collection information properties
+[cols="30,70",options="header"]
+|===
+|Property |Description
+|_**id**_ |A unique identifier for the collection
+|_**title**_ |A human-readable name given to the collection.
+|_**description**_ |A free-text description of the collection.
+|_**links**_ |A list of references to other documents include one link per record that is part of this collection.
+|_**extent**_ |The spatio-temporal coverage of the resources aggregated by this collection.
+|_**itemType**_ |Fixed to the value "record".
+|_**crs**_ |A list of coordinate reference system used for spatial-temporal values.
+|type |Fixed to the value "Collection".
+|keywords |A list of keywords or tag associated with the collection.
+|keywordsCodespace |A reference to a controlled vocabulary used for the keywords property.
+|language |This refers to the natural language used for textual values.
+|created |The date the collection was created.
+|updated |The more recent date on which the collection was changed.
+|publisher |The entity making the collection available.
+|themes |A knowledge orgnaization system used to classify the collection.
+|contactPoint |An entity to contact about the collection.
+|license |A legal document under which the resource is made available.
+|rights |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|===
+
+NOTE: The properties in bold are inherited from OGC API Common and OGC API Features.
+
+It is anticipated that this set of properties will be extended to enrich the information content of the collection metadata to suit specific needs.
+
+[[sc_record_api]]
+=== Records API
+
+==== Overview 
+
+The Records API allows a subsert of records to be retrieved from a catalogue using a logically connected set of predicates that may include spatial and/or temporal predicates.
+
+The Records API extends https://github.com/opengeospatial/ogcapi-common[OGC API Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] to:
+
+. Provide modern API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
+. Provide functionality comparable to that of the <<api-behavior-model-overview,OGC Catalogue Service (CSW) standard>> so that a facade can be created over legacy services thus allowing them to participate in the new OGC API ecosystem.
+
+Collections of records exposed though this OGC API may be accessed through an https://www.ogc.org/standards/ogcapi-features[OGC API Features API] that has been:
+
+* extended with <<records-access,additional parameters>> at the `/collections/{collectionId}/items` endpoint,
+* and constrained to a single <<record-overview,information model>> (i.e. the <<record-overview,record>>).
+
+<<record-api-paths>> summarizes the access paths and relation types defined in this standard.
+
+[[records-paths]]
+[#record-api-paths,reftext='{table-caption} {counter:table-num}']
+.Record API Paths
+[width="90%",cols="40,^20,40",options="header"]
+|===
+|**Path Template** |**Relation** |**Resource** 
+|<<landing-page,/>> |none |Landing page
+|<<api-definition,/api>> |`service-desc` +
+or +
+`service-doc` |API Description (optional)
+|<<conformance-classes,/conformance>> |`conformance` |Conformance Classes
+|<<collections,/collections>> |`data` |Metadata describing the spatial collections available from this API.
+|<<collectionInfo,/collections/{collectionId}>> | |Metadata describing the collection which has the unique identifier `{collectionId}`
+|<<records-access,/collections/{collectionId}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
+|<<record-access,/collections/{collectionId}/items/{recordId}>> |`item` |Record of metadata which has the unique identifier `{recordId}`.
+|===
+
+Where:
+
+* {collectionId} = an identifier for a specific record collection identifier (i.e. catalogue identifier)
+* {recordId} = an identifier for a specific record within a collection
 
 [[api-behavior-model-overview]]
-=== API Behavior Model
+==== API Behavior Model
 
 The Records API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows OGC API - Records implementations and CSW implementations to co-exist in a single processing environment.
 
@@ -121,7 +187,7 @@ The https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard 
 
 Discussion has shown that the API model also assumes underlying service and object descriptions, so a convergence seems possible. In any case, it will be advantageous to have a similar "mental model" of the server store organization on hand to explain the various functionalities introduced below.
 
-=== Search
+==== Search
 
 The Records API offers various levels of search capability of escalating complexity and capability.  At the core is the ability to search the catalogue by specifying:
 
@@ -136,7 +202,7 @@ This specification also includes a <<clause-opensearch,conformance class>> that 
 Finally, the <<clause-record-filter,_Filter using the Common Query Language_ Requirements Class>> may be used to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.
 
 [[dependencies-overview]]
-=== Dependencies
+==== Dependencies
 
 The OGC API - Records standard is an extension of the https://github.com/opengeospatial/ogcapi-common[OGC API - Common] and the https://www.ogc.org/standards/ogcapi-features[OGC API - Features] standards.
 

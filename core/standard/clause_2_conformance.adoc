@@ -7,11 +7,14 @@ The one Standardization Target for this standard is Web APIs.
 
 OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of API - Common. 
 
-This standard identifies seven (7) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+This standard identifies nine (9) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+
 
 The Requirements Classes for OGC API - Records are:
 
-* <<clause-core,Core>>
+* <<clause-record-core,Record>>
+* <<clause-record-collection,Record collection>>
+* <<clause-core-api,Record API>>
 * <<clause-sorting,Sorting>>
 * <<clause-cql-filter,Filtering using the Common Query Language (CQL)>>
 * <<clause-opensearch,OpenSearch>>
@@ -19,11 +22,14 @@ The Requirements Classes for OGC API - Records are:
 * <<requirements-class-atom-clause,ATOM-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 
-The <<clause-core,_Core_ Requirements Class>> is the minimal useful service interface for the OGC Records API. The requirements specified in this Requirements Class are mandatory for all implementations of API - Records.  The core is composed of two components:
+NOTE: Requirement class <<clause-record-code,Record>> is _**MANDATORY**_.
 
-* an API based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API Records,
+The <<clause-record-core,_Record_ Requirements Class>> defines the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended by communities of interest or to suite specific needs.
 
-* a core set of properties (<<core-queryables,core queryables>>) that every catalog records must contain.  This core set of properties can be extended by communities of interest or to suite specific needs.
+The <<clause-record-collection,_Record Collection_ Requirements Class>> defines the metadata used to describe a collection of records.
+
+The <<clause-record-api,_Records API_ Requirement Class>> defines an API for searching collections of records based on logically connected predicates they can include spatial and/or temporal predicates.  The Records API is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to for OGC API Records.
+
 
 The <<clause-sorting,_Sorting_ Requirements Class>> defines the requirements to support sorting of records in a query response.
 
@@ -48,7 +54,9 @@ OGC Compliance Testing web site.
 [cols="40,60",options="header"]
 |===
 |Conformance class |URI
-|<<ats_core,Core>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/core
+|<<ats_core_record,Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
+|<<ats_record_collection,Record Collection>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
+|<<ats_record_api,Record API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api
 |<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
 |<<ats_cql,CQL>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
 |<<ats_opensearch,OpenSearch>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/opensearch
