@@ -84,7 +84,7 @@ The choice of which properties to include in the set of core queryables was prim
 
 It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being made discoverable by the record.
 
-It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.
+It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suite specific needs is allowed and encouranged by this specification.
 
 Although this document does not mandate any particular encoding for a record, the document does define conformance classes for three encodings:
 
@@ -103,7 +103,7 @@ Accessing collections of records through the API defined in this document is des
 
 A record collection or catalogue is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection object is the primary access point from which a deployed set of records can be accessed.  Having found the collection object (i.e. the catalogue) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
 
-Depending on the deployment pattern, the collection may provide a link to each individual record of the collection or a link to an access point for retrieving sub-sets of records.
+Depending on the deployment pattern, the collection may provide a link to each individual record of the collection or a link to a search access point for retrieving sub-sets of records.
 
 <<record-collection-properties>> list the _core_ set of properties that may be used to describe a record collection or catalogue.
 
@@ -181,62 +181,11 @@ Where:
 [[api-behavior-model-overview]]
 ==== API Behavior Model
 
-A catalogue can be searched to identify subsets of records that satisfy search criteria specified by a client.
+The Records API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows OGC API - Records implementations and CSW implementations to co-exist in a single processing environment.
 
-Having found one or more records of interst via a search, the client can then access (i.e. bind) the resource using the descriptive information contained in each record.
+The https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (data, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
 
-The following table lists the set of properties defined in this specification, called _**core queryables**_, that may be included in a catalogue record.
-
-[#core-queryables-list,reftext='{table-caption} {counter:table-num}']
-.Table of Core Queryables related to the catalogue record
-[cols="2,5",options="header"]
-|===
-|Queryables |Description
-|recordId |A unique record identifier assigned by the server.
-|recordCreated |The date this record was created in the server.
-|recordUpdated |The most recent date on which the record was changed.
-|links |A list of links for navigating the API.
-|type |The nature or genre of the resource.
-|title |A human-readable name given to the resource.
-|description |A free-text description of the resource.
-|keywords |A list of keywords or tag associated with the resource.
-|keywordsCodespace |A reference to a controlled vocabulary used for the keywords property.
-|language |This refers to the natural language used for textual values.
-|externalId |An identifier for the resource assigned by an external entity.
-|created |The date the resource was created.
-|updated |The more recent date on which the resource was changed.
-|publisher |The entity making the resource available.
-|themes |A knowledge orgnaization system used to classify the resource.
-|formats |A list of available distributions for the resource.
-|contactPoint |An entity to contact about the resource.
-|license |A legal document under which the resource is made available.
-|rights |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|extent |The spatio-temporal coverage of the resource.
-|associations |A list of links for accessing the resource, links to other resources associated with this resource, etc.
-|===
-
-A complete definition of a record can be found in the query <<query-response,Response>> sub-clause of the <<record-access,Records access>> clause.
-
-The choice of which properties to include in the set of core queryables was primarily informed by the following record models:
-
-* The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalogue schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
-* the https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabular (DCAT) - Version 2] and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specifications.
-
-It is expected that the information necessary to populate this core set of record properties is readily available for any resource that is being registered in the catalogue.  
-
-It is anticipated that this _core_ set of record properties will be extended to describe specific resource types (e.g. datasets, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suit specific needs is allowed and encouraged by this specification.
-
-Although this document does not mandate any particular encoding for a record, the document does define conformance classes for three encodings:
-
-* A <<record_json_encoding,GeoJSON>> record encoding,
-* an <<record_atom_encoding,ATOM>> record encoding,
-* and an <<record_html_encoding,HTML>> encoding.
-
-Other encoding are allow but are not described in this document.
-
-Accessing collections of records through the API defined in this document is described in the <<records-access,Records access>> section.
-
-Accessing individual records through the API defined in this document is described in the <<record-access,Record access>> section.
+Discussion has shown that the API model also assumes underlying service and object descriptions, so a convergence seems possible. In any case, it will be advantageous to have a similar "mental model" of the server store organization on hand to explain the various functionalities introduced below.
 
 ==== Search
 
@@ -256,16 +205,6 @@ OGC API - Record extends these core search capabilities to include:
 The <<clause-opensearch,second level of search capability>> extends the search API so that it is compatible with the https://portal.opengeospatial.org/files/?artifact_id=56866[OGC OpenSearch Geo and Time Extensions] (OpenSearch Geo).  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.
 
 The third level of search capability, defined by the <<clause-record-filter,_Filter using the Common Query Language_ Requirements Class>>, supports complex filter expressions using a rich set of logically connected query predicates.
-=======
-* a bounding box
-* a time instant or time period
-* keywords
-* free text
-* equality predicates (i.e. _property_=_value_) based on a subset of core queryables (e.g. by resource type, by external identifier)
-
-This specification also includes a <<clause-opensearch,conformance class>> that allows a catalogue to be searched using  https://portal.opengeospatial.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.
-
-Finally, the <<clause-record-filter,_Filter using the Common Query Language_ Requirements Class>> may be used to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.
 
 [[dependencies-overview]]
 ==== Dependencies

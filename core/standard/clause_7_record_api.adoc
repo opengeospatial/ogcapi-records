@@ -12,6 +12,7 @@ The components of the `Core Record API` requirements class that are derived from
 
 . <<api-platform-section,API Platform>>: a set of common capabilities
 . <<collections-access,Collections access>>: operations for accessing information about collections of records
+. <<collection-information,Collection information>>: operations for accessing information about a specific collection (i.e. catalogue).
 . <<general-requirements-section,General Requirments>>: general principles for use with this standard
 
 The requirements for accessing collections of records are presented in the following sections:
@@ -19,12 +20,39 @@ The requirements for accessing collections of records are presented in the follo
 . <<records-access,Records Access>>: operations for accessing record resources
 . <<record-access,Record Access>>: operations for accessing a single record
 
+[[record-collection]]
+=== Record collection
+
+==== Overview 
+
+Groups of related records are accesed from a collection (i.e. a catalogue).  The collection provides metadata about the catalogue and includes access metadata for navigating to records from the collection.   The content of the collection is defined in the <<clause-core-record-collection,Record collection clause>> 
+
+This section defines how to access the collection object through the Records API.
+
+==== Operation
+
+See: <<collection-info-operation,Collection Information operation>>.
+
+==== Response 
+
+See: <<collection-info-response,Collection Information response>>.
+
+T.B.D.  Add requirments here for the links section.  Basically, there MUST be at least one link with `rel=items` that points the access/search endpoint of the API. Although, now that I think of it, I believe features includes this requirement.
+
+==== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+==== Examples
+
+T.B.D.
+
 [[records-access]]
 === Records access
 
 ==== Overview
 
-The basic Records API process is the OGC API Features API that has been augmented with additional operators that are useful for searching collections of catalogue records. This clause describes these additional operators.
+The basic Records API is the OGC API Features API that has been augmented with additional operators that are useful for searching collections of catalogue records. This clause describes these additional operators.
 
 ==== Operation
 
@@ -53,9 +81,12 @@ supported at the `/collections/{collectionId}/items` endpoint.
 |type |An equality predicate consistent of a comma-separated list of resource types.  Only records of the listed type shall appear in the resource set.
 |externalid |An equality predicate consistent of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
 |_prop_=_value_ |Equality predicates with any queryable (see: /collections/{catalogueId}/queryables)
-|sortby |Record sorting for response
-|filter/filter_lang/filter_crs |Parameter from Features Part 3 for CQL filtering
-2+|NOTES:  1. Inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].
+|sortby^2^ |Record sorting for response
+|filter/filter_lang/filter_crs^3^ |Enhanced filtering prameters
+2+|NOTES:
+(1)Inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].
+(2) The server must implement the <<clause-sorting,Sorting>> conformance class.
+(3) The server must implement the <<lause-cql-filter,Filtering using CQL>> conformance class. 
 |===
 
 The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from API -Common.  All requirements and recommendations in API - Common regarding these parameters also apply for API - Records.
