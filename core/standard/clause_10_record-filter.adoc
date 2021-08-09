@@ -1,4 +1,4 @@
-[[clause-record-filter]]
+[[clause-cql-filter]]
 == Requirements Class "Filtering using the Common Query Language (CQL)"
 
 [[record-filter-overview]]

@@ -7,7 +7,7 @@
 * <<core-query-parameters-limit,limit>>
 * <<core-query-parameters-q,q>>
 * <<core-query-parameters-type,type>>
-* <<core-query-parameters-sortby,externalid>>
+* <<core-query-parameters-sortby,externalId>>
 |===
 
 

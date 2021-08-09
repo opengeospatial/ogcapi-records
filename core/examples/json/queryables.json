@@ -5,7 +5,7 @@
             "type": "string"
         },
         {
-            "queryable": "externalid",
+            "queryable": "externalId",
             "type": "string"
         },
         {

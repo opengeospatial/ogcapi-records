@@ -23,7 +23,9 @@ The Requirements Classes for OGC API - Records are:
 * <<requirements-class-atom-clause,ATOM-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 
-The <<clause-static-catalogue,Static Catalogue>> conformance class defines the core requirements for a static catalogue.  The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> are mandatory requirements classes that must be implemented for this conformance class.
+The <<clause-static-catalogue,Static Catalogue>> conformance class defines the core requirements for a static catalogue.
+
+The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> are mandatory requirements classes that must be implemented for this conformance class.
 
 The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a searchable catalogue.  The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> and <<clause-core-api,Record API>> requirements are mandatory requirements classes that must be implemented for this conformance class.
 
