@@ -14,7 +14,31 @@ The OGC API - Records specification defines three main building blocks:
 
 ## The Record building block
 
-The _**Record**_ is the atomic unit of information in a catalogue.  The record building block defines the core schema of a catalogue record.  It includes a small number of properties that are common across all resource types.  It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON features and HTML.
+The _**Record**_ is the atomic unit of information in a catalogue.
+
+The record building block defines the core schema of a catalogue record.  It includes a small number of properties that are common across all resource types.  The following table lists the core set of record properties (called queryables):
+
+|Queryables |Requirement |Description                       
+|-----------|------------|----------------------------------
+|type |M |The nature or genre of the resource.
+|title |M |A human-readable name given to the resource.
+|description |O |A free-text description of the resource.
+|keywords |O |A list of keywords or tag associated with the resource.
+|keywordsCodespace |O |A reference to a controlled vocabulary used for the keywords property.
+|language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
+|externalId |O |An identifier for the resource assigned by an external entity.
+|created |O |The date the resource was created.
+|updated |O |The more recent date on which the resource was changed.
+|publisher |O |The entity making the resource available.
+|themes |O |A knowledge orgnaization system used to classify the resource.
+|formats |O |A list of available distributions for the resource.
+|contactPoint |O |An entity to contact about the resource.
+|license |O |A legal document under which the resource is made available.
+|rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|extent |O |The spatio-temporal coverage of the resource.
+|associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc.
+
+It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
 
 The following is an example of a catalogue record encoded as GeoJSON:
 
@@ -71,6 +95,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
       ]
     }
 ```
+
 ## The Record collection building block
 
 A catalogue is a collection of records.  The `Record collection` building block extends the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
