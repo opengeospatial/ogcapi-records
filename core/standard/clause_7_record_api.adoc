@@ -128,6 +128,8 @@ include::requirements/core/REQ_query-param-q-response.adoc[]
 
 include::requirements/core/REQ_query-param-type-definition.adoc[]
 
+include::recommendations/core/REC_query-param-type-definition.adoc[]
+
 include::requirements/core/REQ_query-param-type-response.adoc[]
 
 [[core-query-parameters-externalid]]

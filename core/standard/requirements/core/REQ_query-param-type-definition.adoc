@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/param-type-definition*
 ^|A |A Records API SHALL support the search by Type (type) parameter for the operation.
-^|A |The `type` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+^|B |The `type` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
 [source,YAML]
 ----
@@ -14,6 +14,7 @@ schema:
   type: array
   items:
     type: string
+    maxLength: 64
 explode: false
 ----
 |===

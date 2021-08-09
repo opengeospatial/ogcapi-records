@@ -92,6 +92,17 @@ these properties in a record.
 
 include::recommendations/core/REC_record-keywords-themes.adoc[]
 
+[[sc_type_and_licenses]]
+==== Type and Licenses
+
+A record has one `properties.type` and one `properties.license` properties. The value of each property should be a code, convenient for filtering records. 
+
+include::recommendations/core/REC_record-type.adoc[]
+
+include::recommendations/core/REC_record-license.adoc[]
+
+In addition, links to external resources representing the record type and the licenses are recommended, as described in the next section.
+
 [[sc_associations_and_links]]
 ==== Associations and Links
 
