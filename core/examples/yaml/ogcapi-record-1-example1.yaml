@@ -18,14 +18,14 @@ info:
   contact:
     name: CubeWerx Inc.
     email: pvretano@cubewerx.com
-    url: 'http://www.cubewerx.com'
+    url: 'https://www.cubewerx.com'
   license:
     name: CC-BY 4.0 license
     url: 'https://creativecommons.org/licenses/by/4.0/'
 servers:
-  - url: 'https://data.example.org/'
+  - url: 'https://example.org/data'
     description: Production server
-  - url: 'https://dev.example.org/'
+  - url: 'https://example.org/data-dev'
     description: Development server
 tags:
   - name: Capabilities

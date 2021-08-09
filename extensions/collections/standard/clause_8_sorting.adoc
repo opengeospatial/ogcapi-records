@@ -20,7 +20,7 @@ include::requirements/sorting/REQ_sortables-op.adoc[]
 include::requirements/sorting/REQ_sortables-success.adoc[]
 
 [[schema_sortables]]
-.link:http://fix.me/sortables.yaml[Schema for the list of sortables (sortables.yaml)]
+.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/responses/Sortables.yaml[Schema for the list of sortables (Sortables.yaml)]
 [source,YAML]
 ----
 type: object
@@ -34,7 +34,7 @@ properties:
 ----
 
 [[schema_sortable]]
-.link:http://fix.me/sortable.yaml[Schema for a sortable description(sortable.yaml)]
+.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/sortable.yaml[Schema for a sortable description(sortable.yaml)]
 [source,YAML]
 ----
 type: object

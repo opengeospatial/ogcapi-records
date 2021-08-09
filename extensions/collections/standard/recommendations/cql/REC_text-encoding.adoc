@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-filter/text-encoding*
-^|A |If a filter expression can be represented for its intended use as text, servers SHOULD consider supporting the http://docs.opengeospatial.org/DRAFTS/19-079.html#cql-text[CQL text] encoding.
+^|A |If a filter expression can be represented for its intended use as text, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/19-079.html#cql-text[CQL text] encoding.
 |===

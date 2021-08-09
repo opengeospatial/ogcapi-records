@@ -3,15 +3,16 @@
 
 Conformance with this standard shall be checked using the tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 
-The one Standardization Target for this standard is Web APIs.
+The standardization targets of all conformance classes are "Web APIs".
 
-OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of API - Common. 
+OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to OGC API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of OGC API - Common.
 
-This standard identifies nine (9) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
-
+This standard identifies eleven (11) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
 
 The Requirements Classes for OGC API - Records are:
 
+* <<clause-static-catalogue,Static Catalogue>>
+* <<clause-searchable-catalogue,Searchable Catalogue>>
 * <<clause-record-core,Record>>
 * <<clause-record-collection,Record collection>>
 * <<clause-core-api,Record API>>
@@ -22,14 +23,15 @@ The Requirements Classes for OGC API - Records are:
 * <<requirements-class-atom-clause,ATOM-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 
-NOTE: Requirement class <<clause-record-code,Record>> is _**MANDATORY**_.
+The <<clause-static-catalogue,Static Catalogue>> conformance class defines the core requirements for a static catalogue.  The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> are mandatory requirements classes that must be implemented for this conformance class.
+
+The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a searchable catalogue.  The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> and <<clause-core-api,Record API>> requirements are mandatory requirements classes that must be implemented for this conformance class.
 
 The <<clause-record-core,_Record_ Requirements Class>> defines the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended by communities of interest or to suite specific needs.
 
 The <<clause-record-collection,_Record Collection_ Requirements Class>> defines the metadata used to describe a collection of records.
 
 The <<clause-record-api,_Records API_ Requirement Class>> defines an API for searching collections of records based on logically connected predicates they can include spatial and/or temporal predicates.  The Records API is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to for OGC API Records.
-
 
 The <<clause-sorting,_Sorting_ Requirements Class>> defines the requirements to support sorting of records in a query response.
 
@@ -60,7 +62,7 @@ OGC Compliance Testing web site.
 |<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
 |<<ats_cql,CQL>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
 |<<ats_opensearch,OpenSearch>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/opensearch
-|<<ats_json,JSON-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/JSON
+|<<ats_json,JSON-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 |<<ats_atom,ATOM-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/atom
 |<<ats_atom,HTML-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 |===

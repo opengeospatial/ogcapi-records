@@ -2,7 +2,7 @@ oneOf:
   - type: string
     description: |-
       A reference to information about the responsible party.  For example,
-      a link to a VCard (see http://www.w3.org/TR/vcard-rdf/).
+      a link to a VCard (see https://www.w3.org/TR/vcard-rdf/).
     format: url
   - type: object
     description: |-

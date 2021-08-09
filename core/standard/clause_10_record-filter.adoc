@@ -1,18 +1,18 @@
 [[clause-record-filter]]
-== Requirements Class "CQL Filter"
+== Requirements Class "Filtering using the Common Query Language (CQL)"
 
 [[record-filter-overview]]
 === Overview
 
 include::requirements/requirements_class_record-filter.adoc[]
 
-This clause defines the binding to the filter parameters defined in the http://docs.opengeospatial.org/DRAFTS/19-079.html#_requirements_class_filter[OGC API - Features - Part 3: Filter and the Common Query Language (CQL), Requirements Class "Filter"] clause.
+This clause defines the binding to the filter parameters defined in the https://docs.ogc.org/DRAFTS/19-079.html#_requirements_class_filter[OGC API - Features - Part 3: Filtering and the Common Query Language (CQL), Requirements Class "Filter"] clause.
 
 === Records
 
 ==== Operation
 
-As specified in the <<records-access,Records Access>> clause, records are accessed using the HTTP GET method via the `/collections/{collectionId}/items` path.  The following additional requirements bind the parameters http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-param[filter], http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-lang-param[filter-lang] and http://docs.opengeospatial.org/DRAFTS/19-079.html#filter-filter-crs[filter-crs] to the GET operation on this path.
+As specified in the <<records-access,Records Access>> clause, records are accessed using the HTTP GET method via the `/collections/{collectionId}/items` path.  The following additional requirements bind the parameters https://docs.ogc.org/DRAFTS/19-079.html#filter-param[filter], https://docs.ogc.org/DRAFTS/19-079.html#filter-lang-param[filter-lang] and https://docs.ogc.org/DRAFTS/19-079.html#filter-filter-crs[filter-crs] to the GET operation on this path.
 
 include::requirements/record-filter/REQ_filter-param.adoc[]
 
@@ -47,7 +47,7 @@ Links can be added to the following sections in a catalogue record:
 . the <<query-response,associations>> section.
 . the <<query-response,properties>> section.
 
-The schema for links added to the <<query-response,links>> and <<query-response,associations>> sections in based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in http://docs.opengeospatial.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
+The schema for links added to the <<query-response,links>> and <<query-response,associations>> sections in based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
 
 Links added directly to the <<query-response,properties>> section of a catalogue record can be
 added using the following patterns:
@@ -77,12 +77,12 @@ The following examples illustrate each of these linking patterns:
          {
             "rel" : "alternate",
             "title" : "This records as XML.",
-            "href" : "https://example.com/collections/MyCat/items/rec01.xml"
+            "href" : "https://example.org/collections/mycat/items/rec01.xml"
          },
          {
             "rel": "next",
             "title": "The next record in this result set.",
-            "href" : "https://example.com/collections/MyCat/items/rec02"
+            "href" : "https://example.org/collections/mycat/items/rec02"
          },
          .
          .
@@ -114,7 +114,7 @@ The following examples illustrate each of these linking patterns:
          {
             "rel" : "related",
             "title" : "A related record.",
-            "href" : "https://example.com/collections/YourCat/items/rec15"
+            "href" : "https://example.org/collections/yourcat/items/rec15"
          },
          {
             "rel": "license",
@@ -147,7 +147,7 @@ The following examples illustrate each of these linking patterns:
       "related": [
          {
 		      "title" : "A related record",
-		      "href" : "https://example.com/related-record-path/rec15"
+		      "href" : "https://example.org/related-record-path/rec15"
 	      }
       ],
       "license": {
@@ -173,7 +173,7 @@ The following examples illustrate each of these linking patterns:
       .
       .,
 
-      "related": ["https://example.com/related-record-path/rec15"],
+      "related": ["https://example.org/related-record-path/rec15"],
       "license": "https://creativecommons.org/licenses/by/2.0/",
       .
       .

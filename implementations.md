@@ -110,7 +110,7 @@ Single record:
 
 ## Esri Inc
 
-This Esri Geoportal Server 2.6.4 [public sandbox](http://geoss.esri.com/geoportal_264) has now been extended with a work-in-progress implementation of the OGC Records API.
+This Esri Geoportal Server 2.6.4 [public sandbox](https://geoss.esri.com/geoportal_264) has now been extended with a work-in-progress implementation of the OGC Records API.
 
 Landing page:
 

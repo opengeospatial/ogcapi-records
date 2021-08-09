@@ -166,7 +166,7 @@ Each of these documents recommends an emphasis on resource oriented APIs in futu
 
 In addition, the following metadata standards will be reviewed:
 
-   * Earth Observation Process and Application Discovery (https://portal.opengeospatial.org/files/?artifact_id=82290#EOPAD)
+   * Earth Observation Process and Application Discovery (https://portal.ogc.org/files/?artifact_id=82290#EOPAD)
 
    * OGC OpenSearch Extension for Earth Observation, OGC 13-026r8;
 
@@ -188,9 +188,9 @@ In addition, the following metadata standards will be reviewed:
 
    * ISO 19135-1:2015: Geographic information -- Procedures for item registration -- Part 1: Fundamentals
 
-   * CDB SWG Metadata Analysis Spreadsheet (https://portal.opengeospatial.org/files/?artifact_id=73769)
+   * CDB SWG Metadata Analysis Spreadsheet (https://portal.ogc.org/files/?artifact_id=73769)
 
-   * DRAFT OGC CDB Metadata Enhancements: Background and Recommendations (https://portal.opengeospatial.org/files/?artifact_id=73767)
+   * DRAFT OGC CDB Metadata Enhancements: Background and Recommendations (https://portal.ogc.org/files/?artifact_id=73767)
 
    * Security in your OpenAPI Specification (https://hackernoon.com/security-in-your-openapi-specification-94d081603950)
 
