@@ -1,18 +1,11 @@
-[[clause-core]]
-== Requirements Class "Core"
+[appendix]
+:appendix-caption: Annex
+== Common building blocks (Normative)
 
-[[core-overview]]
+[[common-overview]]
 === Overview
 
-include::requirements/requirements_class_core.adoc[]
-
-The `Core` Requirements Class defines the requirements for locating, understanding, and accessing Record resources. The `Core` Requirements Class is presented in five sections:
-
-. <<api-platform-section,API Platform>>: a set of common capabilities
-. <<collection-access,Collection Access>>: operations for accessing information about collections of records
-. <<records-access,Records Access>>: operations for accessing record resources
-. <<record-access,Record Access>>: operations for accessing a single record
-. <<general-section,General>>: general principles for use with this standard
+This annex describe the components of the OGC API Records that are derived for OGC API Common.
 
 [[core-dependencies-section]]
 === Dependencies
@@ -22,7 +15,7 @@ This standard standard is an extension of the OGC API - Common standard. Therefo
 include::requirements/core/REQ_api-common.adoc[]
 
 [[api-platform-section]]
-=== Platform
+=== API Platform
 
 OGC API - Common defines a set of shared capabilities which are applicable to any OGC Web API. Those capabilities provide the platform upon which resource-specific APIs can be built. This section describes those capabilities and any modifications needed to properly support Record resources.
 
@@ -123,10 +116,6 @@ Both techniques are required by API - Common.
 
 A successful response to the Conformance operation is a list of URLs. Each URL identifies an OGC Conformance Class for which this API claims conformance. The schema for this resource is defined in OGC API - Common and provided for reference in <<conformance-schema>>.
 
-include::requirements/core/REQ_conformance.adoc[]
-
-include::recommendations/core/PER_additional-conformance.adoc[]
-
 [#conformance-schema,reftext='Conformance Response Schema']
 .Conformance Response Schema
 [source,yaml]
@@ -147,8 +136,8 @@ include::../examples/json/conformance.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-[[collection-access]]
-=== Collection access
+[[collections-access]]
+=== Collections access
 
 OGC API - Common assumes that spatial resources are organized into collections.
 An API will expose one or more those collections. The OGC API - Common
@@ -734,4 +723,3 @@ include::requirements/core/REQ_query-param-value-double.adoc[]
 Special values conform to the following requirement. 
 
 include::requirements/core/REQ_query-param-value-special.adoc[]
-

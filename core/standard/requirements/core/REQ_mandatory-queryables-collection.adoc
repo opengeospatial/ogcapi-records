@@ -1,0 +1,7 @@
+[[req_core_mandatory-queryables-collection]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/per/core/mandatory-queryables-collection*
+
+A collection object SHALL contain all the mandatory properties listed in <<collection-properties-table>>.
+|===
