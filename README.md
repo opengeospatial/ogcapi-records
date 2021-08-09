@@ -126,10 +126,12 @@ The following is an example of a record collection encoded as JSON:
   },
   "license": "https://creativecommons.org/licenses/by/4.0/legalcode"
 }
+
+<<This is example is still being revised.>>
 ```
 
 ```
-Add an example of a collection object accessed through an API.
+<<Add an example of a collection object accessed as a static collection.  That is it includes N links to the records.>>
 ```
 
 ## The Records API
