@@ -20,7 +20,6 @@ The _**Record**_ is the atomic unit of information in a catalogue.  The record b
 
 The following is an example of a catalogue record encoded as GeoJSON:
 
-[source,JSON]
 ```
     {
       "id": "urn:uuid:dc9b6d52-932a-11ea-ad6f-823cf448c401",
