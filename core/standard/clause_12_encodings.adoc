@@ -81,7 +81,7 @@ include::requirements/html/REQ_html-conformance.adoc[]
 ==== Record
 
 Catalogue information that is only accessible in formats primarily intended to
-be read by machine, such as JSON or XML, have to issues:
+be read by machine, such as JSON or XML, have two issues:
 
 * The data is not discoverable using the most common mechanism for discovering information, that is the search engines of the Web;
 

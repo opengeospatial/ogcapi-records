@@ -94,7 +94,11 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_overview.adoc[]
 
-include::clause_7_core.adoc[]
+include::clause_7_record_core.adoc[]
+
+include::clause_7_record_collection.adoc[]
+
+include::clause_7_record_api.adoc[]
 
 // include::clause_8_collections.adoc[]
 
@@ -111,6 +115,8 @@ include::clause_14_media_types.adoc[]
 include::clause_15_security.adoc[]
 
 include::annex_ats.adoc[]
+
+include::annex_common.adoc[]
 
 include::annex_bibliography.adoc[]
 
