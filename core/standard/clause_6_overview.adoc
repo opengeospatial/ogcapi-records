@@ -256,6 +256,16 @@ OGC API - Record extends these core search capabilities to include:
 The <<clause-opensearch,second level of search capability>> extends the search API so that it is compatible with the https://portal.opengeospatial.org/files/?artifact_id=56866[OGC OpenSearch Geo and Time Extensions] (OpenSearch Geo).  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.
 
 The third level of search capability, defined by the <<clause-record-filter,_Filter using the Common Query Language_ Requirements Class>>, supports complex filter expressions using a rich set of logically connected query predicates.
+=======
+* a bounding box
+* a time instant or time period
+* keywords
+* free text
+* equality predicates (i.e. _property_=_value_) based on a subset of core queryables (e.g. by resource type, by external identifier)
+
+This specification also includes a <<clause-opensearch,conformance class>> that allows a catalogue to be searched using  https://portal.opengeospatial.org/files/?artifact_id=56866[OpenSearch Geo].  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.
+
+Finally, the <<clause-record-filter,_Filter using the Common Query Language_ Requirements Class>> may be used to support complex search capabilities using a rich set of logically connected search predicates where the user has full control over to query expression.
 
 [[dependencies-overview]]
 ==== Dependencies

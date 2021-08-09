@@ -7,10 +7,12 @@ The standardization targets of all conformance classes are "Web APIs".
 
 OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to OGC API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of OGC API - Common.
 
-This standard identifies nine (9) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+This standard identifies eleven (11) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
 
 The Requirements Classes for OGC API - Records are:
 
+* <<clause-static-catalogue,Static Catalogue>>
+* <<clause-searchable-catalogue,Searchable Catalogue>>
 * <<clause-record-core,Record>>
 * <<clause-record-collection,Record collection>>
 * <<clause-core-api,Record API>>
@@ -21,7 +23,11 @@ The Requirements Classes for OGC API - Records are:
 * <<requirements-class-atom-clause,ATOM-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 
-NOTE: Requirement class <<clause-record-code,Record>> is _**MANDATORY**_.
+The <<clause-static-catalogue,Static Catalogue>> conformance class defines the core requirements for a static catalogue.
+
+The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> are mandatory requirements classes that must be implemented for this conformance class.
+
+The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a searchable catalogue.  The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> and <<clause-core-api,Record API>> requirements are mandatory requirements classes that must be implemented for this conformance class.
 
 The <<clause-record-core,_Record_ Requirements Class>> defines the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended by communities of interest or to suite specific needs.
 

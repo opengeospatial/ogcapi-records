@@ -269,7 +269,9 @@ The requirements for handling unsuccessful requests are provided in <<http-respo
 The primary unit of information in a catalogue is a record. Tables <<core-queryables-record-table>> and <<core-queryables-resource-table>> in this clause present a generic set of properties, called _**core queryables**_, that may be included in a catalogue record.  The choice of which properties to include in the set of core queryables was primarily informed by the following record models:
 
 * The https://docs.ogc.org/is/12-168r6/12-168r6.html#17[core catalogue schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
+
 * the https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabulary (DCAT) - Version 2] specification.
+
 * and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specification.
 
 It is expected that the information necessary to populate the core queryables is readily available for any resource that is being registered in the catalogue.  
