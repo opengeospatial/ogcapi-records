@@ -32,9 +32,9 @@ XML structures documented in this standard are defined using XML Schema. These s
 Atom is an XML-based document format that describes lists of related resources known as "feeds". Feeds are composed of a number of items, known as "entries", each describing a resource using an extensible set of attached metadata.  For example, each entry has an identifier and a title.
 
 === Media Types
-A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <<api-records-mime-types>>.
+A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <<media-types-table>>.
 
-[reftext='{table-caption} {counter:table-num}']
+[#media-types-table,reftext='{table-caption} {counter:table-num}']
 .API - Records MIME Types
 [width="90%",cols="2,4"]
 |====
