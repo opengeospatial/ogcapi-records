@@ -3,6 +3,6 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/record-license*
 ^|A |The list of codes that can occur in records of a catalog for the property `properties.license` SHOULD be listed as enum values in the API definition of the record schema.
-^|B |The use of the identifiers from the SPDX License List is recommended, where applicable. 
+^|B |The use of the https://spdx.dev/ids[identifiers] from the <<SPDX,SPDX License List>> is recommended, where applicable. 
 ^|C |If multiple licenses apply, it is recommended to use "various" as a special value.
 |===
