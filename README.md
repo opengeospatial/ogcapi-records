@@ -78,7 +78,7 @@ A catalogue is a collection of records.  The `Record collection` building block 
 * include additional metadata for describing a catalogue (i.e. collection of records),
 * and to provide links for accessing the records of the collection.
 
-The following is an example of a collection encoded as JSON:
+The following is an example of a record collection encoded as JSON:
 
 ```
 {
