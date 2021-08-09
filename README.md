@@ -14,7 +14,7 @@ The OGC API - Records specification defines three main building blocks:
 
 ## The Record building block
 
-The _**Record**_ is the atomic unit of information in a catalogue.  The record building block defines the core schema of a catalogue record.  It includes a small number of properties that are common across all resource types.  It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
+The _**Record**_ is the atomic unit of information in a catalogue.  The record building block defines the core schema of a catalogue record.  It includes a small number of properties that are common across all resource types.  It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON features and HTML.
 
 The following is an example of a catalogue record encoded as GeoJSON:
 
