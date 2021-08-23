@@ -18,7 +18,7 @@
     "sar:type": "RAW",
     "sar:absolute_orbit": 86256,
     "sar:relative_orbit": 163,
-    "associations": {
+    "associations": [
       {
         "rel": "enclosure",
         "href": "https://data.eodms-sgdot.nrcan-rncan.gc.ca/api/dhus/v1/products/Radarsat1/product?uuid=ae157041-67fa-461a-b555-45280499d9bf",
@@ -31,7 +31,7 @@
         "href": "https://www.eodms-sgdot.nrcan-rncan.gc.ca/wes/getObject?ObjectType=Thumbview&collectionId=Radarsat1&FeatureID=SERVICE-RSAT1_001-000000000000000000-5025460",
         "type": "image/jpeg"
       }
-    }
+    ]
   },
   "links": [
     {
