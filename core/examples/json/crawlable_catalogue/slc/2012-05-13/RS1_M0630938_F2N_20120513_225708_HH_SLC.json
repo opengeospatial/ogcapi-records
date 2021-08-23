@@ -41,21 +41,21 @@
     "sar:pass_direction": "Ascending",
     "sar:type": "SLC",
     "sar:absolute_orbit": 86256,
-    "sar:relative_orbit": 163
-  },
-  "associations": {
-    {
-      "rel": "preview",
-      "href": "https://www.eodms-sgdot.nrcan-rncan.gc.ca/wes/getObject?ObjectType=Thumbview&collectionId=Radarsat1&FeatureID=SERVICE-RSAT1_001-000000000000000000-4956110",
-      "title": "Thumbnail",
-      "type": "image/jpeg"
-    },
-    {
-      "rel": "enclosure",
-      "href": "https://data.eodms-sgdot.nrcan-rncan.gc.ca/api/dhus/v1/products/Radarsat1/product?uuid=8f72f086-292e-4fe3-91e9-c00a1d2eca4d",
-      "title": "Download",
-      "type": "application/zip"
-    }
+    "sar:relative_orbit": 163,
+    "associations": [
+      {
+        "rel": "preview",
+        "href": "https://www.eodms-sgdot.nrcan-rncan.gc.ca/wes/getObject?ObjectType=Thumbview&collectionId=Radarsat1&FeatureID=SERVICE-RSAT1_001-000000000000000000-4956110",
+        "title": "Thumbnail",
+        "type": "image/jpeg"
+      },
+      {
+        "rel": "enclosure",
+        "href": "https://data.eodms-sgdot.nrcan-rncan.gc.ca/api/dhus/v1/products/Radarsat1/product?uuid=8f72f086-292e-4fe3-91e9-c00a1d2eca4d",
+        "title": "Download",
+        "type": "application/zip"
+      }
+    ]
   },
   "links": [
     {
