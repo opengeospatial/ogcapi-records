@@ -6,7 +6,7 @@
 
 OGC API - Records provides discovery and access to metadata about geospatial resources (e.g. data, services, ML models, etc.).  Having found a record describing a resource, binding information contained therein allows the discovered resources to be accessed.
 
-The OGC API - Records specification defines three main building blocks:
+The OGC API - Records specification being developed in this repository defines three main building blocks:
 
 * Record
 * Record collection
@@ -16,9 +16,11 @@ The OGC API - Records specification defines three main building blocks:
 
 The _**Record**_ is the atomic unit of information in a catalogue.
 
+A record provides a description (i.e. metadata) about a resource that the provider of the resource wishes to make discoverable.
+
 The record building block defines the core schema of a catalogue record.  It includes a small number of properties that are common across all resource types.  The following table lists the core set of record properties (called queryables):
 
-|Queryables |Requirement |Description                       
+|Queryables |Requirement |Description
 |-----------|------------|----------------------------------
 |type |M |The nature or genre of the resource.
 |title |M |A human-readable name given to the resource.
@@ -98,12 +100,12 @@ The following is an example of a catalogue record encoded as GeoJSON:
 
 ## The Record collection building block
 
-A catalogue is a collection of records.  The `Record collection` building block extends the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+A collection of related records is called a catalogue.  The `Record collection` building block extends the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
 
 * include additional metadata for describing a catalogue (i.e. collection of records),
 * and to provide links for accessing the records of the collection.
 
-The following is an example of a record collection encoded as JSON:
+The following is an example of a searchable record collection encoded as JSON:
 
 ```
 {
@@ -155,8 +157,75 @@ The following is an example of a record collection encoded as JSON:
 <<This is example is still being revised.>>
 ```
 
+The following is an example of a crawlable record collection encoded as JSON.  In this case, it is a catalogue of other catalogues of RADARSAT Earth observation products.
+
 ```
-<<Add an example of a collection object accessed as a static collection.  That is it includes N links to the records.>>
+{
+  "id": "radarsat-1",
+  "title": "RADARSAT-1 Open Data",
+  "description": "Launched in November 1995, RADARSAT-1 provided Canada and the world with an operational radar satellite system capable of timely delivery of large amounts of data. RADARSAT-1 used a synthetic aperture radar (SAR) sensor to image the Earth at a single microwave frequency of 5.3 GHz, in the C band (wavelength of 5.6 cm). This was a Canadian-led project involving the Canadian federal government, the Canadian provinces, the United States, and the private sector. RADARSAT-1 reached end of service on March 29, 2013. In order to download RADARSAT-1 datasets, credentials for the Earth Observation Data Management System are required.",
+  "extent": {
+    "spatial": [ -180, -90, 180, 90 ],
+    "temporal": [ "1995-11-04T14:22:00Z", "2013-03-29T00:00:00Z" ]
+  },
+  "itemType": "collection",
+  "keywords": [ "sar", "eo", "radar", "radarsat", "canada" ],
+  "language": "en-CA",
+  "publisher": {
+    "organizationName": "Canadian Space Agency (CSA)",
+    "contactInfo": {
+      "onlineResource": {
+        "href": "http://www.asc-csa.gc.ca/eng/satellites/radarsat1/Default.asp"
+      }
+    },
+    "role": {
+      "name": "producer"
+    }
+  },
+  "license": "proprietary",
+  "properties": {
+    "sar:platform": "RADARSAT-1",
+    "sar:constellation": "RADARSAT",
+    "sar:instrument": "C-SAR",
+    "sar:frequency_band": "C",
+    "sar:center_wavelength": 5.6,
+    "sar:center_frequency": 5.3,
+    "sar:polarization": [ "HH" ],
+    "sar:observation_direction": "right"
+  },
+  "links": [
+    {
+      "href": "https://open.canada.ca/en/open-government-licence-canada",
+      "rel": "license",
+      "type": "text/html",
+      "title": "license"
+    },
+    {
+      "rel": "item",
+      "href": "slc/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "raw/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "sgf/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "sgx/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "scn/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "scw/collection.json"
+    }
+  ]
+}
 ```
 
 ## The Records API
@@ -171,24 +240,24 @@ The search capability of the Records API is organized into various levels of com
 
 There are a number of ways that records can be deployed as a "collection of records" or a catalogue.  The OGC API Records specification envisions two deployment patterns using the building blocks described above:
 
-* a catalogue deployed as a static collection of records
+* a catalogue deployed as a crawlable collection of records
 * a catalogue deployed as a searchable endpoint(s)
 
-### Static Catalogue
+### Crawlable Catalogue
 
-The static deployment pattern involves creating a record as a file to describe each discoverable resource.  Each record is then deployed to some web accessible location (e.g. S3 bucket, web accessible directory, etc.), probably co-located with the resource the record is describing.  Sets of related records are identified by creating a _Record collection_ object, another file deployed to some web accessible location.  The record collection object provides metadata about this collection of records (i.e. about this catalogue) and also includes hypermedia controls (i.e. links, one per record) that allow navigation to the records of the collection.
+The crawlable catalogue deployment pattern involves creating a file that contains a record that describes each discoverable resource.  Each file (i.e. record) is then deployed to some web accessible location (e.g. S3 bucket, web accessible directory, etc.), usually co-located with the resource the record is describing.  Sets of related records are identified by creating a _Record collection_ object, another file also deployed to some web accessible location.  The record collection object provides metadata about this collection of records (i.e. about this catalogue) and also includes hypermedia controls (i.e. links, one per record) that allow navigation to the records of the collection.
 
 This deployment pattern imposes a very low implementation burden because it relies on HTTP to do most of the work of accessing the records of a catalogue.  This makes it easy to deploy and to navigate to the records using a browser or by search engine crawlers.  However, complex searches using logically connect spatio-temporal and/or scalar predicates are not easily supported by this deployment pattern.
 
 ```
-add an image illustrating a static catalogue
+add an image illustrating a crawlable catalogue
 ```
 
 ### Searchable catalogue
 
-As is the case for a static catalogue, in a searchable catalogue deployment, records are created to describe discoverable resources.  Collections of these records, rather than being deployed into web-space, are typically (but not necessarily) stored in some back end data management system such as a NO-SQL database or an RDBMS and access to the records is provided through the Records API.  The API also makes use of hypermedia controls (i.e. links) that allow navigation to records in a manner similar to that in the static deployment case.  Information about the catalogue (i.e. the record collection) itself is also accessible through the API.  
+As is the case for a crawlable catalogue, in a searchable catalogue deployment, records are created to describe discoverable resources.  Collections of these records, rather than being deployed into web-space, are typically (but not necessarily) stored in some back end data management system such as a NO-SQL database or an RDBMS and access to the records is provided through the Records API.  The API also makes use of hypermedia controls (i.e. links) that allow navigation to records in a manner similar to that in the crawlable deployment case.  Information about the catalogue (i.e. the record collection) itself is also accessible through the API.  
 
-Unlike the static deployment case, the API also provides search capability that allows subsets of records to be identified and accessed based on client-supplied criteria such as a bounding box, a data range or a free text search.  
+Unlike the crawlable deployment case, the API also provides search capability that allows subsets of records to be identified and accessed based on client-supplied criteria such as a bounding box, a data range or a free text search.  
 
 The following examples illustrate accessing the catalogue through the Records API:
 

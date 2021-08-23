@@ -1,0 +1,66 @@
+{
+  "id": "radarsat-1",
+  "title": "RADARSAT-1 Open Data",
+  "description": "Launched in November 1995, RADARSAT-1 provided Canada and the world with an operational radar satellite system capable of timely delivery of large amounts of data. RADARSAT-1 used a synthetic aperture radar (SAR) sensor to image the Earth at a single microwave frequency of 5.3 GHz, in the C band (wavelength of 5.6 cm). This was a Canadian-led project involving the Canadian federal government, the Canadian provinces, the United States, and the private sector. RADARSAT-1 reached end of service on March 29, 2013. In order to download RADARSAT-1 datasets, credentials for the Earth Observation Data Management System are required.",
+  "extent": {
+    "spatial": [ -180, -90, 180, 90 ],
+    "temporal": [ "1995-11-04T14:22:00Z", "2013-03-29T00:00:00Z" ]
+  },
+  "itemType": "collection",
+  "keywords": [ "sar", "eo", "radar", "radarsat", "canada" ],
+  "language": "en-CA",
+  "publisher": {
+    "organizationName": "Canadian Space Agency (CSA)",
+    "contactInfo": {
+      "onlineResource": {
+        "href": "http://www.asc-csa.gc.ca/eng/satellites/radarsat1/Default.asp"
+      }
+    },
+    "role": {
+      "name": "producer"
+    }
+  },
+  "license": "proprietary",
+  "properties": {
+    "sar:platform": "RADARSAT-1",
+    "sar:constellation": "RADARSAT",
+    "sar:instrument": "C-SAR",
+    "sar:frequency_band": "C",
+    "sar:center_wavelength": 5.6,
+    "sar:center_frequency": 5.3,
+    "sar:polarization": [ "HH" ],
+    "sar:observation_direction": "right"
+  },
+  "links": [
+    {
+      "href": "https://open.canada.ca/en/open-government-licence-canada",
+      "rel": "license",
+      "type": "text/html",
+      "title": "license"
+    },
+    {
+      "rel": "item",
+      "href": "slc/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "raw/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "sgf/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "sgx/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "scn/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "scw/collection.json"
+    }
+  ]
+}

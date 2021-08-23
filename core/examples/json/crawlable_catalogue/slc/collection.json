@@ -1,0 +1,32 @@
+{
+  "id": "slc",
+  "itemType": "record",
+  "title": "Single Look Complex Product",
+  "description": "The Single Look Complex (SLC) product differs from the SGF and SGX products in that interpolation of the slant range coordinates is not performed into ground range coordinates, and each image pixel is represented by complex I and Q numbers to preserve the magnitude and phase information. SLC images can be generated from any single beam mode. SLC image data is georeferenced as for SGF or SGX data, but the range coordinate is in radar slant range rather than ground range. Pixel sizes are variable and governed by the radar range and azimuth sampling rates. All processing is single look; hence SLC products always provide imagery which utilises the full available radar resolution, regardless of beam mode. Since SLC products retain the phase information in the image data, they are useful in applications such as pass-to-pass SAR interferometry.",
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "2012-05-13/RS1_M0630938_F2N_20120513_225708_HH_SLC.json"
+    },
+    {
+      "rel": "item",
+      "href": "2012-06-14/RS1_M0634796_F3F_20120614_110317_HH_SLC.json"
+    },
+    {
+      "rel": "item",
+      "href": "2012-06-14/RS1_M0634795_F3F_20120614_110311_HH_SLC.json"
+    },
+    {
+      "rel": "item",
+      "href": "2012-10-12/RS1_M0634798_F3F_20121012_110325_HH_SLC.json"
+    },
+    {
+      "rel": "item",
+      "href": "2012-10-12/RS1_M0634799_F3F_20121012_110331_HH_SLC.json"
+    }
+  ]
+}

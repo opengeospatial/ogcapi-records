@@ -1,0 +1,79 @@
+{
+  "type": "Feature",
+  "id": "RS1_M0634796_F3F_20120614_110317_HH_SLC",
+  "bbox": [
+    -75.940253,
+    45.366822,
+    -75.134375,
+    46.182722
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -75.769983,
+          46.182722
+        ],
+        [
+          -75.134375,
+          46.11125
+        ],
+        [
+          -75.313256,
+          45.366822
+        ],
+        [
+          -75.940253,
+          45.438478
+        ],
+        [
+          -75.769983,
+          46.182722
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "RS1_M0634796_F3F_20120614_110317_HH_SLC",
+    "created": "2012-06-14T11:03:17.413000Z",
+    "license": "ula",
+    "sar:instrument_mode": "F3",
+    "sar:pass_direction": "Descending",
+    "sar:type": "SLC",
+    "sar:absolute_orbit": 86706,
+    "sar:relative_orbit": 270,
+    "assets": [
+      {
+        "rel": "preview",
+        "title": "Thumbnail",
+        "href": "https://www.eodms-sgdot.nrcan-rncan.gc.ca/wes/getObject?ObjectType=Thumbview&collectionId=Radarsat1&FeatureID=SERVICE-RSAT1_001-000000000000000000-5024208",
+        "type": "image/jpeg"
+      },
+      {
+        "rel": "enclosure",
+        "title": "Download",
+        "href": "https://data.eodms-sgdot.nrcan-rncan.gc.ca/api/dhus/v1/products/Radarsat1/product?uuid=caf0c1d7-ad78-4841-a891-8c992334808f",
+        "type": "application/zip"
+      },
+      {
+        "rel": "about",
+        "title": "Product Description",
+        "href": "https://radarstac.s3.amazonaws.com/stac/radarsat-1/RS1_M0634796_F3F_20120614_110317_HH_SLC/order_key.txt",
+        "type": "text/plain"
+      },
+      {
+        "rel": "license",
+        "title": "User License Agreement",
+        "href": "https://radarstac.s3.amazonaws.com/stac/radarsat-1/RS1_M0634796_F3F_20120614_110317_HH_SLC/UserLicenseAgreement.pdf",
+        "type": "application/pdf"
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json"
+    }
+  ]
+}
