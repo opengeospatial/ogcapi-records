@@ -6,7 +6,7 @@
 
 OGC API - Records provides discovery and access to metadata about geospatial resources (e.g. data, services, ML models, etc.).  Having found a record describing a resource, binding information contained therein allows the discovered resources to be accessed.
 
-The OGC API - Records specification being developed in this repository defines three main building blocks:
+The OGC API - Records specification being developed in this repository defines three main **building blocks**:
 
 * Record
 * Record collection
