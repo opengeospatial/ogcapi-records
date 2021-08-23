@@ -243,6 +243,8 @@ There are a number of ways that records can be deployed as a "collection of reco
 * a catalogue deployed as a crawlable collection of records
 * a catalogue deployed as a searchable endpoint(s)
 
+:warning: In STAC the terms _static_ and _dynamic_ are used to describe these deployment patterns.  However, a _static_ catalogue is not really static since add additional records can be added at any time.  As a result, it was decided to try some different, more descriptive, terminology.  The terms _crawlable_ and _searchable_ have been proposed and are used in this README and in the OGC API Records specification.  Other proposed terms include _basic_ and _searchable_.  The SWG decided to try out _static_ and _searchable_ for now but these terms are subject to change based on feedback.
+
 ### Crawlable Catalogue
 
 The crawlable catalogue deployment pattern involves creating a file that contains a record that describes each discoverable resource.  Each file (i.e. record) is then deployed to some web accessible location (e.g. S3 bucket, web accessible directory, etc.), usually co-located with the resource the record is describing.  Sets of related records are identified by creating a _Record collection_ object, another file also deployed to some web accessible location.  The record collection object provides metadata about this collection of records (i.e. about this catalogue) and also includes hypermedia controls (i.e. links, one per record) that allow navigation to the records of the collection.
