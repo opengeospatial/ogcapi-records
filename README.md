@@ -243,7 +243,7 @@ There are a number of ways that records can be deployed as a "collection of reco
 * a catalogue deployed as a crawlable collection of records
 * a catalogue deployed as a searchable endpoint(s)
 
-:warning: In STAC the terms _static_ and _dynamic_ are used to describe these deployment patterns.  However, a _static_ catalogue is not really static since add additional records can be added at any time.  As a result, it was decided to try some different, more descriptive, terminology.  The terms _crawlable_ and _searchable_ have been proposed and are used in this README and in the OGC API Records specification.  Other proposed terms include _basic_ and _searchable_.  The SWG decided to try out _static_ and _searchable_ for now but these terms are subject to change based on feedback.
+:warning: In STAC the terms _static_ and _dynamic_ are used to describe these deployment patterns.  However, a _static_ catalogue is not really static since additional records can be added at any time.  As a result, it was decided to try some different, more descriptive, terminology.  The terms _crawlable_ and _searchable_ have been proposed and are used in this README and in the OGC API Records specification.  Other proposed terms include _basic_ and _searchable_.  The SWG decided to try out _crawlable_ and _searchable_ for now but these terms are subject to change based on feedback.
 
 ### Crawlable Catalogue
 
