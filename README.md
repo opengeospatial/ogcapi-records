@@ -100,7 +100,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
 
 ## The Record collection building block
 
-A collection of related records is called a catalogue.  The `Record collection` building block extends the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+A collection of related records is called a catalogue.  The `Record collection` building block [extends](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/extendedCollectionInfo.yaml) the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
 
 * include additional metadata for describing a catalogue (i.e. collection of records),
 * and to provide links for accessing the records of the collection.
