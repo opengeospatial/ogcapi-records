@@ -9,7 +9,7 @@ oneOf:
       Identification of, and means of communication with, person responsible
       for the resource.
     properties:
-      individial-name:
+      individualName:
         type: string
         description: |-
           Name of the responsible person.  Recommend surname, given name,
@@ -55,16 +55,16 @@ oneOf:
                   The key name indicates the type of address (e.g. office,
                   home, etc.). The value is the address itself.
                 properties:
-                  delivery-point:
+                  deliveryPoint:
                     type: string
                     description: Address line for the location.
                   city:
                     type: string
                     description: City for the location.
-                  administrative-area:
+                  administrativeArea:
                     type: string
                     description: State or province of the location.
-                  postal-code:
+                  postalCode:
                     type: string
                     description: ZIP or other postal code.
                   country:
