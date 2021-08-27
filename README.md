@@ -141,7 +141,7 @@ The following is an example of a searchable record collection encoded as JSON:
   "language": "en-US",
   "updated": "2019-10-10T15:45:19Z",
   "publisher": {
-     "individual-name": "Joe Smith",
+     "individualName": "Joe Smith",
      "organizationName": "pyGeoAPI",
      "positionName": "developer",
      "contactInfo": {
