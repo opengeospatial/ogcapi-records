@@ -62,7 +62,7 @@ allOf:
             description: |-
                An identifier for the knowledge organization system used
                to classify the catalogue.  It is recommended that the
-               identifier by a resolvable URI.
+               identifier be a resolvable URI.
     contactPoint:
       $ref: responsibleParty.yaml
       description: |-

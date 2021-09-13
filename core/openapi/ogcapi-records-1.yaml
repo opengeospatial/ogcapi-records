@@ -464,7 +464,19 @@ components:
                 An identifier for the resource assigned by an external (to
                 the catalogue) entity.
               items:
-                type: string
+                type: object
+                properties:
+                  scheme:
+                    type: string
+                    description: |-
+                       An identifier for the knowledge organization system used
+                       to classify the resource.  It is recommended that the
+                       identifier be a resolvable URI.
+                  value:
+                    type: string
+                    description: The value of the identifier.
+                required:
+                  - value
             created:
               type: string
               description: Date of creation of the resource.
@@ -492,7 +504,7 @@ components:
                     description: |-
                        An identifier for the knowledge organization system used
                        to classify the resource.  It is recommended that the
-                       identifier by a resolvable URI.
+                       identifier be a resolvable URI.
                   concepts:
                     type: array
                     description: |-

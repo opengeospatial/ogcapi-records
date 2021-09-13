@@ -21,7 +21,12 @@
             "saoz"
         ],
         "language": "en",
-        "externalId": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
+        "externalId": [
+            {
+                "scheme": "WMO:WIS",
+                "value": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"
+            }
+        ],
         "created": "2015-01-23",
         "updated": "2015-01-23",
         "publisher": "https://woudc.org",
