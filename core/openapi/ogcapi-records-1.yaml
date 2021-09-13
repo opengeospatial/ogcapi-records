@@ -408,6 +408,8 @@ components:
           type: string
           description: A unique identifier of the catalogue record.
           format: uri
+        conformsTo:
+          $ref: "#/components/schemas/confClasses/properties/conformsTo"
         type:
           type: string
           enum:
