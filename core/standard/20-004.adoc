@@ -95,29 +95,33 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_overview.adoc[]
 
-include::clause_7_record_core.adoc[]
+include::clause_7_crawlable_catalogue.adoc[]
 
-include::clause_7_record_collection.adoc[]
+include::clause_8_searchable_catalogue.adoc[]
 
-include::clause_7_record_api.adoc[]
+include::clause_9_record_core.adoc[]
 
-// include::clause_8_collections.adoc[]
+include::clause_10_record_collection.adoc[]
 
-include::clause_9_sorting.adoc[]
+include::clause_11_record_api.adoc[]
 
-include::clause_10_record-filter.adoc[]
+// include::clause_12_collections.adoc[]
 
-include::clause_11_opensearch.adoc[]
+include::clause_13_sorting.adoc[]
 
-include::clause_12_encodings.adoc[]
+include::clause_14_record-filter.adoc[]
 
-include::clause_14_media_types.adoc[]
+include::clause_15_opensearch.adoc[]
 
-include::clause_15_security.adoc[]
+include::clause_16_encodings.adoc[]
 
-include::annex_ats.adoc[]
+include::clause_17_media_types.adoc[]
+
+include::clause_18_security.adoc[]
 
 include::annex_common.adoc[]
+
+include::annex_ats.adoc[]
 
 include::annex_bibliography.adoc[]
 

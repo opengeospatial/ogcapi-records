@@ -9,7 +9,7 @@ OGC API - Records provides discovery and access to metadata about geospatial res
 The OGC API - Records specification being developed in this repository defines three main **building blocks**:
 
 * Record
-* Record collection
+* Collection (Record and other)
 * Records API
 
 ## The Record building block
@@ -98,12 +98,14 @@ The following is an example of a catalogue record encoded as GeoJSON:
     }
 ```
 
-## The Record collection building block
+## The Collection building block
 
-A collection of related records is called a catalogue.  The `Record collection` building block [extends](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/extendedCollectionInfo.yaml) the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+The Collection building block is used to describe a collection of resources.  This can be a collection of related records (also called a catalogue) but it can also be a collection of any other type of resource (e.g. feature, coverage, etc.).
 
-* include additional metadata for describing a catalogue (i.e. collection of records),
-* and to provide links for accessing the records of the collection.
+The `Collection` building block [extends](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/extendedCollectionInfo.yaml) the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+
+* include additional metadata to enhanced the description of a collection 
+* and, to provide links for accessing the items of the collection.
 
 The following is an example of a searchable record collection encoded as JSON:
 
@@ -156,6 +158,8 @@ The following is an example of a searchable record collection encoded as JSON:
 
 <<This is example is still being revised.>>
 ```
+
+NOTE: In OGC API - Features and OGC API - Common, the link relation `items` is used to point to a searchable endpoint for accessing the resources of a collections.  This endpoint should, more correctly, use the IANA link relation `search` since the `/items` endpoint is really a search endpoint returnings subsets of resource depending to query parameters specified at the endpoint.
 
 The following is an example of a crawlable record collection encoded as JSON.  In this case, it is a catalogue of other catalogues of RADARSAT Earth observation products.
 
@@ -230,11 +234,15 @@ The following is an example of a crawlable record collection encoded as JSON.  I
 
 ## The Records API
 
-The OGC API - Records specification defines a core access and search API by extending the OGC API - Features - Part 1: Core specification.
+The OGC API - Records specification defines a core catalogue access and search API by extending OGC API - Common - Part 2: Geospatial Data and the OGC API - Features - Part 1: Core APIs.
 
-OGC API - Features specifies well-defined access paths to information about the collection (i.e. the catalogue) and to the records of the collection.  The Features API also defines a basic search capability that is extended by the Records API to allow subsets of records to be identified and accesses based on client-supplied search criteria such as a bounding box, a data range or a free text search.
+OGC API - Common specifies a well-defined access path to information about collections (i.e. `/collections`).  OGC API - Features specifies a well-defined access path to the records (i.e. `/collections/{collectionId}/items`) of a catalogue (i.e. a record collection).  OGC API - Records extended each of these endpoints with additional query parameters that enable catalogue search capabilities.
 
-The search capability of the Records API is organized into various levels of complexity starting from simple spatial, temporal, keyword and type search predicates (i.e. `bbox=`, `datetime=`, `q=`, `type=`) that can be combined using a logical `AND` all the way up to a full blown predicate language (based on OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)), that supports complex filter expressions of logically connected query predicates.
+In the first case this allows deployments with a large number of collections to be searched as a sort of mini-catalogues of the deployment's resource collections (i.e. features, coverages, etc.). 
+
+In the latter case, this allows collections of records (i.e. catalogues) to be searched.
+
+The search capabilities of the Records API are organized into various levels of complexity starting from simple spatial, temporal, keyword and type search predicates (i.e. `bbox=`, `datetime=`, `q=`, `type=`) that can be combined using a logical `AND` all the way up to a full blown predicate language (based on OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)), that supports complex filter expressions of logically connected query predicates.
 
 ## Deployment patterns
 
@@ -242,6 +250,8 @@ There are a number of ways that records can be deployed as a "collection of reco
 
 * a catalogue deployed as a crawlable collection of records
 * a catalogue deployed as a searchable endpoint(s)
+
+The OGC API Records specification also envisions the `/collections` endpoint acting as a special case of the searchable catalogue endpoint allowing large deployments of resource collections to be searched.
 
 :warning: In STAC the terms _static_ and _dynamic_ are used to describe these deployment patterns.  However, a _static_ catalogue is not really static since additional records can be added at any time.  As a result, it was decided to try some different, more descriptive, terminology.  The terms _crawlable_ and _searchable_ have been proposed and are used in this README and in the OGC API Records specification.  Other proposed terms include _basic_ and _searchable_.  The SWG decided to try out _crawlable_ and _searchable_ for now but these terms are subject to change based on feedback.
 

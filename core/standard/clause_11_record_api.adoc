@@ -37,7 +37,9 @@ See: <<collection-info-operation,Collection Information operation>>.
 
 See: <<collection-info-response,Collection Information response>>.
 
-T.B.D.  Add requirments here for the links section.  Basically, there MUST be at least one link with `rel=items` that points the access/search endpoint of the API. Although, now that I think of it, I believe features includes this requirement.
+T.B.D.
+
+Add requirements here for the links section.  Basically, there MUST be at least one link with `rel=items` that points the access/search endpoint of the API. Although, now that I think of it, I believe features includes this requirement.
 
 ==== Error situations
 

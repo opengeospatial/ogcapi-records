@@ -11,7 +11,7 @@ This standard identifies eleven (11) Conformance Classes. The Conformance Classe
 
 The Requirements Classes for OGC API - Records are:
 
-* <<clause-static-catalogue,Static Catalogue>>
+* <<clause-crawlable-catalogue,Crawlable Catalogue>>
 * <<clause-searchable-catalogue,Searchable Catalogue>>
 * <<clause-record-core,Record>>
 * <<clause-record-collection,Record collection>>
@@ -23,17 +23,15 @@ The Requirements Classes for OGC API - Records are:
 * <<requirements-class-atom-clause,ATOM-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 
-The <<clause-static-catalogue,Static Catalogue>> conformance class defines the core requirements for a static catalogue.
+The <<clause-crawlable-catalogue,Crawlable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of web-accessible static files.
 
-The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> are mandatory requirements classes that must be implemented for this conformance class.
-
-The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a searchable catalogue.  The <<clause-record-core,Record>>, <<clause-record-collection,Record collection>> and <<clause-core-api,Record API>> requirements are mandatory requirements classes that must be implemented for this conformance class.
+The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of records that is searchable via an API.
 
 The <<clause-record-core,_Record_ Requirements Class>> defines the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended by communities of interest or to suite specific needs.
 
-The <<clause-record-collection,_Record Collection_ Requirements Class>> defines the metadata used to describe a collection of records.
+The <<clause-record-collection,_Record Collection_ Requirements Class>> defines the metadata used to describe a collection of related records.
 
-The <<clause-record-api,_Records API_ Requirement Class>> defines an API for searching collections of records based on logically connected predicates they can include spatial and/or temporal predicates.  The Records API is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to for OGC API Records.
+The <<clause-record-api,_Records API_ Requirement Class>> defines an API for searching collections of records based on logically connected predicates that can include spatial and/or temporal predicates.  The Records API is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API Records.
 
 The <<clause-sorting,_Sorting_ Requirements Class>> defines the requirements to support sorting of records in a query response.
 

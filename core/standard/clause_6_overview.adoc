@@ -1,7 +1,17 @@
 [[overview]]
 == Overview
 
-=== tl;dr
+=== tl;dr crawlable catalogue
+
+. In order to implement a catalogue where records are stored as individual files in one or more web-accessible locations and can be crawled by simply following hypermedia controls:
+
+* for each discoverable resource create a file that contains a summary description of the resource using  the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>
+* extend the record schema to enrich its content as necessary
+* to make the resource discoverable, place each record file in a web-accessible location, preferably co-located (e.g. in the same directory or object store location) with the resource that the record is describing
+* optionally create a file containing a description of a <<record-collection-overview,_collection_>> of related records
+* also place the collection file in a web-accessible location
+
+=== tl;dr searchable catalogue
 
 . In order to implement a catalogue where records are stored in some backend database and are accessed through an access/search API:
 
@@ -9,13 +19,6 @@
 * implement the parameters defined in <<core-query-parameters-table>>,
 * implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
 * extend the record schema to enrich its content as necessary
-
-. In order to implement a static catalogue where records are stored as individual files and can be crawled by simply following hypermedia controls:
-
-* implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
-* extend the record schema to enrich its content as necessary
-* to make a resource discoverable, place a record file in an accessibles location, preferably co-located (e.g. in the same directory or object store location) with the resource that the record is describing
-* optionally define a _collection_ resource that aggregates a set of related _records_
 
 [[general-overview]]
 === General
@@ -36,11 +39,11 @@ This standard defines three building blocks that may be used to deploy a catalog
 
 Using these building blocks a catalogue can be deployed as:
 
-* a set of static records that can be crawled by a search engine crawler or by using (for example) a web browser
+* a set of web-accessible records that can be crawled by a search engine crawler or by using (for example) a web browser
 
 or as:
 
-* a searchable catalogue with records accessed through an API/
+* a searchable catalogue with records accessible through an API/
 
 [[record-schema-overview]]
 === Record Schema
@@ -94,7 +97,7 @@ Although this document does not mandate any particular encoding for a record, th
 
 Other encodings are allowed but are not described in this document.
 
-Accessing collections of records deployed as static files is described in the <<static-record-deployment,Static records deployment>> clause.
+Accessing collections of records deployed as static files is described in the <<crawlable-record-deployment,Crawlable records deployment>> clause.
 
 Accessing collections of records through the API defined in this document is described in the <<records-access,Records access>> and <<record-access,Record access>> sections.
 
