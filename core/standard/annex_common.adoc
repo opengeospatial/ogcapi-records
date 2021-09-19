@@ -6,7 +6,7 @@
 [[common-overview]]
 === Overview
 
-This annex describe the components of the OGC API Records that are derived for OGC API Common.
+This annex describes the components of the OGC API Records that are derived for OGC API Common.
 
 [[core-dependencies-section]]
 === Dependencies
