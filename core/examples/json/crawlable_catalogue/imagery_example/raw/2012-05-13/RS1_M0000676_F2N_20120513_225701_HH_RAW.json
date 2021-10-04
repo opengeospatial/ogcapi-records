@@ -1,0 +1,43 @@
+{
+  "id": "RS1_M0000676_F2N_20120513_225701_HH_RAW",
+  "type": "Feature",
+  "bbox": [ -75.691, 45.4198, -75.689, 45.4218 ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [ [ -75.691, 45.4218 ], [ -75.689, 45.4218 ],
+        [ -75.689, 45.4198 ], [ -75.691, 45.4198 ],
+        [ -75.691, 45.4218 ] ] ]
+  },
+  "properties": {
+    "type": "radarsat-1",
+    "title": "RS1_M0000676_F2N_20120513_225701_HH_RAW",
+    "created": "2012-05-13T22:57:01.895000Z",
+    "sar:instrument_mode": "F2",
+    "sar:pass_direction": "Ascending",
+    "sar:type": "RAW",
+    "sar:absolute_orbit": 86256,
+    "sar:relative_orbit": 163,
+    "associations": [
+      {
+        "rel": "enclosure",
+        "href": "https://data.eodms-sgdot.nrcan-rncan.gc.ca/api/dhus/v1/products/Radarsat1/product?uuid=ae157041-67fa-461a-b555-45280499d9bf",
+        "title": "Download",
+        "type": "application/zip"
+      },
+      {
+        "rel": "preview",
+        "title": "Thumbnail",
+        "href": "https://www.eodms-sgdot.nrcan-rncan.gc.ca/wes/getObject?ObjectType=Thumbview&collectionId=Radarsat1&FeatureID=SERVICE-RSAT1_001-000000000000000000-5025460",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "title": "radarsat-1"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[[req_local-resources-catalogue_updated]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/updated*
+^|A |The `updated` property shall be present in the collection information object.
+^|B |The value of the `updated` property shall conform to the date-time production of https://tools.ietf.org/html/rfc3339#section-5.6[RFC 3339].
+^|B |The value of the `updated` property shall indicate the  most recent date on which the collection was changed.
+|===

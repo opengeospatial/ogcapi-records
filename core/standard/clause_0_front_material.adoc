@@ -2,7 +2,15 @@
 
 The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, etc.), but define resource-centric APIs that take advantage of modern web development practices. 
 
-This document defines the OGC API for Records. A Record is a way of making a resource discoverable. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, assets, services or widgets. OGC API - Records provides a way to query or browse a curated set of Records known as a catalogue. 
+This document defines the OGC API for Records.
+
+A Record is a way of making a resource discoverable by providing summary information about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, assets, machine models, services, widgets, etc.
+
+OGC API - Records provides a way to browse or search a curated collection of Records known as a catalogue. 
+
+A catalogue can be deployed as a static collection of records stored in web-accessible files and typically co-located with the resources each record is describing.  Such a deployment is amenable to browsing using a web browser or being crawled by a search engine crawler.
+
+A catalogue can also be deployed as an API with well known endpoints for retrieving information about the catalogue, retrieving records from the catalogue and searching the catalogue for sub-sets of records that satisfy user-defined search criteria.  The following table list the endpoints of the OGC API - Records API:
 
 [reftext='{table-caption} {counter:table-num}']
 .Overview of resources, applicable HTTP methods and links to the document sections[[table_1]][[tldnr]]
@@ -12,7 +20,7 @@ This document defines the OGC API for Records. A Record is a way of making a res
 |Landing page |`/` |GET |<<landing-page,API landing page>>
 |Conformance declaration |`/conformance` |GET |<<conformance_class,Declaration of Conformance Classes>>
 |Record collections |`/collections` |GET |<<collections-access,Collections Access>>
-|Record collection |`/collections/{collectionId}` |GET |<<collection-information,Collection Information>>
+|Record collection |`/collections/{collectionId}` |GET |<<clause-core-record-collection,Record Collection>>
 |Records |`/collections/{collectionId}/items` |GET |<<records-access,Records Access>>
 |Record |`/collections/{collectionId}/items/{recordId}` |GET |<<record-access,Record Access>>
 |===

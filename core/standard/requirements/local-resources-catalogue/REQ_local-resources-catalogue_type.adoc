@@ -1,0 +1,8 @@
+[[req_local-resources-catalogue_type]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/type*
+^|A |The `type` property shall be present in the collection information object.
+^|B |The value of the `type` property shall be the same as the value of the `itemType` property if the later is present.
+^|C |Otherwise, the value of the `type` property shall denote the resource type of the collection (e.g. feature, coverage, map, etc.).
+|===

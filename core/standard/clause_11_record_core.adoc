@@ -1,0 +1,169 @@
+[[clause-record-core]]
+== Requirements Class "Core Record"
+
+[[record-core-overview]]
+=== Overview
+
+include::requirements/requirements_class_record-core.adoc[]
+
+The `Core Record` Requirements Class defines the requirements for a catalogue record.
+
+[[record-model]]
+=== Record 
+
+The atomic unit of information in a catalogue is a **_record_** which is defined in this clause.
+
+It is expected that the information necessary to populate the fields/properties of a catalogue record is readily available for any resource that is being registered in the catalogue.
+
+It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. datasets, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.
+
+Although this document does not mandate any particular encoding for a record, this document does define conformance classes for three encodings:
+
+* a <<record_json_encoding,GeoJSON>> record encoding,
+* an <<record_atom_encoding,ATOM>> record encoding,
+* and an <<record_html_encoding,HTML>> encoding.
+
+Other encoding are allow but are not described in this document.
+
+==== Overview
+
+[[core-queryables]]
+==== Core queryables
+
+<<core-queryables-record-table>> and <<core-queryables-resource-table>> define the set of properties, called the _core queryables_, that may be included in a record.
+
+[#core-queryables-record-table,reftext='{table-caption} {counter:table-num}']
+.Table of Core Queryables related to the catalogue record
+[cols="20,5,55,20",options="header"]
+|===
+|Queryables |Requirement |Description |GeoJSON key
+|recordId |M |A unique record identifier assigned by the server. |id
+|recordCreated |O |The date this record was created in the server. |created
+|recordUpdated |O |The most recent date on which the record was changed. |updated
+|links |O |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.) |links
+|===
+
+[#core-queryables-resource-table,reftext='{table-caption} {counter:table-num}']
+.Table of Core Queryables related to the resource
+[cols="20,5,55,20",options="header"]
+|===
+|Queryables |Requirement |Description |GeoJSON key
+|type |M |The nature or genre of the resource. |properties.type
+|title |M |A human-readable name given to the resource. |properties.title
+
+|description |O |A free-text description of the resource. |properties.description
+|keywords |O |A list of keywords or tag associated with the resource. |properties.keyword
+|keywordsCodespace |O |A reference to a controlled vocabulary used for the keywords property. |properties.keyword-codespace
+|language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource. |properties.language
+|externalId |O |An identifier for the resource assigned by an external entity. |properties.externalid
+|created |O |The date the resource was created. |properties.created
+|updated |O |The more recent date on which the resource was changed. |properties.updated
+|publisher |O |The entity making the resource available. |properties.publisher
+|themes |O |A knowledge organization system used to classify the resource. |properties.themes
+|formats |O |A list of available distributions for the resource. |properties.formats
+|contactPoint |O |An entity to contact about the resource. |properties.contactpoint
+|license |O |A legal document under which the resource is made available. |properties.license
+|rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
+|extent |O |The spatio-temporal coverage of the resource. |properties.extent
+|associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc. |properties.associations
+|===
+
+include::requirements/core/REQ_mandatory-queryables-record.adoc[]
+
+include::recommendations/core/PER_additional-queryables-record.adoc[]
+
+[[sc_keywords_and_themes]]
+==== Keywords and Themes
+
+A record allows for one ``properties.keywords`` and 0..n ``properties.themes``
+properties.  The following provides an example of using keywords for free
+form terms (e.g. tags) as well as themes to articulate terms from formal
+vocabularies.
+
+[#keywords-themes-example,reftext=`Keywords and themes Example`]
+.Keywords and themes Example
+[source,json]
+----
+include::../examples/json/keywords-themes.json[]
+----
+
+The following recommendations provide clarification on where and how to use
+these properties in a record.
+
+include::recommendations/core/REC_record-keywords-themes.adoc[]
+
+[[sc_type_and_licenses]]
+==== Type and Licenses
+
+A record has one `properties.type` and one `properties.license` properties. The value of each property should be a code, convenient for filtering records. 
+
+include::recommendations/core/REC_record-type.adoc[]
+
+include::recommendations/core/REC_record-license.adoc[]
+
+In addition, links to external resources representing the record type and the licenses are recommended, as described in the next section.
+
+[[sc_associations_and_links]]
+==== Associations and Links
+
+A record may contain both `links` and `properties.associations` properties which
+serve different purposes.
+
+include::recommendations/core/REC_record-links.adoc[]
+
+include::recommendations/core/REC_record-associations.adoc[]
+
+NOTE: The representation of links in the payload will depend on the encoding of the record.
+
+The following provides an example of using associations for related resources of a record, as both traditional link relations as well as API resources via URI templates.
+
+[#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
+.Associations simple and URI Template Example
+[source,json]
+----
+include::../examples/json/associations-simple-and-uri-template.json[]
+----
+
+[[example_11]]
+.Links in a record payload
+====
+The links in a record could be (in this example represented as link headers):
+
+[source]
+----
+Link: <http://data.example.org/collections/my_catalogue/items/record_123.json>; rel="self"; type="application/geo+json"
+Link: <http://data.example.org/collections/my_catalogue/items/record_123.html>; rel="alternate"; type="text/html"
+Link: <http://data.example.org/collections/my_catalogue.json>; rel="collection"; type="application/json"
+Link: <http://data.example.org/collections/my_catalogue.html>; rel="collection"; type="text/html"
+----
+====
+
+[[sc_templated_links_with_variables]]
+==== Templated links with variables
+
+This specification extends the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] defined in OGC API Common to include a `templated` key and a `variables` key.
+
+T.B.D.  Need to add requirements and recommendations about `templated` and `variables`.
+
+* the presence of the `templated` key with a value of `true` indicates that the included `href` value uses substitution variables of the from `{_variable name_}`.  
+* the presence of the `variables` key indicated that a section is included that defines the schema of the one or more of the substitution variables used in the `templated` URL that is the value of the `href` key.
+
+Templated links with variables may be used to bind to resources that may required additional information inorder to access the resources.  For example, simply knowing the URL of a legacy OGC service such as WMS or WFS is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values are required in order to have a complete link to a resources.  A templated link with variables can provide this additional context.
+
+[#templated-link-with-variables,reftext=`Associations simple and URI Template Example`]
+.Templated link with variables example
+[source,json]
+----
+include::../examples/json/templated-link.json[]
+----
+
+[[sc_language_negotiation]]
+==== Language negotiation
+
+Two kinds of languages are handled in this specification.  The language
+associated with the resource and the language associated with the record
+that describes the resource in the catalogue.
+
+The language associated with the resource is specified using the <<core-queryables-resource-table,language>> property of a catalogue record.  This indicates the language associated with the resource that the record described.
+
+The language for the record itself is negotiated between a client and the servers using the https://tools.ietf.org/html/rfc7231#section-5.3.5[Accept-Language] header of https://tools.ietf.org/html/rfc7231[HTTP].  Records in a response document can only be presented in a single negotiated language.  There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple languages would require multiple requests to the server each negotiating to a desired language.

@@ -1,0 +1,43 @@
+[[clause-crawlable-catalogue]]
+== Requirements Class "Crawlable Catalogue"
+
+[[crawlable-catalogue-overview]]
+=== Overview
+
+include::requirements/requirements_class_crawlable-catalogue.adoc[]
+
+The `Crawlable Catalogue` Requirements Class defines the requirements for a catalogue composed of web-accessible static files.
+
+=== Making resources discoverable
+
+T.B.D.
+
+* for each discoverable resource create a file that contains a summary description of the resource using  the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>
+* extend the record schema to enrich its content as necessary
+* to make the resource discoverable, place each record file in a web-accessible location, preferably co-located (e.g. in the same directory or object store location) with the resource that the record is describing
+
+=== Grouping sets of related records into a catalogue
+
+T.B.D.
+
+* optionally create a file containing a description of a <<record-collection-overview,_collection_>> of related records
+* also place the collection file in a web-accessible location
+* the <<record-collection-overview,_collection_>> object includes `rel=link` hypermedia controls that point to each record of the collection
+
+[source]
+----
+               collection
+              (catalogue)
+                   |
+        +----------+----------+ ...
+        |          |          |
+     record     record     record ...
+        |          |          |
+     resource   resource   resource ...
+----
+
+The collection object represent the root of a 3-level tree structure where the leaf nodes are resources to be discovered and the node just before the a leaf resource node is a record describing the resource.
+
+These statically deployed collection and record objects can easily be traversed using a web browser and indexed by search engine crawlers.
+
+Although not described in this specification, a deeper tree structure of linked collection objects can be used to organize hierarchies of collections and records.

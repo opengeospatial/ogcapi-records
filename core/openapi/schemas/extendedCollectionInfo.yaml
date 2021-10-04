@@ -1,0 +1,86 @@
+allOf:
+  $ref: "common/collectionInfo.yaml"
+  type: object
+  required:
+    - title
+    - itemType
+  properties:
+    keywords:
+      type: array
+      description: |-
+        The topic or topics of the catalogue. Typically represented using
+        keywords, tags, key phrases, or classification codes. Recommended
+        best practice is to use a controlled vocabulary.
+      items:
+        type: string
+    keywordsCodespace:
+      type: string
+      description: |-
+        A reference to a controlled vocabulary used for the keywords
+        parameter.  If a reference is not provided then the value of
+        the keyword parameter should be considered a free list of
+        tokens associated with the record.
+      format: uri
+    language:
+      type: string
+      description: |-
+        The natural language used for textual values (e.g. titles,
+        descriptions, etc.) of the catalogue. ISO 639-1/639-2 codes
+        should be used.
+      default: en
+    created:
+      type: string
+      description: |-
+        Date of creation of this catalogue.
+      format: date-time
+    updated:
+      type: string
+      description: |-
+        Most recent date on which the catalogue was changed.
+      format: date-time
+    publisher:
+      $ref: responsibleParty.yaml
+      description: |-
+        Link to the entity making the catalog available.
+    themes:
+      type: array
+      description: |-
+        A knowledge organization system used to classify the catalogue.
+      items:
+        type: object
+        properties:
+          concepts:
+            type: array
+            description: |-
+              One or more entity/concept identifers from this knowledge
+              system. it is recommended that a resolvable URI be used
+              for each entity/concept identifier.
+            items:
+              type: string
+          scheme:
+            type: string
+            description: |-
+               An identifier for the knowledge organization system used
+               to classify the catalogue.  It is recommended that the
+               identifier be a resolvable URI.
+    contactPoint:
+      $ref: responsibleParty.yaml
+      description: |-
+        Link to relevant contact information.
+    license:
+      type: string
+      description: |-
+        A legal document under which the catalogue is made available.
+      format: uri
+    rights:
+      type: string
+      description: |-
+        A statement that concerns all rights not addresses by the license
+        such as a copyright statement.
+    properties:
+      type: object
+      description: |-
+        Additional catalogue-specific properties describing the catalogue
+        can be added here.
+      additionalProperties: true
+    additionalProperties: true

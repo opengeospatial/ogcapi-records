@@ -1,0 +1,226 @@
+[[clause-record-api]]
+== Requirements Class "Record API"
+
+[[record-api-overview]]
+=== Overview
+
+include::requirements/requirements_class_record-api.adoc[]
+
+The `Core Record API` Requirements Class defines the requirements for searching and accessing collections of records using an API.
+
+The components of the `Core Record API` requirements class that are derived from OGC API Common are presented in the following sections:
+
+. <<api-platform-section,API Platform>>: a set of common capabilities
+. <<collections-access,Collections access>>: operations for accessing information about collections of records
+. <<collection-information,Collection information>>: operations for accessing information about a specific collection (i.e. catalogue).
+. <<general-requirements-section,General Requirements>>: general principles for use with this standard
+
+The requirements for accessing collections of records are presented in the following sections:
+
+. <<records-access,Records Access>>: operations for accessing record resources
+. <<record-access,Record Access>>: operations for accessing a single record
+
+[[record-collection]]
+=== Record collection
+
+==== Overview 
+
+Groups of related records are accessed from a collection (i.e. a catalogue).  The collection provides metadata about the catalogue and includes access metadata for navigating to records from the collection.   The content of the collection is defined in the <<clause-core-record-collection,Record collection clause>> 
+
+This section defines how to access the collection object through the Records API.
+
+==== Operation
+
+See: <<collection-info-operation,Collection Information operation>>.
+
+==== Response 
+
+See: <<collection-info-response,Collection Information response>>.
+
+T.B.D.
+
+Add requirements here for the links section.  Basically, there MUST be at least one link with `rel=items` that points the access/search endpoint of the API. Although, now that I think of it, I believe features includes this requirement.
+
+==== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+==== Examples
+
+T.B.D.
+
+[[records-access]]
+=== Records access
+
+==== Overview
+
+The basic Records API is the OGC API Features API that has been augmented with additional operators that are useful for searching collections of catalogue records. This clause describes these additional operators.
+
+==== Operation
+
+Catalogue records are accessible at the `/collections/{collectionId}/items`
+endpoint.
+
+include::requirements/core/REQ_record-collection-op.adoc[]
+
+[[parameters-section]]
+==== Parameters
+
+===== Overview
+
+The following tables list the set mandatory query parameters that must be 
+supported at the `/collections/{collectionId}/items` endpoint.
+
+[#core-query-parameters-table,reftext='{table-caption} {counter:table-num}']
+.Table of Query Parameters
+[cols="15,85",options="header"]
+|===
+|Parameter name |Description
+|bbox^1^ |A bounding box. If the spatial extent of the record intersects the specified bounding box then the record shall be presented in the response document.
+|datetime^1^ |A time instance or time period. If the temporal extent of the record intersects the specified data/time value then the record shall be presented in the response document.
+|limit^1^ |The number of records to be presented in a response document.
+|q |A comma-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed then this records shall appear in the response set.
+|type |An equality predicate consistent of a comma-separated list of resource types.  Only records of the listed type shall appear in the resource set.
+|externalid |An equality predicate consistent of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
+|_prop_=_value_ |Equality predicates with any queryable (see: /collections/{catalogueId}/queryables)
+|sortby^2^ |Record sorting for response
+|filter/filter_lang/filter_crs^3^ |Enhanced filtering parameters
+2+|NOTES:
+(1)Inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].
+(2) The server must implement the <<clause-sorting,Sorting>> conformance class.
+(3) The server must implement the <<lause-cql-filter,Filtering using CQL>> conformance class. 
+|===
+
+The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from API -Common.  All requirements and recommendations in API - Common regarding these parameters also apply for API - Records.
+
+The query parameters `q`, `type` and `externalid` are specific to API - Records.
+
+[[core-query-parameters-bbox]]
+===== Parameter bbox
+
+The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
+
+include::requirements/core/REQ_query-param-bbox.adoc[]
+
+[[core-query-parameters-datetime]]
+===== Parameter datetime
+
+The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
+
+include::requirements/core/REQ_query-param-datetime.adoc[]
+
+[[core-query-parameters-limit]]
+===== Parameter limit
+
+The limit parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
+
+include::requirements/core/REQ_query-param-limit.adoc[]
+
+[[core-query-parameters-q]]
+===== Parameter q
+
+include::requirements/core/REQ_query-param-q-definition.adoc[]
+
+include::recommendations/core/REC_param-q.adoc[]
+
+include::requirements/core/REQ_query-param-q-response.adoc[]
+
+[[core-query-parameters-type]]
+===== Parameter type
+
+include::requirements/core/REQ_query-param-type-definition.adoc[]
+
+include::recommendations/core/REC_query-param-type-definition.adoc[]
+
+include::requirements/core/REQ_query-param-type-response.adoc[]
+
+[[core-query-parameters-externalid]]
+===== Parameter externalId
+
+include::requirements/core/REQ_query-param-externalid-definition.adoc[]
+
+include::requirements/core/REQ_query-param-externalid-response.adoc[]
+
+[[additional-query-parameters]]
+===== Additional query parameters
+
+This standard defines the following URL query parameters based on the set of
+<<core-queryables-record-table,core queryables>> to support record selection
+based on the resource type and/or an external identifier associated with the
+resource.
+
+* <<core-query-parameters-type,type>>
+* <<core-query-parameters-externalid,externalId>>
+
+include::recommendations/core/REC_additional-query-parameters.adoc[]
+
+===== Combinations of Filtering Parameters
+
+Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> may be specified for filtering. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is **AND** (exclusive).
+
+[[query-response]]
+==== Response
+
+include::requirements/core/REQ_record-collection-response.adoc[]
+
+<<response-encodings>> lists specific requirements based on the negotiated representation of the response.
+
+[#response-encodings,reftext='{table-caption} {counter:table-num}']
+.Negotiated representation of response 
+[width=40%,cols="30%,70%",options="header"]
+|===
+|Representation |Requirements
+|JSON/GeoJSON |<<record_json_encoding,Requirements Class JSON>>
+|HTML |<<record_html_encoding,Requirements Class HTML>>
+|XML/ATOM |<<record_atom_encoding,Requirements Class ATOM>>
+|===
+
+==== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+==== Examples
+
+The following is an example of a response to an OGC API - Records query
+operation (path: `/collections/{collectionId}/items`).  This example shows
+a JSON response and the response container is a GeoJSON feature collection.
+Specific records are not presented in this example in order to illustrate
+the structure of the response container in GeoJSON.
+
+[#records-example,reftext=`Records Example`]
+.Records Example in GeoJSON
+[source,json]
+----
+include::../examples/json/record-collection.json[]
+----
+
+See <<record-example>> for an example of a single catalogue record.
+
+[[record-access]]
+=== Record access
+
+==== Operation
+
+include::requirements/core/REQ_record-op.adoc[]
+
+==== Response
+
+include::requirements/core/REQ_record-success.adoc[]
+
+==== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+===== Examples
+
+The following is an example of a single catalogue record encoded in GeoJSON.
+Such a record might appears in the `features` array of a
+<<records-example,query response>> or it may be the response when a specific,
+single record is accessed (path: `/collections/{collectionId}/items/{recordId}`).
+
+[#record-example,reftext=`Record Example`]
+.Record Example in GeoJSON
+[source,json]
+----
+include::../examples/json/record.json[]
+----

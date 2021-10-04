@@ -1,5 +1,6 @@
 [appendix]
 :appendix-caption: Annex
+[[annex_common]]
 == Common building blocks (Normative)
 
 [[common-overview]]
@@ -194,7 +195,7 @@ include::../openapi/schemas/common/collections.yaml[]
 The following JSON payload is an example of a response to an OGC API - Records
 <<collections-meta-operation,Collections>> operation.
 
-[#conllections-example,reftext=`Collections Example`]
+[#collections-example,reftext=`Collections Example`]
 .Collections Example
 [source,json]
 ----
@@ -261,338 +262,10 @@ include::../examples/json/collection.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-[[records-access]]
-=== Records access
-
-==== Overview
-
-The primary unit of information in a catalogue is a record. Tables <<core-queryables-record-table>> and <<core-queryables-resource-table>> in this clause present a generic set of properties, called _**core queryables**_, that may be included in a catalogue record.  The choice of which properties to include in the set of core queryables was primarily informed by the following record models:
-
-* The https://docs.ogc.org/is/12-168r6/12-168r6.html#17[core catalogue schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
-
-* the https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabulary (DCAT) - Version 2] specification.
-
-* and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specification.
-
-It is expected that the information necessary to populate the core queryables is readily available for any resource that is being registered in the catalogue.  
-
-This basic set of properties can be extended by information communities wishing to enrich the information content of the record to suit their needs.
-
-Although this document does not mandate any particular encoding for a record, the document does define conformance classes for three encodings:
-
-* A <<record_json_encoding,GeoJSON>> record encoding,
-* an <<record_atom_encoding,ATOM>> record encoding,
-* and an <<record_html_encoding,HTML>> encoding.
-
-Other encodings are allowed but are not described in this document (i.e. they can be implemented as
-part of separate Requirements Classes).
-
-This clause describes how to search a catalogue to retreive a subset of records that satsify zero or more query criteria.
-
-==== Operation
-
-Catalogue records are  accessed at the `/collections/{collectionId}/items`
-endpoint.
-
-include::requirements/core/REQ_record-collection-op.adoc[]
-
-[[parameters-section]]
-==== Parameters
-
-===== Overview
-
-The following tables list the set mandatory query parameters that must be 
-supported at the `/collections/{collectionId}/items` endpoint.
-
-[[core-query-parameters-table]]
-[reftext='{table-caption} {counter:table-num}']
-.Table of Query Parameters
-[cols="15,85",options="header"]
-|===
-|Parameter name |Description
-|`bbox` |A bounding box. If the spatial extent of the record intersects the specified bounding box then the record shall be presented in the response document.
-|`datetime` |A time instance or time period. If the temporal extent of the record intersects the specified data/time value then the record shall be presented in the response document.
-|`limit` |The number of records to be presented in a response document.
-|`q` |A comma-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed then this records shall appear in the response set.
-|`type` |An equality predicate consistent of a comma-separated list of resource types.  Only records of the listed type shall appear in the resource set.
-|`externalId` |An equality predicate consistent of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
-|===
-
-The query parameters https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API - Common.  All requirements and recommendations in OGC API - Common regarding these parameters also apply for this standard.
-
-The query parameters `q`, `type` and `externalId` are specific to this standard.
-
-[[core-query-parameters-bbox]]
-===== Parameter bbox
-
-The Bounding Box (`bbox`) parameter is defined in OGC API - Common. The following requirement governs use of that parameter in this standard.
-
-include::requirements/core/REQ_query-param-bbox.adoc[]
-
-[[core-query-parameters-datetime]]
-===== Parameter datetime
-
-The DateTime (`datetime`) parameter is defined in OGC API - Common. The following requirement governs use of that parameter in this standard.
-
-include::requirements/core/REQ_query-param-datetime.adoc[]
-
-[[core-query-parameters-limit]]
-===== Parameter limit
-
-The limit (`limit`) parameter is defined in OGC API - Common. The following requirement governs use of that parameter in this standard.
-
-include::requirements/core/REQ_query-param-limit.adoc[]
-
-[[core-query-parameters-q]]
-===== Parameter q
-
-include::requirements/core/REQ_query-param-q-definition.adoc[]
-
-include::recommendations/core/REC_param-q.adoc[]
-
-include::requirements/core/REQ_query-param-q-response.adoc[]
-
-[[core-query-parameters-type]]
-===== Parameter type
-
-include::requirements/core/REQ_query-param-type-definition.adoc[]
-
-include::requirements/core/REQ_query-param-type-response.adoc[]
-
-[[core-query-parameters-externalid]]
-===== Parameter externalId
-
-include::requirements/core/REQ_query-param-externalid-definition.adoc[]
-
-include::requirements/core/REQ_query-param-externalid-response.adoc[]
-
-[[additional-query-parameters]]
-===== Additional query parameters
-
-This standard defines the following URL query parameters based on the set of
-<<core-queryables-record-table,core queryables>> to support record selection
-based on the resource type and/or an external identifier associated with the
-resource.
-
-* <<core-query-parameters-type,type>>
-* <<core-query-parameters-externalid,externalId>>
-
-include::recommendations/core/REC_additional-query-parameters.adoc[]
-
-===== Combinations of Filtering Parameters
-
-Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> may be specified for filtering. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is **AND** (exclusive).
-
-[[query-response]]
-==== Response
-
-include::requirements/core/REQ_record-collection-response.adoc[]
-
-include::requirements/core/REQ_record-collection-links.adoc[]
-
-include::recommendations/core/REC_record-collection-next-1.adoc[]
-
-include::recommendations/core/REC_record-collection-next-2.adoc[]
-
-include::recommendations/core/REC_record-collection-next-3.adoc[]
-
-This document does not mandate any specific implementation approach for `next` links.
-
-An implementation could use opaque links that are managed by the server. It is
-up to the server to determine how long these links can be de-referenced.
-Clients should be prepared to receive a 404 response.
-
-Another implementation approach is to use an implementation-specific parameter that specifies the index within the result set from which the server begins presenting results in the response, like the `startIndex` parameter that was used in <<WFS20,WFS 2.0>> (and which may be added again in additional parts of the OGC API - Features series).
-
-The API will return no `next` link, if it has returned all selected record, and the server knows that. However, the server may not be aware that it has already returned all selected records. For example, if the request states `limit=10` and the query to the backend datastore returns 10 records, the server may not know, if there are more records or not (in most cases there will be more records), unless the total number of matches is also computed, which may be too costly. The server will then add the next link, and if there are no more records, dereferencing the next link will return am empty feature collection and no next link. This behavior is consistent with the statements above.
-
-Clients should not assume that paging is safe against changes to dataset while a client iterates through `next` links. If a server provides opaque links these could be safe and maintain the dataset state during the original request. Using a parameter for the start index, however, will not be safe.
-
-NOTE: Additional requirements classes for safe paging or an index parameter
-may be added in extensions to this specification.
-
-include::recommendations/core/PER_record-collection-prev.adoc[]
-
-Providing `prev` links supports navigating back and forth between pages, but depending on the implementation approach it may be too complex to implement.
-
-include::requirements/core/REQ_record-collection-rel-type.adoc[]
-
-include::requirements/core/REQ_record-collection-timeStamp.adoc[]
-
-include::requirements/core/REQ_record-collection-numberMatched.adoc[]
-
-include::requirements/core/REQ_record-collection-numberReturned.adoc[]
-
-NOTE: The representation of the links and the other properties in the payload depends on the encoding of the feature collection.
-
-include::recommendations/core/PER_additional-properties.adoc[]
-
-[[core-queryables-record-table]]
-[reftext='{table-caption} {counter:table-num}']
-.Table of Core Queryables related to the catalogue record
-[cols="20,5,55,20",options="header"]
-|===
-|Queryables |Requirement |Description |GeoJSON key
-|recordId |M |A unique record identifier assigned by the server. |`id`
-|recordCreated |O |The date this record was created in the server. |`properties.recordCreated`
-|recordUpdated |O |The most recent date on which the record was changed. |`properties.recordUpdated`
-|links |O |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.) |`links`
-|===
-
-[[core-queryables-resource-table]]
-[reftext='{table-caption} {counter:table-num}']
-.Table of Core Queryables related to the resource
-[cols="20,5,55,20",options="header"]
-|===
-|Queryables |Requirement |Description |GeoJSON key
-|type |M |The nature or genre of the resource. |`properties.type`
-|title |M |A human-readable name given to the resource. |`properties.title`
-|description |O |A free-text description of the resource. |`properties.description`
-|keywords |O |A list of keywords or tag associated with the resource. |`properties.keyword`
-|keywordsCodespace |O |A reference to a controlled vocabulary used for the keywords property. |`properties.keyword-codespace`
-|language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource. |`properties.language`
-|externalId |O |An identifier for the resource assigned by an external entity. |`properties.externalId`
-|created |O |The date the resource was created. |`properties.created`
-|updated |O |The more recent date on which the resource was changed. |`properties.updated`
-|publisher |O |The entity making the resource available. |`properties.publisher`
-|themes |O |A knowledge orgnaization system used to classify the resource. |`properties.themes`
-|formats |O |A list of available distributions for the resource. |`properties.formats`
-|contactPoint |O |An entity to contact about the resource. |`properties.contactpoint`
-|license |O |A legal document under which the resource is made available. |`properties.license`
-|rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement. |`properties.rights`
-|extent |O |The spatio-temporal coverage of the resource. |`properties.extent`
-|associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc. |`properties.associations`
-|===
-
-The following YAML fragment defines the schema of a single record in a query response.
-
-[#record-schema,reftext='Record Response Schema']
-.Record Response Schema
-[source,yaml]
-----
-include::../openapi/schemas/recordGeoJSON.yaml[]
-----
-
-==== Keywords and Themes
-
-A record allows for one ``properties.keywords`` and 0..n ``properties.themes``
-properties.  The following provides an example of using keywords for free
-form terms (e.g. tags) as well as themes to articulate terms from formal
-vocabularies.
-
-[#keywords-themes-example,reftext=`Keywords and themes Example`]
-.Keywords and themes Example
-[source,json]
-----
-include::../examples/json/keywords-themes.json[]
-----
-
-The following recommendations provide clarification on where and how to use
-these properties in a record.
-
-include::recommendations/core/REC_record-keywords-themes.adoc[]
-
-==== Associations and Links
-
-A record contains both `links` and `properties.associations` properties which
-serve different purposes.  The following provides an example of using
-associations for related resources of a record, as both traditional link
-relations as well as API resources via URI templates.
-
-[#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
-.Associations simple and URI Template Example
-[source,json]
-----
-include::../examples/json/associations-simple-and-uri-template.json[]
-----
-
-The following recommendations provide clarification on where and how to use
-these properties in a record.
-
-include::recommendations/core/REC_record-links.adoc[]
-
-include::recommendations/core/REC_record-associations.adoc[]
-
-NOTE: The representation of links in the payload will depend on the encoding of the record.
-
-[[example_11]]
-.Links in a record payload
-====
-The links in a record could be (in this example represented as link headers):
-
-[source]
-----
-Link: <https://example.org/collections/mycat/items/record_123.json>; rel="self"; type="application/geo+json"
-Link: <https://example.org/collections/mycat/items/record_123.html>; rel="alternate"; type="text/html"
-Link: <https://example.org/collections/mycat.json>; rel="collection"; type="application/json"
-Link: <https://example.org/collections/mycat:html>; rel="collection"; type="text/html"
-----
-====
-
-==== Language negotiation
-
-Two kinds of languages are handled in this specification.  The language
-associated with the resource and the language associated with the record
-that describes the resource in the catalogue.
-
-The language associated with the resource is specified using the <<core-queryables-resource-table,language>> property of a catalogue record.  This indicates the language associated with the resource that the record described.
-
-The language for the record itself is negotiated between a client and the servers using the https://tools.ietf.org/html/rfc7231#section-5.3.5[Accept-Language] header of https://tools.ietf.org/html/rfc7231[HTTP].  Records in a response document can only be presented in a single negotiated language.  There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple lanugages would require multiple requests to the server each nagotiating to a desired language.
-
-==== Error situations
-
-The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
-
-==== Examples
-
-The following is an example of a response to an OGC API - Records query
-operation (path: `/collections/{collectionId}/items`).  This example shows
-a JSON response and the response container is a GeoJSON feature collection.
-Specific records are not presented in this example in order to illustrate
-the structure of the response container in GeoJSON.
-
-[#records-example,reftext=`Records Example`]
-.Records Example in GeoJSON
-[source,json]
-----
-include::../examples/json/record-collection.json[]
-----
-
-See <<record-example>> for an example of a single catalogue record.
-
-[[record-access]]
-=== Record access
-
-==== Operation
-
-include::requirements/core/REQ_record-op.adoc[]
-
-==== Response
-
-include::requirements/core/REQ_record-success.adoc[]
-
-==== Error situations
-
-The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
-
-==== Examples
-
-The following is an example of a single catalogue record encoded in GeoJSON.
-Such a record might appears in the `features` array of a
-<<records-example,query response>> or it may be the response when a specific,
-single record is accessed (path: `/collections/{collectionId}/items/{recordId}`).
-
-[#record-example,reftext=`Record Example`]
-.Record Example in GeoJSON
-[source,json]
-----
-include::../examples/json/record.json[]
-----
-
 [[general-requirements-section]]
 === General requirements
 
-The following requirements and recommentations are applicable to all OGC Records APIs.
+The following requirements and recommendations are applicable to all OGC Records APIs.
 
 [[http-protocol]]
 ==== HTTP 1.1
@@ -641,7 +314,7 @@ include::requirements/core/REQ_query-param-unknown.adoc[]
 
 include::requirements/core/REQ_query-param-invalid.adoc[]
 
-The criteria for a parameter to be "specified" in the API definition depends on the API definition language used, the complexity of the resources exposed, and the abilty of the API server to tolerate errors. 
+The criteria for a parameter to be "specified" in the API definition depends on the API definition language used, the complexity of the resources exposed, and the ability of the API server to tolerate errors. 
 
 A service implementer should endeavour to provide as much detail in the server's API definition as the API definition language allows. However, there is no requirement for it to list every endpoint for which there is a non-404 behaviour, for it to list every possible query parameter that might affect the behaviour of an endpoint, or for it to list every possible value that each query parameter might accept.
 
@@ -690,7 +363,7 @@ Parameters may pass more than one value. These lists of parameter values may be 
 . Repeated name:value pairs where the parameter name is repeated for each value in the list
 . A parameter name followed by a delimited list of values.
 
-The folowing requirements define how to encode a delimited list (case 2) of parameter values. They do not apply if replication (case 1) is used.
+The following requirements define how to encode a delimited list (case 2) of parameter values. They do not apply if replication (case 1) is used.
 
 include::requirements/core/REQ_query-param-list-delimiter.adoc[]
 
@@ -702,7 +375,7 @@ Thus, two successive commas indicates an empty item, as does a leading comma or 
 
 ===== Numeric and Boolean Values
 
-Geospatial is a mathematical discipline. The clear and accurate exchange of mathematical values is essential. The encoding rules in this section standarize the encoding of numeric and boolean primitives when included in a URL. These rules are based on the computer science basic data types identified by <<k-and-r-1978,Kernighan and Ritchie>>.   
+Geospatial is a mathematical discipline. The clear and accurate exchange of mathematical values is essential. The encoding rules in this section standardize the encoding of numeric and boolean primitives when included in a URL. These rules are based on the computer science basic data types identified by <<k-and-r-1978,Kernighan and Ritchie>>.   
 
 Boolean values conform to the following requirement.
 

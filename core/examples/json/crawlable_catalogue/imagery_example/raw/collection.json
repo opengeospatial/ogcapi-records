@@ -1,0 +1,16 @@
+{
+  "id": "raw",
+  "itemType": "record",
+  "title": "Raw Signal Data",
+  "description": "A RAW Signal Data product contains raw or unprocessed radar video baseband data in complex in-phase and quadrature signal (I and Q) format as they are recorded by the spacecraft. The only processing performed to the downlink X-band raw signal data is the frame synchronization, meaning re-assembly of the data into contiguous radar range lines in matrix form, and the CEOS formatting. Each range line of data is represented by one Signal Data Record in the RAW CEOS product. The RAW product can contain any single beam mode, or for ScanSAR any combination of different beam modes, depending on the operation of the SAR instrument during the data reception or recording period.",
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "2012-05-13/RS1_M0000676_F2N_20120513_225701_HH_RAW.json"
+    }
+  ]
+}

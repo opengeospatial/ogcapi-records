@@ -2,21 +2,45 @@
 
 ## Overview
 
-OGC API - Records provides discovery and access to metadata about geospatial data and services.
-
 [OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs in a consistent way. [OpenAPI](https://openapis.org) is used to define the reusable API building blocks.
 
 OGC API - Records provides discovery and access to metadata about geospatial resources (e.g. data, services, ML models, etc.).  Having found a record describing a resource, binding information contained therein allows the discovered resources to be accessed.
 
-The OGC API - Records specification defines three main building blocks:
+The OGC API - Records specification being developed in this repository defines three main **building blocks**:
 
 * Record
-* Record collection
+* Collections
 * Records API
 
 ## The Record building block
 
-The _**Record**_ is the atomic unit of information in a catalogue.  The record building block defines the core schema of a catalogue record.  It includes a small number of properties that are common across all resource types.  It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
+The _**Record**_ is the atomic unit of information in a catalogue.
+
+A record provides a description (i.e. metadata) about a resource that the provider of the resource wishes to make discoverable.
+
+The record building block defines the core schema of a catalogue record.  It includes a small number of properties that are common across all resource types.  The following table lists the core set of record properties (called queryables):
+
+|Queryables |Requirement |Description
+|-----------|------------|----------------------------------
+|type |M |The nature or genre of the resource.
+|title |M |A human-readable name given to the resource.
+|description |O |A free-text description of the resource.
+|keywords |O |A list of keywords or tag associated with the resource.
+|keywordsCodespace |O |A reference to a controlled vocabulary used for the keywords property.
+|language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
+|externalId |O |An identifier for the resource assigned by an external entity.
+|created |O |The date the resource was created.
+|updated |O |The more recent date on which the resource was changed.
+|publisher |O |The entity making the resource available.
+|themes |O |A knowledge orgnaization system used to classify the resource.
+|formats |O |A list of available distributions for the resource.
+|contactPoint |O |An entity to contact about the resource.
+|license |O |A legal document under which the resource is made available.
+|rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|extent |O |The spatio-temporal coverage of the resource.
+|associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc.
+
+It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
 
 The following is an example of a catalogue record encoded as GeoJSON:
 
@@ -73,12 +97,17 @@ The following is an example of a catalogue record encoded as GeoJSON:
       ]
     }
 ```
-## The Record collection building block
 
-A catalogue is a collection of records.  The `Record collection` building block extends the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+## The Collection building block
 
-* include additional metadata for describing a catalogue (i.e. collection of records)
-* and to provide links for accessing the records of the collection
+The Collection building block is used to describe a collection of resources.  This can be a collection of related records (also called a catalogue) but it can also be a collection of any other type of resource (e.g. feature, coverage, etc.).
+
+The `Collection` building block [extends](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/extendedCollectionInfo.yaml) the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+
+* include additional metadata to enhanced the description of a collection 
+* and, to provide links for accessing the items of the collection.
+
+The following is an example of a searchable record collection encoded as JSON:
 
 ```
 {
@@ -99,6 +128,10 @@ A catalogue is a collection of records.  The `Record collection` building block 
       "title": "This document as HTML",
       "href": "https://demo.pycsw.org/gisdata/collections/metadata:main?f=html",
       "hreflang": "en-US"
+    },
+    {
+       "rel": "search",
+       "href": "https://demo.pycsw.org/gisdata/collections/metadata:main/items"
     }
   ],
   "itemType": "record",
@@ -110,54 +143,130 @@ A catalogue is a collection of records.  The `Record collection` building block 
   "language": "en-US",
   "updated": "2019-10-10T15:45:19Z",
   "publisher": {
-     "individual-name": "Joe Smith",
-     "organizationName": "pyGeoAPI",
+     "individualName": "Joe Smith",
+     "organizationName": "pygeoapi",
      "positionName": "developer",
      "contactInfo": {
        "phone": "+1555555555",
        "email": {
-         "work": "joesmith@pygeoapi.org"
+         "work": "joesmith@pygeoapi.io"
        }
      }
   },
   "license": "https://creativecommons.org/licenses/by/4.0/legalcode"
 }
+
+<<This is example is still being revised.>>
 ```
 
+NOTE: In OGC API - Features and OGC API - Common, the link relation `items` is used to point to a searchable endpoint for accessing the resources of a collections.  This endpoint should, more correctly, use the IANA link relation `search` since the `/items` endpoint is really a search endpoint returnings subsets of resource depending to query parameters specified at the endpoint.
+
+The following is an example of a crawlable record collection encoded as JSON.  In this case, it is a catalogue of other catalogues of RADARSAT Earth observation products.
+
 ```
-Add an example of a collection object accessed through an API.
+{
+  "id": "radarsat-1",
+  "title": "RADARSAT-1 Open Data",
+  "description": "Launched in November 1995, RADARSAT-1 provided Canada and the world with an operational radar satellite system capable of timely delivery of large amounts of data. RADARSAT-1 used a synthetic aperture radar (SAR) sensor to image the Earth at a single microwave frequency of 5.3 GHz, in the C band (wavelength of 5.6 cm). This was a Canadian-led project involving the Canadian federal government, the Canadian provinces, the United States, and the private sector. RADARSAT-1 reached end of service on March 29, 2013. In order to download RADARSAT-1 datasets, credentials for the Earth Observation Data Management System are required.",
+  "extent": {
+    "spatial": [ -180, -90, 180, 90 ],
+    "temporal": [ "1995-11-04T14:22:00Z", "2013-03-29T00:00:00Z" ]
+  },
+  "itemType": "collection",
+  "keywords": [ "sar", "eo", "radar", "radarsat", "canada" ],
+  "language": "en-CA",
+  "publisher": {
+    "organizationName": "Canadian Space Agency (CSA)",
+    "contactInfo": {
+      "onlineResource": {
+        "href": "http://www.asc-csa.gc.ca/eng/satellites/radarsat1/Default.asp"
+      }
+    },
+    "role": {
+      "name": "producer"
+    }
+  },
+  "license": "proprietary",
+  "properties": {
+    "sar:platform": "RADARSAT-1",
+    "sar:constellation": "RADARSAT",
+    "sar:instrument": "C-SAR",
+    "sar:frequency_band": "C",
+    "sar:center_wavelength": 5.6,
+    "sar:center_frequency": 5.3,
+    "sar:polarization": [ "HH" ],
+    "sar:observation_direction": "right"
+  },
+  "links": [
+    {
+      "href": "https://open.canada.ca/en/open-government-licence-canada",
+      "rel": "license",
+      "type": "text/html",
+      "title": "license"
+    },
+    {
+      "rel": "item",
+      "href": "slc/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "raw/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "sgf/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "sgx/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "scn/collection.json"
+    },
+    {
+      "rel": "item",
+      "href": "scw/collection.json"
+    }
+  ]
+}
 ```
 
 ## The Records API
 
-The OGC API - Records specification defines a core access and search API by extending the OGC API - Features - Part 1: Core specification.
+The OGC API - Records specification defines a core catalogue access and search API by extending OGC API - Common - Part 2: Geospatial Data and the OGC API - Features - Part 1: Core APIs.
 
-OGC API - Features specifies well-defined access paths to information about the collection (i.e. the catalogue) and to the records of the collection.  The Features API also defines a basic search capability that is extended by the Records API to allow subsets of records to be identified and accesses based on client-supplied search criteria such as a bounding box, a data range or a free text search.
+OGC API - Common specifies a well-defined access path to information about collections (i.e. `/collections`).  OGC API - Features specifies a well-defined access path to the records (i.e. `/collections/{collectionId}/items`) of a catalogue (i.e. a record collection).  OGC API - Records extended each of these endpoints with additional query parameters to enable catalogue search capabilities.
 
-The search capability of the Records API is organized into various levels of complexity starting from simple spatial, temporal, keyword and type search predicates (i.e. `bbox=`, `datetime=`, `q=`, `type=`) that can be combined using a logical `AND` all the way up to a full blown predicate language (based on OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)), that supports complex filter expressions of logically connected query predicates.
+In the first case this allows deployments with a large number of collections to be searched as a sort of mini-catalogues of the deployment's resource collections (i.e. features, coverages, etc.). 
+
+In the latter case, this allows collections of records (i.e. catalogues) to be searched.
+
+The search capabilities of the Records API are organized into various levels of complexity starting from simple spatial, temporal, keyword and type search predicates (i.e. `bbox=`, `datetime=`, `q=`, `type=`) that can be combined using a logical `AND` all the way up to a full blown predicate language (based on OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)), that supports complex filter expressions of logically connected query predicates.
 
 ## Deployment patterns
 
-There are a number of ways that records can be deployed as a "collection of records" or a catalogue.  The OGC API Records specification envisions two deployment patterns using the building blocks described above:
+There are a number of ways that records can be deployed as a "collection of records" or a catalogue.  The OGC API Records specification envisions three deployment patterns using the building blocks described above:
 
-* a catalogue deployed as a static collection of records
+* a catalogue deployed as a crawlable collection of records
 * a catalogue deployed as a searchable endpoint(s)
+* a local resources catalogue
 
-### Static Catalogue
+:warning: In STAC the terms _static_ and _dynamic_ are used to describe these deployment patterns.  However, a _static_ catalogue is not really static since additional records can be added at any time.  As a result, it was decided to try some different, more descriptive, terminology.  The terms _crawlable_ and _searchable_ have been proposed and are used in this README and in the OGC API Records specification.  Other proposed terms include _basic_ and _searchable_.  The SWG decided to try out _crawlable_ and _searchable_ for now but these terms are subject to change based on feedback.
 
-The static deployment pattern involves creating a record as a file to describe each discoverable resource.  Each record is then deployed to some web accessible location (e.g. S3 bucket, web accessible directory, etc.), probably co-located with the resource the record is describing.  Sets of related records are identified by creating a _Record collection_ object, another file deployed to some web accessible location.  The record collection object provides metadata about this collection of records (i.e. about this catalogue) and also includes hypermedia controls (i.e. links, one per record) that allow navigation to the records of the collection.
+### Crawlable Catalogue
+
+The crawlable catalogue deployment pattern involves creating a file that contains a record that describes each discoverable resource.  Each file (i.e. record) is then deployed to some web accessible location (e.g. S3 bucket, web accessible directory, etc.), usually co-located with the resource the record is describing.  Sets of related records are identified by creating a _Record collection_ object, another file also deployed to some web accessible location.  The record collection object provides metadata about this collection of records (i.e. about this catalogue) and also includes hypermedia controls (i.e. links, one per record) that allow navigation to the records of the collection.
 
 This deployment pattern imposes a very low implementation burden because it relies on HTTP to do most of the work of accessing the records of a catalogue.  This makes it easy to deploy and to navigate to the records using a browser or by search engine crawlers.  However, complex searches using logically connect spatio-temporal and/or scalar predicates are not easily supported by this deployment pattern.
 
-```
-add an image illustrating a static catalogue
-```
+![crawlable catalogue](images/crawlable_catalogue_example.png)
 
 ### Searchable catalogue
 
-As is the case for a static catalogue, in a searchable catalogue deployment, records are created to describe discoverable resources.  Collections of these records, rather than being deployed into web-space, are typically (but not necessarily) stored in some back end data management system such as a NO-SQL database or an RDBMS and access to the records is provided through the Records API.  The API also makes use of hypermedia controls (i.e. links) that allow navigation to records in a manner similar to that in the static deployment case.  Information about the catalogue (i.e. the record collection) itself is also accessible through the API.  
+As is the case for a crawlable catalogue, in a searchable catalogue deployment, records are created to describe discoverable resources.  Collections of these records, rather than being deployed into web-space, are typically (but not necessarily) stored in some back end data management system such as a NO-SQL database or an RDBMS and access to the records is provided through the Records API.  The API also makes use of hypermedia controls (i.e. links) that allow navigation to records in a manner similar to that in the crawlable deployment case.  Information about the catalogue (i.e. the record collection) itself is also accessible through the API.  
 
-Unlike the static deployment case, the API also provides search capability that allows subsets of records to be identified and accessed based on client-supplied criteria such as a bounding box, a data range or a free text search.  
+Unlike the crawlable deployment case, the API also provides search capability that allows subsets of records to be identified and accessed based on client-supplied criteria such as a bounding box, a data range or a free text search.  
 
 The following examples illustrate accessing the catalogue through the Records API:
 
@@ -200,6 +309,24 @@ Searches the catalogue for records that describe resources from Greece between J
 In all search cases, the response format is determined using standard [HTTP content negotiation](https://restfulapi.net/content-negotiation/).
 
 Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core API specification supports a basic set of filters roughly analogous to the [OpenSearch](https://opensearch.org) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
+
+⚠️ The OpenSearch protocol used by OGC API - Records is based on a protocol that was launched in 2005 by A9.com, an Amazon subsidiary, as a means for sharing search queries and search results in a standardized format.  In 2021, Amazon.com launched the open source OpenSearch search engine project, unrelated to this effort aside from repurposing the name.  The two projects will continue to independently co-exist, though the search protocol (this project) has largely remained stable and unchanged for over ten years, with no significant updates expected on the horizon.  Neither of these two efforts is related to the Open Search Foundation project found [here](https://opensearchfoundation.org/).
+
+### Local resources catalogue
+
+The OGC API resource tree has a number of resource endpoints that represent lists of resources.  Some example endpoints include:
+
+* `/collections` - list of collections offered by an OGC API
+* `/processes` - list of processes offered by an OGC API
+* `/collections/{collectionId}/scenes` - list of source scenes for a coverage or map
+
+The OGC API Records building blocks can be used to enable catalogue-like queries at these endpoints.  This is especially useful if the endpoint can potentially have a very large number of sub-resources as might be the case at the `/collections` endpoint.  For example, the following request searches for collections whose spatial extent intersects a specified bounding box and whose temporal extent intersects a specified time period:
+
+```
+GET /collections?bbox=-69.64,37.76,-56.12,46.63&datetime=2020-01-11T00:00:00/2020-01-12T00:00:00
+```
+
+Only collections that satisfy that specified predicates are included in the response.
 
 ## Using the standard
 

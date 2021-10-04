@@ -35,8 +35,11 @@ properties:
       type:
         type: string
         description: |-
-          The nature or genre of the resource.
-        format: uri
+          The nature or genre of the resource. The value should be a code, 
+          convenient for filtering the records. Where available, a link to 
+          the canonical URI of the record type resource will be added to 
+          the 'links' property.
+        maxLength: 64
       title:
         type: string
         description: |-
@@ -74,7 +77,19 @@ properties:
           An identifier for the resource assigned by an external (to the
           catalogue) entity.
         items:
-          type: string
+          type: object
+          properties:
+              scheme:
+                  type: string
+                  description: |-
+                      An identifier for the knowledge organization system used
+                      to classify the resource.  It is recommended that the
+                      identifier be a resolvable URI.
+              value:
+                  type: string
+                  description: The value of the identifier.
+          required:
+              - value
       created:
         type: string
         description: |-
@@ -109,7 +124,7 @@ properties:
               description: |-
                  An identifier for the knowledge organization system used
                  to classify the resource.  It is recommended that the
-                 identifier by a resolvable URI.
+                 identifier be a resolvable URI.
       formats:
         type: array
         description: |-
@@ -123,8 +138,11 @@ properties:
       license:
         type: string
         description: |-
-          A legal document under which the resource is made available.
-        format: uri
+          A legal document under which the resource is made available. 
+          The value should be a code, convenient for filtering the records. 
+          Where applicable, the use of the identifiers from the SPDX License List is recommended. If multiple licenses apply, it is recommended to use "various".
+          Where available, links to a URI of each applicable license should be added to the 'links' property.
+        maxLength: 64
       rights:
         type: string
         description: |-

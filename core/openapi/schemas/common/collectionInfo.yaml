@@ -2,6 +2,7 @@ type: object
 required:
   - id
   - links
+  - itemType
 properties:
   id:
     type: string
@@ -17,10 +18,11 @@ properties:
     $ref: extent.yaml
   itemType:
     description: |-
-      indicator about the type of the items in the collection (the default
-      value is 'unknown').
+      indicator about the type of the items in the collection
     type: string
-    default: record
+    enum:
+      - collection
+      - record
   crs:
     description: |-
       the list of coordinate reference systems supported by the API; the
