@@ -64,7 +64,7 @@ Other encoding are allow but are not described in this document.
 |contactPoint |O |An entity to contact about the resource. |properties.contactpoint
 |license |O |A legal document under which the resource is made available. |properties.license
 |rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
-|extent |O |The spatio-temporal coverage of the resource. |properties.extent
+|extent |O |The spatio-temporal coverage and resolution of the resource. |properties.extent
 |associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc. |properties.associations
 |===
 
