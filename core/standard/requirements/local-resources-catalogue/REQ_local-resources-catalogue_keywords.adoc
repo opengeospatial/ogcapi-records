@@ -1,7 +1,7 @@
-[[req_collections_keywords]]
+[[req_local-resources-catalogue_keywords]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/collections/keywords*
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/keywords*
 ^|A |The `keywords` property shall be present in the collection information object.
 ^|B |The value of the `keywords` property shall be a list of keywords or tags associated with the collection.
 |===

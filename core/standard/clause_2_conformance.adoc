@@ -13,6 +13,7 @@ The Requirements Classes for OGC API - Records are:
 
 * <<clause-crawlable-catalogue,Crawlable Catalogue>>
 * <<clause-searchable-catalogue,Searchable Catalogue>>
+* <<clause-local-resources-catalogue,Local Resources Catalogue>>
 * <<clause-record-core,Record>>
 * <<clause-record-collection,Record collection>>
 * <<clause-core-api,Record API>>
@@ -26,6 +27,8 @@ The Requirements Classes for OGC API - Records are:
 The <<clause-crawlable-catalogue,Crawlable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of web-accessible static files.
 
 The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of records that is searchable via an API.
+
+The <<clause-local-resources-catalogue,Local Resources Catalogue>> conformance class defines the core requirements for a local resource catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resource catalogue but other endpoints may exist in an OGC API deployment as well.
 
 The <<clause-record-core,_Record_ Requirements Class>> defines the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended by communities of interest or to suite specific needs.
 
@@ -56,8 +59,9 @@ OGC Compliance Testing web site.
 [cols="30,70",options="header"]
 |===
 |Conformance class |URI
-|<<ats_crawlable_Catalogue,Crawlable Catalogue>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalogue
-|<<ats_searchable_Catalogue,Searchable Catalogue>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalogue
+|<<ats_crawlable-catalogue,Crawlable Catalogue>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalogue
+|<<ats_searchable-catalogue,Searchable Catalogue>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalogue
+|<<ats_local-resources-catalogue,Local Resources Catalogue>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalogue
 |<<ats_core_record,Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
 |<<ats_record_collection,Record Collection>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
 |<<ats_record_api,Record API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api

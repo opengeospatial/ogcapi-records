@@ -19,6 +19,16 @@
 * implement the parameters defined in <<core-query-parameters-table>>,
 * implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
 * extend the record schema to enrich its content as necessary
+* optionally implement the CQL, Sorting, OpenSearch/ATOM.
+* optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>,<<clause-opensearch,OpenSearch>>/<<record_atom_encoding,ATOM>>.
+
+=== tl;dr local resources catalogue
+
+. In order to implemented a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
+
+* implement the endpoint as per the relevant OGC API specification,
+* implement the query parameters defined in <<core-query-parameters-table>>,
+* optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>.
 
 [[general-overview]]
 === General
