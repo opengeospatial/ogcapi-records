@@ -9,7 +9,7 @@ include::requirements/requirements_class_local-resources-catalogue.adoc[]
 This conformance class specifies requirements for local resource catalogues.
 
 The OGC API defines a number of resource endpoints that provide lists of
-sub-resources.  These endpoints are refered to "local resource catalogues" in this specification because they provide metadata about resources offered locally by an OGC API deployment.
+sub-resources.  These endpoints are referred to "local resource catalogues" in this specification because they provide metadata about resources offered locally by an OGC API deployment.
 
 The `/collections` endpoint is an example of a local resources catalogue.  It
 provides a list of offered collections of resources.  Each offered collections (i.e. `/collections/{collectionId}`) is described by a small number of properties defined in https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and typically extended by the resource-specification specification (e.g. OGC API - Feature - Part 1: Core).
@@ -25,7 +25,7 @@ The conformance class defines requirements that :
 
 === Collections Metadata
 
-WARNING: T.B.D.  The rest of this clause was originally a description of extending the `/collections` endpoint but is not being expanded to be any endpoint where it makes sense to add catalogue-like query capability.
+WARNING: T.B.D.  The rest of this clause was originally a description of extending the `/collections` endpoint but is now being expanded to be any endpoint where it makes sense to add catalogue-like query capability.
 
 The https://docs.ogc.org/DRAFTS/20-024.html#collections-metadata[Collections Metadata] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension defines the `bbox`, `datetime` and 'limit' query parameters for the `/collections` resource. 
 

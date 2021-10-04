@@ -195,7 +195,7 @@ include::../openapi/schemas/common/collections.yaml[]
 The following JSON payload is an example of a response to an OGC API - Records
 <<collections-meta-operation,Collections>> operation.
 
-[#conllections-example,reftext=`Collections Example`]
+[#collections-example,reftext=`Collections Example`]
 .Collections Example
 [source,json]
 ----
@@ -265,7 +265,7 @@ The requirements for handling unsuccessful requests are provided in <<http-respo
 [[general-requirements-section]]
 === General requirements
 
-The following requirements and recommentations are applicable to all OGC Records APIs.
+The following requirements and recommendations are applicable to all OGC Records APIs.
 
 [[http-protocol]]
 ==== HTTP 1.1
@@ -314,7 +314,7 @@ include::requirements/core/REQ_query-param-unknown.adoc[]
 
 include::requirements/core/REQ_query-param-invalid.adoc[]
 
-The criteria for a parameter to be "specified" in the API definition depends on the API definition language used, the complexity of the resources exposed, and the abilty of the API server to tolerate errors. 
+The criteria for a parameter to be "specified" in the API definition depends on the API definition language used, the complexity of the resources exposed, and the ability of the API server to tolerate errors. 
 
 A service implementer should endeavour to provide as much detail in the server's API definition as the API definition language allows. However, there is no requirement for it to list every endpoint for which there is a non-404 behaviour, for it to list every possible query parameter that might affect the behaviour of an endpoint, or for it to list every possible value that each query parameter might accept.
 
@@ -363,7 +363,7 @@ Parameters may pass more than one value. These lists of parameter values may be 
 . Repeated name:value pairs where the parameter name is repeated for each value in the list
 . A parameter name followed by a delimited list of values.
 
-The folowing requirements define how to encode a delimited list (case 2) of parameter values. They do not apply if replication (case 1) is used.
+The following requirements define how to encode a delimited list (case 2) of parameter values. They do not apply if replication (case 1) is used.
 
 include::requirements/core/REQ_query-param-list-delimiter.adoc[]
 
@@ -375,7 +375,7 @@ Thus, two successive commas indicates an empty item, as does a leading comma or 
 
 ===== Numeric and Boolean Values
 
-Geospatial is a mathematical discipline. The clear and accurate exchange of mathematical values is essential. The encoding rules in this section standarize the encoding of numeric and boolean primitives when included in a URL. These rules are based on the computer science basic data types identified by <<k-and-r-1978,Kernighan and Ritchie>>.   
+Geospatial is a mathematical discipline. The clear and accurate exchange of mathematical values is essential. The encoding rules in this section standardize the encoding of numeric and boolean primitives when included in a URL. These rules are based on the computer science basic data types identified by <<k-and-r-1978,Kernighan and Ritchie>>.   
 
 Boolean values conform to the following requirement.
 

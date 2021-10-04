@@ -13,7 +13,7 @@ The `Searchable Catalogue` Requirements Class defines the requirements for a cat
 T.B.D.
 
 * implement the <<clause-record-api,record api>> conformance class 
-** implmement the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] specification,
+** implement the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] specification,
 ** implement the parameters defined in <<core-query-parameters-table>>
 * implement the <<clause-record-core,core record>> schema
 ** this record schema can be extended as necessary

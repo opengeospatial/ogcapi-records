@@ -7,7 +7,7 @@ This standard does not mandate any particular encoding or format. However, it do
 * <<requirements-class-html-clause,HTML>>
 * <<requirements-class-atom-clause,ATOM>>
 
-None of these encodings are mandatory. An implementor of this standard may choose to implement none of them, selecting different encodings instead.
+None of these encodings are mandatory. An implementer of this standard may choose to implement none of them, selecting different encodings instead.
 
 === HTML Encoding
 Support for HTML is recommended. HTML is the core language of the World Wide Web. An API that supports HTML will support browsing the spatial resources with a web browser and will also enable search engines to crawl and index those resources.

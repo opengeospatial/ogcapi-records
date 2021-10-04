@@ -8,9 +8,9 @@ A Record is a way of making a resource discoverable by providing summary informa
 
 OGC API - Records provides a way to browse or search a curated collection of Records known as a catalogue. 
 
-A catalogue can be deployed as a static collection of records stored in web-accessible files and typically co-located with the resources each record is describing.  Such a deployment is ammenable to browsing using a web browser or being crawled by a search engine crawler.
+A catalogue can be deployed as a static collection of records stored in web-accessible files and typically co-located with the resources each record is describing.  Such a deployment is amenable to browsing using a web browser or being crawled by a search engine crawler.
 
-A catalogue can also be deployed as an API with well known endpoints for retrieveing information about the catalogue, retrieving records from the catalogue and searching the catalogue for sub-sets of records that satisfy user-defined search criteria.  The following table list the endpoints of the OGC API - Records API:
+A catalogue can also be deployed as an API with well known endpoints for retrieving information about the catalogue, retrieving records from the catalogue and searching the catalogue for sub-sets of records that satisfy user-defined search criteria.  The following table list the endpoints of the OGC API - Records API:
 
 [reftext='{table-caption} {counter:table-num}']
 .Overview of resources, applicable HTTP methods and links to the document sections[[table_1]][[tldnr]]
