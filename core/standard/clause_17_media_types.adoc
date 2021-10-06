@@ -12,10 +12,11 @@ None of these encodings are mandatory. An implementer of this standard may choos
 === HTML Encoding
 Support for HTML is recommended. HTML is the core language of the World Wide Web. An API that supports HTML will support browsing the spatial resources with a web browser and will also enable search engines to crawl and index those resources.
 
+=== Schema Encoding
+Schema structures documented in this standard are defined using OpenAPI 3.0 Schema objects. These are available in YAML format from http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas[http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas]
+
 === JSON Encoding
 Support for JSON is recommended. JSON is a commonly used format that is simple to understand and well supported by numerous tools and software libraries.
-
-JSON structures documented in this standard are defined using JSON Schema. These schema are available in JSON and YAML formats from http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas[http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas]
 
 ==== GeoJSON
 "GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the manner in which they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
@@ -28,7 +29,6 @@ XML is a commonly used format that is well supported by tools and software libra
 XML structures documented in this standard are defined using XML Schema. These schema are available from http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API - Records Core XML Schema].
 
 ==== ATOM
-
 Atom is an XML-based document format that describes lists of related resources known as "feeds". Feeds are composed of a number of items, known as "entries", each describing a resource using an extensible set of attached metadata.  For example, each entry has an identifier and a title.
 
 === Media Types
