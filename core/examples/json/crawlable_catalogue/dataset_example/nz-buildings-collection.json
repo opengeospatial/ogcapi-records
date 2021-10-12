@@ -9,10 +9,10 @@
             "bbox":
             [
                 [
-                  167.325430204,
-                  -47.001329508,
-                  179.413063484,
-                  -34.310623441
+                    167.325430204,
+                    -47.001329508,
+                    179.413063484,
+                    -34.310623441
                 ]
             ]
         }
@@ -50,7 +50,7 @@
             "title": "license"
         },
         {
-            "href": "buildings-record.json",
+            "href": "nz-buildings-record.json",
             "rel": "alternate",
             "type": "application/geo+json",
             "title": "OGC Record JSON of this data"
