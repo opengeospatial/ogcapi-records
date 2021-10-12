@@ -99,13 +99,15 @@ include::clause_7_crawlable_catalogue.adoc[]
 
 include::clause_8_searchable_catalogue.adoc[]
 
-include::clause_9_record_core.adoc[]
+include::clause_9_local_resources_catalogue.adoc[]
 
 include::clause_10_record_collection.adoc[]
 
-include::clause_11_record_api.adoc[]
-
 // include::clause_12_collections.adoc[]
+
+include::clause_11_record_core.adoc[]
+
+include::clause_12_record_api.adoc[]
 
 include::clause_13_sorting.adoc[]
 

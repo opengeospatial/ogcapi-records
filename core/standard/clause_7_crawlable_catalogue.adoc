@@ -40,4 +40,4 @@ The collection object represent the root of a 3-level tree structure where the l
 
 These statically deployed collection and record objects can easily be traversed using a web browser and indexed by search engine crawlers.
 
-Although not described in this specification, a deeper tree strcture of linked collection objects can be used to organize hierarchies of collections and records.
+Although not described in this specification, a deeper tree structure of linked collection objects can be used to organize hierarchies of collections and records.

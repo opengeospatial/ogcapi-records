@@ -1,30 +1,39 @@
-== Requirements Class "Collections"
+[[clause_local-resources-catalogue]]
+== Requirements Class "Local Resources Catalogue"
 
-[[collections-overview]]
+[[local-resources-catalogue-overview]]
 === Overview
 
-include::requirements/requirements_class_collections.adoc[]
+include::requirements/requirements_class_local-resources-catalogue.adoc[]
 
-The purpose of the conformance class is to specify requirements that extend
-the behaviour at the `/collections` endpoint to make it queryable by
-OGC API - Records clients.
+This conformance class specifies requirements for local resource catalogues.
 
-The conformance class defines the following extensions:
+The OGC API defines a number of resource endpoints that provide lists of
+sub-resources.  These endpoints are referred to "local resource catalogues" in this specification because they provide metadata about resources offered locally by an OGC API deployment.
 
-1. It extends the set of query parameters defined in the https://docs.ogc.org/DRAFTS/20-024.html#collections-metadata[Collections Metadata] section to support the richer set of query parameters defined in the <<parameters-section,Parameters>> clause of this specification.
+The `/collections` endpoint is an example of a local resources catalogue.  It
+provides a list of offered collections of resources.  Each offered collections (i.e. `/collections/{collectionId}`) is described by a small number of properties defined in https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and typically extended by the resource-specification specification (e.g. OGC API - Feature - Part 1: Core).
 
-2. It extends the schema of the collection information object defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection Description] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension to add additional keys/properties that are required by OGC API - Records.
+Other local resources catalogues include the `/processes` endpoint which provides a list of offered processes and the `/collections/{collectionId}/scenes` endpoint which provides a list of source images.
 
+The conformance class defines requirements that :
+
+1. Define or extend the set of query parameters defined at the local resource catalogue endpoint. In the case of the `/collections` endpoint, for example, the requirements in this conformance class extend the set of queryables, `bbox`, `datetime` and `limit`, to include a parameters such as a text search parameter `q`.
+
+2. Extend the schema of the local resource catalogue endpoint to add additional keys/properties that provide richer descriptive information.  In the case of the
+`/collections` endpoint, for example, these additional properties enhance the information content defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection Description] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension
 
 === Collections Metadata
 
+WARNING: T.B.D.  The rest of this clause was originally a description of extending the `/collections` endpoint but is now being expanded to be any endpoint where it makes sense to add catalogue-like query capability.
+
 The https://docs.ogc.org/DRAFTS/20-024.html#collections-metadata[Collections Metadata] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension defines the `bbox`, `datetime` and 'limit' query parameters for the `/collections` resource. 
 
-include::requirements/collections/REQ_collections_query-params.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_query-params.adoc[]
 
 The collections metadata (i.e. HTTP GET on the `/collections` path) is defined in the https://docs.ogc.org/DRAFTS/20-024.html#_response[Collections Metadata] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension.  
 
-include::requirements/collections/REQ_collections_query-response.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_query-response.adoc[]
 
 === Collection Description
 
@@ -52,9 +61,9 @@ The following requirements specify additional properties that a compliant
 implementation of this conformance class must add to the collection 
 information object.
 
-include::requirements/collections/REQ_collections_title.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_title.adoc[]
 
-include::requirements/collections/REQ_collections_description.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_description.adoc[]
 
 No additional requirements are necessary for the `extent` property.
 
@@ -63,21 +72,21 @@ No additional requirements are necessary to the `links` property.  Since the
 always be present but because it is an optional core queryables, catalogue
 clients will either know how to handle it or they will ignore it.
 
-include::requirements/collections/REQ_collections_type.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_type.adoc[]
 
-include::requirements/collections/REQ_collections_created.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_created.adoc[]
 
-include::requirements/collections/REQ_collections_updated.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_updated.adoc[]
 
 NOTE: Adding, modifying, or deleting items from a collections are all examples of changes to that collection.
 
-include::requirements/collections/REQ_collections_keywords.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_keywords.adoc[]
 
-include::recommendations/collections/REC_collections_additional-properties.adoc[]
+include::recommendations/local-resources-catalogue/REC_local-resources-catalogue_additional-properties.adoc[]
 
 The collections metadata response is defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-metadata[Collections Metadata] clause on the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension.
 
-include::requirements/collections/REQ_collections-schema.adoc[]
+include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_schema.adoc[]
 
 === Examples
 
@@ -97,3 +106,4 @@ Example 1: List all the collections that lie within a specific bounding box and 
      |   Need example output here...                                 |
      |<--------------------------------------------------------------|
 ---
+

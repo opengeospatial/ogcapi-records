@@ -1,12 +1,10 @@
-[[req_collections_query-params]]
+[[req_local-resources-catalogues_query-params]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/collections/query-params*
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogues/query-params*
 ^|A |The HTTP GET operation at the `/collections` path shall support the following additional query parameters defined in the <<parameters-section>> section:
 
 * <<core-query-parameters-type,type>>
 * <<core-query-parameters-q,q>>
 * <<core-query-parameters-sortby,sortby>>
 |===
-
-

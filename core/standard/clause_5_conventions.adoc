@@ -10,15 +10,15 @@ All requirements and conformance tests that appear in this document are denoted 
 
 === Examples
 
-Most of the examples provided in this standard are encoded in JSON. JSON is chosen because it is widely understood by implementers and easy to include in a text document. This convention should NOT be interpreted as a requirement that JSON must be used. Implementors are free to use any format they desire as long as there is a Conformance Class for that format and the API advertises its support for the associated Conformance Class.
+Most of the examples provided in this standard are encoded in JSON. JSON is chosen because it is widely understood by implementers and easy to include in a text document. This convention should NOT be interpreted as a requirement that JSON must be used. Implementers are free to use any format they desire as long as there is a Conformance Class for that format and the API advertises its support for the associated Conformance Class.
 
 === Schema
 
-JSON Schema is used throughout this standard to define the structure of resources. These schema are typically represented using YAML encoding. This convention is for the ease of the user. It does not prohibit the use of another schema language or encoding. Nor does it indicate that JSON Schema is required. Implementations should use a schema language and encoding appropriate for the format of the resource.
+OpenAPI 3.0 Schema objects are used throughout this standard to define the structure of resources. These schema are typically represented using YAML encoding. This convention is for the ease of the user. It does not prohibit the use of another schema language or encoding. Nor does it indicate that OpenAPI 3.0 Schema objects are required. Implementations should use a schema language and encoding appropriate for the format of the resource.  Note that for property values in JSON for which `null` is not explicitly supported/required, server implementations are recommended to drop the property (as opposed to specifying the property with a value of `null`).
 
 === UML Notation
 
-Diagrams using the Unified Modeling Language (UML) adhere to the following conventions:
+Diagrams using the Unified Modelling Language (UML) adhere to the following conventions:
 
 * UML elements having a package name of “GML” are those defined in the UML model of GML 3.2.1
 * UML elements having a package name of “SWE Common” are those defined in the UML model of SWE Common 2.0
@@ -43,6 +43,6 @@ UML diagrams and XML code fragments adhere to the namespace conventions shown in
 |dct |http://purl.org/dc/terms/ |Dublin core terms
 |gml |http://www.opengis.net/gml/3.2 |GML 3.2.1
 |gml33 |http://www.opengis.net/gml/3.3 |GML 3.3
-|os |http://a9.com/-/spec/opensearch/1.1/ |OpenSearach namespace
+|os |http://a9.com/-/spec/opensearch/1.1/ |OpenSearch namespace
 |xlink |http://www.w3.org/1999/xlink |XLink namespace
 |====

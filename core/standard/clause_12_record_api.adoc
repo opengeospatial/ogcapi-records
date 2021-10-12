@@ -13,7 +13,7 @@ The components of the `Core Record API` requirements class that are derived from
 . <<api-platform-section,API Platform>>: a set of common capabilities
 . <<collections-access,Collections access>>: operations for accessing information about collections of records
 . <<collection-information,Collection information>>: operations for accessing information about a specific collection (i.e. catalogue).
-. <<general-requirements-section,General Requirments>>: general principles for use with this standard
+. <<general-requirements-section,General Requirements>>: general principles for use with this standard
 
 The requirements for accessing collections of records are presented in the following sections:
 
@@ -25,7 +25,7 @@ The requirements for accessing collections of records are presented in the follo
 
 ==== Overview 
 
-Groups of related records are accesed from a collection (i.e. a catalogue).  The collection provides metadata about the catalogue and includes access metadata for navigating to records from the collection.   The content of the collection is defined in the <<clause-core-record-collection,Record collection clause>> 
+Groups of related records are accessed from a collection (i.e. a catalogue).  The collection provides metadata about the catalogue and includes access metadata for navigating to records from the collection.   The content of the collection is defined in the <<clause-core-record-collection,Record collection clause>> 
 
 This section defines how to access the collection object through the Records API.
 
@@ -84,7 +84,7 @@ supported at the `/collections/{collectionId}/items` endpoint.
 |externalid |An equality predicate consistent of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
 |_prop_=_value_ |Equality predicates with any queryable (see: /collections/{catalogueId}/queryables)
 |sortby^2^ |Record sorting for response
-|filter/filter_lang/filter_crs^3^ |Enhanced filtering prameters
+|filter/filter_lang/filter_crs^3^ |Enhanced filtering parameters
 2+|NOTES:
 (1)Inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].
 (2) The server must implement the <<clause-sorting,Sorting>> conformance class.

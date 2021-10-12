@@ -15,17 +15,27 @@
 
 . In order to implement a catalogue where records are stored in some backend database and are accessed through an access/search API:
 
-* implmement the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] specification,
+* implement the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] specification,
 * implement the parameters defined in <<core-query-parameters-table>>,
 * implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
 * extend the record schema to enrich its content as necessary
+* optionally implement the CQL, Sorting, OpenSearch/ATOM.
+* optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>,<<clause-opensearch,OpenSearch>>/<<record_atom_encoding,ATOM>>.
+
+=== tl;dr local resources catalogue
+
+. In order to implemented a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
+
+* implement the endpoint as per the relevant OGC API specification,
+* implement the query parameters defined in <<core-query-parameters-table>>,
+* optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>.
 
 [[general-overview]]
 === General
 
 The atomic unit of information in a catalogue is the _record_.
 
-A _catalogue_ is a collection of _records_.  The terms **collection of records** and **catalogue** are used interchangably in this specification.
+A _catalogue_ is a collection of _records_.  The terms **collection of records** and **catalogue** are used interchangeably in this specification.
 
 A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined is this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated that this list of properties would be extended to enhance the information content of a record. 
 
@@ -69,7 +79,7 @@ The following table lists the set or properties, called _**core queryables**_, t
 |created |The date the resource was created.
 |updated |The more recent date on which the resource was changed.
 |publisher |The entity making the resource available.
-|themes |A knowledge orgnaization system used to classify the resource.
+|themes |A knowledge organization system used to classify the resource.
 |formats |A list of available distributions for the resource.
 |contactPoint |An entity to contact about the resource.
 |license |A legal document under which the resource is made available.
@@ -83,11 +93,11 @@ A complete definition of a record can be found in clause <<core-queryables,Core 
 The choice of which properties to include in the set of core queryables was primarily informed by the following record models:
 
 * The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalogue schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
-* the https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabular (DCAT) - Version 2] and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specifications.
+* the https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabulary (DCAT) - Version 2] and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specifications.
 
 It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being made discoverable by the record.
 
-It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suite specific needs is allowed and encouranged by this specification.
+It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suite specific needs is allowed and encouraged by this specification.
 
 Although this document does not mandate any particular encoding for a record, the document does define conformance classes for three encodings:
 
@@ -130,7 +140,7 @@ Depending on the deployment pattern, the collection may provide a link to each i
 |created |The date the collection was created.
 |updated |The more recent date on which the collection was changed.
 |publisher |The entity making the collection available.
-|themes |A knowledge orgnaization system used to classify the collection.
+|themes |A knowledge organization system used to classify the collection.
 |contactPoint |An entity to contact about the collection.
 |license |A legal document under which the resource is made available.
 |rights |A statement that concerns all rights not addressed by the license such as a copyright statement.
@@ -145,12 +155,12 @@ It is anticipated that this set of properties will be extended to enrich the inf
 
 ==== Overview 
 
-The Records API allows a subsert of records to be retrieved from a catalogue using a logically connected set of predicates that may include spatial and/or temporal predicates.
+The Records API allows a subset of records to be retrieved from a catalogue using a logically connected set of predicates that may include spatial and/or temporal predicates.
 
 The Records API extends https://github.com/opengeospatial/ogcapi-common[OGC API Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] to:
 
 . Provide modern API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
-. Provide functionality comparable to that of the <<api-behavior-model-overview,OGC Catalogue Service (CSW) standard>> so that a facade can be created over legacy services thus allowing them to participate in the new OGC API ecosystem.
+. Provide functionality comparable to that of the <<api-behaviour-model-overview,OGC Catalogue Service (CSW) standard>> so that a facade can be created over legacy services thus allowing them to participate in the new OGC API ecosystem.
 
 Collections of records exposed though this OGC API may be accessed through an https://www.ogc.org/standards/ogcapi-features[OGC API Features API] that has been:
 
@@ -181,8 +191,8 @@ Where:
 * {collectionId} = an identifier for a specific record collection (i.e. catalogue identifier)
 * {recordId} = an identifier for a specific record within a collection
 
-[[api-behavior-model-overview]]
-==== API Behavior Model
+[[api-behaviour-model-overview]]
+==== API Behaviour Model
 
 The Records API is designed to be compatible but not conformant with the OGC Catalogue Service for the Web (CSW). This allows OGC API - Records implementations and CSW implementations to co-exist in a single processing environment.
 

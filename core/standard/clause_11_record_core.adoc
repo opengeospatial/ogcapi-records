@@ -59,7 +59,7 @@ Other encoding are allow but are not described in this document.
 |created |O |The date the resource was created. |properties.created
 |updated |O |The more recent date on which the resource was changed. |properties.updated
 |publisher |O |The entity making the resource available. |properties.publisher
-|themes |O |A knowledge orgnaization system used to classify the resource. |properties.themes
+|themes |O |A knowledge organization system used to classify the resource. |properties.themes
 |formats |O |A list of available distributions for the resource. |properties.formats
 |contactPoint |O |An entity to contact about the resource. |properties.contactpoint
 |license |O |A legal document under which the resource is made available. |properties.license
@@ -157,7 +157,7 @@ Templated links with variables may be used to bind to resources that may require
 include::../examples/json/templated-link.json[]
 ----
 
-[[sc_language_metogiation]]
+[[sc_language_negotiation]]
 ==== Language negotiation
 
 Two kinds of languages are handled in this specification.  The language
@@ -166,4 +166,4 @@ that describes the resource in the catalogue.
 
 The language associated with the resource is specified using the <<core-queryables-resource-table,language>> property of a catalogue record.  This indicates the language associated with the resource that the record described.
 
-The language for the record itself is negotiated between a client and the servers using the https://tools.ietf.org/html/rfc7231#section-5.3.5[Accept-Language] header of https://tools.ietf.org/html/rfc7231[HTTP].  Records in a response document can only be presented in a single negotiated language.  There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple lanugages would require multiple requests to the server each nagotiating to a desired language.
+The language for the record itself is negotiated between a client and the servers using the https://tools.ietf.org/html/rfc7231#section-5.3.5[Accept-Language] header of https://tools.ietf.org/html/rfc7231[HTTP].  Records in a response document can only be presented in a single negotiated language.  There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple languages would require multiple requests to the server each negotiating to a desired language.

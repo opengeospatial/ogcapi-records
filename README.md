@@ -9,7 +9,7 @@ OGC API - Records provides discovery and access to metadata about geospatial res
 The OGC API - Records specification being developed in this repository defines three main **building blocks**:
 
 * Record
-* Collection (Record and other)
+* Collections
 * Records API
 
 ## The Record building block
@@ -236,7 +236,7 @@ The following is an example of a crawlable record collection encoded as JSON.  I
 
 The OGC API - Records specification defines a core catalogue access and search API by extending OGC API - Common - Part 2: Geospatial Data and the OGC API - Features - Part 1: Core APIs.
 
-OGC API - Common specifies a well-defined access path to information about collections (i.e. `/collections`).  OGC API - Features specifies a well-defined access path to the records (i.e. `/collections/{collectionId}/items`) of a catalogue (i.e. a record collection).  OGC API - Records extended each of these endpoints with additional query parameters that enable catalogue search capabilities.
+OGC API - Common specifies a well-defined access path to information about collections (i.e. `/collections`).  OGC API - Features specifies a well-defined access path to the records (i.e. `/collections/{collectionId}/items`) of a catalogue (i.e. a record collection).  OGC API - Records extended each of these endpoints with additional query parameters to enable catalogue search capabilities.
 
 In the first case this allows deployments with a large number of collections to be searched as a sort of mini-catalogues of the deployment's resource collections (i.e. features, coverages, etc.). 
 
@@ -246,12 +246,11 @@ The search capabilities of the Records API are organized into various levels of 
 
 ## Deployment patterns
 
-There are a number of ways that records can be deployed as a "collection of records" or a catalogue.  The OGC API Records specification envisions two deployment patterns using the building blocks described above:
+There are a number of ways that records can be deployed as a "collection of records" or a catalogue.  The OGC API Records specification envisions three deployment patterns using the building blocks described above:
 
 * a catalogue deployed as a crawlable collection of records
 * a catalogue deployed as a searchable endpoint(s)
-
-The OGC API Records specification also envisions the `/collections` endpoint acting as a special case of the searchable catalogue endpoint allowing large deployments of resource collections to be searched.
+* a local resources catalogue
 
 :warning: In STAC the terms _static_ and _dynamic_ are used to describe these deployment patterns.  However, a _static_ catalogue is not really static since additional records can be added at any time.  As a result, it was decided to try some different, more descriptive, terminology.  The terms _crawlable_ and _searchable_ have been proposed and are used in this README and in the OGC API Records specification.  Other proposed terms include _basic_ and _searchable_.  The SWG decided to try out _crawlable_ and _searchable_ for now but these terms are subject to change based on feedback.
 
@@ -312,6 +311,22 @@ In all search cases, the response format is determined using standard [HTTP cont
 Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core API specification supports a basic set of filters roughly analogous to the [OpenSearch](https://opensearch.org) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
 
 ⚠️ The OpenSearch protocol used by OGC API - Records is based on a protocol that was launched in 2005 by A9.com, an Amazon subsidiary, as a means for sharing search queries and search results in a standardized format.  In 2021, Amazon.com launched the open source OpenSearch search engine project, unrelated to this effort aside from repurposing the name.  The two projects will continue to independently co-exist, though the search protocol (this project) has largely remained stable and unchanged for over ten years, with no significant updates expected on the horizon.  Neither of these two efforts is related to the Open Search Foundation project found [here](https://opensearchfoundation.org/).
+
+### Local resources catalogue
+
+The OGC API resource tree has a number of resource endpoints that represent lists of resources.  Some example endpoints include:
+
+* `/collections` - list of collections offered by an OGC API
+* `/processes` - list of processes offered by an OGC API
+* `/collections/{collectionId}/scenes` - list of source scenes for a coverage or map
+
+The OGC API Records building blocks can be used to enable catalogue-like queries at these endpoints.  This is especially useful if the endpoint can potentially have a very large number of sub-resources as might be the case at the `/collections` endpoint.  For example, the following request searches for collections whose spatial extent intersects a specified bounding box and whose temporal extent intersects a specified time period:
+
+```
+GET /collections?bbox=-69.64,37.76,-56.12,46.63&datetime=2020-01-11T00:00:00/2020-01-12T00:00:00
+```
+
+Only collections that satisfy that specified predicates are included in the response.
 
 ## Using the standard
 

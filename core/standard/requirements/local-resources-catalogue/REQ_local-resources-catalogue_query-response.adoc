@@ -1,7 +1,7 @@
-[[req_collections_query-response]]
+[[req_local-resources-catalogue_query-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/collections/query-response*
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/query-response*
 ^|A |The response shall only contain those collection information objects that satisfy all the query parameters specified with the HTTP GET operation (i.e. one or more of bbox, datetime, limit, type, q, sortby).
 |===
 
