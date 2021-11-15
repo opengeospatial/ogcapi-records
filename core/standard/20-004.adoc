@@ -125,6 +125,8 @@ include::annex_common.adoc[]
 
 include::annex_ats.adoc[]
 
+include::annex_resource_types.adoc[]
+
 include::annex_bibliography.adoc[]
 
 include::annex_history.adoc[]
