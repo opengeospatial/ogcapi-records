@@ -1,5 +1,8 @@
 {
     "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
+    "conformsTo": [
+        "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+    ],
     "type": "Feature",
     "geometry": {
         "type": "Polygon",
