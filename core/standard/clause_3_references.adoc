@@ -26,6 +26,7 @@ The following normative documents contain provisions that, through reference in 
 * W3C: W3C Recommendation, XML Linking Language (XLink), version 1, 2001
 * W3C: W3C Working Draft, The app: URI scheme, 2013
 * ISO/IEC: ISO/IEC 19757-3:2006 Information technology – Document Schema Definition Languages (DSDL) – Part 3: Rule-based validation – Schematron, 2006
+* ISO 8601: ISO 8601:2004: Data elements and interchange formats — Information interchange — Representation of dates and times, https://www.iso.org/standard/40874.html, 2004
 * IETF: RFC 2183, 1997
 * IETF: RFC 2387, 1998
 * IETF: RFC 2392, 1998
