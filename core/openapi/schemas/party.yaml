@@ -8,18 +8,23 @@ oneOf:
     description: |-
       Identification of, and means of communication with, person responsible
       for the resource.
+    required:
+      - name
     properties:
-      individualName:
+      identifier:
         type: string
         description: |-
-          Name of the responsible person.  Recommend surname, given name,
-          title separated by a demiliter.
-      organizationName:
+          A value uniquely identifying a party (individual or organization)
+      name:
         type: string
-        description: Name of the responsible organization
+        description: |-
+          The name of the organization or the individual.
       positionName:
         type: string
         description: Role or position of the responsible person.
+      logo:
+        $ref: common/link.yaml
+        description: Graphic identifying a party
       contactInfo:
         type: object
         description: |-
@@ -70,8 +75,8 @@ oneOf:
                   country:
                     type: string
                     description: Country of the physical address.
-          onlineResource:
-            $ref: link.yaml
+          url:
+            $ref: common/link.yaml
             description: On-line information about the responsible party.
           hoursOfService:
             type: string
@@ -83,16 +88,18 @@ oneOf:
             description: |-
               Supplemental instructions on how or when to contact the
               responsible party.
-      role:
-        type: object
-        description: |-
-          The function performed by the responsible party. See ISO19115:2003,
-          Subclause B.5.5.
-        required:
-          - name
-        properties:
-          name:
-            type: string
-          authority:
-            type: string
-            format: uri
+      roles:
+        type: array
+        items:
+          type: object
+          description: |-
+            The function performed by the responsible party. See ISO19115:2003,
+            Subclause B.5.5.
+          required:
+            - name
+          properties:
+            name:
+              type: string
+            authority:
+              type: string
+              format: uri
