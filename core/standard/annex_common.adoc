@@ -13,7 +13,7 @@ This annex describes the components of the OGC API Records that are derived for 
 
 This standard standard is an extension of the OGC API - Common standard. Therefore, an implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from OGC API - Common.
 
-include::requirements/core/REQ_api-common.adoc[]
+include::requirements/record-api/REQ_api-common.adoc[]
 
 [[api-platform-section]]
 === API Platform
@@ -272,7 +272,7 @@ The following requirements and recommendations are applicable to all OGC Records
 
 This standard uses the https://tools.ietf.org/rfc/rfc2616.txt[HTTP protocol]. Therefore, conformance with HTTP or a closely related protocol is required.
 
-include::requirements/core/REQ_http.adoc[]
+include::requirements/record-api/REQ_http.adoc[]
 
 [[http-status-codes]]
 ==== HTTP Status Codes
@@ -301,40 +301,40 @@ include::requirements/core/REQ_http.adoc[]
 
 The return status codes described in <<status-codes>> do not cover all possible conditions. 
 
-include::recommendations/core/PER_additional-status-codes.adoc[]
+include::recommendations/record-api/PER_additional-status-codes.adoc[]
 
 When a server encounters an error in the processing of a request, it may wish to include information in addition to the status code in the response. Since Web API interactions are often machine-to-machine, a machine-readable report is preferred. <<rfc7807,IETF RFC 7807>> addresses this need by providing "Problem Details" response schemas for both JSON and XML.
 
-include::recommendations/core/REC_problem-details.adoc[]
+include::recommendations/record-api/REC_problem-details.adoc[]
 
 [[query-parameter-requirements]]
 ==== Query parameters
 
-include::requirements/core/REQ_query-param-unknown.adoc[]
+include::requirements/record-api/REQ_query-param-unknown.adoc[]
 
-include::requirements/core/REQ_query-param-invalid.adoc[]
+include::requirements/record-api/REQ_query-param-invalid.adoc[]
 
 The criteria for a parameter to be "specified" in the API definition depends on the API definition language used, the complexity of the resources exposed, and the ability of the API server to tolerate errors. 
 
 A service implementer should endeavour to provide as much detail in the server's API definition as the API definition language allows. However, there is no requirement for it to list every endpoint for which there is a non-404 behaviour, for it to list every possible query parameter that might affect the behaviour of an endpoint, or for it to list every possible value that each query parameter might accept.
 
-include::recommendations/core/PER_query-param-specified.adoc[]
+include::recommendations/record-api/PER_query-param-specified.adoc[]
 
-include::recommendations/core/PER_query-param-tolerance.adoc[]
+include::recommendations/record-api/PER_query-param-tolerance.adoc[]
 
 [[web-caching-section]]
 ==== Web Caching
 
 Entity tags are a mechanism for web cache validation and for supporting conditional requests to reduce network traffic. Entity tags are specified by <<rfc7232,HTTP/1.1 (RFC 7232)>>.
 
-include::recommendations/core/REC_etag.adoc[]
+include::recommendations/record-api/REC_etag.adoc[]
 
 [[cross-origin-section]]
 ==== Support for Cross-Origin Requests
 
 If the data is located on another host than the webpage ("same-origin policy"), access to data from a HTML page is by default prohibited for security reasons. A typical example is a web-application accessing feature data from multiple distributed datasets.
 
-include::recommendations/core/REC_cross-origin.adoc[]
+include::recommendations/record-api/REC_cross-origin.adoc[]
 
 Two common mechanisms to support cross-origin requests are:
 
@@ -354,7 +354,7 @@ The Backus-Naur Form (BNF) definition of a URI is provided in <<uri-bnf-annex,An
 
 <<rfc3986,IETF RFC 3986>> sections 6.2.2.1 and 2.1 provide the requirements for capitalization in URIs.
 
-include::requirements/core/REQ_query-param-capitalization.adoc[]
+include::requirements/record-api/REQ_query-param-capitalization.adoc[]
 
 ===== Parameter Value Lists
 
@@ -365,11 +365,11 @@ Parameters may pass more than one value. These lists of parameter values may be 
 
 The following requirements define how to encode a delimited list (case 2) of parameter values. They do not apply if replication (case 1) is used.
 
-include::requirements/core/REQ_query-param-list-delimiter.adoc[]
+include::requirements/record-api/REQ_query-param-list-delimiter.adoc[]
 
-include::requirements/core/REQ_query-param-list-escape.adoc[]
+include::requirements/record-api/REQ_query-param-list-escape.adoc[]
 
-include::requirements/core/REQ_query-param-list-empty.adoc[]
+include::requirements/record-api/REQ_query-param-list-empty.adoc[]
 
 Thus, two successive commas indicates an empty item, as does a leading comma or a trailing comma. An empty list ("") can either be interpreted as a list containing no items or as a list containing a single empty item, depending on the context.
 
@@ -379,22 +379,22 @@ Geospatial is a mathematical discipline. The clear and accurate exchange of math
 
 Boolean values conform to the following requirement.
 
-include::requirements/core/REQ_query-param-value-boolean.adoc[]
+include::requirements/record-api/REQ_query-param-value-boolean.adoc[]
 
 Integer values conform to the following requirement.
 
-include::requirements/core/REQ_query-param-value-integer.adoc[]
+include::requirements/record-api/REQ_query-param-value-integer.adoc[]
 
 Real numbers can be represented using either the decimal or double (exponential) format. The decimal format is typically used except for very large or small values.
 
 Decimal values conform to the following requirement. 
 
-include::requirements/core/REQ_query-param-value-decimal.adoc[]
+include::requirements/record-api/REQ_query-param-value-decimal.adoc[]
 
 Double values conform to the following requirement. 
 
-include::requirements/core/REQ_query-param-value-double.adoc[]
+include::requirements/record-api/REQ_query-param-value-double.adoc[]
 
 Special values conform to the following requirement. 
 
-include::requirements/core/REQ_query-param-value-special.adoc[]
+include::requirements/record-api/REQ_query-param-value-special.adoc[]

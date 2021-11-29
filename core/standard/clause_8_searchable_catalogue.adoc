@@ -12,9 +12,9 @@ The `Searchable Catalogue` Requirements Class defines the requirements for a cat
 
 ==== Conformance
 
-include::requirements/core/REQ_conformance.adoc[]
+include::requirements/searchable-catalogue/REQ_conformance.adoc[]
 
-include::recommendations/core/PER_additional-conformance.adoc[]
+include::recommendations/searchable-catalogue/PER_additional-conformance.adoc[]
 
 ==== Core API
 

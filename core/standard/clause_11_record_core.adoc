@@ -67,9 +67,9 @@ Other encoding are allow but are not described in this document.
 |associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc. |properties.associations
 |===
 
-include::requirements/core/REQ_mandatory-queryables-record.adoc[]
+include::requirements/record-core/REQ_mandatory-queryables-record.adoc[]
 
-include::recommendations/core/PER_additional-queryables-record.adoc[]
+include::recommendations/record-core/PER_additional-queryables-record.adoc[]
 
 [[sc_keywords_and_themes]]
 ==== Keywords and Themes
@@ -89,16 +89,16 @@ include::../examples/json/keywords-themes.json[]
 The following recommendations provide clarification on where and how to use
 these properties in a record.
 
-include::recommendations/core/REC_record-keywords-themes.adoc[]
+include::recommendations/record-core/REC_record-keywords-themes.adoc[]
 
 [[sc_type_and_licenses]]
 ==== Type and Licenses
 
 A record has one `properties.type` and one `properties.license` properties. The value of each property should be a code, convenient for filtering records. 
 
-include::recommendations/core/REC_record-type.adoc[]
+include::recommendations/record-core/REC_record-type.adoc[]
 
-include::recommendations/core/REC_record-license.adoc[]
+include::recommendations/record-core/REC_record-license.adoc[]
 
 In addition, links to external resources representing the record type and the licenses are recommended, as described in the next section.
 
@@ -108,9 +108,9 @@ In addition, links to external resources representing the record type and the li
 A record may contain both `links` and `properties.associations` properties which
 serve different purposes.
 
-include::recommendations/core/REC_record-links.adoc[]
+include::recommendations/record-core/REC_record-links.adoc[]
 
-include::recommendations/core/REC_record-associations.adoc[]
+include::recommendations/record-core/REC_record-associations.adoc[]
 
 NOTE: The representation of links in the payload will depend on the encoding of the record.
 

@@ -61,7 +61,7 @@ The basic Records API is the OGC API Features API that has been augmented with a
 Catalogue records are accessible at the `/collections/{collectionId}/items`
 endpoint.
 
-include::requirements/core/REQ_record-collection-op.adoc[]
+include::requirements/record-api/REQ_record-collection-op.adoc[]
 
 [[parameters-section]]
 ==== Parameters
@@ -100,46 +100,46 @@ The query parameters `q`, `type` and `externalid` are specific to API - Records.
 
 The Bounding Box (bbox) parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
 
-include::requirements/core/REQ_query-param-bbox.adoc[]
+include::requirements/record-api/REQ_query-param-bbox.adoc[]
 
 [[core-query-parameters-datetime]]
 ===== Parameter datetime
 
 The Date-Time (datetime) parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
 
-include::requirements/core/REQ_query-param-datetime.adoc[]
+include::requirements/record-api/REQ_query-param-datetime.adoc[]
 
 [[core-query-parameters-limit]]
 ===== Parameter limit
 
 The limit parameter is defined in API - Common. The following requirement governs use of that parameter in API - Records.
 
-include::requirements/core/REQ_query-param-limit.adoc[]
+include::requirements/record-api/REQ_query-param-limit.adoc[]
 
 [[core-query-parameters-q]]
 ===== Parameter q
 
-include::requirements/core/REQ_query-param-q-definition.adoc[]
+include::requirements/record-api/REQ_query-param-q-definition.adoc[]
 
-include::recommendations/core/REC_param-q.adoc[]
+include::recommendations/record-api/REC_param-q.adoc[]
 
-include::requirements/core/REQ_query-param-q-response.adoc[]
+include::requirements/record-api/REQ_query-param-q-response.adoc[]
 
 [[core-query-parameters-type]]
 ===== Parameter type
 
-include::requirements/core/REQ_query-param-type-definition.adoc[]
+include::requirements/record-api/REQ_query-param-type-definition.adoc[]
 
-include::recommendations/core/REC_query-param-type-definition.adoc[]
+include::recommendations/record-api/REC_query-param-type-definition.adoc[]
 
-include::requirements/core/REQ_query-param-type-response.adoc[]
+include::requirements/record-api/REQ_query-param-type-response.adoc[]
 
 [[core-query-parameters-externalid]]
 ===== Parameter externalId
 
-include::requirements/core/REQ_query-param-externalid-definition.adoc[]
+include::requirements/record-api/REQ_query-param-externalid-definition.adoc[]
 
-include::requirements/core/REQ_query-param-externalid-response.adoc[]
+include::requirements/record-api/REQ_query-param-externalid-response.adoc[]
 
 [[additional-query-parameters]]
 ===== Additional query parameters
@@ -152,7 +152,7 @@ resource.
 * <<core-query-parameters-type,type>>
 * <<core-query-parameters-externalid,externalId>>
 
-include::recommendations/core/REC_additional-query-parameters.adoc[]
+include::recommendations/record-api/REC_additional-query-parameters.adoc[]
 
 ===== Combinations of Filtering Parameters
 
@@ -161,7 +161,7 @@ Any combination of query parameters from the <<core-query-parameters-table,Table
 [[query-response]]
 ==== Response
 
-include::requirements/core/REQ_record-collection-response.adoc[]
+include::requirements/record-api/REQ_record-collection-response.adoc[]
 
 <<response-encodings>> lists specific requirements based on the negotiated representation of the response.
 
@@ -200,11 +200,11 @@ See <<record-example>> for an example of a single catalogue record.
 
 ==== Operation
 
-include::requirements/core/REQ_record-op.adoc[]
+include::requirements/record-api/REQ_record-op.adoc[]
 
 ==== Response
 
-include::requirements/core/REQ_record-success.adoc[]
+include::requirements/record-api/REQ_record-success.adoc[]
 
 ==== Error situations
 

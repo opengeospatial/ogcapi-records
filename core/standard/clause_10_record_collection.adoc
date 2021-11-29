@@ -46,9 +46,9 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 
 NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features].
 
-include::requirements/core/REQ_mandatory-queryables-collection.adoc[]
+include::requirements/record-collection/REQ_mandatory-queryables-collection.adoc[]
 
-include::recommendations/core/PER_additional-queryables-collection.adoc[]
+include::recommendations/record-collection/PER_additional-queryables-collection.adoc[]
 
 ==== Keywords and Themes
 
