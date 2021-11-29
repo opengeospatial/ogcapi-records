@@ -5,7 +5,6 @@ This standard does not mandate any particular encoding or format. However, it do
 
 * <<requirements-class-json-clause,JSON>>
 * <<requirements-class-html-clause,HTML>>
-* <<requirements-class-atom-clause,ATOM>>
 
 None of these encodings are mandatory. An implementer of this standard may choose to implement none of them, selecting different encodings instead.
 
@@ -28,9 +27,6 @@ XML is a commonly used format that is well supported by tools and software libra
 
 XML structures documented in this standard are defined using XML Schema. These schema are available from http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API - Records Core XML Schema].
 
-==== ATOM
-Atom is an XML-based document format that describes lists of related resources known as "feeds". Feeds are composed of a number of items, known as "entries", each describing a resource using an extensible set of attached metadata.  For example, each entry has an identifier and a title.
-
 === Media Types
 A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <<media-types-table>>.
 
@@ -42,7 +38,6 @@ A description of the MIME-types is mandatory for any OGC standard which involves
 |HTML |`text/html`
 |JSON |`application/json`
 |GeoJSON |`application/geo+json`
-|ATOM |`application/atom+xml`
 |====
 
 [[media-type-defaults]]
