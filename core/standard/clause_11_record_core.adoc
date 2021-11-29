@@ -1,15 +1,15 @@
 [[clause-record-core]]
-== Requirements Class "Core Record"
+== Requirements Class "Record Core"
 
 [[record-core-overview]]
 === Overview
 
 include::requirements/requirements_class_record-core.adoc[]
 
-The `Core Record` Requirements Class defines the requirements for a catalogue record.
+The `Record` Requirements Class defines the requirements for a catalogue record.
 
 [[record-model]]
-=== Record 
+=== Record
 
 The atomic unit of information in a catalogue is a **_record_** which is defined in this clause.
 
