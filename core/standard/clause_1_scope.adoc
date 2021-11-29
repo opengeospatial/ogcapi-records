@@ -1,12 +1,7 @@
 == Scope
 
-This document specifies the behaviour of an API that supports the ability to
-search collections of descriptive information, called records.  A record
-contains summary information about a resource that a provider wishes to 
-make discoverable.  Examples of resources include: a data collection, a service,
-a process, a style, a code list, an Earth observation asset, a machine
-learning model, a code list and so on.  Records represent resource
-characteristics that can be searched and presented for evaluation and further
-processing by both humans and software.  A record can also contain associations.
-An association is a reference to another record or resource that is related to
-the resource being described by the context record.
+This documents specified a collection of building blocks that can be assembled in various ways to deploy a collection of related descriptive information about resources called a catalogue.  The atomic unit of information in a catalogue is the record.
+
+This document specifies the information content of a record.  A record contains summary descriptive information about a resource that a provider wishes to make discoverable.  A records represent resource characteristics that can be presented for evaluation and further processing by both humans and software.  Examples of resources include: a data collection, a service, a process, a style, a code list, an Earth observation asset, a machine learning model, a code list and so on.
+
+Records are organized into collections.  This specification describes how collections of records can be crawled or searched.  Crawling a collection of records involves following embeded links from one record in a catalogue to the next.  Searching a collection of records involved specifying query predicates that define a subset of records.

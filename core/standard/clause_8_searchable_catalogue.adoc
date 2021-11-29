@@ -10,6 +10,14 @@ The `Searchable Catalogue` Requirements Class defines the requirements for a cat
 
 === Core searchable catalogue
 
+==== Conformance
+
+include::requirements/core/REQ_conformance.adoc[]
+
+include::recommendations/core/PER_additional-conformance.adoc[]
+
+==== Core API
+
 T.B.D.
 
 * implement the <<clause-record-api,record api>> conformance class 
@@ -30,12 +38,6 @@ T.B.D.
 T.B.D.
 
 * optionally implement the <<clause-cql-filter,filtering using CQL>> conformance class
-
-=== OpenSearch API
-
-T.B.D.
-
-* optionally implement the <<clause-opensearch,OpenSearch>> and the <<record_atom_encoding,ATOM>> conformance class
 
 === Coordinate reference systems
 

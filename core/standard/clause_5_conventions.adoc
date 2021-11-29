@@ -36,7 +36,6 @@ UML diagrams and XML code fragments adhere to the namespace conventions shown in
 [width="90%",cols="2,6,6",options="header"]
 |====
 |*GML/XML prefix* |*Namespace URL* |*Description*
-|atom |http://www.w3.org/2005/Atom |ATOM namespace
 |core |http://www.opengis.net/ogcapi-record-1/1.0 |OGC API - Records core elements
 |dc |http://purl.org/dc/elements/1.1/ |Dublin core elements
 |dcat |http://www.w3.org/ns/dcat\# |DCAT vocabulary

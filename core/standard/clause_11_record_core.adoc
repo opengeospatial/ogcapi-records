@@ -17,10 +17,9 @@ It is expected that the information necessary to populate the fields/properties 
 
 It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. datasets, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.
 
-Although this document does not mandate any particular encoding for a record, this document does define conformance classes for three encodings:
+Although this document does not mandate any particular encoding for a record, this document does define conformance classes for two encodings:
 
 * a <<record_json_encoding,GeoJSON>> record encoding,
-* an <<record_atom_encoding,ATOM>> record encoding,
 * and an <<record_html_encoding,HTML>> encoding.
 
 Other encoding are allow but are not described in this document.

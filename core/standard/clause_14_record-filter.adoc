@@ -22,9 +22,6 @@ include::recommendations/record-filter/REC_text-encoding.adoc[]
 
 include::recommendations/record-filter/REC_json-encoding.adoc[]
 
-// TODO include::requirements/record-filter/REQ_cql-atom.adoc[]
-// TODO include::requirements/record-filter/REQ_cql-html.adoc[]
-
 include::requirements/record-filter/REQ_filter-crs-param.adoc[]
 
 ==== Response

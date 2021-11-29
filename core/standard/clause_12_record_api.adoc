@@ -172,7 +172,6 @@ include::requirements/core/REQ_record-collection-response.adoc[]
 |Representation |Requirements
 |JSON/GeoJSON |<<record_json_encoding,Requirements Class JSON>>
 |HTML |<<record_html_encoding,Requirements Class HTML>>
-|XML/ATOM |<<record_atom_encoding,Requirements Class ATOM>>
 |===
 
 ==== Error situations

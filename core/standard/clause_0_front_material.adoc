@@ -1,16 +1,40 @@
 [big]*i.     Abstract*
 
-The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, etc.), but define resource-centric APIs that take advantage of modern web development practices. 
+The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, etc.), but define resource-centric APIs that take advantage of modern web development practices.
 
 This document defines the OGC API for Records.
 
-A Record is a way of making a resource discoverable by providing summary information about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, assets, machine models, services, widgets, etc.
+A Record makes a resource discoverable by providing summary information about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, assets, machine models, services, widgets, etc.
 
-OGC API - Records provides a way to browse or search a curated collection of Records known as a catalogue. 
+OGC API - Records provides a way to browse or search a curated collection of records known as a catalogue.  This specification envisions deploying a catalogue as:
+
+* as a collection of static files,
+* as a collection of records accessed via an API.
 
 A catalogue can be deployed as a static collection of records stored in web-accessible files and typically co-located with the resources each record is describing.  Such a deployment is amenable to browsing using a web browser or being crawled by a search engine crawler.
 
-A catalogue can also be deployed as an API with well known endpoints for retrieving information about the catalogue, retrieving records from the catalogue and searching the catalogue for sub-sets of records that satisfy user-defined search criteria.  The following table list the endpoints of the OGC API - Records API:
+A catalogue can also be deployed as an API with well known endpoints for retrieving information about the catalogue, retrieving records from the catalogue and searching the catalogue for sub-sets of records that satisfy user-defined search criteria.
+
+To enable this kind of flexible deployment of a collection of records, this specification defined the following set of building blocks:
+
+* the record,
+* the collection (of records),
+* and the search API.
+
+A record contains descriptive information about a resource such as:
+
+* a title,
+* a human readable description of the resource,
+* the nature or genre of the resource,
+* keywords associated with the resource,
+* information about the publisher or provider of the resource,
+* etc.
+
+This information is generic and can be used to describe a wide variety of resources.  This specification expects and encourages implementations to enrich the information content of a record to suit specific use cases or requirements.
+
+A collection of records is itself described by a record that provides descriptive information about the catalogue.  The collection also provides access to the records of the collection either by explicitly linking to each record that is an item of the collection or by providing a search endpoint that allows the collection of records to be searched.
+
+The following table list the endpoints of the OGC API - Records API that allows a collection of records to be searched:
 
 [reftext='{table-caption} {counter:table-num}']
 .Overview of resources, applicable HTTP methods and links to the document sections[[table_1]][[tldnr]]
@@ -24,6 +48,14 @@ A catalogue can also be deployed as an API with well known endpoints for retriev
 |Records |`/collections/{collectionId}/items` |GET |<<records-access,Records Access>>
 |Record |`/collections/{collectionId}/items/{recordId}` |GET |<<record-access,Record Access>>
 |===
+
+A special use case of the catalogue deployed as an API is the local resources catalogue.  A local resources catalogue is a catalogue deployed to make local resources offered by a provider searchable using the catalogue information model and API.
+
+An example of a local resources catalogue is the `/collections` endpoint of
+OGC API - Common.  Adding catalogue capabilities to this endpoint allows a
+client to search for collections that satisfy a specified filter expression.
+Any API endpoint whose function is to provide a list of resources, such as the
+`/collections` endpoint, can be extended to be a local resources catalogue.
 
 [[keywords]]
 [big]*ii.    Keywords*

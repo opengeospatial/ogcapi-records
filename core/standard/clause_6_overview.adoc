@@ -3,7 +3,7 @@
 
 === tl;dr crawlable catalogue
 
-. In order to implement a catalogue where records are stored as individual files in one or more web-accessible locations and can be crawled by simply following hypermedia controls:
+In order to implement a catalogue where records are stored as individual files in one or more web-accessible locations and can be crawled by simply following hypermedia controls:
 
 * for each discoverable resource create a file that contains a summary description of the resource using  the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>
 * extend the record schema to enrich its content as necessary
@@ -13,20 +13,19 @@
 
 === tl;dr searchable catalogue
 
-. In order to implement a catalogue where records are stored in some backend database and are accessed through an access/search API:
+In order to implement a catalogue where records are stored in some backend database and are accessed through an access/search API:
 
 * implement the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] specification,
 * implement the parameters defined in <<core-query-parameters-table>>,
 * implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
 * extend the record schema to enrich its content as necessary
-* optionally implement the CQL, Sorting, OpenSearch/ATOM.
-* optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>,<<clause-opensearch,OpenSearch>>/<<record_atom_encoding,ATOM>>.
 
 === tl;dr local resources catalogue
 
-. In order to implemented a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
+In order to implemented a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
 
 * implement the endpoint as per the relevant OGC API specification,
+* enhance the information content of the resource using the mandatory and optional parameters defined in <<core-queryables-resource-table>>,
 * implement the query parameters defined in <<core-query-parameters-table>>,
 * optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>.
 
@@ -37,7 +36,7 @@ The atomic unit of information in a catalogue is the _record_.
 
 A _catalogue_ is a collection of _records_.  The terms **collection of records** and **catalogue** are used interchangeably in this specification.
 
-A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined is this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated that this list of properties would be extended to enhance the information content of a record. 
+A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined is this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouranged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
 
 === Building blocks
 
@@ -50,10 +49,9 @@ This standard defines three building blocks that may be used to deploy a catalog
 Using these building blocks a catalogue can be deployed as:
 
 * a set of web-accessible records that can be crawled by a search engine crawler or by using (for example) a web browser
+* a searchable catalogue with records accessible through an API
 
-or as:
-
-* a searchable catalogue with records accessible through an API/
+A special use case of the _searchable catalogue_ is the _**local resources catalogue**_.  The OGC API resource tree has a number of endpoints that provide lists of resources.  Examples of such endpoints include the `/collections` and the `/processes` endpoints.  One can readily imagine a large OGC API deployment with thousands of collections where the ability to search would enhance the client's interaction with the server.  Using the building blocks defined in this specification these endpoints can be extended to support catalogue-like searching using filter expressions that may also include spatial and/or temporal predicates.  OGC API endpoints extended in this way behave like a catalogue of local resources.
 
 [[record-schema-overview]]
 === Record Schema
@@ -99,10 +97,9 @@ It is expected that the information necessary to populate this core set of prope
 
 It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suite specific needs is allowed and encouraged by this specification.
 
-Although this document does not mandate any particular encoding for a record, the document does define conformance classes for three encodings:
+Although this document does not mandate any particular encoding for a record, the document does define conformance classes for two encodings:
 
 * A <<record_json_encoding,GeoJSON>> record encoding,
-* an <<record_atom_encoding,ATOM>> record encoding,
 * and an <<record_html_encoding,HTML>> encoding.
 
 Other encodings are allowed but are not described in this document.
