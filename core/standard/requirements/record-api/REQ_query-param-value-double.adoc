@@ -1,7 +1,7 @@
-[[req_core_query-param-value-double]]
+[[req_record-api_query-param-value-double]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/query-param-value-double* 
+^|*Requirement {counter:req-id}* |*/req/record-api/query-param-value-double* 
 ^|A |Double values SHALL be represented by a mantissa followed, optionally, by the character "e", followed by an exponent. 
 ^|B |The exponent SHALL be an integer. 
 ^|C |The mantissa SHALL be a decimal number. 

@@ -1,7 +1,7 @@
-[[req_core_api-common]]
+[[req_record-api_api-common]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/api-common*
+^|*Requirement {counter:req-id}* |*/req/record-api/api-common*
 2+|The API implementation SHALL demonstrate conformance with the following Requirements Classes of the OGC API - Common version 1.0 Standard.
 ^|A |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/core
 ^|B |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections

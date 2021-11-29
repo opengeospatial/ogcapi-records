@@ -1,7 +1,7 @@
-[[req_core_rc-response]]
+[[req_record-api_rc-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/rc-response*
+^|*Requirement {counter:req-id}* |*/req/record-api/rc-response*
 ^|A |A successful execution of the operation SHALL be resported as a response with a HTTP status code `200`.
 ^|B |The response SHALL only include records selected by the request.
 ^|C |Each record in the response SHALL include the mandatory properties listed in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.

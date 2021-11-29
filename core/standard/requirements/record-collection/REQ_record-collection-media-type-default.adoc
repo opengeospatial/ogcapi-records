@@ -1,7 +1,7 @@
-[[req_core_rc-mediatype-default]]
+[[req_record-collection_rc-mediatype-default]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/rc-mediatype-default*
+^|*Requirement {counter:req-id}* |*/req/record-collection/rc-mediatype-default*
 ^|A |If the `JSON` Conformance Class is advertised, then the default media type for content SHALL be JSON or GeoJSON.
 ^|C |If the `JSON` Conformance Class is not advertised, then the default media type for content SHALL be HTML. 
 |===

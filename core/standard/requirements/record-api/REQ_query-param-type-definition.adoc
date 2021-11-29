@@ -1,7 +1,7 @@
-[[req_core_param-type-definition]]
+[[req_record-api_param-type-definition]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/param-type-definition*
+^|*Requirement {counter:req-id}* |*/req/record-api/param-type-definition*
 ^|A |A Records API SHALL support the search by Type (type) parameter for the operation.
 ^|B |The `type` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 

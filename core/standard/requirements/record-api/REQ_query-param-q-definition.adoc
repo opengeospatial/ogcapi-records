@@ -1,7 +1,7 @@
-[[req_core_param-q-definition]]
+[[req_record-api_param-q-definition]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/param-q-definition*
+^|*Requirement {counter:req-id}* |*/req/record-api/param-q-definition*
 ^|A |A Records API SHALL support the Text Search (q) parameter for the operation.
 ^|B |The `q` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
