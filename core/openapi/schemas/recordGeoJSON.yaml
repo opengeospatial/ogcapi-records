@@ -102,10 +102,6 @@ properties:
         description: |-
           Most recent date on which the resource was changed.
         format: date-time
-      publisher:
-        $ref: responsibleParty.yaml
-        description: |-
-          Link to the entity making the resource available.
       themes:
         type: array
         description: |-
@@ -133,10 +129,12 @@ properties:
           A list of available distributions of the resource.
         items:
           type: string
-      contactPoint:
-        $ref: responsibleParty.yaml
+      providers:
+        type: array
+        items:
+          $ref: party.yaml
         description: |-
-          Link to relevant contact information.
+          A list of providers qualified by their role in association to the record.
       license:
         type: string
         description: |-

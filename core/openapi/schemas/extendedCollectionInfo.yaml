@@ -39,7 +39,7 @@ allOf:
         Most recent date on which the catalogue was changed.
       format: date-time
     publisher:
-      $ref: responsibleParty.yaml
+      $ref: party.yaml
       description: |-
         Link to the entity making the catalog available.
     themes:
@@ -64,7 +64,7 @@ allOf:
                to classify the catalogue.  It is recommended that the
                identifier be a resolvable URI.
     contactPoint:
-      $ref: responsibleParty.yaml
+      $ref: party.yaml
       description: |-
         Link to relevant contact information.
     license:
