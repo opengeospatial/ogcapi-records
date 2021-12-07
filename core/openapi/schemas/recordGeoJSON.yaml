@@ -134,7 +134,7 @@ properties:
         items:
           $ref: party.yaml
         description: |-
-          A list of providers qualified by their role in assocation to the record.
+          A list of providers qualified by their role in association to the record.
       license:
         type: string
         description: |-

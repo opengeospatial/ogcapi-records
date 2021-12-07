@@ -93,8 +93,8 @@ oneOf:
         items:
           type: object
           description: |-
-            The function performed by the responsible party. See ISO19115:2003,
-            Subclause B.5.5.
+            The function performed by the responsible party. Suggested codelists include the STAC Collection
+            Provider roles as well as ISO 19115.
           required:
             - name
           properties:
