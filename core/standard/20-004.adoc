@@ -95,21 +95,23 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_overview.adoc[]
 
-include::clause_7_crawlable_catalogue.adoc[]
+include::clause_7_autodiscovery.adoc[]
 
-include::clause_8_searchable_catalogue.adoc[]
+include::clause_8_crawlable_catalogue.adoc[]
 
-include::clause_9_local_resources_catalogue.adoc[]
+include::clause_9_searchable_catalogue.adoc[]
 
-include::clause_10_record_collection.adoc[]
+include::clause_10_local_resources_catalogue.adoc[]
 
-include::clause_11_record_core.adoc[]
+include::clause_11_record_collection.adoc[]
 
-include::clause_12_record_api.adoc[]
+include::clause_12_record_core.adoc[]
 
-include::clause_13_sorting.adoc[]
+include::clause_13_record_api.adoc[]
 
-include::clause_14_record-filter.adoc[]
+include::clause_14_sorting.adoc[]
+
+include::clause_15_record-filter.adoc[]
 
 include::clause_16_encodings.adoc[]
 

@@ -4,8 +4,8 @@
 2+|*Requirements Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json
 |Target type |Web API
-|Dependency |<<rc_core,Requirements Class "API - Common Core">>
-|Dependency |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/geojson[API - Common GeoJSON]
+|Dependency |<<rfc8259,IETF RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format>>
+|Dependency |<<jschema, JSON Schema>>
 |Dependency |<<rfc7946,GeoJSON>>
 |Pre-conditions |
 1) The API advertises conformance to the JSON Conformance Class +

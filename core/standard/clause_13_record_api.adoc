@@ -27,7 +27,7 @@ The requirements for accessing collections of records are presented in the follo
 
 Groups of related records are accessed from a collection (i.e. a catalogue).  The collection provides metadata about the catalogue and includes access metadata for navigating to records from the collection.   The content of the collection is defined in the <<clause-core-record-collection,Record collection clause>> 
 
-This section defines how to access the collection object through the Records API.
+This section defines how to access the collection resource through the Records API.
 
 ==== Operation
 

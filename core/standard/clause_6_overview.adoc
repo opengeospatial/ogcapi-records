@@ -111,7 +111,7 @@ Accessing collections of records through the API defined in this document is des
 [[record-collection-overview]]
 === Record collection (catalogue)
 
-A record collection or catalogue is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection object is the primary access point from which a deployed set of records can be accessed.  Having found the collection object (i.e. the catalogue) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
+A record collection or catalogue is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection resource is the primary access point from which a deployed set of records can be accessed.  Having found the collection resource (i.e. the catalogue) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
 
 Depending on the deployment pattern, the collection may provide a link to each individual record of the collection or a link to a search access point for retrieving sub-sets of records.
 

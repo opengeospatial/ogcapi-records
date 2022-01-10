@@ -1,0 +1,10 @@
+[[req_crawlable-catalogue_record-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/record-links*
+^|A |The record SHALL include a link (`rel=self`) that points to itself.
+^|B |The record SHALL include one typed link (`rel=alternate`) for each alternative represenation of this record.
+^|C |The record SHALL include one typed link (`rel=describes`) that points to each representation of the resource being described by this record.
+|===
+
+NOTE: The term "typed link" means a link that specifies a value for the `type` attribute.
