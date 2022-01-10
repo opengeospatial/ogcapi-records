@@ -5,7 +5,7 @@
 
 include::requirements/requirements_class_autodiscovery.adoc[]
 
-The purpose of autodiscovery is for clients who know the URI of a web page to find the location of that page's associated catalogue.
+The purpose of autodiscovery is, knowing the URI of a web page, to find the location of that page's associated catalogue.
 
 === Autodiscovery links
 
