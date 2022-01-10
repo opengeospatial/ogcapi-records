@@ -111,7 +111,11 @@ Single record:
 
 ## Esri Inc
 
-This Esri Geoportal Server 2.6.4 [public sandbox](https://geoss.esri.com/geoportal_264) has now been extended with a work-in-progress implementation of the OGC Records API.
+### ArcGIS Pro CSW Client as OGC API Records consumer
+The ArcGIS Pro CSW Client has been updated to include initial support for OGC API Records. Details may be found on the [Geoportal Server wiki](https://github.com/Esri/geoportal-server-catalog/wiki/OGC_API_Records), the Visual Studio project to build the Pro addin is available in the [Components](https://github.com/Esri/geoportal-server-catalog/tree/master/components/CswClient/Pro/CswClient) section of the Geoportal Server github repo.
+
+### Geoportal Server OGC API Records provider
+Esri Geoportal Server 2.6.4 [public sandbox](https://geoss.esri.com/geoportal_264) has now been extended with a work-in-progress implementation of the OGC Records API.
 
 Landing page:
 
