@@ -2,9 +2,11 @@ name: sortby
 in: query
 description: |-
   Specifies a comma-separated list of property names by which the response shall
-  be sorted.  If the property name is preceeded by a plus (+) sign it inidicates
-  an ascending sort for that property.  If the property name is preceeded by a
-  minus (-) sigh it inidicates a descending sort for that property.
+  be sorted.  If the property name is preceded by a plus (+) sign it indicates
+  an ascending sort for that property.  If the property name is preceded by a
+  minus (-) sign it indicates a descending sort for that property.  If the
+  property is not preceded by a plus or minus, then the default sort order
+  implied is ascending (+).
 required: false
 schema:
   type: array
