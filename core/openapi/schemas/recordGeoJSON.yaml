@@ -73,7 +73,7 @@ properties:
           descriptions, etc.) of the resource. ISO 639-1/639-2 codes
           should be used.
         default: en
-      externalId:
+      externalIds:
         type: array
         description: |-
           An identifier for the resource assigned by an external (to the
