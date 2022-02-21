@@ -1,0 +1,6 @@
+[[req_records-api_param-externalid-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/param-type-response*
+^|A |If the `externalId` parameter is provided by the client, only records whose external identifier, as indicated by the value component of the `externalId` core queryable (JSON path: `externalId[*].value`), is equal to one of the listed values SHALL be in the result set.
+|===

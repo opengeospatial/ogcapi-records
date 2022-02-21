@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/record-links*
-^|A |Implementations SHOULD use the record `links` property to provide hypermedia for navigation in the API (e.g. next record in a query response ) and alternate representations of the current record.
-^|B |If a canonical URI is available for the record type that is the value of the core queryable _type_, a link with link relation type `type` to that canonical URI SHOULD be added to the `links` property. 
-^|C |If a canonical URI is available for a license that is a value of the core queryable _license_, a link with link relation type `license` to that canonical URI SHOULD be added to the `links` property.
+^|A |Each record SHOULD include a link to itself (`rel="self"`).
+^|B |Each record SHOULD include a link pointing to the collection of which this record in a member (`rel="collection"`).
+^|C |Each record SHOULD include links to alternative representations of the record (`rel="alternate"`).
 |===

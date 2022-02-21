@@ -1,0 +1,6 @@
+[[rec_record-associations_bind]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-associations/bind*
+Implementations SHOULD use the record `properties.associations` property to provide one or more links for accessing (or binding to) the resource (and/or sub-resources) being described by the record.
+|===

@@ -1,0 +1,9 @@
+[[req_records-api_param-datetime]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/param-datetime*
+^|A |A Records API SHALL support the DateTime (`datetime`) parameter for the operation.
+^|B |Requests which include the DateTime parameter SHALL comply with OGC API - Features requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_parameter_datetime[/req/core/fc-time-definition].
+^|C |Responses to DateTime requests SHALL comply with OGC API - Feature requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_parameter_datetime[/req/core/fc-time-response`].
+^|D |The response SHALL return records rather than features.
+|===

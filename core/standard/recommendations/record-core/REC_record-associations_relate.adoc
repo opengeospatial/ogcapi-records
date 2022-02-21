@@ -1,0 +1,6 @@
+[[rec_record-associations_relate]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-associations/relate*
+Implementations SHOULD use the record `properties.associations` property to provide links to other internal or external resources related to the current record.
+|===

@@ -1,0 +1,7 @@
+[[req_records-api_rc-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/rc-response*
+
+Each record in the response SHALL include the mandatory properties listed in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
+|===

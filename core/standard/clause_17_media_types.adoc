@@ -45,4 +45,4 @@ A description of the MIME-types is mandatory for any OGC standard which involves
 
 The media type used to encode a response to a request shall be determined through the HTTP content negotiation protocol as specified in API - Common. However, content negotiation is not required by the HTTP standard. So default encodings must be established.
 
-include::requirements/record-collection/REQ_record-collection-media-type-default.adoc[]
+include::requirements/record-collection/REQ_media-type-default.adoc[]

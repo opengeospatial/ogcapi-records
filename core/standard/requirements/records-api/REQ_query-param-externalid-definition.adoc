@@ -1,0 +1,19 @@
+[[req_records-api_param-externalid-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/param-externalid-definition*
+^|A |A Records API SHALL support the search by External Identifier (externalId) parameter for the operation.
+^|B |The `externalId` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: externalId
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+----
+|===

@@ -1,0 +1,7 @@
+[[rec_record-associations_templated]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-associations/templated*
+
+If access to the resource(s) requires or would be facilitated by additional context (e.g. a bounding box) then <<sc_templated_links_with_variables,templated links>> (`"templated": true`) should be used.
+|===

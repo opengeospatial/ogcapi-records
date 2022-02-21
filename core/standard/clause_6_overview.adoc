@@ -8,7 +8,7 @@ In order to implement a catalogue where records are stored as individual files i
 * for each discoverable resource create a file that contains a summary description of the resource using  the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>
 * extend the record schema to enrich its content as necessary
 * to make the resource discoverable, place each record file in a web-accessible location, preferably co-located (e.g. in the same directory or object store location) with the resource that the record is describing
-* optionally create a file containing a description of a <<record-collection-overview,_collection_>> of related records
+* optionally create a file containing a description of a <<sc_record-collection-overview,_collection_>> of related records
 * also place the collection file in a web-accessible location
 
 === tl;dr searchable catalogue
@@ -108,7 +108,7 @@ Accessing collections of records deployed as static files is described in the <<
 
 Accessing collections of records through the API defined in this document is described in the <<records-access,Records access>> and <<record-access,Record access>> sections.
 
-[[record-collection-overview]]
+[[sc_record-collection-overview]]
 === Record collection (catalogue)
 
 A record collection or catalogue is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection resource is the primary access point from which a deployed set of records can be accessed.  Having found the collection resource (i.e. the catalogue) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
