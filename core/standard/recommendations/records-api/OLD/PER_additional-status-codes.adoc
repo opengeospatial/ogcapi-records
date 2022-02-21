@@ -1,0 +1,6 @@
+[[per_core_additional-status-codes]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/core/additional-status-codes*
+^|A |Servers MAY implement additional capabilities provided by the HTTP protocol. Therefore, they MAY return status codes in addition to those listed in <<status-codes>>.
+|===

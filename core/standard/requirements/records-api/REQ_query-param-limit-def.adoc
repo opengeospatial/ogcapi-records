@@ -1,0 +1,7 @@
+[[req_records-api_param-limit-def]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/param-limit-def*
+
+Implementations of the Records API SHALL support the `limit` query parameter at the `/collections/{collectionId}/items` endpoint as defined by requirements http://docs.ogc.org/is/17-069r3/17-069r3.html#_parameter_limit[`req/core/fc-limit-definition`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+|===

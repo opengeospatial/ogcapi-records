@@ -1,0 +1,6 @@
+[[req_record-api_record-success]] 
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-api/record-success* 
+^|A |A successful execution of the operation SHALL be reported as a response with a HTTP status code `200`.
+|===

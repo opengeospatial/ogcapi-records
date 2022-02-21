@@ -1,7 +1,11 @@
-[[req_records-api_rc-response]]
+[[req_records-api_record-collection-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-api/rc-response*
+^|A |The server's response SHALL comply with requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_5[`/req/core/sfc-md-success`] of the  http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+^|B |The body of the response SHALL contain a description of the catalogue based upon the following schema fragment which extends the http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collections.yaml[collections.yaml] schema defined in the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard:
 
-Each record in the response SHALL include the mandatory properties listed in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
+[source,YAML]
+----
+include::../../../openapi/schemas/catalogue.yaml[]
+----
 |===

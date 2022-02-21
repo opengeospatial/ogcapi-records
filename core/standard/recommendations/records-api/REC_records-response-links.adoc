@@ -1,0 +1,9 @@
+[[rec_records-api_response-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/records-api/response-links*
+^|A |A `200`-response SHOULD include a link to the next "page" (relation: `next`), if more features have been selected than returned in the response.
+^|B |Dereferencing a `next` link SHOULD return additional records from the set of selected features that have not yet been returned.
+^|C |The number of records in a response to a `next` link SHOULD follow the same rules as for the response to the original query and again include a `next` link, if there are more records in the selection that have not yet been returned.
+|===
+

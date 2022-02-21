@@ -1,0 +1,8 @@
+[[req_records-api_records-response-rel-type]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-response-api/records-rel-type*
+
+Implementations of the Records API SHALL comply with requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-rel-type`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+|===
+

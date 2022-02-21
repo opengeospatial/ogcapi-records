@@ -1,0 +1,20 @@
+[[req_records-api_record-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/record-response*
+^|A |An implementation of the Records API SHALL comply with requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7[`/req/core/f-success`].
+^|B |The body of the response SHALL contain a record based on the following schema:
+
+[source,YAML]
+----
+include::../../../openapi/schemas/recordGeoJSON.yaml[]
+----
+
+^|C |The `links` section of the record SHALL contain the following links:
+
+* a link to the response document (relation: self),
+* a link to the response document in every other media type supported by the service (relation: alternate), and
+* a link to the feature collection that contains this feature (relation: collection).
+
+^|D |All links SHALL include the `rel` and `type` parameters.
+|===

@@ -1,0 +1,7 @@
+[[per_records-api_api-def-uri]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/records-api/api-def-uri*
+
+Permission http://docs.ogc.org/is/17-069r3/17-069r3.html#_operation_2[`/per/core/api-definition-uri`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard MAY apply to Records API implementations too.
+|===

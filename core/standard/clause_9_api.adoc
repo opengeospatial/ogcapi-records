@@ -8,69 +8,66 @@ include::requirements/requirements_class_records-api.adoc[]
 
 The core API for a catalogue is defined by the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
 
-[[req_records-api_resource-name-mapping]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/resource-name-mapping*
-
-Each reference to `features` or `feature` in the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard SHALL be replaced by the terms `records` or `record` when interpreting an http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] requirement for the Records API.
-|===
+include::requirements/records-api/REQ_resource-name-mapping.adoc[]
 
 === API landing page
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[API landing page] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::requirements/records-api/REQ_landing-page-op.adoc[]
+
+include::requirements/records-api/REQ_landing-page-response.adoc[]
 
 === API definition
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#_api_definition_2[API definition] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+=== Operation 
 
-=== Declarations of conformance classes
+include::requirements/records-api/REQ_api-def-op.adoc[]
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes[Declaration of conformance classes] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::requirements/records-api/REQ_api-def-uri.adoc[]
 
-[[req_records-api_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/conformance*
+=== Response 
 
-An implementation of the Records API SHALL declare the following conformance classes in the conformance declaration retrieved from the `/conformance` endpoint as defined in the http://docs.ogc.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes[Declaration of conformance classes] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::requirements/records-api/REQ_api-def-response.adoc[]
 
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalogue
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/records-api
-|===
+include::requirements/records-api/REQ_api-def-oas.adoc[]
 
-[[per_records-api_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/record-aoi/conformance*
+=== Declarations of conformance class
 
-The conformance declaration MAY include the following conformance classes:
+==== Operation
 
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery
-|===
+include::requirements/records-api/REQ_conformance-op.adoc[]
+
+==== Response
+
+include::requirements/records-api/REQ_conformance-response.adoc[]
+
+include::requirements/records-api/REQ_conformance-classes.adoc[]
+
+include::recommendations/records-api/PER_conformance-classes.adoc[]
 
 [[sc_http]]
 === HTTP 1.1
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#_http_1_1[HTTP 1.1] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::requirements/records-api/REQ_http.adoc[]
+
+include::requirements/records-api/REQ_head.adoc[]
+
+See the http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[HTTP status code] clause for a discussion about status codes.
+
+include::recommendations/records-api/PER_additional-status-codes.adoc[]
 
 === Unknown or invalid query parameters
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#query_parameters[Unknown or invalid query parameters] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::requirements/records-api/REQ_query-param-unknown.adoc[]
+
+include::requirements/records-api/REQ_query-param-invalid.adoc[]
 
 === Web caching
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#web_caching[Web caching] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::recommendations/records-api/REC_etag.adoc[]
 
 === Support for cross-origin requests
 
-See http://docs.ogc.org/is/17-069r3/17-069r3.html#cross_origin[Support for cross-origin requests] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::recommendations/records-api/REC_cors.adoc[]
 
 === Encodings
 
@@ -101,39 +98,50 @@ the Accept header of the HTTP request.
 
 === String internationalization
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#string_i18n[String internationalization] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::recommendations/records-api/REC_string-i18n.adoc[]
 
 === Coordinate reference systems
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#_coordinate_reference_systems[Coordinate reference systems] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::requirements/records-api/REQ_default-crs.adoc[]
 
 === Link headers
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#_link_headers[Link headers] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::recommendations/records-api/REC_link-headers.adoc[]
 
 [[record-collections]]
 === Record collections
 
 ==== Operation 
 
-[[req_records-api_record-collections-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-collections*
-^|A |The list of available catalogues (i.e. record collections) SHALL be retrieved from the `/collections` endpoint as defined by the http://docs.ogc.org/is/17-069r3/17-069r3.html#_operation_4[Feature collections operation] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-^|B |Only collections where the value of the `itemType` property (JSONPath: `$.collections[*].itemType`) is `record` SHALL be considered record collections or catalogues.
-|===
+include::requirements/records-api/REQ_record-collections-op.adoc[]
 
 ==== Response
 
-[[req_records-api_record-collections-response]]
+include::requirements/records-api/REQ_record-collections-response.adoc[]
+
+include::requirements/records-api/REQ_record-collections-links.adoc[]
+
+include::recommendations/records-api/REC_record-collections-descriptions.adoc[]
+
+include::recommendations/records-api/REC_record-collections-license.adoc[]
+
+include::requirements/records-api/REQ_record-collections-items.adoc[]
+
+[[per_records-api_record-collections-items]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-collections*
+^|*Permission {counter:per-id}* |*/per/records-api/record-collections-items*
 
-^|A |Successful execution of the response SHALL be reported as described in the http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_4[Feature collections response] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-^|B |The schema of each collection in the response where the value of the `itemType` property (JSONPath: `$.collections[*].itemType`) is `record` SHALL be augmented as defined by <<req_records-api_record-collection,/req/records-api/record-collection>> requirement.
+Permission http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_4[`/per/core/fc-md-items`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard MAY apply to Records API implementations too.
 |===
+
+include::requirements/records-api/REQ_record-collections-items-links.adoc[]
+
+include::requirements/records-api/REQ_record-collections-extents.adoc[]
+
+include::recommendations/records-api/REC_record-collections-extent-single.adoc[]
+
+include::recommendations/records-api/PER_record-collections-extent-extensions.adoc[]
 
 ==== Error situations
 
@@ -144,27 +152,11 @@ See http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[HTTP status 
 
 ==== Operation
 
-[[req_records-api_record-collection-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-collections*
-^|A |The description of a specific catalogue or record collection SHALL be retrieved from the `/collections/{collectionId}` endpoint as defined by the http://docs.ogc.org/is/17-069r3/17-069r3.html#_operation_5[Feature collection operation] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-|===
+include::requirements/records-api/REQ_record-collection-op.adoc[]
 
 ==== Response 
 
-[[req_records-api_record-collection]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-collection*
-^|A |The description of a record collection or catalogue can be retrieved from the `/collections/{collectionId}` endpoint as defined in http://docs.ogc.org/is/17-069r3/17-069r3.html#_operation_5[Feature collection] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-^|B |The schema the response collection SHALL be augmented as defined in the <<clause-core-record-collection,record collection>> clause and specified by the following schema fragment:
-
-[source,YAML]
-----
-include::../openapi/schemas/catalogue.yaml[]
-----
-|===
+include::requirements/records-api/REQ_record-collection-response.adoc[]
 
 ==== Error situations
 
@@ -175,26 +167,14 @@ See http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[HTTP status 
 
 ==== Operation
 
-[[req_records-api_records-access]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-collections*
-
-For every collection identified in the collections response (path /collections) where the value of the `itemsType` parameter is `record` the server SHALL support the HTTP GET operation at the `/collection/{collectionId}/items` endpoint as defined in the http://docs.ogc.org/is/17-069r3/17-069r3.html#_operation_6[Feature operation] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-|===
+include::requirements/records-api/REQ_records-op.adoc[]
 
 [[parameters-section]]
 ==== Parameters
 
 ===== Overview
 
-[[req_records-api_mandatory-params]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/mandatory-params*
-
-An implementations of the Records API shall support the parameters listed in <<core-query-parameters-table>> at the `/collections/{collectionId}/items` endpoints.
-|===
+include::requirements/records-api/REQ_mandatory-params.adoc[]
 
 [#core-query-parameters-table,reftext='{table-caption} {counter:table-num}']
 .Table of Query Parameters
@@ -213,17 +193,23 @@ An implementations of the Records API shall support the parameters listed in <<c
 [[core-query-parameters-bbox]]
 ===== Parameter bbox
 
-include::requirements/records-api/REQ_query-param-bbox.adoc[]
+include::requirements/records-api/REQ_query-param-bbox-def.adoc[]
+
+include::requirements/records-api/REQ_query-param-bbox-response.adoc[]
 
 [[core-query-parameters-datetime]]
 ===== Parameter datetime
 
-include::requirements/records-api/REQ_query-param-datetime.adoc[]
+include::requirements/records-api/REQ_query-param-datetime-def.adoc[]
+
+include::requirements/records-api/REQ_query-param-datetime-response.adoc[]
 
 [[core-query-parameters-limit]]
 ===== Parameter limit
 
-include::requirements/records-api/REQ_query-param-limit.adoc[]
+include::requirements/records-api/REQ_query-param-limit-def.adoc[]
+
+include::requirements/records-api/REQ_query-param-limit-response.adoc[]
 
 [[core-query-parameters-q]]
 ===== Parameter q
@@ -270,9 +256,21 @@ Any combination of query parameters from the <<core-query-parameters-table,Table
 [[query-response]]
 ==== Response
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_6[Response] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::requirements/records-api/REQ_records-response.adoc[]
 
-include::requirements/records-api/REQ_record-collection-response.adoc[]
+include::requirements/records-api/REQ_records-response-links.adoc[]
+
+include::recommendations/records-api/REC_records-response-links.adoc[]
+
+include::recommendations/records-api/PER_records-response-prev.adoc[]
+
+include::requirements/records-api/REQ_records-response-rel-type.adoc[]
+
+include::requirements/records-api/REQ_records-response-timestamp.adoc[]
+
+include::requirements/records-api/REQ_records-response-numberMatched.adoc[]
+
+include::requirements/records-api/REQ_records-response-numberReturned.adoc[]
 
 <<response-encodings>> lists specific requirements based on the negotiated representation of the response.
 
@@ -320,18 +318,11 @@ include::../examples/json/record.json[]
 
 ==== Operation
 
-[[req_records-api_record-access]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-access*
-
-^|A |For every collection identified in the collections response (path `/collections`) where the value of the `itemsType` parameter (JSONPath: `$.collections[*].itemType`) is `record` the server SHALL support the HTTP GET operation at the `/collection/{collectionId}/items/{recordId}` endpoint.
-^|B |The parameter `collectionId` is each `id` property in the collections response (JSONPath: $.collections[*].id) where the value of the `itemType` property (JSONPath: `$.collections[*].itemType`) is `record`. `recordId` is the local identifier of the record.
-|===
+include::requirements/records-api/REQ_record-op.adoc[]
 
 ==== Response
 
-See: http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7[Response] from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+include::requirements/records-api/REQ_record-response.adoc[]
 
 ==== Error situations
 
