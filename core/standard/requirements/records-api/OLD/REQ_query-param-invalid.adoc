@@ -1,6 +1,0 @@
-[[req_record-api_query-param-invalid]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-api/query-param-invalid*
-^|A |The server SHALL respond with a response with the status code ``400``, if the request URI includes a query parameter that has an invalid value.
-|===
