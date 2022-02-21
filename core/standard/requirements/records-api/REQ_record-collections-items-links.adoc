@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-api/record-collections-items-links*
 
-^|A |For each record collection included in the response, the `links` property of the collection SHALL include an item for each supported encoding with a link to the records resource (relation: `items`).
+For each record collection included in the response, the `links` property of the collection SHALL include an item for each supported encoding with a link to the records resource (relation: `items`).
 |===
