@@ -11,7 +11,7 @@ properties:
       A unique identifier of the catalogue record.
     format: uri
   conformsTo:
-    $ref: common/conformance.yaml#/properties/conformsTo
+    $ref: common/confClasses.yaml#/properties/conformsTo
   type:
     type: string
     enum:
