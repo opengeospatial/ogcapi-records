@@ -1,0 +1,10 @@
+[[req_local-resources-catalogue_param-limit-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/param-limit-response*
+
+^|A |The response SHALL not contain more resource from the local resources endpoint than specified by the optional `limit` parameter.
+^|B |If the API definition specifies a maximum value for `limit` parameter, the response SHALL not contain more resources from the local resources endpoint than this maximum value.
+^|C |If the value of the `limit` parameter is larger than the maximum value, this SHALL NOT result in an error (instead use the maximum as the parameter value).
+^|D |Only resources are counted that are on the first level of resources from the local resources endpoint. Any nested objects contained within the explicitly requested resources SHALL not be counted.
+|===

@@ -12,9 +12,11 @@ include::../../../openapi/schemas/recordGeoJSON.yaml[]
 
 ^|C |The `links` section of the record SHALL contain the following links:
 
-* a link to the response document (relation: self),
-* a link to the response document in every other media type supported by the service (relation: alternate), and
+* a link to this response document (relation: self),
+* a typed link to the response document in every other media type supported by the service (relation: alternate), and
 * a link to the feature collection that contains this feature (relation: collection).
 
-^|D |All links SHALL include the `rel` and `type` parameters.
+^|D |All links SHALL include the `rel` parameter.
 |===
+
+NOTE: The term "typed link" means a link that specifies a value for the `type` attribute.

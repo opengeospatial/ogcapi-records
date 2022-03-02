@@ -1,0 +1,21 @@
+[[req_local-resource-catalogue_param-type-def]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/param-type-definition*
+
+^|A |An implementation SHALL support the search by Type (`type`) parameter for the HTTP GET operation at the local resources endpoint.
+^|B |The `type` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: type
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+    maxLength: 64
+explode: false
+----
+|===

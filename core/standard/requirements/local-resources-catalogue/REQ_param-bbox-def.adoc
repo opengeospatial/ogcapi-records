@@ -1,0 +1,8 @@
+[[req_local-resources-catalogue_param-bbox-def]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/param-bbox-def*
+
+^|A |Implementations SHALL support the `bbox` query parameter for the HTTP GET operation at the local resources endpoint.
+^|B |The characteristics of the `bbox` parameter shall be as defined by requirements http://docs.ogc.org/is/17-069r3/17-069r3.html#_parameter_bbox[`req/core/fc-bbox-definition`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+|===

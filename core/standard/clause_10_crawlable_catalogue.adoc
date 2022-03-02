@@ -10,7 +10,7 @@ The `Crawlable Catalogue` Requirements Class defines the requirements for a cata
 
 The goal of a crawlable catalogue is to expose metadata about resources online with as low an entry barrier as possible thus making those resource more easily discoverable.
 
-A crawlable catalogue is a deployment pattern that uses the <<clause-core-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this standard.  It is simply a set of files deployed on the web that encode, usually in JSON, the collection and record schemas defined in this standard.  The files contain embeded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalogue.
+A crawlable catalogue is a deployment pattern that uses the <<clause-core-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this standard.  It is simply a set of files deployed on the web that encode, usually in HTML or JSON, the <<clause-record-collection,collection>> and <<clause-record-core,record schema>> defined in this standard.  The files contain embeded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalogue.
 
 A crawlable catalogue is not searchable and does not respond to query requests.  As the name implies, it can only be crawled by following the embeded links; typically by search engines and other active catalogues or browsed using a web browser.  However, due to its simplicity, a crawlable catalogue is easy to deploy and maintain, and is very reliable.
 
@@ -19,7 +19,7 @@ A crawlable catalogue is not searchable and does not respond to query requests. 
 
 include::requirements/crawlable-catalogue/REQ_record.adoc[]
 
-Attentions is drawn to requirement <<per_core_additional-properties-record,/per/core/additional-properties-record>> that allows the information content of the record to be enriched as required to describe the resource being made discoverable.
+Attention is drawn to requirement <<per_core_additional-properties-record,/per/core/additional-properties-record>> that allows the information content of the record to be enriched as required to describe the resource being made discoverable.
 
 include::requirements/crawlable-catalogue/REQ_record-links.adoc[]
 

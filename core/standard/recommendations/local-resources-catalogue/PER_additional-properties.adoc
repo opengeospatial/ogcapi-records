@@ -1,0 +1,6 @@
+[[per_collections_additional-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/collections/additional-properties*
+^|A |The <<collection-additional-properties>> table contains a list of recommended additional properties that MAY be added to the information model of a local resource object to enhance the searchability of the resource offered at an OGC API endpoint.
+|===

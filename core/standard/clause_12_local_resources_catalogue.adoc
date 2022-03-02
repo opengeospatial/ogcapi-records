@@ -6,41 +6,30 @@
 
 include::requirements/requirements_class_local-resources-catalogue.adoc[]
 
-This conformance class specifies requirements for local resource catalogues.
+This conformance class specifies requirements for a _local resource catalogues_.
 
 The OGC API defines a number of resource endpoints that provide lists of
-sub-resources.  These endpoints are referred to "local resource catalogues" in this specification because they provide metadata about resources offered locally by an OGC API deployment.
+sub-resources.  These endpoints are referred to as _local resources catalogues_ in this standard because they provide metadata about resources offered locally by an OGC API deployment.
 
-The `/collections` endpoint is an example of a local resources catalogue.  It
-provides a list of offered collections of resources.  Each offered collections (i.e. `/collections/{collectionId}`) is described by a small number of properties defined in https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and typically extended by the resource-specification specification (e.g. OGC API - Feature - Part 1: Core).
+NOTE: The term _local resources endpoint_ is used to reference to the resource path of the _local resources catalogue_.  The term _local resources object_ is used to refer to an instance of the object or resource that can be retrieved from the _local resources endpoint_.
 
-Other local resources catalogues include the `/processes` endpoint which provides a list of offered processes and the `/collections/{collectionId}/scenes` endpoint which provides a list of source images.
+The `/collections` endpoint is an example of a _local resources endpoint_.  This endpoint provides a list of objects describing the collections of items offered by an OGC API deployment.  Each offered collection (path `/collections/{collectionId}`) is described a _local resources object_ containing a small number of properties.  A common set of properties is defined in  https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and can be extended by resource-specific specifications (e.g. http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core]).  In this respect, the `/collections` endpoint is a catalogue of records (i.e. `/collections/{collectionId}` objects) describing the collections of items offered by the OGC API deployment.
 
-The conformance class defines requirements that :
+Other _local resources catalogues_ available in the OGC API resource tree include the `/processes` endpoint which provides a list of offered processes and the `/collections/{collectionId}/scenes` endpoint which provides a list of source images of a coverage.
 
-1. Define or extend the set of query parameters defined at the local resource catalogue endpoint. In the case of the `/collections` endpoint, for example, the requirements in this conformance class extend the set of queryables, `bbox`, `datetime` and `limit`, to include a parameters such as a text search parameter `q`.
+In order to enable catalogue-like searching at these local resources endpoints, this conformance class defines requirements and recommendations that:
 
-2. Extend the schema of the local resource catalogue endpoint to add additional keys/properties that provide richer descriptive information.  In the case of the
-`/collections` endpoint, for example, these additional properties enhance the information content defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection Description] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension
+1. enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<core-queryables,core queryables>> defined for a catalogue <<clause-records-core,record>>,
 
-=== Collections Metadata
+2. define or extend the set of query parameters avaiable at the local resources endpoint (e.g. `/collections`) to enhance it searchability.
 
-WARNING: T.B.D.  The rest of this clause was originally a description of extending the `/collections` endpoint but is now being expanded to be any endpoint where it makes sense to add catalogue-like query capability.
+=== Resource Description
 
-The https://docs.ogc.org/DRAFTS/20-024.html#collections-metadata[Collections Metadata] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension defines the `bbox`, `datetime` and 'limit' query parameters for the `/collections` resource. 
+=== Overview
 
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_query-params.adoc[]
+The clause defines requirements and recommendations for the information content of a local resources object that can be retrieved from local resources endpoint.
 
-The collections metadata (i.e. HTTP GET on the `/collections` path) is defined in the https://docs.ogc.org/DRAFTS/20-024.html#_response[Collections Metadata] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension.  
-
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_query-response.adoc[]
-
-=== Collection Description
-
-The collection information object is defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection Description] clause of the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension.
-
-The following table cross-walks the properties of the collection information
-object with the core queryables.
+As an example of a local resources endpoint, consider the `/collections` enpoint.  The object that can be retrieved from this endpoint is defined in https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_[OGC API - Features].  The following table cross-walks the information content of the collection object with the <<core-queryables,core queryables>> defined for the <<clause-record-core,record>> building block:
 
 [[record-collection-crosswalk]]
 [reftext='{table-caption} {counter:table-num}']
@@ -57,46 +46,179 @@ object with the core queryables.
 |crs                 |O           |--             |--
 |===
 
-The following requirements specify additional properties that a compliant
-implementation of this conformance class must add to the collection 
-information object.
+It is evident that there is significant overlap of the properties of each resource.  This standard defines the following requirements and recommendations with regard to information content of a local resources object such as the collection object that is retrievable from the `/collections` endpoint.
 
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_title.adoc[]
+=== Property `title`
 
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_description.adoc[]
+include::requirements/local-resources-catalogue/REQ_property-title.adoc[]
 
-No additional requirements are necessary for the `extent` property.
+=== Property `description`
 
-No additional requirements are necessary to the `links` property.  Since the
-`links` property is mandatory for the collection information object, it will
-always be present but because it is an optional core queryables, catalogue
-clients will either know how to handle it or they will ignore it.
+include::requirements/local-resources-catalogue/REQ_property-description.adoc[]
 
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_type.adoc[]
+=== Property `extent`
 
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_created.adoc[]
+include::recommendations/local-resources-catalogue/REC_property-extent.adoc[]
 
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_updated.adoc[]
+=== Property `links`
 
-NOTE: Adding, modifying, or deleting items from a collections are all examples of changes to that collection.
+include::recommendations/local-resources-catalogue/REC_property-links.adoc[]
 
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_keywords.adoc[]
+=== Property `type`
 
-include::recommendations/local-resources-catalogue/REC_local-resources-catalogue_additional-properties.adoc[]
+include::requirements/local-resources-catalogue/REQ_property-type.adoc[]
 
-The collections metadata response is defined in the https://docs.ogc.org/DRAFTS/20-024.html#collection-metadata[Collections Metadata] clause on the https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] extension.
+=== Property `created`
 
-include::requirements/local-resources-catalogue/REQ_local-resources-catalogue_schema.adoc[]
+include::requirements/local-resources-catalogue/REQ_property-created.adoc[]
+
+=== Property `updated`
+
+include::requirements/local-resources-catalogue/REQ_property-updated.adoc[]
+
+NOTE: Adding, modifying, or deleting items from a collection are all examples of changes that may occur that would require an update of the collection object that can be retrieved from the `/collections` endpoint.
+
+=== Property `keywords`
+
+include::requirements/local-resources-catalogue/REQ_property-keywords.adoc[]
+
+=== Additional properties
+
+include::recommendations/local-resources-catalogue/PER_additional-properties.adoc[]
+
+[[collection-additional-properties]]
+[reftext='{table-caption} {counter:table-num}']
+.Additional collection information properties
+[cols="30,70",options="header"]
+|===
+|Property |Description
+|language |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
+|publisher |The entity making the resource available.
+|themes |A knowledge organization system used to classify the resource.
+|formats |A list of available distributions for the resource.
+|contactpoint |An entity to contact about the resource.
+|license |A legal document under which the resource is made available.
+|rights |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|associations |A list of links for accessing the resource or links to other resources associated with this resource.
+|===
+
+=== Example
+
+The following JSON-Schema fragment illustrates how the feature collections object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
+
+[source,yaml]
+----
+    allOf:
+      $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
+      type: object
+      required:
+        - type
+        - created
+        - updated
+        - keywords
+      properties:
+        type:
+          description: the nature or genre of the items of the collections (e.g. feature, coverage)
+          type: string
+        created:
+          description: the date this collection was created in the server
+          type: string
+          format: date-time
+        updated:
+          description: the most recent date on which the collection was updated
+          type: string
+          format: date-time
+        keywords:
+          description: A list of keywords or tag associated with the collection
+          type: array
+          items:
+           type: string
+        language:
+          description: refers to the natural language used for textual values (i.e. titles, descriptions, etc) of items in the collection
+          type: string
+        publisher:
+          description: the entity making the collection available
+          type: string
+        themes:
+          description: list of classifications association with the collection from a knowledge organization system
+          type: array
+          items:
+             type: string
+             format: uri
+        contactpoint:
+          description: entity to contact about the collection
+          type: object
+        license:
+          description: legal document under which the collection is made available.
+          type: string
+        rights:
+          description: a statement that concerns all rights not addressed by the license such as a copyright statement.
+          type: string
+----
+
+T.D.B.  Should add an instance example of a collection object.
+
+=== Query parameters
+
+==== Overview
+
+To enable search capabilities at local resource endpoints, this conformance class defines the a set of requirements and recommendations around query parameters that can implemented at the endpoint.
+
+==== Parameter `bbox`
+
+include::requirements/local-resources-catalogue/REQ_param-bbox-def.adoc[]
+
+include::requirements/local-resources-catalogue/REQ_param-bbox-response.adoc[]
+
+==== Parameter `datetime`
+
+include::requirements/local-resources-catalogue/REQ_param-datetime-def.adoc[]
+
+include::requirements/local-resources-catalogue/REQ_param-datetime-response.adoc[]
+
+==== Parameter `limit`
+
+include::requirements/local-resources-catalogue/REQ_param-limit-def.adoc[]
+
+include::requirements/local-resources-catalogue/REQ_param-limit-response.adoc[]
+
+See all the discussion about the `limit` parameter in the http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_6[Feature response] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+
+==== Parameter `q`
+
+include::requirements/local-resources-catalogue/REQ_param-q-def.adoc[]
+
+include::recommendations/local-resources-catalogue/REC_param-q.adoc[]
+
+==== Parameter `type`
+
+include::requirements/local-resources-catalogue/REQ_param-type-def.adoc[]
+
+include::recommendations/local-resources-catalogue/REC_param-type.adoc[]
+
+include::requirements/local-resources-catalogue/REQ_param-type-response.adoc[]
+
+==== Additional query parameters
+
+include::recommendations/local-resources-catalogue/REC_additional-query-parameters.adoc[]
+
+==== Sorting
+
+include::requirements/local-resources-catalogue/REQ_param-sortby-def.adoc[]
+
+include::requirements/local-resources-catalogue/REQ_param-sortby-response.adoc[]
+
+See also: <<req_sorting_get-sortables-op,/req/sorting/get-sortables-op>>, <<req_sorting_get-sortables-success,/req/sorting/get-sortables-success>>.
 
 === Examples
 
-Example 1: List all the collections that lie within a specific bounding box and contains the the keyword `weather`.
+Example 1: List all the collections that lie within a specific bounding box and contain the keyword `weather`.
 
----
+----
    Client                                                          Server
      |                                                               |
-     |   GET /collections?bbox=￼41.875315,-96.767601,56.732861,-73.47|
-     |                          6586&q=weather   HTTP/1.1            |
+     |   GET /collections?bbox=41.875315,-96.767601,56.732861,-73.476|
+     |   586&q=weather   HTTP/1.1
      |   Accept: application/json                                    |
      |-------------------------------------------------------------->|
      |                                                               |
@@ -105,5 +227,4 @@ Example 1: List all the collections that lie within a specific bounding box and 
      |                                                               |
      |   Need example output here...                                 |
      |<--------------------------------------------------------------|
----
-
+----
