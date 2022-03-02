@@ -59,7 +59,7 @@ The <<clause-crawlable-catalogue,Crawlable Catalogue>> conformance class defines
 
 The <<clause-searchable-catalogue,Searchable Catalogue>>, <<clause-searchable-catalogue_sorting,Searchable Catalogue - Sorting>>, <<clause-searchable-catalogue_cql2-filter,Searchable Catalogue - CQL2 Filter>> conformance classes define the requirements for a catalogue composed of a collection of records that is searchable via an API.
 
-The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-local-resources-catalogue_sorting,Local Resources Catalogue - Sorting>>, <<clause-local-resources-catalogue_advanced-filter,Local Resources Catalogue - CQL2 Filter>> conformance classes define the requirements for a local resources catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resources catalogue but other endpoints may exist in an OGC API deployment as well.
+The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-local-resources-catalogue_sorting,Local Resources Catalogue - Sorting>>, <<clause-local-resources-catalogue_cql2-filter,Local Resources Catalogue - CQL2 Filter>> conformance classes define the requirements for a local resources catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resources catalogue but other endpoints may exist in an OGC API deployment as well.
 
 [#required_building_blocks,reftext='{table-caption} {counter:table-num}']
 .Required building blocks by catalogue deployment type

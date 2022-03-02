@@ -1,4 +1,4 @@
-[[clause_local-resources-catalogue]]
+[[clause-local-resources-catalogue]]
 == Requirements Class "Local Resources Catalogue"
 
 [[local-resources-catalogue-overview]]
@@ -206,7 +206,7 @@ include::recommendations/local-resources-catalogue/REC_additional-query-paramete
 
 
 
-[[clause_local-resources-catalogue_sorting]]
+[[clause-local-resources-catalogue_sorting]]
 === Requirements Class "Local Resources Catalogue, Sorting"
 
 include::requirements/requirements_class_local-resources-catalogue_sorting.adoc[]
@@ -244,7 +244,7 @@ Example 1: List all the collections that lie within a specific bounding box and 
 
 
 
-[[clause_local-resources-catalogue_cql2-filter]]
+[[clause-local-resources-catalogue_cql2-filter]]
 === Requirements Class "Local Resources Catalogue - CQL2 Filter"
 
 include::requirements/requirements_class_local-resources-catalogue_cql2-filter.adoc[]
