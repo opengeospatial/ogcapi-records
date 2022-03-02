@@ -20,7 +20,7 @@ This standard also identifies eight (8) building block requirements classes:
 * <<clause-record-collection,Record collection>>
 * <<clause-records-api,Records API>>
 * <<clause-sorting,Sorting>>
-* <<clause-cql-filter,Filtering using the Common Query Language (CQL)>>
+* <<clause-cql-filter,Filtering using the Common Query Language (CQL2)>>
 * <<requirements-class-json-clause,JSON-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 * <<clause-autodiscovery,Autodiscovery>>
@@ -33,7 +33,7 @@ The <<clause-records-api,_Records API_>> conformance class defines the requireme
 
 The <<clause-sorting,_Sorting_>> conformance class defines the requirements to support sorting of records in a query response.
 
-The <<clause-record-filter,_Filter using the Common Query Language_>> conformance class defines the requirements to support record filtering using https://docs.ogc.org/DRAFTS/19-079r1.html[CQL].
+The <<clause-record-filter,_Filter using the Common Query Language_>> conformance class defines the requirements to support record filtering using https://docs.ogc.org/DRAFTS/19-079r1.html[CQL2].
 
 The <<requirements-class-json-clause,_JSON-Record_>> conformance class defines the requirements for a GeoJSON (see RFC 7946) representation of a standard catalogue record.
 
@@ -48,15 +48,18 @@ Using the above mentioned building blocks, this stadard identified the following
 
 * <<clause-crawlable-catalogue,Crawlable Catalogue>>
 * <<clause-searchable-catalogue,Searchable Catalogue>>
+** <<clause-searchable-catalogue_sorting,Searchable Catalogue - Sorting>>
+** <<clause-searchable-catalogue_cql2-filter,Searchable Catalogue - CQL2 Filter>>
+
 * <<clause-local-resources-catalogue,Local Resources Catalogue>>
-** <<clause-local-resources-catalogue_sorting,Local Resources Catalogue, Sorting>>
-** <<clause-local-resources-catalogue_advanced-filter,Local Resources Catalogue, Advanced Filter>>
+** <<clause-local-resources-catalogue_sorting,Local Resources Catalogue - Sorting>>
+** <<clause-local-resources-catalogue_cql2-filter,Local Resources Catalogue - CQL2 Filter>>
 
 The <<clause-crawlable-catalogue,Crawlable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of web-accessible static files.
 
-The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of records that is searchable via an API.
+The <<clause-searchable-catalogue,Searchable Catalogue>>, <<clause-searchable-catalogue_sorting,Searchable Catalogue - Sorting>>, <<clause-searchable-catalogue_cql2-filter,Searchable Catalogue - CQL2 Filter>> conformance classes define the requirements for a catalogue composed of a collection of records that is searchable via an API.
 
-The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-local-resources-catalogue_sorting,Local Resources Catalogue, Sorting>>, <<clause-local-resources-catalogue_advanced-filter,Local Resources Catalogue, Advanced Filter>> conformance classes defines the core requirements for a local resource catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resource catalogue but other endpoints may exist in an OGC API deployment as well.
+The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-local-resources-catalogue_sorting,Local Resources Catalogue - Sorting>>, <<clause-local-resources-catalogue_advanced-filter,Local Resources Catalogue - CQL2 Filter>> conformance classes define the requirements for a local resources catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resources catalogue but other endpoints may exist in an OGC API deployment as well.
 
 [#required_building_blocks,reftext='{table-caption} {counter:table-num}']
 .Required building blocks by catalogue deployment type
@@ -68,7 +71,7 @@ The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-loc
 |<<clause-record-collection,Record collection>> |_Optional_ |Mandatory |Mandatory
 |<<clause-record-api,Records API>> |_Optional_ |Mandatory |Mandatory
 |<<clause-sorting,Sorting>> |_Optional_ |_Optional_ |_Optional_
-|<<clause-record-filter,CQL>> |_Optional_ |_Optional_ |_Optional_
+|<<clause-record-filter,CQL2>> |_Optional_ |_Optional_ |_Optional_
 |<<requirements-class-json-clause,JSON-Record>> |_Optional_ |_Optional_ |_Optional_
 |<<requirements-class-html-clause,HTML-Record>> |_Optional_ |_Optional_ |_Optional_
 |===
@@ -97,7 +100,7 @@ OGC Compliance Testing web site.
 |<<ats_record_collection,Record Collection>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
 |<<ats_record_api,Records API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api
 |<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
-|<<ats_cql,CQL>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
+|<<ats_cql,CQL2>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
 |<<ats_json,JSON-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 |<<ats_html,HTML-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 |<<ats_autodiscovery,Autodiscovery>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery

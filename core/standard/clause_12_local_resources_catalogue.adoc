@@ -244,25 +244,25 @@ Example 1: List all the collections that lie within a specific bounding box and 
 
 
 
-[[clause_local-resources-catalogue_advanced-filter]]
-=== Requirements Class "Local Resources Catalogue, Advanced Filtering"
+[[clause_local-resources-catalogue_cql2-filter]]
+=== Requirements Class "Local Resources Catalogue - CQL2 Filter"
 
-include::requirements/requirements_class_local-resources-catalogue_advanced-filter.adoc[]
+include::requirements/requirements_class_local-resources-catalogue_cql2-filter.adoc[]
 
 This conformance class specifies requirements and recommendations for supporting advanced filtering using CQL2 at _local resource catalogue_ endpoints.
 
 ==== Operation
 
-include::requirements/local-resources-catalogue_advanced-filter/REQ_filter-param.adoc[]
+include::requirements/local-resources-catalogue_cql2-filter/REQ_filter-param.adoc[]
 
-include::requirements/local-resources-catalogue_advanced-filter/REQ_filter-lang-param.adoc[]
+include::requirements/local-resources-catalogue_cql2-filter/REQ_filter-lang-param.adoc[]
 
-include::recommendations/local-resources-catalogue_advanced-filter/REC_text-encoding.adoc[]
+include::recommendations/local-resources-catalogue_cql2-filter/REC_text-encoding.adoc[]
 
-include::recommendations/local-resources-catalogue_advanced-filter/REC_json-encoding.adoc[]
+include::recommendations/local-resources-catalogue_cql2-filter/REC_json-encoding.adoc[]
 
-include::requirements/local-resources-catalogue_advanced-filter/REQ_filter-crs-param.adoc[]
+include::requirements/local-resources-catalogue_cql2-filter/REQ_filter-crs-param.adoc[]
 
 ==== Response
 
-include::requirements/local-resources-catalogue_advanced-filter/REQ_filter-response.adoc[]
+include::requirements/local-resources-catalogue_cql2-filter/REQ_filter-response.adoc[]
