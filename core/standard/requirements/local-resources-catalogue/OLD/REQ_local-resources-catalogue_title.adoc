@@ -1,6 +1,0 @@
-[[req_local-resources-catalogue_title]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/title*
-^|A |The `title` property shall be present in the collection information object.
-|===
