@@ -308,9 +308,8 @@ Searches the catalogue for records that describe resources from Greece between J
 
 In all search cases, the response format is determined using standard [HTTP content negotiation](https://restfulapi.net/content-negotiation/).
 
-Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core API specification supports a basic set of filters roughly analogous to the [OpenSearch](https://opensearch.org) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
+Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core API specification supports a basic set of filters roughly analogous to the [OpenSearch](https://github.com/dewitt/opensearch) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
 
-⚠️ The OpenSearch protocol used by OGC API - Records is based on a protocol that was launched in 2005 by A9.com, an Amazon subsidiary, as a means for sharing search queries and search results in a standardized format.  In 2021, Amazon.com launched the open source OpenSearch search engine project, unrelated to this effort aside from repurposing the name.  The two projects will continue to independently co-exist, though the search protocol (this project) has largely remained stable and unchanged for over ten years, with no significant updates expected on the horizon.  Neither of these two efforts is related to the Open Search Foundation project found [here](https://opensearchfoundation.org/).
 
 ### Local resources catalogue
 
@@ -327,6 +326,14 @@ GET /collections?bbox=-69.64,37.76,-56.12,46.63&datetime=2020-01-11T00:00:00/202
 ```
 
 Only collections that satisfy that specified predicates are included in the response.
+
+### OpenSearch
+
+The OpenSearch protocol defines an XML description document describing how to request search results from a service. If these search results are encoded in ATOM or RSS, this allows results from multiple services to be combined.  It is still used extensively by some communities within OGC and was originally part of Part 1.  It has, recently, been moved into own part, Part 2.  This was primarily done because of the current status of OpenSearch.
+
+The OpenSearch protocol used by OGC API - Records is based on a protocol that was launched in 2005 by A9.com, an Amazon subsidiary.  In 2021, Amazon.com launched the open source OpenSearch search engine project, unrelated to the OpenSearch launched by A9.com aside from repurposing the name.  The two projects will continue to independently co-exist, though the search protocol (now hosted [here](https://github.com/dewitt/opensearch)) has largely remained stable and unchanged for over ten years, with no significant updates expected on the horizon.  Neither of these two efforts is related to the Open Search Foundation project found [here](https://opensearchfoundation.org/).
+
+Because of this shift in status of OpenSearch issolating it in its part of the OGC API Records suite of standards would allow the related conformance class(es) to be easilt deprecated or renamed in the future.  The work for this part, Part 2, is being carried out [here](https://github.com/opengeospatial/ogcapi-records/tree/master/extensions/OpenSearch).
 
 ## Using the standard
 
@@ -372,3 +379,4 @@ The OGC API Records Standards Working Group (SWG) is the group at OGC responsibl
 * [Copy of License Language](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/LICENSE)
 
 Pull Requests from contributors are welcomed. However, please note that by sending a Pull Request or Commit to this GitHub repository, you are agreeing to the terms in the Observer Agreement https://portal.ogc.org/files/?artifact_id=92169
+
