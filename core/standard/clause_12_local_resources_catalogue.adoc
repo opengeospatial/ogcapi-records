@@ -23,6 +23,8 @@ In order to enable catalogue-like searching at these local resources endpoints, 
 
 2. define or extend the set of query parameters avaiable at the local resources endpoint (e.g. `/collections`) to enhance it searchability.
 
+This conformance class does not define the specific endpoints in the OGC API resource tree that should be enabled with catalogue-like query capabilities.  It only defines how those endpoint should be enhanced should the requirement for catalogue-line searching be identified by the responsible OGC standard.
+
 === Resource Description
 
 === Overview
@@ -202,11 +204,22 @@ include::requirements/local-resources-catalogue/REQ_param-type-response.adoc[]
 
 include::recommendations/local-resources-catalogue/REC_additional-query-parameters.adoc[]
 
-==== Sorting
 
-include::requirements/local-resources-catalogue/REQ_param-sortby-def.adoc[]
 
-include::requirements/local-resources-catalogue/REQ_param-sortby-response.adoc[]
+[[clause_local-resources-catalogue_sorting]]
+=== Requirements Class "Local Resources Catalogue, Sorting"
+
+include::requirements/requirements_class_local-resources-catalogue_sorting.adoc[]
+
+This conformance class specifies requirements and recommendations for supporting sorting of responses at _local resource catalogue_ endpoints.
+
+==== Operation
+
+include::requirements/local-resources-catalogue_sorting/REQ_param-sortby-def.adoc[]
+
+==== Response 
+
+include::requirements/local-resources-catalogue_sorting/REQ_param-sortby-response.adoc[]
 
 See also: <<req_sorting_get-sortables-op,/req/sorting/get-sortables-op>>, <<req_sorting_get-sortables-success,/req/sorting/get-sortables-success>>.
 
@@ -228,3 +241,28 @@ Example 1: List all the collections that lie within a specific bounding box and 
      |   Need example output here...                                 |
      |<--------------------------------------------------------------|
 ----
+
+
+
+[[clause_local-resources-catalogue_advanced-filter]]
+=== Requirements Class "Local Resources Catalogue, Advanced Filtering"
+
+include::requirements/requirements_class_local-resources-catalogue_advanced-filter.adoc[]
+
+This conformance class specifies requirements and recommendations for supporting advanced filtering using CQL2 at _local resource catalogue_ endpoints.
+
+==== Operation
+
+include::requirements/local-resources-catalogue_advanced-filter/REQ_filter-param.adoc[]
+
+include::requirements/local-resources-catalogue_advanced-filter/REQ_filter-lang-param.adoc[]
+
+include::recommendations/local-resources-catalogue_advanced-filter/REC_text-encoding.adoc[]
+
+include::recommendations/local-resources-catalogue_advanced-filter/REC_json-encoding.adoc[]
+
+include::requirements/local-resources-catalogue_advanced-filter/REQ_filter-crs-param.adoc[]
+
+==== Response
+
+include::requirements/local-resources-catalogue_advanced-filter/REQ_filter-response.adoc[]

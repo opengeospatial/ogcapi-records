@@ -2,6 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/sorting/get-sortables-op*
+
 ^|A |For every collection identified in the Collections resource (path
  `/collections`), the server SHALL support the HTTP GET operation at the path
  `/collections/{collectionId}/sortables` and the media type `application/schema+json`.

@@ -49,12 +49,14 @@ Using the above mentioned building blocks, this stadard identified the following
 * <<clause-crawlable-catalogue,Crawlable Catalogue>>
 * <<clause-searchable-catalogue,Searchable Catalogue>>
 * <<clause-local-resources-catalogue,Local Resources Catalogue>>
+** <<clause-local-resources-catalogue_sorting,Local Resources Catalogue, Sorting>>
+** <<clause-local-resources-catalogue_advanced-filter,Local Resources Catalogue, Advanced Filter>>
 
 The <<clause-crawlable-catalogue,Crawlable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of web-accessible static files.
 
 The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of records that is searchable via an API.
 
-The <<clause-local-resources-catalogue,Local Resources Catalogue>> conformance class defines the core requirements for a local resource catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resource catalogue but other endpoints may exist in an OGC API deployment as well.
+The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-local-resources-catalogue_sorting,Local Resources Catalogue, Sorting>>, <<clause-local-resources-catalogue_advanced-filter,Local Resources Catalogue, Advanced Filter>> conformance classes defines the core requirements for a local resource catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resource catalogue but other endpoints may exist in an OGC API deployment as well.
 
 [#required_building_blocks,reftext='{table-caption} {counter:table-num}']
 .Required building blocks by catalogue deployment type
