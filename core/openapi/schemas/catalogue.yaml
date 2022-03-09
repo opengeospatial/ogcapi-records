@@ -6,6 +6,16 @@ allOf:
     - itemType
     - type
   properties:
+    recordCreated:
+      type: string
+      description:
+        Date of creation of this catalogue.
+      format: date-time
+    recordUpdated:
+      type: string
+      description:
+        The most recent date on which this catalogue was changed.
+      format: date-time
     keywords:
       type: array
       description:
