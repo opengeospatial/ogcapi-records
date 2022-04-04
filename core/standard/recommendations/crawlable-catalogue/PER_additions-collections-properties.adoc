@@ -1,0 +1,9 @@
+[per_crawlable-catalogue_additional-collections-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/crawlable-catalogue/additional-collections-properties*
+
+^|A |A _collections object_ MAY contain zero or more of the optional properties listed in the <<collections-properties-table>>.
+^|B |A _collection object_ MAY contain any number of additional properties not listed in the <<collections-properties-table>>.  The meaning of these additional properties is not specified in this document.
+|===
+

@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/collection*
-^|A |A collection of related records, called a catalogue, SHALL be described by a <<rc_record_collection,collection object>>. 
-^|B |The `links` section of the catalogue SHALL include one link (`rel=item`) pointing to each record of the catalogue.
+
+A collection of related records, called a catalogue, SHALL be described by a <<rc_record_collection,collection object>>.
 |===

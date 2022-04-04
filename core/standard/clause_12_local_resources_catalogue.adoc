@@ -166,19 +166,19 @@ T.D.B.  Should add an instance example of a collection object.
 
 To enable search capabilities at local resource endpoints, this conformance class defines the a set of requirements and recommendations around query parameters that can implemented at the endpoint.
 
-==== Parameter `bbox`
+==== Parameter bbox
 
 include::requirements/local-resources-catalogue/REQ_param-bbox-def.adoc[]
 
 include::requirements/local-resources-catalogue/REQ_param-bbox-response.adoc[]
 
-==== Parameter `datetime`
+==== Parameter datetime
 
 include::requirements/local-resources-catalogue/REQ_param-datetime-def.adoc[]
 
 include::requirements/local-resources-catalogue/REQ_param-datetime-response.adoc[]
 
-==== Parameter `limit`
+==== Parameter limit
 
 include::requirements/local-resources-catalogue/REQ_param-limit-def.adoc[]
 
@@ -186,13 +186,13 @@ include::requirements/local-resources-catalogue/REQ_param-limit-response.adoc[]
 
 See all the discussion about the `limit` parameter in the http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_6[Feature response] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
 
-==== Parameter `q`
+==== Parameter q
 
 include::requirements/local-resources-catalogue/REQ_param-q-def.adoc[]
 
 include::recommendations/local-resources-catalogue/REC_param-q.adoc[]
 
-==== Parameter `type`
+==== Parameter type
 
 include::requirements/local-resources-catalogue/REQ_param-type-def.adoc[]
 

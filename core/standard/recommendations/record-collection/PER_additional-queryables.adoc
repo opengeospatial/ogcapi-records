@@ -3,5 +3,5 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/record-collection/additional-properties*
 ^|A |A collection object MAY contain zero or more of the optional properties listed in <<collection-properties-table>>.
-^|B |A collection object MAY contain any number of additional properties not listed in <<collection-properties-table>>.  The meaning of these additional properties is not specified in this document.
+^|B |A collection object MAY contain any number of additional properties not listed in <<collection-properties-table>>.  The meaning of these additional properties is not defined in this standard.
 |===

@@ -32,14 +32,48 @@ include::recommendations/crawlable-catalogue/REC_record-file-location.adoc[]
 For example, the record file could be placed in the same web-accessible directory or object store as the resource(s) that the record describes.
 
 [[crawlable-catalogue]]
-=== Grouping sets of related records into a catalogue
+=== Grouping a collection of records into a catalogue
 
 include::requirements/crawlable-catalogue/REQ_collection.adoc[]
 
 include::requirements/crawlable-catalogue/REQ_collection-location.adoc[]
 
-=== Collections of catalogues
+include::requirements/crawlable-catalogue/REQ_collection-links.adoc[]
 
-T.B.D.
+=== Collections of catalogue resources
 
-NOTE: STAC has three bits, the STAC catalogue, the STAC collection and the STAC item.  The STAC collection is what this standard refers to as a "catalogue".  The STAC item is what we call a "record".  STAC also has something called a STAC catalogue.  It is a higher level document that logically groups other STAC catalogue, STAC collection and STAC item objects.  I suppose that this roughly analogous to the "/collections" object although the "/collections" object only groups "collection" (aka catalogue) objects.
+In order to provide flexibility with regard to how crawlable catalogues can be organized (e.g. a hierarchy) a _collections object_ is defined that may be used as a common entry point for crawling to multiple, related, sub-collections, catalogues, records and other resources.
+
+<<collections-properties-table>> defines the set of properties for a collections object.
+
+[#collections-properties-table,reftext='{table-caption} {counter:table-num}']
+.Table of properties for a collections object
+[cols="30,5,65",options="header"]
+|===
+|Queryables |Requirement |Description
+|_**id**_ |**required** |A unique identifier for this collections object.
+|_**title**_ |**required** |A human-readable name given to this collections object.
+|_**description**_ |optional |A free-text description of this collections object.
+|_**links**_ |**required** |A list of links for navigating to the resources (i.e. collections, catalogues, items, other resources) of this collections  object.
+|_**extent**_ |optional |The spatio-temporal coverage of this collections object.
+|_**crs**_ |optional |A list of coordinate reference system used for spatial-temporal values.
+|type |**required** |The nature or genre of this resource. Fixed to "Collection".
+|keywords |optional |A list of keywords or tag associated with this collections object.
+|keywordsCodespace |optional |A reference to a controlled vocabulary used for the keywords property.
+|language |optional |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of this collections object.
+|created |optional |The date this collections object was created.
+|updated |optional |The more recent date on which this collections object was changed.
+|providers |optional |A list of providers qualified by their role.
+|themes |optional |A knowledge organization system used to classify this collections object.
+|contactPoint |optional |An entity to contact about this collections object.
+|license |optional |A legal document under which this collections object is made available.
+|rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|===
+
+include::requirements/crawlable-catalogue/REQ_collections.adoc[]
+
+include::recommendations/crawlable-catalogue/PER_additions-collections-properties.adoc[]
+
+include::requirements/crawlable-catalogue/REQ_collections-links.adoc[]
+
+include::recommendations/crawlable-catalogue/REC_collections-links.adoc[]
