@@ -57,7 +57,7 @@ In order to provide flexibility with regard to how crawlable catalogues can be o
 |_**links**_ |**required** |A list of links for navigating to the resources (i.e. collections, catalogues, items, other resources) of this collections  object.
 |_**extent**_ |optional |The spatio-temporal coverage of this collections object.
 |_**crs**_ |optional |A list of coordinate reference system used for spatial-temporal values.
-|type |**required** |The nature or genre of this resource. Fixed to "Collection".
+|type |**required** |The nature or genre of this resource. Fixed to "Collections".
 |keywords |optional |A list of keywords or tag associated with this collections object.
 |keywordsCodespace |optional |A reference to a controlled vocabulary used for the keywords property.
 |language |optional |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of this collections object.
@@ -65,7 +65,6 @@ In order to provide flexibility with regard to how crawlable catalogues can be o
 |updated |optional |The more recent date on which this collections object was changed.
 |providers |optional |A list of providers qualified by their role.
 |themes |optional |A knowledge organization system used to classify this collections object.
-|contactPoint |optional |An entity to contact about this collections object.
 |license |optional |A legal document under which this collections object is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |===
