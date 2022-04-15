@@ -158,7 +158,6 @@ properties:
           links to other resources associated with this resource.
         items:
           $ref: common/link.yaml
-      additionalProperties: true
   links:
     type: array
     description:
