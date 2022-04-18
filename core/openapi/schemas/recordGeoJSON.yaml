@@ -146,7 +146,7 @@ properties:
       rights:
         type: string
         description:
-          A statement that concerns all rights not addresses by the license
+          A statement that concerns all rights not addressed by the license
           such as a copyright statement.
       extent:
         $ref: common/extent.yaml
@@ -158,7 +158,6 @@ properties:
           links to other resources associated with this resource.
         items:
           $ref: common/link.yaml
-      additionalProperties: true
   links:
     type: array
     description:
