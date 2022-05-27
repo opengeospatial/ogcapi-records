@@ -1,0 +1,162 @@
+type: object
+required:
+  - id
+  - type
+  - geometry
+  - properties
+properties:
+  id:
+    type: string
+    description:
+      A unique identifier of the catalogue record.
+    format: uri
+  conformsTo:
+    $ref: common/confClasses.yaml#/properties/conformsTo
+  type:
+    type: string
+    enum:
+      - Feature
+  geometry:
+    $ref: geometryGeoJSON.yaml
+  properties:
+    type: object
+    required:
+      - type
+      - title
+    properties:
+      recordCreated:
+        type: string
+        description:
+          Date of creation of this record.
+        format: date-time
+      recordUpdated:
+        type: string
+        description:
+          The most recent date on which the record was changed.
+        format: date-time
+      type:
+        type: string
+        description:
+          The nature or genre of the resource. The value should be a code, 
+          convenient for filtering the records. Where available, a link to 
+          the canonical URI of the record type resource will be added to 
+          the 'links' property.
+        maxLength: 64
+      title:
+        type: string
+        description:
+          A human-readable name given to the resource.
+      description:
+        type: string
+        description:
+          A free-text account of the resource.
+      keywords:
+        type: array
+        description:
+           The topic or topics of the resource. Typically represented using
+           keywords, tags, key phrases, or classification codes. Recommended
+           best practice is to use a controlled vocabulary.
+        items:
+          type: string
+      keywordsCodespace:
+        type: string
+        description:
+          A reference to a controlled vocabulary used for the keywords
+          parameter.  If a reference is not provided then the value of
+          the keyword parameter should be considered a free list of
+          tokens associated with the record.
+        format: uri
+      language:
+        type: string
+        description:
+          The natural language used for textual values (e.g. titles,
+          descriptions, etc.) of the resource. ISO 639-1/639-2 codes
+          should be used.
+        default: en
+      externalIds:
+        type: array
+        description:
+          An identifier for the resource assigned by an external (to the
+          catalogue) entity.
+        items:
+          type: object
+          properties:
+              scheme:
+                  type: string
+                  description:
+                      A reference to an authority or identifier for a knowledge
+                      organization system from which the external identifier was
+                      obtained.  It is recommended that the identifier be a resolvable URI.
+              value:
+                  type: string
+                  description: The value of the identifier.
+          required:
+              - value
+      created:
+        type: string
+        description:
+          Date of creation of the resource.
+        format: date-time
+      updated:
+        type: string
+        description:
+          Most recent date on which the resource was changed.
+        format: date-time
+      themes:
+        type: array
+        description:
+          A knowledge organization system used to classify the resource.
+        items:
+          type: object
+          properties:
+            concepts:
+              type: array
+              description:
+                One or more entity/concept identifers from this knowledge
+                system. it is recommended that a resolvable URI be used
+                for each entity/concept identifier.
+              items:
+                type: string
+            scheme:
+              type: string
+              description:
+                 An identifier for the knowledge organization system used
+                 to classify the resource.  It is recommended that the
+                 identifier be a resolvable URI.
+      formats:
+        type: array
+        description:
+          A list of available distributions of the resource.
+        items:
+          type: string
+      providers:
+        type: array
+        items:
+          $ref: party.yaml
+        description:
+          A list of providers qualified by their role in association to the record.
+      license:
+        type: string
+        description:
+          A legal document under which the resource is made available. 
+          The value should be a code, convenient for filtering the records. 
+          Where applicable, the use of the identifiers from the SPDX License List is recommended. If multiple licenses apply, it is recommended to use "various".
+          Where available, links to a URI of each applicable license should be added to the 'links' property.
+        maxLength: 64
+      rights:
+        type: string
+        description:
+          A statement that concerns all rights not addressed by the license
+          such as a copyright statement.
+      extent:
+        $ref: common/extent.yaml
+  links:
+    type: array
+    description:
+      A list of links for accessing the resource (e.g. download link,
+      access link) in one of the supported distribution formats and/or
+      links to other resources associated with this resource.
+      Also, a list of links for navigating the API (e.g. prev,
+      next, etc.).
+    items:
+      $ref: common/link.yaml
