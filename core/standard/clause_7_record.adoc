@@ -118,9 +118,11 @@ include::recommendations/record-core/REC_record-links_license.adoc[]
 
 include::recommendations/record-core/REC_record-links_iana.adoc[]
 
-Association links point to the resource or resources being described by a record. Such links allow binding to a resource once it has be discovered or found in a catalogue.  Depending on how the target resource of a record is represented and how it may be accessed, there may be one or more association links.  For example, if the target resource is an Earth observation imagery file, links may point to the indivdually accessible bands of the image file.
+Association links point to the resource(s) being described by a record. Such links allow binding to a resource once it has be discovered by searching a catalogue.  Depending on how the target resource of a record is represented and how it may be accessed, there may be one or more association links.  For example, if the target resource is an Earth observation imagery file, links may point to the indivdually accessible bands of the image file.
 
-Association links are also meant to point to other records related to the containing record.  For example, consider a record that describe a set of vector features and another record that describes a rendering style for that feature set.  These two records may, in their respective `associations` sections point to each other to encode this "styles", "styled-by" relationship.
+Association links are also meant to point to other records related to the containing record.  For example, consider a record that describes a set of vector features and another record that describes a rendering style for that feature set.  These two records may, in their respective `links` sections point to each other to encode this "styles"/"styled-by" relationship.
+
+Finally, association links are also meant to point to other resources external to the catalogue that are related to the containing record.
 
 include::recommendations/record-core/REC_record-associations_relate.adoc[]
 
