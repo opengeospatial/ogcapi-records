@@ -101,7 +101,6 @@ include::recommendations/local-resources-catalogue/PER_additional-properties.ado
 |contactpoint |An entity to contact about the resource.
 |license |A legal document under which the resource is made available.
 |rights |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|associations |A list of links for accessing the resource or links to other resources associated with this resource.
 |===
 
 === Example

@@ -1,8 +1,8 @@
-[[req_searchable-catalogue_conformance]]
+[[req_searchable-catalogue_core]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/searchable-catalogue/conformance*
-2+|The list of Conformance Classes advertised by the API SHALL include:
+2+|Implementations of this conformance class SHALL implement the following requirements:
 ^|A |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
 ^|B |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
 ^|C |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/records-api

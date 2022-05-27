@@ -39,7 +39,7 @@ Other encoding are allow but are not described in this document.
 |recordId |**required** |A unique record identifier assigned by the server. |id
 |recordCreated |optional |The date this record was created in the server. |created
 |recordUpdated |optional |The most recent date on which the record was changed. |updated
-|links |optional |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.) |links
+|links |optional |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.).| links
 |===
 
 [#core-queryables-resource-table,reftext='{table-caption} {counter:table-num}']
@@ -64,7 +64,6 @@ Other encoding are allow but are not described in this document.
 |license |optional |A legal document under which the resource is made available. |properties.license
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
 |extent |optional |The spatio-temporal coverage and resolution of the resource. |properties.extent
-|associations |optional |A list of links for accessing the resource, links to other resources associated with this resource, etc. |properties.associations
 |===
 
 include::requirements/record-core/REQ_mandatory-queryables-record.adoc[]
@@ -105,9 +104,9 @@ In addition, links to external resources representing the record type and the li
 [[sc_associations_and_links]]
 ==== Associations and Links
 
-A record may contain links in both the `links` section and the `properties.associations` section.  
+A record may contain a `links` section.  This `links` section many contain navigation links and/or association links.
 
-Links in the `links` section are meant to encode relationships between catalogue entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
+Navigation links are meant to encode relationships between catalogue entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
 
 include::recommendations/record-core/REC_record-links.adoc[]
 
@@ -119,15 +118,13 @@ include::recommendations/record-core/REC_record-links_license.adoc[]
 
 include::recommendations/record-core/REC_record-links_iana.adoc[]
 
-Links in the `associations` section are meant to point to the resource or resources being described by a record.  It is the association links that allow binding to a resource once it has be discovered or found in a catalogue.  Depending on how the target resource of a record is represented and how it may be accessed, there may be one or more association links.  For example, if the target resource is an Earth observation imagery file, links in the `associations` section may point to the indivdually accessible bands of the file.
+Association links point to the resource or resources being described by a record. Such links allow binding to a resource once it has be discovered or found in a catalogue.  Depending on how the target resource of a record is represented and how it may be accessed, there may be one or more association links.  For example, if the target resource is an Earth observation imagery file, links may point to the indivdually accessible bands of the image file.
 
-include::recommendations/record-core/REC_record-associations_bind.adoc[]
-
-Links in the `associations` section are also meant to point to other records related to the containing record.  For example, consider a record that describe a set of vector features and another record that describes a rendering style for that feature set.  These two records may, in their respective `associations` sections point to each other to encode this "styles", "styled-by" relationship.
+Association links are also meant to point to other records related to the containing record.  For example, consider a record that describe a set of vector features and another record that describes a rendering style for that feature set.  These two records may, in their respective `associations` sections point to each other to encode this "styles", "styled-by" relationship.
 
 include::recommendations/record-core/REC_record-associations_relate.adoc[]
 
-In some instances additional context may be desirable or required in order to access (or bind to) the resource(s) being described by a record.  This is the case when, for example, access to the resource is though a service interface that requires mandatory parameters to be provided.  The OGC Web Map Service (WMS) is an example of such a service.  It may also be the case that efficient access to the resource would be faciliated by providing additional context.  Accessing data from large data repository such as a data cube would be more efficient if the context of the query used to discover the resource (e.g. bbox, datetime) were passed down to the link used to access the data.  
+In some instances additional context may be desirable or required in order to access (or bind to) the resource(s) being described by a record.  This is the case when, for example, access to the resource is though a service interface that requires mandatory parameters to be provided.  The OGC Web Map Service (WMS) is an example of such a service.  It may also be the case that efficient access to the resource would be faciliated by providing additional context.  Accessing data from large data repository such as a data cube would be more efficient if the context of the query used to discover the resource (e.g. bbox, datetime) were passed down to the link used to access the data.
 
 include::recommendations/record-core/REC_record-associations_templated.adoc[]
 

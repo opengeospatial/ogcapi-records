@@ -1,7 +1,7 @@
-[[req_json_geojson-definition]]
+[[req_geojson-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/json/geojson-definition*
+^|*Requirement {counter:req-id}* |*/req/geojson/response*
 ^|A |200-responses of the server SHALL support the following media type:
 
 * `application/geo+json` for resources that include record content.

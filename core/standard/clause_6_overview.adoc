@@ -1,6 +1,9 @@
 [[overview]]
 == Overview
 
+NOTE: Need to have a disucssion in here about the migration of catalogues from big repositories of metadata documents (e.g. ISO19115) to distributed, crawlable catalogies (e.g. static STAC) and harvesting of resource into the catalogue to make them searchable (e.g. harvesting records close to resources (i.e. STAC item) or even harvesting the resource itself (e.g. the collection object)).
+
+
 === tl;dr crawlable catalogue
 
 In order to implement a catalogue where records are stored as individual files in one or more web-accessible locations and can be crawled by simply following hypermedia controls:
@@ -66,7 +69,7 @@ The following table lists the set or properties, called _**core queryables**_, t
 |recordId |A unique record identifier assigned by the server.
 |recordCreated |The date this record was created in the server.
 |recordUpdated |The most recent date on which the record was changed.
-|links |A list of links for navigating the API.
+|links |A list of links for navigating the API; a list of links for accessing the resource, links to other resources associated with this resource, etc.
 |type |The nature or genre of the resource.
 |title |A human-readable name given to the resource.
 |description |A free-text description of the resource.
@@ -83,7 +86,6 @@ The following table lists the set or properties, called _**core queryables**_, t
 |license |A legal document under which the resource is made available.
 |rights |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |extent |The spatio-temporal coverage of the resource.
-|associations |A list of links for accessing the resource, links to other resources associated with this resource, etc.
 |===
 
 A complete definition of a record can be found in clause <<core-queryables,Core queryables>>.

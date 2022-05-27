@@ -8,5 +8,5 @@
 * a link:https://tools.ietf.org/html/rfc7946#section-3.2[GeoJSON Feature Object] for a single record.
 
 ^|B |The links specified in the requirements <<req_core_rc-links,/req/core/rc-links>> and <<req_core_record-links,/req/core/record-links>> SHALL be added in an extension property (foreign member) with the name `links`.
-^|C |The schema of all responses with the media type `application/json` SHALL validate against the OpenAPI 3.0 schema document `recordGeoJSON.yaml`.
+^|C |The schema of all responses with the media type `application/geo+json` SHALL validate against the OpenAPI 3.0 schema document `recordGeoJSON.yaml`.
 |===

@@ -1,7 +1,7 @@
-[[req_json_api-common]]
+[[req_jsonfg_api-common]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/json/api-common*
+^|*Requirement {counter:req-id}* |*/req/jsonfg/api-common*
 ^|**Extends** |/req/core/api-common
 2+|The API SHALL demonstrate conformance with the following Requirements Class of the OGC API - Common version 1.0 Standard.
 ^|A |http://www.opengis.net/spec/ogcapi_common-1/1.0/req/geojson
