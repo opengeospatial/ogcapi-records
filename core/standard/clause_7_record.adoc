@@ -122,7 +122,7 @@ Association links point to the resource(s) being described by a record. Such lin
 
 Association links are also meant to point to other records related to the containing record.  For example, consider a record that describes a set of vector features and another record that describes a rendering style for that feature set.  These two records may, in their respective `links` sections point to each other to encode this "styles"/"styled-by" relationship.
 
-Finally, association links are also meant to point to other resources external to the catalogue that are related to the containing record.
+Finally, association links are meant to point to other resources external to the catalogue that are related to the containing record or the resource(s) that the record describes.
 
 include::recommendations/record-core/REC_record-associations_relate.adoc[]
 
