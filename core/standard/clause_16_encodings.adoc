@@ -25,7 +25,7 @@ include::../openapi/schemas/recordGeoJSON.yaml[]
 ----
 
 [[requirements-class-jsonfg-clause]]
-=== Requirements Class OGC Features and Geometries JSON
+=== Requirements Class OGC Features and Geometries JSON (JSON-FG)
 
 include::requirements/requirements_class_jsonfg.adoc[]
 
