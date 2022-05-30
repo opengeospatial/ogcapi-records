@@ -20,10 +20,14 @@ A record provides a description (i.e. metadata) about a resource that the provid
 
 The record building block defines the core schema of a catalogue record.  It includes a small number of properties that are common across all resource types.  The following table lists the core set of record properties (called queryables):
 
-|Queryables |Requirement |Description
-|-----------|------------|----------------------------------
-|type |M |The nature or genre of the resource.
-|title |M |A human-readable name given to the resource.
+|Queryables |Requirement |Description 
+|-----------|------------|-----------------------------------
+|recordId |**M** |A unique record identifier assigned by the server.
+|recordCreated |O |The date this record was created in the server.
+|recordUpdated |O |The most recent date on which the record was changed.
+|links |O |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.).
+|type |**M** |The nature or genre of the resource.
+|title |**M** |A human-readable name given to the resource.
 |description |O |A free-text description of the resource.
 |keywords |O |A list of keywords or tag associated with the resource.
 |keywordsCodespace |O |A reference to a controlled vocabulary used for the keywords property.
@@ -32,13 +36,12 @@ The record building block defines the core schema of a catalogue record.  It inc
 |created |O |The date the resource was created.
 |updated |O |The more recent date on which the resource was changed.
 |publisher |O |The entity making the resource available.
-|themes |O |A knowledge orgnaization system used to classify the resource.
+|themes |O |A knowledge organization system used to classify the resource.
 |formats |O |A list of available distributions for the resource.
 |contactPoint |O |An entity to contact about the resource.
 |license |O |A legal document under which the resource is made available.
 |rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|extent |O |The spatio-temporal coverage of the resource.
-|associations |O |A list of links for accessing the resource, links to other resources associated with this resource, etc.
+|extent |O |The spatio-temporal coverage and resolution of the resource.
 
 It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
 
@@ -75,15 +78,13 @@ The following is an example of a catalogue record encoded as GeoJSON:
             "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
           }
         },
-        "associations": [
-          {
-            "href": "\\\\lueg-gis\\data\\dplu-projects\\20050909_williamson_ag\\shapefiles\\Williamson_agpreserve.shp",
-            "rel": "enclosure"
-            "type": "x-gis/x-shape"
-          }
-        ]
       },
       "links": [
+        {
+          "href": "\\\\lueg-gis\\data\\dplu-projects\\20050909_williamson_ag\\shapefiles\\Williamson_agpreserve.shp",
+          "rel": "enclosure"
+          "type": "x-gis/x-shape"
+        }.
         {
           "href": "https://demo.pycsw.org/gisdata/collections/metadata:main/items/urn:uuid:dc9b6d52-932a-11ea-ad6f-823cf448c401?f=json",
           "rel": "self",
