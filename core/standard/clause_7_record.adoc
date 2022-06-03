@@ -37,9 +37,8 @@ Other encoding are allow but are not described in this document.
 |===
 |Queryables |Requirement |Description |GeoJSON key
 |recordId |**required** |A unique record identifier assigned by the server. |id
-|recordCreated |optional |The date this record was created in the server. |created
-|recordUpdated |optional |The most recent date on which the record was changed. |updated
-|links |optional |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.).| links
+|recordCreated |optional |The date this record was created in the server. |properties.recordCreated
+|recordUpdated |optional |The most recent date on which the record was changed. |properties.recordUpdated
 |===
 
 [#core-queryables-resource-table,reftext='{table-caption} {counter:table-num}']
@@ -47,23 +46,24 @@ Other encoding are allow but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Queryables |Requirement |Description |GeoJSON key
+|geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null is there is not associated geometry |geometry
+|time |**required** |The temporal extent of the resource. Can be null. |time
 |type |**required** |The nature or genre of the resource. |properties.type
 |title |**required** |A human-readable name given to the resource. |properties.title
 
 |description |optional |A free-text description of the resource. |properties.description
 |keywords |optional |A list of keywords or tag associated with the resource. |properties.keyword
-|keywordsCodespace |optional |A reference to a controlled vocabulary used for the keywords property. |properties.keyword-codespace
+|keywordsCodespace |optional |A reference to a controlled vocabulary used for the keywords property. |properties.keywordsCodespace
 |language |optional |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource. |properties.language
-|externalId |optional |An identifier for the resource assigned by an external entity. |properties.externalid
+|externalIds |optional |One or more identifiers for the resource assigned by an external entity. |properties.externalIds
 |created |optional |The date the resource was created. |properties.created
 |updated |optional |The more recent date on which the resource was changed. |properties.updated
-|publisher |optional |The entity making the resource available. |properties.publisher
 |themes |optional |A knowledge organization system used to classify the resource. |properties.themes
 |formats |optional |A list of available distributions for the resource. |properties.formats
-|contactPoint |optional |An entity to contact about the resource. |properties.contactpoint
+|providers |optional |A list of providers qualified by their role in association to the record. |properties.providers
 |license |optional |A legal document under which the resource is made available. |properties.license
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
-|extent |optional |The spatio-temporal coverage and resolution of the resource. |properties.extent
+|links |optional |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
 |===
 
 include::requirements/record-core/REQ_mandatory-queryables-record.adoc[]

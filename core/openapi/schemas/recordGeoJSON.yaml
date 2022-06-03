@@ -2,6 +2,7 @@ type: object
 required:
   - id
   - type
+  - time
   - geometry
   - properties
 properties:
@@ -16,8 +17,26 @@ properties:
     type: string
     enum:
       - Feature
+  time:
+    oneOf:
+      - type: null
+      - type: object
+        properties:
+          oneOf:
+            - type: string
+              format: date-time
+            - type: array
+              minItems: 2
+              maxItems: 2
+              items:
+                oneOf:
+                  - type: null
+                  - type: string
+                    format: date-time
   geometry:
-    $ref: geometryGeoJSON.yaml
+    oneOf:
+      - type: null
+      - $ref: geometryGeoJSON.yaml
   properties:
     type: object
     required:
@@ -37,9 +56,9 @@ properties:
       type:
         type: string
         description:
-          The nature or genre of the resource. The value should be a code, 
-          convenient for filtering the records. Where available, a link to 
-          the canonical URI of the record type resource will be added to 
+          The nature or genre of the resource. The value should be a code,
+          convenient for filtering the records. Where available, a link to
+          the canonical URI of the record type resource will be added to
           the 'links' property.
         maxLength: 64
       title:
@@ -53,9 +72,9 @@ properties:
       keywords:
         type: array
         description:
-           The topic or topics of the resource. Typically represented using
-           keywords, tags, key phrases, or classification codes. Recommended
-           best practice is to use a controlled vocabulary.
+          The topic or topics of the resource. Typically represented using
+          keywords, tags, key phrases, or classification codes. Recommended
+          best practice is to use a controlled vocabulary.
         items:
           type: string
       keywordsCodespace:
@@ -81,17 +100,18 @@ properties:
         items:
           type: object
           properties:
-              scheme:
-                  type: string
-                  description:
-                      A reference to an authority or identifier for a knowledge
-                      organization system from which the external identifier was
-                      obtained.  It is recommended that the identifier be a resolvable URI.
+            scheme:
+              type: string
+              description:
+                A reference to an authority or identifier for a knowledge
+                organization system from which the external identifier was
+                obtained.  It is recommended that the identifier be a
+                resolvable URI.
               value:
-                  type: string
-                  description: The value of the identifier.
+                type: string
+                description: The value of the identifier.
           required:
-              - value
+            - value
       created:
         type: string
         description:
@@ -120,9 +140,9 @@ properties:
             scheme:
               type: string
               description:
-                 An identifier for the knowledge organization system used
-                 to classify the resource.  It is recommended that the
-                 identifier be a resolvable URI.
+                An identifier for the knowledge organization system used
+                to classify the resource.  It is recommended that the
+                identifier be a resolvable URI.
       formats:
         type: array
         description:
@@ -134,22 +154,23 @@ properties:
         items:
           $ref: party.yaml
         description:
-          A list of providers qualified by their role in association to the record.
+          A list of providers qualified by their role in association to the
+          record.
       license:
         type: string
         description:
-          A legal document under which the resource is made available. 
-          The value should be a code, convenient for filtering the records. 
-          Where applicable, the use of the identifiers from the SPDX License List is recommended. If multiple licenses apply, it is recommended to use "various".
-          Where available, links to a URI of each applicable license should be added to the 'links' property.
+          A legal document under which the resource is made available.
+          The value should be a code, convenient for filtering the records.
+          Where applicable, the use of the identifiers from the SPDX License
+          List is recommended. If multiple licenses apply, it is recommended
+          to use "various".  Where available, links to a URI of each applicable
+          license should be added to the 'links' property.
         maxLength: 64
       rights:
         type: string
         description:
           A statement that concerns all rights not addressed by the license
           such as a copyright statement.
-      extent:
-        $ref: common/extent.yaml
   links:
     type: array
     description:
