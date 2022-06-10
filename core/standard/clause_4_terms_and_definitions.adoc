@@ -14,9 +14,9 @@ set of related tests, all within a single conformance test class (<<ogc08-131,OG
 === Conformance Class; Conformance Test Class
 set of conformance test modules that must be applied to receive a single certificate of conformance (<<ogc08-131,OGC 08-131>>)
 
- NOTE: When no ambiguity is possible, the word _test_ may be left out, so conformance test class maybe called a conformance class.
+ NOTE: When no ambiguity is possible, the word `test` may be omitted, so conformance test class may be called a conformance class.
 
-=== dataset
+=== Dataset
 collection of data, published or curated by a single agent, and available for access or download in one or more formats (DCAT)
 
 === Distribution
