@@ -44,7 +44,7 @@ The <<clause-autodiscovery,Autodiscovery>> conformance class defines requirement
 [[catalogue-requirements-classes]]
 === Catalogue deployments
 
-Using the above mentioned building blocks, this stadard identified the following catalogue requirements classes:
+Using the above mentioned building blocks, this standard identifies the following catalogue requirements classes:
 
 * <<clause-crawlable-catalogue,Crawlable Catalogue>>
 * <<clause-searchable-catalogue,Searchable Catalogue>>
@@ -78,7 +78,7 @@ The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-loc
 
 === Implementations
 
-Implementors of this specification select one or more of the <<catalogue-requirements-classes,catalogue requirements classes>> they wish to implement and then implement the required building block requirements classes
+Implementors of this specification select one or more of the <<catalogue-requirements-classes,catalogue requirements classes>> they wish to implement and then implement the required building block requirements classes.
 
 === Conformance testing
 
