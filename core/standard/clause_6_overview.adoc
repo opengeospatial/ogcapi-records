@@ -25,12 +25,12 @@ In order to implement a catalogue where records are stored in some backend datab
 
 === tl;dr local resources catalogue
 
-In order to implemented a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
+In order to implement a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
 
 * implement the endpoint as per the relevant OGC API specification,
 * enhance the information content of the resource using the mandatory and optional parameters defined in <<core-queryables-resource-table>>,
 * implement the query parameters defined in <<core-query-parameters-table>>,
-* optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>.
+* optionally implement <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>.
 
 [[general-overview]]
 === General
@@ -39,7 +39,7 @@ The atomic unit of information in a catalogue is the _record_.
 
 A _catalogue_ is a collection of _records_.  The terms **collection of records** and **catalogue** are used interchangeably in this specification.
 
-A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined is this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouranged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
+A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined in this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouranged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
 
 === Building blocks
 
@@ -59,7 +59,7 @@ A special use case of the _searchable catalogue_ is the _**local resources catal
 [[record-schema-overview]]
 === Record Schema
 
-The following table lists the set or properties, called _**core queryables**_, that may be included in a record.
+The following table lists the set of properties, called _**core queryables**_, that may be included in a record.
 
 [#core-queryables-list,reftext='{table-caption} {counter:table-num}']
 .Table of Core Queryables related to the catalogue record
@@ -73,9 +73,9 @@ The following table lists the set or properties, called _**core queryables**_, t
 |type |The nature or genre of the resource.
 |title |A human-readable name given to the resource.
 |description |A free-text description of the resource.
-|keywords |A list of keywords or tag associated with the resource.
+|keywords |A list of keywords or tags associated with the resource.
 |keywordsCodespace |A reference to a controlled vocabulary used for the keywords property.
-|language |This refers to the natural language used for textual values.
+|language |The natural language used for textual values.
 |externalId |An identifier for the resource assigned by an external entity.
 |created |The date the resource was created.
 |updated |The more recent date on which the resource was changed.
@@ -117,7 +117,7 @@ A record collection or catalogue is an object that groups and describes a set of
 
 Depending on the deployment pattern, the collection may provide a link to each individual record of the collection or a link to a search access point for retrieving sub-sets of records.
 
-<<record-collection-properties>> list the _core_ set of properties that may be used to describe a record collection or catalogue.
+<<record-collection-properties>> lists the _core_ set of properties that may be used to describe a record collection or catalogue.
 
 [[record-collection-properties]]
 [reftext='{table-caption} {counter:table-num}']
@@ -131,11 +131,11 @@ Depending on the deployment pattern, the collection may provide a link to each i
 |_**links**_ |A list of references to other documents include one link per record that is part of this collection.
 |_**extent**_ |The spatio-temporal coverage of the resources aggregated by this collection.
 |_**itemType**_ |Fixed to the value "record".
-|_**crs**_ |A list of coordinate reference system used for spatial-temporal values.
+|_**crs**_ |A list of coordinate reference systems used for spatial-temporal values.
 |type |Fixed to the value "Collection".
-|keywords |A list of keywords or tag associated with the collection.
+|keywords |A list of keywords or tags associated with the collection.
 |keywordsCodespace |A reference to a controlled vocabulary used for the keywords property.
-|language |This refers to the natural language used for textual values.
+|language |The natural language used for textual values.
 |created |The date the collection was created.
 |updated |The more recent date on which the collection was changed.
 |publisher |The entity making the collection available.
