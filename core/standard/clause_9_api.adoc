@@ -303,7 +303,7 @@ include::../examples/json/record-collection.json[]
 ----
 
 The following is an example of a single catalogue record encoded in GeoJSON.
-Such a record might appears in the `features` array of a
+Such a record might appear in the `features` array of a
 <<records-example,query response>> or it may be the response when a specific,
 single record is accessed (path: `/collections/{collectionId}/items/{recordId}`).
 
