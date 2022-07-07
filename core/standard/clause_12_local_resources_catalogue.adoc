@@ -6,14 +6,14 @@
 
 include::requirements/requirements_class_local-resources-catalogue.adoc[]
 
-This conformance class specifies requirements for a _local resource catalogues_.
+This conformance class specifies requirements for a _local resources catalogue_.
 
 The OGC API defines a number of resource endpoints that provide lists of
 sub-resources.  These endpoints are referred to as _local resources catalogues_ in this standard because they provide metadata about resources offered locally by an OGC API deployment.
 
 NOTE: The term _local resources endpoint_ is used to reference to the resource path of the _local resources catalogue_.  The term _local resources object_ is used to refer to an instance of the object or resource that can be retrieved from the _local resources endpoint_.
 
-The `/collections` endpoint is an example of a _local resources endpoint_.  This endpoint provides a list of objects describing the collections of items offered by an OGC API deployment.  Each offered collection (path `/collections/{collectionId}`) is described a _local resources object_ containing a small number of properties.  A common set of properties is defined in  https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and can be extended by resource-specific specifications (e.g. http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core]).  In this respect, the `/collections` endpoint is a catalogue of records (i.e. `/collections/{collectionId}` objects) describing the collections of items offered by the OGC API deployment.
+The `/collections` endpoint is an example of a _local resources endpoint_.  This endpoint provides a list of objects describing the collections of items offered by an OGC API deployment.  Each offered collection (path `/collections/{collectionId}`) is described by a _local resources object_ containing a small number of properties.  A common set of properties is defined in  https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and can be extended by resource-specific specifications (e.g. http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core]).  In this respect, the `/collections` endpoint is a catalogue of records (i.e. `/collections/{collectionId}` objects) describing the collections of items offered by the OGC API deployment.
 
 Other _local resources catalogues_ available in the OGC API resource tree include the `/processes` endpoint which provides a list of offered processes and the `/collections/{collectionId}/scenes` endpoint which provides a list of source images of a coverage.
 
@@ -21,9 +21,9 @@ In order to enable catalogue-like searching at these local resources endpoints, 
 
 1. enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<core-queryables,core queryables>> defined for a catalogue <<clause-records-core,record>>,
 
-2. define or extend the set of query parameters avaiable at the local resources endpoint (e.g. `/collections`) to enhance it searchability.
+2. define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to enhance it searchability.
 
-This conformance class does not define the specific endpoints in the OGC API resource tree that should be enabled with catalogue-like query capabilities.  It only defines how those endpoint should be enhanced should the requirement for catalogue-line searching be identified by the responsible OGC standard.
+This conformance class does not define the specific endpoints in the OGC API resource tree that should be enabled with catalogue-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalogue-line searching be identified by the responsible OGC standard.
 
 === Resource Description
 
@@ -31,7 +31,7 @@ This conformance class does not define the specific endpoints in the OGC API res
 
 The clause defines requirements and recommendations for the information content of a local resources object that can be retrieved from local resources endpoint.
 
-As an example of a local resources endpoint, consider the `/collections` enpoint.  The object that can be retrieved from this endpoint is defined in https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_[OGC API - Features].  The following table cross-walks the information content of the collection object with the <<core-queryables,core queryables>> defined for the <<clause-record-core,record>> building block:
+As an example of a local resources endpoint, consider the `/collections` endpoint.  The object that can be retrieved from this endpoint is defined in https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_[OGC API - Features].  The following table cross-walks the information content of the collection object with the <<core-queryables,core queryables>> defined for the <<clause-record-core,record>> building block:
 
 [[record-collection-crosswalk]]
 [reftext='{table-caption} {counter:table-num}']
@@ -94,7 +94,7 @@ include::recommendations/local-resources-catalogue/PER_additional-properties.ado
 [cols="30,70",options="header"]
 |===
 |Property |Description
-|language |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
+|language |The natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
 |publisher |The entity making the resource available.
 |themes |A knowledge organization system used to classify the resource.
 |formats |A list of available distributions for the resource.
@@ -135,7 +135,7 @@ The following JSON-Schema fragment illustrates how the feature collections objec
           items:
            type: string
         language:
-          description: refers to the natural language used for textual values (i.e. titles, descriptions, etc) of items in the collection
+          description: the natural language used for textual values (i.e. titles, descriptions, etc) of items in the collection
           type: string
         publisher:
           description: the entity making the collection available
@@ -163,7 +163,7 @@ T.D.B.  Should add an instance example of a collection object.
 
 ==== Overview
 
-To enable search capabilities at local resource endpoints, this conformance class defines the a set of requirements and recommendations around query parameters that can implemented at the endpoint.
+To enable search capabilities at local resource endpoints, this conformance class defines a set of requirements and recommendations around query parameters that can be implemented at the endpoint.
 
 ==== Parameter bbox
 
