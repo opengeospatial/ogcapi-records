@@ -30,7 +30,7 @@ To support clients, providing additional detail about the meaning of the sortabl
 
 include::recommendations/sorting/REC_sortables-schema.adoc[]
 
-In an OpenAPI 3.0 document, the Sortables resources has the following schema:
+In an OpenAPI 3.0 document, the Sortables resource has the following schema:
 
 [[schema_sortables]]
 .link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/responses/Sortables.yaml[Schema for the list of sortable properties (Sortables.yaml)]
@@ -56,7 +56,7 @@ include::../examples/json/sortables.json[]
 ----
 
 [#sortby-extent-example,reftext=`SortBy Extent Example`]
-.sortby Example of an ascending sort be extent (i.e. smaller area first)
+.sortby Example of an ascending sort by extent (i.e. smaller area first)
 [source]
 ----
 .../collections/mycat/items?...&sortby=%2Bextent&...
