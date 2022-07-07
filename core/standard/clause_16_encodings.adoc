@@ -42,7 +42,7 @@ The JSON-FG Standard specifies the following minimal extensions to the GeoJSON S
 The following requirements apply to an OGC API - Records implementation when the following conditions apply:
 
 . The API advertises conformance to the JSON Conformance Class
-. The client negotiates to a record response encoded as GeoJSON.
+. The client negotiates to a record response encoded as JSON-FG.
 
 include::requirements/jsonfg/REQ_response.adoc[]
 
