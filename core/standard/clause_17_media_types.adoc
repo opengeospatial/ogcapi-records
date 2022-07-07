@@ -38,6 +38,7 @@ A description of the MIME-types is mandatory for any OGC standard which involves
 |HTML |`text/html`
 |JSON |`application/json`
 |GeoJSON |`application/geo+json`
+|XML |`application/xml`
 |====
 
 [[media-type-defaults]]
