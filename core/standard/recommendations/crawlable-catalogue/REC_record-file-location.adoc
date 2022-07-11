@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/crawlable-catalogue/record-file-location*
 
-The record file SHOULD be located close to the resource(s) that the record describes
+The record file SHOULD be located close to the resource(s) that the record describes.
 |===

@@ -4,6 +4,6 @@
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/collections-links*
 
 ^|A |A collections object SHALL include a link (`rel=self`) that points to itself.
-^|B |A collections object SHALL include a link (`rel=root`) that points of its root collections object.  If this collections object is the root then it SHALL point to itself.
+^|B |A collections object SHALL include a link (`rel=root`) that points to its root collections object.  If this collections object is the root then it SHALL point to itself.
 ^|C |A collections object SHALL include one typed link (`rel=alternate`) for each alternative representation of itself.
 |===

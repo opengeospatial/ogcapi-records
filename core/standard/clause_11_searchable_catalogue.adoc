@@ -3,7 +3,7 @@
 
 include::requirements/requirements_class_searchable-catalogue.adoc[]
 
-The `Searchable Catalogue` Requirements Class defines the requirements for a catalogue that is searchable through a API.  A searchable catalogue is an implementation of <<OAFeat-1,OGC API Features>> that uses a defined information model.  In the case of OGC API Records, that information model is the <<clause-record-core,Record>>.
+The `Searchable Catalogue` Requirements Class defines the requirements for a catalogue that is searchable through an API.  A searchable catalogue is an implementation of <<OAFeat-1,OGC API Features>> that uses a defined information model.  In the case of OGC API Records, that information model is the <<clause-record-core,Record>>.
 
 === Core
 

@@ -4,6 +4,6 @@
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/type*
 
 ^|A |The `type` property SHALL be present in the information model of the local resource object.
-^|B |The value of the `type` property SHALL be the same as the value of the `itemType` property if the later is present.
+^|B |The value of the `type` property SHALL be the same as the value of the `itemType` property if the latter is present.
 ^|C |Otherwise, the value of the `type` property SHALL denote the resource type which the local resource object is describing (e.g. source scene, etc.).
 |===

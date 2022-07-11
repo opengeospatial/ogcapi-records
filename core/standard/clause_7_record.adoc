@@ -46,15 +46,15 @@ Other encoding are allow but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Queryables |Requirement |Description |GeoJSON key
-|geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null is there is not associated geometry |geometry
+|geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry |geometry
 |time |**required** |The temporal extent of the resource. Can be null. |time
 |type |**required** |The nature or genre of the resource. |properties.type
 |title |**required** |A human-readable name given to the resource. |properties.title
 
 |description |optional |A free-text description of the resource. |properties.description
-|keywords |optional |A list of keywords or tag associated with the resource. |properties.keyword
+|keywords |optional |A list of keywords or tags associated with the resource. |properties.keyword
 |keywordsCodespace |optional |A reference to a controlled vocabulary used for the keywords property. |properties.keywordsCodespace
-|language |optional |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource. |properties.language
+|language |optional |The natural language used for textual values (i.e. titles, descriptions, etc) of a resource. |properties.language
 |externalIds |optional |One or more identifiers for the resource assigned by an external entity. |properties.externalIds
 |created |optional |The date the resource was created. |properties.created
 |updated |optional |The more recent date on which the resource was changed. |properties.updated
@@ -93,7 +93,7 @@ include::recommendations/record-core/REC_record-keywords-themes.adoc[]
 [[sc_type_and_licenses]]
 ==== Type and Licenses
 
-A record has one `properties.type` and one `properties.license` properties. The value of each property should be a code, convenient for filtering records. 
+A record has one `properties.type` and one `properties.license` property. The value of each property should be a code, convenient for filtering records. 
 
 include::recommendations/record-core/REC_record-type.adoc[]
 
@@ -106,7 +106,7 @@ In addition, links to external resources representing the record type and the li
 
 A record may contain a `links` section.  This `links` section many contain navigation links and/or association links.
 
-Navigation links are meant to encode relationships between catalogue entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
+Navigation links are meant to encode relationships between catalogue entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, and navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
 
 include::recommendations/record-core/REC_record-links.adoc[]
 
@@ -118,7 +118,7 @@ include::recommendations/record-core/REC_record-links_license.adoc[]
 
 include::recommendations/record-core/REC_record-links_iana.adoc[]
 
-Association links point to the resource(s) being described by a record. Such links allow binding to a resource once it has be discovered by searching a catalogue.  Depending on how the target resource of a record is represented and how it may be accessed, there may be one or more association links.  For example, if the target resource is an Earth observation imagery file, links may point to the indivdually accessible bands of the image file.
+Association links point to the resource(s) being described by a record. Such links allow binding to a resource once it has been discovered by searching a catalogue.  Depending on how the target resource of a record is represented and how it may be accessed, there may be one or more association links.  For example, if the target resource is an Earth observation imagery file, links may point to the indivdually accessible bands of the image file.
 
 Association links are also meant to point to other records related to the containing record.  For example, consider a record that describes a set of vector features and another record that describes a rendering style for that feature set.  These two records may, in their respective `links` sections point to each other to encode this "styles"/"styled-by" relationship.
 
@@ -126,11 +126,11 @@ Finally, association links are meant to point to other resources external to the
 
 include::recommendations/record-core/REC_record-associations_relate.adoc[]
 
-In some instances additional context may be desirable or required in order to access (or bind to) the resource(s) being described by a record.  This is the case when, for example, access to the resource is though a service interface that requires mandatory parameters to be provided.  The OGC Web Map Service (WMS) is an example of such a service.  It may also be the case that efficient access to the resource would be faciliated by providing additional context.  Accessing data from large data repository such as a data cube would be more efficient if the context of the query used to discover the resource (e.g. bbox, datetime) were passed down to the link used to access the data.
+In some instances additional context may be desirable or required in order to access (or bind to) the resource(s) being described by a record.  This is the case when, for example, access to the resource is through a service interface that requires mandatory parameters to be provided.  The OGC Web Map Service (WMS) is an example of such a service.  It may also be the case that efficient access to the resource would be facilitated by providing additional context.  Accessing data from a large data repository such as a data cube would be more efficient if the context of the query used to discover the resource (e.g. bbox, datetime) were passed down to the link used to access the data.
 
 include::recommendations/record-core/REC_record-associations_templated.adoc[]
 
-NOTE: This specification does not define any specific link relations that should be used for links in the `associations` section.  Such relatioships are typically domain specific and so it is left to communities of interest to standardize the links that relations should be used.
+NOTE: This specification does not define any specific link relations that should be used for links in the `associations` section.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the links that relations should use.
 
 The following provides an example of using associations for related resources of a record, as both traditional link relations as well as API resources via URI templates.
 
@@ -160,13 +160,13 @@ Link: <http://data.example.org/collections/my_catalogue.html>; rel="collection";
 
 OGC API Records uses links to express associations between resources including links that bind to the resource(s) being described by a record.  In some situations, a static link does not adequately express all the information necessary to retrieve the referenced resource OR does not allow for the resource to be retrieved in an efficient manner.
 
-Consider the case where a record describing a coverage resource is discovered by searching the catalogue using a spatial constraint (e.g. a bbox).  Further consider that the found record contains a link to retrieve the coverage.  Using a static link for the binding link would only allow retrieval of the entire coverage.  Using a templated link, however, would allow the context of the catalogue query (i.e. the bbox) to be passed to down to the binding link.  The templated linkwith all substitution value resolved would thus retrieve the subset of the coverage that corresponds to the spatial contraint used to discover the record in the first place which presumably represents the area of interest.
+Consider the case where a record describing a coverage resource is discovered by searching the catalogue using a spatial constraint (e.g. a bbox).  Further consider that the found record contains a link to retrieve the coverage.  Using a static link for the binding link would only allow retrieval of the entire coverage.  Using a templated link, however, would allow the context of the catalogue query (i.e. the bbox) to be passed to down to the binding link.  The templated link with all substitution values resolved would thus retrieve the subset of the coverage that corresponds to the spatial contraint used to discover the record in the first place which presumably represents the area of interest.
 
-Templated links may also be used to bind to resources that may required additional information in order to access the resources.  For example, simply knowing the URL of a legacy OGC service such as WMS or WFS is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values are required in order to have a complete link to a resources.  A templated link with variables can provide this additional context.
+Templated links may also be used to bind to resources that may require additional information in order to access the resources.  For example, simply knowing the URL of a legacy OGC service such as WMS or WFS is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values are required in order to have a complete link to a resources.  A templated link with variables can provide this additional context.
 
 This specification extends the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] to include substitution variables who values are filled in at runtime prior to resolving the link.
 
-The https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[link schema] is extended with the addition of two properties names `templated` and `variables`.  The `templated` property is a boolean that is used to indicate the the URL of the link (i.e. `href`) is a template and contains substitution variables.  The `variables` property uses https://json-schema.org/draft/2020-12/json-schema-validation.html[JSON-Schema fragments] to define the characteristics of each substitution variables referened in the templated link URL.
+The https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[link schema] is extended with the addition of two properties names `templated` and `variables`.  The `templated` property is a boolean that is used to indicate the the URL of the link (i.e. `href`) is a template and contains substitution variables.  The `variables` property uses https://json-schema.org/draft/2020-12/json-schema-validation.html[JSON-Schema fragments] to define the characteristics of each substitution variable referenced in the templated link URL.
 
 include::requirements/record-core/REQ_templated-link.adoc[]
 

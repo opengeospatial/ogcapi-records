@@ -10,9 +10,9 @@ The `Crawlable Catalogue` Requirements Class defines the requirements for a cata
 
 The goal of a crawlable catalogue is to expose metadata about resources online with as low an entry barrier as possible thus making those resource more easily discoverable.
 
-A crawlable catalogue is a deployment pattern that uses the <<clause-core-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this standard.  It is simply a set of files deployed on the web that encode, usually in HTML or JSON, the <<clause-record-collection,collection>> and <<clause-record-core,record schema>> defined in this standard.  The files contain embeded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalogue.
+A crawlable catalogue is a deployment pattern that uses the <<clause-core-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this standard.  It is simply a set of files deployed on the web that encode, usually in HTML or JSON, the <<clause-record-collection,collection>> and <<clause-record-core,record schema>> defined in this standard.  The files contain embedded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalogue.
 
-A crawlable catalogue is not searchable and does not respond to query requests.  As the name implies, it can only be crawled by following the embeded links; typically by search engines and other active catalogues or browsed using a web browser.  However, due to its simplicity, a crawlable catalogue is easy to deploy and maintain, and is very reliable.
+A crawlable catalogue is not searchable and does not respond to query requests.  As the name implies, it can only be crawled by following the embedded links; typically by search engines and other active catalogues or browsed using a web browser.  However, due to its simplicity, a crawlable catalogue is easy to deploy and maintain, and is very reliable.
 
 [[crawlable-catalogue-record]]
 === Making a resource discoverable
@@ -56,11 +56,11 @@ In order to provide flexibility with regard to how crawlable catalogues can be o
 |_**description**_ |optional |A free-text description of this collections object.
 |_**links**_ |**required** |A list of links for navigating to the resources (i.e. collections, catalogues, items, other resources) of this collections  object.
 |_**extent**_ |optional |The spatio-temporal coverage of this collections object.
-|_**crs**_ |optional |A list of coordinate reference system used for spatial-temporal values.
+|_**crs**_ |optional |A list of coordinate reference systems used for spatial-temporal values.
 |type |**required** |The nature or genre of this resource. Fixed to "Collections".
-|keywords |optional |A list of keywords or tag associated with this collections object.
+|keywords |optional |A list of keywords or tags associated with this collections object.
 |keywordsCodespace |optional |A reference to a controlled vocabulary used for the keywords property.
-|language |optional |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of this collections object.
+|language |optional |The natural language used for textual values (i.e. titles, descriptions, etc) of this collections object.
 |created |optional |The date this collections object was created.
 |updated |optional |The more recent date on which this collections object was changed.
 |providers |optional |A list of providers qualified by their role.
