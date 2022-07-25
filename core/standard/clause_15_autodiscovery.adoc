@@ -11,6 +11,6 @@ The purpose of autodiscovery is, knowing the URI of a web page, to find the loca
 
 include::requirements/autodiscovery/REQ_autodiscovery_link.adoc[]
 
-For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site's catalogue by locating the `rel=http://www.opengis.net/def/rel/ogc/1.0/cataloague` link and then use that catalogue to search for resources offered by the site.
+For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site's catalogue by locating the `rel=http://www.opengis.net/def/rel/ogc/1.0/catalogue` link and then use that catalogue to search for resources offered by the site.
 
 include::recommendations/autodiscovery/PER_autodiscovery_links.adoc[]
