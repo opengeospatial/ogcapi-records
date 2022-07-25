@@ -1,46 +1,54 @@
 [[clause-encodings]]
 == Encodings
 
-[[requirements-class-json-clause]]
-=== Requirements Class JSON
+[[requirements-class-geojson-clause]]
+=== Requirements Class GeoJSON
 
-==== Overview
+include::requirements/requirements_class_geojson.adoc[]
+
+GeoJSON is a commonly used format that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format supporting GeoJSON is recommended, if record data can be represented in GeoJSON for the intended use.
 
 The following requirements apply to an OGC API - Records implementation when the following conditions apply:
 
 . The API advertises conformance to the JSON Conformance Class
-. The client negotiates a JSON or GeoJSON format
+. The client negotiates to a record response encoded as GeoJSON.
 
-The JSON Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the JSON response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
+include::requirements/geojson/REQ_response.adoc[]
 
-include::requirements/requirements_class_json.adoc[]
+include::requirements/geojson/REQ_content.adoc[]
 
-==== Common
+[[schema_geojson_record]]
+.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml[Schema for a catalogue record in JSON(recordGeoJSON.yaml)]
+[source,YAML]
+----
+include::../openapi/schemas/recordGeoJSON.yaml[]
+----
 
-This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:
+[[requirements-class-jsonfg-clause]]
+=== Requirements Class OGC Features and Geometries JSON (JSON-FG)
 
-* `{root}/`: Landing Page
-* `{root}/api`: API Description
-* `{root}/conformance`: Conformance Classes
-* `{root}/collections`: Collections
-* `{root}/collections/{collectionId}`: Collection Information
+include::requirements/requirements_class_jsonfg.adoc[]
 
-include::requirements/json/REQ_api-common.adoc[]
+The OGC Features and Geometries JSON (JSON-FG) Standard extends GeoJSON to support a limited set of additional capabilities that are out-of-scope for GeoJSON, but that are important for a variety of use cases involving record data.
 
-It is also necessary to advertise conformance with this Requirements Class.
+The JSON-FG Standard specifies the following minimal extensions to the GeoJSON Standard:
 
-include::requirements/json/REQ_json-conformance.adoc[]
+* The ability to use Coordinate Reference Systems (CRSs) other than WGS 84;
+* Allow the use of non-Euclidean metrics, in particular ellipsoidal metrics;
+* Solids and multi-solids as geometry types;
+* The ability to encode temporal characteristics of a feature; and
+* The ability to declare the type and the schema of a feature.
 
-[[record_json_encoding]]
-==== Record 
+The following requirements apply to an OGC API - Records implementation when the following conditions apply:
 
-GeoJSON is a commonly used format that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format supporting GeoJSON is recommended, if record data can be represented in GeoJSON for the intended use.
+. The API advertises conformance to the JSON Conformance Class
+. The client negotiates to a record response encoded as JSON-FG.
 
-include::requirements/json/REQ_json-geojson-definition.adoc[]
+include::requirements/jsonfg/REQ_response.adoc[]
 
-include::requirements/json/REQ_json-geojson-content.adoc[]
+include::requirements/jsonfg/REQ_content.adoc[]
 
-[[schema_record]]
+[[schema_jsonfg_record]]
 .link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml[Schema for a catalogue record in JSON(recordGeoJSON.yaml)]
 [source,YAML]
 ----
@@ -50,38 +58,15 @@ include::../openapi/schemas/recordGeoJSON.yaml[]
 [[requirements-class-html-clause]]
 === Requirements Class HTML
 
-==== Overview
+include::requirements/requirements_class_html.adoc[]
 
 The following requirements apply to an OGC API - Records implementation when the following conditions apply:
 
 . The API advertises conformance to the HTML Conformance Class
 . The client negotiates an HTML format
 
-The HTML Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the HTTP response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
-
-include::requirements/requirements_class_html.adoc[]
-
-==== Common
-
-This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:
-
-* `{root}/`: Landing Page
-* `{root}/api`: API Description
-* `{root}/conformance`: Conformance Classes
-* `{root}/collections`: Collections
-* `{root}/collections/{collectionId}`: Collection Information
-
-include::requirements/html/REQ_api-common.adoc[]
-
-It is also necessary to advertise conformance with this Requirements Class.
-
-include::requirements/html/REQ_html-conformance.adoc[]
-
-[[record_html_encoding]]
-==== Record
-
 Catalogue information that is only accessible in formats primarily intended to
-be read by machine, such as JSON or XML, have two issues:
+be read by machines, such as JSON or XML, have two issues:
 
 * The data is not discoverable using the most common mechanism for discovering information, that is the search engines of the Web;
 
@@ -97,66 +82,3 @@ include::requirements/html/REQ_content.adoc[]
 
 include::recommendations/html/REC_schema-org.adoc[]
 
-[[requirements-class-atom-clause]]
-=== Requirements Class ATOM
-
-==== Overview
-
-The following requirements apply to an OGC API - Records implementation when the following conditions apply:
-
-. The API advertises conformance to the ATOM Conformance Class
-. The client negotiates to an ATOM format
-
-The ATOM Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the XML response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
-
-include::requirements/requirements_class_atom.adoc[]
-
-==== Common
-
-This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:
-
-* `{root}/`: Landing Page
-* `{root}/api`: API Description
-* `{root}/conformance`: Conformance Classes
-* `{root}/collections`: Collections
-* `{root}/collections/{collectionId}`: Collection Information
-
-It is necessary to advertise conformance with this Requirements Class.
-
-include::requirements/atom/REQ_atom-conformance.adoc[]
-
-include::requirements/atom/REQ_common-content.adoc[]
-
-[#xml_content,reftext='{table-caption} {counter:table-num}']
-.Media types and XML elements for each common resource[[table_3]]
-[cols="30,35,35",options="header"]
-|===
-|Resource |Path |XML root element
-|Landing page |`/` |`core:LandingPage`
-|Conformance declaration |`/conformance` |`core:ConformsTo`
-|Collections        |`/collections` |`core:Collections`
-|Record collection +
-(resource collection with `itemType=record`) |`/collections/{collectionId}` |`core:Collections`, with just one entry for the collection `collectionId`
-|===
-
-[[record_atom_encoding]]
-==== Record
-
-In addition to HTML and GeoJSON, a significant volume of record data, especially in the Earth Observation domain, is available in XML-based formats, notably https://tools.ietf.org/html/rfc4287[ATOM]. Therefore, this standard specifies requirements classes for https://tools.ietf.org/html/rfc4287[ATOM].
-
-include::requirements/atom/REQ_media-type.adoc[]
-
-include::requirements/atom/REQ_feed-extension-elements.adoc[]
-
-include::requirements/atom/REQ_content.adoc[]
-
-[#atom_content,reftext='{table-caption} {counter:table-num}']
-.Media types and XML elements for each resource[[table_3]]
-[cols="30,35,35",options="header"]
-|===
-|Resource |Path |XML root element
-|Records |`/collections/{collectionId}/items` |`atom:feed`
-|Record |`/collections/{collectionId}/items/{recordId}` |`atom:entry`
-|===
-
-include::recommendations/atom/PER_foreign-markup.adoc[]

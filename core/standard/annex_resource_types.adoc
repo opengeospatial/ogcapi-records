@@ -1,0 +1,17 @@
+[appendix]
+:appendix-caption: Annex
+[[annex_resource_types]]
+== Common resource types (Informative)
+
+[[common_resource_types-overview]]
+=== Overview
+
+This annex describes commonly used codelists and identifiers for OGC resource types when qualifying resources via the record
+schema's `properties.type` property.  Please note that these codelists and identifiers are NOT normative.  For information
+communities wishing to further identify, it is suggested that a specification extension be developed to meet those
+requirements.
+
+* ISO 19115:2003: https://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml (`MD_ScopeCode`)
+* ISO 19115-1:2014: https://github.com/ISO-TC211/XML/blob/master/schemas.isotc211.org/19115/resources/Codelist/cat/codelists.xml (`MD_ScopeCode`)
+* OSGeo Catalogue Interoperability Group link types: https://github.com/OSGeo/Cat-Interop/blob/master/LinkPropertyLookupTable.csv
+* Service types from the OGC Naming Authority: http://www.opengis.net/def/serviceType

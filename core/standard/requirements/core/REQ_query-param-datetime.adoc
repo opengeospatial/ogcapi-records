@@ -1,8 +1,0 @@
-[[req_core_param-datetime]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/param-datetime*
-^|A |A Records API SHALL support the DateTime (`datetime`) parameter for the operation.
-^|B |Requests which include the DateTime parameter SHALL comply with OGC API - Common requirement https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-definition`].
-^|C |Responses to DateTime requests SHALL comply with OGC API - Common requirement https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-response`].
-|===

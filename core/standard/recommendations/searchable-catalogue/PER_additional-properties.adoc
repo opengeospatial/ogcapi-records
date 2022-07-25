@@ -1,0 +1,7 @@
+[[per_core_additional-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/core/additional-properties*
+
+In addition to the properties listed in <<core-queryables-record-table>> and <<core-queryables-resource-table>> servers may add any number of additional properties to the schema of a record.
+|===

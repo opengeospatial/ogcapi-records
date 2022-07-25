@@ -14,7 +14,7 @@ Most of the examples provided in this standard are encoded in JSON. JSON is chos
 
 === Schema
 
-JSON Schema is used throughout this standard to define the structure of resources. These schema are typically represented using YAML encoding. This convention is for the ease of the user. It does not prohibit the use of another schema language or encoding. Nor does it indicate that JSON Schema is required. Implementations should use a schema language and encoding appropriate for the format of the resource.
+OpenAPI 3.0 Schema objects are used throughout this standard to define the structure of resources. These schema are typically represented using YAML encoding. This convention is for the ease of the user. It does not prohibit the use of another schema language or encoding. Nor does it indicate that OpenAPI 3.0 Schema objects are required. Implementations should use a schema language and encoding appropriate for the format of the resource.  Note that for property values in JSON for which `null` is not explicitly supported/required, server implementations are recommended to drop the property (as opposed to specifying the property with a value of `null`).
 
 === UML Notation
 
@@ -36,10 +36,9 @@ UML diagrams and XML code fragments adhere to the namespace conventions shown in
 [width="90%",cols="2,6,6",options="header"]
 |====
 |*GML/XML prefix* |*Namespace URL* |*Description*
-|atom |http://www.w3.org/2005/Atom |ATOM namespace
 |core |http://www.opengis.net/ogcapi-record-1/1.0 |OGC API - Records core elements
 |dc |http://purl.org/dc/elements/1.1/ |Dublin core elements
-|dcat |http://www.w3.org/ns/dcat\# |DCAT vocabulary
+|dcat |http://www.w3.org/ns/dcat# |DCAT vocabulary
 |dct |http://purl.org/dc/terms/ |Dublin core terms
 |gml |http://www.opengis.net/gml/3.2 |GML 3.2.1
 |gml33 |http://www.opengis.net/gml/3.3 |GML 3.3

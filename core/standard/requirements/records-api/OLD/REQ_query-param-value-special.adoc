@@ -1,0 +1,6 @@
+[[req_record-api_query-param-value-special]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-api/query-param-value-special* 
+^|A |The special values positive and negative infinity and not-a-number SHALL be represented using the strings `inf`, `-inf` and `nan`, respectively.
+|===

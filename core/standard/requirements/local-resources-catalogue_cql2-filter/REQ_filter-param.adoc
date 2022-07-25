@@ -1,0 +1,7 @@
+[[req_local-resources-catalogue_cql2-filter_filter-param]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/features-filter/cql2-filter/filter-param*
+
+Implementations SHALL, at the local resources endpoint and for the HTTP GET operation, support the `filter` parameter as defined in https://docs.ogc.org/DRAFTS/19-079.html#filter-param[Parameter filter].
+|===

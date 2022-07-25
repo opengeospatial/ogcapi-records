@@ -1,52 +1,86 @@
 [[conformance_class]]
 == Conformance
 
+=== Overview
+
 Conformance with this standard shall be checked using the tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 
 The standardization targets of all conformance classes are "Web APIs".
 
 OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to OGC API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of OGC API - Common.
 
-This standard identifies eleven (11) Conformance Classes. The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
 
-The Requirements Classes for OGC API - Records are:
+[[building-block-requirements-classes]]
+=== Building blocks
+
+This standard also identifies eight (8) building block requirements classes:
+
+* <<clause-record-core,Record Core>>
+* <<clause-record-collection,Record collection>>
+* <<clause-records-api,Records API>>
+* <<clause-sorting,Sorting>>
+* <<clause-cql-filter,Filtering using the Common Query Language (CQL2)>>
+* <<requirements-class-json-clause,JSON-Record>>
+* <<requirements-class-html-clause,HTML-Record>>
+* <<clause-autodiscovery,Autodiscovery>>
+
+The <<clause-record-core,_Record Core_>> conformance class defines the requirements for the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended by communities of interest or to suite specific needs.
+
+The <<clause-record-collection,_Record Collection_>> conformance class defines requirements for the metadata used to describe a collection of related records.
+
+The <<clause-records-api,_Records API_>> conformance class defines the requirements for an API for searching collections of records based on logically connected predicates that can include spatial and/or temporal predicates.  The Records API is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API Records.
+
+The <<clause-sorting,_Sorting_>> conformance class defines the requirements to support sorting of records in a query response.
+
+The <<clause-record-filter,_Filter using the Common Query Language_>> conformance class defines the requirements to support record filtering using https://docs.ogc.org/DRAFTS/19-079r1.html[CQL2].
+
+The <<requirements-class-json-clause,_JSON-Record_>> conformance class defines the requirements for a GeoJSON (see RFC 7946) representation of a standard catalogue record.
+
+The <<requirements-class-html-clause,_HTML-Record_>> conformance class defines the requirements for an HTML representation of a standard catalogue record.
+
+The <<clause-autodiscovery,Autodiscovery>> conformance class defines requirements that allow catalogues associated with a web page or web site to be discovered. 
+
+[[catalogue-requirements-classes]]
+=== Catalogue deployments
+
+Using the above mentioned building blocks, this standard identifies the following catalogue requirements classes:
 
 * <<clause-crawlable-catalogue,Crawlable Catalogue>>
 * <<clause-searchable-catalogue,Searchable Catalogue>>
+** <<clause-searchable-catalogue_sorting,Searchable Catalogue - Sorting>>
+** <<clause-searchable-catalogue_cql2-filter,Searchable Catalogue - CQL2 Filter>>
+
 * <<clause-local-resources-catalogue,Local Resources Catalogue>>
-* <<clause-record-core,Record>>
-* <<clause-record-collection,Record collection>>
-* <<clause-core-api,Record API>>
-* <<clause-sorting,Sorting>>
-* <<clause-cql-filter,Filtering using the Common Query Language (CQL)>>
-* <<clause-opensearch,OpenSearch>>
-* <<requirements-class-json-clause,JSON-Record>>
-* <<requirements-class-atom-clause,ATOM-Record>>
-* <<requirements-class-html-clause,HTML-Record>>
+** <<clause-local-resources-catalogue_sorting,Local Resources Catalogue - Sorting>>
+** <<clause-local-resources-catalogue_cql2-filter,Local Resources Catalogue - CQL2 Filter>>
 
 The <<clause-crawlable-catalogue,Crawlable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of web-accessible static files.
 
-The <<clause-searchable-catalogue,Searchable Catalogue>> conformance class defines the core requirements for a catalogue composed of a collection of records that is searchable via an API.
+The <<clause-searchable-catalogue,Searchable Catalogue>>, <<clause-searchable-catalogue_sorting,Searchable Catalogue - Sorting>>, <<clause-searchable-catalogue_cql2-filter,Searchable Catalogue - CQL2 Filter>> conformance classes define the requirements for a catalogue composed of a collection of records that is searchable via an API.
 
-The <<clause-local-resources-catalogue,Local Resources Catalogue>> conformance class defines the core requirements for a local resource catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resource catalogue but other endpoints may exist in an OGC API deployment as well.
+The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-local-resources-catalogue_sorting,Local Resources Catalogue - Sorting>>, <<clause-local-resources-catalogue_cql2-filter,Local Resources Catalogue - CQL2 Filter>> conformance classes define the requirements for a local resources catalogue which is a catalogue composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resources catalogue but other endpoints may exist in an OGC API deployment as well.
 
-The <<clause-record-core,_Record_ Requirements Class>> defines the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended by communities of interest or to suite specific needs.
+[#required_building_blocks,reftext='{table-caption} {counter:table-num}']
+.Required building blocks by catalogue deployment type
+[cols="<25,^25,^25,^25",options="header"]
+|===
+|Building block 3+|Catalogue requirements class
+| |<<clause-crawlable-catalogue,_**Crawlable**_>> |<<clause-searchable-catalogue,_**Searchable**_>> |<<clause-local-resources-catalogue,_**Local Resources catalogue**_>>
+|<<clause-record-core,Record Core>> |Mandatory |Mandatory |Mandatory
+|<<clause-record-collection,Record collection>> |_Optional_ |Mandatory |Mandatory
+|<<clause-record-api,Records API>> |_Optional_ |Mandatory |Mandatory
+|<<clause-sorting,Sorting>> |_Optional_ |_Optional_ |_Optional_
+|<<clause-record-filter,CQL2>> |_Optional_ |_Optional_ |_Optional_
+|<<requirements-class-json-clause,JSON-Record>> |_Optional_ |_Optional_ |_Optional_
+|<<requirements-class-html-clause,HTML-Record>> |_Optional_ |_Optional_ |_Optional_
+|===
 
-The <<clause-record-collection,_Record Collection_ Requirements Class>> defines the metadata used to describe a collection of related records.
+=== Implementations
 
-The <<clause-record-api,_Records API_ Requirement Class>> defines an API for searching collections of records based on logically connected predicates that can include spatial and/or temporal predicates.  The Records API is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API Records.
+Implementors of this specification select one or more of the <<catalogue-requirements-classes,catalogue requirements classes>> they wish to implement and then implement the required building block requirements classes.
 
-The <<clause-sorting,_Sorting_ Requirements Class>> defines the requirements to support sorting of records in a query response.
-
-The <<clause-record-filter,_Filter using the Common Query Language_ Requirements Class>> defines the requirements to support record filtering using https://docs.ogc.org/DRAFTS/19-079r1.html[CQL].
-
-The <<clause-opensearch,_OpenSearch_ Requirements Class>> defines the requirements to support query by OpenSearch clients.
-
-The <<requirements-class-json-clause,_JSON-Record_ Requirements Class>> defines the requirements for a GeoJSON (see RFC 7946) representation of a standard catalogue record.
-
-The <<requirements-class-atom-clause,_ATOM-Record_ Requirements Class>> defines the requirements for an ATOM representation of a standard catalogue record.
-
-The <<requirements-class-html-clause,_HTML-Record_ Requirements Class>> defines the requirements for an HTML representation of a standard catalogue record.
+=== Conformance testing
 
 Conformance with this standard shall be checked using all the relevant tests
 specified in <<ats,Annex A>> of this document. The framework, concepts, and
@@ -62,17 +96,12 @@ OGC Compliance Testing web site.
 |<<ats_crawlable-catalogue,Crawlable Catalogue>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalogue
 |<<ats_searchable-catalogue,Searchable Catalogue>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalogue
 |<<ats_local-resources-catalogue,Local Resources Catalogue>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalogue
-|<<ats_core_record,Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
+|<<ats_core_record,Record Core>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
 |<<ats_record_collection,Record Collection>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
-|<<ats_record_api,Record API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api
+|<<ats_record_api,Records API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api
 |<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
-|<<ats_cql,CQL>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
-|<<ats_opensearch,OpenSearch>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/opensearch
+|<<ats_cql,CQL2>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
 |<<ats_json,JSON-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
-|<<ats_atom,ATOM-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/atom
-|<<ats_atom,HTML-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
+|<<ats_html,HTML-Record>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
+|<<ats_autodiscovery,Autodiscovery>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery
 |===
-
-include::requirements/core/REQ_conformance.adoc[]
-
-include::recommendations/core/PER_additional-conformance.adoc[]

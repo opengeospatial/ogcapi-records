@@ -1,0 +1,8 @@
+[[req_record-api_record-collection-schema]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-api/record-collection-schema*
+
+The schema of a 
+Each collection (path `/collection/{collectionId}`) SHALL be considered a record collection is the value of the `itemType` parameter is `record`.
+|===

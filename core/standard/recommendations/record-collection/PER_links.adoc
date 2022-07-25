@@ -1,0 +1,7 @@
+[[per_record-collection_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/record-collection/links*
+
+The links in the `links` section of the a collection may be typed to allow for the possibility of alternate representations for each record.
+|===

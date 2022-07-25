@@ -1,0 +1,48 @@
+[[req_record-core_templated-link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-core/templated-link*
+
+^|A |A templated link SHALL be defined by the following schema fragment:
+
+[source,YAML]
+----
+type: object
+required:
+  - href
+  - rel
+properties:
+  href:
+    type: string
+    description: Supplies the URI to a remote resource (or resource fragment).
+    example: http://data.example.com/buildings/123
+  rel:
+    type: string
+    description: The type or semantics of the relation.
+    example: alternate
+  type:
+    type: string
+    description: A hint indicating what the media type of the result of dereferencing the link should be.
+    example: application/geo+json
+  hreflang:
+    type: string
+    description: A hint indicating what the language of the result of dereferencing the link should be.
+    example: en
+  title:
+    type: string
+    description: Used to label the destination of a link such that it can be used as a human-readable identifier.
+    example: Trierer Strasse 70, 53115 Bonn
+  length:
+    type: integer
+  templated:
+    type: boolean
+    description: Used to indicate that the URI of the link is a template that contains substitution variables.
+    default: false
+  variables:
+    type: object
+    description: A dictionary of the JSON-Schema fragements defining the characteristics of each substitution variable in the link URI.
+----
+
+^|B |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
+^|C |For each substitution variable in a templated link URI, there SHALL be a correspondingly named entry in the `variables` dictionary.
+|===

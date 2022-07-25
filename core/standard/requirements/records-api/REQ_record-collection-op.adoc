@@ -1,0 +1,7 @@
+[[req_records-api_record-collection-op]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/record-collection-op*
+^|A |An implementation of the Records API SHALL support the GET operation at the path `/collections/{collectionId}`.
+^|B |The parameter `collectionId` is each id property in the collections response (JSONPath: `$.collections[*].id`) where the value of the `itemType` property (JSONPath: `$.collections[*].itemType`) is `record`.
+|===

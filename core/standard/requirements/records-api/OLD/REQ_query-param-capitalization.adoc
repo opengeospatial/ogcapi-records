@@ -1,0 +1,7 @@
+[[req_record-api_query-param-capitalization]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-api/query-param-capitalization* 
+^|A |Parameter names and values SHALL NOT be case sensitive. 
+^|B |If a parameter name or value includes a precent encoded (escaped) character, then the upper case hexadecimal digits ("A" through "F") of that percent encoded character SHALL be equivalent to the lower case digits "a" through "f" respectively.
+|===

@@ -1,0 +1,8 @@
+[[rec_record-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-links*
+^|A |Each record SHOULD include a link to itself (`rel="self"`).
+^|B |Each record SHOULD include a link pointing to the collection of which this record in a member (`rel="collection"`).
+^|C |Each record SHOULD include links to alternative representations of the record (`rel="alternate"`).
+|===

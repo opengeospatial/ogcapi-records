@@ -1,0 +1,7 @@
+[[req_crawlable-catalogue_record]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/record*
+
+A <<rc_record_core,record>> SHALL be created for each resource to be made discoverable.
+|===

@@ -1,8 +1,0 @@
-[[per_core_additional-link-relations]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/core/additional-link-relations*
-2+|Servers MAY link to resource types in addition to those identified in <<link-relations-table>>.
-^|A |Those links SHOULD use link relation types defined in the https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA] or https://github.com/opengeospatial/NamingAuthority/blob/master/incubation/linkRelationTypes/linkrelations.csv[OGC] registries.
-^|B |Those links SHOULD NOT use any of the link relation types identified in <<link-relations-table>>.
-|===

@@ -1,0 +1,22 @@
+[[req_records-api_param-q-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/param-q-definition*
+^|A |A Records API SHALL support the Text Search (q) parameter for the operation.
+^|B |The `q` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: q
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+----
+
+^|C |Keyword searches using the `q` parameter SHALL be case insensitive.
+^|D |The specific set of text keys/fields/properties of a record to which the `q` operator is applied SHALL be left to the discretion of the implementation.
+|===

@@ -1,0 +1,7 @@
+[[rec_record-links_type]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-links/type*
+
+If a canonical URI is available for the record type that is the value of the core queryable _type_, a link with link relation type `type` to that canonical URI SHOULD be added to the `links` property. 
+|===

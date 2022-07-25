@@ -1,0 +1,7 @@
+[[req_crawlable-catalogue_record-file-location]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/record-file-location*
+
+The record SHALL be placed in a web-accessible location.
+|===

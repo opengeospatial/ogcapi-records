@@ -1,0 +1,34 @@
+[[clause-searchable-catalogue]]
+== Requirements Class "Searchable Catalogue"
+
+include::requirements/requirements_class_searchable-catalogue.adoc[]
+
+The `Searchable Catalogue` Requirements Class defines the requirements for a catalogue that is searchable through an API.  A searchable catalogue is an implementation of <<OAFeat-1,OGC API Features>> that uses a defined information model.  In the case of OGC API Records, that information model is the <<clause-record-core,Record>>.
+
+=== Core
+
+include::requirements/searchable-catalogue/REQ_core.adoc[]
+
+include::recommendations/searchable-catalogue/PER_additional-conformance.adoc[]
+
+include::requirements/searchable-catalogue/REQ_mandatory-properties.adoc[]
+
+include::recommendations/searchable-catalogue/PER_additional-properties.adoc[]
+
+[[clause-searchable-catalogue_sorting]]
+=== Sorting
+
+include::requirements/searchable-catalogue_sorting/REQ_sorting.adoc[]
+
+[[clause-searchable-catalogue_cql2-filter]]
+=== Filtering 
+
+include::requirements/searchable-catalogue_cql2-filter/REQ_filtering.adoc[]
+
+include::requirements/searchable-catalogue_cql2-filter/REQ_mandatory-queryables.adoc[]
+
+include::recommendations/searchable-catalogue_cql2-filter/REQ_additional-queryables.adoc[]
+
+=== Coordinate reference systems
+
+include::requirements/searchable-catalogue_crs/REQ_crs.adoc[]

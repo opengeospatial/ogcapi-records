@@ -1,6 +1,0 @@
-[[req_core_query-param-value-boolean]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/query-param-value-boolean* 
-^|A |Boolean values shall be represented by the lowercase strings `true` and `false`, representing Boolean true and false respectively.
-|===

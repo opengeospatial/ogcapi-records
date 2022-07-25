@@ -1,7 +1,0 @@
-[[req_core_http-responsse]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/http-response*
-^|A |An HTTP operation SHALL return a response which includes a `status code` and an optional `description` elements.
-^|B |If the `status code` is not equal to 200, then the `description` element SHALL be populated.
-|===

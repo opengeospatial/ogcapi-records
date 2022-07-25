@@ -1,0 +1,331 @@
+[[clause-records-api]]
+== Requirements Class "Records API"
+
+[[records-api-overview]]
+=== Overview
+
+include::requirements/requirements_class_records-api.adoc[]
+
+The core API for a catalogue is defined by the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+
+include::requirements/records-api/REQ_resource-name-mapping.adoc[]
+
+=== API landing page
+
+include::requirements/records-api/REQ_landing-page-op.adoc[]
+
+include::requirements/records-api/REQ_landing-page-response.adoc[]
+
+=== API definition
+
+=== Operation 
+
+include::requirements/records-api/REQ_api-def-op.adoc[]
+
+include::requirements/records-api/REQ_api-def-uri.adoc[]
+
+=== Response 
+
+include::requirements/records-api/REQ_api-def-response.adoc[]
+
+include::requirements/records-api/REQ_api-def-oas.adoc[]
+
+=== Declarations of conformance class
+
+==== Operation
+
+include::requirements/records-api/REQ_conformance-op.adoc[]
+
+==== Response
+
+include::requirements/records-api/REQ_conformance-response.adoc[]
+
+include::requirements/records-api/REQ_conformance-classes.adoc[]
+
+include::recommendations/records-api/PER_conformance-classes.adoc[]
+
+[[sc_http]]
+=== HTTP 1.1
+
+include::requirements/records-api/REQ_http.adoc[]
+
+include::requirements/records-api/REQ_head.adoc[]
+
+See the http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[HTTP status code] clause for a discussion about status codes.
+
+include::recommendations/records-api/PER_additional-status-codes.adoc[]
+
+=== Unknown or invalid query parameters
+
+include::requirements/records-api/REQ_query-param-unknown.adoc[]
+
+include::requirements/records-api/REQ_query-param-invalid.adoc[]
+
+=== Web caching
+
+include::recommendations/records-api/REC_etag.adoc[]
+
+=== Support for cross-origin requests
+
+include::recommendations/records-api/REC_cors.adoc[]
+
+=== Encodings
+
+While OGC API Records does not specify any mandatory encoding, support for the following encodings is recommended.
+
+include::recommendations/records-api/REC_html.adoc[]
+
+include::recommendations/records-api/REC_json.adoc[]
+
+The requirements specified in the <<sc_http,HTTP 1.1>> sub-clause imply that the encoding of a server response is determined using content negotiation as specified by the HTTP RFC.
+
+The <<media-types-section,Media Types>> sub-clause includes guidance on media types for encodings that are specified in this document.
+
+Note that any server that supports multiple encodings will have to support a mechanism to mint encoding-specific URIs for resources in order to express links, for example, to alternate representations of the same resource. This document does not mandate any particular approach how this is supported by the server.
+
+As clients simply need to dereference the URI of the link, the implementation details and the mechanism how the encoding is included in the URI of the link are not important. Developers interested in the approach of a particular implementation, for example, to manipulate ("hack") URIs in the browser address bar, can study the API definition.
+
+[NOTE]
+=====================================================================
+Two common approaches are:
+
+* an additional path for each encoding of each resource (this can be expressed,
+for example, using format specific suffixes like ".html");
+
+* an additional query parameter (for example, "accept" or "f") that overrides
+the Accept header of the HTTP request.
+=====================================================================
+
+=== String internationalization
+
+include::recommendations/records-api/REC_string-i18n.adoc[]
+
+=== Coordinate reference systems
+
+include::requirements/records-api/REQ_default-crs.adoc[]
+
+=== Link headers
+
+include::recommendations/records-api/REC_link-headers.adoc[]
+
+[[record-collections]]
+=== Record collections
+
+==== Operation 
+
+include::requirements/records-api/REQ_record-collections-op.adoc[]
+
+==== Response
+
+include::requirements/records-api/REQ_record-collections-response.adoc[]
+
+include::requirements/records-api/REQ_record-collections-links.adoc[]
+
+include::recommendations/records-api/REC_record-collections-descriptions.adoc[]
+
+include::recommendations/records-api/REC_record-collections-license.adoc[]
+
+include::requirements/records-api/REQ_record-collections-items.adoc[]
+
+[[per_records-api_record-collections-items]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/records-api/record-collections-items*
+
+Permission http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_4[`/per/core/fc-md-items`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard MAY apply to Records API implementations too.
+|===
+
+include::requirements/records-api/REQ_record-collections-items-links.adoc[]
+
+include::requirements/records-api/REQ_record-collections-extents.adoc[]
+
+include::recommendations/records-api/REC_record-collections-extent-single.adoc[]
+
+include::recommendations/records-api/PER_record-collections-extent-extensions.adoc[]
+
+==== Error situations
+
+See http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[HTTP status codes] for general guidance.
+
+[[record-collection]]
+=== Record collection
+
+==== Operation
+
+include::requirements/records-api/REQ_record-collection-op.adoc[]
+
+==== Response 
+
+include::requirements/records-api/REQ_record-collection-response.adoc[]
+
+==== Error situations
+
+See http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[HTTP status codes] for general guidance.
+
+[[records-access]]
+=== Records access
+
+==== Operation
+
+include::requirements/records-api/REQ_records-op.adoc[]
+
+[[parameters-section]]
+==== Parameters
+
+===== Overview
+
+include::requirements/records-api/REQ_mandatory-params.adoc[]
+
+[#core-query-parameters-table,reftext='{table-caption} {counter:table-num}']
+.Table of Query Parameters
+[cols="15,85",options="header"]
+|===
+|Parameter name |Description
+|bbox |A bounding box. If the spatial extent of the record intersects the specified bounding box then the record shall be presented in the response document.
+|datetime |A time instance or time period. If the temporal extent of the record intersects the specified data/time value then the record shall be presented in the response document.
+|limit |The number of records to be presented in a response document.
+|q |A comma-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed then this records shall appear in the response set.
+|type |An equality predicate consistent of a comma-separated list of resource types.  Only records of the listed type shall appear in the resource set.
+|externalid |An equality predicate consistent of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
+|_prop_=_value_ |Equality predicates with any queryable (see: /collections/{catalogueId}/queryables)
+|===
+
+[[core-query-parameters-bbox]]
+===== Parameter bbox
+
+include::requirements/records-api/REQ_query-param-bbox-def.adoc[]
+
+include::requirements/records-api/REQ_query-param-bbox-response.adoc[]
+
+[[core-query-parameters-datetime]]
+===== Parameter datetime
+
+include::requirements/records-api/REQ_query-param-datetime-def.adoc[]
+
+include::requirements/records-api/REQ_query-param-datetime-response.adoc[]
+
+[[core-query-parameters-limit]]
+===== Parameter limit
+
+include::requirements/records-api/REQ_query-param-limit-def.adoc[]
+
+include::requirements/records-api/REQ_query-param-limit-response.adoc[]
+
+[[core-query-parameters-q]]
+===== Parameter q
+
+include::requirements/records-api/REQ_query-param-q-definition.adoc[]
+
+include::recommendations/records-api/REC_param-q.adoc[]
+
+include::requirements/records-api/REQ_query-param-q-response.adoc[]
+
+[[core-query-parameters-type]]
+===== Parameter type
+
+include::requirements/records-api/REQ_query-param-type-definition.adoc[]
+
+include::recommendations/records-api/REC_query-param-type-definition.adoc[]
+
+include::requirements/records-api/REQ_query-param-type-response.adoc[]
+
+[[core-query-parameters-externalid]]
+===== Parameter externalId
+
+include::requirements/records-api/REQ_query-param-externalid-definition.adoc[]
+
+include::requirements/records-api/REQ_query-param-externalid-response.adoc[]
+
+[[additional-query-parameters]]
+===== Additional query parameters
+
+This standard defines the following URL query parameters based on the set of
+<<core-queryables-record-table,core queryables>> to support record selection
+based on the resource type and/or an external identifier associated with the
+resource.
+
+* <<core-query-parameters-type,type>>
+* <<core-query-parameters-externalid,externalId>>
+
+include::recommendations/records-api/REC_additional-query-parameters.adoc[]
+
+===== Combinations of Filtering Parameters
+
+Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> may be specified for filtering. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set; i.e., the logical operator between the predicates is **AND** (exclusive).
+
+[[query-response]]
+==== Response
+
+include::requirements/records-api/REQ_records-response.adoc[]
+
+include::requirements/records-api/REQ_records-response-links.adoc[]
+
+include::recommendations/records-api/REC_records-response-links.adoc[]
+
+include::recommendations/records-api/PER_records-response-prev.adoc[]
+
+include::requirements/records-api/REQ_records-response-rel-type.adoc[]
+
+include::requirements/records-api/REQ_records-response-timestamp.adoc[]
+
+include::requirements/records-api/REQ_records-response-numberMatched.adoc[]
+
+include::requirements/records-api/REQ_records-response-numberReturned.adoc[]
+
+<<response-encodings>> lists specific requirements based on the negotiated representation of the response.
+
+[#response-encodings,reftext='{table-caption} {counter:table-num}']
+.Negotiated representation of response 
+[width=40%,cols="30%,70%",options="header"]
+|===
+|Representation |Requirements
+|JSON/GeoJSON |<<record_json_encoding,Requirements Class JSON>>
+|HTML |<<record_html_encoding,Requirements Class HTML>>
+|===
+
+==== Error situations
+
+See http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[HTTP status codes] for general guidance.
+
+==== Examples
+
+The following is an example of a response to an OGC API - Records query
+operation (path: `/collections/{collectionId}/items`).  This example shows
+a JSON response and the response container is a GeoJSON feature collection.
+Specific records are not presented in this example in order to illustrate
+the structure of the response container in GeoJSON.
+
+[#records-example,reftext=`Records Example`]
+.Records Example in GeoJSON
+[source,json]
+----
+include::../examples/json/record-collection.json[]
+----
+
+The following is an example of a single catalogue record encoded in GeoJSON.
+Such a record might appear in the `features` array of a
+<<records-example,query response>> or it may be the response when a specific,
+single record is accessed (path: `/collections/{collectionId}/items/{recordId}`).
+
+[#record-example,reftext=`Record Example`]
+.Record Example in GeoJSON
+[source,json]
+----
+include::../examples/json/record.json[]
+----
+
+=== Record access
+
+==== Operation
+
+include::requirements/records-api/REQ_record-op.adoc[]
+
+==== Response
+
+include::requirements/records-api/REQ_record-response.adoc[]
+
+==== Error situations
+
+See http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[HTTP status codes] for general guidance.
+
+If the path parameter `collectionId` or the path parameter `recordId` do not exist on the server, the status code of the response will be 404.

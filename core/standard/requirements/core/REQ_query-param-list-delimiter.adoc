@@ -1,7 +1,0 @@
-[[req_core_query-param-list-delimiter]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/query-param-list-delimiter* 
-^|A |Parameters values containing lists SHOULD specify the delimiter to be used in the API definition.
-^|B |The default list item delimiter SHALL be the comma ("`,`").
-|===

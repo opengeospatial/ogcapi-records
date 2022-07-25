@@ -1,8 +1,0 @@
-[[req_core_rc-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/rc-op*
-^|A |A Records API implementation SHALL comply with the API - Common requirement https://docs.ogc.org/DRAFTS/20-024.html#_operation_3[`http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-op`].
-^|B |For API - Records, the API - Common https://docs.ogc.org/DRAFTS/20-024.html#_operation_3[`/req/collections/rc-op`] requirement SHALL apply to collections where the value of the `itemType` property is specified as `record`.
-^|C |The property `itemType` is each property in the resource <<collection-info-response,collections response>> (JSONPath: `$.collections[*].itemType`).
-|===

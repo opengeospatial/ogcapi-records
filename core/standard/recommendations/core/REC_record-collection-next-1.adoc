@@ -1,6 +1,0 @@
-[[rec_core_rc-next-1]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/core/rc-next-1* 
-^|A |A `200` response SHOULD include a link to the next "page" (relation: `next`), if more records have been selected than returned in the response.
-|===

@@ -75,6 +75,10 @@ properties:
           example:
             - '2011-11-11T12:22:11Z'
             - null
+      resolution:
+        description: |-
+          Minimum time period resolvable in the dataset, as an ISO 8601 duration
+          type: string
       trs:
         description: |-
           Coordinate reference system of the coordinates in the temporal extent

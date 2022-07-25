@@ -408,6 +408,8 @@ components:
           type: string
           description: A unique identifier of the catalogue record.
           format: uri
+        conformsTo:
+          $ref: "#/components/schemas/confClasses/properties/conformsTo"
         type:
           type: string
           enum:
@@ -469,9 +471,9 @@ components:
                   scheme:
                     type: string
                     description: |-
-                       An identifier for the knowledge organization system used
-                       to classify the resource.  It is recommended that the
-                       identifier be a resolvable URI.
+                       A reference to an authority or identifier for a knowledge
+                       organization system from which the external identifier was
+                       obtained.  It is recommended that the identifier be a resolvable URI.
                   value:
                     type: string
                     description: The value of the identifier.

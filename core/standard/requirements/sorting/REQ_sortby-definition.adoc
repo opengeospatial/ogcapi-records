@@ -2,6 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/sorting/sortby-definition*
+
 ^|A |The operation SHALL support a parameter `sortby` with the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
 [source,YAML]

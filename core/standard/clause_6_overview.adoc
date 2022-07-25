@@ -1,34 +1,36 @@
 [[overview]]
 == Overview
 
+NOTE: Need to have a disucssion in here about the migration of catalogues from big repositories of metadata documents (e.g. ISO19115) to distributed, crawlable catalogies (e.g. static STAC) and harvesting of resource into the catalogue to make them searchable (e.g. harvesting records close to resources (i.e. STAC item) or even harvesting the resource itself (e.g. the collection object)).
+
+
 === tl;dr crawlable catalogue
 
-. In order to implement a catalogue where records are stored as individual files in one or more web-accessible locations and can be crawled by simply following hypermedia controls:
+In order to implement a catalogue where records are stored as individual files in one or more web-accessible locations and can be crawled by simply following hypermedia controls:
 
 * for each discoverable resource create a file that contains a summary description of the resource using  the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>
 * extend the record schema to enrich its content as necessary
 * to make the resource discoverable, place each record file in a web-accessible location, preferably co-located (e.g. in the same directory or object store location) with the resource that the record is describing
-* optionally create a file containing a description of a <<record-collection-overview,_collection_>> of related records
+* optionally create a file containing a description of a <<sc_record-collection-overview,_collection_>> of related records
 * also place the collection file in a web-accessible location
 
 === tl;dr searchable catalogue
 
-. In order to implement a catalogue where records are stored in some backend database and are accessed through an access/search API:
+In order to implement a catalogue where records are stored in some backend database and are accessed through an access/search API:
 
 * implement the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] specification,
 * implement the parameters defined in <<core-query-parameters-table>>,
 * implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
 * extend the record schema to enrich its content as necessary
-* optionally implement the CQL, Sorting, OpenSearch/ATOM.
-* optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>,<<clause-opensearch,OpenSearch>>/<<record_atom_encoding,ATOM>>.
 
 === tl;dr local resources catalogue
 
-. In order to implemented a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
+In order to implement a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
 
 * implement the endpoint as per the relevant OGC API specification,
+* enhance the information content of the resource using the mandatory and optional parameters defined in <<core-queryables-resource-table>>,
 * implement the query parameters defined in <<core-query-parameters-table>>,
-* optionally implement the <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>.
+* optionally implement <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>.
 
 [[general-overview]]
 === General
@@ -37,7 +39,7 @@ The atomic unit of information in a catalogue is the _record_.
 
 A _catalogue_ is a collection of _records_.  The terms **collection of records** and **catalogue** are used interchangeably in this specification.
 
-A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined is this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated that this list of properties would be extended to enhance the information content of a record. 
+A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined in this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouranged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
 
 === Building blocks
 
@@ -50,15 +52,14 @@ This standard defines three building blocks that may be used to deploy a catalog
 Using these building blocks a catalogue can be deployed as:
 
 * a set of web-accessible records that can be crawled by a search engine crawler or by using (for example) a web browser
+* a searchable catalogue with records accessible through an API
 
-or as:
-
-* a searchable catalogue with records accessible through an API/
+A special use case of the _searchable catalogue_ is the _**local resources catalogue**_.  The OGC API resource tree has a number of endpoints that provide lists of resources.  Examples of such endpoints include the `/collections` and the `/processes` endpoints.  One can readily imagine a large OGC API deployment with thousands of collections where the ability to search would enhance the client's interaction with the server.  Using the building blocks defined in this specification these endpoints can be extended to support catalogue-like searching using filter expressions that may also include spatial and/or temporal predicates.  OGC API endpoints extended in this way behave like a catalogue of local resources.
 
 [[record-schema-overview]]
 === Record Schema
 
-The following table lists the set or properties, called _**core queryables**_, that may be included in a record.
+The following table lists the set of properties, called _**core queryables**_, that may be included in a record.
 
 [#core-queryables-list,reftext='{table-caption} {counter:table-num}']
 .Table of Core Queryables related to the catalogue record
@@ -68,13 +69,13 @@ The following table lists the set or properties, called _**core queryables**_, t
 |recordId |A unique record identifier assigned by the server.
 |recordCreated |The date this record was created in the server.
 |recordUpdated |The most recent date on which the record was changed.
-|links |A list of links for navigating the API.
+|links |A list of links for navigating the API; a list of links for accessing the resource, links to other resources associated with this resource, etc.
 |type |The nature or genre of the resource.
 |title |A human-readable name given to the resource.
 |description |A free-text description of the resource.
-|keywords |A list of keywords or tag associated with the resource.
+|keywords |A list of keywords or tags associated with the resource.
 |keywordsCodespace |A reference to a controlled vocabulary used for the keywords property.
-|language |This refers to the natural language used for textual values.
+|language |The natural language used for textual values.
 |externalId |An identifier for the resource assigned by an external entity.
 |created |The date the resource was created.
 |updated |The more recent date on which the resource was changed.
@@ -85,7 +86,6 @@ The following table lists the set or properties, called _**core queryables**_, t
 |license |A legal document under which the resource is made available.
 |rights |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |extent |The spatio-temporal coverage of the resource.
-|associations |A list of links for accessing the resource, links to other resources associated with this resource, etc.
 |===
 
 A complete definition of a record can be found in clause <<core-queryables,Core queryables>>.
@@ -99,10 +99,9 @@ It is expected that the information necessary to populate this core set of prope
 
 It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suite specific needs is allowed and encouraged by this specification.
 
-Although this document does not mandate any particular encoding for a record, the document does define conformance classes for three encodings:
+Although this document does not mandate any particular encoding for a record, the document does define conformance classes for two encodings:
 
 * A <<record_json_encoding,GeoJSON>> record encoding,
-* an <<record_atom_encoding,ATOM>> record encoding,
 * and an <<record_html_encoding,HTML>> encoding.
 
 Other encodings are allowed but are not described in this document.
@@ -111,14 +110,14 @@ Accessing collections of records deployed as static files is described in the <<
 
 Accessing collections of records through the API defined in this document is described in the <<records-access,Records access>> and <<record-access,Record access>> sections.
 
-[[record-collection-overview]]
+[[sc_record-collection-overview]]
 === Record collection (catalogue)
 
-A record collection or catalogue is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection object is the primary access point from which a deployed set of records can be accessed.  Having found the collection object (i.e. the catalogue) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
+A record collection or catalogue is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection resource is the primary access point from which a deployed set of records can be accessed.  Having found the collection resource (i.e. the catalogue) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
 
 Depending on the deployment pattern, the collection may provide a link to each individual record of the collection or a link to a search access point for retrieving sub-sets of records.
 
-<<record-collection-properties>> list the _core_ set of properties that may be used to describe a record collection or catalogue.
+<<record-collection-properties>> lists the _core_ set of properties that may be used to describe a record collection or catalogue.
 
 [[record-collection-properties]]
 [reftext='{table-caption} {counter:table-num}']
@@ -132,11 +131,11 @@ Depending on the deployment pattern, the collection may provide a link to each i
 |_**links**_ |A list of references to other documents include one link per record that is part of this collection.
 |_**extent**_ |The spatio-temporal coverage of the resources aggregated by this collection.
 |_**itemType**_ |Fixed to the value "record".
-|_**crs**_ |A list of coordinate reference system used for spatial-temporal values.
+|_**crs**_ |A list of coordinate reference systems used for spatial-temporal values.
 |type |Fixed to the value "Collection".
-|keywords |A list of keywords or tag associated with the collection.
+|keywords |A list of keywords or tags associated with the collection.
 |keywordsCodespace |A reference to a controlled vocabulary used for the keywords property.
-|language |This refers to the natural language used for textual values.
+|language |The natural language used for textual values.
 |created |The date the collection was created.
 |updated |The more recent date on which the collection was changed.
 |publisher |The entity making the collection available.

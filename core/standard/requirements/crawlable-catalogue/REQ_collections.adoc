@@ -1,0 +1,7 @@
+[[req_crawlable-catalogue_collections]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/collections*
+
+A _collections object_ SHALL contain all the mandatory properties listed in  <<collections-properties-table>>.
+|===

@@ -1,0 +1,76 @@
+[[clause-record-collection]]
+== Requirements Class "Record Collection"
+
+[[record-collection-overview]]
+=== Overview
+
+include::requirements/requirements_class_record-collection.adoc[]
+
+This requirements class defines the requirements for a record collection.
+
+A _collection_ is an object that provides information about and access to a set of related <<clause-core-record,records>>.  Such a collection of records is also referred to as a _catalogue_.
+
+The schema for the collection resource is an extension of the collection schema defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features].
+
+While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API Records only fixes the location of the collection in the <<clause-records-api,Record API>> conformance class.  Otherwise the collection resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
+
+[[record-collection-schema]]
+=== Record collection schema
+
+<<collection-properties-table>> defines the set of properties that may be used to describe a collection of records.
+
+[#collection-properties-table,reftext='{table-caption} {counter:table-num}']
+.Table of collection properties
+[cols="30,5,65",options="header"]
+|===
+|Queryables |Requirement |Description
+|_**id**_ |**required** |A unique identifier to the collection.
+|_**title**_ |**required** |A human-readable name given to the collection.
+|_**description**_ |optional |A free-text description of the collection.
+|_**links**_ |**required** |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)
+|_**extent**_ |optional |The spatio-temporal coverage of the collection.
+|_**itemType**_ |**required** |Fixed to the value "record".
+|_**crs**_ |optional |A list of coordinate reference systems used for spatial-temporal values.
+|type |**required** |The nature or genre of the resource. Fixed to "Collection".
+|keywords |optional |A list of keywords or tags associated with the collection.
+|keywordsCodespace |optional |A reference to a controlled vocabulary used for the keywords property.
+|language |optional |The natural language used for textual values (i.e. titles, descriptions, etc) of a collection.
+|created |optional |The date the collection was created.
+|updated |optional |The more recent date on which the collection was changed.
+|providers |optional |A list of providers qualified by their role.
+|themes |optional |A knowledge organization system used to classify the collection.
+|contactPoint |optional |An entity to contact about the collection.
+|license |optional |A legal document under which the collection is made available.
+|rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|properties |optional |Additional catalogue-specific properties describing the catalogue can be added here.
+|===
+
+NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features].
+
+include::requirements/record-collection/REQ_mandatory-queryables.adoc[]
+
+include::recommendations/record-collection/PER_additional-queryables.adoc[]
+
+=== Keywords and Themes
+
+See <<sc_keywords_and_themes,Keywords and Themes>> for a record.
+
+=== Links
+
+include::requirements/record-collection/REQ_links.adoc[]
+
+include::recommendations/record-collection/PER_links.adoc[]
+
+NOTE: The `rel` `items` is inherited from OGC API - Features but should that `rel` actually be the standard IANA `rel` `search`?
+
+=== Templated links with variables
+
+See <<sc_templated_links_with_variables,Templated links with variables>> for a record.
+
+=== Language negotiation
+
+See <<sc_language_negotiation,Language negotiation>> for a record.
+
+=== Encodings
+
+This specification defines requirements for JSON and HTML encoding of a catalogue. See <<clause-encodings,Encodings>>.

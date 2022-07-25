@@ -1,0 +1,8 @@
+[[req_jsonfg-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/jsonfg/response*
+^|A |200-responses of the server SHALL support the following media type:
+
+* `application/fg+json` for resources that include record content.
+|===

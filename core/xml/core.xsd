@@ -208,6 +208,7 @@
             <xsd:sequence>
                <xsd:element ref="core:begin" minOccurs="0"/>
                <xsd:element ref="core:end" minOccurs="0"/>
+               <xsd:element ref="core:resolution" minOccurs="0"/>
             </xsd:sequence>
             <xsd:attribute name="trs" type="xsd:anyURI"/>
          </xsd:extension>
@@ -219,6 +220,7 @@
             <xsd:sequence>
                <xsd:element ref="core:begin" minOccurs="0"/>
                <xsd:element ref="core:end" minOccurs="0"/>
+               <xsd:element ref="core:resolution" minOccurs="0"/>
             </xsd:sequence>
             <xsd:attribute name="trs" type="xsd:anyURI"
                  fixed="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
@@ -246,6 +248,8 @@
       </xsd:complexType>
    </xsd:element>
 
+   <xsd:element name="resolution" type="xsd:string"/>
+
    <!-- ========================================================== -->
    <!-- = TITLE, DESCRIPTION & LANGUAGE STRING TYPES             = -->
    <!-- ========================================================== -->
@@ -266,7 +270,7 @@
    <!-- ========================================================== -->
    <!-- = FOREIGN ATOM ELEMENTS                                  = -->
    <!-- ========================================================== -->
-   <xsd:element name="TimeStamp" type="xsd:dataTime"/>
+   <xsd:element name="TimeStamp" type="xsd:dateTime"/>
    <xsd:element name="NumberReturned" type="xsd:nonNegativeInteger"/>
 
 </xsd:schema>

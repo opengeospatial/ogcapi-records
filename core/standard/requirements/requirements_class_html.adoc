@@ -4,8 +4,8 @@
 2+|*Requirements Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html
 |Target type |Web API
-|Dependency |<<rc_core,Conformance Class "Core">>
-|Dependency |http://www.opengis.net/spec/ogcapi_common/1.0/req/html[API - Common HTML]
-|Dependency |<<HTML5,HTML5>>
-|Dependency |<<schema.org,Schema.org>>
+|Dependency |http://www.w3.org/TR/html5/[HTML5]
+|Pre-conditions |
+1) The API advertises conformance to the HTML Conformance Class +
+2) The client negotiates use of the HTML encoding.
 |===

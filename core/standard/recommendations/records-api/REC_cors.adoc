@@ -1,0 +1,7 @@
+[[rec_records-api_cors]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/record-api/cors*
+
+Implementations of the Records API SHOULD comply with recommendation http://docs.ogc.org/is/17-069r3/17-069r3.html#cross_origin[`/req/core/cross-origin`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+|===

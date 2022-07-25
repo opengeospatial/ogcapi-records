@@ -1,0 +1,6 @@
+[[rec_records-api_param-type-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/records-api/param-type-definition*
+^|A |The definition of the `type` parameter SHOULD be extended to enumerate the list of known record types.
+|===

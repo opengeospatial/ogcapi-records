@@ -1,0 +1,7 @@
+[[req_record-api_http]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-api/http* 
+^|A |OGC Web APIs SHALL conform to <<rfc2616,HTTP 1.1>>.
+^|B |If the API supports HTTPS, then the API SHALL also conform to <<rfc2818,HTTP over TLS>>.
+|===

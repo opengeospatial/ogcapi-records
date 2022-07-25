@@ -1,0 +1,7 @@
+[[rec_records-api_head]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/record-api/head*
+
+Implementations of the Records API SHOULD comply with recommendation http://docs.ogc.org/is/17-069r3/17-069r3.html#_http_1_1[`/req/core/head`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+|===

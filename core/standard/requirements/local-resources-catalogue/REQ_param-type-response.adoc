@@ -1,0 +1,7 @@
+[[req_local-resources-catalogue_param-type-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/param-type-response*
+
+If the `type` parameter is provided by the client, only resources from the local resources endpoint whose type, as indicated by the value of the `type` parameter, is equal to one of the listed values SHALL be in the result set.
+|===

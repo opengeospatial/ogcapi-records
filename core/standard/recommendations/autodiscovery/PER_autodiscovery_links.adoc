@@ -1,0 +1,7 @@
+[[per_autodiscovery_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/autodiscovery/links*
+
+A web page MAY contain multiple <<req_autodiscovery_link,autodiscovery links>> pointing to multiple associated catalogues.
+|===

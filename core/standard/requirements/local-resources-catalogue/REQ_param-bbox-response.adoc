@@ -1,0 +1,10 @@
+[[req_local-resources-catalogue_param-bbox-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/param-bbox-response*
+
+^|A |If the `bbox` parameter is provided, only resources that have a spatial geometry that intersects the bounding box SHALL be part of the result set.
+^|B |If a resource has multiple spatial geometry properties, it is the decision of the server whether only a single spatial geometry property is used to determine the extent or all relevant geometries.
+^|C |The `bbox` parameter SHALL match all resources at the endpoint that are not associated with a spatial geometry, too.
+^|D |The coordinate values SHALL intersect the extent specified for the coordinate reference system.
+|===

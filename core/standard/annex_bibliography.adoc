@@ -8,3 +8,6 @@
 * [[DCAT]] W3C: Data Catalog Vocabulary, W3C Recommendation 16 January 2014, https://www.w3.org/TR/vocab-dcat/
 * [[link-relations]] IANA: Link Relation Types, https://www.iana.org/assignments/link-relations/link-relations.xml
 * [[SPDX]] Linux Foundation: SPDX License List, https://spdx.org/licenses/
+* https://www.rssboard.org/rss-autodiscovery
+* https://datatracker.ietf.org/doc/html/draft-ietf-atompub-autodiscovery
+
