@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/record-associations*
-^|A |Implementations SHOULD use the record `properties.keywords` property to provide free form keywords associated with the current record.
+^|A |Implementations SHOULD use the record `properties.keywords` property to provide free-form keywords associated with the current record.
 ^|B |Implementations SHOULD use the record `properties.themes` property to enumerate 1..n objects of concepts and their respective knowledge organization system/controlled vocabulary associated with the current record.
 |===

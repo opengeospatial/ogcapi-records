@@ -73,8 +73,7 @@ The following table lists the set of properties, called _**core queryables**_, t
 |type |The nature or genre of the resource.
 |title |A human-readable name given to the resource.
 |description |A free-text description of the resource.
-|keywords |A list of keywords or tags associated with the resource.
-|keywordsCodespace |A reference to a controlled vocabulary used for the keywords property.
+|keywords |A list of free-form keywords or tags associated with the resource.
 |language |The natural language used for textual values.
 |externalId |An identifier for the resource assigned by an external entity.
 |created |The date the resource was created.
@@ -133,8 +132,7 @@ Depending on the deployment pattern, the collection may provide a link to each i
 |_**itemType**_ |Fixed to the value "record".
 |_**crs**_ |A list of coordinate reference systems used for spatial-temporal values.
 |type |Fixed to the value "Collection".
-|keywords |A list of keywords or tags associated with the collection.
-|keywordsCodespace |A reference to a controlled vocabulary used for the keywords property.
+|keywords |A list of free-form keywords or tags associated with the collection.
 |language |The natural language used for textual values.
 |created |The date the collection was created.
 |updated |The more recent date on which the collection was changed.

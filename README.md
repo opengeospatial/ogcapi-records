@@ -29,8 +29,7 @@ The record building block defines the core schema of a catalogue record.  It inc
 |type |**M** |The nature or genre of the resource.
 |title |**M** |A human-readable name given to the resource.
 |description |O |A free-text description of the resource.
-|keywords |O |A list of keywords or tag associated with the resource.
-|keywordsCodespace |O |A reference to a controlled vocabulary used for the keywords property.
+|keywords |O |A list of free-form keywords or tag associated with the resource.
 |language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
 |externalId |O |An identifier for the resource assigned by an external entity.
 |created |O |The date the resource was created.

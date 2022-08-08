@@ -444,15 +444,10 @@ components:
               type: array
               description: |-
                 The topic or topics of the resource. Typically represented
-                using keywords, tags, key phrases, or classification codes.
-                Recommended best practice is to use a controlled vocabulary.
+                using free-form keywords, tags, key phrases, or classification
+                codes.
               items:
                 type: string
-            keywordsCodespace:
-              type: string
-              description: |-
-                A reference to a controlled vocabulary used for the keywords.
-              format: uri
             language:
               type: string
               description: |-

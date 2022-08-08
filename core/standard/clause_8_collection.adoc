@@ -32,8 +32,7 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 |_**itemType**_ |**required** |Fixed to the value "record".
 |_**crs**_ |optional |A list of coordinate reference systems used for spatial-temporal values.
 |type |**required** |The nature or genre of the resource. Fixed to "Collection".
-|keywords |optional |A list of keywords or tags associated with the collection.
-|keywordsCodespace |optional |A reference to a controlled vocabulary used for the keywords property.
+|keywords |optional |A list of free-form keywords or tags associated with the collection.
 |language |optional |The natural language used for textual values (i.e. titles, descriptions, etc) of a collection.
 |created |optional |The date the collection was created.
 |updated |optional |The more recent date on which the collection was changed.
