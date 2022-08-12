@@ -115,36 +115,36 @@ Single record:
 The ArcGIS Pro CSW Client has been updated to include initial support for OGC API Records. Details may be found on the [Geoportal Server wiki](https://github.com/Esri/geoportal-server-catalog/wiki/OGC_API_Records), the Visual Studio project to build the Pro addin is available in the [Components](https://github.com/Esri/geoportal-server-catalog/tree/master/components/CswClient/Pro/CswClient) section of the Geoportal Server github repo.
 
 ### Geoportal Server OGC API Records provider
-Esri Geoportal Server 2.6.4 [public sandbox](https://geoss.esri.com/geoportal_264) has now been extended with a work-in-progress implementation of the OGC Records API.
+Esri Geoportal Server 2.6.4 [public sandbox](https://gpt.geocloud.com/geoportal2) has now been extended with a work-in-progress implementation of the OGC Records API.
 
 Landing page:
 
-* https://geoss.esri.com/ogcrecords
+* https://gpt.geocloud.com/ogcrecords
 
 API document:
 
-* https://geoss.esri.com/ogcrecords/api
+* https://gpt.geocloud.com/ogcrecords/api
 
 Conformance page:
 
-* https://geoss.esri.com/ogcrecords/conformance
+* https://gpt.geocloud.com/ogcrecords/conformance
 
 List of catalogues:
 
-* https://geoss.esri.com/ogcrecords/collections
+* https://gpt.geocloud.com/ogcrecords/collections
 
-Describe geoportal_264 catalogue:
+Describe geoportal2 catalogue:
 
-* TODO - geoss.esri.com/ogcrecords/master 
+* TODO - gpt.geocloud.com/ogcrecords/master 
 
 Queryables:
 
-* TODO - geoss.esri.com/ogcrecords/collections/master/queryables
+* TODO - gpt.geocloud.com/ogcrecords/collections/master/queryables
 
 Records:
 
-* https://geoss.esri.com/ogcrecords/collections/master/items
-* https://geoss.esri.com/ogcrecords/collections/master/items/89ed638c5eed41df9fe25473677d9df4 - get individual item based on item identifier
+* https://gpt.geocloud.com/ogcrecords/collections/master/items
+* https://gpt.geocloud.com/ogcrecords/collections/master/items/456688037ef0400fa46c87a3bec3a893 - get individual item based on item identifier
 
 ## GeoNetwork opensource
 
