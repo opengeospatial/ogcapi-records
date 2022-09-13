@@ -54,9 +54,9 @@ Records:
 
 * https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63
 
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2022-01-11T00:00:00/2022-01-21T00:00:00
+* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2022-01-20T00:00:00/2022-02-15T00:00:00
 
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2022-01-11T00:00:00/2022-01-21T00:00:00&filter-lang=CQL&filter=passDirection%3D%27Ascending%27
+* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2022-01-20T00:00:00/2022-02-15T00:00:00&filter-lang=CQL&filter=passDirection%3D%27Ascending%27
 
 ## pygeoapi
 
