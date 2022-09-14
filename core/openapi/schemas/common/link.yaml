@@ -24,3 +24,13 @@ properties:
       In combination with a templated href, the variables section should
       provide enough information to bind to the target resource (e.g. a WMS).
     type: object
+  created:
+    type: string
+    description:
+      Date of creation of the resource pointed to by the link.
+    format: date-time
+  updated:
+    type: string
+    description:
+      Most recent date on which the resource pointed to by the link was changed.
+    format: date-time

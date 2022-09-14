@@ -37,8 +37,8 @@ Other encoding are allow but are not described in this document.
 |===
 |Queryables |Requirement |Description |GeoJSON key
 |recordId |**required** |A unique record identifier assigned by the server. |id
-|recordCreated |optional |The date this record was created in the server. |properties.recordCreated
-|recordUpdated |optional |The most recent date on which the record was changed. |properties.recordUpdated
+|created |optional |The date this record was created in the server. |properties.created
+|updated |optional |The most recent date on which the record was changed. |properties.updated
 |===
 
 [#core-queryables-resource-table,reftext='{table-caption} {counter:table-num}']
@@ -55,8 +55,6 @@ Other encoding are allow but are not described in this document.
 |keywords |optional |A list of free-form keywords or tags associated with the resource. |properties.keyword
 |language |optional |The natural language used for textual values (i.e. titles, descriptions, etc) of a resource. |properties.language
 |externalIds |optional |One or more identifiers for the resource assigned by an external entity. |properties.externalIds
-|created |optional |The date the resource was created. |properties.created
-|updated |optional |The more recent date on which the resource was changed. |properties.updated
 |themes |optional |A knowledge organization system used to classify the resource. |properties.themes
 |formats |optional |A list of available distributions for the resource. |properties.formats
 |providers |optional |A list of providers qualified by their role in association to the record. |properties.providers
@@ -165,7 +163,7 @@ Templated links may also be used to bind to resources that may require additiona
 
 This specification extends the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] to include substitution variables who values are filled in at runtime prior to resolving the link.
 
-The https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[link schema] is extended with the addition of two properties names `templated` and `variables`.  The `templated` property is a boolean that is used to indicate the the URL of the link (i.e. `href`) is a template and contains substitution variables.  The `variables` property uses https://json-schema.org/draft/2020-12/json-schema-validation.html[JSON-Schema fragments] to define the characteristics of each substitution variable referenced in the templated link URL.
+The https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[link schema] is extended with the addition of two properties named `templated` and `variables`.  The `templated` property is a boolean that is used to indicate the the URL of the link (i.e. `href`) is a template and contains substitution variables.  The `variables` property uses https://json-schema.org/draft/2020-12/json-schema-validation.html[JSON-Schema fragments] to define the characteristics of each substitution variable referenced in the templated link URL.
 
 include::requirements/record-core/REQ_templated-link.adoc[]
 
@@ -175,6 +173,10 @@ include::requirements/record-core/REQ_templated-link.adoc[]
 ----
 include::../examples/json/templated-link.json[]
 ----
+
+==== Resource timestamps
+
+A <<fix.me,record>> contains information for accessing the resource described by the record which is encoded in the links section.  Since a resource may have multiple representations there may be multiple links pointing to each represention of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[link schema] is extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
 
 [[sc_language_negotiation]]
 ==== Language negotiation
