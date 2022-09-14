@@ -45,12 +45,12 @@ It is anticipated that this _core_ set of properties will be extended to describ
 
 Although this document does not mandate any particular encoding for a record, the document does define conformance classes for two encodings:
 
-* A <<record_json_encoding,GeoJSON>> record encoding,
-* and an <<record_html_encoding,HTML>> encoding.
+* A <<requirements-class-geojson-clause,GeoJSON>> record encoding,
+* and an <<requirements-class-html-clause,HTML>> encoding.
 
 Other encodings are allowed but are not described in this document.
 
-Accessing collections of records deployed as static files is described in the <<crawlable-record-deployment,Crawlable records deployment>> clause.
+Accessing collections of records deployed as static files is described in the <<clause-crawlable-catalogue,Crawlable records deployment>> clause.
 
 Accessing collections of records through the API defined in this document is described in the <<records-access,Records access>> and <<record-access,Record access>> sections.
 

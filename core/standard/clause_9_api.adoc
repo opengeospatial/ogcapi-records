@@ -315,6 +315,7 @@ single record is accessed (path: `/collections/{collectionId}/items/{recordId}`)
 include::../examples/json/record.json[]
 ----
 
+[[record-access]]
 === Record access
 
 ==== Operation
