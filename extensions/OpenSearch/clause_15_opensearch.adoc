@@ -218,7 +218,6 @@ The following table maps the <<query-response,core query response properties>> t
 |`title`              |`atom:entry/atom:title`
 |`description`        |`atom:entry/atom:summary`
 |`keywords`           |`atom:entry/atom:category`
-|`keywordsCodespace`  |`atom:entry/atom:category/@scheme`
 |`language`           |`dct:language`
 |`externalId`         |n/a`
 |`created`            |`atom:entry/atom:published`

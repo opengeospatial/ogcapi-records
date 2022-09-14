@@ -130,7 +130,7 @@ The following JSON-Schema fragment illustrates how the feature collections objec
           type: string
           format: date-time
         keywords:
-          description: A list of keywords or tag associated with the collection
+          description: A list of free-form keywords or tag associated with the collection
           type: array
           items:
            type: string

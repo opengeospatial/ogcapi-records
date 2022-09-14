@@ -21,7 +21,7 @@ This standard also identifies eight (8) building block requirements classes:
 * <<clause-records-api,Records API>>
 * <<clause-sorting,Sorting>>
 * <<clause-cql-filter,Filtering using the Common Query Language (CQL2)>>
-* <<requirements-class-json-clause,JSON-Record>>
+* <<requirements-class-geojson-clause,JSON-Record>>
 * <<requirements-class-html-clause,HTML-Record>>
 * <<clause-autodiscovery,Autodiscovery>>
 
@@ -69,10 +69,10 @@ The <<clause-local-resources-catalogue,Local Resources Catalogue>>, <<clause-loc
 | |<<clause-crawlable-catalogue,_**Crawlable**_>> |<<clause-searchable-catalogue,_**Searchable**_>> |<<clause-local-resources-catalogue,_**Local Resources catalogue**_>>
 |<<clause-record-core,Record Core>> |Mandatory |Mandatory |Mandatory
 |<<clause-record-collection,Record collection>> |_Optional_ |Mandatory |Mandatory
-|<<clause-record-api,Records API>> |_Optional_ |Mandatory |Mandatory
+|<<clause-records-api,Records API>> |_Optional_ |Mandatory |Mandatory
 |<<clause-sorting,Sorting>> |_Optional_ |_Optional_ |_Optional_
-|<<clause-record-filter,CQL2>> |_Optional_ |_Optional_ |_Optional_
-|<<requirements-class-json-clause,JSON-Record>> |_Optional_ |_Optional_ |_Optional_
+|<<clause-cql-filter,CQL2>> |_Optional_ |_Optional_ |_Optional_
+|<<requirements-class-geojson-clause,JSON-Record>> |_Optional_ |_Optional_ |_Optional_
 |<<requirements-class-html-clause,HTML-Record>> |_Optional_ |_Optional_ |_Optional_
 |===
 

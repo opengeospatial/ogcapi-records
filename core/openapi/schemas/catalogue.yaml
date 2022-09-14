@@ -20,18 +20,9 @@ allOf:
       type: array
       description:
         The topic or topics of the catalogue. Typically represented using
-        keywords, tags, key phrases, or classification codes. Recommended
-        best practice is to use a controlled vocabulary.
+        free-form keywords, tags, key phrases, or classification codes.
       items:
         type: string
-    keywordsCodespace:
-      type: string
-      description:
-        A reference to a controlled vocabulary used for the keywords
-        parameter.  If a reference is not provided then the value of
-        the keyword parameter should be considered a free list of
-        tokens associated with the record.
-      format: uri
     language:
       type: string
       description:

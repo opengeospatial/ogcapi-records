@@ -42,9 +42,6 @@ properties:
     type: array
     items:
       type: string
-  keywordsCodespace:
-    type: string
-    format: uri
   language:
     type: string
     default: en
