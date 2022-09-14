@@ -10,6 +10,7 @@ The core API for a catalogue is defined by the http://docs.ogc.org/is/17-069r3/1
 
 include::requirements/records-api/REQ_resource-name-mapping.adoc[]
 
+[[landing-page]]
 === API landing page
 
 include::requirements/records-api/REQ_landing-page-op.adoc[]

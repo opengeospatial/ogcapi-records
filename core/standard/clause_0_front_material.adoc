@@ -42,11 +42,11 @@ The search API allows collections of records to be searched using logically conn
 |===
 |Resource |Path |HTTP method |Document reference
 |Landing page |`/` |GET |<<landing-page,API landing page>>
-|Conformance declaration |`/conformance` |GET |<<conformance_class,Declaration of Conformance Classes>>
-|Record collections |`/collections` |GET |<<collections-access,Collections Access>>
-|Record collection |`/collections/{collectionId}` |GET |<<clause-core-record-collection,Record Collection>>
-|Records |`/collections/{collectionId}/items` |GET |<<records-access,Records Access>>
-|Record |`/collections/{collectionId}/items/{recordId}` |GET |<<record-access,Record Access>>
+|Conformance declaration |`/conformance` |GET |<<conformance_class,Conformance>>
+|Record collections |`/collections` |GET |<<record-collections,Record collections>>
+|Record collection |`/collections/{collectionId}` |GET |<<clause-record-collection,Record Collection>>
+|Records |`/collections/{collectionId}/items` |GET |<<records-access,Records access>>
+|Record |`/collections/{collectionId}/items/{recordId}` |GET |<<clause-record-core,Record Core>>
 |===
 
 A special use case of the catalogue deployed as an API is the _local resources catalogue_.  A local resources catalogue is a catalogue deployed to make local resources offered by a provider searchable using the catalogue information model and API.  An example of a local resources catalogue is the `/collections` endpoint of http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data] or http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].  Adding catalogue capabilities to this endpoint allows a client to search for collections that satisfy a specified filter expression.  Any API endpoint whose function is to provide a list of resources, such as the `/collections` endpoint, can be extended to be a local resources catalogue.
