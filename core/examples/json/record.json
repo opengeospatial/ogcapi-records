@@ -32,8 +32,8 @@
     ]
   },
   "properties": {
-    "created": "2021-02-08",
-    "updated": "2021-02-08",
+    "created": "2021-02-08T00:00:00Z",
+    "updated": "2021-02-08T00:00:00Z",
     "type": "dataset",
     "title": "Total Ozone - daily observations",
     "description": "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily",
@@ -162,8 +162,8 @@
       "type": "text/html",
       "title": "Web Accessible Folder (WAF)",
       "href": "https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1",
-      "created": "2015-01-23",
-      "updated": "2015-01-23"
+      "created": "2015-01-23T00:00:00Z",
+      "updated": "2015-01-23T00:00:00Z"
     },
     {
       "rel": "search",
@@ -176,8 +176,8 @@
       "type": "application/zip",
       "title": "Static dataset archive file",
       "href": "https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip",
-      "created": "2015-01-23",
-      "updated": "2015-01-23"
+      "created": "2015-01-23T00:00:00Z",
+      "updated": "2015-01-23T00:00:00Z"
     },
     {
       "rel": "service",
