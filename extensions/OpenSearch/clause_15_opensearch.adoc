@@ -211,8 +211,8 @@ The following table maps the <<query-response,core query response properties>> t
 |===
 |Core query response property |ATOM entry element
 |`recordId`           |`atom:entry/atom:id`
-|`recordCreated`      |`dct:issued`
-|`recordUpdated`      |`dct:modified`
+|`created`            |`atom:entry/atom:published`
+|`updated`            |`atom:entry/atom:modified`
 |`links`              |`atom:link`
 |`type`               |`dc:type`
 |`title`              |`atom:entry/atom:title`
@@ -220,8 +220,6 @@ The following table maps the <<query-response,core query response properties>> t
 |`keywords`           |`atom:entry/atom:category`
 |`language`           |`dct:language`
 |`externalId`         |n/a`
-|`created`            |`atom:entry/atom:published`
-|`updated`            |`atom:entry/atom:modified`
 |`publisher`          |`atom:entry/atom:creator`
 |`themes`             |`atom:entry/atom:category`
 |`formats`            |`atom/entry/atom:link[@rel="enclosure"]/@type`
