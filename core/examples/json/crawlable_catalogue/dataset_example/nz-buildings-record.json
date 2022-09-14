@@ -32,8 +32,8 @@
     },
     "properties":
     {
-        "created": "2021-08-17",
-        "updated": "2021-08-17",
+        "created": "2021-08-17T00:00:00Z",
+        "updated": "2021-08-17T00:00:00Z",
         "type": "dataset",
         "title": "New Zealand Building Outlines",
         "description": "This dataset provides current outlines of buildings within mainland New Zealand captured from the latest aerial imagery. A building outline is a 2D representation of the roof outline of a building which has been classified from LINZ aerial imagery using a combination of automated and manual processes to extract and refine a building roof outline. Building outlines observed in aerial imagery larger than or equal to 10 square meters are captured in this dataset, and may include structures such as garages and large sheds. **Data vintage** This dataset shows the most recent set of building outlines extracted from the LINZ aerial imagery available on the LINZ Data Service. Current coverage includes nearly all regions of New Zealand, except parts of rural Auckland, remote parts of Bay of Plenty, Tasman and the Southern Alps, as well as Fiordland, Stewart Island and the Chatham Islands. This dataset will be updated and expanded as new aerial imagery becomes available. Since aerial imagery is flown only every few years in each region of the country, building outlines only reflect those buildings observed at the date of this aerial imagery capture, and may not reflect buildings constructed after this time period. Please refer to the [NZ Building Outlines Data Dictionary](https://nz-buildings.readthedocs.io/en/latest/introduction.html) for detailed metadata and information about this dataset.",
