@@ -62,6 +62,7 @@ Other encoding are allow but are not described in this document.
 |providers |optional |A list of providers qualified by their role in association to the record. |properties.providers
 |license |optional |A legal document under which the resource is made available. |properties.license
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
+|collection |optional |The identifier of the collection the resource belongs to. |properties.collection
 |links |optional |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
 |===
 

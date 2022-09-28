@@ -111,6 +111,7 @@
       }
     }
   },
+  "collection": "ozone",
   "links": [
     {
       "rel": "alternate",

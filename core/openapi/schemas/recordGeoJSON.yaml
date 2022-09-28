@@ -162,6 +162,10 @@ properties:
         description:
           A statement that concerns all rights not addressed by the license
           such as a copyright statement.
+      collection:
+        type: string
+        description:
+          The identifier of the collection of the resource.
   links:
     type: array
     description:
