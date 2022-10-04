@@ -1,0 +1,9 @@
+[req_opensearch_descriptiondoc-response-results-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/opensearch/descriptiondoc-results-links*
+^|A |The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-description-document[OpenSearch description document] SHALL include one https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-url-element[Url element] for each record access end point (path: `/collections/{collectionId}/items`) and record representation. 
+^|B |The value of the `type` attribute SHALL be the media type that identifies the representation.
+^|C |The value of the `rel` attribute SHALL be `results`.
+^|D |The value of the `template` attribute SHALL be the URL to the `items` endpoint (path: `/collections/{collectionId}/items`) optionally appended with query parameters (see <<parameters-section,here>> and <<sc-os-query-parameters,here>>) and <<sc-substitsubstitution-variable,substitution variables>>.
+|===

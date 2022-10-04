@@ -1,0 +1,45 @@
+[[conformance_class]]
+== Conformance
+
+=== Overview
+
+Conformance with this standard shall be checked using the tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+
+The standardization targets of all conformance classes are "Web APIs".
+
+OGC API - Common provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to OGC API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of OGC API - Common.
+
+The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+
+[[requirements-classes]]
+=== Conformance classes
+
+This standard identifies two (2) conformance classes:
+
+* <<clause-opensearch,OpenSearch>>
+* <<clause-record-collection,ATOM>>
+
+The <<clause-opensearch,_OpenSearch_>> conformance class defines the requirements for retrieving a https://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part4-opensearch/searchRetrieve-v1.0-os-part4-opensearch.html#_Toc313525762[description document] from the server and also defines a set of query parameters that can be mapped to the https://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part4-opensearch/searchRetrieve-v1.0-os-part4-opensearch.html#_Toc313525759[OpenSearch query parameters].
+
+The <<requirements-class-atom-clause,_ATOM_>> conformance class defines requirements for mapping the content of a catalogue record into an https://datatracker.ietf.org/doc/html/rfc4287#section-4.1.2[ATOM entry].
+
+=== Implementations
+
+Implementors of this specification must implement the <<rc_opensearch,OpenSearch>> conformance class and may implement the <<rc_atom,ATOM>> conformance class.
+
+=== Conformance testing
+
+Conformance with this standard shall be checked using all the relevant tests
+specified in <<ats,Annex A>> of this document. The framework, concepts, and
+methodology for testing, and the criteria to be achieved to claim conformance
+are specified in the OGC Compliance Testing Policies and Procedures and the
+OGC Compliance Testing web site.
+
+[#conf_class_uris,reftext='{table-caption} {counter:table-num}']
+.Conformance class URIs
+[cols="30,70",options="header"]
+|===
+|Conformance class |URI
+|<<ats_opensearch,OpenSearch>> |http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/opensearch
+|<<ats_atom,ATOM>> |http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/atom
+|===
