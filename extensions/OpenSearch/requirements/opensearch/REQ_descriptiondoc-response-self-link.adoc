@@ -1,0 +1,6 @@
+[[req_opensearch_descriptiondoc-response-self-link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/opensearch/descriptiondoc-response-self-link*
+^|A |The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-description-document[OpenSearch description document] SHALL include one https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-url-element#[Url element] that points to the canonical representation (relation: `self`) of this OpenSearch description document.
+|===

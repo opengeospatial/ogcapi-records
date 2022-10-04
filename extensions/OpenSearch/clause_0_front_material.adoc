@@ -1,0 +1,49 @@
+[big]*i.     Abstract*
+
+The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, etc.), but define resource-centric APIs that take advantage of modern web development practices.
+
+This document defines an extension to the OGC API for Records standard to add 
+an OpenSearch interface to the API which is a protocol that is still used
+extensively by some communities with the Opengeospatial Consortium.
+
+The OpenSearch protocol defines an XML description document describing how to request search results from a service. If these search results are encoded in ATOM or RSS, this allows results from multiple services to be combined.
+
+The OpenSearch protocol used by OGC API - Records is based on a protocol that was launched in 2005 by A9.com, an Amazon subsidiary.  In 2021, Amazon.com launched the open source OpenSearch search engine project, unrelated to the OpenSearch launched by A9.com aside from repurposing the name.  The two projects will continue to independently co-exist, though the search protocol (now hosted [here](https://github.com/dewitt/opensearch)) has largely remained stable and unchanged for over ten years, with no significant updates expected on the horizon.  Neither of these two efforts is related to the Open Search Foundation project found [here](https://opensearchfoundation.org/).
+
+Because of this shift in status of OpenSearch, issolating it in its own part of the OGC API Records suite of standards would allow the related conformance class(es) to be easily deprecated or renamed in the future.
+
+[[keywords]]
+[big]*ii.    Keywords*
+
+The following are keywords to be used by search engines and document catalogues.
+
+ogcdoc, OGC document, OGC API, catalogue, record, records, resource, metadata, discovery, OpenSearch, CSW, API, GeoJSON, HTML, schema.org, JSON-LD
+
+[[preface]]
+[big]*iii.   Preface*
+
+*OGC Declaration*
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium Inc. shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+[[submitting_organizations]]
+[big]*iv.    Submitting organizations*
+
+The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
+
+* CubeWerx Inc.
+* Meteorological Service of Canada
+* Geonovum
+
+[big]*v.     Submitters*
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+^|Name  ^|Affiliation
+| Panagiotis (Peter) A. Vretanos (editor) | CubeWerx Inc.
+| Tom Kralidis (editor) | Meteorological Service of Canada
+| Linda van den Brink | Geonovum
+|===

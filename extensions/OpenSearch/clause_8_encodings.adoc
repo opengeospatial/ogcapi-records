@@ -1,0 +1,66 @@
+[[clause-encodings]]
+== Encodings
+
+[[requirements-class-atom-clause]]
+=== Requirements Class ATOM
+
+==== Overview
+
+The following requirements apply to an OGC API - Records implementation when the following conditions apply:
+
+. The API advertises conformance to the ATOM Conformance Class
+. The client negotiates to an ATOM format
+
+The ATOM Requirements Class restricts requirements defined in the `Core` Requirements Class by imposing encoding-specific requirements. At this time, these additional requirements only apply to the XML response payloads. The sections below identify the scope of each new requirement and the `Core` requirements which lay within each scope.
+
+include::requirements/requirements_class_atom.adoc[]
+
+==== Common
+
+This section covers the requirements inherited from the API - Common standard. Its scope includes responses for the following operations:
+
+* `{root}/`: Landing Page
+* `{root}/api`: API Description
+* `{root}/conformance`: Conformance Classes
+* `{root}/collections`: Collections
+* `{root}/collections/{collectionId}`: Collection Information
+
+It is necessary to advertise conformance with this Requirements Class.
+
+include::requirements/atom/REQ_atom-conformance.adoc[]
+
+include::requirements/atom/REQ_common-content.adoc[]
+
+[#xml_content,reftext='{table-caption} {counter:table-num}']
+.Media types and XML elements for each common resource[[table_3]]
+[cols="30,35,35",options="header"]
+|===
+|Resource |Path |XML root element
+|Landing page |`/` |`core:LandingPage`
+|Conformance declaration |`/conformance` |`core:ConformsTo`
+|Collections        |`/collections` |`core:Collections`
+|Record collection +
+(resource collection with `itemType=record`) |`/collections/{collectionId}` |`core:Collections`, with just one entry for the collection `collectionId`
+|===
+
+[[record_atom_encoding]]
+==== Record
+
+In addition to HTML and GeoJSON, a significant volume of record data, especially in the Earth Observation domain, is available in XML-based formats, notably https://tools.ietf.org/html/rfc4287[ATOM]. Therefore, this standard specifies requirements classes for https://tools.ietf.org/html/rfc4287[ATOM].
+
+include::requirements/atom/REQ_media-type.adoc[]
+
+include::requirements/atom/REQ_feed-extension-elements.adoc[]
+
+include::requirements/atom/REQ_content.adoc[]
+
+[#atom_content,reftext='{table-caption} {counter:table-num}']
+.Media types and XML elements for each resource[[table_3]]
+[cols="30,35,35",options="header"]
+|===
+|Resource |Path |XML root element
+|Records |`/collections/{collectionId}/items` |`atom:feed`
+|Record |`/collections/{collectionId}/items/{recordId}` |`atom:entry`
+|===
+
+include::recommendations/atom/PER_foreign-markup.adoc[]

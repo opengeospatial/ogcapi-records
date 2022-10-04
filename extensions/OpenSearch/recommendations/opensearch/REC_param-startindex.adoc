@@ -1,0 +1,6 @@
+[[rec_opensearch_param-startIndex]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-startIndex*
+^|A |Servers SHOULD support the start index (`startIndex`) parameter for the search operation (method: GET, path: `/collections/{collectionId}/items`).
+|===

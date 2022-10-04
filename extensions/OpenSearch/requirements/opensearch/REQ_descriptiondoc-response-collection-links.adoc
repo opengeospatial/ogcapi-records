@@ -1,0 +1,8 @@
+[[req_opensearch_descriptiondoc-response-collection-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/opensearch/descriptiondoc-collection-links*
+^|A |The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-description-document[OpenSearch description document] SHALL include one https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-url-element[Url element] for each record collection (path: `/collections/{collectionId}`, `itemType=record`). 
+^|B |The value of the `rel` attribute SHALL be `collection`.
+^|C |The value of the `template` attribute SHALL be the URL to the record collection (path: `/collections/{collectionId}`).
+|===
