@@ -14,6 +14,11 @@
          "type": "string",
          "format": "date"
       },
+      "area": {
+         "title": "Spatial area of the resource",
+         "description": "This is a synthetic sortable that the server computes on the fly based on the spatial extent of the resource.  Resources without spatial extent have zero area.",
+         "type": "number"
+      },
       "extent": {
          "title": "Spatio-Temporal Extent",
          "description": "The spatio-temporal coverage of the resource.",

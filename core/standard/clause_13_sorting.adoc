@@ -39,7 +39,24 @@ In an OpenAPI 3.0 document, the Sortables resource has the following schema:
 include::../openapi/responses/Sortables.yaml[]
 ----
 
+=== Declaring default sort order
+
+This specification does not mandate a specific default sort order for records
+fetched from a searchable catalogue.  However, servers can declare a default
+sort order.
+
+include::requirements/sorting/REQ_defaultSortOrder-definition.adoc[]
+
 === Examples
+
+[#defaultSortOrder-example,reftext=`Default Sort Order Example`]
+.Default Sort Order Example
+[source,json]
+----
+include::../examples/json/defaultSortOrder.json[]
+----
+
+This examples indicates that by default, response records are sorted by the `updated` sortable and the `area` sortable with the most recent record with the largest area being presented first.
 
 [#sortables-example,reftext=`Sortables Example`]
 .Sortables Example
@@ -61,3 +78,5 @@ include::../examples/json/sortables.json[]
 ----
 .../collections/mycat/items?...&sortby=%2Bextent&...
 ----
+
+
