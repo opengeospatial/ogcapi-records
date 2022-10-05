@@ -17,5 +17,5 @@
 ^|C |If a listed sortable is prepended with a `+` this SHALL indiciate that the sort order is ascending.
 ^|D |If a listed sortable is prepended with a `-` this SHALL indicate that the sort order is descending.
 ^|E |If a listed sortables is not prepended with a `+` or `-` then the sort order SHALL be assumed to be ascending.
-^|F |If the `defaultSortOrder` member is not present in the collection response then no sorting information can be assumed.
+^|F |If the `defaultSortOrder` member is not present in the collection response then no sorting information SHALL be assumed.
 |===
