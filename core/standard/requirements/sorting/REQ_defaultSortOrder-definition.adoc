@@ -14,11 +14,8 @@
 ----
 
 ^|B |Each string in the array SHALL be the name of a sortable.
-^|C |If a listed sortable is appended with a `+` this SHALL indiciate that the sort order is ascending.
-^|D |If a listed sortable is appended with a `-` this SHALL indicate that the sort order is descending.
-^|E |If a listed sortables is not appneded with a `+` or `-` then the sort order shall be assumed to be ascending.
+^|C |If a listed sortable is prepended with a `+` this SHALL indiciate that the sort order is ascending.
+^|D |If a listed sortable is prepended with a `-` this SHALL indicate that the sort order is descending.
+^|E |If a listed sortables is not prepended with a `+` or `-` then the sort order shall be assumed to be ascending.
 ^|F |If the `defaultSortOrder` member is not present in the collection response then no sorting information can be assumed.
 |===
-
-
-

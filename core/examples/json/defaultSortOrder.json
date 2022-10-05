@@ -3,7 +3,7 @@
     "itemType": "record",
     "title": "Sentinel-1 Catalogue",
     "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
-    "defaultSortOrder": [ "updated-", "area-"],
+    "defaultSortOrder": [ "-updated", "-area"],
     "links": [
         {
             "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items",
