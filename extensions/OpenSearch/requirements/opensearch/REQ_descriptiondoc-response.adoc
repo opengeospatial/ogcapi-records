@@ -1,0 +1,8 @@
+[[req_opensearch_descriptiondoc-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/opensearch/descriptiondoc-response*
+^|Condition |The negotiated response representation is `application/opensearchdescription+xml`.
+^|A |A successful execution of the operation SHALL be reported as a response with a HTTP status code 200.
+^|B |The response SHALL contain a valid https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-description-document[OpenSearch description document].
+|===

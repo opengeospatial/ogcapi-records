@@ -1,0 +1,6 @@
+[[req_opensearch_descriptiondoc-op]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/opensearch/descriptiondoc-op*
+^|A |The HTTP GET operation SHALL be supported at the <<api-definition,`service-desc`>> endpoint specified in the server's <<landing-page,landing page>>.
+|===

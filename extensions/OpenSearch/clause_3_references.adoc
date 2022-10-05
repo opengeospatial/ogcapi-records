@@ -1,0 +1,9 @@
+== References
+The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
+
+* [[rfc4287]] Nottingham, M., Sayre, R.: IETF RFC 4287, *The Atom Syndication Format*, https://tools.ietf.org/html/rfc4287[RFC 4287]
+* [[rfc6570]] Gregorio, J., Fielding, R., Hadley, M., Nottingham, M., Orchard, D.: IETF RFC 6570, *URI Template*, https://tools.ietf.org/html/rfc6570[RFC 6570]
+* [[rfc8288]] Nottingham, M.: IETF RFC 8288, *Web Linking*, https://tools.ietf.org/rfc/rfc8288.txt[RFC 8288]
+* [[schema.org]] *Schema.org*: https://schema.org/docs/schemas.html[Schema.org]
+* [[xml]] W3C, *Extensible Markup Language (XML) 1.0 (Fifth Edition)*, November 2008, https://www.w3.org/TR/xml/
+* [[opensearch]] OASIS, https://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part4-opensearch/searchRetrieve-v1.0-os-part4-opensearch.html#_Toc313525766[searchRetrieve: Part 4. APD Binding for OpenSearch Version 1.0]
