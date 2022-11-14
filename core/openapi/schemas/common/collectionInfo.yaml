@@ -32,3 +32,10 @@ properties:
       type: string
     default:
       - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  defaultSortOrder:
+    description: |-
+      an array of sortables, optionally prepended with a plus or minus sign,
+      indicating the default sort order
+    type: array
+    items:
+      type: string
