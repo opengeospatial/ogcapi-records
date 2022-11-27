@@ -11,24 +11,63 @@
     "themes": [
         {
             "concepts": [
-                "dobson",
-                "brewer",
-                "vassey",
-                "pion",
-                "microtops",
-                "spectral",
-                "hoelper",
-                "saoz",
-                "filter"
+                {
+                    "name": "dobson",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson"
+                },
+                {
+                    "name": "brewer",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer"
+                },
+                {
+                    "name": "vassey",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_vassey"
+                },
+                {
+                    "name": "pion",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_pion"
+                },
+                {
+                    "name": "microtops",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_microtops"
+                },
+                {
+                    "name": "spectral",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_spectral"
+                },
+                {
+                    "name": "hoelper",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_hoelper"
+                },
+                {
+                    "name": "saoz",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_saoz"
+                },
+                {
+                    "name": "filter",
+                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_filter"
+                }
             ],
             "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
         },
         {
             "concepts": [
-                "atmosphericComposition",
-                "pollution",
-                "observationPlatform",
-                "rocketSounding"
+                {
+                    "name": "atmosphericComposition",
+                    "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_atmosphericComposition"
+                },
+                {
+                    "name": "pollution",
+                    "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_pollution"
+                },
+                {
+                    "name": "observationPlatform",
+                    "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_observationPlatform"
+                },
+                {
+                    "name": "rocketSounding",
+                    "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_rocketSounding"
+                }
             ],
             "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"
         }

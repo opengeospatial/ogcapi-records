@@ -54,7 +54,17 @@ allOf:
               system. it is recommended that a resolvable URI be used
               for each entity/concept identifier.
             items:
-              type: string
+              type: object
+              properties:
+                  name:
+                    type: string
+                    description: A human readable name for the concept.
+                  url:
+                    type: string
+                    format: uri
+                    description: A URI providing further description of the concept.
+              required:
+                - name
           scheme:
             type: string
             description:
