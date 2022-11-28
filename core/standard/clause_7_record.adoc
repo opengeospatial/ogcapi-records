@@ -72,10 +72,10 @@ include::recommendations/record-core/PER_additional-queryables-record.adoc[]
 [[sc_keywords_and_themes]]
 ==== Keywords and Themes
 
-A record allows for one ``properties.keywords`` and 0..n ``properties.themes``
+A record allows for one ``properties.keywords`` and one to many ``properties.themes``
 properties.  The following provides an example of using keywords for free
 form terms (e.g. tags) as well as themes to articulate terms from formal
-vocabularies.
+vocabularies or classification systems.
 
 [#keywords-themes-example,reftext=`Keywords and themes Example`]
 .Keywords and themes Example
