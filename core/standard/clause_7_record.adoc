@@ -107,7 +107,7 @@ A record may contain a `links` section.  This `links` section many contain navig
 
 Navigation links are meant to encode relationships between catalogue entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, and navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
 
-include::recommendations/record-core/REC_record-links.adoc[]
+include::requirements/record-core/REQ_record-links.adoc[]
 
 Links in the `links` section may also encode canoncial URIs for record properties such as `type` and `license`.
 
