@@ -129,6 +129,9 @@ properties:
               items:
                 type: object
                 properties:
+                  id:
+                    type: string
+                    description: An identifier for the concept.
                   name:
                     type: string
                     description: A human readable name for the concept.
