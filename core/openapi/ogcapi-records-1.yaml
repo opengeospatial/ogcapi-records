@@ -501,7 +501,20 @@ components:
                        knowledge system. it is recommended that a resolvable
                        URI be used for each entity/concept identifier.
                     items:
-                      type: string
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: An identifier for the concept.
+                        name:
+                          type: string
+                          description: A human readable name for the concept.
+                        url:
+                          type: string
+                          format: uri
+                          description: A URI providing further description of the concept.
+                      required:
+                        - name
             formats:
               type: array
               description: A list of available distributions of the resource.
