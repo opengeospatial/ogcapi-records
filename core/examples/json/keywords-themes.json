@@ -12,39 +12,39 @@
         {
             "concepts": [
                 {
-                    "name": "dobson",
+                    "id": "dobson",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson"
                 },
                 {
-                    "name": "brewer",
+                    "id": "brewer",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer"
                 },
                 {
-                    "name": "vassey",
+                    "id": "vassey",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_vassey"
                 },
                 {
-                    "name": "pion",
+                    "id": "pion",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_pion"
                 },
                 {
-                    "name": "microtops",
+                    "id": "microtops",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_microtops"
                 },
                 {
-                    "name": "spectral",
+                    "id": "spectral",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_spectral"
                 },
                 {
-                    "name": "hoelper",
+                    "id": "hoelper",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_hoelper"
                 },
                 {
-                    "name": "saoz",
+                    "id": "saoz",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_saoz"
                 },
                 {
-                    "name": "filter",
+                    "id": "filter",
                     "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_filter"
                 }
             ],
@@ -53,19 +53,19 @@
         {
             "concepts": [
                 {
-                    "name": "atmosphericComposition",
+                    "id": "atmosphericComposition",
                     "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_atmosphericComposition"
                 },
                 {
-                    "name": "pollution",
+                    "id": "pollution",
                     "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_pollution"
                 },
                 {
-                    "name": "observationPlatform",
+                    "id": "observationPlatform",
                     "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_observationPlatform"
                 },
                 {
-                    "name": "rocketSounding",
+                    "id": "rocketSounding",
                     "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_rocketSounding"
                 }
             ],
