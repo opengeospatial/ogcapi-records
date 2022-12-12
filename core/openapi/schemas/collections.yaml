@@ -63,13 +63,15 @@ properties:
             properties:
               id:
                 type: string
-              name:
+              title:
+                type: string
+              description:
                 type: string
               url:
                 type: string
                 format: uri
             required:
-              - name
+              - id
         scheme:
           type: string
   providers:

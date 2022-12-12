@@ -132,15 +132,18 @@ properties:
                   id:
                     type: string
                     description: An identifier for the concept.
-                  name:
+                  title:
                     type: string
-                    description: A human readable name for the concept.
+                    description: A human readable title for the concept.
+                  description:
+                    type: string
+                    description: A human readable description for the concept.
                   url:
                     type: string
                     format: uri
                     description: A URI providing further description of the concept.
                 required
-                  - name
+                  - id
             scheme:
               type: string
               description:
