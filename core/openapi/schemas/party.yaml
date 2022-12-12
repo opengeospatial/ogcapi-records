@@ -1,9 +1,17 @@
 oneOf:
-  - type: string
+  - type: object
     description: |-
       A reference to information about the responsible party.  For example,
       a link to a VCard (see https://www.w3.org/TR/vcard-rdf/).
-    format: url
+    properties:
+      url:
+        type: string
+        format: uri
+        description: A URI providing a link to the contact.
+      roles:
+        $ref: roles.yaml
+    required:
+      - url
   - type: object
     description: |-
       Identification of, and means of communication with, person responsible
@@ -89,17 +97,4 @@ oneOf:
               Supplemental instructions on how or when to contact the
               responsible party.
       roles:
-        type: array
-        items:
-          type: object
-          description: |-
-            The function performed by the responsible party. Suggested codelists include the STAC Collection
-            Provider roles as well as ISO 19115.
-          required:
-            - name
-          properties:
-            name:
-              type: string
-            authority:
-              type: string
-              format: uri
+        $ref: roles.yaml
