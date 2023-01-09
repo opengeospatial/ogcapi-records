@@ -61,13 +61,17 @@ properties:
           items:
             type: object
             properties:
-              name:
+              id:
+                type: string
+              title:
+                type: string
+              description:
                 type: string
               url:
                 type: string
                 format: uri
             required:
-              - name
+              - id
         scheme:
           type: string
   providers:

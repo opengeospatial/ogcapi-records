@@ -56,15 +56,21 @@ allOf:
             items:
               type: object
               properties:
-                  name:
+                  id:
                     type: string
-                    description: A human readable name for the concept.
+                    description: An identifier for the concept.
+                  title:
+                    type: string
+                    description: A human readable title for the concept.
+                  description:
+                    type: string
+                    description: A human readable description for the concept.
                   url:
                     type: string
                     format: uri
                     description: A URI providing further description of the concept.
               required:
-                - name
+                - id
           scheme:
             type: string
             description:
