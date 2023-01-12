@@ -57,24 +57,50 @@
     "themes": [
       {
         "concepts": [
-          "dobson",
-          "brewer",
-          "vassey",
-          "pion",
-          "microtops",
-          "spectral",
-          "hoelper",
-          "saoz",
-          "filter"
+          {
+            "id": "dobson"
+          },
+          {
+            "id": "brewer"
+          },
+          {
+            "id": "vassey"
+          },
+          {
+            "id": "pion"
+          },
+          {
+            "id": "microtops"
+          },
+          {
+            "id": "spectral"
+          },
+          {
+            "id": "hoelper"
+          },
+          {
+            "id": "saoz"
+          },
+          {
+            "id": "filter"
+          }
         ],
         "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
       },
       {
         "concepts": [
-          "atmosphericComposition",
-          "pollution",
-          "observationPlatform",
-          "rocketSounding"
+          {
+            "id": "atmosphericComposition"
+          },
+          {
+            "id": "pollution"
+          },
+          {
+            "id": "observationPlatform"
+          },
+          {
+            "id": "rocketSounding"
+          }
         ],
         "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"
       }
