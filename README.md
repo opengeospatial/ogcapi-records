@@ -23,17 +23,14 @@ The record building block defines the core schema of a catalogue record.  It inc
 |Queryables |Requirement |Description 
 |-----------|------------|-----------------------------------
 |recordId |**M** |A unique record identifier assigned by the server.
-|recordCreated |O |The date this record was created in the server.
-|recordUpdated |O |The most recent date on which the record was changed.
-|links |O |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.).
+|created |O |The date this record was created in the server.
+|updated |O |The most recent date on which the record was changed.
 |type |**M** |The nature or genre of the resource.
 |title |**M** |A human-readable name given to the resource.
 |description |O |A free-text description of the resource.
 |keywords |O |A list of free-form keywords or tag associated with the resource.
 |language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
 |externalId |O |An identifier for the resource assigned by an external entity.
-|created |O |The date the resource was created.
-|updated |O |The more recent date on which the resource was changed.
 |publisher |O |The entity making the resource available.
 |themes |O |A knowledge organization system used to classify the resource.
 |formats |O |A list of available distributions for the resource.
@@ -41,6 +38,7 @@ The record building block defines the core schema of a catalogue record.  It inc
 |license |O |A legal document under which the resource is made available.
 |rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |extent |O |The spatio-temporal coverage and resolution of the resource.
+|links |O |A list of links including links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats, links to other resources associated with this resource and links for navigating the API (e.g. prev, next, alternate, etc.). See [link schema.](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/common/link.yaml).
 
 It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
 

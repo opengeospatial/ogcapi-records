@@ -1,75 +1,75 @@
 {
-    "keywords": [
-        "total",
-        "ozone",
-        "level 1.0",
-        "column",
-        "dobson",
-        "brewer",
-        "saoz"
-    ],
-    "themes": [
+  "keywords": [
+    "total",
+    "ozone",
+    "level 1.0",
+    "column",
+    "dobson",
+    "brewer",
+    "saoz"
+  ],
+  "themes": [
+    {
+      "concepts": [
         {
-            "concepts": [
-                {
-                    "id": "dobson",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson"
-                },
-                {
-                    "id": "brewer",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer"
-                },
-                {
-                    "id": "vassey",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_vassey"
-                },
-                {
-                    "id": "pion",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_pion"
-                },
-                {
-                    "id": "microtops",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_microtops"
-                },
-                {
-                    "id": "spectral",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_spectral"
-                },
-                {
-                    "id": "hoelper",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_hoelper"
-                },
-                {
-                    "id": "saoz",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_saoz"
-                },
-                {
-                    "id": "filter",
-                    "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_filter"
-                }
-            ],
-            "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
+          "id": "dobson",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson"
         },
         {
-            "concepts": [
-                {
-                    "id": "atmosphericComposition",
-                    "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_atmosphericComposition"
-                },
-                {
-                    "id": "pollution",
-                    "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_pollution"
-                },
-                {
-                    "id": "observationPlatform",
-                    "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_observationPlatform"
-                },
-                {
-                    "id": "rocketSounding",
-                    "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_rocketSounding"
-                }
-            ],
-            "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"
+          "id": "brewer",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer"
+        },
+        {
+          "id": "vassey",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_vassey"
+        },
+        {
+          "id": "pion",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_pion"
+        },
+        {
+          "id": "microtops",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_microtops"
+        },
+        {
+          "id": "spectral",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_spectral"
+        },
+        {
+          "id": "hoelper",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_hoelper"
+        },
+        {
+          "id": "saoz",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_saoz"
+        },
+        {
+          "id": "filter",
+          "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_filter"
         }
-    ]
+      ],
+      "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
+    },
+    {
+      "concepts": [
+        {
+          "id": "atmosphericComposition",
+          "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_atmosphericComposition"
+        },
+        {
+          "id": "pollution",
+          "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_pollution"
+        },
+        {
+          "id": "observationPlatform",
+          "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_observationPlatform"
+        },
+        {
+          "id": "rocketSounding",
+          "url": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode_rocketSounding"
+        }
+      ],
+      "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"
+    }
+  ]
 }

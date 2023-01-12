@@ -61,11 +61,11 @@
             "type": "datetime"
         },
         {
-            "queryable": "recordcreated",
+            "queryable": "created",
             "type": "datetime"
         },
         {
-            "queryable": "recordmodified",
+            "queryable": "updated",
             "type": "datetime"
         }
     ]

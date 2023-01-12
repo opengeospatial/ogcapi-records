@@ -6,12 +6,12 @@ allOf:
     - itemType
     - type
   properties:
-    recordCreated:
+    created:
       type: string
       description:
         Date of creation of this catalogue.
       format: date-time
-    recordUpdated:
+    updated:
       type: string
       description:
         The most recent date on which this catalogue was changed.
@@ -30,16 +30,6 @@ allOf:
         descriptions, etc.) of the catalogue. ISO 639-1/639-2 codes
         should be used.
       default: en
-    created:
-      type: string
-      description:
-        Date of creation of this catalogue.
-      format: date-time
-    updated:
-      type: string
-      description:
-        Most recent date on which the catalogue was changed.
-      format: date-time
     themes:
       type: array
       description:
