@@ -32,7 +32,7 @@ oneOf:
         description: Role or position of the responsible person.
       organization:
         type: string
-        description: Affiliation of the individual.
+        description: Organization/affiliation of the individual/responsible person. In case of an organization, the name property should be used and this property is not to be used.
       logo:
         $ref: common/link.yaml
         description: Graphic identifying a party
