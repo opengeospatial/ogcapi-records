@@ -4,7 +4,7 @@
 ^|*Recommendation {counter:rec-id}* |*/rec/records-api/param-q*
 ^|A |The q operator SHOULD at least be applied to the following core queryables:
 
-*  title
+* title
 * description
 * keywords
 

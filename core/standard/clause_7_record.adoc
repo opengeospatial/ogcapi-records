@@ -22,7 +22,7 @@ Although this document does not mandate any particular encoding for a record, th
 * a <<record_json_encoding,GeoJSON>> record encoding,
 * and an <<record_html_encoding,HTML>> encoding.
 
-Other encoding are allow but are not described in this document.
+Other encoding are allowed but are not described in this document.
 
 ==== Overview
 
@@ -126,9 +126,9 @@ In some instances additional context may be desirable or required in order to ac
 
 include::recommendations/record-core/REC_record-associations_templated.adoc[]
 
-NOTE: This specification does not define any specific link relations that should be used for links in the `associations` section.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the links that relations should use.
+NOTE: This specification does not define any specific link relations that should be used for links in the `links` section.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the links that relations should use.
 
-The following provides an example of using associations for related resources of a record, as both traditional link relations as well as API resources via URI templates.
+The following provides an example of using association links for related resources of a record, as both traditional link relations as well as API resources via URI templates.
 
 [#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
 .Associations simple and URI Template Example

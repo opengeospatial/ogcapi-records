@@ -1,10 +1,10 @@
 [big]*i.     Abstract*
 
-The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, etc.), but define resource-centric APIs that take advantage of modern web development practices.
+The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, CSW, etc.), but define resource-centric APIs that take advantage of modern web development practices.
 
 This document defines the OGC API for Records.
 
-A Record makes a resource discoverable by providing summary information about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, assets, machine models, services, widgets, etc.
+A Record makes a resource discoverable by providing summary information (metadata) about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, styles, assets, machine models, services, processes, widgets, etc.
 
 OGC API - Records provides a way to browse or search a curated collection of records known as a catalogue.  This specification envisions deploying a catalogue as:
 
@@ -21,13 +21,14 @@ To enable this kind of flexible deployment of a collection of records, this spec
 * the collection (of records),
 * and the search API.
 
-A record is the atomic unit of information in a catalogue, It contains descriptive information about a resource such as:
+A record is the atomic unit of information in a catalogue, It contains descriptive information (metadata) about a resource such as:
 
 * a title,
 * a human readable description of the resource,
 * the nature or genre of the resource,
 * keywords associated with the resource,
 * information about the publisher or provider of the resource,
+* links to access the resource,
 * etc.
 
 This information is generic and can be used to describe a wide variety of resources.  This specification expects and encourages implementations to enrich the information content of a record to suit specific use cases or requirements.
@@ -75,6 +76,7 @@ The following organizations submitted this Document to the Open Geospatial Conso
 * CubeWerx Inc.
 * Meteorological Service of Canada
 * Geonovum
+* Open Source Geospatial Foundation
 
 [big]*v.     Submitters*
 
@@ -85,4 +87,5 @@ All questions regarding this submission should be directed to the editor or the 
 | Panagiotis (Peter) A. Vretanos (editor) | CubeWerx Inc.
 | Tom Kralidis (editor) | Meteorological Service of Canada
 | Linda van den Brink | Geonovum
+| Angelos Tzotsos (editor) | Open Source Geospatial Foundation
 |===
