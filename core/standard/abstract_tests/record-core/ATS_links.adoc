@@ -1,0 +1,14 @@
+[[ats_record-core_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core/links*
+^|Test Purpose |Validate the behaviour of link relations for link objects.
+^|Requirement |<<req_record-core_links,/req/record-core/links>>
+^|Test Method |. Construct a path for a given record
+. Issue a HTTP GET request on the path
+. Parse all link objects
+. Check that one link has a ``rel`` property with value of ``self``
+. Issue a HTTP GET request on the resulting path
+. Validate that the content between both requests is equal
+|===
+

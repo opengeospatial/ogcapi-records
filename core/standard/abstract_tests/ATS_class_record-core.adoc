@@ -1,0 +1,14 @@
+[[ats_record-core]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
+|Target type |Web API
+|Requirements class |<<rc_record-core,Requirements Class "Record Core">>
+|===
+
+==== General Tests
+
+===== Links
+
+include::record-core/ATS_links.adoc[]
