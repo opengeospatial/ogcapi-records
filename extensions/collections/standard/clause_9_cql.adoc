@@ -31,13 +31,13 @@ include::requirements/cql/REQ_filter-crs-param.adoc[]
 
 include::requirements/cql/REQ_response.adoc[]
 
-=== Filtering on links/associations
+=== Filtering on links
 
 ==== Overview
 
 Links can be added to a collection info object in various ways.  This clause 
 describes the various linking patterns and describes how to use CQL to
-filter based on links/associations.
+filter based on links.
 
 ==== Linking in collection info object
 
@@ -45,13 +45,12 @@ Links can be added to the following sections in an extended collection info obje
 
 . to the collection info object itself as the value of a key/property
 . the <<query-response,links>> section.
-. the <<query-response,associations>> section.
 
-The schema for links added to the <<query-response,links>> and <<query-response,associations>> sections in based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
+The schema for links added to the <<query-response,links>> section in based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
 
 Links added directly to the collection info object can be added using the following patterns:
 
-. The link relation is the key for an array of links with a schemas similar to that used in the <<query-response,links>> and <<query-response,associations>> sections but omitting the `rel` key.
+. The link relation is the key for an array of links with a schemas similar to that used in the <<query-response,links>> section but omitting the `rel` key.
 . The link relation is the key for an array of `href` values.
 . The link relation is the key for an an `href` value.
 
@@ -89,39 +88,7 @@ The following examples illustrate each of these linking patterns:
 }
 ----
 
-[#linking-pattern-2,reftext=`Adding links to the **associations** section.`]
-.Adding links to the **associations** section
-----
-{
-   .
-   .
-   .,
-   "associations":
-   [
-      .
-      .
-      .,
-      {
-         "rel" : "related",
-         "title" : "A related record.",
-         "href" : "https://example.com/collections/YourCat/items/rec15"
-      },
-      {
-         "rel": "license",
-         "title": "CC BY 2.0",
-         "href" : "https:https://creativecommons.org/licenses/by/2.0/"
-      },
-      .
-      .
-      .
-   ],
-   .
-   .
-   .
-}
-----
-
-[#linking-pattern-3,reftext=`Adding links to the collection info object itself.`]
+[#linking-pattern-2,reftext=`Adding links to the collection info object itself.`]
 .Adding links to the collection info object itself
 ----
 {
@@ -144,7 +111,7 @@ The following examples illustrate each of these linking patterns:
 }
 ----
 
-[#linking-pattern-4,reftext=`Adding links to the **properties** section.`]
+[#linking-pattern-3,reftext=`Adding links to the **properties** section.`]
 .Adding links to the collection info object itself
 ----
 {
@@ -159,9 +126,9 @@ The following examples illustrate each of these linking patterns:
 }
 ----
 
-==== Example CQL filters on links/associations
+==== Example CQL filters on links
 
-The following example illustrate how to filter links/associations that may
+The following example illustrate how to filter links that may
 appear in a catalogue record.
 
 [#filter-pattern-1,reftext=`Filtering links in the **links** section.`]
@@ -170,19 +137,13 @@ appear in a catalogue record.
 links[rel='license'].title LIKE 'CC%'
 ----
 
-[#filter-pattern-2,reftext=`Filtering links in the **associations** section.`]
-.Filtering links in the **associations** section
-----
-properties.associations[rel='related'].href LIKE '%/rec15'
-----
-
-[#filter-pattern-3,reftext=`Filtering links as **properties** in the collection object.`]
+[#filter-pattern-2,reftext=`Filtering links as **properties** in the collection object.`]
 .Filtering links that are **properties** in the collection object
 ----
 properties.related[*].href LIKE '%/rec15' AND properties.license.title LIKE 'CC%'
 ----
 
-[#filter-pattern-4,reftext=`Filtering links in the **properties** section.`]
+[#filter-pattern-3,reftext=`Filtering links in the **properties** section.`]
 .Filtering links that are **properties** in the collection object
 ----
 properties.related LIKE '%/rec15' AND properties.license LIKE 'https://creativecommons.org/licenses/%'
