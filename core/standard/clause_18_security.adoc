@@ -3,6 +3,6 @@
 
 See:
 
-* http://docs.ogc.org/DRAFTS/19-072.html#_security_considerations
+* http://docs.ogc.org/DRAFTS/19-072.html#security-considerations-section
 * http://docs.ogc.org/is/17-069r3/17-069r3.html#_security_considerations
 
