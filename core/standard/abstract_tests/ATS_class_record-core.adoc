@@ -16,3 +16,7 @@ include::record-core/ATS_links.adoc[]
 ==== Core queryables
 
 include::record-core/ATS_mandatory-queryables.adoc[]
+
+==== Templated links with variables
+
+include::record-core/ATS_templated-link.adoc[]

@@ -1,0 +1,15 @@
+[[ats_record-core_templated-link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core/templated-link*
+^|Test Purpose |Validate the behaviour of templated links.
+^|Requirement |<<req_record-core_templated-link,/req/record-core/templated-link>>
+^|Test Method |. Construct a path for a given record
+. Issue a HTTP GET request on the path
+. Parse all link objects
+. Check that one link has a ``templated`` property with value of ``true``
+. Check that a ``variables`` object exists
+. Validate the link against the ``../../../openapi/schemas/common/link.yaml`` schema
+. Check that substitution variables in the ``href`` property include variables of the form `{_variable name_}`
+. Check that for each substitution variable in the ``href`` property, a correspondingly named entry in the `variables` dictionary exists.
+|===
