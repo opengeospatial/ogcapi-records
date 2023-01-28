@@ -5,3 +5,8 @@
 === Conformance Class: Record Core
 
 include::abstract_tests/ATS_class_record-core.adoc[]
+
+=== Conformance Class: Record Collection
+
+include::abstract_tests/ATS_class_record-collection.adoc[]
+
