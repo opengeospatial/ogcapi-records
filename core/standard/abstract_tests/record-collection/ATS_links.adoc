@@ -1,0 +1,15 @@
+[[ats_record-collection_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/links*
+^|Test Purpose |Validate the behaviour of link relations for collection link objects.
+^|Requirement |<<req_record-collection_links,/req/record-collection/links>>
+^|Test Method |. Construct a path for a given collection
+. Issue a HTTP GET request on the path
+. Parse all link objects
+. If the catalogue is a <<clause-crawlable-catalogue,crawlable catalogue>>, check that the collection contains one or more link objects with a ``rel`` property with value of ``item`` that explicitly points to each record in the collection.
+. If the catalogue is a <<clause-searchable-catalogue,searchable catalogue>>, check that the collection contains one link object with a ``rel`` property with value of ``items`` that points to the search/access endpoint for the records of the collection.
+. Issue a HTTP GET request on the resulting paths.
+. Validate that the content is record items.
+|===
+
