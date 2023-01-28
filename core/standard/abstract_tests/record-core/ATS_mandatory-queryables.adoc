@@ -1,0 +1,14 @@
+[[ats_record-core_mandatory-queryables]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core/mandatory-queryables*
+^|Test Purpose |Validate each record containing the mandatory properties.
+^|Requirement |<<req_record-core_mandatory-queryables,/req/record-core/mandatory-queryables>>
+^|Test Method |. Construct a path for a given record
+. Issue a HTTP GET request on the path
+. Parse record
+. Check that the record includes an ``id`` property
+. Check that the record includes a ``time`` property
+. Check that the record includes a ``properties.type`` property
+. Check that the record includes a ``properties.title`` property
+|===
