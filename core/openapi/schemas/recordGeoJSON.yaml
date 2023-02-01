@@ -132,7 +132,7 @@ properties:
                     type: string
                     format: uri
                     description: A URI providing further description of the concept.
-                required
+                required:
                   - id
             scheme:
               type: string
