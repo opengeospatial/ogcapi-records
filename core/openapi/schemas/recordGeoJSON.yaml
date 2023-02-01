@@ -20,19 +20,16 @@ properties:
   time:
     oneOf:
       - type: null
-      - type: object
-        properties:
+      - type: string
+        format: date-time
+      - type: array
+        minItems: 2
+        maxItems: 2
+        items:
           oneOf:
+            - type: null
             - type: string
               format: date-time
-            - type: array
-              minItems: 2
-              maxItems: 2
-              items:
-                oneOf:
-                  - type: null
-                  - type: string
-                    format: date-time
   geometry:
     oneOf:
       - type: null
