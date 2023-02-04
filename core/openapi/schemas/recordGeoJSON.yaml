@@ -19,7 +19,7 @@ properties:
       - Feature
   time:
     oneOf:
-      - type: null
+      - type: "null"
       - type: string
         format: date-time
       - type: array
@@ -27,12 +27,12 @@ properties:
         maxItems: 2
         items:
           oneOf:
-            - type: null
+            - type: "null"
             - type: string
               format: date-time
   geometry:
     oneOf:
-      - type: null
+      - type: "null"
       - $ref: geometryGeoJSON.yaml
   properties:
     type: object
