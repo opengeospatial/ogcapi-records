@@ -24,37 +24,6 @@ include::requirements/geojson/REQ_content.adoc[]
 include::../openapi/schemas/recordGeoJSON.yaml[]
 ----
 
-[[requirements-class-jsonfg-clause]]
-=== Requirements Class OGC Features and Geometries JSON (JSON-FG)
-
-include::requirements/requirements_class_jsonfg.adoc[]
-
-The OGC Features and Geometries JSON (JSON-FG) Standard extends GeoJSON to support a limited set of additional capabilities that are out-of-scope for GeoJSON, but that are important for a variety of use cases involving record data.
-
-The JSON-FG Standard specifies the following minimal extensions to the GeoJSON Standard:
-
-* The ability to use Coordinate Reference Systems (CRSs) other than WGS 84;
-* Allow the use of non-Euclidean metrics, in particular ellipsoidal metrics;
-* Solids and multi-solids as geometry types;
-* The ability to encode temporal characteristics of a feature; and
-* The ability to declare the type and the schema of a feature.
-
-The following requirements apply to an OGC API - Records implementation when the following conditions apply:
-
-. The API advertises conformance to the JSON Conformance Class
-. The client negotiates to a record response encoded as JSON-FG.
-
-include::requirements/jsonfg/REQ_response.adoc[]
-
-include::requirements/jsonfg/REQ_content.adoc[]
-
-[[schema_jsonfg_record]]
-.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml[Schema for a catalogue record in JSON(recordGeoJSON.yaml)]
-[source,YAML]
-----
-include::../openapi/schemas/recordGeoJSON.yaml[]
-----
-
 [[requirements-class-html-clause]]
 === Requirements Class HTML
 
