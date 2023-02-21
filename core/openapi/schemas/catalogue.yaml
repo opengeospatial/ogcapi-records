@@ -23,10 +23,14 @@ allOf:
         free-form keywords, tags, key phrases, or classification codes.
       items:
         type: string
+    language:
+      description:
+        The language used for textual values for this catalogue object.
+      $ref: language.yaml
     languages:
       type: array
       description:
-        This list of languages in which records from this catalogue can
+        This list of other languages in which catalogue object can
         be retrieved.
       items:
         $ref: language.yaml
