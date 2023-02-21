@@ -37,7 +37,7 @@ allOf:
     languages:
       type: array
       description:
-        This list of other languages in which catalogue object can
+        This list of other languages in which this catalogue object can
         be retrieved.
       items:
         $ref: language.yaml
