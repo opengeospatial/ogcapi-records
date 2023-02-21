@@ -23,13 +23,13 @@ allOf:
         free-form keywords, tags, key phrases, or classification codes.
       items:
         type: string
-    language:
-      type: string
+    languages:
+      type: array
       description:
-        The natural language used for textual values (e.g. titles,
-        descriptions, etc.) of the catalogue. ISO 639-1/639-2 codes
-        should be used.
-      default: en
+        This list of languages in which records from this catalogue can
+        be retrieved.
+      items:
+        $ref: language.yaml
     themes:
       type: array
       description:

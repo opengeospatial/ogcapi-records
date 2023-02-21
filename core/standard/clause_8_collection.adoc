@@ -19,6 +19,7 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 
 <<collection-properties-table>> defines the set of properties that may be used to describe a collection of records.
 
+[[record-collection-queryables]]
 [#collection-properties-table,reftext='{table-caption} {counter:table-num}']
 .Table of collection properties
 [cols="30,5,65",options="header"]
@@ -33,7 +34,8 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 |_**crs**_ |optional |A list of coordinate reference systems used for spatial-temporal values.
 |type |**required** |The nature or genre of the resource. Fixed to "Collection".
 |keywords |optional |A list of free-form keywords or tags associated with the collection.
-|language |optional |The natural language used for textual values (i.e. titles, descriptions, etc) of a collection.
+|language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this collection object. 
+|languages |optional |The list of other languages in which this collection object is available. 
 |created |optional |The date the collection was created.
 |updated |optional |The more recent date on which the collection was changed.
 |providers |optional |A list of providers qualified by their role.
@@ -66,9 +68,11 @@ NOTE: The `rel` `items` is inherited from OGC API - Features but should that `re
 
 See <<sc_templated_links_with_variables,Templated links with variables>> for a record.
 
-=== Language negotiation
+=== Language handling
 
-See <<sc_language_negotiation,Language negotiation>> for a record.
+Language handling for the collection object is analogous to <<sc_record_language_handling,Language handling>> for a record.
+
+include::recommendations/record-collection/REC_collection-lang.adoc[]
 
 === Encodings
 

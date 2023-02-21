@@ -42,9 +42,13 @@ properties:
     type: array
     items:
       type: string
-  language:
-    type: string
-    default: en
+  languages:
+    type: array
+    description:
+      This list of languages in which the item of this collection can be
+      requested.
+    items:
+      $ref: language.yaml
   created:
     type: string
     format: date-time
