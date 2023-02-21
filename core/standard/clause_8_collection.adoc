@@ -19,7 +19,6 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 
 <<collection-properties-table>> defines the set of properties that may be used to describe a collection of records.
 
-[[record-collection-queryables]]
 [#collection-properties-table,reftext='{table-caption} {counter:table-num}']
 .Table of collection properties
 [cols="30,5,65",options="header"]
