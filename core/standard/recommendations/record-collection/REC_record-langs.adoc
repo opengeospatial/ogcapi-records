@@ -1,0 +1,7 @@
+[[rec_record-collection_record-langs]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/record-collection/record-langs*
+
+If records of the collection are available in one or more languages, those languages SHOULD be listed in the collection object using the `recordLanguages` property.
+|===

@@ -53,6 +53,13 @@ properties:
       retrieved.
     items:
       $ref: language.yaml
+  recordLanguages:
+    type: array
+    description:
+      This list of languages in which records of this collection can be
+      retrieved.
+    items:
+      $ref: language.yaml
   created:
     type: string
     format: date-time
