@@ -36,6 +36,7 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 |keywords |optional |A list of free-form keywords or tags associated with the collection.
 |language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this collection object. 
 |languages |optional |The list of other languages in which this collection object is available. 
+|recordLanguages |optional |The list of languages in which records from the collection can be represented.
 |created |optional |The date the collection was created.
 |updated |optional |The more recent date on which the collection was changed.
 |providers |optional |A list of providers qualified by their role.
