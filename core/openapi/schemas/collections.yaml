@@ -42,11 +42,15 @@ properties:
     type: array
     items:
       type: string
+  language:
+    description:
+      The language used to textual values for this collection object.
+    $ref: language.yaml
   languages:
     type: array
     description:
-      This list of languages in which the item of this collection can be
-      requested.
+      This list of other languages in which this collection object can be
+      retrieved.
     items:
       $ref: language.yaml
   created:
