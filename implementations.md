@@ -18,6 +18,7 @@ Servers:
 Clients:
 * [QGIS](#qgis)
 * [OWSLib](#owslib)
+* [stac-browser](#stac-browser)
 
 Parsers/Encoders:
 * [pygeometa](#pygeometa)
@@ -249,3 +250,7 @@ written in Python which also implements the evolving OGC API standards.  See the
 
 [pygeometa](https://geopython.github.io/pygeometa) is a Python package to generate
 metadata for geospatial datasets.  Supports OGC API - Records record metadata generation.
+
+## stac-browser
+
+[stac-browser](https://github.com/radiantearth/stac-browser) is a web client developed for [Spatio-Temporal Asset Catalog (STAC)](https://github.com/radiantearth/stac-spec) static catalogs. It is compatible with OGC API Records crawlable catalogs. A live version is available [here](https://radiantearth.github.io/stac-browser/#/)
