@@ -97,17 +97,17 @@ Queryables:
 Records:
 
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Luchtfoto%202015%20Almelo%20service
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Luchtfoto%202015%20Almelo%20service&f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Geesten%20van%20Holland
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Geesten%20van%20Holland&f=json
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items?bbox=4,51,7,53
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items?bbox=4,51,7,53&f=json
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Natuurmeting
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Natuurmeting&f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Kaartboeck
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Kaartboeck&f=json
 
 Single record:
 
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/554a799c-ed4e-4a8d-82f3-efb9c72247e4
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/554a799c-ed4e-4a8d-82f3-efb9c72247e4?f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=json
 
 ## Esri Inc
 
