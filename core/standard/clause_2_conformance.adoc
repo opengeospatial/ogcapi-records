@@ -25,7 +25,7 @@ This standard also identifies eight (8) building block requirements classes:
 * <<requirements-class-html-clause,HTML-Record>>
 * <<clause-autodiscovery,Autodiscovery>>
 
-The <<clause-record-core,_Record Core_>> conformance class defines the requirements for the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended by communities of interest or to suite specific needs.
+The <<clause-record-core,_Record Core_>> conformance class defines the requirements for the core schema of a catalogue record which is a set of properties (<<core-queryables,core queryables>>) that can be used to make any resource discoverable via a catalogue.  This core set of properties can be extended as required by specific communities of interest and/or use cases.
 
 The <<clause-record-collection,_Record Collection_>> conformance class defines requirements for the metadata used to describe a collection of related records.
 

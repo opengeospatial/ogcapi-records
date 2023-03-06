@@ -10,7 +10,7 @@ The atomic unit of information in a catalogue is the _record_.
 
 A _catalogue_ is a collection of _records_.  The terms **collection of records** and **catalogue** are used interchangeably in this specification.
 
-A record provides a summary description of a resource that the provider of the resource wishes to make discoverable.  The record schema defined in this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouranged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
+A record provides a summary description (metadata) of a resource that the provider of the resource wishes to make discoverable.  The record schema defined in this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouranged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
 
 === Building blocks
 
@@ -41,7 +41,7 @@ The choice of which properties to include in the set of core queryables was prim
 
 It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being made discoverable by the record.
 
-It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suite specific needs is allowed and encouraged by this specification.
+It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, dataset series, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suite specific needs is allowed and encouraged by this specification.
 
 Although this document does not mandate any particular encoding for a record, the document does define conformance classes for two encodings:
 
@@ -111,7 +111,7 @@ Where:
 
 The Records API is designed to be compatible but not conformant with the http://docs.opengeospatial.org/is/12-176r7/12-176r7.html[OGC Catalogue Service for the Web (CSW)]. This allows OGC API - Records implementations and CSW implementations to co-exist in a single processing environment.
 
-The https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (data, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
+The https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (datasets, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
 
 Discussion has shown that the API model also assumes underlying service and object descriptions, so a convergence seems possible. In any case, it will be advantageous to have a similar "mental model" of the server store organization on hand to explain the various functionalities introduced below.
 

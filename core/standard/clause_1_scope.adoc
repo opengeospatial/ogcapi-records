@@ -1,7 +1,7 @@
 == Scope
 
-This document specifies a collection of building blocks that can be assembled in various ways to deploy a collection of related descriptive information about resources called a catalogue.  The atomic unit of information in a catalogue is the record.
+This document specifies a collection of building blocks that can be assembled in various ways to deploy a collection of related descriptive information (metadata) about resources called a catalogue.  The atomic unit of information in a catalogue is the record.
 
-This document specifies the information content of a record.  A record contains summary descriptive information about a resource that a provider wishes to make discoverable.  A record represents resource characteristics that can be presented for evaluation and further processing by both humans and software.  Examples of resources include: a data collection, a service, a process, a style, a code list, an Earth observation asset, a machine learning model, a code list and so on.
+This document specifies the information content of a record.  A record contains summary descriptive information (metadata) about a resource that a provider wishes to make discoverable.  A record represents resource characteristics that can be presented for evaluation and further processing by both humans and software.  Examples of resources include: a data collection, a service, a process, a style, a code list, an Earth observation asset, a machine learning model, a code list and so on.
 
 Records are organized into collections.  This specification describes how collections of records can be crawled or searched.  Crawling a collection of records involves following embedded links from one record in a catalogue to the next.  Searching a collection of records involves specifying query predicates that define a subset of records.
