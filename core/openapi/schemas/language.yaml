@@ -8,21 +8,19 @@ properties:
     type: string
     description:
       The language tag as per RFC-5646.
-    example:
-      code: el
+    example: el
     name:
       type: string
+      minLength: 1
       description:
         The untranslated name of of the language.
-      example:
-        name: Ελληνικά
+      example: Ελληνικά
     alternate:
       type: string
       description:
         The name of the language in another well-understood language,
         usually English.
-      example:
-        alternate: Greek
+      example: Greek
     dir:
       type: string
       description:
