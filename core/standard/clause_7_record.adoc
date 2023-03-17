@@ -196,16 +196,16 @@ include::recommendations/record-core/REC_record-lang.adoc[]
 
 The https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link object] based on https://docs.ogc.org/is/17-069r4/17-069r4.html#rfc8228[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languges.  
 
-A server that wants to use language specific links will have to support a mechanism to mint language-specific URIs in order to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any particular approach how such a capability is supported by a server. 
+[[minting-language-specific-uris]]
+A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs in order to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any particular approach how such a capability is supported by a server. 
 
 [NOTE]
 =====================================================================
 Two common approaches are:
 
-* an additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language specific path element like `.../en-ca/...`);
+* an additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language-specific path element like `.../en-ca/...`);
 
-* an additional query parameter (for example, "language" or "l") that overrides
-the Accept-Language header of the HTTP request.
+* an additional query parameter (for example, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/parameter/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
 =====================================================================
 
 [NOTE]

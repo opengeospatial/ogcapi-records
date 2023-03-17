@@ -101,6 +101,17 @@ the Accept header of the HTTP request.
 
 include::recommendations/records-api/REC_string-i18n.adoc[]
 
+Requirement <<req_records-api_http,/req/records-api/http>> implies that the language of a server response is determined using language negotiation as specified by the https://www.rfc-editor.org/rfc/rfc2616#section-14.4[HTTP RFC].
+
+[NOTE]
+=====================================================================
+Any server that supports multiple languages will have to support a mechanism to mint language-specific URIs for resources in order to express links, for example, to alternate language representations of the same resource. This document does not mandate any particular approach how this is supported by the server.
+
+As clients simply need to dereference the URI of the link, the implementation details and the mechanism of how the language is included in the URI of the link are not important.  Developers interested in the approach of a particular implementation, for example, to manipulate ("hack") URIs in the browser address bar, can study the API definition.
+
+See the discusion in <<sc_record_language_handling>> about <<minting-language-specific-uris,minting language-specific URIs>> 
+=====================================================================
+
 === Coordinate reference systems
 
 include::requirements/records-api/REQ_default-crs.adoc[]
