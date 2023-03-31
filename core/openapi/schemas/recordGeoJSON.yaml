@@ -176,6 +176,9 @@ properties:
       access link) in one of the supported distribution formats and/or
       links to other resources associated with this resource.
       Also, a list of links for navigating the API (e.g. prev,
-      next, etc.).
+      next, etc.).  Since the specification requires that at least
+      the self link be present then the min items for this list should
+      be one.
     items:
+      minItems: 1
       $ref: common/link.yaml
