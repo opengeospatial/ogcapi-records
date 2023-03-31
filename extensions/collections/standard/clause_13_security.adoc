@@ -1,8 +1,0 @@
-[[security-section]]
-== Security Considerations
-
-See:
-
-* https://github.com/opengeospatial/oapi_common/blob/master/core/clause_12_security_considerations.adoc
-* https://github.com/opengeospatial/ogcapi-features/blob/master/core/standard/clause_11_security_considerations.adoc
-

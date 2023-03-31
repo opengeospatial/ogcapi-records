@@ -1,8 +1,0 @@
-[[req_opensearch_startindex-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/startindex-response*
-^|Condition |Server implements recommendation <<rec_opensearch_param-startIndex,/rec/opensearch/param-startIndex>>.
-^|A |The server SHALL begin presenting collection info objects starting with the specified offset value.
-^|B |The start index of the first collection info object in the result set SHALL be counted as 1.
-|===

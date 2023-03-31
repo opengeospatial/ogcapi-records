@@ -1,8 +1,0 @@
-[[rc_cql-filter]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/cql-filter
-|Target type |Web API
-|Dependency |<<OAFeat-3,OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)>>
-|===
