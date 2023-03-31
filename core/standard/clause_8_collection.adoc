@@ -60,8 +60,6 @@ include::requirements/record-collection/REQ_links.adoc[]
 
 include::recommendations/record-collection/PER_links.adoc[]
 
-NOTE: The `rel` `items` is inherited from OGC API - Features but should that `rel` actually be the standard IANA `rel` `search`?
-
 === Templated links with variables
 
 See <<sc_templated_links_with_variables,Templated links with variables>> for a record.
