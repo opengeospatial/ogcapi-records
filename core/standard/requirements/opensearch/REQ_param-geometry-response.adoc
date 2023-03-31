@@ -1,7 +1,0 @@
-[[req_opensearch_geometry-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/geometry-response*
-^|Condition |Server implements recommendation <<rec_opensearch_param-geometry,/rec/opensearch/param-geometry>>.
-^|A |If the `geo:geometry` parameter is provided by the client, only records where the record's geometry and the value of the `geo:geometry` parameter satisfy the specified spatial relationship (see recommendation: <<rec_opensearch_param_geo-relation,/rec/opensearch/geo-relation>>) SHALL be included in the response.
-|===

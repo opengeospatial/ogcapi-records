@@ -1,7 +1,0 @@
-[[req_opensearch_geo-name-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/geo-name-response*
-^|Condition |Server implements recommendation <<rec_opensearch_param-geo-name,/rec/opensearch/param-geo-name>>.
-^|A |If the `geo:name` parameter is provided by the client, only records where the record's geometry and the geometry implied by the specified place name satisfy the specified spatial relationship (see recommendation: <<rec_opensearch_param_geo-relation,/rec/opensearch/geo-relation>>) SHALL be included in the response.
-|===

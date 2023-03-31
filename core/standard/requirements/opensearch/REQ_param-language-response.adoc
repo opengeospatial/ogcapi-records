@@ -1,7 +1,0 @@
-[[req_opensearch_language-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/language-response*
-^|Condition |Server implements recommendation <<rec_opensearch_param-language,/rec/opensearch/param-language>>.
-^|A |The response records SHALL be presented in the requested language.
-|===

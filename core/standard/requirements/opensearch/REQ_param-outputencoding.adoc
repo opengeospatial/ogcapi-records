@@ -1,7 +1,0 @@
-[[req_opensearch_param-outputencoding]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/param-outputencoding*
-^|Conditions |Server implements recommendation <<rec_opensearch_param-outputencoding,/rec/opensearch/param-outputencoding>>.
-^|A |The value of this parameter SHALL override any value specified for the request using the https://tools.ietf.org/html/rfc7231#section-5.3.4[Accept-Encoding] HTTP header.
-|===
