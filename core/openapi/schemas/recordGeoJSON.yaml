@@ -5,6 +5,7 @@ required:
   - time
   - geometry
   - properties
+  - links
 properties:
   id:
     type: string
