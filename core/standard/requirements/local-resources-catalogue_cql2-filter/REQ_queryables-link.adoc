@@ -1,0 +1,7 @@
+[[req_local-resources-catalogue_cql2-filter_queryables-link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/features-filter/cql2-filter/queryables-link*
+^|A |Implementations SHALL, at the local resources endpoint, include a `links` section that contains a link with `rel="queryables"`.
+^|B |This link SHALL point to a resource for discovering the list of record properties (and their types) that may be used to construct a filter expression.
+|===

@@ -264,6 +264,8 @@ include::recommendations/local-resources-catalogue_cql2-filter/REC_json-encoding
 
 include::requirements/local-resources-catalogue_cql2-filter/REQ_filter-crs-param.adoc[]
 
+include::requirements/local-resources-catalogue_cql2-filter/REQ_queryables-link.adoc[]
+
 ==== Response
 
 include::requirements/local-resources-catalogue_cql2-filter/REQ_filter-response.adoc[]
