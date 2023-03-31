@@ -59,7 +59,7 @@ Other encoding are allowed but are not described in this document.
 |providers |optional |A list of providers qualified by their role in association to the record. |properties.providers
 |license |optional |A legal document under which the resource is made available. |properties.license
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
-|links |optional |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
+|links |***required*** |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
 |===
 
 include::requirements/record-core/REQ_mandatory-queryables-record.adoc[]
@@ -100,7 +100,7 @@ In addition, links to external resources representing the record type and the li
 [[sc_associations_and_links]]
 ==== Associations and Links
 
-A record may contain a `links` section.  This `links` section many contain navigation links and/or association links.
+A record must contain a `links` section.  This `links` section many contain navigation links and/or association links.
 
 Navigation links are meant to encode relationships between catalogue entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, and navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
 
