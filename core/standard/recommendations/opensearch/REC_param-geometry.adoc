@@ -1,6 +1,0 @@
-[[rec_opensearch_param-geometry]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-geometry*
-^|A |Servers SHOULD support the geometry (`geo:geometry`) parameter for the search operation (method: GET, path: `/collections/{collectionId}/items`).
-|===

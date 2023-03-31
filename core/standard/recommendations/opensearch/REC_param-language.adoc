@@ -1,7 +1,0 @@
-[[rec_opensearch_param-language]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-language*
-
-Servers SHOULD support the language (`language`) parameter for the search operation (method: GET, path: `/collections/{collectionId}/items`).
-|===

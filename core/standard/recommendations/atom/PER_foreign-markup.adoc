@@ -1,7 +1,0 @@
-[[per_core_foreign-markup]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/core/foreign-markup*
-
-Servers MAY include additional foreign markup from other vocabularies in an ATOM document as per the extension provisions specified in the https://datatracker.ietf.org/doc/html/rfc4287#section-6[The Atom Syndication Format] specification.
-|===

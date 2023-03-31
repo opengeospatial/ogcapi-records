@@ -1,8 +1,0 @@
-[[rec_opensearch_response-query]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/opensearch/response-query*
-^|A |In the response to a <<records-access,search operation>>, server SHOULD inc
-lude a https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-query-element[Query element] that exposes the query parameters used to gen
-erate this response.
-|===
