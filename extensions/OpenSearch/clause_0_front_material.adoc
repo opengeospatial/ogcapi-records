@@ -10,7 +10,7 @@ The OpenSearch protocol defines an XML description document describing how to re
 
 The OpenSearch protocol used by OGC API - Records is based on a protocol that was launched in 2005 by A9.com, an Amazon subsidiary.  In 2021, Amazon.com launched the open source OpenSearch search engine project, unrelated to the OpenSearch launched by A9.com aside from repurposing the name.  The two projects will continue to independently co-exist, though the search protocol (now hosted [here](https://github.com/dewitt/opensearch)) has largely remained stable and unchanged for over ten years, with no significant updates expected on the horizon.  Neither of these two efforts is related to the Open Search Foundation project found [here](https://opensearchfoundation.org/).
 
-Because of this shift in status of OpenSearch, issolating it in its own part of the OGC API Records suite of standards would allow the related conformance class(es) to be easily deprecated or renamed in the future.
+Because of this shift in status of OpenSearch, issolating it in its own part of the OGC API - Records suite of standards would allow the related conformance class(es) to be easily deprecated or renamed in the future.
 
 [[keywords]]
 [big]*ii.    Keywords*

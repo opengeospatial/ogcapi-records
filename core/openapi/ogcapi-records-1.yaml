@@ -206,7 +206,7 @@ components:
         itemType:
           description: |-
             indicator about the type of the items in the collection (the
-            default value is 'record' for OAPIR).
+            default value is 'record' for OGC API - Records).
           type: string
           default: record
         crs:
@@ -799,7 +799,7 @@ components:
         The URIs of all conformance classes supported by the server.
 
         To support "generic" clients that want to access multiple
-        OGC API Records implementations - and not "just" a specific
+        OGC API - Records implementations - and not "just" a specific
         API / server, the server declares the conformance
         classes it implements and conforms to.
       content:
