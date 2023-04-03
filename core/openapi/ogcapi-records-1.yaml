@@ -918,9 +918,14 @@ components:
           schema:
             type: string
     Sortables:
-      type: array
-      items:
-        $ref: "#/components/schemas/sortable"
+      description: |-
+        Fetch the list of sortable properties.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/sortable"
     OpenSearchDescriptionDocument:
       description: |-
         description document for OpenSearch clients
