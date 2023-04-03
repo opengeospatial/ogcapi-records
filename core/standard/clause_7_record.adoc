@@ -222,7 +222,7 @@ A <<core-queryables,record>> contains information, encoded in the links section,
 A catalogue record can include language information about:
 
 * the resource that the record describes,
-* the language used for text values in the current record,
+* the language used for text values in the current record representation,
 * and alternate languages in which the current record can be represented.
 
 ===== Language of the record
