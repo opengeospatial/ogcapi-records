@@ -11,7 +11,7 @@ The following normative documents contain provisions that, through reference in 
 * [[GeoJSON]] IETF RFC 7946: *The GeoJSON Format*, https://tools.ietf.org/rfc/rfc7946.txt[GeoJSON]
 * [[rfc8288]] Nottingham, M.: IETF RFC 8288, *Web Linking*, https://tools.ietf.org/rfc/rfc8288.txt[RFC 8288]
 
-* [[OACommon]] OGC 19-072: *OGC API (OAPI) Common Specification*, (Draft) https://github.com/opengeospatial/oapi_common[API Common]
+* [[OACommon]] OGC 19-072: *OGC API - Common Specification*, (Draft) https://github.com/opengeospatial/oapi_common[API Common]
 * [[OAFeat-1]] OGC 17-069r3: *OGC API - Features - Part 1: Core*, http://docs.opengeospatial.org/is/17-069r3/17-069r3.html 
 * [[OAFeat-3]] OGC 19-079: *OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)*, https://docs.ogc.org/DRAFTS/19-079.html
 * [[OpenAPI]] Open API Initiative: *OpenAPI Specification 3.0.2*, https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md[OpenAPI]

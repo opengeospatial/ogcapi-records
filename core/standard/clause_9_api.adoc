@@ -72,7 +72,7 @@ include::recommendations/records-api/REC_cors.adoc[]
 
 === Encodings
 
-While OGC API Records does not specify any mandatory encoding, support for the following encodings is recommended.
+While OGC API - Records does not specify any mandatory encoding, support for the following encodings is recommended.
 
 include::recommendations/records-api/REC_html.adoc[]
 

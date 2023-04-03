@@ -72,12 +72,12 @@ It is anticipated that this set of properties will be extended to enrich the inf
 
 The Records API allows a subset of records to be retrieved from a catalogue using a logically connected set of predicates that may include spatial and/or temporal predicates.
 
-The Records API extends https://github.com/opengeospatial/ogcapi-common[OGC API Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] to:
+The Records API extends https://github.com/opengeospatial/ogcapi-common[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] to:
 
 . Provide modern API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
 . Provide functionality comparable to that of the <<api-behaviour-model-overview,OGC Catalogue Service (CSW) standard>> so that a facade can be created over legacy services thus allowing them to participate in the new OGC API ecosystem.
 
-Collections of records exposed though this OGC API may be accessed through an https://www.ogc.org/standards/ogcapi-features[OGC API Features API] that has been:
+Collections of records exposed though this OGC API may be accessed through an https://www.ogc.org/standards/ogcapi-features[OGC API - Features API] that has been:
 
 * extended with <<records-access,additional parameters>> at the `/collections/{collectionId}/items` endpoint,
 * and constrained to a single <<record-overview,information model>> (i.e. the <<record-overview,record>>).

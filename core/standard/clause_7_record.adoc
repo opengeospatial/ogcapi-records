@@ -93,6 +93,8 @@ A record has one `properties.type` and one `properties.license` property. The va
 
 include::recommendations/record-core/REC_record-type.adoc[]
 
+include::recommendations/record-core/PER_record-type.adoc[]
+
 include::recommendations/record-core/REC_record-license.adoc[]
 
 In addition, links to external resources representing the record type and the licenses are recommended, as described in the next section.
@@ -154,7 +156,7 @@ Link: <http://data.example.org/collections/my_catalogue.html>; rel="collection";
 [[sc_templated_links_with_variables]]
 ==== Templated links with variables
 
-OGC API Records uses links to express associations between resources including links that bind to the resource(s) being described by a record.  In some situations, a static link does not adequately express all the information necessary to retrieve the referenced resource OR does not allow for the resource to be retrieved in an efficient manner.
+OGC API - Records uses links to express associations between resources including links that bind to the resource(s) being described by a record.  In some situations, a static link does not adequately express all the information necessary to retrieve the referenced resource OR does not allow for the resource to be retrieved in an efficient manner.
 
 Consider the case where a record describing a coverage resource is discovered by searching the catalogue using a spatial constraint (e.g. a bbox).  Further consider that the found record contains a link to retrieve the coverage.  Using a static link for the binding link would only allow retrieval of the entire coverage.  Using a templated link, however, would allow the context of the catalogue query (i.e. the bbox) to be passed to down to the binding link.  The templated link with all substitution values resolved would thus retrieve the subset of the coverage that corresponds to the spatial contraint used to discover the record in the first place which presumably represents the area of interest.
 
