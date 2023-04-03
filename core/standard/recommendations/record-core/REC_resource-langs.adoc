@@ -3,6 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-core/resource-langs*
 
-If there are one or more languages associated with the resource that a catalogu
-e describes, those languages SHOULD be listed in the record using the <<core-queryables-resource-table,`resourceLanguages`>> property.
+If there are one or more languages associated with the resource that a catalogue record describes, those languages SHOULD be listed in the record using the <<core-queryables-resource-table,`resourceLanguages`>> property.
 |===
