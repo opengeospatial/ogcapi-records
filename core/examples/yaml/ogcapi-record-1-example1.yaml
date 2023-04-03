@@ -7,7 +7,7 @@ info:
     classes "Core", "GeoJSON", "HTML" and "OpenAPI 3.0" of the draft
     standard "OGC API - Records - Part 1: Core".
 
-    This example is a generic OGC API Records definition that uses path
+    This example is a generic OGC API - Records definition that uses path
     parameters to describe all record collections and all records.
     The generic OpenAPI definition does not provide any details on the
     collections or the record content. This information is only available

@@ -244,13 +244,13 @@ The search capabilities of the Records API are organized into various levels of 
 
 ## Deployment patterns
 
-There are a number of ways that records can be deployed as a "collection of records" or a catalogue.  The OGC API Records specification envisions three deployment patterns using the building blocks described above:
+There are a number of ways that records can be deployed as a "collection of records" or a catalogue.  The OGC API - Records specification envisions three deployment patterns using the building blocks described above:
 
 * a catalogue deployed as a crawlable collection of records
 * a catalogue deployed as a searchable endpoint(s)
 * a local resources catalogue
 
-:warning: In STAC the terms _static_ and _dynamic_ are used to describe these deployment patterns.  However, a _static_ catalogue is not really static since additional records can be added at any time.  As a result, it was decided to try some different, more descriptive, terminology.  The terms _crawlable_ and _searchable_ have been proposed and are used in this README and in the OGC API Records specification.  Other proposed terms include _basic_ and _searchable_.  The SWG decided to try out _crawlable_ and _searchable_ for now but these terms are subject to change based on feedback.
+:warning: In STAC the terms _static_ and _dynamic_ are used to describe these deployment patterns.  However, a _static_ catalogue is not really static since additional records can be added at any time.  As a result, it was decided to try some different, more descriptive, terminology.  The terms _crawlable_ and _searchable_ have been proposed and are used in this README and in the OGC API - Records specification.  Other proposed terms include _basic_ and _searchable_.  The SWG decided to try out _crawlable_ and _searchable_ for now but these terms are subject to change based on feedback.
 
 ### Crawlable Catalogue
 
@@ -317,7 +317,7 @@ The OGC API resource tree has a number of resource endpoints that represent list
 * `/processes` - list of processes offered by an OGC API
 * `/collections/{collectionId}/scenes` - list of source scenes for a coverage or map
 
-The OGC API Records building blocks can be used to enable catalogue-like queries at these endpoints.  This is especially useful if the endpoint can potentially have a very large number of sub-resources as might be the case at the `/collections` endpoint.  For example, the following request searches for collections whose spatial extent intersects a specified bounding box and whose temporal extent intersects a specified time period:
+The OGC API - Records building blocks can be used to enable catalogue-like queries at these endpoints.  This is especially useful if the endpoint can potentially have a very large number of sub-resources as might be the case at the `/collections` endpoint.  For example, the following request searches for collections whose spatial extent intersects a specified bounding box and whose temporal extent intersects a specified time period:
 
 ```
 GET /collections?bbox=-69.64,37.76,-56.12,46.63&datetime=2020-01-11T00:00:00/2020-01-12T00:00:00
@@ -331,7 +331,7 @@ The OpenSearch protocol defines an XML description document describing how to re
 
 The OpenSearch protocol used by OGC API - Records is based on a protocol that was launched in 2005 by A9.com, an Amazon subsidiary.  In 2021, Amazon.com launched the open source OpenSearch search engine project, unrelated to the OpenSearch launched by A9.com aside from repurposing the name.  The two projects will continue to independently co-exist, though the search protocol (now hosted [here](https://github.com/dewitt/opensearch)) has largely remained stable and unchanged for over ten years, with no significant updates expected on the horizon.  Neither of these two efforts is related to the Open Search Foundation project found [here](https://opensearchfoundation.org/).
 
-Because of this shift in status of OpenSearch issolating it in its part of the OGC API Records suite of standards would allow the related conformance class(es) to be easilt deprecated or renamed in the future.  The work for this part, Part 2, is being carried out [here](https://github.com/opengeospatial/ogcapi-records/tree/master/extensions/OpenSearch).
+Because of this shift in status of OpenSearch issolating it in its part of the OGC API - Records suite of standards would allow the related conformance class(es) to be easilt deprecated or renamed in the future.  The work for this part, Part 2, is being carried out [here](https://github.com/opengeospatial/ogcapi-records/tree/master/extensions/OpenSearch).
 
 ## Using the standard
 
@@ -370,7 +370,7 @@ The current expectation is to have a stable version of the Core specification in
 
 The contributor understands that any contributions, if accepted by the OGC Membership and ISO/TC 211, shall be incorporated into OGC and ISO/TC 211 standards documents and that all copyright and intellectual property shall be vested to the OGC.
 
-The OGC API Records Standards Working Group (SWG) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
+The OGC API - Records Standards Working Group (SWG) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
 
 * [Open issues](https://github.com/opengeospatial/ogcapi-records/issues)
 * [Proposing changes](https://github.com/opengeospatial/ogcapi-records/wiki/Propose-a-change-to-a-draft-of-a-CAT40-specification-document)
