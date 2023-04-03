@@ -9,24 +9,24 @@ properties:
     description:
       The language tag as per RFC-5646.
     example: el
-    name:
-      type: string
-      minLength: 1
-      description:
-        The untranslated name of of the language.
-      example: Ελληνικά
-    alternate:
-      type: string
-      description:
-        The name of the language in another well-understood language,
-        usually English.
-      example: Greek
-    dir:
-      type: string
-      description:
-        The direction for text in this language.  Either left-to-right
-        or right-to-left.
-      enum:
-        - rtl
-        - ltr
-      default: ltr
+  name:
+    type: string
+    minLength: 1
+    description:
+      The untranslated name of of the language.
+    example: Ελληνικά
+  alternate:
+    type: string
+    description:
+      The name of the language in another well-understood language,
+      usually English.
+    example: Greek
+  dir:
+    type: string
+    description:
+      The direction for text in this language.  Either left-to-right
+      or right-to-left.  If this member is not specified then the assumed
+      direction is the natural direction for the langauge (e.g. English would be ltr but Arabic would be rtl).
+    enum:
+      - rtl
+      - ltr
