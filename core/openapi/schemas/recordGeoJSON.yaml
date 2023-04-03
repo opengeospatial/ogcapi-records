@@ -78,7 +78,7 @@ properties:
           type: string
       language:
         description:
-           The language used for textual values in this record.
+           The language used for textual values in this record representation.
         $ref: language.yaml
       languages:
         type: array
