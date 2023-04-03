@@ -1,8 +1,0 @@
-[[req_opensearch_autodiscovery-link]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/autodiscovery-link*
-^|A |An autodiscovery link (relation: `search`, type: `application/opensearchdescription+xml`) SHALL be included in the links section of the collection information object (path: `/collection/{collectionId}`).
-|===
-
-

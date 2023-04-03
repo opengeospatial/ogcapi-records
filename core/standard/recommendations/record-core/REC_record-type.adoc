@@ -1,6 +1,7 @@
 [[rec_record-core_type]]
 [width="90%",cols="2,6a"]
 |===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/type*
-^|A |The list of codes that can occur in records of a catalog for the property `properties.type` SHOULD be listed as enum values in the API definition of the record schema.
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-type*
+^|A |The list of codes that can occur in records of a catalog for the property `properties.type` SHOULD use a formal controlled vocabulary defined by an organization (e.g. ISO), or a community of interest/domain (e.g. WMO).
+^|B |The list of codes that can occur in records of a catalog for the property `properties.type` SHOULD be listed as enum values in the API definition of the record schema.
 |===

@@ -1,7 +1,0 @@
-[[req_opensearch_param-geo-relation]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/param-geo-relation*
-
-The default value of the `geo:relation` parameter SHALL be `intersects`.
-|===

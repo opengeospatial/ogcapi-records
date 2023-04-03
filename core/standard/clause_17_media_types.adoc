@@ -25,7 +25,7 @@ GeoJSON provides a simple way of representing OGC Records in JSON and is support
 === XML Encoding
 XML is a commonly used format that is well supported by tools and software libraries.
 
-XML structures documented in this standard are defined using XML Schema. These schema are available from http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API - Records Core XML Schema].
+XML structures documented in this standard are defined using XML Schema. These schemas are available from http://schemas.opengis.net/ogcapi/records/part1/1.0/xml/core.xsd[OGC API - Records Core XML Schema].
 
 === Media Types
 A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <<media-types-table>>.

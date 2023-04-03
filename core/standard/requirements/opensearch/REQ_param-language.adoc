@@ -1,8 +1,0 @@
-[[req_opensearch_param-language]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/param-language*
-^|Condition |Server implements recommendation <<rec_opensearch_param-language,/rec/opensearch/param-language>>.
-^|A |The value of the `language` parameter SHALL conform to https://tools.ietf.org/html/rfc5646[RFC 5646, Tags for Identifying Languages].
-^|B |The value of this parameter SHALL override any value specified for the request using the https://tools.ietf.org/html/rfc7231#section-5.3.5[Accept-Language] HTTP header.
-|===

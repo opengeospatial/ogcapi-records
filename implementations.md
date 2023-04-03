@@ -2,7 +2,7 @@
 
 ## Overview
 
-This page points to servers implementing drafts of the OGC API Records series.
+This page points to servers implementing drafts of the OGC API - Records series.
 
 ## Implementations:
 
@@ -18,6 +18,7 @@ Servers:
 Clients:
 * [QGIS](#qgis)
 * [OWSLib](#owslib)
+* [stac-browser](#stac-browser)
 
 Parsers/Encoders:
 * [pygeometa](#pygeometa)
@@ -97,24 +98,24 @@ Queryables:
 Records:
 
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Luchtfoto%202015%20Almelo%20service
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Luchtfoto%202015%20Almelo%20service&f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Geesten%20van%20Holland
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Geesten%20van%20Holland&f=json
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items?bbox=4,51,7,53
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items?bbox=4,51,7,53&f=json
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Natuurmeting
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Natuurmeting&f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Kaartboeck
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Kaartboeck&f=json
 
 Single record:
 
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/554a799c-ed4e-4a8d-82f3-efb9c72247e4
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/554a799c-ed4e-4a8d-82f3-efb9c72247e4?f=json
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a
+* https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=json
 
 ## Esri Inc
 
-### ArcGIS Pro CSW Client as OGC API Records consumer
-The ArcGIS Pro CSW Client has been updated to include initial support for OGC API Records. Details may be found on the [Geoportal Server wiki](https://github.com/Esri/geoportal-server-catalog/wiki/OGC_API_Records), the Visual Studio project to build the Pro addin is available in the [Components](https://github.com/Esri/geoportal-server-catalog/tree/master/components/CswClient/Pro/CswClient) section of the Geoportal Server github repo.
+### ArcGIS Pro CSW Client as OGC API - Records consumer
+The ArcGIS Pro CSW Client has been updated to include initial support for OGC API - Records. Details may be found on the [Geoportal Server wiki](https://github.com/Esri/geoportal-server-catalog/wiki/OGC_API_Records), the Visual Studio project to build the Pro addin is available in the [Components](https://github.com/Esri/geoportal-server-catalog/tree/master/components/CswClient/Pro/CswClient) section of the Geoportal Server github repo.
 
-### Geoportal Server OGC API Records provider
+### Geoportal Server OGC API - Records provider
 Esri Geoportal Server 2.6.4 [public sandbox](https://gpt.geocloud.com/geoportal2) has now been extended with a work-in-progress implementation of the OGC Records API.
 
 Landing page:
@@ -148,15 +149,15 @@ Records:
 
 ## GeoNetwork opensource
 
-[GeoNetwork](https://geonetwork-opensource.org) is a java/xml oriented catalogue application. As part of an ongoing effort, the GeoNetwork API component is extended to support OGC API Records. The work in progress is available at https://github.com/geonetwork/geonetwork-microservices/pull/23.
+[GeoNetwork](https://geonetwork-opensource.org) is a java/xml oriented catalogue application. As part of an ongoing effort, the GeoNetwork API component is extended to support OGC API - Records. The work in progress is available at https://github.com/geonetwork/geonetwork-microservices/pull/23.
 
-GeoNetwork has a concept of [sub-portals](https://geonetwork-opensource.org/manuals/trunk/en/administrator-guide/configuring-the-catalog/portal-configuration.html). In the OGC API Records implementation these subportals are available as collections of records. GeoNetwork uses an [Elastic Search](https://elastic.co) backend, supporting a configurable set of queryables. Records are available in various encodings, such as text/html, application/geo+json, application/dcat.ld+json, application/iso19139+xml, application/iso19115-3+xml, application/dublin-core+xml, application/datacite+xml, through the accept-header mechanism. The html encoding of records contains an embedded schema-org json-ld snippet to facilitate search engines. A [Sitemap](https://sitemaps.org) endpoint is available to notify the search engine of available records.
+GeoNetwork has a concept of [sub-portals](https://geonetwork-opensource.org/manuals/trunk/en/administrator-guide/configuring-the-catalog/portal-configuration.html). In the OGC API - Records implementation these subportals are available as collections of records. GeoNetwork uses an [Elastic Search](https://elastic.co) backend, supporting a configurable set of queryables. Records are available in various encodings, such as text/html, application/geo+json, application/dcat.ld+json, application/iso19139+xml, application/iso19115-3+xml, application/dublin-core+xml, application/datacite+xml, through the accept-header mechanism. The html encoding of records contains an embedded schema-org json-ld snippet to facilitate search engines. A [Sitemap](https://sitemaps.org) endpoint is available to notify the search engine of available records.
 
 GeoNetwork supports basic authentication, but can also be set up with alternative authentication mechanisms to facilitate autorisation on subsets of records.
 
 ## ldproxy
 
-[ldproxy](https://github.com/interactive-instruments/ldproxy) supports (most of) the core/cql/json/html conformance classes of the current draft of OGC API Records.
+[ldproxy](https://github.com/interactive-instruments/ldproxy) supports (most of) the core/cql/json/html conformance classes of the current draft of OGC API - Records.
 
 A sample instance with enumerations and codelists from the data specification of the German mapping and cadastral authorities for topographic, cadastral, geodetic, land use and land cover data ("GeoInfoDok NEU") is available at https://demo.ldproxy.net/geoinfodok. Sample URLs are shown below, to override content negotiation use `f=html` for HTML and `f=json` for JSON.
 
@@ -184,7 +185,7 @@ Queryables:
 
 * https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/queryables
 
-Response schema (not part of OGC API Records, JSON Schema only):
+Response schema (not part of OGC API - Records, JSON Schema only):
 
 * https://demo.ldproxy.net/geoinfodok/collections/ax_gebaeudefunktion/schema
 
@@ -249,3 +250,7 @@ written in Python which also implements the evolving OGC API standards.  See the
 
 [pygeometa](https://geopython.github.io/pygeometa) is a Python package to generate
 metadata for geospatial datasets.  Supports OGC API - Records record metadata generation.
+
+## stac-browser
+
+[stac-browser](https://github.com/radiantearth/stac-browser) is a web client developed for [Spatio-Temporal Asset Catalog (STAC)](https://github.com/radiantearth/stac-spec) static catalogs. It is compatible with OGC API - Records crawlable catalogs. A live version is available [here](https://radiantearth.github.io/stac-browser/#/)

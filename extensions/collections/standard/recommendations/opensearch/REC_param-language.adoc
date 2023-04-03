@@ -1,9 +1,0 @@
-[[rec_opensearch_param-language]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-language*
-^|A |A Records API SHOULD support the language (`language`) parameter for the search operation (method: GET, path: `/collections`).
-^|B |If implemented, the value of the `language` parameter SHALL conform to https://tools.ietf.org/html/rfc5646[RFC 5646, Tags for Identifying Languages].
-^|C |If implemented, the list of supported languages SHALL be listed in the server's <<clause-opensearch-description-document,OpenSearch description document>>.
-^|D |If implemented and specified on a search request, the value of this parameter SHALL override any value specified for the request using the https://tools.ietf.org/html/rfc7231#section-5.3.5[Accept-Language] HTTP header.
-|===

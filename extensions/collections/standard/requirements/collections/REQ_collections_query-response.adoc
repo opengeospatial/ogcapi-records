@@ -1,8 +1,0 @@
-[[req_collections_query-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/collections/query-response*
-
-The response shall only contain those collection info objects that satisfy all the query parameters specified with the HTTP GET operation (i.e. one or more of bbox, datetime, limit, q, type, externalId).
-|===
-

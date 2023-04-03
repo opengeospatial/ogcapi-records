@@ -2,7 +2,7 @@
 The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
 
 * [[rfc2616]] Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P., Berners-Lee, T.: IETF RFC 2616, *HTTP/1.1*, https://tools.ietf.org/rfc/rfc2616.txt[RFC 2616]
-* [[rfc2818]]  Rescorla, E.: IETF RFC 2818, *HTTP Over TLS*, https://tools.ietf.org/rfc/rfc2818.txt[RFC 2818]
+* [[rfc2818]] Rescorla, E.: IETF RFC 2818, *HTTP Over TLS*, https://tools.ietf.org/rfc/rfc2818.txt[RFC 2818]
 * [[rfc3339]] Klyne, G., Newman, C.: IETF RFC 3339, *Date and Time on the Internet: Timestamps*, https://tools.ietf.org/rfc/rfc3339.txt[RFC 3339]
 * [[rfc3986]] Berners-Lee, T., Fielding, R., Masinter, L.: IETF RFC 3986, *Uniform Resource Identifier (URI): Generic Syntax*, https://tools.ietf.org/html/rfc3986[RFC 3986]
 * [[rfc3987]] Duerst, M., Suignard, M.: IETF RFC 3987, *Internationalized Resource Identifiers (IRIs)*, https://tools.ietf.org/html/rfc3987[RFC 3987]
@@ -11,7 +11,7 @@ The following normative documents contain provisions that, through reference in 
 * [[GeoJSON]] IETF RFC 7946: *The GeoJSON Format*, https://tools.ietf.org/rfc/rfc7946.txt[GeoJSON]
 * [[rfc8288]] Nottingham, M.: IETF RFC 8288, *Web Linking*, https://tools.ietf.org/rfc/rfc8288.txt[RFC 8288]
 
-* [[OAPI_Common]] OGC 19-072: *OGC API (OAPI) Common Specification*, (Draft) https://github.com/opengeospatial/oapi_common[API Common]
+* [[OACommon]] OGC 19-072: *OGC API - Common Specification*, (Draft) https://github.com/opengeospatial/oapi_common[API Common]
 * [[OAFeat-1]] OGC 17-069r3: *OGC API - Features - Part 1: Core*, http://docs.opengeospatial.org/is/17-069r3/17-069r3.html 
 * [[OAFeat-3]] OGC 19-079: *OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)*, https://docs.ogc.org/DRAFTS/19-079.html
 * [[OpenAPI]] Open API Initiative: *OpenAPI Specification 3.0.2*, https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md[OpenAPI]

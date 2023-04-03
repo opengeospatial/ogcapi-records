@@ -23,7 +23,7 @@ include::requirements/records-api/REQ_landing-page-response.adoc[]
 
 include::requirements/records-api/REQ_api-def-op.adoc[]
 
-include::requirements/records-api/REQ_api-def-uri.adoc[]
+include::recommendations/records-api/PER_api-def-uri.adoc[]
 
 === Response 
 
@@ -72,7 +72,7 @@ include::recommendations/records-api/REC_cors.adoc[]
 
 === Encodings
 
-While OGC API Records does not specify any mandatory encoding, support for the following encodings is recommended.
+While OGC API - Records does not specify any mandatory encoding, support for the following encodings is recommended.
 
 include::recommendations/records-api/REC_html.adoc[]
 

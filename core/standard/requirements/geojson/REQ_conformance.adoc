@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/geojson/conformance*
 2+|The list of Conformance Classes advertised by the API SHALL include:
-^|A |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/jsonfg
+^|A |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/geojson
 |===
