@@ -41,13 +41,6 @@ allOf:
         be retrieved.
       items:
         $ref: language.yaml
-    recordLanguages:
-      type: array
-      description:
-        This list of languages in which the records of this  catalogue can
-        be retrieved.
-      items:
-        $ref: language.yaml
     themes:
       type: array
       description:
