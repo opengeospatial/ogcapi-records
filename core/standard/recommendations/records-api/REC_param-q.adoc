@@ -7,5 +7,5 @@
 * title
 * description
 * keywords
-
+^|B |If an empty q operator is passed (i.e. `+q=+`), the server SHOULD ignore this operator as if it was not specified by the client.
 |===
