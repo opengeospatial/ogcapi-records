@@ -24,9 +24,11 @@ properties:
     dir:
       type: string
       description:
-        The direction for text in this language.  Either left-to-right
-        or right-to-left.
+        The direction for text in this language. The default auto lets the user agent decide the text direction.
       enum:
         - rtl
         - ltr
-      default: ltr
+        - ttb
+        - btt
+        - auto
+      default: auto
