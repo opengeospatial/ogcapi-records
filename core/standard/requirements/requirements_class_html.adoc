@@ -3,7 +3,7 @@
 |===
 2+|*Requirements Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html
-|Target type |Web API
+|Target type |Document encoding
 |Dependency |http://www.w3.org/TR/html5/[HTML5]
 |Pre-conditions |
 1) The API advertises conformance to the HTML Conformance Class +

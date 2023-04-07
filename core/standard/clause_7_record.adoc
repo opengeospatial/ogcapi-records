@@ -39,6 +39,7 @@ Other encoding are allowed but are not described in this document.
 |recordId |**required** |A unique record identifier assigned by the server. |id
 |created |optional |The date this record was created in the server. |properties.created
 |updated |optional |The most recent date on which the record was changed. |properties.updated
+|conformsTo |optional |The extensions/conformance classes used in this record. |conformsTo
 |===
 
 [#core-queryables-resource-table,reftext='{table-caption} {counter:table-num}']
@@ -47,7 +48,7 @@ Other encoding are allowed but are not described in this document.
 |===
 |Queryables |Requirement |Description |GeoJSON key
 |geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry. |geometry
-|time |**required** |The temporal extent of the resource. Can be null is there is not associated temporal extent. |time
+|time |**required** |The temporal extent of the resource. Can be null if there is no associated temporal extent. |time
 |type |**required** |The nature or genre of the resource. |properties.type
 |title |**required** |A human-readable name given to the resource. |properties.title
 |description |optional |A free-text description of the resource. |properties.description
@@ -65,6 +66,13 @@ Other encoding are allowed but are not described in this document.
 include::requirements/record-core/REQ_mandatory-queryables-record.adoc[]
 
 include::recommendations/record-core/PER_additional-queryables-record.adoc[]
+
+[[sc_record_extensions]]
+==== Record extensions
+
+In tables <<core-queryables-record-table>> and <<core-queryables-resource-table>> this standard defines a core set of properties for describing discoverable resources.  It is anticipated that this core set of properties will be extended to suite specific use cases or requirements.  For example, a catalogue record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalogue record has been extended in this way can be advertised using the `conformsTo` member.  The `conformsTo` member is a list of URIs that identify each extension used in a record.  This specification does not define the specific URIs that are used to identify a specific extension; it simply provides a place where these identifiers can be listed.
+
+In the case where all the records of a catalogue use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` member at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalogue.yaml[collection or catalogue level] that may be used to declare which extensions are used in all records of the catalogue.  Extensions listed at the catalogue and record levels are cumulative.
 
 [[sc_keywords_and_themes]]
 ==== Keywords and Themes
