@@ -74,12 +74,12 @@ allOf:
                An identifier for the knowledge organization system used
                to classify the catalogue.  It is recommended that the
                identifier be a resolvable URI.
-    providers:
+    contacts:
       type: array
       items:
         $ref: party.yaml
       description:
-        A list of providers qualified by their role.
+        A list of contacts qualified by their role.
     license:
       type: string
       description:
