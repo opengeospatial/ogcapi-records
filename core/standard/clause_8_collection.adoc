@@ -38,7 +38,7 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 |recordLanguages |optional |The list of languages in which records from the collection can be represented.
 |created |optional |The date the collection was created.
 |updated |optional |The more recent date on which the collection was changed.
-|providers |optional |A list of providers qualified by their role.
+|contacts |optional |A list of contacts qualified by their role.
 |themes |optional |A knowledge organization system used to classify the collection.
 |contactPoint |optional |An entity to contact about the collection.
 |license |optional |A legal document under which the collection is made available.
