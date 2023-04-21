@@ -1,103 +1,89 @@
-oneOf:
-  - type: object
+type: object
+description: |-
+  Identification of, and means of communication with, person responsible
+  for the resource.
+required:
+  - name
+properties:
+  identifier:
+    type: string
     description: |-
-      A reference to information about the responsible party.  For example,
-      a link to a VCard (see https://www.w3.org/TR/vcard-rdf/).
-    properties:
-      url:
-        type: string
-        format: uri
-        description: A URI providing a link to the contact.
-      roles:
-        $ref: roles.yaml
-    required:
-      - url
-  - type: object
+      A value uniquely identifying a party (individual or organization)
+  name:
+    type: string
     description: |-
-      Identification of, and means of communication with, person responsible
-      for the resource.
-    required:
-      - name
+      The name of the organization or the individual.
+  positionName:
+    type: string
+    description: Role or position of the responsible person.
+  organization:
+    type: string
+    description: Organization/affiliation of the individual/responsible person. In case of an organization, the name property should be used and this property is not to be used.
+  logo:
+    $ref: common/link.yaml
+    description: Graphic identifying a party
+  contactInfo:
+    type: object
+    description: |-
+      Information required to enable contact with the responsible party.
     properties:
-      identifier:
-        type: string
-        description: |-
-          A value uniquely identifying a party (individual or organization)
-      name:
-        type: string
-        description: |-
-          The name of the organization or the individual.
-      positionName:
-        type: string
-        description: Role or position of the responsible person.
-      organization:
-        type: string
-        description: Organization/affiliation of the individual/responsible person. In case of an organization, the name property should be used and this property is not to be used.
-      logo:
-        $ref: common/link.yaml
-        description: Graphic identifying a party
-      contactInfo:
+      phone:
         type: object
+        description: Telephone numbers at which contact can be made.
+        patternProperties:
+          "^.*":
+            type: string
+            description: |-
+              The key name indicates the type of phone number (e.g. home,
+              work, fax, etc.). The value is the phone number itself.
+            pattern: "^+[1-9]{1}[0-9]{3,14}$"
+      email:
+        type: object
+        description: Email address at which contact can be made.
+        patternProperties:
+          "^.*":
+            type: string
+            description: |-
+              The key name indicates the type of email address (e.g. home,
+              work, etc.). The value of the email address itself.
+            format: email
+      address:
+        type: object
+        description: Physical location at which contact can be made.
+        patternProperties:
+          "^.*":
+            type: object
+            description: |-
+              The key name indicates the type of address (e.g. office,
+              home, etc.). The value is the address itself.
+            properties:
+              deliveryPoint:
+                type: string
+                description: Address line for the location.
+              city:
+                type: string
+                description: City for the location.
+              administrativeArea:
+                type: string
+                description: State or province of the location.
+              postalCode:
+                type: string
+                description: ZIP or other postal code.
+              country:
+                type: string
+                description: Country of the physical address.
+      url:
+        $ref: common/link.yaml
+        description: On-line information about the responsible party.
+      hoursOfService:
+        type: string
         description: |-
-          Information required to enable contact with the responsible party.
-        properties:
-          phone:
-            type: object
-            description: Telephone numbers at which contact can be made.
-            patternProperties:
-              "^.*":
-                type: string
-                description: |-
-                  The key name indicates the type of phone number (e.g. home,
-                  work, fax, etc.). The value is the phone number itself.
-                pattern: "^+[1-9]{1}[0-9]{3,14}$"
-          email:
-            type: object
-            description: Email address at which contact can be made.
-            patternProperties:
-              "^.*":
-                type: string
-                description: |-
-                  The key name indicates the type of email address (e.g. home,
-                  work, etc.). The value of the email address itself.
-                format: email
-          address:
-            type: object
-            description: Physical location at which contact can be made.
-            patternProperties:
-              "^.*":
-                type: object
-                description: |-
-                  The key name indicates the type of address (e.g. office,
-                  home, etc.). The value is the address itself.
-                properties:
-                  deliveryPoint:
-                    type: string
-                    description: Address line for the location.
-                  city:
-                    type: string
-                    description: City for the location.
-                  administrativeArea:
-                    type: string
-                    description: State or province of the location.
-                  postalCode:
-                    type: string
-                    description: ZIP or other postal code.
-                  country:
-                    type: string
-                    description: Country of the physical address.
-          url:
-            $ref: common/link.yaml
-            description: On-line information about the responsible party.
-          hoursOfService:
-            type: string
-            description: |-
-              Time period (including time zone) when the resposible party
-              can be contacted.
-          contactInstructions:
-            type: string
-            description: |-
-              Supplemental instructions on how or when to contact the
-              responsible party.
-      roles:
-        $ref: roles.yaml
+          Time period (including time zone) when the resposible party
+          can be contacted.
+      contactInstructions:
+        type: string
+        description: |-
+          Supplemental instructions on how or when to contact the
+          responsible party.
+  roles:
+    $ref: roles.yaml
