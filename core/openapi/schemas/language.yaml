@@ -24,11 +24,10 @@ properties:
     dir:
       type: string
       description:
-        The direction for text in this language. The default auto lets the user agent decide the text direction.
+        The direction for text in this language. The default ltr represents the most common situation.  However, care should be taked to set the value of dir appropriately if the language direction is not ltr.
       enum:
-        - rtl
         - ltr
+        - rtl
         - ttb
         - btt
-        - auto
-      default: auto
+      default: ltr
