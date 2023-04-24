@@ -1,8 +1,7 @@
 [[req_records-api_record-collections-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-collections*
-^|A |A successful execution of the operation SHALL be reported as a response with a HTTP status code 200.
-^|B |Only collections where the value of the `itemType` property (JSONPath: `$.collections[*].itemType`) is `record` SHALL be considered record collections or catalogues.
-^|C |The schema of each record collection or catalogue in the response SHALL be based upon the schema defined in the <<req_records-api_record-collection,/req/records-api/record-collection>> requirement.
+^|*Requirement {counter:req-id}* |*/req/records-api/record-collections-response*
+^|A |Only collections where the value of the `itemType` property (JSONPath: `$.collections[*].itemType`) is `record` SHALL be considered record collections or catalogues.
+^|B |The schema of each record collection or catalogue in the response SHALL be based upon the schema defined in the <<req_records-api_record-collection-response,/req/records-api/record-collection-response>> requirement.
 |===

@@ -1,7 +1,0 @@
-[[req_records-api_landing-page-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/landing-page-response*
-
-Implementations of the Records API SHALL comply with requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_response[`/req/core/root-success`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-|===

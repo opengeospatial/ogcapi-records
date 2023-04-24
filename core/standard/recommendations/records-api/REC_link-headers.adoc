@@ -1,7 +1,0 @@
-[[rec_records-api_link-headers]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-api/link-headers*
-
-Implementations of the Records API SHOULD comply with recommendation http://docs.ogc.org/is/17-069r3/17-069r3.html#_link_headers[`/req/core/link-header`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-|===
