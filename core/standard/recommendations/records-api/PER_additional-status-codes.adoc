@@ -1,7 +1,0 @@
-[[per_records-api_additional-status-codes]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/records-api/api-def-uri*
-
-Permission http://docs.ogc.org/is/17-069r3/17-069r3.html#http_status_codes[`/per/core/additional-status-codes`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard MAY apply to Records API implementations too.
-|===

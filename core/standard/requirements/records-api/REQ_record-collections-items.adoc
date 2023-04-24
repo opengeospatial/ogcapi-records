@@ -1,7 +1,0 @@
-[[req_records-api_record-collections-items]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-collections-items*
-
-For each record collection provided by the server, an item SHALL be provided in the property `collections`.
-|===

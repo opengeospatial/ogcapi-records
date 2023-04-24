@@ -1,9 +1,0 @@
-[[req_records-api_records-response-numberMatched]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/records-response-numberMatched*
-
-^|A |If a property `numberMatched` is included in the response, the value SHALL be identical to the number of records in the record collection that match the selection parameters like bbox, datetime or additional filter parameters.
-^|B |A server MAY omit this information in a response, if the information about the number of matching records is not known or difficult to compute.
-|===
-

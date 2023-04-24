@@ -1,7 +1,0 @@
-[[per_records-record-collections-extent-extensions]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/records-api/record-collections-extent-extensions*
-
-Permission http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_4[`/per/core/fc-md-extent-extension`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard MAY apply to Records API implementations too.
-|===

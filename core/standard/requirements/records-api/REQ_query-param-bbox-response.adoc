@@ -1,9 +1,0 @@
-[[req_records-api_param-bbox-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/param-bbox-response*
-^|A |Only records that have a spatial geometry that intersects the bounding box SHALL be part of the result set, if the `bbox` parameter is provided.
-^|B |If a record has multiple spatial geometry properties, it is the decision of the server whether only a single spatial geometry property is used to determine the extent or all relevant geometries.
-^|C |The `bbox` parameter SHALL match all records in the collection that are not associated with a spatial geometry, too.
-^|D |The coordinate values SHALL intersect the extent specified for the coordinate reference system.
-|===
