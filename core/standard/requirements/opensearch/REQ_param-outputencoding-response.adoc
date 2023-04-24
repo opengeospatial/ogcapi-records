@@ -1,7 +1,0 @@
-[[req_opensearch_outputencoding-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/outputencoding-response*
-^|Condition |Server implements recommendation <<rec_opensearch_param-outputencoding,/rec/opensearch/param-outputencoding>>.
-^|A |The response records SHALL be presented in the requested output encoding.
-|===

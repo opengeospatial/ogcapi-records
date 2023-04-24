@@ -1,6 +1,0 @@
-[[req_sorting_sortby-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/sorting/sortby-definition*
-The operation SHALL be defined as OGC API - Records - Part 1: Core.
-|===

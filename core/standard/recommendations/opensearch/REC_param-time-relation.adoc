@@ -1,6 +1,0 @@
-[[rec_opensearch_param-time-relation]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/opensearch/param-time-relation*
-^|A |Servers SHOULD support the geometry relation (`geo:relation`) parameter for the search operation (method: GET, path: `/collections/{collectionId}/items`).
-|===

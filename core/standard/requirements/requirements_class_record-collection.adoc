@@ -3,6 +3,6 @@
 |===
 2+|*Requirements Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
-|Target type |Web API
+|Target type |Document model
 |Dependency |http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-resource-definition-section[Collection Resource Definition]
 |===

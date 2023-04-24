@@ -1,6 +1,0 @@
-[[req_opensearch_descriptiondoc-response-example-qry]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/descriptiondoc-response-example-qry*
-^|A |The https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-description-document[OpenSearch description document] SHALL include at least one https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-query-element[Query element] with a `role` set to `example` which, when resolved, executes a sample query on the server.
-|===

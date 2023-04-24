@@ -1,7 +1,8 @@
 [[rec_records-api_json]]
 [width="90%",cols="2,6a"]
 |===
-^|*Recommendation {counter:rec-id}* |*/rec/records-api/json* 
+^|*Recommendation {counter:rec-id}* |*/rec/records-api/json*
 
-If the records can be represented for the intended use in GeoJSON, implementations SHOULD consider supporting GeoJSON as an encoding for records and catalogues (i.e. record collections).
+^|A |If the records can be represented for the intended use in GeoJSON, implementations SHOULD consider supporting GeoJSON as an encoding for records and catalogues (i.e. record collections).
+^|B |If a catalogue (i.e. record collection) can be represented for the intended use in JSON, implementations SHOULD consider supporting JSON as an encoding for a catalogue (i.e. record collection).
 |===

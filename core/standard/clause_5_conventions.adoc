@@ -1,6 +1,6 @@
 == Conventions
 
-The following conventions will be used in this document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+The following conventions will be used in this document. Examples of conventions are symbols, abbreviations, use of XML schema, use of JSON schema, or special notes regarding how to read the document.
 
 === Identifiers
 

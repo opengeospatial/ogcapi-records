@@ -22,7 +22,7 @@ Although this document does not mandate any particular encoding for a record, th
 * a <<record_json_encoding,GeoJSON>> record encoding,
 * and an <<record_html_encoding,HTML>> encoding.
 
-Other encoding are allow but are not described in this document.
+Other encoding are allowed but are not described in this document.
 
 ==== Overview
 
@@ -39,6 +39,7 @@ Other encoding are allow but are not described in this document.
 |recordId |**required** |A unique record identifier assigned by the server. |id
 |created |optional |The date this record was created in the server. |properties.created
 |updated |optional |The most recent date on which the record was changed. |properties.updated
+|conformsTo |optional |The extensions/conformance classes used in this record. |conformsTo
 |===
 
 [#core-queryables-resource-table,reftext='{table-caption} {counter:table-num}']
@@ -47,7 +48,7 @@ Other encoding are allow but are not described in this document.
 |===
 |Queryables |Requirement |Description |GeoJSON key
 |geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry. |geometry
-|time |**required** |The temporal extent of the resource. Can be null is there is not associated temporal extent. |time
+|time |**required** |The temporal extent of the resource. Can be null if there is no associated temporal extent. |time
 |type |**required** |The nature or genre of the resource. |properties.type
 |title |**required** |A human-readable name given to the resource. |properties.title
 |description |optional |A free-text description of the resource. |properties.description
@@ -61,12 +62,19 @@ Other encoding are allow but are not described in this document.
 |providers |optional |A list of providers qualified by their role in association to the record. |properties.providers
 |license |optional |A legal document under which the resource is made available. |properties.license
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
-|links |optional |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
+|links |**required** |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
 |===
 
 include::requirements/record-core/REQ_mandatory-queryables-record.adoc[]
 
 include::recommendations/record-core/PER_additional-queryables-record.adoc[]
+
+[[sc_record_extensions]]
+==== Record extensions
+
+In tables <<core-queryables-record-table>> and <<core-queryables-resource-table>> this standard defines a core set of properties for describing discoverable resources.  It is anticipated that this core set of properties will be extended to suite specific use cases or requirements.  For example, a catalogue record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalogue record has been extended in this way can be advertised using the `conformsTo` member.  The `conformsTo` member is a list of URIs that identify each extension used in a record.  This specification does not define the specific URIs that are used to identify a specific extension; it simply provides a place where these identifiers can be listed.
+
+In the case where all the records of a catalogue use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` member at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalogue.yaml[collection or catalogue level] that may be used to declare which extensions are used in all records of the catalogue.  Extensions listed at the catalogue and record levels are cumulative.
 
 [[sc_keywords_and_themes]]
 ==== Keywords and Themes
@@ -95,6 +103,8 @@ A record has one `properties.type` and one `properties.license` property. The va
 
 include::recommendations/record-core/REC_record-type.adoc[]
 
+include::recommendations/record-core/PER_record-type.adoc[]
+
 include::recommendations/record-core/REC_record-license.adoc[]
 
 In addition, links to external resources representing the record type and the licenses are recommended, as described in the next section.
@@ -102,7 +112,7 @@ In addition, links to external resources representing the record type and the li
 [[sc_associations_and_links]]
 ==== Associations and Links
 
-A record may contain a `links` section.  This `links` section many contain navigation links and/or association links.
+A record must contain a `links` section.  This `links` section many contain navigation links and/or association links.
 
 Navigation links are meant to encode relationships between catalogue entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, and navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
 
@@ -128,9 +138,9 @@ In some instances additional context may be desirable or required in order to ac
 
 include::recommendations/record-core/REC_record-associations_templated.adoc[]
 
-NOTE: This specification does not define any specific link relations that should be used for links in the `associations` section.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the links that relations should use.
+NOTE: This specification does not define any specific link relations that should be used for links in the `links` section.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the links that relations should use.
 
-The following provides an example of using associations for related resources of a record, as both traditional link relations as well as API resources via URI templates.
+The following provides an example of using association links for related resources of a record, as both traditional link relations as well as API resources via URI templates.
 
 [#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
 .Associations simple and URI Template Example
@@ -156,7 +166,7 @@ Link: <http://data.example.org/collections/my_catalogue.html>; rel="collection";
 [[sc_templated_links_with_variables]]
 ==== Templated links with variables
 
-OGC API Records uses links to express associations between resources including links that bind to the resource(s) being described by a record.  In some situations, a static link does not adequately express all the information necessary to retrieve the referenced resource OR does not allow for the resource to be retrieved in an efficient manner.
+OGC API - Records uses links to express associations between resources including links that bind to the resource(s) being described by a record.  In some situations, a static link does not adequately express all the information necessary to retrieve the referenced resource OR does not allow for the resource to be retrieved in an efficient manner.
 
 Consider the case where a record describing a coverage resource is discovered by searching the catalogue using a spatial constraint (e.g. a bbox).  Further consider that the found record contains a link to retrieve the coverage.  Using a static link for the binding link would only allow retrieval of the entire coverage.  Using a templated link, however, would allow the context of the catalogue query (i.e. the bbox) to be passed to down to the binding link.  The templated link with all substitution values resolved would thus retrieve the subset of the coverage that corresponds to the spatial contraint used to discover the record in the first place which presumably represents the area of interest.
 
@@ -187,7 +197,7 @@ A <<core-queryables,record>> contains information, encoded in the links section,
 A catalogue record can include language information about:
 
 * the resource that the record describes,
-* the language used for text values in the current record,
+* the language used for text values in the current record representation,
 * and alternate languages in which the current record can be represented.
 
 ===== Language of the record

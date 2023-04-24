@@ -5,6 +5,7 @@ required:
   - time
   - geometry
   - properties
+  - links
 properties:
   id:
     type: string
@@ -57,7 +58,7 @@ properties:
         type: string
         description:
           The nature or genre of the resource. The value should be a code,
-          convenient for filtering the records. Where available, a link to
+          convenient for filtering records. Where available, a link to
           the canonical URI of the record type resource will be added to
           the 'links' property.
         maxLength: 64
@@ -78,7 +79,7 @@ properties:
           type: string
       language:
         description:
-           The language used for textual values in this record.
+           The language used for textual values in this record representation.
         $ref: language.yaml
       languages:
         type: array
@@ -185,6 +186,9 @@ properties:
       access link) in one of the supported distribution formats and/or
       links to other resources associated with this resource.
       Also, a list of links for navigating the API (e.g. prev,
-      next, etc.).
+      next, etc.).  Since the specification requires that at least
+      the self link be present then the min items for this list should
+      be one.
     items:
+      minItems: 1
       $ref: common/link.yaml

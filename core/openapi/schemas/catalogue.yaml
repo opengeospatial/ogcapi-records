@@ -6,6 +6,13 @@ allOf:
     - itemType
     - type
   properties:
+    conformsTo:
+      description:
+        If all records of the catalogue conform to same set of
+        extensions/conformance classes then this member can be
+        used to advertise that fact rather than copying this 
+        information into each record.
+      $ref: common/confClasses.yaml#/properties/conformsTo
     created:
       type: string
       description:
@@ -31,13 +38,6 @@ allOf:
       type: array
       description:
         This list of other languages in which this catalogue object can
-        be retrieved.
-      items:
-        $ref: language.yaml
-    recordLanguages:
-      type: array
-      description:
-        This list of languages in which the records of this  catalogue can
         be retrieved.
       items:
         $ref: language.yaml

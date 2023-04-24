@@ -1,7 +1,0 @@
-[[req_opensearch_proximity-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/opensearch/proximity-response*
-^|Condition |Server implements recommendation <<rec_opensearch_param-proximity,/rec/opensearch/param-proximity>>.
-^|A |If the `geo:lat`, `geo:lon` and `geo:radius` parameters are provided by the client, only records where the record's geometry and the specified circle satisfy the specified spatial relationship (see recommendation: <<rec_opensearch_param_geo-relation,/rec/opensearch/geo-relation>>) SHALL be included in the response.
-|===

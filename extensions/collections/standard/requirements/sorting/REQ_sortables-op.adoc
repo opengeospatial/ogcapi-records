@@ -1,6 +1,0 @@
-[[req_sorting_sortables-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/sorting/sortables-op*
-The server SHALL support the HTTP GET operation at the path `/collections/sortables`.
-|===

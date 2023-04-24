@@ -3,7 +3,7 @@
 |===
 2+|*Requirements Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
-|Target type |Web API
+|Target type |Document model
 |Dependency |<<rc_html,HTML>>
 |Dependency |<<rc_json,JSON or GeoJSON>>
 |===

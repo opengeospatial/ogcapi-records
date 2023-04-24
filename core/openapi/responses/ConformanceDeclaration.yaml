@@ -2,7 +2,7 @@ description: |-
   The URIs of all conformance classes supported by the server.
 
   To support "generic" clients that want to access multiple
-  OGC API Records implementations - and not "just" a specific
+  OGC API - Records implementations - and not "just" a specific
   API / server, the server declares the conformance
   classes it implements and conforms to.
 content:

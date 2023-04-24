@@ -3,7 +3,7 @@
 |===
 2+|*Requirements Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/geojson
-|Target type |Web API
+|Target type |Document encoding
 |Dependency |<<rfc8259,IETF RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format>>
 |Dependency |<<jschema, JSON Schema>>
 |Dependency |<<rfc7946,GeoJSON>>
