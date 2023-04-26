@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/per/core/common-mark*
 
-For any `description` member in a record, https://spec.commonmark.org/current/(CommonMark) MAY be used for a rich text representation.
+For any `description` member in a record, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
 |===

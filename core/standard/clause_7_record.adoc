@@ -127,14 +127,12 @@ include::recommendations/record-core/PER_record-type.adoc[]
 
 In addition, links to external resources describing the record type vocabulary used to populate the `properties.type` member are recommended, as described in <<sc_associations_and_links,Associations and Links>>.
 
-[[sc_licenses_vocabulary]]
-==== Licenses vocabulary
+[[sc_license_vocabulary]]
+==== License vocabulary
 
-A record has one `properties.licenses` property. The value of this property should be a code, convenient for filtering records. 
+A record may have one `properties.license` property. If present, the value of this property should be a code, convenient for filtering records.
 
 include::recommendations/record-core/REC_record-license.adoc[]
-
-In addition, links to external resources describing the licences used are recommended, as described in <<sc_associations_and_links,Associations and Links>>.
 
 [[sc_associations_and_links]]
 ==== Associations and Links

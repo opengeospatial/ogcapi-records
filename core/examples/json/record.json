@@ -110,7 +110,7 @@
       "GeoJSON"
     ],
     "contactPoint": "https://woudc.org/contact.php",
-    "license": "https://woudc.org/about/data-policy.php",
+    "license": "other",
     "extent": {
       "spatial": {
         "bbox": [
@@ -210,6 +210,10 @@
       "type": "application/xml",
       "title": "OGC Web Feature Service (WFS)",
       "href": "https://geo.woudc.org/ows"
+    },
+    {
+      "rel": "license",
+      "href": "https://woudc.org/about/data-policy.php"
     }
   ]
 }
