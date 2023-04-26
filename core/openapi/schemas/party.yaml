@@ -59,8 +59,10 @@ properties:
         home, etc.). The value is the address itself.
       properties:
         deliveryPoint:
-          type: string
-          description: Address line for the location.
+          type: array
+          description: Address lines for the location.
+          items:
+            type: string
         city:
           type: string
           description: City for the location.
