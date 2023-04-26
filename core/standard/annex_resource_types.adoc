@@ -6,10 +6,7 @@
 [[common_resource_types-overview]]
 === Overview
 
-This annex describes common resource types when qualifying resources via a record's `properties.type` property, in the absence
-of a formal controlled vocabulary.  Please note that these codelists and identifiers are NOT normative.  For information
-communities wishing to formally identify and qualify, it is suggested that a specification extension be developed to meet those
-requirements.
+This annex describes common resource types when qualifying resources via a record's `properties.type` property, in the absence of a formal controlled vocabulary.  Please note that these codelists and identifiers are NOT normative.  For information communities wishing to formally identify and qualify, it is suggested that a specification extension be developed to meet those requirements.
 
 ==== Data
 
