@@ -57,7 +57,8 @@ Other encoding are allowed but are not described in this document.
 |externalIds |optional |One or more identifiers for the resource assigned by an external entity. |properties.externalIds
 |themes |optional |A knowledge organization system used to classify the resource. |properties.themes
 |formats |optional |A list of available distributions for the resource. |properties.formats
-|contacts |optional |A list of contacts qualified by their role in association to the record. |properties.contacts
+|providers|optional |A list of providers who create or process the resource. |properties.providers
+|contacts |optional |A list of contacts qualified by their role in association to the record or resource. |properties.contacts
 |license |optional |A legal document under which the resource is made available. |properties.license
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
 |links |**required** |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
@@ -93,6 +94,14 @@ The following recommendations provide clarification on where and how to use
 these properties in a record.
 
 include::recommendations/record-core/REC_record-keywords-themes.adoc[]
+
+[[sc_providers_and_contacts]]
+==== Providers and contacts
+
+A provider is an entity that creates, produces, processes, hosts or publishes
+the resource(s) described by the record.
+
+A contact is a related party that can be an administrator, public relations manager, project officer, other contributors or maintainers, etc. of the record or the resource.
 
 [[sc_type_and_licenses]]
 ==== Type and Licenses
