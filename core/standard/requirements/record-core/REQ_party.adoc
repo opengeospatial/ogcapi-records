@@ -1,0 +1,6 @@
+[[req_party]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/party*
+^|A |If the `party` member is included in a record and the `logo` member is included in the party object then the link relation SHALL be `icon` and the mediate type SHALL be an `image` media type.
+|===

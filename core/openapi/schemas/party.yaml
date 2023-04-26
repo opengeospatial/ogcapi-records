@@ -25,8 +25,9 @@ properties:
       property is not to be used.
   logo:
     $ref: common/link.yaml
-    description: Graphic identifying a party
-
+    description:
+      Graphic identifying a party.  The link relation should be icon
+      and the media type should be an image media type.
   phone:
     type: object
     description: Telephone numbers at which contact can be made.
