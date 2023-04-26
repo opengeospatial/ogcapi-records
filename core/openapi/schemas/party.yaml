@@ -37,7 +37,7 @@ properties:
         description: |-
           The key name indicates the type of phone number (e.g. home,
           work, fax, etc.). The value is the phone number itself.
-        pattern: "^[1-9]{1}[0-9]{3,14}$"
+        pattern: "^\+[1-9]{1}[0-9]{3,14}$"
   email:
     type: object
     description: Email address at which contact can be made.
