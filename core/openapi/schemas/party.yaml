@@ -75,9 +75,11 @@ properties:
         country:
           type: string
           description: Country of the physical address.
-  url:
-    $ref: common/link.yaml
+  links:
+    type: array
     description: On-line information about the responsible party.
+    items:
+      $ref: common/link.yaml
   hoursOfService:
     type: string
     description: |-
