@@ -108,6 +108,7 @@ properties:
         type: array
         description:
           A knowledge organization system used to classify the resource.
+        minItems: 1
         items:
           type: object
           properties:
@@ -117,6 +118,7 @@ properties:
                 One or more entity/concept identifers from this knowledge
                 system. it is recommended that a resolvable URI be used
                 for each entity/concept identifier.
+              minItems: 1
               items:
                 type: object
                 properties:
@@ -141,6 +143,9 @@ properties:
                 An identifier for the knowledge organization system used
                 to classify the resource.  It is recommended that the
                 identifier be a resolvable URI.
+          required:
+              - concepts
+              - scheme
       formats:
         type: array
         description:
