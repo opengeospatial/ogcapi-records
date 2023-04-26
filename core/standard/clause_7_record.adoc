@@ -127,6 +127,8 @@ the resource(s) described by the record.
 
 A contact is a related party that can be an administrator, public relations manager, project officer, other contributors or maintainers, etc. of the record or the resource.
 
+include::requirements/record-core/REQ_party.adoc[]
+
 [[sc_type_and_licenses]]
 ==== Type and Licenses
 
