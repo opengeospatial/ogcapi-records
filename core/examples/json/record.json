@@ -4,6 +4,9 @@
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
   ],
   "type": "Feature",
+  "time": {
+    "timestamp": "2021-02-08T00:00:00Z"
+  },
   "geometry": {
     "type": "Polygon",
     "coordinates": [
