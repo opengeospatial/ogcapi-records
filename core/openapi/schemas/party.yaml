@@ -37,7 +37,7 @@ properties:
         description: |-
           The key name indicates the type of phone number (e.g. home,
           work, fax, etc.). The value is the phone number itself.
-        pattern: "^\+[1-9]{1}[0-9]{3,14}$"
+        pattern: "^+[1-9]{1}[0-9]{3,14}$"
   email:
     type: object
     description: Email address at which contact can be made.
@@ -81,10 +81,29 @@ properties:
     items:
       $ref: common/link.yaml
   hoursOfService:
-    type: string
-    description: |-
-      Time period (including time zone) when the resposible party
-      can be contacted.
+    type: object
+    description:
+      Time period when the responsible party can be contacted.  The
+      keys are the numbers 1 to 7 indicating the day of the week
+      starting with Monday as day 1 as per ISO-8601.  Associated with
+      each key/day is an array of time intervals indicating the periods
+      of open service.  There is also a closed member to indicate days
+      of the year when service is closed (e.g. public holidays).
+    patternProperties:
+      "^[1-7]":
+        type: array
+        items:
+          type: array
+          items:
+            type: string
+            format: time
+            minItems: 2
+            maxItems: 2
+      closed:
+        type: array
+        items:
+          type: string
+          format: date
   contactInstructions:
     type: string
     description: |-
