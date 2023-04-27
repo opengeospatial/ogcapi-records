@@ -1,7 +1,0 @@
-[[req_records-api_record-collections-items-links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-api/record-collections-items-links*
-
-For each record collection included in the response, the `links` property of the collection SHALL include an item for each supported encoding with a link to the records resource (relation: `items`).
-|===

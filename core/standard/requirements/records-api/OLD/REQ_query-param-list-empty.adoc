@@ -1,6 +1,0 @@
-[[req_record-api_query-param-list-empty]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-api/query-param-list-empty* 
-^|A |All empty entries SHALL be represented by the empty string ("").
-|===

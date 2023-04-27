@@ -1,7 +1,0 @@
-[[req_records-api_record-collections-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-collections-op*
-
-Implementations of the Record API shall comply with requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_operation_4[`/req/core/fc-md-op`]  of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-|===

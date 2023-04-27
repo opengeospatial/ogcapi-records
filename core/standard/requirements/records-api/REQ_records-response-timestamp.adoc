@@ -1,7 +1,0 @@
-[[req_records-api_records-timestamp]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/records-timestamp*
-
-Implementations of the Records API SHALL comply with requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-timeStamp`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
-|===
