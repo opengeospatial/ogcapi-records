@@ -1,7 +1,7 @@
-[[rec_record-links_iana]]
+[[rec_record-core_links_iana]]
 [width="90%",cols="2,6a"]
 |===
-^|*Recommendation {counter:rec-id}* |*/rec/core/record-links/iana*
+^|*Recommendation {counter:rec-id}* |*/rec/record-core/links_iana*
 
 It is recommended to use the official https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA Link Relation Types] for links in the `links` section.
 |===

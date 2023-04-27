@@ -53,11 +53,13 @@ Other encoding are allowed but are not described in this document.
 |title |**required** |A human-readable name given to the resource. |properties.title
 |description |optional |A free-text description of the resource. |properties.description
 |keywords |optional |A list of free-form keywords or tags associated with the resource. |properties.keyword
-|language |optional |The natural language used for textual values (i.e. titles, descriptions, etc) of a resource. |properties.language
+|language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this record. |properties.language
+|languages |optional |The list of other languages in which this record is available. |properties.languages
+|resourceLanguages |optional |The list of languages in which the resource described by this record can be retrieved. |properties.resourceLanguages
 |externalIds |optional |One or more identifiers for the resource assigned by an external entity. |properties.externalIds
 |themes |optional |A knowledge organization system used to classify the resource. |properties.themes
 |formats |optional |A list of available distributions for the resource. |properties.formats
-|providers |optional |A list of providers qualified by their role in association to the record. |properties.providers
+|contacts |optional |A list of contacts qualified by their role in association to the record or resource. |properties.contacts
 |license |optional |A legal document under which the resource is made available. |properties.license
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
 |links |**required** |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
@@ -93,6 +95,11 @@ The following recommendations provide clarification on where and how to use
 these properties in a record.
 
 include::recommendations/record-core/REC_record-keywords-themes.adoc[]
+
+[[sc_contacts]]
+==== Contacts
+
+include::requirements/record-core/REQ_party.adoc[]
 
 [[sc_type_and_licenses]]
 ==== Type and Licenses
@@ -187,13 +194,40 @@ include::../examples/json/templated-link.json[]
 
 A <<core-queryables,record>> contains information, encoded in the links section, for accessing one or more resources described by the record.  Since a resource may have multiple representations there may be multiple links pointing to each represention of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link schema] is extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
 
-[[sc_language_negotiation]]
-==== Language negotiation
+[[sc_record_language_handling]]
+==== Language handling
 
-Two kinds of languages are handled in this specification.  The language
-associated with the resource and the language associated with the record
-that describes the resource in the catalogue.
+===== Overview
 
-The language associated with the resource is specified using the <<core-queryables-resource-table,language>> property of a catalogue record.  This indicates the language associated with the resource that the record described.
+A catalogue record can include language information about:
 
-The language for the record itself is negotiated between a client and the servers using the https://tools.ietf.org/html/rfc7231#section-5.3.5[Accept-Language] header of https://tools.ietf.org/html/rfc7231[HTTP].  Records in a response document can only be presented in a single negotiated language.  There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple languages would require multiple requests to the server each negotiating to a desired language.
+* the resource that the record describes,
+* the language used for text values in the current record representation,
+* and alternate languages in which the current record can be represented.
+
+===== Language of the record
+
+include::recommendations/record-core/REC_record-lang.adoc[]
+
+The https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link object] based on https://docs.ogc.org/is/17-069r4/17-069r4.html#rfc8228[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languges.  
+
+[[minting-language-specific-uris]]
+A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs in order to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any particular approach how such a capability is supported by a server. 
+
+[NOTE]
+=====================================================================
+Two common approaches are:
+
+* an additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language-specific path element like `.../en-ca/...`);
+
+* an additional query parameter (for example, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/parameter/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
+=====================================================================
+
+[NOTE]
+=====================================================================
+There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple languages would require multiple requests to the server each negotiating to a desired language.
+=====================================================================
+
+===== Language of the resource
+
+include::recommendations/record-core/REC_resource-langs.adoc[]

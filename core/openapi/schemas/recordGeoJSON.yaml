@@ -78,12 +78,22 @@ properties:
         items:
           type: string
       language:
-        type: string
         description:
-          The natural language used for textual values (e.g. titles,
-          descriptions, etc.) of the resource. ISO 639-1/639-2 codes
-          should be used.
-        default: en
+           The language used for textual values in this record representation.
+        $ref: language.yaml
+      languages:
+        type: array
+        description:
+          This list of languages in which this record is available.
+        items:
+          $ref: language.yaml
+      resourceLanguages:
+        type: array
+        description:
+          The list of languages in which the resource described by this
+          record is available.
+        items:
+          $ref: language.yaml
       externalIds:
         type: array
         description:
@@ -108,6 +118,7 @@ properties:
         type: array
         description:
           A knowledge organization system used to classify the resource.
+        minItems: 1
         items:
           type: object
           properties:
@@ -117,6 +128,7 @@ properties:
                 One or more entity/concept identifers from this knowledge
                 system. it is recommended that a resolvable URI be used
                 for each entity/concept identifier.
+              minItems: 1
               items:
                 type: object
                 properties:
@@ -132,7 +144,8 @@ properties:
                   url:
                     type: string
                     format: uri
-                    description: A URI providing further description of the concept.
+                    description:
+                      A URI providing further description of the concept.
                 required:
                   - id
             scheme:
@@ -141,19 +154,22 @@ properties:
                 An identifier for the knowledge organization system used
                 to classify the resource.  It is recommended that the
                 identifier be a resolvable URI.
+          required:
+              - concepts
+              - scheme
       formats:
         type: array
         description:
           A list of available distributions of the resource.
         items:
           type: string
-      providers:
+      contacts:
         type: array
         items:
           $ref: party.yaml
         description:
-          A list of providers qualified by their role in association to the
-          record.
+          A list of contacts qualified by their role in association to the
+          record or the resource described by the record.
       license:
         type: string
         description:
