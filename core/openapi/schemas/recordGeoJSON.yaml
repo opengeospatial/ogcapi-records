@@ -112,7 +112,7 @@ properties:
       contacts:
         type: array
         items:
-          $ref: party.yaml
+          $ref: contact.yaml
         description:
           A list of contacts qualified by their role in association to the
           record or the resource described by the record.

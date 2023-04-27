@@ -121,7 +121,7 @@ include::recommendations/record-core/REC_record-keywords-themes.adoc[]
 [[sc_contacts]]
 ==== Contacts
 
-include::requirements/record-core/REQ_party.adoc[]
+include::requirements/record-core/REQ_contact.adoc[]
 
 [[sc_type_and_licenses]]
 ==== Type and Licenses
