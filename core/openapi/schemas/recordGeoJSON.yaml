@@ -142,7 +142,8 @@ properties:
                   url:
                     type: string
                     format: uri
-                    description: A URI providing further description of the concept.
+                    description:
+                      A URI providing further description of the concept.
                 required:
                   - id
             scheme:
@@ -157,13 +158,13 @@ properties:
           A list of available distributions of the resource.
         items:
           type: string
-      providers:
+      contacts:
         type: array
         items:
           $ref: party.yaml
         description:
-          A list of providers qualified by their role in association to the
-          record.
+          A list of contacts qualified by their role in association to the
+          record or the resource described by the record.
       license:
         type: string
         description:
