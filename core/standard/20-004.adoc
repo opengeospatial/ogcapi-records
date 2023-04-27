@@ -125,6 +125,8 @@ include::annex_summary.adoc[]
 
 include::annex_resource_types.adoc[]
 
+include::annex_contact_roles.adoc[]
+
 include::annex_bibliography.adoc[]
 
 include::annex_history.adoc[]
