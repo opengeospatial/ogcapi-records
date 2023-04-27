@@ -19,6 +19,7 @@ Clients:
 * [QGIS](#qgis)
 * [OWSLib](#owslib)
 * [stac-browser](#stac-browser)
+* [model-driven-metadata-editor](#mdme)
 
 Parsers/Encoders:
 * [pygeometa](#pygeometa)
@@ -254,3 +255,8 @@ metadata for geospatial datasets.  Supports OGC API - Records record metadata ge
 ## stac-browser
 
 [stac-browser](https://github.com/radiantearth/stac-browser) is a web client developed for [Spatio-Temporal Asset Catalog (STAC)](https://github.com/radiantearth/stac-spec) static catalogs. It is compatible with OGC API - Records crawlable catalogs. A live version is available [here](https://radiantearth.github.io/stac-browser/#/)
+
+## mdme
+
+Model Driven Metadata Editor ([MDME](https://osgeo.github.io/mdme)) is a 
+metadata editor driven by arbitrary json schema models based on [vjsf](https://koumoul-dev.github.io/vuetify-jsonschema-form). You can configure it with the OGC API Records schema to use it to author metadata in the OGC API Records model. MDME also offers capabilities to transform between models using metadata transformation services provided by [pygeoapi.io](https://demo.pygeoapi.io/master/processes/)
