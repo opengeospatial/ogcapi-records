@@ -1,0 +1,18 @@
+[appendix]
+:appendix-caption: Annex
+[[annex_contact_roles]]
+== Common contact roles (Informative)
+
+[[common_contact_roles-overview]]
+=== Overview
+
+This annex describes common contact types when qualifying contact roles via a record contact's `roles` property, in the absence
+of a formal controlled vocabulary.  Please note that these codelists and identifiers are NOT normative.  For information
+communities wishing to formally identify and qualify, it is suggested that a specification extension be developed to meet those
+requirements.
+
+* ISO 19115 contact roles (`+CI_RoleCode`+) footnote:[https://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode]
+* ISO 19115-3 contact roles (`+CI_RoleCode`+) footnote:[https://schemas.isotc211.org/schemas/19115/resources/Codelist/cat/codelists.xml#CI_RoleCode]
+* STAC Item Provider roles footnote:[https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#provider-object]
+* DCAT 2 https://www.w3.org/TR/vocab-dcat-2/#Class:Role
+* DCAT 3 https://www.w3.org/TR/vocab-dcat-3/#Class:Role
