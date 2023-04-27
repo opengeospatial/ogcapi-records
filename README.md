@@ -55,7 +55,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
                            [ -117.35, 32.58 ] ] ]
       },
       "properties": {
-        "recordUpdated": "2020-05-10T21:58:08Z",
+        "updated": "2020-05-10T21:58:08Z",
         "type": "vector digital data",
         "title": "AG_PRESERVE",
         "description": "Agriculture Preserve Lands\nThe California Land Conservation Act, better known as the Williamson Act, has been the state's premier agricultural land protection program since its enactment in 1965. More than 16 million of the state's 30 million acres of farm and ranch land are currently protected under the Williamson Act. \n\nThe California Legislature passed the Williamson Act in 1965 to preserve agricultural and open space lands by discouraging premature and unnecessary conversion to urban uses. The Act creates an arrangement whereby private landowners contract with counties and cities to voluntarily restrict their land to agricultural and compatible open-space uses. The vehicle for these agreements is a rolling term 10-year contract (i.e., unless either party files a \"notice of nonrenewal,\" the contract is automatically renewed for an additional year.). In return, restricted parcels are assessed for property tax purposes at a rate consistent with their actual use, rather then potential market value.\nAn agricultural preserve defines the boundary of an area within which a city or county will enter into contracts with landowners. The boundary is designated by resolution of the board of supervisors (board) or city council (council) having jurisdiction. Only land located within an agricultural preserve is eligible for a Williamson Act contract. Preserves are regulated by rules and restrictions designated in the resolution to ensure that the land within the preserve is maintained for agricultural or open space use.",
@@ -68,13 +68,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
         "externalId": "urn:uuid:dc9b6d52-932a-11ea-ad6f-823cf448c401",
         "formats": [
           "vector digital data"
-        ],
-        "extent": {
-          "spatial": {
-            "bbox": [ [ -117.35, 32.58, -116.21, 33.45 ] ],
-            "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-          }
-        },
+        ]
       },
       "links": [
         {
