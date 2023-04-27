@@ -1,6 +1,5 @@
-oneOf:
-- type: 'null'
 - type: object
+  nullable: true
   properties:
     date:
       type: string
@@ -21,3 +20,9 @@ oneOf:
         - type: string
           enum:
           - ".."
+    resolution:
+      type: string
+      description:
+        Minimum time period resolvable in the dataset, as an ISO 8601 duration
+      example:
+        - 'P1D'
