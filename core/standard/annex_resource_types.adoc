@@ -36,3 +36,9 @@ requirements.
 * http://www.opengis.net/spec/ogcapi-styles-1/1.0
 * http://www.opengis.net/spec/ogcapi-processes-1/1.0
 * http://www.opengis.net/spec/ogcapi-edr-1/1.0
+
+==== Additional Resource Type Vocabularies
+
+* DCAT 2 type/genre: footnote:[https://www.w3.org/TR/vocab-dcat-2/#Property:resource_type]
+* DCAT 3 type/genre: footnote:[https://www.w3.org/TR/vocab-dcat-3/#Property:resource_type]
+* DMCI Type Vocabulary footnote:[https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#section-7]
