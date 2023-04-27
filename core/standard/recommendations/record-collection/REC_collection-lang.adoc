@@ -1,0 +1,8 @@
+[[rec_record-collection_langs]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/record-collection/langs*
+^|A |The language used to express text values in a collection object SHOULD be specified using the <<collection-properties-table,`language`>> property.
+^|B |The list of other languges in which the collection object may be retrieved SHOULD be specified using the <<collection-properties-table,`languages`>> property.
+^|C |If one or more language-specific links are included in the links section of a record collection (path: `links`) pointing to alternate language representations of this collection object, the language used as the `hreflang` value SHOULD be one of the languages listed as the value of the <<collection-properties-table,`languages`>> property of the collection object.
+|===

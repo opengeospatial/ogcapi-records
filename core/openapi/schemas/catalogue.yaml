@@ -31,12 +31,16 @@ allOf:
       items:
         type: string
     language:
-      type: string
       description:
-        The natural language used for textual values (e.g. titles,
-        descriptions, etc.) of the catalogue. ISO 639-1/639-2 codes
-        should be used.
-      default: en
+        The language used for textual values for this catalogue object.
+      $ref: language.yaml
+    languages:
+      type: array
+      description:
+        This list of other languages in which this catalogue object can
+        be retrieved.
+      items:
+        $ref: language.yaml
     themes:
       type: array
       description:
