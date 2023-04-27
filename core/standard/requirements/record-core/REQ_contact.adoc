@@ -1,0 +1,7 @@
+[[req_contact]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/contact*
+^|A |If the `contacts` member is included in a record and the `logo` member is included in the contact object then the link relation SHALL be `icon` and the media type SHALL be an `image` media type.
+^|A |If the `contacts` member is included in a record and the `links` member is included in the contact object then the link relation `about` SHALL be used for each listed link and the media type SHALL be set the inidicate the content type of the link (e.g. `text/html` for a company's web page versus `text/vcard` for a virtual contact file).
+|===

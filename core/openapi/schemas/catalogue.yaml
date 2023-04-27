@@ -81,7 +81,7 @@ allOf:
     contacts:
       type: array
       items:
-        $ref: party.yaml
+        $ref: contact.yaml
       description:
         A list of contacts qualified by their role.
     license:

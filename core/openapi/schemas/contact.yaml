@@ -9,7 +9,7 @@ properties:
   identifier:
     type: string
     description: |-
-      A value uniquely identifying a party (individual or organization)
+      A value uniquely identifying a contact (individual or organization)
   name:
     type: string
     description: |-
@@ -26,7 +26,7 @@ properties:
   logo:
     $ref: common/link.yaml
     description:
-      Graphic identifying a party.  The link relation should be icon
+      Graphic identifying a contact.  The link relation should be icon
       and the media type should be an image media type.
   phone:
     type: object
@@ -77,13 +77,13 @@ properties:
           description: Country of the physical address.
   links:
     type: array
-    description: On-line information about the responsible party.
+    description: On-line information about the contact/.
     items:
       $ref: common/link.yaml
   hoursOfService:
     type: object
     description:
-      Time period when the responsible party can be contacted.  The
+      Time period when the contact can be contacted.  The
       keys are the numbers 1 to 7 indicating the day of the week
       starting with Monday as day 1 as per ISO-8601.  Associated with
       each key/day is an array of time intervals indicating the periods
