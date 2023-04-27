@@ -19,7 +19,7 @@ Clients:
 * [QGIS](#qgis)
 * [OWSLib](#owslib)
 * [stac-browser](#stac-browser)
-* [model-driven-metadata-editor](#mdme)
+* [mdme](#mdme)
 
 Parsers/Encoders:
 * [pygeometa](#pygeometa)
