@@ -26,33 +26,30 @@ properties:
   logo:
     $ref: common/link.yaml
     description:
-      Graphic identifying a contact.  The link relation should be icon
+      Graphic identifying a contact. The link relation should be `icon`
       and the media type should be an image media type.
   phone:
     type: object
     description: Telephone numbers at which contact can be made.
-    patternProperties:
-      "^.*":
-        type: string
-        description: |-
-          The key name indicates the type of phone number (e.g. home,
-          work, fax, etc.). The value is the phone number itself.
-        pattern: "^+[1-9]{1}[0-9]{3,14}$"
+    additionalProperties:
+      type: string
+      description: |-
+        The key name indicates the type of phone number (e.g. home,
+        work, fax, etc.). The value is the phone number itself.
+      pattern: "^+[1-9]{1}[0-9]{3,14}$"
   email:
     type: object
     description: Email address at which contact can be made.
-    patternProperties:
-      "^.*":
-        type: string
-        description: |-
-          The key name indicates the type of email address (e.g. home,
-            work, etc.). The value of the email address itself.
-          format: email
+    additionalProperties:
+      type: string
+      description: |-
+        The key name indicates the type of email address (e.g. home,
+          work, etc.). The value of the email address itself.
+        format: email
   address:
     type: object
     description: Physical location at which contact can be made.
-    patternProperties:
-      "^.*":
+    additionalProperties:
       type: object
       description: |-
         The key name indicates the type of address (e.g. office,
@@ -77,7 +74,7 @@ properties:
           description: Country of the physical address.
   links:
     type: array
-    description: On-line information about the contact/.
+    description: On-line information about the contact.
     items:
       $ref: common/link.yaml
   hoursOfService:
@@ -90,7 +87,7 @@ properties:
       of open service.  There is also a closed member to indicate days
       of the year when service is closed (e.g. public holidays).
     patternProperties:
-      "^[1-7]":
+      "^[1-7]$":
         type: array
         items:
           type: array
