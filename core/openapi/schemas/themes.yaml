@@ -6,7 +6,7 @@ items:
   properties:
     concepts:
       type: array
-      description: |
+      description: |-
         One or more entity/concept identifers from this knowledge
         system. it is recommended that a resolvable URI be used
         for each entity/concept identifier.
@@ -32,7 +32,7 @@ items:
           - id
     scheme:
       type: string
-      description: |
+      description: |-
         An identifier for the knowledge organization system used
         to classify the resource.  It is recommended that the
         identifier be a resolvable URI.
