@@ -109,9 +109,9 @@ The following JSON-Schema fragment illustrates how the feature collections objec
 
 [source,yaml]
 ----
-    allOf:
-      $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
-      type: object
+  allOf:
+    - $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
+    - type: object
       required:
         - type
         - created
