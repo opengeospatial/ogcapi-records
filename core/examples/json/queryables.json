@@ -5,11 +5,23 @@
             "type": "string"
         },
         {
-            "queryable": "externalId",
+            "queryable": "created",
+            "type": "datetime"
+        },
+        {
+            "queryable": "updated",
+            "type": "datetime"
+        },
+        {
+            "queryable": "conformsTo",
             "type": "string"
         },
         {
             "queryable": "title",
+            "type": "string"
+        },
+        {
+            "queryable": "type",
             "type": "string"
         },
         {
@@ -21,20 +33,28 @@
             "type": "string"
         },
         {
-            "queryable": "type",
+            "queryable": "languages",
             "type": "string"
         },
         {
-            "queryable": "publisher",
-            "type": "datetime"
+            "queryable": "resourceLanguages",
+            "type": "string"
+        },
+        {
+            "queryable": "externalIds",
+            "type": "string"
         },
         {
             "queryable": "themes",
-            "type": "datetime"
+            "type": "string"
         },
         {
-            "queryable": "contactpoint",
-            "type": "datetime"
+            "queryable": "formats",
+            "type": "string"
+        },
+        {
+            "queryable": "contacts",
+            "type": "string"
         },
         {
             "queryable": "license",
@@ -45,28 +65,8 @@
             "type": "string"
         },
         {
-            "queryable": "modified",
-            "type": "datetime"
-        },
-        {
-            "queryable": "language",
-            "type": "datetime"
-        },
-        {
-            "queryable": "extent",
-            "type": "geometry"
-        },
-        {
-            "queryable": "formats",
-            "type": "datetime"
-        },
-        {
-            "queryable": "created",
-            "type": "datetime"
-        },
-        {
-            "queryable": "updated",
-            "type": "datetime"
+            "queryable": "links",
+            "type": "string"
         }
     ]
 }
