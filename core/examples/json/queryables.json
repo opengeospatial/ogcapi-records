@@ -11,10 +11,12 @@
             "type": "string"
         },
         "created": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
         },
         "updated": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
         },
         "conformsTo": {
             "type": "string"
