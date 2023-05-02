@@ -1,7 +1,0 @@
-[[rec_record-core_links-license]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/links-license*
-
-If a canonical URI is available for a license that is a value of the core queryable _license_, a link with link relation type `license` to that canonical URI SHOULD be added to the `links` property.
-|===

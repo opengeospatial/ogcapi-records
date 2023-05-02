@@ -50,6 +50,8 @@ NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType
 
 include::requirements/record-collection/REQ_mandatory-queryables.adoc[]
 
+include::recommendations/record-collection/PER_common-mark.adoc[]
+
 include::recommendations/record-collection/PER_additional-queryables.adoc[]
 
 === Keywords and Themes

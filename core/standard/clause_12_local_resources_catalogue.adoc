@@ -58,6 +58,8 @@ include::requirements/local-resources-catalogue/REQ_property-title.adoc[]
 
 include::requirements/local-resources-catalogue/REQ_property-description.adoc[]
 
+include::recommendations/local-resources-catalogue/PER_common-mark.adoc[]
+
 === Property `extent`
 
 include::recommendations/local-resources-catalogue/REC_property-extent.adoc[]

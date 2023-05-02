@@ -1,0 +1,7 @@
+[[req_record-core_time-instant]]
+[width="90%",cols="2,7a"]
+|===
+^|*Requirement {counter:req-num}* |*/req/core/time-instant*
+^|A |If the `time` object in a record includes a `date` member, the value SHALL conform to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match the production rule `full-date`.
+^|B |If the `time` object in a record includes a `timestamp` member, the value SHALL conform to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match the production rule `date-time`.
+|===

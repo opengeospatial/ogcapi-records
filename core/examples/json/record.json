@@ -4,6 +4,9 @@
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
   ],
   "type": "Feature",
+  "time": {
+    "timestamp": "2021-02-08T00:00:00Z"
+  },
   "geometry": {
     "type": "Polygon",
     "coordinates": [
@@ -126,7 +129,8 @@
       "CSV",
       "GeoJSON"
     ],
-    "license": "https://woudc.org/about/data-policy.php",
+    "contactPoint": "https://woudc.org/contact.php",
+    "license": "other",
     "extent": {
       "spatial": {
         "bbox": [
@@ -226,6 +230,10 @@
       "type": "application/xml",
       "title": "OGC Web Feature Service (WFS)",
       "href": "https://geo.woudc.org/ows"
+    },
+    {
+      "rel": "license",
+      "href": "https://woudc.org/about/data-policy.php"
     }
   ]
 }

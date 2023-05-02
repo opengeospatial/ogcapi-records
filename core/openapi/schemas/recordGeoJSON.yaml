@@ -1,3 +1,4 @@
+---
 type: object
 required:
   - id
@@ -19,21 +20,7 @@ properties:
     enum:
       - Feature
   time:
-    oneOf:
-      - type: null
-      - type: object
-        properties:
-          oneOf:
-            - type: string
-              format: date-time
-            - type: array
-              minItems: 2
-              maxItems: 2
-              items:
-                oneOf:
-                  - type: null
-                  - type: string
-                    format: date-time
+    $ref: time.yaml
   geometry:
     oneOf:
       - type: null
@@ -115,48 +102,7 @@ properties:
           required:
             - value
       themes:
-        type: array
-        description:
-          A knowledge organization system used to classify the resource.
-        minItems: 1
-        items:
-          type: object
-          properties:
-            concepts:
-              type: array
-              description:
-                One or more entity/concept identifers from this knowledge
-                system. it is recommended that a resolvable URI be used
-                for each entity/concept identifier.
-              minItems: 1
-              items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                    description: An identifier for the concept.
-                  title:
-                    type: string
-                    description: A human readable title for the concept.
-                  description:
-                    type: string
-                    description: A human readable description for the concept.
-                  url:
-                    type: string
-                    format: uri
-                    description:
-                      A URI providing further description of the concept.
-                required:
-                  - id
-            scheme:
-              type: string
-              description:
-                An identifier for the knowledge organization system used
-                to classify the resource.  It is recommended that the
-                identifier be a resolvable URI.
-          required:
-              - concepts
-              - scheme
+        $ref: themes.yaml
       formats:
         type: array
         description:
@@ -171,15 +117,7 @@ properties:
           A list of contacts qualified by their role in association to the
           record or the resource described by the record.
       license:
-        type: string
-        description:
-          A legal document under which the resource is made available.
-          The value should be a code, convenient for filtering the records.
-          Where applicable, the use of the identifiers from the SPDX License
-          List is recommended. If multiple licenses apply, it is recommended
-          to use "various".  Where available, links to a URI of each applicable
-          license should be added to the 'links' property.
-        maxLength: 64
+        $ref: license.yaml
       rights:
         type: string
         description:
