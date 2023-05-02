@@ -1,8 +1,12 @@
 type: array
 description:
   A knowledge organization system used to classify the resource.
+minItems: 1
 items:
   type: object
+  required:
+      - concepts
+      - scheme
   properties:
     concepts:
       type: array
@@ -10,6 +14,7 @@ items:
         One or more entity/concept identifers from this knowledge
         system. it is recommended that a resolvable URI be used
         for each entity/concept identifier.
+      minItems: 1
       items:
         type: object
         required:
