@@ -102,7 +102,12 @@ properties:
           required:
             - value
       themes:
-        $ref: themes.yaml
+        type: array
+        description:
+          A knowledge organization system used to classify the resource.
+        minItems: 1
+        items:
+          $ref: themes.yaml
       formats:
         type: array
         description:
