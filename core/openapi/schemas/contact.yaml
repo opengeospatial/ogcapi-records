@@ -107,4 +107,6 @@ properties:
       Supplemental instructions on how or when to contact the
       responsible party.
   roles:
-    $ref: roles.yaml
+    type: array
+    items:
+      $ref: roles.yaml
