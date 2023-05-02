@@ -1,72 +1,64 @@
 {
-    "queryables": [
-        {
-            "queryable": "recordId",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://example.orgnet/api/collections/my-dataset/queryables",
+    "type": "object",
+    "title": "My dataset",
+    "properties": {
+        "geometry": {
+            "$ref": "https://geojson.org/schema/Geometry.json"
+        },
+        "recordId": {
             "type": "string"
         },
-        {
-            "queryable": "externalId",
+        "created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "conformsTo": {
             "type": "string"
         },
-        {
-            "queryable": "title",
+        "title": {
             "type": "string"
         },
-        {
-            "queryable": "description",
+        "type": {
             "type": "string"
         },
-        {
-            "queryable": "keywords",
+        "description": {
             "type": "string"
         },
-        {
-            "queryable": "type",
+        "keywords": {
+            "type": "array"
+        },
+        "languages": {
             "type": "string"
         },
-        {
-            "queryable": "publisher",
-            "type": "datetime"
-        },
-        {
-            "queryable": "themes",
-            "type": "datetime"
-        },
-        {
-            "queryable": "contactpoint",
-            "type": "datetime"
-        },
-        {
-            "queryable": "license",
+        "resourceLanguages": {
             "type": "string"
         },
-        {
-            "queryable": "rights",
+        "externalIds": {
             "type": "string"
         },
-        {
-            "queryable": "modified",
-            "type": "datetime"
+        "themes": {
+            "type": "array"
         },
-        {
-            "queryable": "language",
-            "type": "datetime"
+        "formats": {
+            "type": "string"
         },
-        {
-            "queryable": "extent",
-            "type": "geometry"
+        "contacts": {
+            "type": "array"
         },
-        {
-            "queryable": "formats",
-            "type": "datetime"
+        "license": {
+            "type": "string"
         },
-        {
-            "queryable": "created",
-            "type": "datetime"
+        "rights": {
+            "type": "string"
         },
-        {
-            "queryable": "updated",
-            "type": "datetime"
+        "links": {
+            "type": "string"
         }
-    ]
+    }
 }
