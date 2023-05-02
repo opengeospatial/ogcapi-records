@@ -74,6 +74,8 @@ Language handling for the collection object is analogous to <<sc_record_language
 
 include::recommendations/record-collection/REC_collection-lang.adoc[]
 
+include::recommendations/record-collection/REC_record-langs.adoc[]
+
 === Encodings
 
 This specification defines requirements for JSON and HTML encoding of a catalogue. See <<clause-encodings,Encodings>>.
