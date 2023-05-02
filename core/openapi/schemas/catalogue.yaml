@@ -42,7 +42,12 @@ allOf:
       items:
         $ref: language.yaml
     themes:
-      $ref: themes.yaml
+      type: array
+      description:
+        A knowledge organization system used to classify the resource.
+      minItems: 1
+      items:
+        $ref: theme.yaml
     contacts:
       type: array
       items:
