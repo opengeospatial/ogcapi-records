@@ -56,7 +56,20 @@
         "value": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"
       }
     ],
-    "publisher": "https://woudc.org",
+    "contacts": [
+      {
+        "name": "World Ozone and Ultraviolet Radiation Data Centre",
+        "contactInfo": {
+          "url": "https://woudc.org",
+          "contactInstructions": "https://woudc.org/contact.php"
+        },
+        "roles": [
+          {
+            "name": "publisher"
+          }
+        ]
+      }
+    ],
     "themes": [
       {
         "concepts": [
