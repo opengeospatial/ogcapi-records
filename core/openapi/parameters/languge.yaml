@@ -1,0 +1,12 @@
+name: language
+in: query
+description: |-
+   The optional language parameter supports requesting records in
+   specific langauge(s).
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+style: form

@@ -1,0 +1,34 @@
+type: object
+description:
+  The language used for textual values in this record.
+required:
+  - code
+properties:
+  code:
+    type: string
+    description:
+      The language tag as per RFC-5646.
+    example:
+      code: el
+    name:
+      type: string
+      description:
+        The untranslated name of of the language.
+      example:
+        name: Ελληνικά
+    alternate:
+      type: string
+      description:
+        The name of the language in another well-understood language,
+        usually English.
+      example:
+        alternate: Greek
+    dir:
+      type: string
+      description:
+        The direction for text in this language.  Either left-to-right
+        or right-to-left.
+      enum:
+        - rtl
+        - ltr
+      default: ltr

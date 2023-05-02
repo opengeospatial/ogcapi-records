@@ -1,4 +1,4 @@
-[[rec_record-type]]
+[[rec_record-core_type]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/record-type*
