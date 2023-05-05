@@ -67,11 +67,7 @@
            }
         ],
         "contactInstructions": "SEE PAGE: https://woudc.org/contact.php",
-        "roles": [
-          {
-            "name": "publisher"
-          }
-        ]
+        "roles": [ "publisher" ]
       }
     ],
     "themes": [

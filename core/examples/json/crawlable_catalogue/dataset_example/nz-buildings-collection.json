@@ -35,10 +35,7 @@
             },
             "email": "customersupport@linz.govt.nz"
         },
-        "role":
-        {
-            "name": "producer"
-        }
+        "roles": [ "producer" ]
     },
     "license": "CC-BY-4.0",
     "links":

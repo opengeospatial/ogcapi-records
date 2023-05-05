@@ -59,17 +59,21 @@ allOf:
               properties:
                   id:
                     type: string
-                    description: An identifier for the concept.
+                    description:
+                      An identifier for the concept.
                   title:
                     type: string
-                    description: A human readable title for the concept.
+                    description:
+                      A human readable title for the concept.
                   description:
                     type: string
-                    description: A human readable description for the concept.
+                    description:
+                      A human readable description for the concept.
                   url:
                     type: string
                     format: uri
-                    description: A URI providing further description of the concept.
+                    description:
+                      A URI providing further description of the concept.
               required:
                 - id
           scheme:
@@ -80,10 +84,10 @@ allOf:
                identifier be a resolvable URI.
     contacts:
       type: array
+      description:
+        A list of contacts qualified by their role(s).
       items:
         $ref: contact.yaml
-      description:
-        A list of contacts qualified by their role.
     license:
       type: string
       description:

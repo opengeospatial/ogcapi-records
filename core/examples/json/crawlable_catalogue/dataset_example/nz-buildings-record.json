@@ -53,10 +53,7 @@
                 },
                 "email": "customersupport@linz.govt.nz"
             },
-            "role":
-            {
-                "name": "producer"
-            }
+            "roles": [ "producer" ]
         },
         "formats":
         [

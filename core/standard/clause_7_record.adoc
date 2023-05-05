@@ -59,7 +59,7 @@ Other encoding are allowed but are not described in this document.
 |externalIds |optional |One or more identifiers for the resource assigned by an external entity. |properties.externalIds
 |themes |optional |A knowledge organization system used to classify the resource. |properties.themes
 |formats |optional |A list of available distributions for the resource. |properties.formats
-|contacts |optional |A list of contacts qualified by their role in association to the record or resource. |properties.contacts
+|contacts |optional |A list of contacts qualified by their role(s) in association to the record or resource. |properties.contacts
 |license |optional |A legal document under which the resource is made available. |properties.license
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
 |links |**required** |A list of links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats and/or links to other resources associated with this resource.  Also, a list of links for navigating the API (e.g. prev, next, alternate, etc.). |links
@@ -75,7 +75,9 @@ include::recommendations/record-core/PER_additional-queryables-record.adoc[]
 [[sc_record_extensions]]
 ==== Record extensions
 
-In tables <<core-queryables-record-table>> and <<core-queryables-resource-table>> this standard defines a core set of properties for describing discoverable resources.  It is anticipated that this core set of properties will be extended to suite specific use cases or requirements.  For example, a catalogue record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalogue record has been extended in this way can be advertised using the `conformsTo` member.  The `conformsTo` member is a list of URIs that identify each extension used in a record.  This specification does not define the specific URIs that are used to identify a specific extension; it simply provides a place where these identifiers can be listed.
+In tables <<core-queryables-record-table>> and <<core-queryables-resource-table>> this standard defines a set of core properties for describing discoverable resources.  It is anticipated that this set of core properties will be extended to suite specific use cases or requirements.  For example, a catalogue record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalogue record has been extended in this way can be advertised using the `conformsTo` member.  The `conformsTo` member is a list of identifiers that indicate each extension used in a record.  This specification does not define the specific identifiers that are used to identify specific extensions; it simply provides a place where these identifiers can be listed.
+
+include::recommendations/record-core/REC_record-extensions.adoc[]
 
 In the case where all the records of a catalogue use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` member at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalogue.yaml[collection or catalogue level] that may be used to declare which extensions are used in all records of the catalogue.  Extensions listed at the catalogue and record levels are cumulative.
 
