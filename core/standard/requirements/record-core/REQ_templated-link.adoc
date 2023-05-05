@@ -40,7 +40,7 @@ properties:
     default: false
   variables:
     type: object
-    description: A dictionary of the JSON-Schema fragements defining the characteristics of each substitution variable in the link URI.
+    description: A dictionary of the JSON Schema fragments defining the characteristics of each substitution variable in the link URI.
 ----
 
 ^|B |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.

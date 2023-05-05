@@ -107,7 +107,7 @@ properties:
           A knowledge organization system used to classify the resource.
         minItems: 1
         items:
-          $ref: themes.yaml
+          $ref: theme.yaml
       formats:
         type: array
         description:

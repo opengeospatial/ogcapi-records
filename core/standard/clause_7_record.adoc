@@ -206,7 +206,7 @@ Templated links may also be used to bind to resources that may require additiona
 
 This specification extends the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] to include substitution variables who values are filled in at runtime prior to resolving the link.
 
-The https://schemas.opengis.net/ogcapi/common/part1/1.0/openapi/schemas/link.yaml[link schema] is extended with the addition of two properties named `templated` and `variables`.  The `templated` property is a boolean that is used to indicate the the URL of the link (i.e. `href`) is a template and contains substitution variables.  The `variables` property uses https://json-schema.org/draft/2020-12/json-schema-validation.html[JSON-Schema fragments] to define the characteristics of each substitution variable referenced in the templated link URL.
+The https://schemas.opengis.net/ogcapi/common/part1/1.0/openapi/schemas/link.yaml[link schema] is extended with the addition of two properties named `templated` and `variables`.  The `templated` property is a boolean that is used to indicate the the URL of the link (i.e. `href`) is a template and contains substitution variables.  The `variables` property uses https://json-schema.org/draft/2020-12/json-schema-validation.html[JSON Schema fragments] to define the characteristics of each substitution variable referenced in the templated link URL.
 
 include::requirements/record-core/REQ_templated-link.adoc[]
 

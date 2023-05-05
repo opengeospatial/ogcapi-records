@@ -44,44 +44,10 @@ allOf:
     themes:
       type: array
       description:
-        A knowledge organization system used to classify the catalogue.
+        A knowledge organization system used to classify the resource.
+      minItems: 1
       items:
-        type: object
-        properties:
-          concepts:
-            type: array
-            description:
-              One or more entity/concept identifers from this knowledge
-              system. it is recommended that a resolvable URI be used
-              for each entity/concept identifier.
-            items:
-              type: object
-              properties:
-                  id:
-                    type: string
-                    description:
-                      An identifier for the concept.
-                  title:
-                    type: string
-                    description:
-                      A human readable title for the concept.
-                  description:
-                    type: string
-                    description:
-                      A human readable description for the concept.
-                  url:
-                    type: string
-                    format: uri
-                    description:
-                      A URI providing further description of the concept.
-              required:
-                - id
-          scheme:
-            type: string
-            description:
-               An identifier for the knowledge organization system used
-               to classify the catalogue.  It is recommended that the
-               identifier be a resolvable URI.
+        $ref: theme.yaml
     contacts:
       type: array
       description:

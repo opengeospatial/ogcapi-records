@@ -107,7 +107,7 @@ include::recommendations/local-resources-catalogue/PER_additional-properties.ado
 
 === Example
 
-The following JSON-Schema fragment illustrates how the feature collections object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
+The following JSON Schema fragment illustrates how the feature collections object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
 
 [source,yaml]
 ----
@@ -143,11 +143,48 @@ The following JSON-Schema fragment illustrates how the feature collections objec
           description: the entity making the collection available
           type: string
         themes:
-          description: list of classifications association with the collection from a knowledge organization system
           type: array
+          description:
+            A knowledge organization system used to classify the resource.
+          minItems: 1
           items:
-             type: string
-             format: uri
+            type: object
+            properties:
+              concepts:
+                type: array
+                description:
+                  One or more entity/concept identifers from this knowledge
+                  system. it is recommended that a resolvable URI be used
+                  for each entity/concept identifier.
+                minItems: 1
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: An identifier for the concept.
+                    title:
+                      type: string
+                      description: A human readable title for the concept.
+                    description:
+                      type: string
+                      description: A human readable description for the concept.
+                    url:
+                      type: string
+                      format: uri
+                      description:
+                        A URI providing further description of the concept.
+                  required:
+                    - id
+              scheme:
+                type: string
+                description:
+                  An identifier for the knowledge organization system used
+                  to classify the resource.  It is recommended that the
+                  identifier be a resolvable URI.
+            required:
+                - concepts
+                - scheme
         contactpoint:
           description: entity to contact about the collection
           type: object
