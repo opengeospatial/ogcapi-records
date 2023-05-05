@@ -33,7 +33,7 @@ properties:
   phones:
     type: array
     description: Telephone numbers at which contact can be made.
-    items: 
+    items:
       type: object
       required: value
       properties:
@@ -84,7 +84,7 @@ properties:
           type: string
           description: Country of the physical address.
         roles:
-          description: 
+          description:
             The type of address (e.g. office, home, etc.).
           $ref: roles.yaml
   links:

@@ -1,3 +1,4 @@
+---
 allOf:
   $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
   type: object
@@ -10,7 +11,7 @@ allOf:
       description:
         If all records of the catalogue conform to same set of
         extensions/conformance classes then this member can be
-        used to advertise that fact rather than copying this 
+        used to advertise that fact rather than copying this
         information into each record.
       $ref: common/confClasses.yaml#/properties/conformsTo
     created:

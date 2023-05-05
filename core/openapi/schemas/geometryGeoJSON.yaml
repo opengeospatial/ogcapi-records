@@ -1,3 +1,4 @@
+---
 oneOf:
   - $ref: pointGeoJSON.yaml
   - $ref: multipointGeoJSON.yaml

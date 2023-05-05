@@ -1,3 +1,4 @@
+---
 openapi: 3.0.3
 info:
   title: "Building Blocks specified in OGC API - Records - Part 1: Core"

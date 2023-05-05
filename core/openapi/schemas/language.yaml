@@ -1,3 +1,4 @@
+---
 type: object
 description:
   The language used for textual values in this record.
@@ -24,7 +25,12 @@ properties:
     dir:
       type: string
       description:
-        The direction for text in this language. The default `ltr` (left-to-right) represents the most common situation. However, care should be taken to set the value of `dir` appropriately if the language direction is not `ltr`. Other values supported: `rtl` (right-to-left), `ttb` (top-to-bottom), and `btt` (bottom-to-top).
+        The direction for text in this language. The default, `ltr`
+        (left-to-right), represents the most common situation.
+        However, care should be taken to set the value of `dir`
+        appropriately if the language direction is not `ltr`.
+        Other values supported are `rtl` (right-to-left), `ttb`
+        (top-to-bottom), and `btt` (bottom-to-top).
       enum:
         - ltr
         - rtl
