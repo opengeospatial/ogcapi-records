@@ -45,7 +45,6 @@ properties:
           description:
             The type of phone number (e.g. home, work, fax, etc.).
           $ref: roles.yaml
-          items:
   emails:
     type: array
     description: Email addresses at which contact can be made.
