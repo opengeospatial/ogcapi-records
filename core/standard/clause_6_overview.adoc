@@ -2,13 +2,13 @@
 == Overview
 
 [[records-role]]
-=== Role of OGC API Records
+=== Role of OGC API - Records
 
-Historically, catalogues have been used as big repositories of formal metadata like ISO-19119, ISO-19115, FGDC. etc. However, more recently catalogues are migrating to a more distributed model where the metadata is intimately associated with the resource that it describes. A modern example is STAC which relies on well defined building blocks that can be linked in different ways.
+Historically, catalogues have been used as large repositories of formal metadata like ISO 19119, ISO 19115, FGDC, etc. However, more recently catalogues are migrating to a more distributed model where the metadata is intimately associated with the resource that it describes. A modern example is STAC which relies on well defined building blocks that can be linked in different ways.
 
-Althought OGC API - Records is built upon the legacy of CSW, its role in a modern SDI can be both: a big repository of metadata documents or a distributed (even crawlable) catalogue.
+Although OGC API - Records is built upon the legacy of CSW, its role in a modern SDI can be both: a big repository of metadata documents or a distributed (even crawlable) catalogue.
 
-In the modern scenario, the catalogue records can be distributed and linked together so that they can be crawled OR they can be harvested into a service endpoint to make them searchable. Even more than that, a searchable catalogue can harvest not only a metadata document describing the resource but in some cases the resource itself (e.g. harvesting the collections object from OGC API). The implications of this are subtle but important. In the traditional cataloging approach (e.g. based on CSW) a client could find the record and the record might include binding information to access the resource but that is pretty much it. Using the new approach, a client interacts more intimately with the catalogue and the catalogue becomes integral to the access to the resource. Think of the entire cloud native ecosystem: range requests to COGs don't really work unless there is a STAC item telling the client in what ranges the bands exists, thus the catalogue becomes an integral component in the process of accessing a resource.
+In the modern scenario, the catalogue records can be distributed and linked together so that they can be crawled OR they can be harvested into a service endpoint to make them searchable. In addition, a searchable catalogue can harvest not only a metadata document describing the resource but in some cases the resource itself (e.g. harvesting the collections object from OGC API). The implications of this are subtle but important. In the traditional cataloging approach (e.g. based on CSW) a client could find the record and the record might include binding information to access the resource but that is pretty much it. Using the new approach, a client interacts more intimately with the catalogue and the catalogue becomes integral to the access to the resource. An example is the cloud native ecosystem: HTTP range requests to Cloud Optimized GeoTIFF (COG) data cannot be used propertly unless there is a STAC item telling the client in what ranges the bands exists, thus the catalogue becomes an integral component in the process of accessing a resource.
 
 [[general-overview]]
 === General
