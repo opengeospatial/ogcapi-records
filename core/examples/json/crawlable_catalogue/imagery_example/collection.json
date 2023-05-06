@@ -16,9 +16,7 @@
         "href": "http://www.asc-csa.gc.ca/eng/satellites/radarsat1/Default.asp"
       }
     },
-    "role": {
-      "name": "producer"
-    }
+    "roles": [ "producer" ]
   },
   "license": "proprietary",
   "properties": {

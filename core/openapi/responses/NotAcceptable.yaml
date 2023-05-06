@@ -1,3 +1,4 @@
+---
 description: |-
   Content negotiation failed. For example, the `Accept` header submitted
   in the request did not support any of the media types supported by the

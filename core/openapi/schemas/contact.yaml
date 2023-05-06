@@ -16,7 +16,9 @@ properties:
       The name of the organization or the individual.
   positionName:
     type: string
-    description: Role or position of the responsible person.
+    description:
+      The name of the role or position of the responsible person taken
+      from the organization's formal organizational hierarchy or chart.
   organization:
     type: string
     description:
@@ -28,32 +30,41 @@ properties:
     description:
       Graphic identifying a contact. The link relation should be `icon`
       and the media type should be an image media type.
-  phone:
-    type: object
+  phones:
+    type: array
     description: Telephone numbers at which contact can be made.
-    additionalProperties:
-      type: string
-      description: |-
-        The key name indicates the type of phone number (e.g. home,
-        work, fax, etc.). The value is the phone number itself.
-      pattern: "^+[1-9]{1}[0-9]{3,14}$"
-  email:
-    type: object
-    description: Email address at which contact can be made.
-    additionalProperties:
-      type: string
-      description: |-
-        The key name indicates the type of email address (e.g. home,
-          work, etc.). The value of the email address itself.
-        format: email
-  address:
-    type: object
-    description: Physical location at which contact can be made.
-    additionalProperties:
+    items:
       type: object
-      description: |-
-        The key name indicates the type of address (e.g. office,
-        home, etc.). The value is the address itself.
+      required: value
+      properties:
+        value:
+          type: string
+          description: The value is the phone number itself.
+          pattern: "^+[1-9]{1}[0-9]{3,14}$"
+        roles:
+          description:
+            The type of phone number (e.g. home, work, fax, etc.).
+          $ref: roles.yaml
+  emails:
+    type: array
+    description: Email addresses at which contact can be made.
+    items:
+      type: object
+      required: value
+      properties:
+        value:
+          type: string
+          description: The value is the email number itself.
+          format: email
+        roles:
+          description:
+            The type of eMail (e.g. home, work, etc.).
+          $ref: roles.yaml
+  addresses:
+    type: array
+    description: Physical location at which contact can be made.
+    items:
+      type: object
       properties:
         deliveryPoint:
           type: array
@@ -72,6 +83,10 @@ properties:
         country:
           type: string
           description: Country of the physical address.
+        roles:
+          description:
+            The type of address (e.g. office, home, etc.).
+          $ref: roles.yaml
   links:
     type: array
     description: On-line information about the contact.
@@ -107,6 +122,8 @@ properties:
       Supplemental instructions on how or when to contact the
       responsible party.
   roles:
-    type: array
-    items:
-      $ref: roles.yaml
+    description:
+      The set of named duties, job functions and/or permissions
+      associated with this contact.
+      (e.g. developer, administrator, etc.).
+    $ref: roles.yaml

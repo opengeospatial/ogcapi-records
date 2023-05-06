@@ -1,3 +1,4 @@
+---
 description: |-
   Fetch the record with id `recordId` in the record collection
   with id `collectionId`

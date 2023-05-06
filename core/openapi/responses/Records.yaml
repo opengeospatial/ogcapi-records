@@ -1,3 +1,4 @@
+---
 description: |-
   The response is a document consisting of records in the collection.
   The records included in the response are determined by the server

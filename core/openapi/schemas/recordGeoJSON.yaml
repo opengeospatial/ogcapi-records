@@ -66,7 +66,7 @@ properties:
           type: string
       language:
         description:
-           The language used for textual values in this record representation.
+          The language used for textual values in this record representation.
         $ref: language.yaml
       languages:
         type: array
@@ -116,11 +116,11 @@ properties:
           type: string
       contacts:
         type: array
+        description:
+          A list of contacts qualified by their role(s) in association to the
+          record or the resource described by the record.
         items:
           $ref: contact.yaml
-        description:
-          A list of contacts qualified by their role in association to the
-          record or the resource described by the record.
       license:
         $ref: license.yaml
       rights:
