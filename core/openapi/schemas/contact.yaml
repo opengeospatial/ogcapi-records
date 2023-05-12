@@ -58,7 +58,7 @@ properties:
           format: email
         roles:
           description:
-            The type of eMail (e.g. home, work, etc.).
+            The type of email (e.g. home, work, etc.).
           $ref: roles.yaml
   addresses:
     type: array
