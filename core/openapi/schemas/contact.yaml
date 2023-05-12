@@ -37,7 +37,8 @@ properties:
           - type
         properties:
           rel:
-            const: "icon"
+            enum:
+              - icon
   phones:
     type: array
     description: Telephone numbers at which contact can be made.
