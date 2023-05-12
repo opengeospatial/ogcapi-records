@@ -99,7 +99,11 @@ properties:
     type: array
     description: On-line information about the contact.
     items:
-      $ref: common/link.yaml
+      allOf:
+        - $ref: common/link.yaml
+        - type: object
+          required:
+            - type
   hoursOfService:
     type: object
     description:
