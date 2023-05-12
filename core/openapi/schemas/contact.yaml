@@ -26,10 +26,18 @@ properties:
       case of an organization, the name property should be used and this
       property is not to be used.
   logo:
-    $ref: common/link.yaml
     description:
       Graphic identifying a contact. The link relation should be `icon`
       and the media type should be an image media type.
+    allOf:
+      - $ref: common/link.yaml
+      - type: object
+        required:
+          - rel
+          - type
+        properties:
+          rel:
+            const: "icon"
   phones:
     type: array
     description: Telephone numbers at which contact can be made.
