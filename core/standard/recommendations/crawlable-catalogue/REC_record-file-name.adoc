@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/crawlable-catalogue/record-file-name*
 
-The name of the record file should be `{id}.json` where `{id}` is the identifier of the record.
+The name of the record file should be `{id}.{ext}` where `{id}` is the identifier of the record and `{ext}` is an extenting representing the media type of the record object (e.g. `.json` for a JSON-encoded record).
 |===

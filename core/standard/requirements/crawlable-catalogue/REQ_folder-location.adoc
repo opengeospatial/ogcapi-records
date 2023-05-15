@@ -1,0 +1,7 @@
+[[req_crawlable-catalogue_folder-location]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/folder-location*
+
+The folder object describing a logically grouped set of resources SHALL be placed in a web-accessible location.
+|===

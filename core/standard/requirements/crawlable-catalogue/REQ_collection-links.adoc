@@ -5,7 +5,8 @@
 
 ^|A |A catalogue's `links` section SHALL include a link (`rel=self`) that points to itself.
 ^|B |A catalogue's `links` section SHALL include one or more typed links (`rel=alternate`) that point to each alternate representation of the collection object describing the catalogue.
-^|B |A catalogue's `links` section SHALL include one link (`rel=item`) pointing to each record of the catalogue.
+^|C |A catalogue's `links` section SHALL include one link (`rel=item`) pointing to each record of the catalogue.
+^|D |A catalogue's `links` section SHALL include one link (`rel=folder`) pointing to each subordinate folder of the catalogue.
 |===
 
 NOTE: The term "typed link" means a link that specifies a value for the `type` attribute.

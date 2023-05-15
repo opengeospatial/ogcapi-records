@@ -1,0 +1,61 @@
+---
+type: object
+required:
+  - id 
+  - type
+  - links
+properties:
+  id:
+    description:
+      An identifier of this folder.
+    type: string
+  type:
+    description:
+      Fixed value of "folder".
+    type:
+      string
+    enum:
+      - Folder
+  title:
+    description:
+      A human readable title of the folder.
+    type: string
+  description:
+    description:
+      A longer, human readable, narative describing this folder.
+    type: string
+  keywords:
+    type: array
+    description:
+      The topic or topics of the catalogue. Typically represented using
+      free-form keywords, tags, key phrases, or classification codes.
+    items:
+      type: string
+  created:
+    type: string
+    description:
+      Date of creation of this catalogue.
+    format: date-time
+  updated:
+    type: string
+    description:
+      The most recent date on which this catalogue was changed.
+    format: date-time
+  language:
+    description:
+      The language used for textual values for this catalogue object.
+    $ref: language.yaml
+  languages:
+    type: array
+    description:
+      This list of other languages in which this catalogue object can
+      be retrieved.
+    items:
+      $ref: language.yaml
+  extent:
+    $ref: extent.yaml
+  links:
+    type: array
+    items:
+      $ref: common/link.yaml
+  additionalProperties: true

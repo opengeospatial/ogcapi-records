@@ -1,0 +1,7 @@
+[[req_folder_mandatory-queryables]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/folder/mandatory-queryables*
+
+A folder object SHALL contain all the mandatory properties listed in <<folder-properties-table>>.
+|===

@@ -1,0 +1,8 @@
+[[rec_folder_langs]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/folder/langs*
+^|A |The language used to express text values in a folder object SHOULD be specified using the <<folder-properties-table,`language`>> property.
+^|B |The list of other languges in which the folder object may be retrieved SHOULD be specified using the <<folder-properties-table,`languages`>> property.
+^|C |If one or more language-specific links are included in the links section of a folder (path: `links`) pointing to alternate language representations of this folder object, the language used as the `hreflang` value SHOULD be one of the languages listed as the value of the <<folder-properties-table,`languages`>> property of the folder object.
+|===

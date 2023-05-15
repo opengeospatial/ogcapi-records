@@ -40,38 +40,13 @@ include::requirements/crawlable-catalogue/REQ_collection-location.adoc[]
 
 include::requirements/crawlable-catalogue/REQ_collection-links.adoc[]
 
-=== Collections of catalogue resources
+=== Grouping catalogue resources into folders
 
-In order to provide flexibility with regard to how crawlable catalogues can be organized (e.g. a hierarchy) a _collections object_ is defined that may be used as a common entry point for crawling to multiple, related, sub-collections, catalogues, records and other resources.
+In order to provide flexibility with regard to how crawlable catalogues can be organized (e.g. into a hierarchy) a <<clause-folder,_folder object_>> is defined (see: <<clause-folder>>) that may be used as a common entry point for crawling to multiple, related, sub-collections, catalogues, records and other resources.  The following figure illustrates the use of folders to organize a crawlable catalogue.
 
-<<collections-properties-table>> defines the set of properties for a collections object.
+image::images/FolderExample.png[]
 
-[#collections-properties-table,reftext='{table-caption} {counter:table-num}']
-.Table of properties for a collections object
-[cols="30,5,65",options="header"]
-|===
-|Queryables |Requirement |Description
-|_**id**_ |**required** |A unique identifier for this collections object.
-|_**title**_ |**required** |A human-readable name given to this collections object.
-|_**description**_ |optional |A free-text description of this collections object.
-|_**links**_ |**required** |A list of links for navigating to the resources (i.e. collections, catalogues, items, other resources) of this collections  object.
-|_**extent**_ |optional |The spatio-temporal coverage of this collections object.
-|_**crs**_ |optional |A list of coordinate reference systems used for spatial-temporal values.
-|type |**required** |The nature or genre of this resource. Fixed to "Collections".
-|keywords |optional |A list of free-form keywords or tags associated with this collections object.
-|language |optional |The natural language used for textual values (i.e. titles, descriptions, etc) of this collections object.
-|created |optional |The date this collections object was created.
-|updated |optional |The more recent date on which this collections object was changed.
-|contacts |optional |A list of contacts qualified by their role(s).
-|themes |optional |A knowledge organization system used to classify this collections object.
-|license |optional |A legal document under which this collections object is made available.
-|rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|===
+include::requirements/crawlable-catalogue/REQ_folder-location.adoc[]
 
-include::requirements/crawlable-catalogue/REQ_collections.adoc[]
+include::recommendations/crawlable-catalogue/REC_folder-file-name.adoc[]
 
-include::recommendations/crawlable-catalogue/PER_additions-collections-properties.adoc[]
-
-include::requirements/crawlable-catalogue/REQ_collections-links.adoc[]
-
-include::recommendations/crawlable-catalogue/REC_collections-links.adoc[]

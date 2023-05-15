@@ -3,6 +3,7 @@ This document uses the terms defined in Sub-clause 5 of https://docs.ogc.org/DRA
 
 For the purposes of this document, the following additional terms and definitions apply.
 
+[[catalogue-def]]
 === Catalogue; Record collection
 a collection of <<record-def,records>>
 
@@ -26,6 +27,10 @@ EXAMPLE: a downloadable file, an RSS feed or a web service that provides the dat
 
 === Executable Test Suite (ETS)
 set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.ogc.org/files/?artifact_id=55234[(OGC 08-134)]
+
+[[folder-def]]
+=== Folder
+A structure which container references to other <<catalogue-def,catalogues>>, <<record-def,records>> and/or <<folder-def,folders>>.
 
 [[record-def]]
 === Record

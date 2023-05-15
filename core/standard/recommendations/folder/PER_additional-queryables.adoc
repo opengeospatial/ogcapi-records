@@ -1,0 +1,7 @@
+[[per_folder_additional-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/folder/additional-properties*
+^|A |A folder object MAY contain zero or more of the optional properties listed in <<folder-properties-table>>.
+^|B |A folder object MAY contain any number of additional properties not listed in <<folder-properties-table>>.  The meaning of these additional properties is not defined in this standard.
+|===

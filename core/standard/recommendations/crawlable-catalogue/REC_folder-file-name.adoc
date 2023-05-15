@@ -1,0 +1,7 @@
+[[rec_crawlable-catalogue_folder-file-name]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/crawlable-catalogue/folder-file-name*
+
+The name of the folder file should be `{id}.{ext}` where `{id}` is the identifier of the folder and `{ext}` is an extension representing the media type of the folder object (e.g. `.json` for JSON files).
+|===

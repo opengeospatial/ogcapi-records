@@ -1,0 +1,6 @@
+[[rec_folder_root-link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/folder/root-link*
+^|A |A folder SHOULD include a link to the root object (`rel="root"`) of the organizational structure to which this folder belongs.
+|===

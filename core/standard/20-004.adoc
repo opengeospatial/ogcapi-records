@@ -99,25 +99,27 @@ include::clause_7_record.adoc[]
 
 include::clause_8_collection.adoc[]
 
-include::clause_9_api.adoc[]
+include::clause_9_folder.adoc[]
 
-include::clause_10_crawlable_catalogue.adoc[]
+include::clause_10_api.adoc[]
 
 include::clause_11_searchable_catalogue.adoc[]
 
-include::clause_12_local_resources_catalogue.adoc[]
+include::clause_12_crawlable_catalogue.adoc[]
 
-include::clause_13_sorting.adoc[]
+include::clause_13_local_resources_catalogue.adoc[]
 
-include::clause_14_record-filter.adoc[]
+include::clause_14_sorting.adoc[]
 
-include::clause_15_autodiscovery.adoc[]
+include::clause_15_record-filter.adoc[]
 
-include::clause_16_encodings.adoc[]
+include::clause_16_autodiscovery.adoc[]
 
-include::clause_17_media_types.adoc[]
+include::clause_17_encodings.adoc[]
 
-include::clause_18_security.adoc[]
+include::clause_18_media_types.adoc[]
+
+include::clause_19_security.adoc[]
 
 include::annex_ats.adoc[]
 

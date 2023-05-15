@@ -1,0 +1,7 @@
+[[req_json_json-content]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/json/json-content*
+^|A |Every 200 <<clause-record-collection,catalogue>> response with the media type `application/json` SHALL validate against the OpenAPI 3.0 schema document http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalogue.yaml[`catalogue.yaml`].
+^|B |Every 200 <<clause-record-folder,folder>> response with the media type `application/json` SHALL validate against the OpenAPI 3.0 schema document http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/folder.yaml[`folder.yaml`].
+|===

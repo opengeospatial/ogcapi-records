@@ -1,0 +1,10 @@
+[[req_folder_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/folder/links*
+^|A |Each folder SHALL include a link (`rel="self"`) to itself.
+^|B |Each folder SHALL, if they exist, include links (`rel="alternate"`) to each alternative representation of the folder.
+^|C |If a folder includes a reference to a <<clause-record-core,record>>, the link relation for the reference SHALL be `item`.
+^|D |If a folder includes a reference to a subordinate <<clause-record-collection,catalogue>> or other <<clause-folder,folder>>, the link relation for the reference SHALL be `child`.
+^|E |If a folder includes a reference to a parent <<clause-record-collection,catalogue>> or <<clause-folder,folder>>, the link relation for the reference SHALL be `parent`.
+|===

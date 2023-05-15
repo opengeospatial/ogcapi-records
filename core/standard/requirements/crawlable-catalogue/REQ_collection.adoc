@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/collection*
 
-A collection of related records, called a catalogue, SHALL be described by a <<rc_record_collection,collection object>>.
+A collection of related records, called a catalogue, SHALL be described by a <<clause-record-collection,collection object>>.
 |===

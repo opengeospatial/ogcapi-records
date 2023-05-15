@@ -128,6 +128,7 @@ properties:
         description:
           A statement that concerns all rights not addressed by the license
           such as a copyright statement.
+    additionalProperties: true
   links:
     type: array
     description:
@@ -141,3 +142,4 @@ properties:
     items:
       minItems: 1
       $ref: common/link.yaml
+  additionalProperties: true

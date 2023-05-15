@@ -1,0 +1,8 @@
+[[per_folder_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/folder/links*
+^|A |A folder may contain zero or more links to <<clause-record-collection,catalogues>>, <<clause-record-core,records>> and/or other <<clause-folder,folders>>.
+^|B |A folder may contain zero or more links to other resources not defined in this standard.  The meaning or interpretation of such links is not specified in this document.
+^|C |The links in the `links` section of the a folder may be typed (i.e. `type` property) and language-specific (i.e. `hreflang` property) to allow for the possibility of alternate content and/or language representations for each object referenced in the folder.
+|===

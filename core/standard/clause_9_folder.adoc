@@ -1,0 +1,65 @@
+[[clause-folder]]
+== Requirements Class "Folder"
+
+[[folder-overview]]
+=== Overview
+
+include::requirements/requirements_class_folder.adoc[]
+
+This requirements class defines the requirements for a folder.
+
+A _folder_ is a cataloging structure which contains links to <<clause-record-core,records>>, <<clause-record-collection,catalogues>> and possibly other _folders_. It allows logically related <<clause-record-core,records>>, <<clause-record-collection,catalogues>> and other <<clause-folder,folders>> to be grouped together and thus supporting flexibility in how these object can be organized (e.g. into a hierarchy).
+
+[[folder-schema]]
+=== Folder schema
+
+<<folder-properties-table>> defines the set of properties that may be used to describe a folder.
+
+[#folder-properties-table,reftext='{table-caption} {counter:table-num}']
+.Table of folder properties
+[cols="30,5,65",options="header"]
+|===
+|Queryables |Requirement |Description
+|_**id**_ |**required** |A unique identifier for the folder.
+|type |**required** |Fixed value of "Folder".
+|_**title**_ |optional |A human-readable name given to the folder.
+|_**description**_ |optional |A free-text description of the folder.
+|keywords |optional |A list of free-form keywords or tags associated with this folder.
+|language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this folder object. 
+|languages |optional |The list of other languages in which this folder object is available. 
+|created |optional |The date this folder object was created.
+|updated |optional |The more recent date on which this folder object was changed.
+|_**extent**_ |optional |The spatio-temporal coverage of all subordinate resources referenced by this folder object.
+|_**links**_ |**required** |A list of links for navigating to cataloges, records or other folders.
+|===
+
+NOTE: The properties _id_, _title_, _description_, _links_ and _extent_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features].
+
+
+include::requirements/folder/REQ_mandatory-queryables.adoc[]
+
+include::recommendations/folder/PER_common-mark.adoc[]
+
+include::recommendations/folder/PER_additional-queryables.adoc[]
+
+=== Language handling
+
+Language handling for the folder object is analogous to <<sc_record_language_handling,Language handling>> for a record.
+
+include::recommendations/folder/REC_lang.adoc[]
+
+=== Spatio-temporal extent
+
+If it is known, the optional `extent` property may be used to specify the spatial-temporal coverage of all subordinate referenced resources in a folder.  This property is provided here to allow for a richer interaction with the folder.  For example, when rendered in HTML, the folder could include an accopmanying map whose view is zoomed to the extent specified in the folder.
+
+=== Links
+
+include::requirements/folder/REQ_links.adoc[]
+
+include::recommendations/folder/REC_root-link.adoc[]
+
+include::recommendations/folder/PER_links.adoc[]
+
+=== Encodings
+
+This specification defines requirements for JSON and HTML encoding of a catalogue. See <<clause-encodings,Encodings>>.
