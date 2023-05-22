@@ -44,12 +44,14 @@ properties:
     description: Telephone numbers at which contact can be made.
     items:
       type: object
-      required: value
+      required:
+        - value
       properties:
         value:
           type: string
           description: The value is the phone number itself.
-          pattern: "^+[1-9]{1}[0-9]{3,14}$"
+          pattern: "^\\+[1-9]{1}[0-9]{3,14}$"
+          example: "+14165550142"
         roles:
           description:
             The type of phone number (e.g. home, work, fax, etc.).
@@ -59,7 +61,8 @@ properties:
     description: Email addresses at which contact can be made.
     items:
       type: object
-      required: value
+      required:
+        - value
       properties:
         value:
           type: string
@@ -106,29 +109,9 @@ properties:
           required:
             - type
   hoursOfService:
-    type: object
-    description:
-      Time period when the contact can be contacted.  The
-      keys are the numbers 1 to 7 indicating the day of the week
-      starting with Monday as day 1 as per ISO-8601.  Associated with
-      each key/day is an array of time intervals indicating the periods
-      of open service.  There is also a closed member to indicate days
-      of the year when service is closed (e.g. public holidays).
-    patternProperties:
-      "^[1-7]$":
-        type: array
-        items:
-          type: array
-          items:
-            type: string
-            format: time
-            minItems: 2
-            maxItems: 2
-      closed:
-        type: array
-        items:
-          type: string
-          format: date
+    type: string
+    description: Time period when the contact can be contacted.
+    example: "Hours: Mo-Fr 10am-7pm Sa 10am-22pm Su 10am-21pm"
   contactInstructions:
     type: string
     description: |-

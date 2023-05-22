@@ -23,7 +23,8 @@ properties:
     $ref: time.yaml
   geometry:
     oneOf:
-      - type: null
+      - enum:
+        - null
       - $ref: geometryGeoJSON.yaml
   properties:
     type: object
