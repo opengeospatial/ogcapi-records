@@ -1,0 +1,37 @@
+{
+  "id": "sentinel1cat",
+  "type": "Collection",
+  "itemType": "record",
+  "title": "Sentinel-1 Catalogue",
+  "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+  "created": "2022-10-23T07:20:00",
+  "keywords": "SAR earth observation remote sensing satellite radar imaging weather environmental lang surface mapping ocean ice disaster agriculture terrain urban climate",
+  "langauge": "en",
+  "license": "CC-BY-3.0-IGO",
+  "links": [
+    {
+      "href": "https://www.someserver.com/ogcapi/catalogues/collections/sentinel1cat?f=json",
+      "rel": "self",
+      "type": "application/json",
+      "title": "this catalogue's description as JSON"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi/catalogues/collections/sentinel1cat?f=html",
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "this catalogue's description as HTML"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi/catalogues/collections/sentinel1cat/items?f=json",
+      "rel": "items",
+      "type": "application/xml",
+      "title": "the records of this catalogue as GeoJSON"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi/catalogues/collections/sentinel1cat/items?f=html",
+      "rel": "items",
+      "type": "text/html",
+      "title": "the records of this catalogue as HTML"
+    }
+  ]
+}

@@ -9,11 +9,12 @@ allOf:
   properties:
     type:
       description:
-        Fixed to "Catalogue".
+        Fixed to "Collection".  However it should be understood that in this
+        context the term mean a "collection" of records (aka catalogue).
       type:
         string
       enum:
-        - Catalogue
+        - Collection
     conformsTo:
       description:
         If all records of the catalogue conform to same set of

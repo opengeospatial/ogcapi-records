@@ -31,7 +31,7 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 |_**extent**_ |optional |The spatio-temporal coverage of the collection.
 |_**itemType**_ |**required** |Fixed to the value "record".
 |_**crs**_ |optional |A list of coordinate reference systems used for spatial-temporal values.
-|type |**required** |The nature or genre of the resource. Fixed to "Catalogue".
+|type |**required** |The nature or genre of the resource. Fixed to "Collection".
 |keywords |optional |A list of free-form keywords or tags associated with the collection.
 |language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this collection object. 
 |languages |optional |The list of other languages in which this collection object is available. 
@@ -79,3 +79,7 @@ include::recommendations/record-collection/REC_record-langs.adoc[]
 === Encodings
 
 This specification defines requirements for JSON and HTML encoding of a catalogue. See <<clause-encodings,Encodings>>.
+
+=== Example
+
+include::../examples/json/catalogue.json[]
