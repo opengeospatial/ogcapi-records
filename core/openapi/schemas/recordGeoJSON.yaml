@@ -20,7 +20,10 @@ properties:
     enum:
       - Feature
   time:
-    $ref: time.yaml
+    oneOf:
+      - enum:
+        - null
+      - $ref: time.yaml
   geometry:
     oneOf:
       - enum:
