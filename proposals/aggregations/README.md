@@ -28,7 +28,7 @@ indicates if there are potentially more buckets to be retrieved.
   "type": "FeatureCollection",
   "aggregations": [
     {
-      "property": "keyword", 
+      "property": "keywords", 
       "buckets": [
         {
           "key": "forestry",

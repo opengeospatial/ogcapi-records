@@ -52,7 +52,7 @@ Other encoding are allowed but are not described in this document.
 |type |**required** |The nature or genre of the resource. |properties.type
 |title |**required** |A human-readable name given to the resource. |properties.title
 |description |optional |A free-text description of the resource. |properties.description
-|keywords |optional |A list of free-form keywords or tags associated with the resource. |properties.keyword
+|keywords |optional |A list of free-form keywords or tags associated with the resource. |properties.keywords
 |language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this record. |properties.language
 |languages |optional |The list of other languages in which this record is available. |properties.languages
 |resourceLanguages |optional |The list of languages in which the resource described by this record can be retrieved. |properties.resourceLanguages
