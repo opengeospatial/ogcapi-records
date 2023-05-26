@@ -5,7 +5,7 @@
   ],
   "type": "Feature",
   "time": {
-    "interval": [ "1924-08-17T00:00:00Z",
+    "interval": [ "1924-08-17T00:00:00Z", ".."],
     "resolution": "P1D"
   },
   "geometry": {
