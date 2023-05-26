@@ -40,7 +40,6 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 |updated |optional |The more recent date on which the collection was changed.
 |contacts |optional |A list of contacts qualified by their role(s).
 |themes |optional |A knowledge organization system used to classify the collection.
-|contactPoint |optional |An entity to contact about the collection.
 |license |optional |A legal document under which the collection is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |properties |optional |Additional catalogue-specific properties describing the catalogue can be added here.
