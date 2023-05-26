@@ -219,12 +219,12 @@ The following table maps the <<query-response,core query response properties>> t
 |`description`        |`atom:entry/atom:summary`
 |`keywords`           |`atom:entry/atom:category`
 |`language`           |`dct:language`
-|`externalId`         |n/a`
-|`publisher`          |`atom:entry/atom:creator`
+|`externalIds`        |n/a`
 |`themes`             |`atom:entry/atom:category`
 |`formats`            |`atom/entry/atom:link[@rel="enclosure"]/@type`
-|`contactPoint`       |`dcat:contactPoint`
+|`contacts`           |`dcat:contactPoint`, `atom:entry/atom:creator`
 |`license`            |`atom:link[@rel="license"]`
 |`rights`             |`atom:entry/atom:rights`
-|`extent`             |`atom:entry/georss:*`
+|`geometry`           |`atom:entry/georss:*`
+|`time`               |
 |===

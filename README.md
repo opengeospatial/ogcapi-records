@@ -23,21 +23,24 @@ The record building block defines the core schema of a catalogue record.  It inc
 |Queryables |Requirement |Description 
 |-----------|------------|-----------------------------------
 |recordId |**M** |A unique record identifier assigned by the server.
+|conformsTo |O |A list of identifiers indicating that the record conforms to one or more extensionsl  Ideally, the requirements of each listed extension is formally published.
 |created |O |The date this record was created in the server.
-|updated |O |The most recent date on which the record was changed.
-|type |**M** |The nature or genre of the resource.
-|title |**M** |A human-readable name given to the resource.
+|updated |O |The most recent date on which this record was changed.
+|language |O |The natural language used for textual values (i.e. titles, descriptions, etc) of this record.
+|languages |O |The list of languages in which this record can be requested.
+|time |**M** |A characteristic temporal instance or interval associated with the resource; can be _null_ if not known or applicable.
+|geometry |**M** |A characteristic spatial extent associated with the resource; can be _null_ if not known or applicable.
+|type |**M** |The nature or genre of the resource described by this record.
+|title |**M** |A human-readable name given to the resource described by this record.
 |description |O |A free-text description of the resource.
-|keywords |O |A list of free-form keywords or tag associated with the resource.
-|language |O |This refers to the natural language used for textual values (i.e. titles, descriptions, etc) of a resource.
-|externalId |O |An identifier for the resource assigned by an external entity.
-|publisher |O |The entity making the resource available.
+|keywords |O |A list of free-form keywords or tags associated with the resource.
+|resourceLanguages |O |A list of languages in which the resource can be requested.
+|externalIds |O |A list of identifiers for the resource assigned by one or more external entities.
 |themes |O |A knowledge organization system used to classify the resource.
 |formats |O |A list of available distributions for the resource.
-|contactPoint |O |An entity to contact about the resource.
+|contacts |O |A list of entities to contact about the resource.
 |license |O |A legal document under which the resource is made available.
 |rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|extent |O |The spatio-temporal coverage and resolution of the resource.
 |links |O |A list of links including links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats, links to other resources associated with this resource and links for navigating the API (e.g. prev, next, alternate, etc.). See [link schema.](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/common/link.yaml).
 
 It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
@@ -48,6 +51,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
     {
       "id": "urn:uuid:dc9b6d52-932a-11ea-ad6f-823cf448c401",
       "type": "Feature",
+      "time": null,
       "geometry": {
         "type": "Polygon",
         "coordinates": [ [ [ -117.35, 32.58 ], [ -117.35, 33.45 ],
@@ -65,7 +69,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
           "Ag Preserve"
         ],
         "language": "en-US",
-        "externalId": "urn:uuid:dc9b6d52-932a-11ea-ad6f-823cf448c401",
+        "externalIds": [ "urn:uuid:dc9b6d52-932a-11ea-ad6f-823cf448c401" ],
         "formats": [
           "vector digital data"
         ]
