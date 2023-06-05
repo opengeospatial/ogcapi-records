@@ -1,0 +1,6 @@
+[[per_local-resources-catalogue_property-extent-null]]
+[width="90%",cols="2,6a"]
+|===
+^|*Premission {counter:per-id}* |*/per/local-resources-catalogue/property-extent-null*
+^|A |The value of the `extent` property MAY be `null`.
+|===

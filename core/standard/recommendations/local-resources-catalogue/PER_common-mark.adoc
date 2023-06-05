@@ -1,7 +1,7 @@
-[[per_collections_common-mark]]
+[[per_local-resources-catalogue_common-mark]]
 [width="90%",cols="2,6a"]
 |===
-^|*Recommendation {counter:rec-id}* |*/per/collections/common-mark*
+^|*Premission {counter:per-id}* |*/per/local-resources-catalogue/common-mark*
 
 For any `description` member in a local resources object, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
 |===
