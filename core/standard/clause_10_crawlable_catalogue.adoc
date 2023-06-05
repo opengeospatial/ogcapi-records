@@ -14,6 +14,8 @@ A crawlable catalogue is a deployment pattern that uses the <<clause-core-record
 
 A crawlable catalogue is not searchable and does not respond to query requests.  As the name implies, it can only be crawled (or harvested) by following the embedded links; typically by search engines and other active catalogues or browsed using a web browser.  However, due to its simplicity, a crawlable catalogue is easy to deploy and maintain, and is very reliable.
 
+NOTE: It should be pointed out that a <<clause-searchable-catalogue,searchable catalogue>> can also behave as a crawlable catalogue as long as the requirements in this clause are satisfied by the <<lause-searchable-catalogue,searchable catalogue>> implementation.
+
 [[crawlable-catalogue-record]]
 === Making a resource discoverable
 
