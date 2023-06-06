@@ -1,12 +1,16 @@
 ---
 allOf:
-  $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
+  $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/\
+         schemas/collection.yaml"
   type: object
   required:
     - title
     - itemType
     - type
   properties:
+    itemType:
+      enum:
+        - record
     conformsTo:
       description:
         If all records of the catalogue conform to same set of

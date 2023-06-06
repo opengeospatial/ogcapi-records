@@ -43,15 +43,15 @@ for example, using format specific suffixes like ".html");
 the Accept header of the HTTP request.
 =====================================================================
 
-[[record-collections]]
-=== Record collections
-
-include::requirements/records-api/REQ_record-collections-response.adoc[]
-
 [[record-collection]]
-=== Record collection
+=== Record collection response
 
 include::requirements/records-api/REQ_record-collection-response.adoc[]
+
+[[record-collections]]
+=== Record collections response
+
+include::requirements/records-api/REQ_record-collections-response.adoc[]
 
 [[records-access]]
 === Records access
