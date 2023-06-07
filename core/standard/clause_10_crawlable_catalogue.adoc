@@ -54,7 +54,7 @@ In order to provide flexibility with regard to how crawlable catalogues can be o
 |_**id**_ |**required** |A unique identifier for this collections object.
 |_**title**_ |**required** |A human-readable name given to this collections object.
 |_**description**_ |optional |A free-text description of this collections object.
-|_**links**_ |**required** |A list of links for navigating to the resources (i.e. collections, catalogues, items, other resources) of this collections  object.
+|_**links**_ |**required** |A list of links related to this collection.
 |_**extent**_ |optional |The spatio-temporal coverage of this collections object.
 |_**crs**_ |optional |A list of coordinate reference systems used for spatial-temporal values.
 |type |**required** |The nature or genre of this resource. Fixed to "Collection".
@@ -64,7 +64,7 @@ In order to provide flexibility with regard to how crawlable catalogues can be o
 |updated |optional |The more recent date on which this collections object was changed.
 |contacts |optional |A list of contacts qualified by their role(s).
 |themes |optional |A knowledge organization system used to classify this collections object.
-|license |optional |A legal document under which this collections object is made available.
+|license |optional |The legal provisions under which this collections object is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |===
 
