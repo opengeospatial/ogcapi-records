@@ -2,8 +2,7 @@
   "rel": "item",
   "type": "image/png",
   "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
-  "href": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetCapabilitieshttps://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs=EPSG:4326&layers=stations&bbox=-180,-90,180,90&format=image/png&width=1024&height=1024",
-  "templated": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
+  "link-template": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
   "variables": {
     "width": {
       "description": "...",
@@ -20,5 +19,5 @@
       "maximum": 5000
     }
   },
-  "varBase": "variables.json"
+  "var-base": "variables.json"
 }

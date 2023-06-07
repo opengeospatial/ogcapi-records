@@ -7,14 +7,11 @@
 
 [source,YAML]
 ----
-include::../../../openapi/schemas/common/link.yaml[]
+include::../../../openapi/schemas/common/linkTemplate.yaml[]
 ----
 
-^|B |The `href` member SHALL supply a resolvable URI to a remote resource or resource fragment.
-^|C |The optional `templated` member SHALL supply a parameterized version of `href` URI.
-^|D |Substitution variables in the `templated` link URI SHALL have the form `{_variable name_}`.
-^|E |If the optional `templated` member is supplied then a dictionary of substitution variable SHALL accompany the link.
-^|F |If the optional `templated` member is supplied then the value of the `href` member SHALL be considered an example URI created by using valid values from the the dictionary of substitution variables.
-^|G |The dictionary of substitution variables SHALL either be specified in-line in the link using the `variables` member or referenced using the `varBase` member or both.
-^|H |If both the `variables` member and the `varBase` member are supplied, the  complete dictionary of substitution variables SHALL be the union of the two dictionaries.
+^|B |The `link-template` member SHALL supply the templated link URI.
+^|C |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
+^|D |A dictionary of substitution variables SHALL either be specified in-line in the link using the `variables` member or referenced using the `var-base` member or both.
+^|E |If both the `variables` member and the `var-base` member are supplied, the  complete dictionary of substitution variables SHALL be the union of the two dictionaries.
 |===

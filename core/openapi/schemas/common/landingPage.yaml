@@ -13,4 +13,6 @@ properties:
     description: Links to the resources exposed through this API.
     type: array
     items:
-      $ref: link.yaml
+      oneOf:
+        - $ref: link.yaml
+        - $ref: linkTemplate.yaml

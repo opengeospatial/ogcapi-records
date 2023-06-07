@@ -141,4 +141,6 @@ properties:
       be one.
     items:
       minItems: 1
-      $ref: common/link.yaml
+      oneOf:
+        - $ref: link.yaml
+        - $ref: linkTemplate.yaml

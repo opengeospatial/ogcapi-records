@@ -14,7 +14,9 @@ properties:
   links:
     type: array
     items:
-      $ref: link.yaml
+      oneOf:
+        - $ref: link.yaml
+        - $ref: linkTemplate.yaml
   extent:
     $ref: extent.yaml
   itemType:

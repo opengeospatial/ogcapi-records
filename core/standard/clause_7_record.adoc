@@ -200,13 +200,11 @@ Consider the case where a record describing a coverage resource is discovered by
 
 Templated links may also be used to bind to resources that may require additional information in order to access the resources.  For example, simply knowing the URL of a legacy OGC service such as https://portal.ogc.org/files/?artifact_id=14416[WMS] or https://docs.ogc.org/is/09-025r2/09-025r2.html[WFS] is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values are required in order to have a complete link to a resource.  A templated link with variables can provide this additional context.
 
-This specification extends the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] to include substitution variables who's values are filled in at runtime prior to resolving the link.  The https://schemas.opengis.net/ogcapi/common/part1/1.0/openapi/schemas/link.yaml[link schema] is extended with the addition of three properties named `templated`, `variables` and `varBase`.  
+This specification defines a new schemas based on the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] that includes substitution variables who's values are filled in at runtime prior to resolving the link.  The https://schemas.opengis.net/ogcapi/common/part1/1.0/openapi/schemas/linkTemplated.yaml[templated link schema] defines three properties named `link-template`, `variables` and `var-base`.  The `link-template` property supplies the text of the templated link.  The `variables` and `var-base` properties allow substitution variables to be encoded in-line in the link or externally referenced.
 
 include::requirements/record-core/REQ_templated-link.adoc[]
 
-The `templated`, `variables` and `varBase` properties work together with the `href` property to allow both templated and non-templated aware clients resolve the link.  The `href` property is required and will thus always be available.  If the `templated` property is not specified then the link behaves as a normal link and the value of the `href` member is the URL to the resource.  If, however, the `templated` property is specified, indicating that this is a `templated` link, then templated-aware clients can consider the `href` value as a example URL to the resource (and use that if it is suitable for their needs) OR they can create a resolvable URL to the resource using the substitution variable information retrieved from the `variables` and `varBase` members.  Non-templated aware clients, on the other hand, will simply use the `href` value as the URL to the resource and ignore all the unrecgonized members.
-
-The following example illustrates a link to a legacy OGC Web service.  The example includes both an in-line and referenced (i.e. _variables.json_) dictionary of substitution variables.
+The following example illustrates a link template to a legacy OGC Web service.  The example includes both an in-line and referenced (i.e. _variables.json_) dictionary of substitution variables.
 
 [#templated-link-with-variables,reftext=`Associations simple and URI Template Example`]
 .Templated link with substitution variables
@@ -224,7 +222,7 @@ include::../examples/json/variables.json[]
 
 ==== Resource timestamps
 
-A <<core-queryables,record>> contains information, encoded in the links section, for accessing one or more resources described by the record.  Since a resource may have multiple representations there may be multiple links pointing to each represention of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link schema] is extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
+A <<core-queryables,record>> contains information, encoded in the links section, for accessing one or more resources described by the record.  Since a resource may have multiple representations there may be multiple links pointing to each represention of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link schema] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[templated link schema] are extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
 
 [[sc_record_language_handling]]
 ==== Language handling
@@ -241,7 +239,7 @@ A catalogue record can include language information about:
 
 include::recommendations/record-core/REC_record-lang.adoc[]
 
-The https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link object] based on https://docs.ogc.org/is/17-069r4/17-069r4.html#rfc8228[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languges.  
+The https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/linkTemplated.yaml[templated link object] are based on https://docs.ogc.org/is/17-069r4/17-069r4.html#rfc8228[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languges.  
 
 [[minting-language-specific-uris]]
 A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs in order to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any particular approach how such a capability is supported by a server. 

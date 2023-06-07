@@ -7,9 +7,6 @@ properties:
     type: string
     description:
       Supplies a resolvable URI to a remote resource (or resource fragment).
-      If a "templated" link URI is supplied then "href" shall be an example
-      URI created by using valid values from the "variables" dictionary
-      for the substitution variables.
     format: url
     example: http://data.example.com/buildings/123
   rel:
@@ -36,31 +33,6 @@ properties:
     example: "Trierer Strasse 70, 53115 Bonn"
   length:
     type: integer
-  templated:
-    type: string
-    description:
-      Supplies a parameterized version of the "href" URI where each variable
-      portion of the URI is specified using a substition variable of the form
-      "{variable_name}".
-  variables:
-    type: object
-    description:
-      This object contains one key per substitution variable in a "templated"
-      URL.  Each key defines the schema of one substitution variable using
-      a JSON Schema fragment and can thus include things like the data type
-      of the variable, enumerations, minimum values, maximum values, etc.
-      In combination with a "templated", the variables section should
-      provide enough information to bind to the target resource.
-      The complete set of variables is the union of the variables defined
-      by this member and referenced via the "varBase" member.
-  varBase:
-    type: string
-    description:
-      The path to a dictionary that defines the characteristics of each
-      substitution variable in the "templated" URI.  The complete set of
-      variables is the union of the variables referenced by this member
-      and any additional variables defined using the "variables" member.
-    format: url
   created:
     type: string
     description:

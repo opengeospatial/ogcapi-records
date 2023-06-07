@@ -7,7 +7,9 @@ properties:
   links:
     type: array
     items:
-      $ref: link.yaml
+      oneOf:
+        - $ref: link.yaml
+        - $ref: linkTemplate.yaml
   collections:
     type: array
     items:

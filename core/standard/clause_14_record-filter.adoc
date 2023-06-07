@@ -45,8 +45,7 @@ Links can be added to the following sections in a catalogue record:
 
 The schema for links added to the <<query-response,links>> section is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
 
-Links added directly to the <<query-response,properties>> section of a catalogue record can be
-added using the following patterns:
+Links added directly to the <<query-response,properties>> section of a catalogue record can be added using the following patterns:
 
 . The link relation is the key for an array of links with a schema similar to that used in the <<query-response,links>> section but omitting the `rel` key.
 . The link relation is the key for an array of `href` values.
