@@ -137,7 +137,7 @@ In addition, links to external resources describing the record type vocabulary u
 
 A record may have one `properties.license` property. If present, the value of this property should be a code, convenient for filtering records.
 
-include::recommendations/record-core/REC_record-license.adoc[]
+include::requirements/record-core/REQ_record-license.adoc[]
 
 [[sc_associations_and_links]]
 ==== Associations and Links
