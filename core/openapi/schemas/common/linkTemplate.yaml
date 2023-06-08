@@ -20,7 +20,7 @@ allOf:
             minimum values, maximum values, etc.
     - type: object
       properties:
-        var-base:
+        varBase:
           type: string
           description:
             The base URI to which the variable name can be
