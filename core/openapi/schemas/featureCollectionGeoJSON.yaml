@@ -15,9 +15,11 @@ properties:
   links:
     type: array
     items:
-      oneOf:
-        - $ref: link.yaml
-        - $ref: linkTemplate.yaml
+      $ref: common/link.yaml
+  linkTemplates:
+    type: array
+    items:
+      $ref: common/linkTemplate.yaml
   timeStamp:
     type: string
     format: date-time

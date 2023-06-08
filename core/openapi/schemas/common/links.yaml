@@ -1,0 +1,3 @@
+oneOf:
+  - $ref: link.yaml
+  - $ref: linkTemplate.yaml

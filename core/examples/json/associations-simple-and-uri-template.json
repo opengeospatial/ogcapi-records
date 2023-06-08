@@ -5,13 +5,33 @@
       "type": "text/html",
       "title": "WOUDC - Data - Station List",
       "href": "https://woudc.org/data/stations"
-    },
+    }
+  ],
+  "linkTemplates": [
     {
       "rel": "item",
       "type": "image/png",
       "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
-      "link-template": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
+      "href": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
       "variables": {
+        "bbox": {
+          "description": "...",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "crs": {
+          "description": "...",
+          "type": "string",
+          "enum": [
+            "EPSG:4326",
+            "EPSG:3857"
+          ]
+        },
         "width": {
           "description": "...",
           "type": "number",
@@ -26,8 +46,7 @@
           "minimum": 600,
           "maximum": 5000
         }
-      },
-      "var-base": "variables.json"
+      }
     }
   ]
 }

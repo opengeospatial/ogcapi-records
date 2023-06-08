@@ -1,67 +1,29 @@
 ---
-type: object
-required:
-  - href
-properties:
-  link-template:
-    type: string
-    description:
-      Supplies a templated version of a URI where each variable portion
-      of the URI is specified using a substition variable of the form
-      "{variable_name}".
-    format: url
-    example: http://data.example.com/buildings/123
-  rel:
-    type: string
-    description: The type or semantics of the relation.
-    example: alternate
-  type:
-    type: string
-    description:
-      A hint indicating what the media type of the result of dereferencing
-      the link should be.
-    example: application/geo+json
-  hreflang:
-    type: string
-    description:
-      A hint indicating what the language of the result of dereferencing
-      the link should be.
-    example: en
-  title:
-    type: string
-    description:
-      Used to label the destination of a link such that it can be used as
-      a human-readable identifier.
-    example: "Trierer Strasse 70, 53115 Bonn"
-  length:
-    type: integer
-  variables:
-    type: object
-    description:
-      This object contains one key per substitution variable in the 
-      templated URL.  Each key defines the schema of one substitution
-      variable using a JSON Schema fragment and can thus include things
-      like the data type of the variable, enumerations, minimum values,
-      maximum values, etc.  In combination with that templated URI, the
-      variables section should provide enough information to bind to the
-      target resource.  The complete set of variables is the union of the
-      variables defined by this member and referenced via the "var-base"
-      member.
-  var-base:
-    type: string
-    description:
-      The path to a dictionary that defines the characteristics of each
-      substitution variable in the templated URI.  The complete set of
-      variables is the union of the variables referenced by this member
-      and any additional variables defined using the "variables" member.
-    format: url
-  created:
-    type: string
-    description:
-      Date of creation of the resource pointed to by the link.
-    format: date-time
-  updated:
-    type: string
-    description:
-      Most recent date on which the resource pointed to by the link was changed.
-    format: date-time
+allOf:
+  $ref: link.yaml
+  description:
+    The "href" in a link template contains a URI
+    with substitution variables and is not a fully
+    resolvable link until the variable substitution
+    is preformed at runtime.
+  oneOf:
+    - type: object
+      properties:
+        variables:
+          type: object
+          description:
+            This object contains one key per substitution
+            variable in the templated URL.  Each key defines
+            the schema of one substitution variable using a
+            JSON Schema fragment and can thus include things
+            like the data type of the variable, enumerations,
+            minimum values, maximum values, etc.
+    - type: object
+      properties:
+        var-base:
+          type: string
+          description:
+            The base URI to which the variable name can be
+            appended to retrieve the definition of the
+            variable as a JSON Schema fragment.
+          format: url

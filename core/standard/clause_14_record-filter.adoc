@@ -36,14 +36,15 @@ Links can be added to a catalogue record in various ways.  This clause
 describes the various linking patterns and describes how to use CQL to
 filter based on links.
 
-==== Linking in records
+==== Linking patterns in records
 
 Links can be added to the following sections in a catalogue record:
 
 . the <<query-response,links>> section.
+. the <<query-response,linksTemplates>> section.
 . the <<query-response,properties>> section.
 
-The schema for links added to the <<query-response,links>> section is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
+The schema for links added to the <<query-response,links>> and <<query-response,linkTemplates>> sections is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
 
 Links added directly to the <<query-response,properties>> section of a catalogue record can be added using the following patterns:
 
@@ -57,18 +58,12 @@ The following examples illustrate each of these linking patterns:
 .Adding links to the **links** section
 ----
 {
-   .
-   .
-   .,
+   ...,
    "properties": {
-      .
-      .
-      .,
+      ...,
       "links":
       [
-         .
-         .
-         .,
+         ...,
          {
             "rel" : "alternate",
             "title" : "This records as XML.",
@@ -79,13 +74,9 @@ The following examples illustrate each of these linking patterns:
             "title": "The next record in this result set.",
             "href" : "https://example.org/collections/mycat/items/rec02"
          },
-         .
-         .
-         .
+         ...,
       ],
-      .
-      .
-      .
+      ...
    }
 }
 ----
@@ -94,14 +85,9 @@ The following examples illustrate each of these linking patterns:
 .Adding links to the **properties** section
 ----
 {
-   .
-   .
-   .,
+   ...,
    "properties": {
-      .
-      .
-      .,
-
+      ...,
       "related": [
          {
 		      "title" : "A related record",
@@ -112,9 +98,12 @@ The following examples illustrate each of these linking patterns:
 		   "title" : "CC BY 2.0",
 		   "href" : "https://creativecommons.org/licenses/by/2.0/"
 	   },
-      .
-      .
-      .
+      "enclosure": {
+         "title": "GeoPackage of Feature Data",
+         "href" : "https://www.someserver.com/collections/MyCollection/items?f=application/geopackage+vnd.sqlite3&bbox={bbox}",
+         "varBase": "https://www.someserver.com/variables"
+      },
+      ...
    }
 }
 ----
@@ -123,19 +112,12 @@ The following examples illustrate each of these linking patterns:
 .Adding links to the **properties** section
 ----
 {
-   .
-   .
-   .,
+   ...,
    "properties": {
-      .
-      .
-      .,
-
+      ...
       "related": ["https://example.org/related-record-path/rec15"],
       "license": "https://creativecommons.org/licenses/by/2.0/",
-      .
-      .
-      .
+      ...
    }
 }
 ----

@@ -132,15 +132,21 @@ properties:
   links:
     type: array
     description:
-      A list of links for accessing the resource (e.g. download link,
-      access link) in one of the supported distribution formats and/or
-      links to other resources associated with this resource.
-      Also, a list of links for navigating the API (e.g. prev,
-      next, etc.).  Since the specification requires that at least
+      A list of links related to the record or the resource that the
+      record describes.  There can be links to retrieve the resource
+      in one or more distribution formats, links to retrive the current
+      record in alternative formats and/or languages, links for
+      navigating an API used to retrieve the record (e.g. rel=prev,
+      rel=next), etc..  Since the specification requires that at least
       the self link be present then the min items for this list should
       be one.
     items:
       minItems: 1
-      oneOf:
-        - $ref: link.yaml
-        - $ref: linkTemplate.yaml
+      $ref: common/link.yaml
+  linkTemplates:
+    type: array
+    description:
+      A list of links similar to the "links" array but containing link
+      templates rather than fully resolvable links.
+    items:
+      $ref: common/linkTemplate.yaml

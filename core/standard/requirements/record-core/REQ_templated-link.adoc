@@ -10,8 +10,6 @@
 include::../../../openapi/schemas/common/linkTemplate.yaml[]
 ----
 
-^|B |The `link-template` member SHALL supply the templated link URI.
+^|B |The `href` member SHALL supply the templated link URI.
 ^|C |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
-^|D |A dictionary of substitution variables SHALL either be specified in-line in the link using the `variables` member or referenced using the `var-base` member or both.
-^|E |If both the `variables` member and the `var-base` member are supplied, the  complete dictionary of substitution variables SHALL be the union of the two dictionaries.
 |===
