@@ -9,7 +9,7 @@ The `Searchable Catalogue` Requirements Class defines the requirements for a cat
 
 include::requirements/searchable-catalogue/REQ_core.adoc[]
 
-include::recommendations/searchable-catalogue/PER_additional-conformance.adoc[]
+include::recommendations/searchable-catalogue/PER_additional-requirements.adoc[]
 
 include::requirements/searchable-catalogue/REQ_mandatory-properties.adoc[]
 
