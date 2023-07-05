@@ -24,25 +24,24 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 [cols="30,5,65",options="header"]
 |===
 |Queryables |Requirement |Description
-|_**id**_ |**required** |A unique identifier to the collection.
-|_**title**_ |**required** |A human-readable name given to the collection.
-|_**description**_ |optional |A free-text description of the collection.
-|_**links**_ |**required** |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)
-|_**extent**_ |optional |The spatio-temporal coverage of the collection.
+|_**id**_ |**required** |A unique identifier for this collection.
+|_**title**_ |**required** |A human-readable name given to this collection.
+|_**description**_ |optional |A free-text description of this collection.
+|_**links**_ |**required** |A list of links related to this collection.
+|_**extent**_ |optional |The spatio-temporal coverage of thos collection.
 |_**itemType**_ |**required** |Fixed to the value "record".
 |_**crs**_ |optional |A list of coordinate reference systems used for spatial-temporal values.
 |type |**required** |The nature or genre of the resource. Fixed to "Collection".
-|keywords |optional |A list of free-form keywords or tags associated with the collection.
+|keywords |optional |A list of free-form keywords or tags associated with this collection.
 |language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this collection object. 
 |languages |optional |The list of other languages in which this collection object is available. 
 |recordLanguages |optional |The list of languages in which records from the collection can be represented.
-|created |optional |The date the collection was created.
-|updated |optional |The more recent date on which the collection was changed.
+|created |optional |The date this collection was created.
+|updated |optional |The more recent date on which this collection was changed.
 |contacts |optional |A list of contacts qualified by their role(s).
-|themes |optional |A knowledge organization system used to classify the collection.
-|license |optional |A legal document under which the collection is made available.
+|themes |optional |A knowledge organization system used to classify this collection.
+|license |optional |The legal provisions under which this collection is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|properties |optional |Additional catalogue-specific properties describing the catalogue can be added here.
 |===
 
 NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features].

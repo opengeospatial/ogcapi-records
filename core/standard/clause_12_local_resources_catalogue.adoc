@@ -106,23 +106,30 @@ The following JSON Schema fragment illustrates how the feature collections objec
         - keywords
       properties:
         type:
-          description: the nature or genre of the items of the collections (e.g. feature, coverage)
+          description: 
+            The nature or genre of the items of the collections (e.g. feature,
+            coverage)
           type: string
         created:
-          description: the date this collection was created in the server
+          description:
+            The date this collection was created in the server.
           type: string
           format: date-time
         updated:
-          description: the most recent date on which the collection was updated
+          description:
+            The most recent date on which the collection was updated.
           type: string
           format: date-time
         keywords:
-          description: A list of free-form keywords or tag associated with the collection
+          description:
+            A list of free-form keywords or tag associated with the collection
           type: array
           items:
             type: string
         language:
-          description: the natural language used for textual values (i.e. titles, descriptions, etc) of items in the collection
+          description:
+            The natural language used for textual values (i.e. titles,
+            descriptions, etc) of items in the collection.
           type: string
         themes:
           type: array
@@ -144,13 +151,16 @@ The following JSON Schema fragment illustrates how the feature collections objec
                   properties:
                     id:
                       type: string
-                      description: An identifier for the concept.
+                      description:
+                        An identifier for the concept.
                     title:
                       type: string
-                      description: A human readable title for the concept.
+                      description:
+                        A human readable title for the concept.
                     description:
                       type: string
-                      description: A human readable description for the concept.
+                      description:
+                        A human readable description for the concept.
                     url:
                       type: string
                       format: uri
@@ -168,15 +178,19 @@ The following JSON Schema fragment illustrates how the feature collections objec
                 - concepts
                 - scheme
         contacts:
-          description: entity to contact about the collection
+          description:
+            The entity to contact about the collection.
           type: array
           items:
             $ref: contact.yaml
         license:
-          description: legal document under which the collection is made available.
+          description: 
+            The legal provisions under which the collection is made available.
           type: string
         rights:
-          description: a statement that concerns all rights not addressed by the license such as a copyright statement.
+          description:
+            A statement that concerns all rights not addressed by the license
+            such as a copyright statement.
           type: string
 ----
 
