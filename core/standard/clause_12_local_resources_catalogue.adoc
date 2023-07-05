@@ -27,7 +27,7 @@ This conformance class does not define the specific endpoints in the OGC API res
 
 === Resource Description
 
-=== Overview
+==== Overview
 
 The clause defines requirements and recommendations for the information content of a local resources object that can be retrieved from local resources endpoint.
 
@@ -50,47 +50,47 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 
 It is evident that there is significant overlap of the properties of each resource.  This standard defines the following requirements and recommendations with regard to information content of a local resources object such as the collection object that is retrievable from the `/collections` endpoint.
 
-=== Property `title`
+==== Property `title`
 
 include::requirements/local-resources-catalogue/REQ_property-title.adoc[]
 
-=== Property `description`
+==== Property `description`
 
 include::requirements/local-resources-catalogue/REQ_property-description.adoc[]
 
 include::recommendations/local-resources-catalogue/PER_common-mark.adoc[]
 
-=== Property `extent`
+==== Property `extent`
 
 include::recommendations/local-resources-catalogue/REC_property-extent.adoc[]
 
-=== Property `links`
+==== Property `links`
 
 include::recommendations/local-resources-catalogue/REC_property-links.adoc[]
 
-=== Property `type`
+==== Property `type`
 
 include::requirements/local-resources-catalogue/REQ_property-type.adoc[]
 
-=== Property `created`
+==== Property `created`
 
 include::requirements/local-resources-catalogue/REQ_property-created.adoc[]
 
-=== Property `updated`
+==== Property `updated`
 
 include::requirements/local-resources-catalogue/REQ_property-updated.adoc[]
 
 NOTE: Adding, modifying, or deleting items from a collection are all examples of changes that may occur that would require an update of the collection object that can be retrieved from the `/collections` endpoint.
 
-=== Property `keywords`
+==== Property `keywords`
 
 include::requirements/local-resources-catalogue/REQ_property-keywords.adoc[]
 
-=== Additional properties
+==== Additional properties
 
 include::recommendations/local-resources-catalogue/PER_additional-properties.adoc[]
 
-=== Example
+==== Example
 
 The following JSON Schema fragment illustrates how the feature collections object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
 
@@ -202,18 +202,21 @@ T.D.B.  Should add an instance example of a collection object.
 
 To enable search capabilities at local resource endpoints, this conformance class defines a set of requirements and recommendations around query parameters that can be implemented at the endpoint.
 
+[[local-resources-catalogue-bbox-param]]
 ==== Parameter bbox
 
 include::requirements/local-resources-catalogue/REQ_param-bbox-def.adoc[]
 
 include::requirements/local-resources-catalogue/REQ_param-bbox-response.adoc[]
 
+[[local-resources-catalogue-datetime-param]]
 ==== Parameter datetime
 
 include::requirements/local-resources-catalogue/REQ_param-datetime-def.adoc[]
 
 include::requirements/local-resources-catalogue/REQ_param-datetime-response.adoc[]
 
+[[local-resources-catalogue-limit-param]]
 ==== Parameter limit
 
 include::requirements/local-resources-catalogue/REQ_param-limit-def.adoc[]
@@ -222,12 +225,16 @@ include::requirements/local-resources-catalogue/REQ_param-limit-response.adoc[]
 
 See all the discussion about the `limit` parameter in the http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_6[Feature response] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
 
+[[local-resources-catalogue-q-param]]
 ==== Parameter q
 
 include::requirements/local-resources-catalogue/REQ_param-q-def.adoc[]
 
 include::recommendations/local-resources-catalogue/REC_param-q.adoc[]
 
+include::requirements/local-resources-catalogue/REQ_param-q-response.adoc[]
+
+[[local-resources-catalogue-type-param]]
 ==== Parameter type
 
 include::requirements/local-resources-catalogue/REQ_param-type-def.adoc[]
@@ -236,11 +243,14 @@ include::recommendations/local-resources-catalogue/REC_param-type.adoc[]
 
 include::requirements/local-resources-catalogue/REQ_param-type-response.adoc[]
 
+[[local-resources-catalogue-additional-params]]
 ==== Additional query parameters
 
 include::recommendations/local-resources-catalogue/REC_additional-query-parameters.adoc[]
 
+==== Response
 
+include::requirements/local-resources-catalogue/REQ_response.adoc[]
 
 [[clause-local-resources-catalogue_sorting]]
 === Requirements Class "Local Resources Catalogue, Sorting"
@@ -259,7 +269,7 @@ include::requirements/local-resources-catalogue_sorting/REQ_param-sortby-respons
 
 See also: <<req_sorting_get-sortables-op,/req/sorting/get-sortables-op>>, <<req_sorting_get-sortables-success,/req/sorting/get-sortables-success>>.
 
-=== Examples
+==== Examples
 
 Example 1: List all the collections that lie within a specific bounding box and contain the keyword `weather`.
 
@@ -277,8 +287,6 @@ Example 1: List all the collections that lie within a specific bounding box and 
      |   T.B.D. Need example output here...                          |
      |<--------------------------------------------------------------|
 ----
-
-
 
 [[clause-local-resources-catalogue_cql2-filter]]
 === Requirements Class "Local Resources Catalogue - CQL2 Filter"
