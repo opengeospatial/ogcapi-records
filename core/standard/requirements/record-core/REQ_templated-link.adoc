@@ -43,6 +43,8 @@ properties:
     description: A dictionary of the JSON Schema fragments defining the characteristics of each substitution variable in the link URI.
 ----
 
-^|B |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
-^|C |For each substitution variable in a templated link URI, there SHALL be a correspondingly named entry in the `variables` dictionary.
+^|B |The link template SHALL be encoded as a link object with a property `templated` set to `true` and the URI template in `href`.
+^|C |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
+^|D |For each substitution variable in a templated link URI, there SHALL be a correspondingly named entry in the `variables` dictionary.
+^|E |Templated links included in the HTTP header SHALL use the `Link-Template` HTTP header accorinding to the https://datatracker.ietf.org/doc/draft-ietf-httpapi-link-template/[draft "The Link-Template HTTP Header Field" specification] and SHALL forgo the inclusion of the `variables` dictionary.
 |===
