@@ -1,6 +1,7 @@
 ---
 allOf:
-  $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
+  $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/\
+        schemas/collection.yaml"
   type: object
   required:
     - title
@@ -65,10 +66,4 @@ allOf:
       description:
         A statement that concerns all rights not addresses by the license
         such as a copyright statement.
-    properties:
-      type: object
-      description:
-        Additional catalogue-specific properties describing the catalogue
-        can be added here.
-      additionalProperties: true
     additionalProperties: true
