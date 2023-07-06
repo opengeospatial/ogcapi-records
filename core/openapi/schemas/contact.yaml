@@ -3,18 +3,21 @@ type: object
 description: |-
   Identification of, and means of communication with, person responsible
   for the resource.
-required:
-  - name
+anyOf:
+  - required:
+    - name
+  - required:
+    - organization
 properties:
   identifier:
     type: string
     description: |-
-      A value uniquely identifying a contact (individual or organization)
+      A value uniquely identifying a contact.
   name:
     type: string
     description: |-
-      The name of the organization or the individual.
-  positionName:
+      The name of the responsible person.
+  position:
     type: string
     description:
       The name of the role or position of the responsible person taken
@@ -22,9 +25,7 @@ properties:
   organization:
     type: string
     description:
-      Organization/affiliation of the individual/responsible person. In
-      case of an organization, the name property should be used and this
-      property is not to be used.
+      Organization/affiliation of the contact.
   logo:
     description:
       Graphic identifying a contact. The link relation should be `icon`
