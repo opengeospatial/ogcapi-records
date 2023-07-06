@@ -95,7 +95,7 @@ properties:
           description: ZIP or other postal code.
         country:
           type: string
-          description: Country of the physical address.  ISO 3166-1 alpha-3 is recommended.
+          description: Country of the physical address.  ISO 3166-1 is recommended.
         roles:
           description:
             The type of address (e.g. office, home, etc.).
