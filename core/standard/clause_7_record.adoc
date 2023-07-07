@@ -120,6 +120,7 @@ include::../examples/json/keywords-themes.json[]
 ==== Contacts
 
 include::requirements/record-core/REQ_contact.adoc[]
+include::recommendations/record-core/REC_contact.adoc[]
 
 [[sc_type]]
 ==== Type

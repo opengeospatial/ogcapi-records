@@ -1,0 +1,6 @@
+[[rec_record-core_contact]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-contact*
+^|A |A contact `country` property SHOULD use ISO 3166-1 notation.
+|===
