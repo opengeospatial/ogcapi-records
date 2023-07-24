@@ -1,5 +1,22 @@
 # OGC API - Records
 
+## Using the standard
+
+This GitHub repository contains the OGC API - Records for discovering geospatial information on the web. It focuses on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components with responses in JSON and HTML.
+
+The latest Editor's Draft version of _OGC API - Records - Part 1: Core_ (1.1 or 2.0) is found here in [HTML](https://docs.ogc.org/DRAFTS/20-004.html) or [PDF](https://docs.ogc.org/DRAFTS/20-004.pdf).
+
+Draft(s) are built daily based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file.
+
+[OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs in a consistent way. [OpenAPI](http://openapis.org) is used to define the reusable API building blocks.
+
+## Implementations
+
+There have been several implementations of the draft standard, though they are
+against different versions of the evolving draft:
+
+* [Implementations of the draft specification / demo services](https://github.com/opengeospatial/ogcapi-records/blob/master/implementations.md)
+
 ## Overview
 
 [OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs in a consistent way. [OpenAPI](https://openapis.org) is used to define the reusable API building blocks.
@@ -331,24 +348,6 @@ The OpenSearch protocol used by OGC API - Records is based on a protocol that wa
 
 Because of this shift in status of OpenSearch issolating it in its part of the OGC API - Records suite of standards would allow the related conformance class(es) to be easilt deprecated or renamed in the future.  The work for this part, Part 2, is being carried out [here](https://github.com/opengeospatial/ogcapi-records/tree/master/extensions/OpenSearch).
 
-## Using the standard
-
-A draft of the **OGC API - Records - Part 1: Core** standard is available:
-
-* [HTML version](https://docs.ogc.org/DRAFTS/20-004.html)
-* [PDF version](https://docs.ogc.org/DRAFTS/20-004.pdf)
-
-Draft(s) are built daily based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file.
-
-Those who want to just see the endpoints and responses can explore the generic
-OpenAPI definition on SwaggerHub:
-
-* T.B.D.
-
-There have been several implementations of the draft standard, though they are
-against different versions of the evolving draft:
-
-* [Implementations of the draft specification / demo services](https://github.com/opengeospatial/ogcapi-records/blob/master/implementations.md)
 
 ## Communication
 
