@@ -9,4 +9,4 @@
 
 ==== Links
 
-include::autodiscovery/ATS_autodiscovery_link.adoc[]
+include::autodiscovery/ATS_link.adoc[]
