@@ -1,0 +1,16 @@
+[[ats_geojson_content]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/geojson/content*
+^|Test Purpose |Validate the behaviour of link relations for catalogue geojson.
+^|Requirement |<<req_geojson_content,/req/geojson/content>>
+^|Test Method |. Construct a path for a `+collections/items+` page.
+. Issue an HTTP GET request on the path
+. Using the `+id+` of a given record, construct a path for a `+collections/items/<featureId>+` page.
+. Issue an HTTP GET request on the path
+. Check that the HTTP response header value is `+200+`.
+. Check that the HTTP Content-Type header value is `+application/geo+json+`.
+. Check that the response contains a `+links+` array.
+. Check that the response validates against as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml.
+|===
+

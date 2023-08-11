@@ -1,0 +1,11 @@
+[[ats_crawlable-catalogue_conformance]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalogue/conformance*
+^|Test Purpose |Validate conformance identification.
+^|Requirement |<<req_crawlable-catalogue_conformance,/req/crawlable-catalogue/conformance>>
+^|Test Method |. Construct a path for a conformance page
+. Issue an HTTP GET request on the path
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalogue+`.
+|===
+
