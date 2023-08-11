@@ -8,6 +8,8 @@ include::requirements/requirements_class_record-core.adoc[]
 
 The `Record` Requirements Class defines the requirements for a catalogue record.
 
+include::requirements/record-core/REQ_conformance.adoc[]
+
 [[record-model]]
 === Record
 

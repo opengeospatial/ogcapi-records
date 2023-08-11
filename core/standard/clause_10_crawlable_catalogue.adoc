@@ -17,6 +17,9 @@ A crawlable catalogue is not searchable and does not respond to query requests. 
 NOTE: It should be pointed out that a <<clause-searchable-catalogue,searchable catalogue>> can also behave as a crawlable catalogue as long as the requirements in this clause are satisfied by the <<lause-searchable-catalogue,searchable catalogue>> implementation.
 
 [[crawlable-catalogue-record]]
+
+include::requirements/crawlable-catalogue/REQ_conformance.adoc[]
+
 === Making a resource discoverable
 
 include::requirements/crawlable-catalogue/REQ_record.adoc[]
