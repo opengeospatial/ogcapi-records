@@ -1,0 +1,13 @@
+[[ats_record-core_license]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core/record-license*
+^|Test Purpose |Validate the behaviour of license object.
+^|Requirement |<<req_record-core_license,/req/record-core/license>>
+^|Test Method |. Construct a path for a given record
+. Issue a HTTP GET request on the path
+. Parse all link objects
+. Parse license object if it exists
+. Check if the license includes a SPDX license identifier or a SPDX license expression string or the value ``other``
+. If the value ``other`` is used, check that one link has a ``rel`` property with value of ``license``
+|===
