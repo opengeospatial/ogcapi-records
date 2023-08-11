@@ -9,6 +9,10 @@
 |Requirements class |<<rc_crawlable-catalogue,Requirements Class "Crawlable Catalogue">>
 |===
 
+==== Conformance
+
+include::crawlable-catalogue/ATS_conformance.adoc[]
+
 ==== Record
 
 include::crawlable-catalogue/ATS_record.adoc[]

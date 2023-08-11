@@ -7,6 +7,10 @@
 |Requirements class |<<rc_autodiscovery,Requirements Class "Autodiscovery">>
 |===
 
+==== Conformance
+
+include::autodiscovery/ATS_conformance.adoc[]
+
 ==== Links
 
 include::autodiscovery/ATS_link.adoc[]
