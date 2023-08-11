@@ -1,0 +1,9 @@
+[[ats_crawlable-catalogue_collection-location]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalogue/collection-location*
+^|Test Purpose |Validate crawlable catalogue root collection location.
+^|Requirement |<<req_crawlable-catalogue_collection-location,/req/crawlable-catalogue/collection-location>>
+^|Test Method |. Retrieve the top level collection object
+. Check that the collection path is a valid web-accessible location
+|===

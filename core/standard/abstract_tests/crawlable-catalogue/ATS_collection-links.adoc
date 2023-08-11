@@ -1,0 +1,11 @@
+[[ats_crawlable-catalogue_collection-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalogue/collection-links*
+^|Test Purpose |Validate crawlable catalogue root collection links.
+^|Requirement |<<req_crawlable-catalogue_collection-links,/req/crawlable-catalogue/collection-links>>
+^|Test Method |. Retrieve the top level catalogue object
+. Check that the catalogue includes a link (``rel=self``) that points to itself.
+. Check that the catalogue includes one typed link (``rel=alternate``) for each collection object describing the catalogue.
+. Check that the catalogue includes one link (``rel=item``) pointing to each record of the catalogue.
+|===
