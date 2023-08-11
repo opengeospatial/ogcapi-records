@@ -13,7 +13,7 @@ include::record-core/ATS_mandatory-queryables.adoc[]
 
 ==== Links
 
-include::record-core/ATS_links.adoc[]
+include::record-core/ATS_record-links.adoc[]
 
 ==== Templated links with variables
 
