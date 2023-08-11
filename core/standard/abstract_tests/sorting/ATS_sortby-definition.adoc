@@ -1,0 +1,14 @@
+[[ats_sorting_sortby-definition-success]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/sorting/sortby-definition-success*
+^|Test Purpose |Validate the availability of the `+sortby+` query parameter.
+^|Requirement |<<req_sorting_sortby-definition-success,/req/sorting/sortby-definition-success>>
+^|Test Method |. Construct a path for a landing page.
+. Issue an HTTP GET request on the path.
+. Parse all link objects
+. Find the link object `+href+` attribute whose link object's `+rel+` attribute value is `+service-desc+` and `+type+` attribute value is `+application/vnd.oai.openapi+json;version=3.0+`.
+. Issue an HTTP GET request on the `+href+`.
+. Parse the resulting OpenAPI document, and detect a `+path+` object whose endpoint value ends with `+.../items`.
+. Check that the `+get.parameters+` object contains an object defining a `+sortby+` parameter.
+|===

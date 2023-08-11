@@ -1,0 +1,25 @@
+[[ats_sorting]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
+|Target type |Web API
+|Requirements class |<<rc_sorting,Requirements Class "Sorting">>
+|===
+
+==== Default sort order definition
+
+include::sorting/ATS_defaultSortOrder-definition.adoc[]
+
+==== Sortables endpoint
+
+include::sorting/ATS_get-sortables-op.adoc[]
+include::sorting/ATS_get-sortables-success.adoc[]
+
+==== Query parameter definition
+
+include::sorting/ATS_sortby-definition.adoc[]
+
+==== Query parameter behaviour
+
+include::sorting/ATS_sortby-response.adoc[]
