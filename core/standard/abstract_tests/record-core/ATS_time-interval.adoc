@@ -1,0 +1,13 @@
+[[ats_record-core_time-interval]]
+[width="90%",cols="2,7a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core/interval*
+^|Test Purpose |Validate the behaviour of time interval for time objects.
+^|Requirement |<<req_record-core_interval,/req/record-core/interval>>
+^|Test Method |. Construct a path for a given record
+. Issue a HTTP GET request on the path
+. Parse time object
+. If the time object includes an ``interval`` member, check that each array item is a string that is a double-dot (``..``) or conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches one of the following production rules: ``full-date`` (a date) or ``date-time`` (a timestamp)
+. If the start is a date, check that the end is a date, or ``..``
+. If the start is a timestamp, check that the end is a timestamp or ``..``
+|===
