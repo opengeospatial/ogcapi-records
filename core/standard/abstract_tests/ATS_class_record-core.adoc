@@ -18,3 +18,18 @@ include::record-core/ATS_record-links.adoc[]
 ==== Templated links with variables
 
 include::record-core/ATS_templated-link.adoc[]
+
+==== License
+
+include::record-core/ATS_record-license.adoc[]
+
+==== Contacts
+
+include::record-core/ATS_contact.adoc[]
+
+==== Time
+
+include::record-core/ATS_time-instant-interval.adoc[]
+include::record-core/ATS_time-instant.adoc[]
+include::record-core/ATS_time-interval.adoc[]
+include::record-core/ATS_time-zone.adoc[]
