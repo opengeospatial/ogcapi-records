@@ -7,16 +7,14 @@
 |Requirements class |<<rc_record-collection,Requirements Class "Record Collection">>
 |===
 
-==== General Tests
-
-=== Record collection schema
+==== Record collection schema
 
 include::record-collection/ATS_mandatory-queryables.adoc[]
 
-===== Links
+==== Links
 
 include::record-collection/ATS_links.adoc[]
 
-=== Encodings
+==== Encodings
 
 include::record-collection/ATS_media-type-default.adoc[]

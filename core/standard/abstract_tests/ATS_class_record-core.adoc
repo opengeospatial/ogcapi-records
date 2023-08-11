@@ -7,16 +7,14 @@
 |Requirements class |<<rc_record-core,Requirements Class "Record Core">>
 |===
 
-==== General Tests
-
-===== Core queryables
+==== Core queryables
 
 include::record-core/ATS_mandatory-queryables.adoc[]
 
-===== Links
+==== Links
 
 include::record-core/ATS_links.adoc[]
 
-===== Templated links with variables
+==== Templated links with variables
 
 include::record-core/ATS_templated-link.adoc[]
