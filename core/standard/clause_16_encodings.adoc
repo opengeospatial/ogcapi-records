@@ -13,8 +13,6 @@ The following requirements apply to an OGC API - Records implementation when the
 . The API advertises conformance to the JSON Conformance Class
 . The client negotiates to a record response encoded as GeoJSON.
 
-include::requirements/geojson/REQ_response.adoc[]
-
 include::requirements/geojson/REQ_content.adoc[]
 
 [[schema_geojson_record]]
