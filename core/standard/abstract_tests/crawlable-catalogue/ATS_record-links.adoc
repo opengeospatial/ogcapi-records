@@ -1,0 +1,12 @@
+[[ats_crawlable-catalogue_record-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalogue/record-links*
+^|Test Purpose |Validate crawlable catalogue record links.
+^|Requirement |<<req_crawlable-catalogue_record-links,/req/crawlable-catalogue/record-links>>
+^|Test Method |. Parse the catalogue structure and create a list of all records available
+. For each item in the list, retrieve the record object
+. Check that each record includes a link (``rel=self``) that points to itself.
+. Check that each record includes one typed link (``rel=alternate``) for each alternative representation of this record.
+. Check taht each record includes one link (``rel=collection``) that points to the collection to which this record belongs to.
+|===

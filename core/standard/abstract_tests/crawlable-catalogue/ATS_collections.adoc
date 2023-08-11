@@ -1,0 +1,14 @@
+[[ats_crawlable-catalogue_collections]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalogue/collections*
+^|Test Purpose |Validate crawlable catalogue collections.
+^|Requirement |<<req_crawlable-catalogue_collections,/req/crawlable-catalogue/collections>>
+^|Test Method |. Parse the catalogue structure and create a list of all collections available
+. For each item in the list, retrieve the collection object
+. Check that the collection includes an ``id`` property
+. Check that the collection includes a ``title`` property
+. Check that the collection includes a ``links`` property
+. Check that the collection includes a ``itemType`` property
+. Check that the collection includes a ``type`` property with the value set to ``collection``
+|===
