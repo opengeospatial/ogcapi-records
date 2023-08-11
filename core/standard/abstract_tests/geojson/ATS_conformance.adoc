@@ -1,0 +1,11 @@
+[[ats_geojson_conformance]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/geojson/conformance*
+^|Test Purpose |Validate conformance identification.
+^|Requirement |<<req_geojson_conformance,/req/geojson/conformance>>
+^|Test Method |. Construct a path for a conformance page
+. Issue an HTTP GET request on the path
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/geojson+`.
+|===
+
