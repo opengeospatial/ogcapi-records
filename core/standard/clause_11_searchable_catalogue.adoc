@@ -7,7 +7,7 @@ The `Searchable Catalogue` Requirements Class defines the requirements for a cat
 
 === Core
 
-include::requirements/searchable-catalogue/REQ_core.adoc[]
+include::requirements/searchable-catalogue/REQ_conformance.adoc[]
 
 include::recommendations/searchable-catalogue/PER_additional-requirements.adoc[]
 
