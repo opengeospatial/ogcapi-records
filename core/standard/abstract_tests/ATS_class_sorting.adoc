@@ -7,6 +7,10 @@
 |Requirements class |<<rc_sorting,Requirements Class "Sorting">>
 |===
 
+==== Conformance
+
+include::sorting/ATS_conformance.adoc[]
+
 ==== Default sort order definition
 
 include::sorting/ATS_defaultSortOrder-definition.adoc[]
