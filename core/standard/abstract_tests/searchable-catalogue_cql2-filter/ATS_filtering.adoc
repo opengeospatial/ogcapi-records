@@ -1,0 +1,10 @@
+[[ats_searchable-catalogue_cql2-filtering]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalogue/cql2-filtering*
+^|Test Purpose |Validate searchable catalogue CQL filtering.
+^|Requirement |<<req_searchable-catalogue_cql2-filtering,/req/searchable-catalogue/cql2-filtering>>
+^|Test Method |. Construct a path for a conformance page
+. Issue an HTTP GET request on the path
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/req/cql-filter+`.
+|===
