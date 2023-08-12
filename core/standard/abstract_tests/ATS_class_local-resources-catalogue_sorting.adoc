@@ -1,0 +1,16 @@
+[[ats_local-resources-catalogue_sorting]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalogue/sorting
+|Target type |Web API
+|Requirements class |<<rc_local-resources-catalogue_sorting,Requirements Class "Local Resources Catalogue">>
+|===
+
+==== Query parameter definition
+
+include::local-resources-catalogue_sorting/ATS_param-sortby-def.adoc[]
+
+==== Query parameter behaviour
+
+include::local-resources-catalogue_sorting/ATS_param-sortby-response.adoc[]
