@@ -9,9 +9,9 @@
 |Requirements class |<<rc_searchable-catalogue_cql2-filter,Requirements Class "Searchable Catalogue">>
 |===
 
-==== Filtering
+==== Conformance
 
-include::searchable-catalogue_cql2-filter/ATS_filtering.adoc[]
+include::searchable-catalogue_cql2-filter/ATS_conformance.adoc[]
 
 ==== Queryables
 
