@@ -1,0 +1,9 @@
+[[ats_record-filter_filter-crs-param]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-filter/filter-crs-param*
+^|Test Purpose |Validate filter crs parameter.
+^|Requirement |<<req_record-filter_filter-crs-param,/req/record-filter/filter-crs-param>>
+^|Test Method |. Construct a path for a collection items page ``/collections/{collectionId}/items``
+. Check that the the HTTP GET operation on the path supports the `filter` parameter as defined in https://portal.ogc.org/files/96288#filter-filter-crs[Parameter filter-crs].
+|===
