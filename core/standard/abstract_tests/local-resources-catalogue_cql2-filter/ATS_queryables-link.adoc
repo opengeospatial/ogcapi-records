@@ -1,0 +1,12 @@
+[[ats_local-resources-catalogue_cql2-filter_queryables-link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalogue/cql2-filter/queryables-link*
+^|Test Purpose |Validate queryables link for local resources catalogue.
+^|Requirement |<<req_local-resources-catalogue_cql2-filter_queryables-link,/req/local-resources-catalogue/cql2-filter/queryables-link>>
+^|Test Method |. Construct a path for the local resources catalogue
+. Issue an HTTP GET request and retrieve the catalogue object.
+. Parse the links section
+. Check that the links section contains a link with ``rel="http://www.opengis.net/def/rel/ogc/1.0/queryables"``
+. Check that this link points to a resource for discovering the list of record properties (and their types) and that they can be used to construct a filter expression.
+|===

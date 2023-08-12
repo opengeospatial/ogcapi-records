@@ -1,0 +1,14 @@
+[[ats_local-resources-catalogue_cql2-filter_filter-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalogue/cql2-filter/filter-response*
+^|Test Purpose |Validate filter response.
+^|Requirement |<<req_local-resources-catalogue_cql2-filter_response,/req/local-resources-catalogue/cql2-filter/response>>
+^|Test Method |. Construct a path for a collection items page ``/collections/{collectionId}/items``
+. Construct a filter expresion with one or more of <<core-query-parameters-bbox,bbox>>, <<core-query-parameters-datetime,datetime>>, <<core-query-parameters-q,q>>, <<core-query-parameters-type,type>>, <<core-query-parameters-externalid,externalId>> and any <<additional-query-parameters,additional query parameters>>
+. Issue an HTTP POST request on the path using the filter expression.
+. Check that the filter expression is evaluated for each record of the collection.
+. Check that all filtering parameters specified are evaluated for each record of the collection.
+. If the filter expresion includes the expression ``AND`` and all the filtering expressions evaluate to ``TRUE`` then check that the record is included in the result set.
+. If the filter expresion includes the expression ``OR`` and all the filtering expressions evaluate to ``FALSE`` then check that the record is excluded from the result set.
+|===
