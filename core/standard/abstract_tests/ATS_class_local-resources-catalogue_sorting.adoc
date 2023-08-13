@@ -7,6 +7,10 @@
 |Requirements class |<<rc_local-resources-catalogue_sorting,Requirements Class "Local Resources Catalogue">>
 |===
 
+==== Conformance
+
+include::local-resources-catalogue_sorting/ATS_conformance.adoc[]
+
 ==== Query parameter definition
 
 include::local-resources-catalogue_sorting/ATS_param-sortby-def.adoc[]
