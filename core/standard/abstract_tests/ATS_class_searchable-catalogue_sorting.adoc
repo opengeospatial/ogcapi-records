@@ -11,4 +11,4 @@
 
 ==== Sorting
 
-include::searchable-catalogue_sorting/ATS_sorting.adoc[]
+include::searchable-catalogue_sorting/ATS_conformance.adoc[]

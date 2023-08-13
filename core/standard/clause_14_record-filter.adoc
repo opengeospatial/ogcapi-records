@@ -4,6 +4,8 @@
 [[record-filter-overview]]
 === Overview
 
+include::requirements/record-filter/REQ_conformance.adoc[]
+
 include::requirements/requirements_class_record-filter.adoc[]
 
 This clause defines the binding to the filter parameters defined in the https://docs.ogc.org/DRAFTS/19-079.html#_requirements_class_filter[OGC API - Features - Part 3: Filtering and the Common Query Language (CQL), Requirements Class "Filter"] clause.

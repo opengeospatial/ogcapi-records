@@ -9,6 +9,10 @@
 |Requirements class |<<rc_local-resources-catalogue_cql2-filter,Requirements Class "Local Resources Catalogue">>
 |===
 
+==== Conformance
+
+include::local-resources-catalogue_cql2-filter/ATS_conformance.adoc[]
+
 ==== Filter Response
 
 include::local-resources-catalogue_cql2-filter/ATS_filter-response.adoc[]
