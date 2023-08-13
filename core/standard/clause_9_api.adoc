@@ -12,9 +12,9 @@ include::requirements/records-api/REQ_resource-name-mapping.adoc[]
 
 === Declarations of conformance class
 
-include::requirements/records-api/REQ_conformance-classes.adoc[]
+include::requirements/records-api/REQ_conformance.adoc[]
 
-include::recommendations/records-api/PER_conformance-classes.adoc[]
+include::recommendations/records-api/PER_conformance.adoc[]
 
 === Encodings
 
