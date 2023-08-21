@@ -18,8 +18,6 @@ NOTE: It should be pointed out that a <<clause-searchable-catalogue,searchable c
 
 [[crawlable-catalogue-record]]
 
-include::requirements/crawlable-catalogue/REQ_conformance.adoc[]
-
 === Making a resource discoverable
 
 include::requirements/crawlable-catalogue/REQ_record.adoc[]

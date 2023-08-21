@@ -7,8 +7,6 @@ The `Searchable Catalogue` Requirements Class defines the requirements for a cat
 
 === Core
 
-include::requirements/searchable-catalogue/REQ_conformance.adoc[]
-
 include::recommendations/searchable-catalogue/PER_additional-requirements.adoc[]
 
 include::requirements/searchable-catalogue/REQ_mandatory-properties.adoc[]
@@ -18,17 +16,11 @@ include::recommendations/searchable-catalogue/PER_additional-properties.adoc[]
 [[clause-searchable-catalogue_sorting]]
 === Sorting
 
-include::requirements/searchable-catalogue_sorting/REQ_conformance.adoc[]
-
 [[clause-searchable-catalogue_cql2-filter]]
 === Filtering 
-
-include::requirements/searchable-catalogue_cql2-filter/REQ_conformance.adoc[]
 
 include::requirements/searchable-catalogue_cql2-filter/REQ_mandatory-queryables.adoc[]
 
 include::recommendations/searchable-catalogue_cql2-filter/REQ_additional-queryables.adoc[]
 
 === Coordinate reference systems
-
-include::requirements/searchable-catalogue_crs/REQ_conformance.adoc[]

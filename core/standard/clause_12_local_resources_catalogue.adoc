@@ -25,8 +25,6 @@ In order to enable catalogue-like searching at these local resources endpoints, 
 
 This conformance class does not define the specific endpoints in the OGC API resource tree that should be enabled with catalogue-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalogue-line searching be identified by the responsible OGC standard.
 
-include::requirements/local-resources-catalogue/REQ_conformance.adoc[]
-
 === Resource Description
 
 ==== Overview
@@ -261,8 +259,6 @@ include::requirements/requirements_class_local-resources-catalogue_sorting.adoc[
 
 This conformance class specifies requirements and recommendations for supporting sorting of responses at _local resource catalogue_ endpoints.
 
-include::requirements/local-resources-catalogue_sorting/REQ_conformance.adoc[]
-
 ==== Operation
 
 include::requirements/local-resources-catalogue_sorting/REQ_param-sortby-def.adoc[]
@@ -299,8 +295,6 @@ include::requirements/requirements_class_local-resources-catalogue_cql2-filter.a
 
 This conformance class specifies requirements and recommendations for supporting advanced filtering using CQL2 at _local resource catalogue_ endpoints.
 o
-
-include::requirements/local-resources-catalogue_cql2-filter/REQ_conformance.adoc[]
 
 ==== Operation
 

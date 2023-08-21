@@ -13,8 +13,6 @@ The following requirements apply to an OGC API - Records implementation when the
 . The API advertises conformance to the JSON Conformance Class
 . The client negotiates to a record response encoded as GeoJSON.
 
-include::requirements/geojson/REQ_conformance.adoc[]
-
 include::requirements/geojson/REQ_content.adoc[]
 
 [[schema_geojson_record]]
@@ -44,5 +42,3 @@ be read by machines, such as JSON or XML, have two issues:
 Therefore, sharing data on the Web should include publication in HTML. To be consistent with the Web, it should be done in a way that enables users and search engines to access all data.
 
 This is discussed in detail in link:https://www.w3.org/TR/sdw-bp/#indexable-by-search-engines[Best Practice 2: Make your spatial data indexable by search engines] <<SDWBP>>. This standard therefore <<rec_html,recommends supporting HTML as an encoding>>.
-
-include::requirements/html/REQ_conformance.adoc[]

@@ -8,8 +8,6 @@ include::requirements/requirements_class_sorting.adoc[]
 
 The `Sorting` Requirements Class defines the requirements for specifying how records in a response should be ordered for presentation.
 
-include::requirements/sorting/REQ_conformance.adoc[]
-
 [[sorting-parameter-sortby]]
 === Parameter sortby
 
