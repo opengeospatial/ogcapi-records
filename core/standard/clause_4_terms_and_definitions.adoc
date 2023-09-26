@@ -3,7 +3,7 @@ This document uses the terms defined in Sub-clause 5 of https://docs.ogc.org/DRA
 
 For the purposes of this document, the following additional terms and definitions apply.
 
-=== Catalogue; Record collection
+=== Catalog; Record collection
 a collection of <<record-def,records>>
 
 === Conformance Module; Conformance Test Module
@@ -29,7 +29,7 @@ set of code (e.g. Java and CTL) that provides runtime tests for the assertions d
 
 [[record-def]]
 === Record
-atomic unit of information of a catalogue that is used to provide information about a particular resource
+atomic unit of information of a catalog that is used to provide information about a particular resource
 
 === Recommendation
 expression in the content of a document conveying that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is deprecated but not prohibited (<<ogc08-131,OGC 08-131>>) 
@@ -44,11 +44,16 @@ aggregate of all requirement modules that must all be satisfied to satisfy a con
 aggregate of requirements and recommendations of a specification against a single standardization target type (<<ogc08-131,OGC 08-131>>)
 
 === Resource
-an asset of interest that may be described by metadata in a catalogue for the purpose of discovery and access (i.e. binding)
+an asset of interest that may be described by metadata in a catalog for the purpose of discovery and access (i.e. binding)
+
+=== Searchable catalog endpoint
+an endpoint in the OGC API resource tree that has been enhanced to support catalog queries
+
+NOTE: For <<clause-searchable-catalog,searchable catalogs>>, the searchable catalog endpoint is at `/items`.  For <<clause-local-resources-catalog,local resources catalogs>>, an example of a searchable catalog endpoint might be `/collections` or `/processes`.
 
 === Standardization Target
 entity to which some requirements of a standard apply (<<ogc08-131,OGC 08-131>>)
 
- NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
+NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
 
 

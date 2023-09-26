@@ -1,0 +1,7 @@
+[[req_records-core-query-parameters_q-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/q-response*
+
+Only records whose text fields contains one or more of the search terms specified using the `q` parameter SHALL be in the result set.
+|===

@@ -1,0 +1,7 @@
+[[rec_crawlable-catalog_record-file-name]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/crawlable-catalog/record-file-name*
+
+The name of the record file should be `{id}.json` where `{id}` is the identifier of the record.
+|===

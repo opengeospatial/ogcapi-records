@@ -1,7 +1,0 @@
-[[rec_local-resource-catalogue_cql2-filter_JSON-encoding]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalogue/cql2-filter/JSON-encoding*
-
-If a filter expression can be represented for its intended use as JSON, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/19-079.html#cql-json[CQL JSON] encoding.
-|===

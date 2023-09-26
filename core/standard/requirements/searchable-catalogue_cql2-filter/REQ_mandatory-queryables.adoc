@@ -1,6 +1,0 @@
-[[req_searchable-catalogue_mandatory-queryables]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/searchable-catalogue/mandatory-queryables*
-2+|The list of queryables SHALL include all the mandatory queryables listed in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
-|===

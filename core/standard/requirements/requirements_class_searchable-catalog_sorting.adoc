@@ -1,0 +1,9 @@
+[[rc_searchable-catalog_sorting]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/sorting
+|Target type |Web API
+|Dependency |<<rc_searchable_catalog,Searchable Catalog>>
+|Dependency |<<rc_sorting,Sorting>>
+|===

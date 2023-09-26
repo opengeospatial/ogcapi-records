@@ -183,7 +183,7 @@ A successful response to the <<collections-meta-operation,Collections Operation>
 In a typical API deployment, the <<collection-meta-operation,collections response>>
 will list collections of all offered resource types.  The collections where
 the value of the `itemType` property (JSONPath: `$.collections[*].itemType`)
-is `record` are collections of records (i.e. catalogues).
+is `record` are collections of records (i.e. catalogs).
 
 [#collections-schema,reftext='Collections Response Schema']
 .Collections Response Schema

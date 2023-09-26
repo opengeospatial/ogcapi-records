@@ -1,6 +1,0 @@
-[[rec_local-resources-catalogue_property-extent-def]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalogue/property-extent-def*
-^|A |The `extent` property SHOULD be present in the information model of the local resource object.
-|===

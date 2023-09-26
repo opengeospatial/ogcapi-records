@@ -1,0 +1,7 @@
+[[per_record-core_additional-properties-record]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/record-core/additional-properties-record*
+^|A |Each record in a response MAY contain zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+^|B |Each record in a response MAY contain any number of additional properties not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.  The meaning of these additional properties is not specified in this document.
+|===

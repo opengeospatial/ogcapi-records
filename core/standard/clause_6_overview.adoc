@@ -4,46 +4,47 @@
 [[records-role]]
 === Role of OGC API - Records
 
-Historically, catalogues have been used as large repositories of formal metadata like ISO 19119, ISO 19115, FGDC, etc. More recently, catalogues are migrating to a more distributed model where the metadata is intimately associated with the resource that it describes. A current example is STAC which relies on well-defined building blocks that can be integrated in different ways.
+Historically, catalogs have been used as large repositories of formal metadata like ISO 19119, ISO 19115, FGDC, etc. More recently, catalogs are migrating to a more distributed model where the metadata is intimately associated with the resource that it describes. A current example is STAC which relies on well-defined building blocks that can be integrated in different ways.
 
-Although OGC API - Records is built upon the legacy of CSW, its role in a modern SDI can be both: a large repository of metadata documents or a distributed catalogue, with the ability to provide a static or dynamic capability.
+Although OGC API - Records is built upon the legacy of CSW, its role in a modern SDI can be both: a large repository of metadata documents or a distributed catalog, with the ability to provide a static or dynamic capability.
 
-In the modern scenario, the catalogue records can be distributed and linked together so that they can be crawled or they can be harvested into a service endpoint to make them searchable. In addition, a searchable catalogue can harvest not only a metadata document describing the resource but in some cases the resource itself (e.g. harvesting the collections object from an OGC API). The implications of this are subtle yet important. In the traditional cataloguing approach (e.g. based on CSW) a client could find the record and the record might include binding information to access the resource but that is pretty much it. Using the new approach, a client interacts more intimately with the catalogue and the catalogue becomes integral to the access to the resource. An example is the cloud native ecosystem: HTTP range requests to Cloud Optimized GeoTIFF (COG) data cannot be used properly unless there is a STAC item telling the client in what ranges the bands exists, thus the catalogue becomes an integral component in the process of accessing a resource.
+In the modern scenario, the catalog records can be distributed and linked together so that they can be crawled or they can be harvested into a service endpoint to make them searchable. In addition, a searchable catalog can harvest not only a metadata document describing the resource but in some cases the resource itself (e.g. harvesting the collections object from an OGC API). The implications of this are subtle yet important. In the traditional cataloguing approach (e.g. based on CSW) a client could find the record and the record might include binding information to access the resource but that is pretty much it. Using the new approach, a client interacts more intimately with the catalog and the catalog becomes integral to the access to the resource. An example is the cloud native ecosystem: HTTP range requests to Cloud Optimized GeoTIFF (COG) data cannot be used properly unless there is a STAC item telling the client in what ranges the bands exists, thus the catalog becomes an integral component in the process of accessing a resource.
 
 [[general-overview]]
 === General
 
-The atomic unit of information in a catalogue is the _record_.
+The atomic unit of information in a catalog is the _record_.
 
-A _catalogue_ is a collection of _records_.  The terms **collection of records** and **catalogue** are used interchangeably in this specification.
+A _catalog_ is a collection of _records_.  The terms **collection of records** and **catalog** are used interchangeably in this specification.
 
 A record provides a summary description (metadata) of a resource that the provider of the resource wishes to make discoverable.  The record schema defined in this specification includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouranged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
 
 === Building blocks
 
-This standard defines three building blocks that may be used to deploy a catalogue:
+This standard defines the following building blocks that may be used to deploy a catalog:
 
 . The _core_ schema of a record.
-. The definition of a _collection_ resource that groups and describes a set of related records (i.e. a catalogue).
-. An API that allows collections of records (i.e. a catalogue) to be searched using logically connected predicates that can include spatial and/or temporal predicates.
+. The definition of a _collection_ resource that groups and describes a set of related records (i.e. a catalog).
+. The definition of a core set of query parameters for searchable catalogs.
+. An API that allows collections of records (i.e. a catalog) to be searched using logically connected predicates that can include spatial and/or temporal predicates.
 
-Using these building blocks a catalogue can be deployed as:
+Using these building blocks a catalog can be deployed as:
 
 * a set of web-accessible records that can be crawled by a search engine crawler or by using (for example) a web browser
-* a searchable catalogue with records accessible through an API
+* a searchable catalog with records accessible through an API
 
-A special use case of the _searchable catalogue_ is the _**local resources catalogue**_.  The OGC API resource tree has a number of endpoints that provide lists of resources.  Examples of such endpoints include the `/collections` and the `/processes` endpoints.  One can readily imagine a large OGC API deployment with thousands of collections where the ability to search would enhance the client's interaction with the server.  Using the building blocks defined in this specification these endpoints can be extended to support catalogue-like searching using filter expressions that may also include spatial and/or temporal predicates.  OGC API endpoints extended in this way behave like a catalogue of local resources.
+A special use case of the _searchable catalog_ is the _**local resources catalog**_.  The OGC API resource tree has a number of endpoints that provide lists of resources.  Examples of such endpoints include the `/collections` and the `/processes` endpoints.  One can readily imagine a large OGC API deployment with thousands of collections where the ability to search would enhance the client's interaction with the server.  Using the building blocks defined in this specification these endpoints can be extended to support catalog-like searching using filter expressions that may also include spatial and/or temporal predicates.  OGC API endpoints extended in this way behave like a catalog of local resources.
 
 [[record-schema-overview]]
 === Record Schema
 
 The core set of record properties that may be used to describe a resource
 include the  _recordId_, _time_, _type_, _title_, _description_ and _geometry_.
-A complete definition of a record can be found in clause <<core-queryables,Core queryables>>.
+A complete definition of a record can be found in clause <<core-properties,Core properties>>.
 
-The choice of which properties to include in the set of core queryables was primarily informed by the following record models:
+The choice of which properties to include in the set of core properties was primarily informed by the following record models:
 
-* The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalogue schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
+* The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalog schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
 * the https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabulary (DCAT) - Version 2] and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specifications.
 
 It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being made discoverable by the record.
@@ -57,18 +58,18 @@ Although this document does not mandate any particular encoding for a record, th
 
 Other encodings are allowed but are not described in this document.
 
-Accessing collections of records deployed as static files is described in the <<clause-crawlable-catalogue,Crawlable records deployment>> clause.
+Accessing collections of records deployed as static files is described in the <<clause-crawlable-catalog,Crawlable records deployment>> clause.
 
 Accessing collections of records through the API defined in this document is described in the <<records-access,Records access>> and <<record-access,Record access>> sections.
 
 [[sc_record-collection-overview]]
-=== Record collection (catalogue)
+=== Record collection (catalog)
 
-A record collection or catalogue is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection resource is the primary access point from which a deployed set of records can be accessed.  Having found the collection resource (i.e. the catalogue) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
+A record collection or catalog is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection resource is the primary access point from which a deployed set of records can be accessed.  Having found the collection resource (i.e. the catalog) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
 
 Depending on the deployment pattern, the collection may provide a link to each individual record of the collection or a link to a search access point for retrieving sub-sets of records.
 
-The core set of properties that may be used to describe a record collection or catalogue include _id_, _type_, _title_, _description_, _extent_ and _links_.  A complete definition of a record can be found in clause<<clause-record-collection,Record collection>>.  It should be noted that this list of properties is very similar to the list of core properties defined for a <<record-schema-overview,catalogue record>>.  This is intentional since the record collection object can be considered a _record_ that describes a catalogue.
+The core set of properties that may be used to describe a record collection or catalog include _id_, _type_, _title_, _description_, _extent_ and _links_.  A complete definition of a record can be found in clause<<clause-record-collection,Record collection>>.  It should be noted that this list of properties is very similar to the list of core properties defined for a <<record-schema-overview,catalog record>>.  This is intentional since the record collection object can be considered a _record_ that describes a catalog.
 
 It is anticipated that this set of properties will be extended to enrich the information content of the collection metadata to suit specific needs.
 
@@ -77,7 +78,7 @@ It is anticipated that this set of properties will be extended to enrich the inf
 
 ==== Overview 
 
-The Records API allows a subset of records to be retrieved from a catalogue using a logically connected set of predicates that may include spatial and/or temporal predicates.
+The Records API allows a subset of records to be retrieved from a catalog using a logically connected set of predicates that may include spatial and/or temporal predicates.
 
 The Records API extends https://github.com/opengeospatial/ogcapi-common[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] to:
 
@@ -110,7 +111,7 @@ Collections of records exposed though this OGC API may be accessed through an ht
 
 Where:
 
-* {collectionId} = an identifier for a specific record collection (i.e. catalogue identifier)
+* {collectionId} = an identifier for a specific record collection (i.e. catalog identifier)
 * {recordId} = an identifier for a specific record within a collection
 
 [[api-behaviour-model-overview]]
@@ -118,7 +119,7 @@ Where:
 
 The Records API is designed to be compatible but not conformant with the http://docs.opengeospatial.org/is/12-176r7/12-176r7.html[OGC Catalogue Service for the Web (CSW)]. This allows OGC API - Records implementations and CSW implementations to co-exist in a single processing environment.
 
-The https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (datasets, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalogue collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalogue may provide discovery services to any number of metadata repositories. The core catalogue model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
+The https://www.opengeospatial.org/standards/cat[OGC Catalogue Service standard version 3] provides an abstract core model of metadata (data about data) describing a number of different information types (datasets, services, styles, processes, etc.) on which the classic operations GetCapabilities, DescribeRecord, GetRecords, and GetRecordById can be explained naturally. This model consists of a 1..n catalog collections residing in a CSW backend repository. It holds service metadata describing service qualities (identification, contact, operations, filtering capabilities, etc.). At its heart, a catalog may provide discovery services to any number of metadata repositories. The core catalog model is based on an extension of Dublin Core (CSW Record). Application profiles can be developed to target specific metadata information models (such as ISO 19115/19139, etc.).
 
 Discussion has shown that the API model also assumes underlying service and object descriptions, so a convergence seems possible. In any case, it will be advantageous to have a similar "mental model" of the server store organization on hand to explain the various functionalities introduced below.
 
@@ -134,10 +135,12 @@ The first or core level of search capability is based on <<OAFeat-1,OGC API - Fe
 
 OGC API - Record extends these core search capabilities to include:
 
-* searches based on a subset of core queryables (e.g. by resource type, by external identifier).
-* keyword searches
+* keyword searches,
+* searches based on the type of resource,
+* searches based on one or more record identifiers,
+* and searches based on one or more external identifiers of a resource.
 
-The second level of search capability extends the search API so that it is compatible with the https://portal.opengeospatial.org/files/?artifact_id=56866[OGC OpenSearch Geo and Time Extensions] (OpenSearch Geo).  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.  https://fix.me[OGC API - Records - Part 2: OpenSearch] defines the requirements for a catalogue that supports OpenSearch.
+The second level of search capability extends the search API so that it is compatible with the https://portal.opengeospatial.org/files/?artifact_id=56866[OGC OpenSearch Geo and Time Extensions] (OpenSearch Geo).  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.  https://fix.me[OGC API - Records - Part 2: OpenSearch] defines the requirements for a catalog that supports OpenSearch.
 
 The third level of search capability, defined by the <<clause-record-filter,_Filter using the Common Query Language_ Requirements Class>>, supports complex filter expressions using a rich set of logically connected query predicates.
 

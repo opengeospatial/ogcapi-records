@@ -1,7 +1,0 @@
-[[req_crawlable-catalogue_collection-location]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/crawlable-catalogue/collection-location*
-
-The collection object describing a catalogue SHALL be placed in a web-accessible location.
-|===

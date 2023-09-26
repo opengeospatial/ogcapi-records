@@ -1,4 +1,4 @@
-[[rc_record_core]]
+[[rc_record-core]]
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*

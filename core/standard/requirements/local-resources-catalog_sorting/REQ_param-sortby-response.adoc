@@ -1,0 +1,8 @@
+[[req_local-resources-catalog_sorting_param-sortby-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/sorting/param-sortby-response*
+
+^|A |If the `sortby` parameter is specified, then the resources from the local resources endpoint in a response SHALL be ordered by the keys and sort directions (i.e. ascending or descending) specified.
+^|B |The specific set of keys that may be used for sorting SHALL be specified by the `/collections/{collectionId}/sortables` resource.
+|===

@@ -1,7 +1,0 @@
-[[req_record-core_mandatory-queryables-record]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-core/mandatory-queryables-record*
-
-Each record in a response SHALL contain all the mandatory properties listed in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
-|===

@@ -1,0 +1,7 @@
+[[req_crawlable-catalog_catalog]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/catalog*
+
+A collection of related records, called a _catalog_, SHALL be described by a <<clause-record-collection,record collection object>>.
+|===

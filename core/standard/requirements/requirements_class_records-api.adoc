@@ -1,4 +1,4 @@
-[[rc_records_api]]
+[[rc_records-api]]
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*
@@ -6,5 +6,5 @@
 |Target type |Web API
 |Dependency |http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core[OGC API - Features - Part 1: Core]
 |Dependency | <<rc_sorting,Sorting>>
-|Dependency | <<rc_cql-filter,Record Filtering Using CQL2>>
+|Dependency | <<rc_filtering,Filtering>>
 |===

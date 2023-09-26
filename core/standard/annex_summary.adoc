@@ -5,35 +5,34 @@
 
 === Overview
 
-This annex presents implementation summaries for the crawlable catalogue,
-searchable catalogue and local resources catalogue deployment patterns.  
+This annex presents implementation summaries for the crawlable catalog,
+searchable catalog and local resources catalog deployment patterns.
 This information is meant to be a short guide for developers.
 
-=== Crawlable catalogue
+=== Crawlable catalog
 
-In order to implement a catalogue where records are stored as individual files in one or more web-accessible locations and can be crawled by simply following hypermedia controls:
+In order to implement a catalog where records are stored as individual files in one or more web-accessible locations and can be crawled by simply following hypermedia controls:
 
-* for each discoverable resource create a file that contains a summary description of the resource using  the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>
+* for each discoverable resource create a file that contains a summary description of the resource using the record schema defined in <<core-properties-record-table>> and <<core-properties-resource-table>>
 * extend the record schema to enrich its content as necessary
 * to make the resource discoverable, place each record file in a web-accessible location, preferably co-located (e.g. in the same directory or object store location) with the resource that the record is describing
 * optionally create a file containing a description of a <<sc_record-collection-overview,_collection_>> of related records
 * also place the collection file in a web-accessible location
 
-=== Searchable catalogue
+=== Searchable catalog
 
-In order to implement a catalogue where records are stored in some backend database and are accessed through an access/search API:
+In order to implement a catalog where records are stored in some backend database and are accessed through an access/search API:
 
 * implement the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] specification,
 * implement the parameters defined in <<core-query-parameters-table>>,
-* implement the record schema defined in <<core-queryables-record-table>> and <<core-queryables-resource-table>>.
+* implement the record schema defined in <<core-properties-record-table>> and <<core-properties-resource-table>>.
 * extend the record schema to enrich its content as necessary
 
-=== Local resources catalogue
+=== Local resources catalog
 
-In order to implement a local resource catalogue at an OGC API resources endpoint such as `/collections` for example:
+In order to implement a local resource catalog at an OGC API resources endpoint such as `/collections` for example:
 
 * implement the endpoint as per the relevant OGC API specification,
-* enhance the information content of the resource using the mandatory and optional parameters defined in <<core-queryables-resource-table>>,
+* enhance the information content of the resource using the mandatory and optional parameters defined in <<core-properties-resource-table>>,
 * implement the query parameters defined in <<core-query-parameters-table>>,
-* optionally implement <<clause-cql-filter,CQL>>, <<clause-sorting,sorting>>.
-
+* optionally implement <<clause-filtering,filtering>>, <<clause-sorting,sorting>>.

@@ -1,7 +1,0 @@
-[[req_records-api_param-type-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/param-type-response*
-
-Only records whose type, as indicated by the value of the `type` core queryable, is equal to one of the listed values specified using the `type` parameter SHALL be in the result set.
-|===

@@ -1,0 +1,30 @@
+[[rec_records-core-query-parameters_additional-query-parameters]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/records-core-query-parameters/additional-query-parameters*
+^|A |If any additional property (see <<per_core_additional-properties,additional record properties>>) is expected to be useful for applications using at a searchable catalog endpoint, a parameter with the name of that property SHOULD be supported.
+^|B |If the parameter has a simple value (e.g. a string or integer) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: <name of property>
+in: query
+required: false
+style: form
+explode: false
+----
+
+^|C |If the parameter is an array of simple values then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: <name of property>
+in: query
+required: false
+schema:
+  type: array
+explode: false
+----
+
+^|D |The `schema` property SHOULD be the same as the definition of the property from which the parameter is derived (see <<per_core_additional-properties,additional record properties>>).
+|===
