@@ -34,31 +34,31 @@ I have currently harvested a bunch of RADARSAT metadata and will shortly have
 harvested all the SENTINEL-1 metadata that is available on AWS.
 
 Landing page:
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues?f=json
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues?f=json
 
 API document:
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/api
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/api
 
 Conformance Page:
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/conformance?f=json
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/conformance?f=json
 
 List of catalogues:
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=json
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=json
 
 Describe sentinel1cat catalogue:
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat?f=json
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat?f=json
 
 Queryables:
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/queryables?f=json
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/queryables?f=json
 
 Records:
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=100
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=100
 
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63
 
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2022-05-01T00:00:00/2022-05-15T00:00:00
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2022-05-01T00:00:00/2022-05-15T00:00:00
 
-* https://eratosthenes.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2022-05-20T00:00:00/2022-05-15T00:00:00&filter-lang=CQL&filter=passDirection%3D%27Ascending%27
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2022-05-20T00:00:00/2022-05-15T00:00:00&filter-lang=CQL&filter=passDirection%3D%27Ascending%27
 
 ## pygeoapi
 
