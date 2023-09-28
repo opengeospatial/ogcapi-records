@@ -58,7 +58,7 @@ Records:
 
 * https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2023-07-01T00:00:00/2023-07-15T00:00:00
 
-* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2023-07-20T00:00:00/2023-07-15T00:00:00&filter-lang=CQL&filter=passDirection%3D%27Ascending%27
+* https://atlas.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat/items?f=json&limit=10000&bbox=-69.64,37.76,-56.12,46.63&datetime=2023-07-01T00:00:00/2023-07-15T00:00:00&filter-lang=CQL&filter=passDirection%3D%27Ascending%27
 
 ## pygeoapi
 
