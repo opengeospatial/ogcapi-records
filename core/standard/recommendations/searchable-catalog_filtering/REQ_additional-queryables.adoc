@@ -1,0 +1,8 @@
+[[per_searchable-catalog_additional-queryables]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/core/additional-conformance*
+2+|The list of queryables MAY also include:
+^|A |zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>,
+^|B |any number of additional properties that are part of the record but are not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>. 
+|===

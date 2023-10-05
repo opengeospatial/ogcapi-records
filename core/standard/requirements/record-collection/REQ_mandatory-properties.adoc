@@ -1,0 +1,7 @@
+[[req_record-collection_mandatory-properties-collection]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-collection/mandatory-properties-collection*
+
+A collection object SHALL contain all the mandatory properties listed in <<collection-properties-table>>.
+|===

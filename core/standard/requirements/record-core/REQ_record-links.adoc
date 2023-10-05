@@ -4,7 +4,7 @@
 ^|*Requirement {counter:req-id}* |*/req/core/record-links*
 ^|A |Each record SHALL include a link (`rel="self"`) to itself.
 ^|B |Each record SHALL, if it is a member of a collection, include a link (`rel="collection"`) pointing to the collection of which this record in a member.
-^|C |Each record SHALL, if they exist, include typed links (`rel="alternate"`) to each alternative representation of the record.
+^|C |Each record SHALL, if they exist, include typed links (`rel="alternate"`) to each alternative representation of this record.
 |===
 
 NOTE: The term "typed link" means a link that specifies a value for the `type` attribute

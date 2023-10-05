@@ -1,9 +1,0 @@
-[[rc_local-resources-catalogue_cql2-filter]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalogue/cql2-filter
-|Target type |Web API
-|Dependency |<<rc_local-resources-catalogue,Local Resources Catalogue>>
-|Dependency |<<rc_cql-filter,Filtering using the Common Query Language (CQL2)>>
-|===

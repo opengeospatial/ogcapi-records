@@ -1,0 +1,7 @@
+[[req_record-core_mandatory-properties-record]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-core/mandatory-properties-record*
+
+Each record in a response SHALL contain all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+|===

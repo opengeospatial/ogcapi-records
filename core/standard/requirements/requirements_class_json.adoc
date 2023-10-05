@@ -1,0 +1,13 @@
+[[rc_json]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json
+|Target type |Document encoding
+|Dependency |<<rfc8259,IETF RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format>>
+|Dependency |<<jschema,JSON Schema>>
+|Dependency |<<rfc7946,GeoJSON>>
+|Pre-conditions |
+1) The API advertises conformance to the JSON Conformance Class +
+2) The client negotiates use of the JSON (catalog) or GeoJSON (record).
+|===

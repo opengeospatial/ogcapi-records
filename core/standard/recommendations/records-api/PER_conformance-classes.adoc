@@ -6,7 +6,7 @@
 A conformance declaration MAY include one or more of the following conformance classes:
 
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/filtering
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery

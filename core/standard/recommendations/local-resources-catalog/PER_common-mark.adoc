@@ -1,0 +1,7 @@
+[[per_collection_common-mark]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/per/collection/common-mark*
+
+For any `description` member in a local resources object, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
+|===

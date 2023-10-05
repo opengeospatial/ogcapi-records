@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/sorting/sortby-definition*
 
-^|A |The operation SHALL support a parameter `sortby` with the following characteristics (using an OpenAPI Specification 3.0 fragment):
+^|A |At the searchable catalog endpoint, the operation SHALL support a parameter `sortby` with the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
 [source,YAML]
 ----

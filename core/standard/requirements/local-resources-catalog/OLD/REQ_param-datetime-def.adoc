@@ -1,0 +1,8 @@
+[[req_local-resources-catalog_param-datetime-def]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/param-datetime-def*
+
+^|A |Implementations SHALL support the `datetime` query parameter for the HTTP GET operation at the local resources endpoint.
+^|B |The characteristics of the `datetime` parameter SHALL be as defined by requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_parameter_datetime[`req/core/fc-datetime-definition`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+|===

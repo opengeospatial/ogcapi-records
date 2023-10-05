@@ -1,0 +1,13 @@
+[[req_crawlable-catalog_catalog-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/catalog-links*
+
+^|A |A catalog's `links` section SHALL include a link (`rel=self`) that points to itself.
+^|B |A catalog's `links` section SHALL include one or more typed links (`rel=alternate`) that point to each alternate representation of this catalog.
+^|B |A catalog's `links` section SHALL include one link (`rel=item`) pointing to each record of the catalog.
+|===
+
+NOTE: The term "typed link" means a link that specifies a value for the `type` attribute.
+
+

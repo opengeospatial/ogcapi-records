@@ -1,0 +1,7 @@
+[[req_json_collection-content]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/json/collection-content*
+
+The schema of all responses with the media type `application/ogc-catalog+json` SHALL validate against the OpenAPI 3.0 schema document `catalog.yaml`.
+|===

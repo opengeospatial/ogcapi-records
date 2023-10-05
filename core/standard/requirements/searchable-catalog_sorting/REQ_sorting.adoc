@@ -1,0 +1,7 @@
+[[req_searchable-catalog_sorting]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/searchable-catalog/sorting*
+2+|Implementations that offer sorting SHALL implement the following requirements:
+^|A | <<clause-sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
+|===

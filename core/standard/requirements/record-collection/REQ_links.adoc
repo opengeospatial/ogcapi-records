@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-collection/links*
-^|A |If the catalogue is a <<clause-crawlable-catalogue,crawlable catalogue>>, the collection SHALL contain one or more links (`rel="item"`) in the `links` section that explicitly point to each record in the collection.
-^|B |If the catalogue is a <<clause-searchable-catalogue,searchable catalogue>>, the collection SHALL contain a link (`rel="items"`) in the `links` section that point to the search/access endpoint for the records of the collection.
+^|A |If the catalog is a <<clause-crawlable-catalog,crawlable catalog>>, the collection SHALL contain one or more links (`rel="item"`) in the `links` section that explicitly point to each record in the collection.
+^|B |If the catalog is a <<clause-searchable-catalog,searchable catalog>>, the collection SHALL contain a link (`rel="items"`) in the `links` section that point to the search/access endpoint for the records of the collection.
 |===

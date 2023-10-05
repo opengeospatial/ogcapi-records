@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/sorting/defaultSortOrder-definition*
 
-^|A |The schema of a collections (collectionInfo.yaml) SHALL be extended with the addition of the `defaultSortOrder` member with the following characteristics (using an OpenAPI Sepcification 3.0 fragment):
+^|A |The schema of a collection (collectionInfo.yaml) SHALL be extended with the addition of the `defaultSortOrder` member with the following characteristics (using an OpenAPI Sepcification 3.0 fragment):
 
 [source,YAML]
 ----

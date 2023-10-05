@@ -1,0 +1,375 @@
+[[catalog-deployments]]
+== Catalog deployments
+
+=== Overview
+
+This clause uses the <<building-blocks,building blocks>> defined in this standard to define various catalog deployments.
+
+[[clause-crawlable-catalog]]
+=== Requirements Class "Crawlable Catalog" (Deployment)
+
+[[crawlable-catalog-overview]]
+==== Overview
+
+include::requirements/requirements_class_crawlable-catalog.adoc[]
+
+The `Crawlable Catalog` Requirements Class defines the requirements for a catalog composed of static, web-accessible files.
+
+The goal of a crawlable catalog is to expose metadata about resources online with as low an entry barrier as possible, thus making those resource more easily discoverable.
+
+A crawlable catalog is a deployment pattern that uses the <<clause-core-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this standard.  It is simply a set of files deployed on the web that encode, usually in HTML or JSON, the <<clause-record-collection,collection>> and <<clause-record-core,record schema>> defined in this standard.  The files contain embedded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalog.
+
+A crawlable catalog is not searchable and does not respond to query requests.  As the name implies, it can only be crawled (or harvested) by following the embedded links; typically by search engines and other active catalogs or browsed using a web browser.  However, due to its simplicity, a crawlable catalog is easy to deploy and maintain, and is very reliable.
+
+NOTE: It should be pointed out that a <<clause-searchable-catalog,searchable catalog>> can also behave as a crawlable catalog as long as the requirements in this clause are satisfied by the <<lause-searchable-catalog,searchable catalog>> implementation.
+
+[[crawlable-catalog-record]]
+==== Making a resource discoverable
+
+include::requirements/crawlable-catalog/REQ_record.adoc[]
+
+Attention is drawn to requirement <<per_core_additional-properties-record,/per/core/additional-properties-record>> that allows the information content of the record to be enriched as required to describe the resource being made discoverable.
+
+include::requirements/crawlable-catalog/REQ_record-links.adoc[]
+
+include::requirements/crawlable-catalog/REQ_record-file-location.adoc[]
+
+include::recommendations/crawlable-catalog/REC_record-file-name.adoc[]
+
+include::recommendations/crawlable-catalog/REC_record-file-location.adoc[]
+
+For example, the record file could be placed in the same web-accessible directory or object store as the resource(s) that the record describes.
+
+[[crawlable-catalog]]
+==== Grouping a collection of records into a catalog
+
+include::requirements/crawlable-catalog/REQ_catalog.adoc[]
+
+include::requirements/crawlable-catalog/REQ_catalog-location.adoc[]
+
+include::requirements/crawlable-catalog/REQ_catalog-links.adoc[]
+
+[[crawlable-collections]]
+==== Grouping catalogs (and other resources) into collections
+
+In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g. a hierarchy) the same catalog object (see: http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[catalog.yaml]) used to organized related collections of records into a catalog may also be used as a common entry point for crawling to multiple, related, sub-collections, catalogs, records and other resources.  In this use case, the term _collection_ is used to refer to a http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[catalog object].
+
+include::requirements/crawlable-catalog/REQ_collection.adoc[]
+
+include::recommendations/crawlable-catalog/PER_additional-collection-properties.adoc[]
+
+include::requirements/crawlable-catalog/REQ_collection-location.adoc[]
+
+include::requirements/crawlable-catalog/REQ_itemType.adoc[]
+
+include::requirements/crawlable-catalog/REQ_collection-links.adoc[]
+
+include::recommendations/crawlable-catalog/REC_collection-links.adoc[]
+
+[[clause-searchable-catalog]]
+=== Requirements Class "Searchable Catalog" (Deployment)
+
+include::requirements/requirements_class_searchable-catalog.adoc[]
+
+The `Searchable Catalog` Requirements Class defines the requirements for a catalog that is searchable through an API.  A searchable catalog is an implementation of <<OAFeat-1,OGC API - Features>> that uses a defined information model.  In the case of OGC API - Records, that information model is the <<clause-record-core,Record>>.
+
+include::requirements/searchable-catalog/REQ_core.adoc[]
+
+include::recommendations/searchable-catalog/PER_additional-requirements.adoc[]
+
+include::requirements/searchable-catalog/REQ_mandatory-properties.adoc[]
+
+include::recommendations/searchable-catalog/PER_additional-properties.adoc[]
+
+[[clause-searchable-catalog_sorting]]
+==== Requirements Class "Searchable Catalog - Sorting" (Deployment)
+
+include::requirements/requirements_class_searchable-catalog_sorting.adoc[]
+
+This conformance class specifies requirements for supporting sorting of responses at searchable catalog endpoints.
+
+include::requirements/searchable-catalog_sorting/REQ_sorting.adoc[]
+
+[[clause-searchable-catalog_filtering]]
+==== Requirements Class "Searchable Catalog - Filtering" (Deployment)
+
+include::requirements/requirements_class_searchable-catalog_filtering.adoc[]
+
+This conformance class specifies requirements and recommendations for supporting advanced filtering at searchable catalog endpoints.
+ 
+===== Filter queryables
+
+include::requirements/searchable-catalog_filtering/REQ_mandatory-queryables.adoc[]
+
+include::recommendations/searchable-catalog_filtering/REQ_additional-queryables.adoc[]
+
+===== Coordinate reference systems
+
+include::requirements/searchable-catalog_crs/REQ_crs.adoc[]
+
+[[clause-local-resources-catalog]]
+=== Requirements Class "Local Resources Catalog" (Deployment)
+
+[[local-resources-catalog-overview]]
+==== Overview
+
+include::requirements/requirements_class_local-resources-catalog.adoc[]
+
+This conformance class specifies requirements for a _local resources catalog_.
+
+The OGC API defines a number of resource endpoints that provide lists of
+sub-resources.  These endpoints are referred to as _local resources catalogs_ in this standard because they provide metadata about resources offered locally by an OGC API deployment.
+
+NOTE: The term _local resources endpoint_ is used to reference to the resource path of the _local resources catalog_.  The term _local resources object_ is used to refer to an instance of the object or resource that can be retrieved from the _local resources endpoint_.
+
+The `/collections` endpoint is an example of a _local resources endpoint_.  This endpoint provides a list of objects describing the collections of items offered by an OGC API deployment.  Each offered collection (path `/collections/{collectionId}`) is described by a _local resources object_ containing a small number of properties.  A common set of properties is defined in  https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and can be extended by resource-specific specifications (e.g. http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core]).  In this respect, the `/collections` endpoint is a catalog of records (i.e. `/collections/{collectionId}` objects) describing the collections of items offered by the OGC API deployment.
+
+Other _local resources catalogs_ available in the OGC API resource tree include the `/processes` endpoint which provides a list of offered processes and the `/collections/{collectionId}/scenes` endpoint which provides a list of source images of a coverage.
+
+In order to enable catalog-like searching at these local resources endpoints, this conformance class defines requirements and recommendations that:
+
+1. enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<core-properties,core properties>> defined for a catalog <<clause-records-core,record>>,
+
+2. define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to enhance it searchability.
+
+This conformance class does not define the specific endpoints in the OGC API resource tree that should be enabled with catalog-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalog-line searching be identified by the responsible OGC standard.
+
+==== Resource Description
+
+===== Overview
+
+The clause defines requirements and recommendations for the information content of a local resources object that can be retrieved from local resources endpoint.
+
+As an example of a local resources endpoint, consider the `/collections` endpoint.  The object that can be retrieved from this endpoint is defined in https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_[OGC API - Features].  The following table cross-walks the information content of the collection object with the <<core-properties,core properties>> defined for the <<clause-record-core,record>> building block:
+
+[[record-collection-crosswalk]]
+[reftext='{table-caption} {counter:table-num}']
+.Crosswalk of core properties with collection information object properties
+[cols="25,25,25,25",options="header"]
+|===
+|Collection property |Requirement |Core Property  |Requirement
+|id                  |M           |id             |M
+|title               |O           |title          |M
+|description         |O           |description    |M
+|itemType            |O           |--             |--
+|extent              |O           |extent         |O
+|links               |M           |links          |O
+|crs                 |O           |--             |--
+|===
+
+It is evident that there is significant overlap of the properties of each resource.  This standard defines the following requirements and recommendations with regard to information content of a local resources object such as the collection object that is retrievable from the `/collections` endpoint.
+
+===== Property `title`
+
+include::requirements/local-resources-catalog/REQ_property-title.adoc[]
+
+===== Property `description`
+
+include::requirements/local-resources-catalog/REQ_property-description.adoc[]
+
+include::recommendations/local-resources-catalog/PER_common-mark.adoc[]
+
+===== Property `extent`
+
+include::recommendations/local-resources-catalog/REC_property-extent.adoc[]
+
+===== Property `links`
+
+include::recommendations/local-resources-catalog/REC_property-links.adoc[]
+
+===== Property `type`
+
+include::requirements/local-resources-catalog/REQ_property-type.adoc[]
+
+===== Property `created`
+
+include::requirements/local-resources-catalog/REQ_property-created.adoc[]
+
+===== Property `updated`
+
+include::requirements/local-resources-catalog/REQ_property-updated.adoc[]
+
+NOTE: Adding, modifying, or deleting items from a collection are all examples of changes that may occur that would require an update of the collection object that can be retrieved from the `/collections` endpoint.
+
+===== Property `keywords`
+
+include::requirements/local-resources-catalog/REQ_property-keywords.adoc[]
+
+===== Additional properties
+
+include::recommendations/local-resources-catalog/PER_additional-properties.adoc[]
+
+===== Example
+
+The following JSON Schema fragment illustrates how the feature collection object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
+
+[source,yaml]
+----
+  allOf:
+    - $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
+    - type: object
+      required:
+        - type
+        - created
+        - updated
+        - keywords
+      properties:
+        type:
+          description: 
+            The nature or genre of the items of the collection (e.g. feature,
+            coverage)
+          type: string
+        created:
+          description:
+            The date this collection was created in the server.
+          type: string
+          format: date-time
+        updated:
+          description:
+            The most recent date on which the collection was updated.
+          type: string
+          format: date-time
+        keywords:
+          description:
+            A list of free-form keywords or tag associated with the collection
+          type: array
+          items:
+            type: string
+        language:
+          description:
+            The natural language used for textual values (i.e. titles,
+            descriptions, etc) of items in the collection.
+          type: string
+        themes:
+          type: array
+          description:
+            A knowledge organization system used to classify the resource.
+          minItems: 1
+          items:
+            type: object
+            properties:
+              concepts:
+                type: array
+                description:
+                  One or more entity/concept identifers from this knowledge
+                  system. it is recommended that a resolvable URI be used
+                  for each entity/concept identifier.
+                minItems: 1
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description:
+                        An identifier for the concept.
+                    title:
+                      type: string
+                      description:
+                        A human readable title for the concept.
+                    description:
+                      type: string
+                      description:
+                        A human readable description for the concept.
+                    url:
+                      type: string
+                      format: uri
+                      description:
+                        A URI providing further description of the concept.
+                  required:
+                    - id
+              scheme:
+                type: string
+                description:
+                  An identifier for the knowledge organization system used
+                  to classify the resource.  It is recommended that the
+                  identifier be a resolvable URI.
+            required:
+                - concepts
+                - scheme
+        contacts:
+          description:
+            The entity to contact about the collection.
+          type: array
+          items:
+            $ref: contact.yaml
+        license:
+          description: 
+            The legal provisions under which the collection is made available.
+          type: string
+        rights:
+          description:
+            A statement that concerns all rights not addressed by the license
+            such as a copyright statement.
+          type: string
+----
+
+T.D.B.  Should add an instance example of a collection object.
+
+==== Query parameters
+
+include::requirements/local-resources-catalog/REQ_query-parameters.adoc[]
+
+==== Response
+
+include::requirements/local-resources-catalog/REQ_response.adoc[]
+
+[[clause-local-resources-catalog_sorting]]
+==== Requirements Class "Local Resources Catalog - Sorting" (Deployment)
+
+include::requirements/requirements_class_local-resources-catalog_sorting.adoc[]
+
+This conformance class specifies requirements and recommendations for supporting sorting of responses at _local resource catalog_ endpoints.
+
+===== Operation
+
+include::requirements/local-resources-catalog_sorting/REQ_param-sortby-def.adoc[]
+
+===== Response 
+
+include::requirements/local-resources-catalog_sorting/REQ_param-sortby-response.adoc[]
+
+See also: <<req_sorting_get-sortables-op,/req/sorting/get-sortables-op>>, <<req_sorting_get-sortables-success,/req/sorting/get-sortables-success>>.
+
+===== Examples
+
+Example 1: List all the collections that lie within a specific bounding box and contain the keyword `weather`.
+
+----
+   Client                                                          Server
+     |                                                               |
+     |   GET /collections?bbox=41.875315,-96.767601,56.732861,-73.476|
+     |   586&q=weather   HTTP/1.1                                    |
+     |   Accept: application/json                                    |
+     |-------------------------------------------------------------->|
+     |                                                               |
+     |   HTTP/1.1 200 OK                                             | 
+     |   Content-Type: application/json                              |
+     |                                                               |
+     |   T.B.D. Need example output here...                          |
+     |<--------------------------------------------------------------|
+----
+
+[[clause-local-resources-catalog_filtering]]
+==== Requirements Class "Local Resources Catalog - Filtering" (Deployment)
+
+include::requirements/requirements_class_local-resources-catalog_filtering.adoc[]
+
+This conformance class specifies requirements and recommendations for supporting advanced filtering at _local resource catalog_ endpoints.
+
+===== Operation
+
+include::requirements/local-resources-catalog_filtering/REQ_filter-param.adoc[]
+
+include::requirements/local-resources-catalog_filtering/REQ_filter-lang-param.adoc[]
+
+include::recommendations/local-resources-catalog_filtering/REC_text-encoding.adoc[]
+
+include::recommendations/local-resources-catalog_filtering/REC_json-encoding.adoc[]
+
+include::requirements/local-resources-catalog_filtering/REQ_filter-crs-param.adoc[]
+
+include::requirements/local-resources-catalog_filtering/REQ_queryables-link.adoc[]
+
+===== Response
+
+include::requirements/local-resources-catalog_filtering/REQ_filter-response.adoc[]

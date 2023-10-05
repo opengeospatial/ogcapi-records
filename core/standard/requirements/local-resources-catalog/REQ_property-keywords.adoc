@@ -1,0 +1,8 @@
+[[req_local-resources-catalog_keywords]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/keywords*
+
+^|A |The `keywords` property SHALL be present in the information model of the local resource object.
+^|B |The value of the `keywords` property SHALL be a list of free-form keywords or tags associated with the local resource.
+|===

@@ -1,8 +1,0 @@
-[[per_searchable-catalogue_additional-queryables]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/core/additional-conformance*
-2+|The list of queryables MAY also include:
-^|A |zero or more of the optional queryables listed in <<core-queryables-record-table>> and <<core-queryables-resource-table>>,
-^|B |any number of additional queryables that are part of the record but are not listed in <<core-queryables-record-table>> and <<core-queryables-resource-table>>. 
-|===

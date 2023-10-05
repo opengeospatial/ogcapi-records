@@ -1,8 +1,0 @@
-[[rec_crawlable-catalogue_collections-links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/crawlable-catalogue/collections-links*
-
-^|A |The collections object SHOULD include one or more links (`rel=child`) that point to each child entity (sub-collection, catalogue, record, other resources) of this collections object.
-^|B |The collections object SHOULD include a link (`rel=parent`) that points to this collections object's parent collections object.
-|===

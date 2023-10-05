@@ -7,4 +7,4 @@
 ^|C |If the resource is being made available under one or more licenses that haven't been assigned an https://spdx.org/licenses/[SPDX license identifier] or one or more custom licenses then the value of the `license` member SHALL be the value `other` and one or more links (relation: `license`) SHALL be included in the `links` section of the record pointing to the file(s) that contain the text of the licenses.
 |===
 
-NOTE: There is also the case of a resource that is private or unpublished and is thus unlicensed; in this case do not register such a resource in the catalogue in the first place since there is no point in making such a resource discoverable.
+NOTE: There is also the case of a resource that is private or unpublished and is thus unlicensed; in this case do not register such a resource in the catalog in the first place since there is no point in making such a resource discoverable.

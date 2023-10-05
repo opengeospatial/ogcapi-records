@@ -1,0 +1,7 @@
+[[req_records-core-query-parameters_limit]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/limit*
+^|A |A searchable endpoint SHALL support a Paging (`limit`) parameter as defined in https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_limit[OGC API - Features - Part 1: Core].
+^|B |All references to the term "features" in https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_limit[OGC API - Features - Part 1: Core] SHALL be replaced by the term "record" or "local resource" as the context may indicate.
+|===

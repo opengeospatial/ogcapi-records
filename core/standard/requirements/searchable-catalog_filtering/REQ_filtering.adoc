@@ -1,0 +1,7 @@
+[[req_searchable-catalog_filtering]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/searchable-catalog/filtering*
+2+|Implementations that offer enhanced filtering SHALL implement the following requirements:
+^|A |<<clause-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
+|===

@@ -1,0 +1,23 @@
+[[req_records-core-query-parameters_ids-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/ids-definition*
+^|A |A Records API SHALL support the query-by-ids (ids) parameter for the operation.
+^|B |The characteristics of the `ids` parameter SHALL be as defined by requirement http://fix.em[`req/ids/fc-ids-definition`] of the http://fix.me[OGC API - Features - Part X: Title Unknown] standard.  The definition is copied here for convenience.
+
+[source,YAML]
+----
+name: ids
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+----
+
+^|C |An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
+|===
+
+NOTE:  Is the behaviour in C correct?  If the `ids` parameter is empty should the server just ignore it?  ... which would imply that all records should be part of results set (subject to any other filters of course).
