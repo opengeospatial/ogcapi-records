@@ -492,9 +492,32 @@ include::requirements/record-core-query-parameters/REQ_query-param-limit.adoc[]
 [[core-query-parameters-q]]
 ===== Parameter q
 
-include::requirements/record-core-query-parameters/REQ_query-param-q-definition.adoc[]
+The `q` parameter is meant to provide and rudimentary, easy to implement keyword search capability across one or more text fields in a record.  The specific text fields in a record that are to be searched is not mandated in this standard.
 
 include::recommendations/record-core-query-parameters/REC_param-q.adoc[]
+
+The `q` parameter is a comma-separated list of search terms.  If any of these terms appear in a searched text field of a record then that record can be included in the result set (logical OR).  If any search term specified using the `q` parameter contains one or more spaces, this implied that all of the specified search terms must appear in a searched text field of a record before that record can be included in the result set (logical AND).
+
+For example, the following `q` parameter specification:
+
+----
+q=ocean,climate   change,desalination
+----
+
+represents the query predicate:
+
+----
+(anytext CONTAINS 'ocean') OR
+(anytext CONTAINS 'climate' AND anytext CONTAINS 'change') OR
+(anytext CONTAINS 'desalination')`
+----
+
+NOTE:
+
+* The term `anytext` is meant to represent the set of text fields that are searched by the operation.
+* The `CONTAINS` operator used above is just an example of a operator that searches a text field(s) for a specific search term.  How this operator is implemented and what its named in the system backing a catalog implementation is are beyond the scope of this standard.
+
+include::requirements/record-core-query-parameters/REQ_query-param-q-definition.adoc[]
 
 include::requirements/record-core-query-parameters/REQ_query-param-q-response.adoc[]
 

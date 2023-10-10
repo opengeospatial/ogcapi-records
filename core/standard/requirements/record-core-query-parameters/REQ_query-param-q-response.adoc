@@ -3,5 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/q-response*
 
-Only records whose text fields contains one or more of the search terms specified using the `q` parameter SHALL be in the result set.
+^|A |For search terms that are comma separated (logical OR) only records whose text fields contain one or more of the search terms specified using the `q` parameter SHALL be in the result set.
+^|B |For search terms that are space separated (logical AND) only records whose text fields containe all the search terms specified using the `q` parameter SHALL be in the results set.
 |===
