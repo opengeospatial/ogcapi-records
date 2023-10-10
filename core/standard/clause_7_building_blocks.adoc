@@ -514,6 +514,7 @@ represents the query predicate:
 
 NOTE:
 
+* The parameter values are not escaped for clarity.
 * The term `anytext` is meant to represent the set of text fields that are searched by the operation.
 * The `CONTAINS` operator used above is just an example of a operator that searches a text field(s) for a specific search term.  How this operator is implemented and what its named in the system backing a catalog implementation is are beyond the scope of this standard.
 
