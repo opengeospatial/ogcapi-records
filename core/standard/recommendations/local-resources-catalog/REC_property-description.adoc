@@ -1,7 +1,7 @@
-[[rec_local-resources-catalogue_property-description-def]]
+[[rec_local-resources-catalog_property-description-def]]
 [width="90%",cols="2,6a"]
 |===
-^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalogue/property-description-def*
+^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalog/property-description-def*
 
 The `description` property SHOULD be present in the information model of the local resource object.
 |===

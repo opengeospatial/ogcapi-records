@@ -1,0 +1,7 @@
+[[rec_local-resources-catalog_core-property-title-requirement]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalog/core-property-title-requirement*
+
+When included in the information content of a local resource object, the <<core-properties,core property>> `title` SHOULD be required.
+|===

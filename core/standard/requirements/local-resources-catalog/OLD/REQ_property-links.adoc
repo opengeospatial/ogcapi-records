@@ -1,6 +1,6 @@
-[req_local-resources-catalogue_links]]
+[req_local-resources-catalog_links]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalogue/links*
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/links*
 ^|A |The `links` property SHALL be present in the information model of the local resource object.
 |===

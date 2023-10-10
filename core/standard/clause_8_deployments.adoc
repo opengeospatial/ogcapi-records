@@ -147,14 +147,14 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 .Crosswalk of core properties with collection information object properties
 [cols="25,25,25,25",options="header"]
 |===
-|Collection property |Requirement |Core Property  |Requirement
-|id                  |M           |id             |M
-|title               |O           |title          |M
-|description         |O           |description    |M
-|itemType            |O           |--             |--
-|extent              |O           |extent         |O
-|links               |M           |links          |O
-|crs                 |O           |--             |--
+|`/collections` property |Requirement |Core Property  |Requirement
+|id                      |M           |id             |M
+|title                   |O           |title          |M
+|description             |O           |description    |M
+|itemType                |O           |--             |--
+|extent                  |O           |extent         |O
+|links                   |M           |links          |O
+|crs                     |O           |--             |--
 |===
 
 It is evident that there is significant overlap of the properties of each resource.  This standard defines the following requirements and recommendations with regard to information content of a local resources object such as the collection object that is retrievable from the `/collections` endpoint.
@@ -162,6 +162,8 @@ It is evident that there is significant overlap of the properties of each resour
 ===== Property `title`
 
 include::requirements/local-resources-catalog/REQ_property-title.adoc[]
+
+include::recommendations/local-resources-catalog/REC_core-property-title-requirement.adoc[]
 
 ===== Property `description`
 
@@ -181,13 +183,19 @@ include::recommendations/local-resources-catalog/REC_property-links.adoc[]
 
 include::requirements/local-resources-catalog/REQ_property-type.adoc[]
 
+include::recommendations/local-resources-catalog/REC_core-property-type-requirement.adoc[]
+
 ===== Property `created`
 
 include::requirements/local-resources-catalog/REQ_property-created.adoc[]
 
+include::recommendations/local-resources-catalog/REC_core-property-created-requirement.adoc[]
+
 ===== Property `updated`
 
 include::requirements/local-resources-catalog/REQ_property-updated.adoc[]
+
+include::recommendations/local-resources-catalog/REC_core-property-updated-requirement.adoc[]
 
 NOTE: Adding, modifying, or deleting items from a collection are all examples of changes that may occur that would require an update of the collection object that can be retrieved from the `/collections` endpoint.
 
@@ -205,102 +213,7 @@ The following JSON Schema fragment illustrates how the feature collection object
 
 [source,yaml]
 ----
-  allOf:
-    - $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
-    - type: object
-      required:
-        - type
-        - created
-        - updated
-        - keywords
-      properties:
-        type:
-          description: 
-            The nature or genre of the items of the collection (e.g. feature,
-            coverage)
-          type: string
-        created:
-          description:
-            The date this collection was created in the server.
-          type: string
-          format: date-time
-        updated:
-          description:
-            The most recent date on which the collection was updated.
-          type: string
-          format: date-time
-        keywords:
-          description:
-            A list of free-form keywords or tag associated with the collection
-          type: array
-          items:
-            type: string
-        language:
-          description:
-            The natural language used for textual values (i.e. titles,
-            descriptions, etc) of items in the collection.
-          type: string
-        themes:
-          type: array
-          description:
-            A knowledge organization system used to classify the resource.
-          minItems: 1
-          items:
-            type: object
-            properties:
-              concepts:
-                type: array
-                description:
-                  One or more entity/concept identifers from this knowledge
-                  system. it is recommended that a resolvable URI be used
-                  for each entity/concept identifier.
-                minItems: 1
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                      description:
-                        An identifier for the concept.
-                    title:
-                      type: string
-                      description:
-                        A human readable title for the concept.
-                    description:
-                      type: string
-                      description:
-                        A human readable description for the concept.
-                    url:
-                      type: string
-                      format: uri
-                      description:
-                        A URI providing further description of the concept.
-                  required:
-                    - id
-              scheme:
-                type: string
-                description:
-                  An identifier for the knowledge organization system used
-                  to classify the resource.  It is recommended that the
-                  identifier be a resolvable URI.
-            required:
-                - concepts
-                - scheme
-        contacts:
-          description:
-            The entity to contact about the collection.
-          type: array
-          items:
-            $ref: contact.yaml
-        license:
-          description: 
-            The legal provisions under which the collection is made available.
-          type: string
-        rights:
-          description:
-            A statement that concerns all rights not addressed by the license
-            such as a copyright statement.
-          type: string
+include::../examples/yaml/collection-extended.yaml[]
 ----
 
 T.D.B.  Should add an instance example of a collection object.

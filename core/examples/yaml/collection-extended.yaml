@@ -1,58 +1,96 @@
----
 allOf:
-  - $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/\
-          schemas/collection.yaml"
+  - $ref: "http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml"
   - type: object
     required:
       - type
+      - created
+      - updated
+      - keywords
     properties:
       type:
+        description: 
+          The nature or genre of the items of the collection (e.g. feature,
+          coverage)
         type: string
-        description:
-          The nature or genre of the resource. The value should be a code,
-          convenient for filtering records. Where available, a link to
-          the canonical URI of the record type resource will be added to
-          the 'links' property.
-        maxLength: 64
       created:
-        type: string
         description:
-          Date of creation of this record.
+          The date this collection was created in the server.
+        type: string
         format: date-time
       updated:
-        type: string
         description:
-          The most recent date on which the record was changed.
+          The most recent date on which the collection was updated.
+        type: string
         format: date-time
       keywords:
-        type: array
         description:
-          The topic or topics of the resource. Typically represented using
-          free-form keywords, tags, key phrases, or classification codes.
+          A list of free-form keywords or tag associated with the collection
+        type: array
         items:
           type: string
       language:
         description:
-          The language used for textual values in this record representation.
-        $ref: language.yaml
+          The natural language used for textual values (i.e. titles,
+          descriptions, etc) of items in the collection.
+        type: string
       themes:
         type: array
         description:
           A knowledge organization system used to classify the resource.
         minItems: 1
         items:
-          $ref: theme.yaml
+          type: object
+          properties:
+            concepts:
+              type: array
+              description:
+                One or more entity/concept identifers from this knowledge
+                system. it is recommended that a resolvable URI be used
+                for each entity/concept identifier.
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description:
+                      An identifier for the concept.
+                  title:
+                    type: string
+                    description:
+                      A human readable title for the concept.
+                  description:
+                    type: string
+                    description:
+                      A human readable description for the concept.
+                  url:
+                    type: string
+                    format: uri
+                    description:
+                      A URI providing further description of the concept.
+                required:
+                  - id
+            scheme:
+              type: string
+              description:
+                An identifier for the knowledge organization system used
+                to classify the resource.  It is recommended that the
+                identifier be a resolvable URI.
+          required:
+              - concepts
+              - scheme
       contacts:
-        type: array
         description:
-          A list of contacts qualified by their role(s) in association to the
-          record or the resource described by the record.
+          The entity to contact about the collection.
+        type: array
         items:
           $ref: contact.yaml
       license:
-        $ref: license.yaml
-      rights:
+        description: 
+          The legal provisions under which the collection is made available.
         type: string
+      rights:
         description:
           A statement that concerns all rights not addressed by the license
           such as a copyright statement.
+        type: string

@@ -1,14 +1,14 @@
-[[per_local-resources-catalogue_additional-properties]]
+[[per_local-resources-catalog_additional-properties]]
 [width="90%",cols="2,6a"]
 |===
-^|*Permission {counter:per-id}* |*/per/local-resources-catalogue/additional-properties*
-^|A |The <<local-resources-catalogue-additional-properties>> table contains a list of recommended additional properties that MAY be added to information model of a local resources object to enhance its searchability.
-^|B |Each local resource object in a response MAY contain any number of other additional properties not listed in <<local-resources-catalogue-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
+^|*Permission {counter:per-id}* |*/per/local-resources-catalog/additional-properties*
+^|A |The <<local-resources-catalog-additional-properties>> table contains a list of recommended additional properties that MAY be added to information model of a local resource object to enhance its searchability.
+^|B |Each local resource object in a response MAY contain any number of other additional properties not listed in <<local-resources-catalog-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
 |===
 
-[[local-resources-catalogue-additional-properties]]
+[[local-resources-catalog-additional-properties]]
 [reftext='{table-caption} {counter:table-num}']
-.Additional local resources object information properties
+.Additional local resource object information properties
 [cols="30,70",options="header"]
 |===
 |Property |Description

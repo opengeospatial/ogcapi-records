@@ -1,7 +1,7 @@
-[[rec_local-resources-catalogue_keywords]]
+[[rec_local-resources-catalog_keywords]]
 [width="90%",cols="2,6a"]
 |===
-^|*Recommendations {counter:rec-id}* |*/rec/local-resources-catalogue/keywords*
+^|*Recommendations {counter:rec-id}* |*/rec/local-resources-catalog/keywords*
 
 ^|A |The `keywords` property SHOULD be present in the information model of the local resource object.
 ^|B |The value of the `keywords` property SHOULD be a list of free-form keywords or tags associated with the local resource.
