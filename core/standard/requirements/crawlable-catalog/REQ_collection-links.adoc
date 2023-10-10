@@ -1,4 +1,4 @@
-[[req_crawlable-catalogue_collection-links]]
+[[req_crawlable-catalog_collection-links]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/collection-links*

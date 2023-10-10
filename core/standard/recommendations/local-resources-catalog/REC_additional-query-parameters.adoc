@@ -1,7 +1,7 @@
 [[rec_local-resources-catalog_additional-query-parameters]]
 [width="90%",cols="2,6a"]
 |===
-^|*Recommendation {counter:rec-id}* |*/rec/record-api/additional-query-parameters*
+^|*Recommendation {counter:rec-id}* |*/rec/local-resource-catalog/additional-query-parameters*
 
 ^|A |If any <<per_core_additional-properties,additional resource property>> is expected to be useful for applications using the service to filter resources from the local resources endpoint based on this property, a parameter with the name of the property SHOULD be supported for the HTTP GET operation.
 ^|B |If the parameter has a simple value (e.g. a string or integer) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
