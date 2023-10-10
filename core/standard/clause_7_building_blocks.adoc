@@ -470,7 +470,7 @@ The parameters `bbox`, `datetime`, `limit` and `ids` are inherited from https://
 |<<core-query-parameters-q,q>> |A comma-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed then this records shall appear in the response set.
 |<<core-query-parameters-type,type>> |An equality predicate consistent of a comma-separated list of resource types.  Only records of the listed type shall appear in the resource set.
 |https://fix.me[ids] |An equality predicate consisting of a comma-separated list of record identifiers. Only records with the specified identifiers shall appear in the response set.
-|<<core-query-parameters-externalid,externalid>> |An equality predicate consisting of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
+|<<core-query-parameters-externalIds,externalIds>> |An equality predicate consisting of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
 |<<additional-query-parameters,_prop_=_value_>> |Equality predicates with any <<additional-query-parameters,queryable>> not already listed in this table.
 |===
 
@@ -514,12 +514,12 @@ include::requirements/record-core-query-parameters/REQ_query-param-ids-definitio
 
 include::requirements/record-core-query-parameters/REQ_query-param-ids-response.adoc[]
 
-[[core-query-parameters-externalid]]
-===== Parameter externalId
+[[core-query-parameters-externalIds]]
+===== Parameter externalIds
 
-include::requirements/record-core-query-parameters/REQ_query-param-externalid-definition.adoc[]
+include::requirements/record-core-query-parameters/REQ_query-param-externalIds-definition.adoc[]
 
-include::requirements/record-core-query-parameters/REQ_query-param-externalid-response.adoc[]
+include::requirements/record-core-query-parameters/REQ_query-param-externalIds-response.adoc[]
 
 [[additional-query-parameters]]
 ===== Additional query parameters
@@ -530,7 +530,7 @@ based on the resource type and/or an external identifier associated with the
 resource.
 
 * <<core-query-parameters-type,type>>
-* <<core-query-parameters-externalid,externalId>>
+* <<core-query-parameters-externalIds,externalIds>>
 
 include::recommendations/record-core-query-parameters/REC_additional-query-parameters.adoc[]
 

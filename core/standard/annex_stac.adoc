@@ -1,0 +1,237 @@
+[appendix]
+:appendix-caption: Annex
+[[annex_stac]]
+== Crosswalk between STAC and OGC API - Records - Part 1 Core (Informative)
+
+[[annex_stac_overview]]
+=== Overview
+
+This annex give a brief overview of the similarities and differences between
+
+* https://github.com/radiantearth/stac-api-spec/tree/v1.0.0[Spatial Temporal Asset Catalog, V 1.0.0]
+* OGC API - Records - Part 1: Core (this standard)
+
+This annex will compare content model (STAC vs. OARec) and the API specification (STAC API vs. OARec API).
+
+STAC and OGC API - Records - Part 1: Core are not fully compliant.  This means that by default a STAC API is not automatically a OGC API - Records and vice versa.  Nevertheless, there are no major conflicts in the specifications so that both implementations can be made compliant with a relatively small number of additions.
+
+=== Terminology
+
+[#entity-mapping,reftext='{table-caption} {counter:table-num}']
+.Entity mapping between STAC and OARec
+[cols="30,30",options="header"]
+|===
+|STAC |OARec 
+|Catalog |Record Collection 
+|Collection |Record Collection (See note 1)
+|Item |Record 
+2+|Note 1: The term "catalog" and "record collection" are used interchangably in OARec.
+|===
+
+Nevertheless, you could also think about other mappings between the specifications. Some may argue, a STAC Collection is a OARec Record. Due to the way the JSON representations are defined, I'm assuming a mapping as in the table above though.
+
+Please also note that Catalogs, Collections and Items could be Records in OARec and some implementations only convert Records to Record Collections once they have at least one child record. Catalogs are currently mostly used in static deployments and don't play a huge role in APIs/dynamic deployments.
+
+=== Static content
+
+==== Overview
+
+- The content model and static catalog behavior for STAC is specified in the standalone STAC specification and corresponding extensions.
+- The content model and static catalog behavior for OARec is specified in the requirement classes "Crawable Catalog" which depends on the building-block conformance classes "Record Core" and "Record Collection".
+
+**_Note:_** In the tables below, the following applies:
+
+* **bold** properties indicate that they are required.
+* **_bold and italic_** properties are required if a certain criteria is met
+* ✅ means that fields are fully compatible.
+* ⚠ means that fields are generally compatible (if applicable), but the field is not required in both specs or there are other minor differences implementors need to take care of.
+* ❌ means there is a conflict in the specifications, the generated JSON is NOT compatible.
+* **Profile\*** = Checks the compliance if STAC would be defined as an OGC API - Records - Part 1 profile / extension.
+
+==== Catalogs 
+
+Assuming a JSON (non-GeoJSON) encoding.
+
+[#stac-catalog-crosswalk,reftext='{table-caption} {counter:table-num}']
+.STAC Item crosswalk
+[cols="20,20,20,40",options="header"]
+|===
+|STAC |OARec |Profile* |Compatible / Comments
+|**type** = `Catalog` |**type** = `Collection` |⚠ https://github.com/opengeospatial/ogcapi-records/issues/264[Issue] |⚠ There is no Catalog in OARec, you can use a "lightweight" Collection instead.
+|**stac_version** |- |✅ |⚠
+|stac_extensions  |- |✅ |✅
+|**id** |**id** |✅ |✅
+|title |**title** |⚠ https://github.com/radiantearth/stac-spec/issues/1232[Issue] |⚠
+|**description** |**description** |✅ |⚠ STAC disallows empty strings
+|**links** |**links** |⚠ https://github.com/opengeospatial/ogcapi-records/issues/276[Issue 1], https://github.com/opengeospatial/ogcapi-records/issues/275[Issue 2], https://github.com/radiantearth/stac-spec/issues/1235[Issue 3] |⚠ Structure is compatible except for templated links and different relation type requirements (none in STAC; `self` in OARec). Also, OARec and STAC both use the relation type `child` with a media type `application/json` to link to catalogs, but **clients can't distinguish whether they can expect OARec or STAC**.
+|===
+
+==== Collections
+
+Assuming a JSON (non-GeoJSON) encoding.
+
+[#stac-collection-crosswalk,reftext='{table-caption} {counter:table-num}']
+.STAC Collection crosswalk
+[cols="20,20,20,40",options="header"]
+|===
+|STAC |OARec |Profile* |Compatible / Comments
+|**type** = `Collection` |**type** = `Collection` |✅ |✅
+|- |**itemType** = `record` |✅ |✅
+|**stac_version** |- |✅ |⚠ 
+|stac_extensions |conformsTo |✅ |⚠ STAC extensions could be used in `conformsTo`, but conformance classes that are not valid JSON schemas can't be used in `stac_extensions`.
+|**id** |**id** |✅ |✅
+|title |**title** |⚠ https://github.com/radiantearth/stac-spec/issues/1232[Issue] |⚠
+|**description** |description |✅ |⚠ STAC disallows empty strings
+|**links** |**links** |⚠ https://github.com/opengeospatial/ogcapi-records/issues/276[Issue 1] https://github.com/opengeospatial/ogcapi-records/issues/275[Issue 2] https://github.com/radiantearth/stac-spec/issues/1235[Issue 3] |⚠ Structure is compatible except for templated links, but different relation type requirements (none in STAC; `self` and `root` in OARec). Also, OARec and STAC both use the relation type `child` with a media type `application/json` to link to collections, but **clients can't distinguish whether they can expect OARec or STAC**.
+|keywords |keywords |✅ |✅
+|**license** |license |✅ (STAC 1.1+) |⚠ STAC 1.0 is not fully compatible, but STAC 1.1 will be made compatible.
+|providers |- |✅ |✅
+|contacts (extension) |contacts |✅ |✅
+|**extent** |extent |✅ |⚠ STAC requires a bounding box and a temporal interval.
+|summaries |- |✅ |✅
+|assets |- |✅ |⚠ Assets are provided as links (rel="describes") in OARec.
+|language (extension) |language |✅ |✅
+|languages (extension) |languages |✅ |✅
+|- |recordLanguages |✅ |✅
+|created (common metadata) |created |✅ |✅
+|updated (common metadata) |updated |✅ |✅
+|themes (extension) |themes |✅ |✅
+|crs (API only) |crs |✅ |✅
+|- |rights |✅ |✅
+|===
+
+[[stac-iterms_records-crosswalk]]
+==== Items / Records
+
+Assuming a GeoJSON encoding.
+
+===== Top level
+
+[#stac-item_toplevel-crosswalk,reftext='{table-caption} {counter:table-num}']
+.STAC Collection crosswalk
+[cols="20,20,20,40",options="header"]
+|===
+|STAC |OARec |Profile* |Compatible / Comments
+|**type** = `Feature` |**type** = `Feature` |✅ |✅
+|**stac_version** |- |✅ |⚠
+|stac_extensions |conformsTo |✅ |⚠ STAC extensions could be used in `conformsTo`, but conformance classes that are not valid JSON schemas can't be used in `stac_extensions`.
+|**id** |**id** |✅ |✅
+|**geometry** |**geometry** |✅ |⚠ STAC https://github.com/radiantearth/stac-spec/issues/1160[disallows GeometryCollections]
+|**_bbox_** |bbox |✅ |⚠ STAC requires `bbox` if `geometry` is not `null`.
+|**properties** |**properties** |✅ |✅ 
+|**links** |**links** |⚠ https://github.com/opengeospatial/ogcapi-records/issues/276[Issue 1], https://github.com/opengeospatial/ogcapi-records/issues/275[Issue 2], https://github.com/radiantearth/stac-spec/issues/1235[Issue 3]|⚠ Structure is compatible except for templated links, but different relation type requirements (none in STAC; `self` in OARec). Also, OARec and STAC both use the relation type `item` with a media type `application/geo+json` to link to items/records, but **clients can't distinguish whether they can expect OARec or STAC**.
+|**assets** |- |✅ |⚠ Assets are provided as links (rel="describes") in OARec.
+|**_collection_** |- |✅ |✅ This field is *required* in STAC if such a relation type is present and is *not allowed* otherwise. |
+|- |**time** |⚠ https://github.com/opengeospatial/ogcapi-records/issues/277[Issue 1], https://github.com/radiantearth/stac-spec/issues/1232[Issue 2] |⚠ STAC: `datetime` / `start_datetime` / `end_datetime` in `properties`. STAC can't encode all options that OARec allows.
+|===
+
+===== Properties section
+
+[#stac-item_properties-crosswalk,reftext='{table-caption} {counter:table-num}']
+.STAC Collection crosswalk
+[cols="20,20,20,40",options="header"]
+|===
+|STAC |OARec |Profile* |Compatible
+|- |**type** |⚠ https://github.com/radiantearth/stac-spec/issues/1232[Issue] |⚠
+|**datetime** / start_datetime / end_datetime |- |⚠ https://github.com/opengeospatial/ogcapi-records/issues/277[Issue 1], https://github.com/radiantearth/stac-spec/issues/1232[Issue 2] |⚠ OARec: `time` in the top-level object
+|title (common metadata) |**title** |⚠ https://github.com/radiantearth/stac-spec/issues/1232[Issue] |⚠
+|description (common metadata) |description |✅ |⚠ STAC disallows empty strings
+|keywords (common metadata) |keywords |✅ |✅
+|license (common metadata) |license |✅ (STAC 1.1+) |⚠ STAC 1.0 is not fully compatible, but STAC 1.1 will be made compatible.
+|created (common metadata) |created |✅ |✅
+|updated (common metadata) |updated |✅ |✅
+|contacts (extension) |contacts |✅ |✅
+|themes (extension) |themes |✅ |✅
+|language (extension) |language |✅ |✅
+|languages (extension) |languages |✅ |✅
+|- |resourceLanguages |✅ |✅
+|- |externalIds |✅ |✅
+|- |rights |✅ |✅
+|- |formats |✅ |✅ STAC: A similar list can be obtained from the `type` field in assets
+|===
+
+=== API behaviour
+
+==== Overview
+
+* The API for STAC is specified in the standalone STAC API specification and corresponding extensions (conformance classes Core, Collections, Features).
+* The API for OARec is specified in the requirement classes "Records API"
+** The conformance classes "Searchable Catalog" and "Local Resources Catalog" have a dependency on the "Record API" conformance class.
+
+Both APIs base their work on OGC API - Features and OGC API - Common.
+
+The APIs use HTTP as the basis and encourage HTTPS.
+HTTP 1.1 is required for OARec, while STAC API doesn't explicitly define an HTTP version.
+The APIs follow REST principles and make use of HTTP content negotiation.
+The APIs make broad use of "Web Linking" (compatible between OARec and STAC API).
+Both specifications recommend the implementation of CORS.
+
+The default encoding for requests and response bodies in STAC is JSON. OARec does not mandate a specific encoding but strongly recommends JSON and HTML, thus content negotiation needs to be implemented more carefully for OARec.
+STAC API usually uses client software to render HTML output from JSON (e.g., STAC Browser).
+
+Both specifications make broad use of OpenAPI 3.0 (or later) and JSON Schema for specification purposes.
+
+==== Landing Page
+
+* STAC: `GET /` (required)
+* OARec: `GET /` (required)
+
+As the landing pages both are based on top of https://docs.ogc.org/is/19-072/19-072.html[OGC API - Common], they are very similar.
+
+In OARec you must provide just `links` and can optionally add `title` and `description`.
+
+STAC API requires additional properties (`stac_version`, `type`, `id`, `description`) to form a full STAC [Catalog](#catalogs). It also lists the conformance classes in the landing page, while OARec has them [separate](#conformance).
+
+The use of links is a bit different in STAC API and OARec. The implementation of the [Collection List](#collection-list) is optional in STAC. A STAC API can also just expose child links to catalogs/collections and/or to a search endpoint.
+
+==== Conformance
+
+* STAC: `GET /conformance` (optional)
+* OARec: `GET /conformance` (required)
+
+Both endpoints are 100% equivalent.
+OARec requires a separate endpoint that lists conformance classes, which is optional in STAC API.
+STAC API additionally lists the conformance classes in the landing page.
+
+==== Collection list
+
+* STAC: `GET /collections` (optional)
+* OARec: `GET /collections` (required)
+
+As the endpoints for collection lists are both based on top of https://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core], they are very similar. The difference between STAC and OARec is how the individual collections are encoded, see <<stac-collection-crosswalk,Collections>> for details.
+
+==== Individual collection
+
+* STAC: `GET /collections/{collectionId}` (optional)
+* OARec: `GET /collections/{collectionId}` (required)
+
+As the endpoints for individual collections are both based on top of [OGC API - Features - Part 1](https://docs.ogc.org/is/17-069r3/17-069r3.html), they are very similar. The difference between STAC and OARec is how the individual collections are encoded, see <<stac-collection-crosswalk,Collections>> for details.
+
+[[item-list]]
+==== Item List
+
+* STAC: `GET /collections/{collectionId}/items` (optional)
+* OARec: `GET /collections/{collectionId}/items` (required)
+
+As the endpoints for item lists (per collection) are both based on top of https://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core], they are very similar. The difference between STAC and OARec is how the individual items are encoded, see <<stac-iterms_records-crosswalk,Items>> for details. Additionally, OARec defines the following parameters that implementations must support: `q`, `type`, `ids` and `externalIds`.
+
+==== Individual Item
+
+* STAC: `GET /collections/{collectionId}/items/{itemId}` (optional)
+* OARec: `GET /collections/{collectionId}/items/{recordId}` (required)
+
+As the endpoints for individual items are both based on https://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1:Core], they are very similar. The difference between STAC and OARec is how the individual items are encoded, see <<stac-iterms_records-crosswalk,Items>> for details.
+
+==== Search
+
+STAC defines three ways to search for resources:
+
+* https://github.com/stac-api-extensions/collection-search/[**Collection Search Extension**]: Search for collections via `GET /collections` (based on Local Resource Catalog in OARec)
+* https://github.com/radiantearth/stac-api-spec/tree/main/item-search[**Item Search**]: Search (globally) for items across collections via `GET /search` and `POST /search`
+* **Items per Collection**: Filter for items in a specific collection via `GET /collections/{collectionId}/items` (see <<item-list,Item List>>)
+
+OARec defines similar ways to search for resources:
+
+- https://docs.ogc.org/DRAFTS/20-004.html#clause-local-resources-catalog[**Local Resource Catalog**]: Search for record collections via `GET /collections`.  This capability applies to endpoints other than `/collections` as well.  For example, a local resource catalog can be used to search for processes at the `GET /processes` endpoint.
+- **Record Search**: A global search for records is planned in the requirement class https://docs.ogc.org/DRAFTS/20-004.html#clause-searchable-catalog[Searchable Catalog] based on the https://htmlpreview.github.io/?https://github.com/opengeospatial/ogcapi-features/blob/master/proposals/search/standard/20-096.html[OGC API - Features - Part X: Search] proposal.  There are https://github.com/opengeospatial/ogcapi-features/issues/832[chances for incompatibilities with STAC].
+- **Records per Record Collection**: Filter for records in a specific record collection via `GET /collections/{collectionId}/items`  (see <<item-list,Item List>>)
