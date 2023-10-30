@@ -167,12 +167,12 @@ In some instances additional context may be desirable or required in order to ac
 
 include::recommendations/record-core/REC_record-associations_templated.adoc[]
 
-NOTE: This specification does not define any specific link relations that should be used for links in the `links` or <<sc_templated_links_with_variables,`linkTemplates`>> sections.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the links that relations should use.
+NOTE: This specification does not define any specific link relations that should be used for links in the `links` or <<sc_templated_links_with_variables,`linkTemplates`>> sections.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the relations that links should use.
 
-The following provides an example of using association links for related resources of a record, as both traditional link relations as well as API resources via URI templates.
+The following provides an example of using association links for related resources of a record, as both traditional links as well as link templates.
 
 [#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
-.Associations simple and URI Template Example
+.Associations simple and Link Template Example
 [source,json]
 ----
 include::../examples/json/associations-simple-and-uri-template.json[]
