@@ -18,7 +18,7 @@ explode: false
 ----
 
 ^|C |Search terms that are to be OR'ed SHALL be separated by literal commas.
-^|D |Search terms that are to be AND'ed SHALL be separated by one or more white space.
+^|D |Search terms that are to be AND'ed SHALL be separated by one or more white space characters.
 ^|E |Keyword searches using the `q` parameter SHALL be case insensitive.
 ^|F |The specific set of text keys/fields/properties of a record to which the `q` operator is applied SHALL be left to the discretion of the implementation.
 |===
