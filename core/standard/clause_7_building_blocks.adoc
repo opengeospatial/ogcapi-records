@@ -496,7 +496,7 @@ The `q` parameter is meant to provide a simple, easy to implement keyword search
 
 include::recommendations/record-core-query-parameters/REC_param-q.adoc[]
 
-The `q` parameter is a comma-separated list of search terms.  If any of these terms appear in one or more searched text field of a record then that record can be included in the result set (logical OR).  If any search term specified using the `q` parameter contains one or more whitespaces, this implies that all of the specified search terms must appear in one or more searched text field of a record before that record can be included in the result set (logical AND).
+The `q` parameter is a comma-separated list of search terms.  If any of these terms appear in one or more searched text field of a record then that record can be included in the result set (logical OR).  If any search term specified using the `q` parameter contains one or more whitespaces, this implies that all of the specified search terms must appear in one or more searched text fields of a record in the order specified and regardless of the number of white spaces separating the them before that record can be included in the result set (logical AND).
 
 For example, the following `q` parameter specification:
 
@@ -508,7 +508,7 @@ represents the query predicate:
 
 ----
 (anytext CONTAINS 'ocean') OR
-(anytext CONTAINS 'climate' AND anytext CONTAINS 'change') OR
+(anytext CONTAINS 'climate\s+change') OR
 (anytext CONTAINS 'desalination')`
 ----
 
@@ -516,6 +516,7 @@ NOTES:
 
 * The term `anytext` is meant to represent the set of text fields that are searched by the operation.
 * The `CONTAINS` operator used above is just an example of an operator that searches a text field(s) for specific search terms.  How this operator is implemented and what it is named in the system backing a catalog implementation is beyond the scope of this standard.
+* The regular expression `\s+` is meant to represent one or more white spaces.
 
 include::requirements/record-core-query-parameters/REQ_query-param-q-definition.adoc[]
 
