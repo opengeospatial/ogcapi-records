@@ -1,6 +1,6 @@
 Aggregation:
   type: object
-  description: An aggregation is linked to a item property and contains the top set of occurences (buckets) of values of the property
+  description: An aggregation is linked to a item property and contains the top set of occurrences (buckets) of values of the property
   required:
     - key
   properties:

@@ -1,4 +1,4 @@
-name: includeAggregations
+name: aggregations
 description: parameter can be set to omit aggregations in search result
 in: query
 required: false

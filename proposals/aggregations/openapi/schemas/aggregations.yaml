@@ -1,4 +1,4 @@
-type: array
-description: List of aggregations
+type: object
+description: Aggregations overview
 items:
-  $ref: "./aggregation.yaml"
+  $ref: "./aggregationResult.yaml"
