@@ -1,0 +1,6 @@
+[[per_record-core_temporal-comparison]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/record-core/temporal-comparison*
+^|A |`date` and `timestamp` are different datatyes and when attempting to compare them, a server MAY either return an error or it MAY case the value to compatible data types for comparison.
+|===

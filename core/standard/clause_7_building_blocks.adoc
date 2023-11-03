@@ -157,6 +157,8 @@ Dates and timestamps are the initial range of instant values. The range may be e
 
 include::requirements/record-core/REQ_time-instant.adoc[]
 
+include::recommendations/record-core/PER_temporal_comparison.adoc[]
+
 ====== Intervals
 
 An interval is described by start and end instants. Both start and end instants are included in the interval, i.e., the interval is closed.
