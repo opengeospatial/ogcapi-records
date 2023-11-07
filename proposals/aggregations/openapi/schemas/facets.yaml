@@ -1,0 +1,4 @@
+type: object
+description: Facets overview
+items:
+  $ref: "./facetResult.yaml"

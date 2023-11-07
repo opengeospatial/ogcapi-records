@@ -1,0 +1,10 @@
+name: facetsOnly
+description: parameter can be used to request facets only, similar to &limit=0
+in: query
+required: false
+schema:
+  type: string
+  format: uri
+style: form
+explode: false
+default: false

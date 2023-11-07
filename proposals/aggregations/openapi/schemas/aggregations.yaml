@@ -1,4 +1,0 @@
-type: object
-description: Aggregations overview
-items:
-  $ref: "./aggregationResult.yaml"

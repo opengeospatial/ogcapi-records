@@ -1,5 +1,5 @@
-name: aggregations
-description: parameter can be set to omit aggregations in search result
+name: facets
+description: parameter can be set to omit facets in search result
 in: query
 required: false
 schema:

@@ -1,6 +1,6 @@
 # Proposed Extensions
 
-OGC APIs are designed to be modular. We expect new requirements will emerge with use and new features will be proposed to address those requirements. Development and validation of these new features is a community effort. Supporting that effort are two tools; a process for tracking the maturity of a proposed addition, and a means to publish the current baseline of a proposed new feature. 
+OGC APIs are designed to be modular. We expect new requirements will emerge with use then new features will be proposed to address those requirements. Development and validation of these new features is a community effort. Supporting that effort are two tools; a process for tracking the maturity of a proposed addition, and a means to publish the current baseline of a proposed new feature. 
 
 ## Draft Features
 
