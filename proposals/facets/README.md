@@ -1,6 +1,6 @@
 # OGC API - Records - Facets
 
-This folder contains the content for the standard extension OGC API - Records - Term Facets.
+This folder contains the content for the standard extension OGC API - Records - Facets.
 
 # Overview
 
@@ -13,11 +13,11 @@ Various backends support faceted search. Examples are [Elastic](https://www.elas
 The word _Facet_ refers here to a high-level piece of information that is computed over a set of records in a
 collection.
 
-An facet can be of several types:
+A facet can be of several types:
 
 ### Terms facet
 
-A "terms" facet can be applied to any text property and produces a list of values appearing for a specific
+A `terms` facet can be applied to any text property and produces a list of values appearing for a specific
 property across all matching records, as well as the count of records containing each value.
 
 #### Example
@@ -31,8 +31,7 @@ A terms facet based on `keyword` countries might return a list of buckets like s
 
 ### Histogram facet
 
-A "histogram" facet can be applied to any temporal or numeric property and produces a list of buckets describing
-the repartition of values across matching documents.
+A `histogram` facet can be applied to any temporal or numeric property to distribute item values over ranges or intervals.
 
 #### Example
 
@@ -41,11 +40,16 @@ The facet `createDate` will return a list of buckets like so:
 * `2020-01-01` to `2020-02-01`: 18 records
 * `2020-02-01` to `2020-03-01`: 22 records
 * `2020-03-01` to `2020-04-01`: 43 records
+
+or
+* `2020`: 18 records
+* `2021`: 22 records
+* `2022`: 43 records
 * etc.
 
 ### Filters facets
 
-A "filters" facets produces a count of matching records for one or several predefined queries. This essentially
+A `filters` facets produces a count of matching records for one or several predefined queries. This essentially
 lets the user run "sub-queries" cheaply to have a better understanding of the composition of the search results.
 
 #### Example
@@ -61,10 +65,11 @@ The facet `hasDownloads` will return the amount of records which have at least 1
 
 ### 1. Advertising available facets
 
-An additional `/facets` has to be supported at the collection level. This endpoint only supports `GET` requests.
+An additional `/facets` entrypoint (similar to `/queryables`)has to be supported at the collection level. This endpoint only supports `GET` requests.
 
 For example, for a collection called `myOrg`, a request on
 
+Note
 ```http request
 GET /collections/myOrg/facets
 ```
@@ -86,7 +91,54 @@ following information are included:
 * For filters facets:
   * CQL expression used for each filter; this then lets the user apply the same filter in subsequent queries
 
-### 2. Extending a JSON search result with a Facet Overview
+> **Note** that all the `facettables` attributes must be `queryables`
+
+Example:
+
+```json
+{
+  "type": "object",
+  "title": "Observations",
+  "defaultCount": 10,
+  "properties": {
+    "date": {
+      "type": "histogram"
+    },
+    "organization": {
+      "type": "terms"
+    },
+    "created": {
+      "type": "histogram"
+    },
+    "format": {
+      "type": "terms"
+    },
+    "usage": {
+      "type": "filter",
+      "view": "link.type = 'wms'",
+      "download": "link.type = 'wfs'"
+    }
+  },
+  "$schema": "http://json-schema.org/draft/2019-09/schema"
+}
+```
+### 2. Extending queryables response
+
+The queryable response will advertize that an attribute is facettable or not, to eventually skip the `/facets` request.
+
+eg.
+```json
+{
+  "properties": {
+    "organization": {
+      "title": "organization",
+      "type": "string",
+      "facets": true
+    }
+  }
+}
+```
+### 3. Extending a JSON search result with a Facet Overview
 
 The server might include a facet Overview for any search result within a collection. For example, for a collection `myOrg` the response to
 
@@ -148,18 +200,11 @@ computed.
 }
 ```
 
-In some situations clients are interested only in the facets. In other situations the facets are not
-required. These aspects can be controlled via additional query parameters.
-
-| Parameter  | Explanation                                                                        |
-|------------|------------------------------------------------------------------------------------| 
-| facets     | default `true`; will include the facets overview in the response                   |
-| facetsOnly | default `false`; returns the facets without search results. Similar to `&limit=0`. |
+In some situations clients are interested only in the facets. In that case, they can use the `facets` parameter with `&limit=0`.
 
 ### Examples
 ```
-GET /collections/myOrg/items?q=countries&facets=keywords&exclude=*england*&offset=100&limit=10
-GET /collections/myOrg/items?q=countries&facets=keywords&include=*england*&offset=100&limit=10
+GET /collections/myOrg/items?q=&facets=keywords:20:value_asc,date:quantile:4,update:year.month,usage
 ```
 
 # Folder structure
