@@ -1,7 +1,7 @@
-[[req_records-core-query-parameters_externalids-response]]
+[[req_records-core-query-parameters_externalIds-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/externalids-response*
+^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/externalIds-response*
 
 Only records that have an external identifier, as indicated by the values of the `externalIds` core queryable, equal to one of the listed values specified using the `externalIds` parameter SHALL be in the result set. 
 |===

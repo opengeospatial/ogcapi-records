@@ -1,7 +1,7 @@
-[[req_records-core-query-parameters_externalids-definition]]
+[[req_records-core-query-parameters_externalIds-definition]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/externalids-definition*
+^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/externalIds-definition*
 ^|A |A searchable endpoint SHALL support search by External Identifiers (`externalIds`) parameter for the operation.
 ^|B |The `externalIds` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 

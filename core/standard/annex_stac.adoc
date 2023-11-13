@@ -1,0 +1,6 @@
+[appendix]
+:appendix-caption: Annex
+[[annex_stac]]
+== Crosswalk between STAC and OGC API - Records - Part 1 Core (Informative)
+
+The document https://github.com/stac-utils/stac-crosswalks/tree/master/ogcapi-records#crosswalk-between-stac-and-ogc-api---records["Crosswalk between STAC and OGC API - Records"] presents a comparison between this standard and the https://github.com/radiantearth/stac-api-spec/tree/v1.0.0[Spatial Temporal Asset Catalog, V 1.0.0].
