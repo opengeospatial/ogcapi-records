@@ -41,24 +41,18 @@ The facet `createDate` will return a list of buckets like so:
 * `2020-02-01` to `2020-03-01`: 22 records
 * `2020-03-01` to `2020-04-01`: 43 records
 
-or
-* `2020`: 18 records
-* `2021`: 22 records
-* `2022`: 43 records
-* etc.
-
 ### Filters facets
 
 A `filters` facets produces a count of matching records for one or several predefined queries. This essentially
 lets the user run "sub-queries" cheaply to have a better understanding of the composition of the search results.
 
-#### Example
+#### Examples
 
 The facet `hasDownloads` will return the amount of records which have at least 1 distribution of a download type (CSV, Excel...):
+* `hasDownloads` : 2051 records
 
-`hasDownloads`
-* 'CSV, Excel, ...' : 2051 records
-* 'None' : 351 records
+The facet `hasMaps` will return the amount of records which have at associated to it:
+* `hasMaps` : 11495 records
 
 
 ## Requirements
@@ -78,9 +72,9 @@ will return a JSON object describing the various available facets for that colle
 following information are included:
 
 * The identifier of the facet
-* The type of facet: a facet can be of type `terms`, `histogram` or `filters`
+* The type of facet: a facet can be of type `term`, `histogram` or `filter`
 * The maximum count of buckets returned in the _facets overview_
-* For terms facets:
+* For term facets:
   * Name of the property targeted by this facet
   * Sort criteria: count or value (alphabetical)
   * Minimum occurrence count
@@ -88,7 +82,7 @@ following information are included:
 * For histogram facet:
   * Name of the property targeted by this facet
   * Type of buckets used: fixed intervals, fixed buckets count, equalized amount of records in each bucket
-* For filters facets:
+* For filter facets:
   * CQL expression used for each filter; this then lets the user apply the same filter in subsequent queries
 
 > **Note** that all the `facettables` attributes must be `queryables`
@@ -99,19 +93,26 @@ Example:
 {
   "type": "object",
   "title": "Observations",
-  "defaultCount": 10,
-  "properties": {
+  "defaultBucketCount": 10,
+  "facets": {
     "date": {
-      "type": "histogram"
+      "name" : "updateDate",
+      "type": "histogram",
+      "bucketType": "fixedInterval"
     },
     "organization": {
-      "type": "terms"
+      "type": "term",
+      "sortedBy": "count",
+      "minimumOccurrenceCount": 500
     },
     "created": {
-      "type": "histogram"
+      "type": "histogram",
+      "bucketType": "fixedBucketCount"
     },
     "format": {
-      "type": "terms"
+      "type": "terms",
+      "sortedBy": "value",
+      "minimumOccurrenceCount": 10
     },
     "usage": {
       "type": "filter",
@@ -122,6 +123,7 @@ Example:
   "$schema": "http://json-schema.org/draft/2019-09/schema"
 }
 ```
+
 ### 2. Extending queryables response
 
 The queryable response will advertize that an attribute is facettable or not, to eventually skip the `/facets` request.
