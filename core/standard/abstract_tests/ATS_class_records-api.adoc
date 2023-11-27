@@ -10,3 +10,12 @@
 ==== Conformance
 
 include::records-api/ATS_conformance-classes.adoc[]
+
+==== API Mandatory Parameters
+
+include::records-api/ATS_mandatory-params.adoc[]
+
+==== API Responses
+
+include::records-api/ATS_record-collection-response.adoc[]
+include::records-api/ATS_record-collections-response.adoc[]
