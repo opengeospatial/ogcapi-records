@@ -19,3 +19,5 @@ include::records-api/ATS_mandatory-params.adoc[]
 
 include::records-api/ATS_record-collection-response.adoc[]
 include::records-api/ATS_record-collections-response.adoc[]
+include::records-api/ATS_record-op.adoc[]
+include::records-api/ATS_record-response.adoc[]
