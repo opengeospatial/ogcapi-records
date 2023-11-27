@@ -9,4 +9,4 @@
 
 ==== Conformance
 
-include::records-api/ATS_conformance.adoc[]
+include::records-api/ATS_conformance-classes.adoc[]
