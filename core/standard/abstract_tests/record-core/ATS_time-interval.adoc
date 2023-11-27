@@ -1,9 +1,9 @@
 [[ats_record-core_time-interval]]
 [width="90%",cols="2,7a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/interval*
+^|*Abstract Test {counter:ats-id}* |*/conf/core/interval*
 ^|Test Purpose |Validate the behaviour of time interval for time objects.
-^|Requirement |<<req_record-core_interval,/req/record-core/interval>>
+^|Requirement |<<req_core_interval,/req/core/interval>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path
 . Parse time object

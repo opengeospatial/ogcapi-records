@@ -9,7 +9,7 @@
 . Parse all link objects
 . Check that one link has a ``templated`` property with value of ``true``
 . Check that a ``variables`` object exists
-. Validate the link against the ``../../../openapi/schemas/common/link.yaml`` schema
+. Validate the link against the ``https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml`` schema
 . Check that substitution variables in the ``href`` property include variables of the form `{_variable name_}`
 . Check that for each substitution variable in the ``href`` property, a correspondingly named entry in the `variables` dictionary exists.
 |===

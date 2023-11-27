@@ -1,9 +1,9 @@
 [[ats_contact]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/contact*
+^|*Abstract Test {counter:ats-id}* |*/conf/core/contact*
 ^|Test Purpose |Validate the behaviour of contacts objects.
-^|Requirement |<<req_record-core_contact,/req/record-core/contact>>
+^|Requirement |<<req_core_contact,/req/core/contact>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path
 . Parse a contacts member if it exists.

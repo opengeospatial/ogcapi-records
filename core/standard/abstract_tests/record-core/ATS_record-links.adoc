@@ -1,9 +1,9 @@
-[[ats_record-core_links]]
+[[ats_record-links]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/record-links*
+^|*Abstract Test {counter:ats-id}* |*/conf/core/record-links*
 ^|Test Purpose |Validate the behaviour of link relations for link objects.
-^|Requirement |<<req_record-core_links,/req/record-core/links>>
+^|Requirement |<<req_core_links,/req/core/links>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path
 . Parse all link objects

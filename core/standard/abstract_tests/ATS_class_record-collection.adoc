@@ -13,7 +13,7 @@ include::record-collection/ATS_conformance.adoc[]
 
 ==== Record collection schema
 
-include::record-collection/ATS_mandatory-queryables.adoc[]
+include::record-collection/ATS_mandatory-properties.adoc[]
 
 ==== Links
 

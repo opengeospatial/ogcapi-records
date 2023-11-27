@@ -13,7 +13,7 @@ include::record-core/ATS_conformance.adoc[]
 
 ==== Core queryables
 
-include::record-core/ATS_mandatory-queryables.adoc[]
+include::record-core/ATS_mandatory-properties-record.adoc[]
 
 ==== Links
 
