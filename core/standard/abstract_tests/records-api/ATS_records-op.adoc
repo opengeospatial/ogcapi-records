@@ -1,0 +1,11 @@
+[[ats_records-api_records-op]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-api/records-op*
+^|Test Purpose |Validate that records can be identified and extracted from a Collection using query parameters.
+^|Requirement |<<req_records-api_records-op,/req/records-api/records-op>>
+^|Test Method |. Construct a path for a collection endpoint
+. Check that the API complies with the requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_operation_6[`/req/core/fc-op`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard.
+. Use the test https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-op
+. The parameter `collectionId` is each `id` property in the collections response where the value of the `itemsType` property is `record`.
+|===
