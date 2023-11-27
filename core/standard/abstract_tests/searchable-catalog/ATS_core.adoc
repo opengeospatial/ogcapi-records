@@ -1,0 +1,14 @@
+[[ats_searchable-catalogue_core]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/core*
+^|Test Purpose |Validate conformance identification.
+^|Requirement |<<req_searchable-catalog_core,/req/searchable-catalog/core>>
+^|Test Method |. Construct a path for a landing page
+. Issue an HTTP GET request on the path
+. Check that the server conforms with `+http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core+` requirement
+. Check that the server conforms with `+http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection+` requirement
+. Check that the server conforms with `+http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters+` requirement
+. Check that the server conforms with `+http://www.opengis.net/spec/ogcapi-records-1/1.0/req/records-api+` requirement
+|===
+
