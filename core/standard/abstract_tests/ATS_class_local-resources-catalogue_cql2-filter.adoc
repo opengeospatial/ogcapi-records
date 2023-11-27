@@ -1,28 +1,28 @@
-[[ats_local-resources-catalogue_cql2-filter]]
+[[ats_local-resources-catalog_filtering]]
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalogue/cql2-filter
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog/filtering
 |Target type |Web API
-|Dependency |<<rc_local-resources-catalogue,Local Resources Catalogue>>
-|Dependency |<<rc_cql-filter,Filtering using the Common Query Language (CQL2)>>
-|Requirements class |<<rc_local-resources-catalogue_cql2-filter,Requirements Class "Local Resources Catalogue">>
+|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
+|Dependency |<<rc_filtering,Filtering using the Common Query Language (CQL2)>>
+|Requirements class |<<rc_local-resources-catalog_filtering,Requirements Class "Local Resources Catalog">>
 |===
 
 ==== Conformance
 
-include::local-resources-catalogue_cql2-filter/ATS_conformance.adoc[]
+include::local-resources-catalog_filtering/ATS_conformance.adoc[]
 
 ==== Filter Response
 
-include::local-resources-catalogue_cql2-filter/ATS_filter-response.adoc[]
+include::local-resources-catalog_filtering/ATS_filter-response.adoc[]
 
 ==== Filter Parameters
 
-include::local-resources-catalogue_cql2-filter/ATS_filter-param.adoc[]
-include::local-resources-catalogue_cql2-filter/ATS_filter-lang-param.adoc[]
-include::local-resources-catalogue_cql2-filter/ATS_filter-crs-param.adoc[]
+include::local-resources-catalog_filtering/ATS_filter-param.adoc[]
+include::local-resources-catalog_filtering/ATS_filter-lang-param.adoc[]
+include::local-resources-catalog_filtering/ATS_filter-crs-param.adoc[]
 
 ==== Queryable link
 
-include::local-resources-catalogue_cql2-filter/ATS_queryables-link.adoc[]
+include::local-resources-catalog_filtering/ATS_queryables-link.adoc[]
