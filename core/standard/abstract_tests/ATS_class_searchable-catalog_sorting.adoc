@@ -1,0 +1,14 @@
+[[ats_searchable-catalog_sorting]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/sorting
+|Target type |Web API
+|Dependency |<<ats_searchable_catalog,Searchable Catalog>>
+|Dependency |<<ats_sorting,Sorting>>
+|Requirements class |<<rc_searchable-catalog_sorting,Requirements Class "Sorting">>
+|===
+
+==== Sorting
+
+include::searchable-catalog_sorting/ATS_conformance.adoc[]
