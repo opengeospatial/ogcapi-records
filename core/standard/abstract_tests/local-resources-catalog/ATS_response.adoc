@@ -1,0 +1,13 @@
+[[ats_local-resources-catalog_response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/response*
+^|Test Purpose |Validate conformance identification.
+^|Requirement |<<req_local-resources-catalog_response,/req/local-resources-catalog/response>>
+^|Test Method |. Construct a path for a local resources catalog page.
+. Issue an HTTP GET request on the path
+. Check that the HTTP response header value is `+200+`.
+. Check that the response conforms to the requirements of the local resource being extended.
+. Check that the response only includes local resources selected by the request
+|===
+

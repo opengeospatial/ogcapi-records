@@ -1,11 +1,11 @@
-[[ats_local-resources-catalogue_conformance]]
+[[ats_local-resources-catalog_conformance]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalogue/conformance*
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/conformance*
 ^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_local-resources-catalogue_conformance,/req/local-resources-catalogue/conformance>>
+^|Requirement |<<req_local-resources-catalog_conformance,/req/local-resources-catalog/conformance>>
 ^|Test Method |. Construct a path for a conformance page
 . Issue an HTTP GET request on the path
-. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalogue+`.
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog+`.
 |===
 
