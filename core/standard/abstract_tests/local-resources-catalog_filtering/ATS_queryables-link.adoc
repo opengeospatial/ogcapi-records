@@ -1,9 +1,9 @@
-[[ats_local-resources-catalogue_cql2-filter_queryables-link]]
+[[ats_local-resources-catalog_filtering_queryables-link]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalogue/cql2-filter/queryables-link*
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/filtering/queryables-link*
 ^|Test Purpose |Validate queryables link for local resources catalogue.
-^|Requirement |<<req_local-resources-catalogue_cql2-filter_queryables-link,/req/local-resources-catalogue/cql2-filter/queryables-link>>
+^|Requirement |<<req_local-resources-catalog_filtering_queryables-link,/req/local-resources-catalog/filtering/queryables-link>>
 ^|Test Method |. Construct a path for the local resources catalogue
 . Issue an HTTP GET request and retrieve the catalogue object.
 . Parse the links section
