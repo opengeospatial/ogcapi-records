@@ -1,0 +1,17 @@
+[[ats_json_record-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/json/record-response*
+^|Test Purpose |Validate the JSON response of a record.
+^|Requirement |<<req_json_record-response,/req/json/record-response>>
+^|Test Method |. Construct a path for a `+collections/items+` page.
+. Issue an HTTP GET request on the path
+. Using the `+id+` of a given record, construct a path for a `+collections/items/<featureId>+` page.
+. Issue an HTTP GET request on the path
+. Check that the HTTP response header value is `+200+`.
+. Check that the HTTP Content-Type header value is `+application/geo+json+`.
+. Check that the response validates against as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml.
+. Check that a `geometry` member exists.
+. Check that the `extent` member includes the bounding extent of the resource being described by the record.
+|===
+

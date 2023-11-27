@@ -1,0 +1,9 @@
+[[ats_crawlable-catalog_collection]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/collection*
+^|Test Purpose |Validate crawlable catalog root collection object.
+^|Requirement |<<req_crawlable-catalog_collection,/req/crawlable-catalog/collection>>
+^|Test Method |. Retrieve the collection object
+. Check that the collection is a valid using the JSON Schema (https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml)
+|===

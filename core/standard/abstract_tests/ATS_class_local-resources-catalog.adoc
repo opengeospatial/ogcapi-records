@@ -1,0 +1,13 @@
+[[ats_local-resources-catalog]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
+|Target type |Web API
+|Dependency |<<rc_local-resources-catalog,Local Resources Catalogue>>
+|Requirements class |<<rc_local-resources-catalog,Requirements Class "Local Resources Catalog">>
+|===
+
+==== Conformance
+
+include::local-resources-catalog/ATS_conformance.adoc[]

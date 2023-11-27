@@ -1,0 +1,12 @@
+[[ats_records-core-query-parameters_q-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-core-query-parameters/q-response*
+^|Test Purpose |Validate q query parameter.
+^|Requirement |<<req_records-core-query-parameters_q-response,/req/records-core-query-parameters/q-response>>
+^|Test Method |. Construct a path for a searchable endpoint
+. Issue an HTTP GET request on the path
+. Check that the HTTP response header value is `+200+`.
+. Check that only records whose text fields contains one or more of the search terms specified using the `q` parameter are in the result set.
+|===
+

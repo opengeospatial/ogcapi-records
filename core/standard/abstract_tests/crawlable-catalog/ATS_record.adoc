@@ -1,0 +1,10 @@
+[[ats_crawlable-catalog_record]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/record*
+^|Test Purpose |Validate crawlable catalog records.
+^|Requirement |<<req_crawlable-catalogue_record,/req/crawlable-catalog/record>>
+^|Test Method |. Parse the catalog structure and create a list of all records available
+. For each item in the list, retrieve the record object
+. Check that the record is valid using the provided JSON-Schema (https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml)
+|===

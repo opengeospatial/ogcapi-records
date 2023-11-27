@@ -1,0 +1,10 @@
+[[ats_records-api_resource-name-mapping]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-api/resource-name-mapping*
+^|Test Purpose |Validate Records API using Features API with naming mapping.
+^|Requirement |<<req_records-api_resource-name-mapping,/req/records-api/resource-name-mapping>>
+^|Test Method |. Construct an API endpoint
+. Check if the API confirms with http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard by replacing each reference to `features` or `feature` by the terms `records` or `record` when interpreting an http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core]
+. Check the API using the https://docs.ogc.org/is/17-069r4/17-069r4.html#_abstract_test_suite_normative
+|===

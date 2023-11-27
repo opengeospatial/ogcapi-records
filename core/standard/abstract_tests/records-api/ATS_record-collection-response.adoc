@@ -1,0 +1,15 @@
+[[ats_records-api_record-collection-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-api/record-collection-response*
+^|Test Purpose |Validate collection API endpoint.
+^|Requirement |<<req_records-api_record-collection-response,/req/records-api/record-collection-response>>
+^|Test Method |. Construct a path for a collection page.
+. Validate that a document was returned with a status code 200
+. Validate the body of the response using the following yaml schema:
+[source,YAML]
+----
+include::../../../openapi/schemas/catalog.yaml[]
+----
+. Check that the `itemType` property is a string with the value `record`.
+|===

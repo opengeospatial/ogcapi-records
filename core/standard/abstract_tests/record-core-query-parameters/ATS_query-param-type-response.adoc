@@ -1,0 +1,12 @@
+[[ats_records-core-query-parameters_type-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-core-query-parameters/type-response*
+^|Test Purpose |Validate type query parameter.
+^|Requirement |<<req_records-core-query-parameters_type-response,/req/records-core-query-parameters/type-response>>
+^|Test Method |. Construct a path for a searchable endpoint
+. Issue an HTTP GET request on the path
+. Check that the HTTP response header value is `+200+`.
+. Check that only records whose type, as indicated by the value of the `type` core queryable, is equal to one of the listed values specified using the `type` parameter are in the result set.
+|===
+

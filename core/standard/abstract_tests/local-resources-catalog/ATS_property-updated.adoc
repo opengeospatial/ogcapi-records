@@ -1,0 +1,13 @@
+[[ats_local-resources-catalog_updated]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/updated*
+^|Test Purpose |Validate property updated.
+^|Requirement |<<req_local-resources-catalog_updated,/req/local-resources-catalog/updated>>
+^|Test Method |. Construct a path for a local resource object
+. Issue an HTTP GET request on the path
+. Parse the local resource object
+. Check that there is a `updated` property present
+. Check that the value of the `updated` property conform to the date-time production of https://tools.ietf.org/html/rfc3339#section-5.6[RFC 3339]
+|===
+

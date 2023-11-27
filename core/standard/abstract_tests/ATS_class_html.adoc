@@ -1,0 +1,18 @@
+[[ats_html]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
+|Target type |Web API
+|Requirements class |<<rc_html,Requirements Class "HTML">>
+|===
+
+==== Conformance
+
+include::html/ATS_conformance.adoc[]
+include::html/ATS_content.adoc[]
+include::html/ATS_definition.adoc[]
+
+==== API
+
+include::html/ATS_api-common.adoc[]

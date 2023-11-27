@@ -1,0 +1,12 @@
+[[ats_local-resources-catalog_property-description-def]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/property-description-def*
+^|Test Purpose |Validate conformance identification.
+^|Requirement |<<req_local-resources-catalog_property-description-def,/req/local-resources-catalog/property-description-def>>
+^|Test Method |. Construct a path for a local resource object
+. Issue an HTTP GET request on the path
+. Parse the local resource object
+. Check that there is a `description` property present
+|===
+

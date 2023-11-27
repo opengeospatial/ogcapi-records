@@ -1,0 +1,13 @@
+[[ats_crawlable-catalog_collection-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/collection-links*
+^|Test Purpose |Validate crawlable catalog collection links.
+^|Requirement |<<req_crawlable-catalog_collection-links,/req/crawlable-catalog/collection-links>>
+^|Test Method |. Retrieve the collection object
+. Create a list of the collection object links
+. Check that the list includes a link (``rel=self``) that points to itself.
+. Check that the list includes a link (``rel=root``) that points to its root collection.
+. If this collection object is the root then it should point to itself.
+. Check that the collection includes one typed link (``rel=alternate``) for each alternative representation of itself.
+|===

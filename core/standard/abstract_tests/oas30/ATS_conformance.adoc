@@ -1,0 +1,11 @@
+[[ats_oas30_conformance]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/oas30/conformance*
+^|Test Purpose |Validate conformance identification.
+^|Requirement |<<req_oas30_conformance,/req/oas30/conformance>>
+^|Test Method |. Construct a path for a conformance page
+. Issue an HTTP GET request on the path
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-common-1/1.0/req/oas30+`.
+|===
+

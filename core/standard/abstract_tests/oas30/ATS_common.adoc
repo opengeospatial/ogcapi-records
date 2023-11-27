@@ -1,0 +1,11 @@
+[[ats_oas30_oas-common]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/oas30/oas-common*
+^|Test Purpose |Validate conformance identification.
+^|Requirement |<<req_oas30_oas-common,/req/oas30/oas-common>>
+^|Test Method |. Construct a path for a server landing page
+. Issue an HTTP GET request on the path
+. Check that the server conforms with the following Requirements Class of the OGC API - Common version 1.0 Standard. http://www.opengis.net/spec/ogcapi-common-1/1.0/req/oas30.
+|===
+

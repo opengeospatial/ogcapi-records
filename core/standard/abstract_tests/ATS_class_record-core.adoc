@@ -1,0 +1,39 @@
+[[ats_record-core]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
+|Target type |Web API
+|Requirements class |<<rc_record-core,Requirements Class "Record Core">>
+|===
+
+==== Conformance
+
+include::record-core/ATS_conformance.adoc[]
+
+==== Core queryables
+
+include::record-core/ATS_mandatory-properties-record.adoc[]
+
+==== Links
+
+include::record-core/ATS_record-links.adoc[]
+
+==== Templated links with variables
+
+include::record-core/ATS_templated-link.adoc[]
+
+==== License
+
+include::record-core/ATS_record-license.adoc[]
+
+==== Contacts
+
+include::record-core/ATS_contact.adoc[]
+
+==== Time
+
+include::record-core/ATS_time-instant-interval.adoc[]
+include::record-core/ATS_time-instant.adoc[]
+include::record-core/ATS_time-interval.adoc[]
+include::record-core/ATS_time-zone.adoc[]

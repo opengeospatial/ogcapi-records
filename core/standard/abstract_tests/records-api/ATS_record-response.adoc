@@ -1,0 +1,22 @@
+[[ats_records-api_record-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-api/record-response*
+^|Test Purpose |Validate a record response from the API.
+^|Requirement |<<req_records-api_record-response,/req/records-api/record-response>>
+^|Test Method |. Construct a path for a collection endpoint and send a HTTP GET request.
+. Validate that a document was returned with a status code 200
+. Select a record id and send a HTTP GET request to retrieve the record.
+. Validate the body of the response using the following yaml schema:
+
+[source,YAML]
+----
+include::../../../openapi/schemas/recordGeoJSON.yaml[]
+----
+
+. Check that the `links` section of the record contains the following links:
+* a link to this response document (relation: self),
+* a typed link to the response document in every other media type supported by the service (relation: alternate), and
+* a link to the feature collection that contains this feature (relation: collection).
+. Check that all links include a `rel` parameter.
+|===

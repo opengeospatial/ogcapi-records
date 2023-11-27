@@ -1,0 +1,16 @@
+[[ats_autodiscovery_link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/autodiscovery/link*
+^|Test Purpose |Validate the behaviour of link relations for catalogue autodiscovery.
+^|Requirement |<<req_autodiscovery_link,/req/autodiscovery/link>>
+^|Test Method |. Construct a path for a landing page
+. Issue an HTTP GET request on the path
+. Parse all link objects
+. Check that at least one link contains a `+rel+` of `+http://www.opengis.net/def/rel/ogc/1.0/catalogue+`.
+. Check that the `+type+` attribute exists with a valid media type.
+. Check that the `+href+` attribute exists.
+. Issue an HTTP GET request on the value of the `+href+` attribute.
+. Validate that the link resolves with the associated media type identified in the `+type+` attribute.
+|===
+

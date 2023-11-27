@@ -1,0 +1,12 @@
+[[ats_searchable-catalog_crs]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/crs*
+^|Test Purpose |Validate CRS conformance identification.
+^|Requirement |<<req_searchable-catalog_crs,/req/searchable-catalog/crs>>
+^|Test Method |. Construct a path for a conformance page
+. Issue an HTTP GET request on the path
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-features-2/1.0/conf/crs+`.
+. Check that the server implements http://docs.opengeospatial.org/is/18-058/18-058.html[OGC API - Feature - Part 2: Coordinate Reference Systems by Reference]
+|===
+

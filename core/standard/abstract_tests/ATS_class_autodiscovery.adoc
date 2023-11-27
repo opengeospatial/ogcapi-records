@@ -1,0 +1,16 @@
+[[ats_autodiscovery]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery
+|Target type |Web API
+|Requirements class |<<rc_autodiscovery,Requirements Class "Autodiscovery">>
+|===
+
+==== Conformance
+
+include::autodiscovery/ATS_conformance.adoc[]
+
+==== Links
+
+include::autodiscovery/ATS_link.adoc[]

@@ -1,0 +1,9 @@
+[[ats_sorting_sortby-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/sorting/sortby-response*
+^|Test Purpose |Validate the availability of the `+sortby+` query parameter.
+^|Requirement |<<req_sorting_sortby-response,/req/sorting/sortby-response>>
+^|Test Method |. TODO
+. TODO can we reuse ATS_defaultSortOrder-definition.adoc here?
+|===

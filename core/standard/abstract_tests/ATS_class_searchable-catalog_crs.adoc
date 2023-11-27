@@ -1,0 +1,13 @@
+[[ats_searchable-catalog_crs]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/crs
+|Target type |Web API
+|Dependency |<<ats_searchable_catalogue,Searchable Catalogue>>
+|Requirements class |<<rc_searchable-catalogue_crs,Requirements Class "CRS">>
+|===
+
+==== CRS
+
+include::searchable-catalog_crs/ATS_crs.adoc[]

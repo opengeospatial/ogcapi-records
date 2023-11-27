@@ -1,0 +1,15 @@
+[[ats_searchable-catalog_mandatory-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatory-properties*
+^|Test Purpose |Validate each record containing the mandatory properties.
+^|Requirement |<<req_searchable-catalog_mandatory-properties,/req/searchable-catalog/mandatory-properties>>
+^|Test Method |. Construct a path for a given record
+. Issue a HTTP GET request on the path
+. Parse record
+. Check that the record includes an ``id`` property
+. Check that the record includes a ``geometry`` property
+. Check that the record includes a ``time`` property
+. Check that the record includes a ``properties.type`` property
+. Check that the record includes a ``properties.title`` property
+|===

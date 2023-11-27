@@ -1,0 +1,11 @@
+[[ats_local-resource-catalog_sorting_param-sortby-def]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resource-catalog/sorting/param-sortby-def*
+^|Test Purpose |Validate the availability of the `+sortby+` query parameter.
+^|Requirement |<<req_local-resource-catalog_sorting_param-sortby-def,/req/local-resource-catalog/sorting/param-sortby-def>>
+^|Test Method |. Construct a path for the local resource catalogue.
+. Issue an HTTP GET request on the path.
+. Check that a ``sortby`` parameter is supported.
+. Check that the characteristics of the ``sortby`` parameter are  defined by requirement <<req_sorting_sortby-definition,/req/sorting/sortby-definition>>.
+|===

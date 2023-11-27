@@ -1,0 +1,11 @@
+[[ats_json_api-common]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/json/api-common*
+^|Test Purpose |Validate the JSON of the Records API.
+^|Requirement |<<req_json_api-common,/req/json/api-common>>
+^|Test Method |. Construct a path for the API landing page
+. Issue an HTTP GET request on the path
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi_common-1/1.0/req/json+`.
+|===
+

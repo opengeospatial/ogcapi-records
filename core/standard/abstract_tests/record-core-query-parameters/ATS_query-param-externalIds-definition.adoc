@@ -1,0 +1,24 @@
+[[ats_records-core-query-parameters_externalIds-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-core-query-parameters/externalIds-definition*
+^|Test Purpose |Validate datetime query parameter.
+^|Requirement |<<req_records-core-query-parameters_externalIds-definition,/req/records-core-query-parameters/externalIds-definition>>
+^|Test Method |. Construct a path for a searchable endpoint
+. Issue an HTTP GET request on the path
+. Check that the HTTP response header value is `+200+`.
+. Validate that the externalIds parameters are constructed correctly using an OpenAPI Specification 3.0 fragment:
+
+[source,YAML]
+----
+name: externalIds
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+----
+|===
+

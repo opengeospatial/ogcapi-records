@@ -1,0 +1,9 @@
+[[ats_local-resources-catalog_filtering_filter-crs-param]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/filtering/filter-crs-param*
+^|Test Purpose |Validate filter crs parameter.
+^|Requirement |<<req_local-resources-catalog_filtering_filter-crs-param,/req/local-resources-catalog/filtering/filter-crs-param>>
+^|Test Method |. Construct a path for a collection items page ``/collections/{collectionId}/items``
+. Check that the the HTTP GET operation on the path supports the `filter-crs` parameter as defined in https://portal.ogc.org/files/96288#filter-filter-crs[Parameter filter-crs].
+|===
