@@ -1,0 +1,19 @@
+[[ats_json_record-content]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/json/record-content*
+^|Test Purpose |Validate the behaviour of link relations for record geojson.
+^|Requirement |<<req_json_record-content,/req/json/record-content>>
+^|Test Method |. Construct a path for a `+collections/items+` page.
+. Issue an HTTP GET request on the path
+. Check that the HTTP response header value is `+200+`.
+. Check that the HTTP Content-Type header value is `+application/geo+json+`.
+. Check that the response validates against as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml
+. Using the `+id+` of a given record, construct a path for a `+collections/items/<featureId>+` page.
+. Issue an HTTP GET request on the path
+. Check that the HTTP response header value is `+200+`.
+. Check that the HTTP Content-Type header value is `+application/geo+json+`.
+. Check that the response contains a `+links+` array.
+. Check that the response validates against as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml.
+|===
+
