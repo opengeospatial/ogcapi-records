@@ -7,8 +7,8 @@
 ^|Test Method |. Construct a path for a given collection
 . Issue a HTTP GET request on the path
 . Parse all link objects
-. If the catalogue is a <<clause-crawlable-catalogue,crawlable catalogue>>, check that the collection contains one or more link objects with a ``rel`` property with value of ``item`` that explicitly points to each record in the collection.
-. If the catalogue is a <<clause-searchable-catalogue,searchable catalogue>>, check that the collection contains one link object with a ``rel`` property with value of ``items`` that points to the search/access endpoint for the records of the collection.
+. If the catalog is a <<clause-crawlable-catalog,crawlable catalog>>, check that the collection contains one or more link objects with a ``rel`` property with value of ``item`` that explicitly points to each record in the collection.
+. If the catalog is a <<clause-searchable-catalog,searchable catalog>>, check that the collection contains one link object with a ``rel`` property with value of ``items`` that points to the search/access endpoint for the records of the collection.
 . Issue a HTTP GET request on the resulting paths.
 . Validate that the content is record items.
 |===

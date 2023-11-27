@@ -1,9 +1,9 @@
-[[ats_record-collection_mandatory-queryables]]
+[[ats_record-collection_mandatory-properties-collection]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/mandatory-queryables*
+^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/mandatory-properties-collection*
 ^|Test Purpose |Validate each collection containing the mandatory properties.
-^|Requirement |<<req_record-collection_mandatory-queryables,/req/record-collection/mandatory-queryables>>
+^|Requirement |<<req_record-collection_mandatory-properties-collection,/req/record-collection/mandatory-properties-collection>>
 ^|Test Method |. Construct a path for a given collection
 . Issue a HTTP GET request on the path
 . Parse collection record

@@ -1,9 +1,9 @@
-[[ats_record-collection_media-type-default]]
+[[ats_record-collection_rc-mediatype-default]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/media-type-default*
+^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/rc-mediatype-default*
 ^|Test Purpose |Check the default encoding for collection record.
-^|Requirement |<<req_record-collection_media-type-default,/req/record-collection/media-type-default>>
+^|Requirement |<<req_record-collection_rc-mediatype-default,/req/record-collection/rc-mediatype-default>>
 ^|Test Method |. Construct a path for a given collection
 . Issue a HTTP GET request on the path
 . Check if the <<rc_json,JSON conformance class>> is advertised for the catalogue.
