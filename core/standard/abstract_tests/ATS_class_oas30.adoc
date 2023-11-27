@@ -10,3 +10,4 @@
 ==== Conformance
 
 include::oas30/ATS_conformance.adoc[]
+include::oas30/ATS_common.adoc[]
