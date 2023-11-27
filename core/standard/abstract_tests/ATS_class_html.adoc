@@ -10,3 +10,9 @@
 ==== Conformance
 
 include::html/ATS_conformance.adoc[]
+include::html/ATS_content.adoc[]
+include::html/ATS_definition.adoc[]
+
+==== API
+
+include::html/ATS_api-common.adoc[]

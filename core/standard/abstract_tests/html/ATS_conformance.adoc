@@ -1,11 +1,11 @@
-[[ats_geojson_html]]
+[[ats_html_conformance]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/geojson/html*
+^|*Abstract Test {counter:ats-id}* |*/conf/html/conformance*
 ^|Test Purpose |Validate html identification.
-^|Requirement |<<req_geojson_html,/req/geojson/html>>
+^|Requirement |<<req_html_conformance,/req/html/conformance>>
 ^|Test Method |. Construct a path for a html page
 . Issue an HTTP GET request on the path
-. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/geojson+`.
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html+`.
 |===
 
