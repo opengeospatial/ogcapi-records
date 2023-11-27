@@ -1,9 +1,9 @@
-[[ats_autodiscovery_links]]
+[[ats_autodiscovery_link]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/autodiscovery/links*
+^|*Abstract Test {counter:ats-id}* |*/conf/autodiscovery/link*
 ^|Test Purpose |Validate the behaviour of link relations for catalogue autodiscovery.
-^|Requirement |<<req_autodiscovery_links,/req/autodiscovery/links>>
+^|Requirement |<<req_autodiscovery_link,/req/autodiscovery/link>>
 ^|Test Method |. Construct a path for a landing page
 . Issue an HTTP GET request on the path
 . Parse all link objects
