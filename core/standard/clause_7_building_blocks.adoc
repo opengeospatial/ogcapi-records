@@ -494,11 +494,35 @@ include::requirements/record-core-query-parameters/REQ_query-param-limit.adoc[]
 [[core-query-parameters-q]]
 ===== Parameter q
 
+The `q` parameter is meant to provide a simple, easy-to-implement keyword search capability across one or more text fields in a record.  
+
 include::requirements/record-core-query-parameters/REQ_query-param-q-definition.adoc[]
+
+The specific text fields in a record that are to be searched is not mandated in this standard.
 
 include::recommendations/record-core-query-parameters/REC_param-q.adoc[]
 
 include::requirements/record-core-query-parameters/REQ_query-param-q-response.adoc[]
+
+For example, the following `q` parameter specification:
+
+----
+q=ocean,climate%20%09change,desalination
+----
+
+represents the query predicate:
+
+----
+(anytext CONTAINS 'ocean') OR
+(anytext CONTAINS 'climate\s+change') OR
+(anytext CONTAINS 'desalination')`
+----
+
+NOTES:
+
+* The term `anytext` is meant to represent the set of text fields that are searched by the operation.
+* The `CONTAINS` operator used above is just an example of an operator that searches a text field(s) for specific search terms.  How this operator is implemented and what it is named in the system backing a catalog implementation is beyond the scope of this standard.
+* The regular expression `\s+` is meant to represent one or more white spaces.
 
 [[core-query-parameters-type]]
 ===== Parameter type

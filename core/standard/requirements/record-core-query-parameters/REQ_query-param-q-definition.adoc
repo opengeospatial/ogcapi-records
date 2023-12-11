@@ -17,7 +17,8 @@ schema:
 explode: false
 ----
 
-^|C |The list of search terms SHALL be a comma-separated list and spaces have no special meaning.
-^|D |Keyword searches using the `q` parameter SHALL be case insensitive.
-^|E |The specific set of text keys/fields/properties of a record to which the `q` operator is applied SHALL be left to the discretion of the implementation.
+^|C |Search terms that may appear together (logical OR) in a record SHALL be separated by literal commas.
+^|D |Search terms that must appear together, and in the order specified, in a record SHALL be separated by one or more white space characters.
+^|E |Keyword searches using the `q` parameter SHALL be case insensitive.
+^|F |The specific set of text keys/fields/properties of a record to which the `q` operator is applied SHALL be left to the discretion of the implementation.
 |===
