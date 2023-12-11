@@ -2,7 +2,8 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/records-core-query-parameters/param-q*
-The q operator SHOULD at least be applied to the following core properties:
+
+The `q` operator SHOULD, at least, be applied to the following core properties:
 
 * title
 * description
