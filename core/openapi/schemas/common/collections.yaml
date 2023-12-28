@@ -1,18 +1,12 @@
 ---
-type: object
-required:
-  - links
-  - collections
-properties:
-  links:
-    type: array
-    items:
-      $ref: link.yaml
-  linkTemplates:
-    type: array
-    items:
-      $ref: linkTemplate.yaml
-  collections:
-    type: array
-    items:
-      $ref: collectionInfo.yaml
+allOf:
+  - $ref: links.yaml
+  - type: object
+    required:
+      - links
+      - collections
+    properties:
+      collections:
+        type: array
+        items:
+          $ref: collectionInfo.yaml

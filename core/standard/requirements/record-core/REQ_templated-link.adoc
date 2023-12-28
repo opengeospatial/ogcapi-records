@@ -10,6 +10,6 @@
 include::../../../openapi/schemas/common/linkTemplate.yaml[]
 ----
 
-^|B |The `href` member SHALL supply the templated link URI.
+^|B |The `link-template` member SHALL supply the templated link URI.
 ^|C |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
 |===

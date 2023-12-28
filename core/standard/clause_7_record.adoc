@@ -203,6 +203,8 @@ include::requirements/record-core/REQ_templated-link.adoc[]
 
 include::recommendations/record-core/REC_templated-link.adoc[]
 
+include::requirements/record-core/REQ_templated-link-header.adoc[]
+
 The following example illustrates a link template to a legacy OGC Web service.  The example includes both an in-line and referenced dictionaries of substitution variables.
 
 [#templated-link-with-variables-inline,reftext=`Templated link example 1`]

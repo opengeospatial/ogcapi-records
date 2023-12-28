@@ -1,21 +1,13 @@
 ---
-type: object
-required:
-  - links
-properties:
-  title:
-    description: The title of the API
-    type: string
-  description:
-    description: A textual description of the API
-    type: string
-  links:
-    description: Links to the resources exposed through this API.
-    type: array
-    items:
-      $ref: link.yaml
-  linkTemplates:
-    description: Link templates to the resources exposed through this API.
-    type: array
-    items:
-      $ref: linkTemplate.yaml
+allOf:
+  - $ref: links.yaml
+  - type: object
+    required:
+      - links
+    properties:
+      title:
+        description: The title of the API
+        type: string
+      description:
+        description: A textual description of the API
+        type: string
