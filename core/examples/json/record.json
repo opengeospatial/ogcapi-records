@@ -50,7 +50,20 @@
       "brewer",
       "saoz"
     ],
-    "language": "en",
+    "language": {
+      "code": "en-CA",
+      "name": "English (Canada)"
+    },
+    "languages": [
+      {
+        "code": "en-CA",
+        "name": "English (Canada)"
+      },
+      {
+        "code": "fr-CA",
+        "name": French (Canada)"
+      }
+    ],
     "externalId": [
       {
         "scheme": "WMO:WIS",
