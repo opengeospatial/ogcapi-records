@@ -191,6 +191,12 @@
       "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
     },
     {
+      "rel": "preview",
+      "type": "image/png",
+      "title": "Total Ozone Preview Image",
+      "href": "https://woudc.org/data/preview.png"
+    },
+    {
       "rel": "enclosure",
       "type": "text/html",
       "title": "Web Accessible Folder (WAF)",
