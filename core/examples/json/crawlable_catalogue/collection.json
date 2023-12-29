@@ -1,32 +1,23 @@
 {
-    "id": "example-collection",
-    "title": "Dataset and Imagery Record examples",
-    "description": "This Collection links down to several examples of crawlable record collections of different types",
-    "extent":
+  "id": "example-collection",
+  "title": "Dataset and Imagery Record examples",
+  "description": "This Collection links down to several examples of crawlable record collections of different types",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [ -180, -90, 180, 90 ]
+      ]
+    }
+  },
+  "itemType": "feature",
+  "links": [
     {
-        "spatial":
-        {
-            "bbox":
-            [
-                [
-                    -180,
-                    -90,
-                    180,
-                    90
-                ]
-            ]
-        }
+      "rel": "item",
+      "href": "imagery_example/collection.json"
     },
-    "itemType": "feature",
-    "links":
-    [
-        {
-            "rel": "item",
-            "href": "imagery_example/collection.json"
-        },
-        {
-            "rel": "item",
-            "href": "dataset_example/collection.json"
-        }
-    ]
+    {
+      "rel": "item",
+      "href": "dataset_example/collection.json"
+    }
+  ]
 }

@@ -1,0 +1,7 @@
+[[req_record-core_templated-link-header]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-core/templated-link-header*
+
+A templated link that appears in a HTTP header SHALL be encoded according to https://ietf-wg-httpapi.github.io/link-template/draft-ietf-httpapi-link-template.html[The Link-Template HTTP Header Field] specification.
+|===
