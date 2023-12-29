@@ -202,6 +202,10 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/link"
+        linkTemplates:
+          type: array
+          items:
+            $ref: "#/components/schemas/linkTemplate"
         extent:
           $ref: "#/components/schemas/extent"
         itemType:
@@ -228,6 +232,10 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/link"
+        linkTemplates:
+          type: array
+          items:
+            $ref: "#/components/schemas/linkTemplate"
         collections:
           type: array
           items:
@@ -435,6 +443,10 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/link"
+        linkTemplates:
+          type: array
+          items:
+            $ref: "#/components/schemas/linkTemplate"
     linestringGeoJSON:
       type: object
       required:
@@ -470,16 +482,25 @@ components:
           type: string
         length:
           type: integer
-        templated:
-          type: boolean
-        variables:
-          type: object
         created:
           type: string
           format: date-time
         updated:
           type: string
           format: date-time
+    linkTemplate:
+      allOf:
+        - $ref: "#/components/schemas/link"
+        - oneOf:
+          - type: object
+            properties:
+              variables:
+                type: object
+          - type: object
+            properties:
+              varBase:
+                type: string
+                format: url
     multilinestringGeoJSON:
       type: object
       required:

@@ -247,7 +247,7 @@ include::requirements/record-core/REQ_record-license.adoc[]
 [[sc_associations_and_links]]
 ===== Associations and Links
 
-A record must contain a `links` section.  This `links` section many contain navigation links and/or association links.
+A record must contain a `links` section and may contain a <<sc_templated_links_with_variables,`linkTemplates`>> section.  These sections contain navigation links and/or association links.
 
 Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, and -- in the context of an API -- navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
 
@@ -273,56 +273,91 @@ In some instances additional context may be desirable or required in order to ac
 
 include::recommendations/record-core/REC_record-associations_templated.adoc[]
 
-NOTE: This specification does not define any specific link relations that should be used for links in the `links` section.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the links that relations should use.
+NOTE: This specification does not define any specific link relations that should be used for links in the `links` or <<sc_templated_links_with_variables,`linkTemplates`>> sections.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the relations that links should use.
 
-The following provides an example of using association links for related resources of a record, as both traditional link relations as well as API resources via URI templates.
+The following provides an example of using association links for related resources of a record, as both traditional links as well as link templates.
 
 [#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
-.Associations simple and URI Template Example
+.Associations simple and Link Template Example
 [source,json]
 ----
 include::../examples/json/associations-simple-and-uri-template.json[]
 ----
 
-[[example_11]]
-.Links in a record payload
-=====
-The links in a record could be (in this example represented as link headers):
-
+[#links-in-https-headers,reftext=`Example of links in HTTP headers`]
+￼.Example of links and link templates in HTTP headers
 [source]
 ----
-Link: <http://data.example.org/collections/my_catalog/items/record_123.json>; rel="self"; type="application/geo+json"
-Link: <http://data.example.org/collections/my_catalog/items/record_123.html>; rel="alternate"; type="text/html"
-Link: <http://data.example.org/collections/my_catalog.json>; rel="collection"; type="application/json"
-Link: <http://data.example.org/collections/my_catalog.html>; rel="collection"; type="text/html"
+Link: <https://woudc.org/data/stations>; rel="search"; type="text/html"
+Link-Template: <https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png>; rel="item"; type="image/png"; varBase="https://geo.woudc.org/variables/"
 ----
-=====
 
 [[sc_templated_links_with_variables]]
 ===== Templated links with variables
 
 OGC API - Records uses links to express associations between resources including links that bind to the resource(s) being described by a record.  In some situations, a static link does not adequately express all the information necessary to retrieve the referenced resource OR does not allow for the resource to be retrieved in an efficient manner.
 
-Consider the case where a record describing a coverage resource is discovered by searching the catalog using a spatial constraint (e.g. a bbox).  Further consider that the found record contains a link to retrieve the coverage.  Using a static link for the binding link would only allow retrieval of the entire coverage.  Using a templated link, however, would allow the context of the catalog query (i.e. the bbox) to be passed to down to the binding link.  The templated link with all substitution values resolved would thus retrieve the subset of the coverage that corresponds to the spatial contraint used to discover the record in the first place which presumably represents the area of interest.
+Consider the case where a record describing a coverage resource is discovered by searching the catalogue using a spatial constraint (e.g. a bbox).  Further consider that the found record contains a link to retrieve the coverage.  Using a static link would only allow for retrieval of the entire coverage or a subset unrelated to the user's original catalogue query.  Using a templated link, however, would allow the context of the catalogue query (i.e. the bbox) to be passed to the retrieval link as a substitution variable.  The templated link with all substitution variables resolved would thus retrieve the subset of the coverage that corresponds to the spatial contraint used to discover the record in the first place which presumably represents the area of interest.
 
-Templated links may also be used to bind to resources that may require additional information in order to access the resources.  For example, simply knowing the URL of a legacy OGC service such as WMS or WFS is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values are required in order to have a complete link to a resources.  A templated link with variables can provide this additional context.
+Templated links may also be used to bind to resources that may require additional information in order to access the resources.  For example, simply knowing the URL of a legacy OGC service such as https://portal.ogc.org/files/?artifact_id=14416[WMS] or https://docs.ogc.org/is/09-025r2/09-025r2.html[WFS] is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values are required in order to have a complete link to a resource.  A templated link with variables can provide this additional context.
 
-This specification extends the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] to include substitution variables who values are filled in at runtime prior to resolving the link.
+This specification defines a new schema, https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml],  based on the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] that includes substitution variables who's values are filled in at runtime prior to resolving the link.  
 
-The https://schemas.opengis.net/ogcapi/common/part1/1.0/openapi/schemas/link.yaml[link schema] is extended with the addition of two properties named `templated` and `variables`.  The `templated` property is a boolean that is used to indicate the the URL of the link (i.e. `href`) is a template and contains substitution variables.  The `variables` property uses https://json-schema.org/draft/2020-12/json-schema-validation.html[JSON Schema fragments] to define the characteristics of each substitution variable referenced in the templated link URL.
+Information about the substitution variables can be obtained in one of two ways.  The `variable` property may be used to encode the definitions of substitution variables in-line in the link.  Alternatively, the `varBase` property can be used to specify a base URI to which a variable name may be appended in order to retrieve the definition of the specified substitution variable.
 
 include::requirements/record-core/REQ_templated-link.adoc[]
 
-[#templated-link-with-variables,reftext=`Associations simple and URI Template Example`]
-.Templated link with variables example
+include::recommendations/record-core/REC_templated-link.adoc[]
+￼
+::requirements/record-core/REQ_templated-link-header.adoc[]
+￼
+following example illustrates a link template to a legacy OGC Web service.  The example includes both an in-line and referenced dictionaries of substitution variables.
+￼
+[#templated-link-with-variables-inline,reftext=`Templated link example 1`]
+.Templated link with in-line dictionary of substitution variables
 [source,json]
 ----
-include::../examples/json/templated-link.json[]
+include::../examples/json/templated-link-inline.json[]
+----
+￼
+[#templated-link-with-variables-ref,reftext=`Templated link example 2`]
+.Templated link with `varBase` URI for retrieving substitution variable definitions
+[source,json]
+----
+include::../examples/json/templated-link-ref.json[]
+----
+￼
+[#variable-def,reftext=`Variable definition example`]
+.Using `varBase` to retrieve the definition of the variable bbox
+----
+   CLIENT                                                     SERVER
+     |                                                           |
+     |   GET variables/bbox HTTP/1.1                             |
+     |   Host: www.someserver.com                                |
+     |   Accept: application/json                                |
+     |---------------------------------------------------------->|
+     |                                                           |
+     |   HTTP/1.1 200 OK                                         |
+     |   Content-Type: application/json                          |
+     |                                                           |
+     |   {                                                       |
+     |     "bbox": {                                             |
+     |       "description": "...",                               |
+     |       "type": "array",                                    |
+     |       "items": {                                          |
+     |         "type": "number",                                 |
+     |         "format": "double"                                |
+     |       },                                                  |
+     |       "minItems": 4,                                      |
+     |       "maxItems": 4                                       |
+     |     }                                                     |
+     |   }                                                       |
+     |<----------------------------------------------------------|
 ----
 
 ===== Resource timestamps
 
-A <<core-properties,record>> contains information, encoded in the links section, for accessing one or more resources described by the record.  Since a resource may have multiple representations there may be multiple links pointing to each represention of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link schema] is extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
+A <<core-queryables,record>> contains information, encoded in the links and link templates sections, for accessing one or more resources described by the record.  Since a resource may have multiple representations there may be multiple links pointing to each represention of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link schema] is extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
 
 [[sc_record_language_handling]]
 ===== Language handling
@@ -339,7 +374,7 @@ A catalog record can include language information about:
 
 include::recommendations/record-core/REC_record-lang.adoc[]
 
-The https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link object] based on https://docs.ogc.org/is/17-069r4/17-069r4.html#rfc8228[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languges.  
+The https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/linkTemplated.yaml[templated link object] are based on https://docs.ogc.org/is/17-069r4/17-069r4.html#rfc8228[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languges. 
 
 [[minting-language-specific-uris]]
 A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs in order to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any particular approach how such a capability is supported by a server. 
@@ -793,17 +828,17 @@ Links can be added to a catalog record in various ways.  This clause
 describes the various linking patterns and describes how to use CQL to
 filter based on links.
 
-===== Linking in records
+===== Linking patterns in records
 
 Links can be added to the following sections in a catalog record:
 
-. the <<query-response,links>> section.
+. the <<query-response,links>> section,
+. the <<query-response,linkTemplates>> section,
 . the <<query-response,properties>> section.
 
-The schema for links added to the <<query-response,links>> section is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
+The schema for links added to the <<query-response,links>> and <<query-response,linkTemplates>> sections is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
 
-Links added directly to the <<query-response,properties>> section of a catalog record can be
-added using the following patterns:
+Links added directly to the <<query-response,properties>> section of a catalog record can be added using the following patterns:
 
 . The link relation is the key for an array of links with a schema similar to that used in the <<query-response,links>> section but omitting the `rel` key.
 . The link relation is the key for an array of `href` values.
@@ -815,18 +850,12 @@ The following examples illustrate each of these linking patterns:
 .Adding links to the **links** section
 ----
 {
-   .
-   .
-   .,
+   ...,
    "properties": {
-      .
-      .
-      .,
+      ...,
       "links":
       [
-         .
-         .
-         .,
+         ...,
          {
             "rel" : "alternate",
             "title" : "This records as XML.",
@@ -837,13 +866,9 @@ The following examples illustrate each of these linking patterns:
             "title": "The next record in this result set.",
             "href" : "https://example.org/collections/mycat/items/rec02"
          },
-         .
-         .
-         .
+         ...
       ],
-      .
-      .
-      .
+      ...
    }
 }
 ----
@@ -852,28 +877,26 @@ The following examples illustrate each of these linking patterns:
 .Adding links to the **properties** section
 ----
 {
-   .
-   .
-   .,
-   "properties": {
-      .
-      .
-      .,
-
-      "related": [
-         {
-		      "title" : "A related record",
-		      "href" : "https://example.org/related-record-path/rec15"
-	      }
-      ],
-      "license": {
-		   "title" : "CC BY 2.0",
-		   "href" : "https://creativecommons.org/licenses/by/2.0/"
-	   },
-      .
-      .
-      .
-   }
+  ...,
+  "properties": {
+    ...,
+    "related": [
+      {
+        "title" : "A related record",
+        "href" : "https://example.org/related-record-path/rec15"
+	   }
+    ],
+    "license": {
+      "title" : "CC BY 2.0",
+      "href" : "https://creativecommons.org/licenses/by/2.0/"
+	 },
+    "enclosure": {
+      "title": "GeoPackage of Feature Data",
+￼     "href" : "https://www.someserver.com/collections/MyCollection/items?f=application/geopackage+vnd.sqlite3&bbox={bbox}",
+￼     "varBase": "https://www.someserver.com/variables"
+    },
+    ...
+  }
 }
 ----
 
@@ -881,19 +904,12 @@ The following examples illustrate each of these linking patterns:
 .Adding links to the **properties** section
 ----
 {
-   .
-   .
-   .,
+   ...,
    "properties": {
-      .
-      .
-      .,
-
+      ...,
       "related": ["https://example.org/related-record-path/rec15"],
       "license": "https://creativecommons.org/licenses/by/2.0/",
-      .
-      .
-      .
+      ...
    }
 }
 ----
