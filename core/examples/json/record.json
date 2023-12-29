@@ -61,7 +61,7 @@
       },
       {
         "code": "fr-CA",
-        "name": French (Canada)"
+        "name": "French (Canada)"
       }
     ],
     "externalId": [
@@ -189,6 +189,12 @@
       "type": "text/html",
       "title": "This document as HTML",
       "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
+    },
+    {
+      "rel": "preview",
+      "type": "image/png",
+      "title": "Total Ozone Preview Image",
+      "href": "https://woudc.org/data/preview.png"
     },
     {
       "rel": "enclosure",
