@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-core/associations-templated*
 
-If access to the resource(s) requires or would be facilitated by additional context (e.g. a bounding box) then <<sc_templated_links_with_variables,templated links>> (`"templated": true`) should be used.
+If access to the resource(s) requires or would be facilitated by additional context (e.g. a bounding box) then <<sc_templated_links_with_variables,templated links>> SHOULD be used.
 |===

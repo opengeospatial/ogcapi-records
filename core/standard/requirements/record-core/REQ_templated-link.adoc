@@ -7,44 +7,9 @@
 
 [source,YAML]
 ----
-type: object
-required:
-  - href
-  - rel
-properties:
-  href:
-    type: string
-    description: Supplies the URI to a remote resource (or resource fragment).
-    example: http://data.example.com/buildings/123
-  rel:
-    type: string
-    description: The type or semantics of the relation.
-    example: alternate
-  type:
-    type: string
-    description: A hint indicating what the media type of the result of dereferencing the link should be.
-    example: application/geo+json
-  hreflang:
-    type: string
-    description: A hint indicating what the language of the result of dereferencing the link should be.
-    example: en
-  title:
-    type: string
-    description: Used to label the destination of a link such that it can be used as a human-readable identifier.
-    example: Trierer Strasse 70, 53115 Bonn
-  length:
-    type: integer
-  templated:
-    type: boolean
-    description: Used to indicate that the URI of the link is a template that contains substitution variables.
-    default: false
-  variables:
-    type: object
-    description: A dictionary of the JSON Schema fragments defining the characteristics of each substitution variable in the link URI.
+include::../../../openapi/schemas/common/linkTemplate.yaml[]
 ----
 
-^|B |The link template SHALL be encoded as a link object with a property `templated` set to `true` and the URI template in `href`.
+^|B |The `link-template` member SHALL supply the templated link URI.
 ^|C |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
-^|D |For each substitution variable in a templated link URI, there SHALL be a correspondingly named entry in the `variables` dictionary.
-^|E |Templated links included in the HTTP header SHALL use the `Link-Template` HTTP header accorinding to the https://datatracker.ietf.org/doc/draft-ietf-httpapi-link-template/[draft "The Link-Template HTTP Header Field" specification] and SHALL forgo the inclusion of the `variables` dictionary.
 |===

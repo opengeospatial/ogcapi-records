@@ -1,0 +1,20 @@
+{
+  "bbox": {
+    "description": "...",
+    "type": "array",
+    "items": {
+      "type": "number",
+      "format": "double"
+    },
+    "minItems": 4,
+    "maxItems": 4
+  },
+  "crs": {
+    "description": "...",
+    "type": "string",
+    "enum": [
+      "EPSG:4326",
+      "EPSG:3857"
+    ]
+  }
+}

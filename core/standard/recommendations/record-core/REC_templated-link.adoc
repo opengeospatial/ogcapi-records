@@ -1,0 +1,8 @@
+[[rec_record-core_templated-link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/record-core/templated-link*
+
+^|A |A dictionary of substitution variable definitions SHOULD be defined for templated links.
+^|B |The dictionary MAY either be specified in-line in the link using the `variables` member or substitution variable definitions MAY be retrieved by appending the name of the variable to a base URI specified using the `varBase` member.
+|===
