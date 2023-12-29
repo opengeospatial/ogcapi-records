@@ -120,34 +120,34 @@ Esri Geoportal Server 2.6.4 [public sandbox](https://gpt.geocloud.com/geoportal2
 
 Landing page:
 
-* https://gpt.geocloud.com/ogcrecords
+* [https://gpt.geocloud.com/ogcrecords](https://gpt.geocloud.com/geoportal2/ogcrecords)
 
 API document:
 
-* https://gpt.geocloud.com/ogcrecords/api
+* [https://gpt.geocloud.com/ogcrecords/api](https://gpt.geocloud.com/geoportal2/ogcrecords/api)
 
 Conformance page:
 
-* https://gpt.geocloud.com/ogcrecords/conformance
+* [https://gpt.geocloud.com/ogcrecords/conformance](https://gpt.geocloud.com/geoportal2/ogcrecords/conformance)
 
 List of catalogues:
 
-* https://gpt.geocloud.com/ogcrecords/collections
+* [https://gpt.geocloud.com/ogcrecords/collections](https://gpt.geocloud.com/geoportal2/ogcrecords/collections)
 
 Describe geoportal2 catalogue:
 
-* TODO - gpt.geocloud.com/ogcrecords/master 
+* [gpt.geocloud.com/ogcrecords/master](https://gpt.geocloud.com/geoportal2/ogcrecords/collections/metadata) 
 
 Queryables:
 
-* TODO - gpt.geocloud.com/ogcrecords/collections/master/queryables
+* [TODO - gpt.geocloud.com/ogcrecords/collections/master/queryables](https://gpt.geocloud.com/geoportal2/ogcrecords/collections/metadata/queryables)
 
 Records:
 
-* https://gpt.geocloud.com/ogcrecords/collections/master/items
-* https://gpt.geocloud.com/ogcrecords/collections/master/items/5482a0979f7f4d7ba6a3caa8202dc240 - get individual item based on item identifier
+* [https://gpt.geocloud.com/ogcrecords/collections/master/items](https://gpt.geocloud.com/geoportal2/ogcrecords/collections/metadata/items)
+* [https://gpt.geocloud.com/geoportal2/ogcrecords/collections/metadata/items?bbox=-111.791110603%2C18.91619%2C-66.96466%2C71.3577635769](Items within bbox)
+* [https://gpt.geocloud.com/ogcrecords/collections/master/items/5482a0979f7f4d7ba6a3caa8202dc240](https://gpt.geocloud.com/geoportal2/ogcrecords/collections/metadata/items/0052b84c4a25478ea5c1c4154fc9c6bc) - get individual item based on item identifier
 
-NOTE: As this is still a work-in-progress, the API follows the Records specification but the responses are not yet compliant with the Record schema.
 
 ## GeoNetwork opensource
 
