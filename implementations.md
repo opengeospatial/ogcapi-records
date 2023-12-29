@@ -145,7 +145,9 @@ Queryables:
 Records:
 
 * https://gpt.geocloud.com/ogcrecords/collections/master/items
-* https://gpt.geocloud.com/ogcrecords/collections/master/items/456688037ef0400fa46c87a3bec3a893 - get individual item based on item identifier
+* https://gpt.geocloud.com/ogcrecords/collections/master/items/5482a0979f7f4d7ba6a3caa8202dc240 - get individual item based on item identifier
+
+NOTE: As this is still a work-in-progress, the API follows the Records specification but the responses are not yet compliant with the Record schema.
 
 ## GeoNetwork opensource
 
