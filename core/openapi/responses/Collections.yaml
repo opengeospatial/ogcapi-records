@@ -2,7 +2,7 @@
 content:
   application/json:
     schema:
-      $ref: '../schema/schema.yaml'
+      $ref: '../schemas/collections.yaml'
   text/html:
     schema:
-      type: string 
+      type: string

@@ -9,4 +9,4 @@ allOf:
       collections:
         type: array
         items:
-          $ref: collectionInfo.yaml
+          $ref: catalog.yaml

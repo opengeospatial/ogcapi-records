@@ -4,7 +4,7 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
 |Target type |Web API
-|Dependency |<<rc_local-resources-catalog,Local Resources Catalogue>>
+|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
 |Requirements class |<<rc_local-resources-catalog,Requirements Class "Local Resources Catalog">>
 |===
 

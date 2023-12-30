@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatory-queryables*
-^|Test Purpose |Validate searchable catalogue CQL filtering.
+^|Test Purpose |Validate searchable catalog CQL filtering.
 ^|Requirement |<<req_searchable-catalog_mandatory-queryables,/req/searchable-catalog/mandatory-queryables>>
 ^|Test Method |. Construct a path for a collection queryables page
 . Issue an HTTP GET request on the path

@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/catalog*
-^|Test Purpose |Validate crawlable catalogue collections.
+^|Test Purpose |Validate crawlable catalog collections.
 ^|Requirement |<<req_crawlable-catalog_catalog,/req/crawlable-catalog/catalog>>
 ^|Test Method |. Parse the catalog structure and create a list of all collections available
 . For each item in the list, retrieve the collection object

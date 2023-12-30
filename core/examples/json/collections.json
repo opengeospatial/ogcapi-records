@@ -1,19 +1,19 @@
 {
     "links": [
         {
-            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=application%2Fjson",
+            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogs/collections?f=application%2Fjson",
             "rel": "self",
             "type": "application/json",
             "title": "this document"
         },
         {
-            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=text%2Fxml",
+            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogs/collections?f=text%2Fxml",
             "rel": "alternate",
             "type": "text/xml",
             "title": "this document as XML"
         },
         {
-            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections?f=text%2Fhtml",
+            "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogs/collections?f=text%2Fhtml",
             "rel": "alternate",
             "type": "text/html",
             "title": "this document as HTML"
@@ -23,26 +23,26 @@
         {
             "id": "radarsat2cat",
             "itemType": "record",
-            "title": "CubeWerx RADARSAT-2 Catalogue",
-            "description": "A sample catalogue of RADARSAT-2 products stored in S3 on AWS.",
+            "title": "CubeWerx RADARSAT-2 Catalog",
+            "description": "A sample catalog of RADARSAT-2 products stored in S3 on AWS.",
             "links": [
                 {
-                    "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/s1tepcat",
+                    "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogs/collections/s1tepcat",
                     "rel": "collection",
-                    "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+                    "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalog as well as hypermedia controls that allow you to query the catalog."
                 }
             ]
         },
         {
             "id": "sentinel1cat",
             "itemType": "record",
-            "title": "CubeWerx Sentinel-1 Catalogue",
-            "description": "A sample catalogue of Sentinel-1 products stored in S3 on AWS.",
+            "title": "CubeWerx Sentinel-1 Catalog",
+            "description": "A sample catalog of Sentinel-1 products stored in S3 on AWS.",
             "links": [
                 {
-                    "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogues/collections/sentinel1cat",
+                    "href": "http://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/catalogs/collections/sentinel1cat",
                     "rel": "collection",
-                    "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalogue as well as hypermedia controls that allow you to query the catalogue."
+                    "title": "Root URL for this record collection.  At this endpoint you can retrieve a description of this catalog as well as hypermedia controls that allow you to query the catalog."
                 }
             ]
         }

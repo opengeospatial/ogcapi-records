@@ -13,7 +13,7 @@ allOf:
       id:
         type: string
         description:
-          A unique identifier of the catalogue record.
+          A unique identifier of the catalog record.
         format: uri
       conformsTo:
         $ref: common/confClasses.yaml#/properties/conformsTo
@@ -88,7 +88,7 @@ allOf:
             type: array
             description:
               An identifier for the resource assigned by an external (to the
-              catalogue) entity.
+              catalog) entity.
             items:
               type: object
               properties:
