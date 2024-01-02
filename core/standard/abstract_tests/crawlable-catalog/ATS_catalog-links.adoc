@@ -3,7 +3,7 @@
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/catalog-links*
 ^|Test Purpose |Validate crawlable catalog collection links.
-^|Requirement |<<req_crawlable-catalogue_catalog-links,/req/crawlable-catalogue/catalog-links>>
+^|Requirement |<<req_crawlable-catalog_catalog-links,/req/crawlable-catalog/catalog-links>>
 ^|Test Method |. Parse the catalog structure and create a list of all links available
 . Check that the list includes a link (``rel=self``) that points to itself.
 . Check that the list includes a link (``rel=alternate``) for each alternative representation of itself.

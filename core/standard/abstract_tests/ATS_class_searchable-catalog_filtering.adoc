@@ -6,7 +6,7 @@
 |Target type |Web API
 |Dependency |<<ats_searchable_catalog,Searchable Catalog>>
 |Dependency |<<ats_cql-filter,Filtering using the Common Query Language (CQL2)>>
-|Requirements class |<<rc_searchable-catalogue_cql2-filter,Requirements Class "Searchable Catalogue">>
+|Requirements class |<<rc_searchable-catalog_cql2-filter,Requirements Class "Searchable Catalog">>
 |===
 
 ==== Conformance

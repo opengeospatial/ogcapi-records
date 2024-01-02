@@ -13,7 +13,7 @@ allOf:
       features:
         type: array
         items:
-          $ref: record.yaml
+          $ref: recordGeoJSON.yaml
       timeStamp:
         type: string
         format: date-time

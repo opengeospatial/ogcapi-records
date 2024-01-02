@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/itemType*
-^|Test Purpose |Validate crawlable catalogue collection itemType list.
+^|Test Purpose |Validate crawlable catalog collection itemType list.
 ^|Requirement |<<req_crawlable-catalog_itemType,/req/crawlable-catalog/itemType>>
 ^|Test Method |. Parse the collection object
 . Check that the collection is valid using the provided JSON-Schema (http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml)

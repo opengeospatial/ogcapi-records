@@ -4,8 +4,8 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/crs
 |Target type |Web API
-|Dependency |<<ats_searchable_catalogue,Searchable Catalogue>>
-|Requirements class |<<rc_searchable-catalogue_crs,Requirements Class "CRS">>
+|Dependency |<<ats_searchable_catalog,Searchable Catalog>>
+|Requirements class |<<rc_searchable-catalog_crs,Requirements Class "CRS">>
 |===
 
 ==== CRS
