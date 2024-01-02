@@ -2,14 +2,21 @@
 allOf:
   - $ref: linkBase.yaml
   - type: object
-    required: link-template
+    required: uriTemplate
     properties: 
-      link-template:
+      uriTemplate:
         type: string
         description:
           Supplies a resolvable URI to a remote resource
           (or resource fragment).
         example: http://data.example.com/buildings/(building-id}
+      varBase:
+        type: string
+        description:
+          The base URI to which the variable name can be
+          appended to retrieve the definition of the
+          variable as a JSON Schema fragment.
+        format: url
       variables:
         type: object
         description:
@@ -19,10 +26,3 @@ allOf:
           JSON Schema fragment and can thus include things
           like the data type of the variable, enumerations,
           minimum values, maximum values, etc.
-      varBase:
-        type: string
-        description:
-          The base URI to which the variable name can be
-          appended to retrieve the definition of the
-          variable as a JSON Schema fragment.
-        format: url
