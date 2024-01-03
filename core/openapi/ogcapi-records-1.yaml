@@ -1,23 +1,23 @@
-openapi: 3.0.2
+openapi: 3.0.3
 info:
   title: "Building Blocks specified in OGC API - Features - Part 1: Core"
   description: |-
     Common components used in the
-    [OGC standard "OGC API - Records - Part 1: Core"](http://docs.opengeospatial.org/is/20-004/20-004.html).
+    [OGC standard "OGC API - Records - Part 1: Core"](https://docs.opengeospatial.org/is/20-004/20-004.html).
 
     OGC API - Records - Part 1: Core 1.0 is an OGC Standard.
     Copyright (c) 2019 Open Geospatial Consortium.
-    To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    To obtain additional rights of use, visit https://www.ogc.org/about-ogc/policies.
 
     This document is also available on
-    [OGC](http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/ogcapi-records-1.yaml).
+    [OGC](https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/ogcapi-records-1.yaml).
   version: '1.0.0'
   contact:
     name: Panagiotis Vretanos
     email: pvretano@cubewerx.com
   license:
     name: OGC License
-    url: 'http://www.opengeospatial.org/legal/'
+    url: 'https://www.ogc.org/about-ogc/policies'
 components:
   parameters:
     bbox:
@@ -237,7 +237,7 @@ components:
                 default: 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
       landingPage:
         allOf:
-          - $ref: "#/components/schemas/common/link.yaml"
+          - $ref: schemas/common/link.yaml
           - type: object
             required:
               - links
@@ -290,7 +290,7 @@ components:
             properties:
               link-template:
                 type: string
-                example: http://data.example.com/buildings/(building-id}
+                example: https://example.org/data/buildings/{building-id}
               variables:
                 type: object
               varBase:
@@ -305,7 +305,7 @@ components:
               href:
                 type: string
                 format: url
-                example: http://data.example.com/buildings/123
+                example: https://example.org/data/buildings/123
     catalog:
       allOf:
         $ref: "#/components/schemas/common/collectionInfo"
@@ -345,22 +345,22 @@ components:
             items:
               type: string
           language:
-            $ref: language.yaml
+            $ref: schemas/language.yaml
           languages:
             type: array
             items:
-              $ref: language.yaml
+              $ref: schemas/language.yaml
           themes:
             type: array
             minItems: 1
             items:
-              $ref: theme.yaml
+              $ref: schemas/theme.yaml
           contacts:
             type: array
             items:
-              $ref: contact.yaml
+              $ref: schemas/contact.yaml
           license:
-            $ref: license.yaml
+            $ref: schemas/license.yaml
           rights:
             type: string
           additionalProperties: true
@@ -382,7 +382,7 @@ components:
           type: string
         logo:
           allOf:
-            - $ref: common/link.yaml
+            - $ref: schemas/common/link.yaml
             - type: object
               required:
                 - rel
@@ -404,7 +404,7 @@ components:
                 pattern: "^\\+[1-9]{1}[0-9]{3,14}$"
                 example: "+14165550142"
               roles:
-                $ref: roles.yaml
+                $ref: schemas/roles.yaml
         emails:
           type: array
           items:
@@ -656,7 +656,7 @@ components:
               enum:
                 - Feature
             time:
-              $ref: time.yaml
+              $ref: schemas/time.yaml
             geometry:
               oneOf:
                 - enum:
@@ -686,15 +686,15 @@ components:
                   items:
                     type: string
                 language:
-                  $ref: language.yaml
+                  $ref: schemas/language.yaml
                 languages:
                   type: array
                   items:
-                    $ref: language.yaml
+                    $ref: schemas/language.yaml
                 resourceLanguages:
                   type: array
                   items:
-                    $ref: language.yaml
+                    $ref: schemas/language.yaml
                 externalIds:
                   type: array
                   items:
@@ -710,7 +710,7 @@ components:
                   type: array
                   minItems: 1
                   items:
-                    $ref: theme.yaml
+                    $ref: schemas/theme.yaml
                 formats:
                   type: array
                   items:
@@ -718,9 +718,9 @@ components:
                 contacts:
                   type: array
                   items:
-                    $ref: contact.yaml
+                    $ref: schemas/contact.yaml
                 license:
-                  $ref: license.yaml
+                  $ref: schemas/license.yaml
                 rights:
                   type: string
     roles:
