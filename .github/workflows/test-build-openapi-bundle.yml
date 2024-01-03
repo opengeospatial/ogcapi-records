@@ -4,8 +4,8 @@ on:
   pull_request:
     branches:
       - master
-    paths:
-      - 'core/openapi/**.yaml'
+#    paths:
+#      - 'core/openapi/**.yaml'
 
 jobs:
   test-build-openapi-bundle:
