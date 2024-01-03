@@ -1,0 +1,35 @@
+name: Build OpenAPI bundle
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'core/openapi/**.yaml'
+
+jobs:
+  build-openapi-bundle:
+    name: Generate OpenAPI bundle
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup npm
+      uses: actions/setup-node@v2
+    - name: Install dependencies
+      run: npm install -g @apidevtools/swagger-cli
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Generate OpenAPI bundle
+      run: |
+        cd core/openapi
+        swagger-cli bundle -o ogcapi-records-1.bundled.json ogcapi-records-1.yaml
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: Tom Kralidis
+        author_email: tomkralidis@gmail.com
+        message: 'Updating OpenAPI bundle'
+        add: '*.json'
+        cwd: './core/openapi/'
+
