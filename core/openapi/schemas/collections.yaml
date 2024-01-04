@@ -1,6 +1,6 @@
 ---
 allOf:
-  - $ref: links.yaml
+  - $ref: common/links.yaml
   - type: object
     required:
       - links
