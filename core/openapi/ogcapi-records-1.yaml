@@ -237,7 +237,7 @@ components:
                 default: 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
       landingPage:
         allOf:
-          - $ref: schemas/common/link.yaml
+          - $ref: "#/components/schemas/common/links"
           - type: object
             required:
               - links
@@ -345,22 +345,22 @@ components:
             items:
               type: string
           language:
-            $ref: schemas/language.yaml
+            $ref: "#/components/schemas/language"
           languages:
             type: array
             items:
-              $ref: schemas/language.yaml
+              $ref: "#/components/schemas.language"
           themes:
             type: array
             minItems: 1
             items:
-              $ref: schemas/theme.yaml
+              $ref: "#/components/schemas/theme"
           contacts:
             type: array
             items:
-              $ref: schemas/contact.yaml
+              $ref: "#/components/schemas/contact"
           license:
-            $ref: schemas/license.yaml
+            $ref: "#/components/schemas/license"
           rights:
             type: string
           additionalProperties: true
@@ -382,7 +382,7 @@ components:
           type: string
         logo:
           allOf:
-            - $ref: schemas/common/link.yaml
+            - $ref: "#/components/schemas/common/link"
             - type: object
               required:
                 - rel
@@ -404,7 +404,7 @@ components:
                 pattern: "^\\+[1-9]{1}[0-9]{3,14}$"
                 example: "+14165550142"
               roles:
-                $ref: schemas/roles.yaml
+                $ref: "#/components/schemas/roles"
         emails:
           type: array
           items:
@@ -416,7 +416,7 @@ components:
                 type: string
                 format: email
               roles:
-                $ref: roles.yaml
+                $ref: "#/components/schemas/roles"
         addresses:
           type: array
           items:
@@ -436,12 +436,12 @@ components:
               country:
                 type: string
               roles:
-                $ref: roles.yaml
+                $ref: "#/components/schemas/roles"
         links:
           type: array
           items:
             allOf:
-              - $ref: common/link.yaml
+              - $ref: "#/components/schemas/common/link"
               - type: object
                 required:
                   - type
@@ -451,7 +451,7 @@ components:
         contactInstructions:
           type: string
         roles:
-          $ref: roles.yaml
+          $ref: "#/components/schemas/roles"
     featureCollectionGeoJSON:
       allOf:
         - $ref: "#/components/schemas/common/links"
@@ -656,7 +656,7 @@ components:
               enum:
                 - Feature
             time:
-              $ref: schemas/time.yaml
+              $ref: "#/components/schemas/time"
             geometry:
               oneOf:
                 - enum:
@@ -686,15 +686,15 @@ components:
                   items:
                     type: string
                 language:
-                  $ref: schemas/language.yaml
+                  $ref: "#/components/schemas/language"
                 languages:
                   type: array
                   items:
-                    $ref: schemas/language.yaml
+                    $ref: "#/components/schemas/language"
                 resourceLanguages:
                   type: array
                   items:
-                    $ref: schemas/language.yaml
+                    $ref: "#/components/schemas/language"
                 externalIds:
                   type: array
                   items:
@@ -710,7 +710,7 @@ components:
                   type: array
                   minItems: 1
                   items:
-                    $ref: schemas/theme.yaml
+                    $ref: "#/components/schemas/theme"
                 formats:
                   type: array
                   items:
@@ -718,9 +718,9 @@ components:
                 contacts:
                   type: array
                   items:
-                    $ref: schemas/contact.yaml
+                    $ref: "#/components/schemas/contact"
                 license:
-                  $ref: schemas/license.yaml
+                  $ref: "#/components/schemas/license"
                 rights:
                   type: string
     roles:
