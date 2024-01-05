@@ -126,7 +126,7 @@ components:
     common:
       collectionInfo:
         allOf:
-          - $ref: "#/components/schemas/common/LANKS"
+          - $ref: "#/components/schemas/common/links"
           - type: object
             required:
               - id
