@@ -31,9 +31,24 @@ tags:
   - name: Capabilities
     description: |-
       essential characteristics of this API
-  - name: Data
+  - name: Conformance
     description: |-
-      access to data (records)
+      list of conformance classes implemented by this API
+  - name: Collections
+    description: |-
+      list of catalogs offered by this API
+  - name: Collection
+    description: |-
+      description of a catalog offered by this API
+  - name: Sortables
+    description: |-
+      list of record properties by which responses can be sorted
+  - name: Records
+    description: |-
+      access to records
+  - name: Record
+    description: |-
+      access to a single record
 paths:
   '/':
     get:
@@ -67,7 +82,9 @@ paths:
     get:
       tags:
         - Collections
-      summary: the record collections in the dataset
+      summary: the record collections
+      description: |-
+        Fetch list of catalogs offered by this API
       operationId: getCollections
       responses:
         '200':
@@ -80,6 +97,8 @@ paths:
         - Collection
       summary: |-
         describe the record collection with id `catalogId`
+      description: |-
+        Fetch a detailed description of the catalog with id `catalogId`.
       operationId: describeCollection
       parameters:
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/catalogId'
@@ -96,6 +115,9 @@ paths:
         - Sortables
       summary: |-
        get the list of sortable properties
+      description: |-
+        Fetch the list of properties which can be used to sort the getRecords
+        response.
       operationId: getSortables
       parameters:
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1.yaml#/components/parameters/catalogId'
