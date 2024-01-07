@@ -7,6 +7,6 @@
 ^|Test Method |. Construct a path for a `+collection+` page.
 . Issue an HTTP GET request on the path
 . Check that the media type of the response is `application/ogc-catalog+json`
-. Check that the response validates against as defined in https://github.com/opengeospatial/ogcapi-records/blob/master/openapi/schemas/catalog.yaml.
+. Check that the response validates against as defined in https://github.com/opengeospatial/ogcapi-records/blob/master/openapi/schemas/records-core/catalog.yaml.
 |===
 
