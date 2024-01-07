@@ -1,0 +1,10 @@
+---
+description: |-
+  Information about the record collection with id `catalogId`.
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/records-core/catalog.yaml'
+  text/html:
+    schema:
+      type: string

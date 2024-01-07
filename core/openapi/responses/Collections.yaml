@@ -1,8 +1,0 @@
----
-content:
-  application/json:
-    schema:
-      $ref: '../schemas/collections.yaml'
-  text/html:
-    schema:
-      type: string

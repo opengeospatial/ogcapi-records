@@ -1,0 +1,10 @@
+type: object
+properties:
+  links:
+    type: array
+    items:
+      $ref: 'link.yaml'
+  linkTemplates:
+    type: array
+    items:
+      $ref: 'linkTemplate.yaml'

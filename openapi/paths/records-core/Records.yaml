@@ -1,0 +1,32 @@
+get:
+  tags:
+    - Records
+  summary: fetch records
+  description: |-
+    Fetch records of the record collection with id `catalogId`.
+
+    Every record in a dataset belongs to a collection. A dataset may
+    consist of multiple record collections. A record collection is often a
+    collection of records of a similar type, based on a common schema.
+
+    Use content negotiation to request HTML or GeoJSON.
+  operationId: getRecords
+  parameters:
+    - $ref: '../../parameters/features-core/bbox.yaml'
+    - $ref: '../../parameters/features-core/datetime.yaml'
+    - $ref: '../../parameters/features-core/limit.yaml'
+    - $ref: '../../parameters/records-core/catalogId.yaml'
+    - $ref: '../../parameters/records-core/q.yaml'
+    - $ref: '../../parameters/records-core/type.yaml'
+    - $ref: '../../parameters/records-core/externalId.yaml'
+    - $ref: '../../parameters/records-core/sortby.yaml'
+    - $ref: '../../parameters/unspecified/f.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/records-core/Records.yaml'
+    '400':
+      $ref: '../../responses/features-core/InvalidParameter.yaml'
+    '404':
+      $ref: '../../responses/features-core/NotFound.yaml'
+    '500':
+      $ref: '../../responses/features-core/ServerError.yaml'

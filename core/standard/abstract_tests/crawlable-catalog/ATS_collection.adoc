@@ -5,5 +5,5 @@
 ^|Test Purpose |Validate crawlable catalog root collection object.
 ^|Requirement |<<req_crawlable-catalog_collection,/req/crawlable-catalog/collection>>
 ^|Test Method |. Retrieve the collection object
-. Check that the collection is a valid using the JSON Schema (https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml)
+. Check that the collection is a valid using the JSON Schema (https://github.com/opengeospatial/ogcapi-records/blob/master/openapi/schemas/catalog.yaml)
 |===

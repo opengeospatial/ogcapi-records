@@ -6,7 +6,7 @@
 
 [source,YAML]
 ----
-include::../../../openapi/schemas/recordGeoJSON.yaml[]
+include::../../../../openapi/schemas/records-core/recordGeoJSON.yaml[]
 ----
 
 ^|B |The `links` section of the record SHALL contain the following links:

@@ -1,0 +1,10 @@
+---
+description: |-
+  A query parameter has an invalid value.
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/features-core/exception.yaml'
+  text/html:
+    schema:
+      type: string

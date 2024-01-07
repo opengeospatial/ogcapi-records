@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Capabilities
+  summary: Retrieve the OGC API landing page for this server.
+  description: |-
+    The landing page provides links to the API definition, the conformance
+    statements and to the record collections in this dataset.
+  operationId: getLandingPage
+  parameters:
+    - $ref: '../../parameters/unspecified/f.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/features-core/LandingPage.yaml'
+    '500':
+      $ref: '../../responses/features-core/ServerError.yaml'

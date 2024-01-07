@@ -1,0 +1,10 @@
+---
+description: |-
+  A server error occurred.
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/features-core/exception.yaml'
+  text/html:
+    schema:
+      type: string

@@ -1,0 +1,13 @@
+---
+type: object
+description:
+  A list of identifiers indicating that the resource conforms to one or more
+  extensions.  Ideally, the requirements of each listed extension is formally
+  published.
+required:
+  - conformsTo
+properties:
+  conformsTo:
+    type: array
+    items:
+      type: string

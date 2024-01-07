@@ -1,0 +1,12 @@
+---
+description: |-
+  Content negotiation failed. For example, the `Accept` header submitted
+  in the request did not support any of the media types supported by the
+  server for the requested resource.
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/features-core/exception.yaml'
+  text/html:
+    schema:
+      type: string

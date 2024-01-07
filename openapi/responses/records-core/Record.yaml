@@ -1,0 +1,11 @@
+---
+description: |-
+  Fetch the record with id `recordId` in the record collection
+  with id `collectionId`
+content:
+  application/geo+json:
+    schema:
+      $ref: '../../schemas/records-core/recordGeoJSON.yaml'
+  text/html:
+    schema:
+      type: string

@@ -1,0 +1,8 @@
+---
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/records-core/schema.yaml'
+  text/html:
+    schema:
+      type: string 

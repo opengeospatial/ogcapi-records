@@ -1,0 +1,25 @@
+---
+allOf:
+  - $ref: 'links.yaml'
+  - type: object
+    required:
+      - type
+      - geometry
+      - properties
+    properties:
+      type:
+        type: string
+        enum:
+          - Feature
+      geometry:
+        oneOf:
+        - enum:
+          - null
+        - $ref: 'geometryGeoJSON.yaml'
+      properties:
+        type: object
+        nullable: true
+      id:
+        oneOf:
+          - type: string
+          - type: integer

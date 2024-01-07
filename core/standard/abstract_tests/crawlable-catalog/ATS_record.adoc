@@ -6,5 +6,5 @@
 ^|Requirement |<<req_crawlable-catalog_record,/req/crawlable-catalog/record>>
 ^|Test Method |. Parse the catalog structure and create a list of all records available
 . For each item in the list, retrieve the record object
-. Check that the record is valid using the provided JSON-Schema (https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml)
+. Check that the record is valid using the provided JSON-Schema (https://github.com/opengeospatial/ogcapi-records/blob/master/openapi/schemas/recordGeoJSON.yaml)
 |===

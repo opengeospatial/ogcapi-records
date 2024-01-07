@@ -9,7 +9,7 @@
 . Validate the body of the response using the following yaml schema:
 [source,YAML]
 ----
-include::../../../openapi/schemas/catalog.yaml[]
+include::../../../../openapi/schemas/catalog.yaml[]
 ----
 . Check that the `itemType` property is a string with the value `record`.
 |===

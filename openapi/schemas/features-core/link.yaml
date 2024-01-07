@@ -1,0 +1,14 @@
+---
+allOf:
+  - $ref: 'linkBase.yaml'
+  - type: object
+    required:
+      - href
+    properties: 
+      href:
+        type: string
+        description:
+          Supplies a resolvable URI to a remote resource
+          (or resource fragment).
+        format: url
+        example: http://data.example.com/buildings/123

@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Collections
+  summary: the record collections
+  description: |-
+    Fetch list of catalogs offered by this API
+  operationId: getCollections
+  parameters:
+    - $ref: '../../parameters/unspecified/f.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/features-core/Collections.yaml'
+    '500':
+      $ref: '../../responses/features-core/ServerError.yaml'

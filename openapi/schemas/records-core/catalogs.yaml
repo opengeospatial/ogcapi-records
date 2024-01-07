@@ -1,0 +1,12 @@
+---
+allOf:
+  - $ref: '../features-core/links.yaml'
+  - type: object
+    required:
+      - links
+      - collections
+    properties:
+      collections:
+        type: array
+        items:
+          $ref: 'catalog.yaml'
