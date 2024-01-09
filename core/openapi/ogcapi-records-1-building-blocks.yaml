@@ -372,96 +372,100 @@ components:
               type: string
               format: url
     recordGeoJSON:
-      allOf:
-        - $ref: "#/components/schemas/links"
-        - type: object
+      type: object
+      required:
+        - id
+        - type
+        - time
+        - geometry
+        - properties
+        - links
+      properties:
+        id:
+          type: string
+          format: uri
+        conformsTo:
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          enum:
+            - Feature
+        time:
+          $ref: "#/components/schemas/time"
+        geometry:
+          oneOf:
+            - enum:
+              - null
+            - $ref: "#/components/schemas/geometryGeoJSON"
+        properties:
+          type: object
           required:
-            - id
             - type
-            - time
-            - geometry
-            - properties
-            - links
+            - title
           properties:
-            id:
+            created:
               type: string
-              format: uri
-            conformsTo:
+              format: date-time
+            updated:
+              type: string
+              format: date-time
+            type:
+              type: string
+              maxLength: 64
+            title:
+              type: string
+            description:
+              type: string
+            keywords:
               type: array
               items:
                 type: string
-            type:
+            language:
+              $ref: "#/components/schemas/language"
+            languages:
+              type: array
+              items:
+                $ref: "#/components/schemas/language"
+            resourceLanguages:
+              type: array
+              items:
+                $ref: "#/components/schemas/language"
+            externalIds:
+              type: array
+              items:
+                type: object
+                properties:
+                  scheme:
+                    type: string
+                  value:
+                    type: string
+                required:
+                  - value
+            themes:
+              type: array
+              minItems: 1
+              items:
+                $ref: "#/components/schemas/theme"
+            formats:
+              type: array
+              items:
+                type: string
+            contacts:
+              type: array
+              items:
+                $ref: "#/components/schemas/contact"
+            license:
+              $ref: "#/components/schemas/license"
+            rights:
               type: string
-              enum:
-                - Feature
-            time:
-              $ref: "#/components/schemas/time"
-            geometry:
-              oneOf:
-                - enum:
-                  - null
-                - $ref: "#/components/schemas/geometryGeoJSON"
-            properties:
-              type: object
-              required:
-                - type
-                - title
-              properties:
-                created:
-                  type: string
-                  format: date-time
-                updated:
-                  type: string
-                  format: date-time
-                type:
-                  type: string
-                  maxLength: 64
-                title:
-                  type: string
-                description:
-                  type: string
-                keywords:
-                  type: array
-                  items:
-                    type: string
-                language:
-                  $ref: "#/components/schemas/language"
-                languages:
-                  type: array
-                  items:
-                    $ref: "#/components/schemas/language"
-                resourceLanguages:
-                  type: array
-                  items:
-                    $ref: "#/components/schemas/language"
-                externalIds:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      scheme:
-                        type: string
-                      value:
-                        type: string
-                    required:
-                      - value
-                themes:
-                  type: array
-                  minItems: 1
-                  items:
-                    $ref: "#/components/schemas/theme"
-                formats:
-                  type: array
-                  items:
-                    type: string
-                contacts:
-                  type: array
-                  items:
-                    $ref: "#/components/schemas/contact"
-                license:
-                  $ref: "#/components/schemas/license"
-                rights:
-                  type: string
+            links:
+              type: array
+              items: '#/components/schemas/link'
+            linkTemplates:
+              type: array
+              items: '#/components/schemas/linkTemplates'
     roles:
       type: array
       minItems: 1
@@ -659,11 +663,11 @@ components:
         features:
           type: array
           items:
-            $ref: featureGeoJSON.yaml
+            $ref: '#/components/schemas/recordGeoJSON'
         links:
           type: array
           items:
-            $ref: link.yaml
+            $ref: '#/components/schemas/link'
         timeStamp:
           type: string
           format: date-time
@@ -876,6 +880,8 @@ components:
           schema:
             type: string
     Catalogs:
+      description:
+        Information about the list of catalogs offered by this service.
       content:
         application/json:
           schema:
@@ -884,6 +890,26 @@ components:
           schema:
             type: string
     Catalog:
+      description: |-
+        Information about the record collection with id `collectionId`.
+
+        The response contains a link to the items in the collection
+        (path `/collections/{collectionId}/items`, link relation `items`)
+        as well as key information about the collection. This information
+        includes:
+
+        * A local identifier for the collection that is unique for the +
+          catalog;
+        * A list of coordinate reference systems (CRS) in which geometries +
+          may be returned by the server. The first CRS is the default +
+          coordinate reference system (the default is always WGS 84 with +
+          axis order longitude/latitude);
+        * An optional title and description for the collection;
+        * An optional extent that can be used to provide an indication of +
+          the spatial and temporal extent of the collection - typically +
+          derived from the data;
+        * An optional indicator about the type of the items in the collection +
+          (the default value, if the indicator is not provided, is 'record').
       content:
         application/json:
           schema:
