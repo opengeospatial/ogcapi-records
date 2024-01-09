@@ -1,0 +1,10 @@
+---
+description:
+  Information about the list of catalogs offered by this service.
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/catalogs.yaml'
+  text/html:
+    schema:
+      type: string

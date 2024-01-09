@@ -31,7 +31,7 @@ properties:
       Graphic identifying a contact. The link relation should be `icon`
       and the media type should be an image media type.
     allOf:
-      - $ref: common/link.yaml
+      - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml' 
       - type: object
         required:
           - rel
@@ -56,7 +56,7 @@ properties:
         roles:
           description:
             The type of phone number (e.g. home, work, fax, etc.).
-          $ref: roles.yaml
+          $ref: 'roles.yaml'
   emails:
     type: array
     description: Email addresses at which contact can be made.
@@ -72,7 +72,7 @@ properties:
         roles:
           description:
             The type of email (e.g. home, work, etc.).
-          $ref: roles.yaml
+          $ref: 'roles.yaml'
   addresses:
     type: array
     description: Physical location at which contact can be made.
@@ -99,13 +99,13 @@ properties:
         roles:
           description:
             The type of address (e.g. office, home, etc.).
-          $ref: roles.yaml
+          $ref: 'roles.yaml'
   links:
     type: array
     description: On-line information about the contact.
     items:
       allOf:
-        - $ref: common/link.yaml
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'
         - type: object
           required:
             - type
@@ -123,4 +123,4 @@ properties:
       The set of named duties, job functions and/or permissions
       associated with this contact.
       (e.g. developer, administrator, etc.).
-    $ref: roles.yaml
+    $ref: 'roles.yaml'
