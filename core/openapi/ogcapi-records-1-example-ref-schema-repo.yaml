@@ -61,9 +61,9 @@ paths:
       operationId: getLandingPage
       responses:
         '200':
-          $ref: '../../openapi/responses/LandingPage.yaml'
+          $ref: 'responses/LandingPage.yaml'
         '500':
-          $ref: '../../openapi/responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/conformance':
     get:
       tags:
@@ -75,9 +75,9 @@ paths:
       operationId: getConformanceDeclaration
       responses:
         '200':
-          $ref: '../../openapi/responses/ConformanceDeclaration.yaml'
+          $ref: 'responses/ConformanceDeclaration.yaml'
         '500':
-          $ref: '../../openapi/responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections':
     get:
       tags:
@@ -88,9 +88,9 @@ paths:
       operationId: getCollections
       responses:
         '200':
-          $ref: '../../openapi/responses/Catalogs.yaml'
+          $ref: 'responses/Catalogs.yaml'
         '500':
-          $ref: '../../openapi/responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}':
     get:
       tags:
@@ -101,14 +101,14 @@ paths:
         Fetch a detailed description of the catalog with id `catalogId`.
       operationId: describeCollection
       parameters:
-        - $ref: '../../openapi/parameters/catalogId.yaml'
+        - $ref: 'parameters/catalogId.yaml'
       responses:
         '200':
-          $ref: '../../openapi/responses/Catalog.yaml'
+          $ref: 'responses/Catalog.yaml'
         '404':
-          $ref: '../../openapi/responses/NotFound.yaml'
+          $ref: 'responses/NotFound.yaml'
         '500':
-          $ref: '../../openapi/responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/sortables':
     get:
       tags:
@@ -120,14 +120,14 @@ paths:
         response.
       operationId: getSortables
       parameters:
-        - $ref: '../../openapi/parameters/catalogId.yaml'
+        - $ref: 'parameters/catalogId.yaml'
       responses:
         '200':
-          $ref: '../../openapi/responses/Sortables.yaml'
+          $ref: 'responses/Sortables.yaml'
         '404':
-          $ref: '../../openapi/responses/NotFound.yaml'
+          $ref: 'responses/NotFound.yaml'
         '500':
-          $ref: '../../openapi/responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/items':
     get:
       tags:
@@ -146,20 +146,20 @@ paths:
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/bbox.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/datetime.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/limit.yaml'
-        - $ref: '../../openapi/parameters/catalogId.yaml'
-        - $ref: '../../openapi/parameters/q.yaml'
-        - $ref: '../../openapi/parameters/type.yaml'
-        - $ref: '../../openapi/parameters/externalId.yaml'
-        - $ref: '../../openapi/parameters/sortby.yaml'
+        - $ref: 'parameters/catalogId.yaml'
+        - $ref: 'parameters/q.yaml'
+        - $ref: 'parameters/type.yaml'
+        - $ref: 'parameters/externalId.yaml'
+        - $ref: 'parameters/sortby.yaml'
       responses:
         '200':
-          $ref: '../../openapi/responses/Records.yaml'
+          $ref: 'responses/Records.yaml'
         '400':
-          $ref: '../../openapi/responses/InvalidParameter.yaml'
+          $ref: 'responses/InvalidParameter.yaml'
         '404':
-          $ref: '../../openapi/responses/NotFound.yaml'
+          $ref: 'responses/NotFound.yaml'
         '500':
-          $ref: '../../openapi/responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/items/{recordId}':
     get:
       tags:
@@ -172,12 +172,12 @@ paths:
         Use content negotiation to request HTML or GeoJSON.
       operationId: getRecord
       parameters:
-        - $ref: '../../openapi/parameters/catalogId.yaml'
-        - $ref: '../../openapi/parameters/recordId.yaml'
+        - $ref: 'parameters/catalogId.yaml'
+        - $ref: 'parameters/recordId.yaml'
       responses:
         '200':
-          $ref: '../../openapi/responses/Record.yaml'
+          $ref: 'responses/Record.yaml'
         '404':
-          $ref: '../../openapi/responses/NotFound.yaml'
+          $ref: 'responses/NotFound.yaml'
         '500':
-          $ref: '../../openapi/responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'

@@ -98,7 +98,8 @@ paths:
       summary: |-
         describe the record collection with id `catalogId`
       description: |-
-        Fetch a detailed description of the catalog with id `catalogId`.
+        Fetch a detailed description of a catalog or collection of records
+        with id `catalogId`.
       operationId: describeCollection
       parameters:
         - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
@@ -134,7 +135,7 @@ paths:
         - Records
       summary: fetch records
       description: |-
-        Fetch records of the record collection with id `catalogId`.
+        Fetch records from the record collection with id `catalogId`.
 
         Every record in a dataset belongs to a collection. A dataset may
         consist of multiple record collections. A record collection is often a
@@ -166,7 +167,7 @@ paths:
         - Record
       summary: fetch a single record
       description: |-
-        Fetch the record with id `recordId` in the record collection
+        Fetch the record with id `recordId` from the record collection
         with id `catalogId`.
 
         Use content negotiation to request HTML or GeoJSON.
