@@ -48,12 +48,13 @@ lets the user run "sub-queries" cheaply to have a better understanding of the co
 
 #### Examples
 
-The facet `hasDownloads` will return the amount of records which have at least 1 distribution of a download type (CSV, Excel...):
-* `hasDownloads` : 2051 records
+The facet `is available by` will provide 2 sub-queries :
+- `Download service` returns the amount of records which have at least 1 distribution of a download type (CSV, Excel...):
+- `Visualization service` returns the amount of records which have at least 1 distribution of a type (WMS, WMTS...):
 
-The facet `hasMaps` will return the amount of records which have at associated to it:
-* `hasMaps` : 11495 records
-
+Is available by
+* `Download service`: 300 records
+* `Visualization service`: 243 records
 
 ## Requirements
 
