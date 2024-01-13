@@ -47,7 +47,7 @@ A successful response to the `Landing Page` operation is defined in OGC API - Co
 .Landing Page Response Schema
 [source,yaml]
 ----
-include::../openapi/schemas/common/landingPage.yaml[]
+include::../../openapi/schemas/common/landingPage.yaml[]
 ----
 
 The following JSON fragment is an example of a response to an OGC API - Records Landing Page operation.
@@ -121,7 +121,7 @@ A successful response to the Conformance operation is a list of URLs. Each URL i
 .Conformance Response Schema
 [source,yaml]
 ----
-include::../openapi/schemas/common/confClasses.yaml[]
+include::../../openapi/schemas/common/confClasses.yaml[]
 ----
 
 The following JSON payload is an example of a response to an OGC API - Records conformance operation.
@@ -189,7 +189,7 @@ is `record` are collections of records (i.e. catalogs).
 .Collections Response Schema
 [source,yaml]
 ----
-include::../openapi/schemas/common/collections.yaml[]
+include::../../openapi/schemas/common/collections.yaml[]
 ----
 
 The following JSON payload is an example of a response to an OGC API - Records
@@ -245,7 +245,7 @@ is a set of metadata that describes the collection identified by the
 .Collection Information Response Schema
 [source,yaml]
 ----
-include::../openapi/schemas/common/collectionInfo.yaml[]
+include::../../openapi/schemas/common/collectionInfo.yaml[]
 ----
 
 The following JSON payload is an example of a response to an OGC API - Records

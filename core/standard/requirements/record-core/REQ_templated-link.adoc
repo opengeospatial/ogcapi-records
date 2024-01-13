@@ -7,9 +7,11 @@
 
 [source,YAML]
 ----
-include::../../../openapi/schemas/common/linkTemplate.yaml[]
+include::../../../../openapi/schemas/records-core/linkTemplate.yaml[]
 ----
 
 ^|B |The `uriTemplate` member SHALL supply the templated link URI.
 ^|C |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
 |===
+
+

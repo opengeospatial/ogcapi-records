@@ -1,8 +1,0 @@
----
-description:
-  The list of duties, job functions or permissions assigned by the system
-  and associated with the context of this member.
-type: array
-minItems: 1
-items:
-  type: string
