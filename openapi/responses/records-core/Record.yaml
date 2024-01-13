@@ -1,0 +1,10 @@
+---
+description:
+  Fetch the record with id `recordId` in the catalog with id `catalogId`.
+content:
+  application/geo+json:
+    schema:
+      $ref: '../../schemas/records-core/recordGeoJSON.yaml'
+  text/html:
+    schema:
+      type: string

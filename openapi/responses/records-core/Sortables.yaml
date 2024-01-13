@@ -1,0 +1,12 @@
+---
+description:
+  Fetch this list of properties that may be specified using the `sortBy`
+  parameter to indicate the order in which response records should be 
+  presented.  Each sortable is described using a JSON-schema fragment.
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/records-core/schema.yaml'
+  text/html:
+    schema:
+      type: string 

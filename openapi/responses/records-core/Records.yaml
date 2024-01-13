@@ -1,0 +1,51 @@
+---
+description:
+  The response is a document consisting of records in the catalog.
+  The records included in the response are determined by the server
+  based on the query parameters of the request. To support access to
+  larger catalogs without overloading the client, the API supports
+  paged access with links to the next page, if more records are selected
+  that the page size.
+
+  The `bbox`, `datetime`, `q`, `type` and `externalId` parameters
+  can be used to select the subset of the records in the catalog that 
+  satisfy all the query predicates.
+
+  The `bbox` parameter matches all records that intersect with the 
+  specified bounding box.  The `bbox` parameter matches all records
+  in the catalog that are not associated with a location, too.
+
+  The `datatime` parameter matches all records that are equal to the 
+  specified time stamp or intersect the specified time interval. The
+  `datetime` parameter matches all records in the catalog that are
+  not associated with a time stamp or interval, too.
+
+  The `q` parameter accepts a list of search terms separated by
+  literal commas.  Indivdual search terms may contain any number of
+  white spaces separating the terms.  The `q` parameter matches all
+  records in the catalog that contain ANY of the comma-separated
+  search terms or that contain ALL of the white-space separated
+  terms in the order specified but separated by any number of white
+  spaces.
+
+  The `type` parameter matches all records that describe resources of
+  the specified type.
+
+  The `externalId` parameter may be used to select a subset of records
+  identified by their external (to the catalog) identifiers.
+
+  The `limit` parameter may be used to control the subset of the
+  selected records that should be returned in the response, the page size.
+  Each page may include information about the number of selected and
+  returned records (`numberMatched` and `numberReturned`) as well as
+  links to support paging (link relation `next`).
+
+  The `sortby` parameter may be used to specify a set of sort properties
+  that indicate the order in which response records should be presented.
+content:
+  application/geo+json:
+    schema:
+      $ref: '../../schemas/records-core/recordsGeoJSON.yaml'
+  text/html:
+    schema:
+      type: string

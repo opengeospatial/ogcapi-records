@@ -1,0 +1,16 @@
+get:
+  tags:
+    - Conformance
+  summary:
+    Information about specifications that this API conforms to.
+  description:
+    A list of all conformance classes specified in a standard that the
+    server conforms to.
+  operationId: getConformanceDeclaration
+  parameters:
+    - $ref: '../../parameters/unspecified/f.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/features-core/ConformanceDeclaration.yaml'
+    '500':
+      $ref: '../../responses/features-core/ServerError.yaml'

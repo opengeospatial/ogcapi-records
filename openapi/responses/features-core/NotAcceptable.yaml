@@ -1,0 +1,12 @@
+---
+description:
+  Content negotiation failed. For example, the `Accept` header submitted
+  in the request did not support any of the media types supported by the
+  server for the requested resource.
+content:
+  application/json:
+    schema:
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/exception.yaml'
+  text/html:
+    schema:
+      type: string

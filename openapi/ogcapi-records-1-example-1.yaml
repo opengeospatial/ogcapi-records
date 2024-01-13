@@ -1,0 +1,73 @@
+---
+openapi: 3.0.3
+info:
+  title: "OGC API - Records - Part 1: Core"
+  version: '1.0.0'
+  description: |-
+    This is a sample OpenAPI definition that conforms to the conformance
+    classes "Core", "GeoJSON", "HTML" and "OpenAPI 3.0" of the draft
+    standard "OGC API - Records - Part 1: Core".
+
+    This example is a generic OGC API - Records definition that uses path
+    parameters to describe all record collections and all records.
+    The generic OpenAPI definition does not provide any details on the
+    collections or the record content. This information is only available
+    from accessing the record collection resources.
+
+    There is [another example](ogcapi-records-1-example2.yaml)
+    that specifies each collection explicitly.
+  contact:
+    name: CubeWerx Inc.
+    email: pvretano@cubewerx.com
+    url: 'https://www.cubewerx.com'
+  license:
+    name: CC-BY 4.0 license
+    url: 'https://creativecommons.org/licenses/by/4.0/'
+servers:
+  - url: 'https://example.org/ogcapi/catalog'
+    description: Production server
+  - url: 'https://example.org/ogcapi/catalog-dev'
+    description: Development server
+tags:
+  - name: Capabilities
+    description: |-
+      essential characteristics of this API
+  - name: Conformance
+    description: |-
+      list of conformance classes implemented by this API
+  - name: Collections
+    description: |-
+      list of catalogs offered by this API
+  - name: Collection
+    description: |-
+      description of a catalog offered by this API
+  - name: Sortables
+    description: |-
+      list of record properties by which responses can be sorted
+  - name: Records
+    description: |-
+      access to records
+  - name: Record
+    description: |-
+      access to a single record
+paths:
+  /:
+    $ref: 'paths/records-core/LandingPage.yaml'
+
+  /conformance:
+    $ref: 'paths/features-core/Conformance.yaml'
+
+  /collections:
+    $ref: 'paths/records-core/Catalogs.yaml'
+
+  /collections/{catalogId}:
+    $ref: 'paths/records-core/Catalog.yaml'
+
+  /collections/{catalogId}/sortables:
+    $ref: 'paths/records-core/Sortables.yaml'
+
+  /collections/{catalogId}/items:
+    $ref: 'paths/records-core/Records.yaml'
+
+  /collections/{catalogId}/items/{recordId}:
+    $ref: 'paths/records-core/Record.yaml'

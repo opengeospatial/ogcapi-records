@@ -1,0 +1,40 @@
+---
+type: object
+properties:
+  rel:
+    type: string
+    description: The type or semantics of the relation.
+    example: alternate
+  type:
+    type: string
+    description:
+      A hint indicating what the media type of the
+      result of dereferencing the link should be.
+    example: application/geo+json
+  hreflang:
+    type: string
+    description:
+      A hint indicating what the language of the
+      result of dereferencing the link should be.
+    example: en
+  title:
+    type: string
+    description:
+      Used to label the destination of a link
+      such that it can be used as a human-readable
+      identifier.
+    example: "Trierer Strasse 70, 53115 Bonn"
+  length:
+    type: integer
+  created:
+    type: string
+    description:
+      Date of creation of the resource pointed to
+      by the link.
+    format: date-time
+  updated:
+    type: string
+    description:
+      Most recent date on which the resource pointed
+      to by the link was changed.
+    format: date-time

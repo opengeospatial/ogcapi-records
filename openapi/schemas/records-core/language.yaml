@@ -1,0 +1,40 @@
+---
+type: object
+description:
+  The language used for textual values in this record.
+required:
+  - code
+properties:
+  code:
+    type: string
+    description:
+      The language tag as per RFC-5646.
+    example: el
+  name:
+    type: string
+    minLength: 1
+    description:
+      The untranslated name of of the language.
+    example: Ελληνικά
+  alternate:
+    type: string
+    description:
+      The name of the language in another well-understood language,
+      usually English.
+    example: Greek
+  dir:
+    type: string
+    description:
+      The direction for text in this language. The default, `ltr`
+      (left-to-right), represents the most common situation.
+      However, care should be taken to set the value of `dir`
+      appropriately if the language direction is not `ltr`.
+      Other values supported are `rtl` (right-to-left), `ttb`
+      (top-to-bottom), and `btt` (bottom-to-top).
+    enum:
+      - ltr
+      - rtl
+      - ttb
+      - btt
+    default:
+      - ltr

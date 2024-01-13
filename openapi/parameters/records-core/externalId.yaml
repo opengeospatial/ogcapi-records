@@ -1,0 +1,16 @@
+---
+name: externalId
+in: query
+description:
+  The optional externalId parameter supports searching by an identifier
+  that was not assigned by the catalog (i.e. an external identifier).
+  Only records with an external identifer, as indicated by the value of
+  the externalId core queryable array, that is equal to one of the listed
+  values shall be selected.
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+style: form

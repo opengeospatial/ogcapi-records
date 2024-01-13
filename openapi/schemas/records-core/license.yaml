@@ -1,0 +1,18 @@
+---
+type: string
+description:
+  A legal document under which the resource is made available.
+  If the resource is being made available under a common license
+  then use an SPDX license id (https://spdx.org/licenses/).
+  If the resource is being made available under multiple common
+  licenses then use an SPDX license expression v2.3 string
+  (https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/)
+  If the resource is being made available under one or more licenses
+  that haven't been assigned an SPDX identifier or one or more custom
+  licenses then use a string value of 'other' and include one or more
+  links (rel="license") in the `link` section of the record to the
+  file(s) that contains the text of the license(s).
+  There is also the case of a resource that is private or unpublished
+  and is thus unlicensed; in this case do not register such a resource
+  in the catalog in the first place since there is no point in making
+  such a resource discoverable.

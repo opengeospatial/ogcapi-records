@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Records
+  summary:
+    Fetch a subset of records.
+  description:
+    Fetch records of the catalog with id `catalogId`.
+    Use content negotiation to request HTML or GeoJSON.
+  operationId: getRecords
+  parameters:
+    - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/bbox.yaml'
+    - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/datetime.yaml'
+    - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/limit.yaml'
+    - $ref: '../../parameters/records-core/catalogId.yaml'
+    - $ref: '../../parameters/records-core/q.yaml'
+    - $ref: '../../parameters/records-core/type.yaml'
+    - $ref: '../../parameters/records-core/externalId.yaml'
+    - $ref: '../../parameters/records-core/sortby.yaml'
+    - $ref: '../../parameters/records-core/language.yaml'
+    - $ref: '../../parameters/unspecified/f.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/records-core/Records.yaml'
+    '400':
+      $ref: '../../responses/features-core/InvalidParameter.yaml'
+    '404':
+      $ref: '../../responses/features-core/NotFound.yaml'
+    '500':
+      $ref: '../../responses/features-core/ServerError.yaml'

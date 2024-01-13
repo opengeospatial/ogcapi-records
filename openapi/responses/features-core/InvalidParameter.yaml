@@ -1,0 +1,10 @@
+---
+description:
+  A query parameter has an invalid value.
+content:
+  application/json:
+    schema:
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/exception.yaml'
+  text/html:
+    schema:
+      type: string

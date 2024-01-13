@@ -1,0 +1,20 @@
+get:
+  tags:
+    - Sortables
+  summary:
+    Get the list of sortable properties.
+  description:
+    Fetch the list of properties which can be used to indicate the order in
+    which response records should be presented.
+  operationId: getSortables
+  parameters:
+    - $ref: '../../parameters/records-core/catalogId.yaml'
+    - $ref: '../../parameters/records-core/language.yaml'
+    - $ref: '../../parameters/unspecified/f.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/records-core/Sortables.yaml'
+    '404':
+      $ref: '../../responses/features-core/NotFound.yaml'
+    '500':
+      $ref: '../../responses/features-core/ServerError.yaml'

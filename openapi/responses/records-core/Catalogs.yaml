@@ -1,0 +1,10 @@
+---
+description:
+  Fetch a list of catalogs offered at this service endpoint.
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/records-core/catalogs.yaml'
+  text/html:
+    schema:
+      type: string
