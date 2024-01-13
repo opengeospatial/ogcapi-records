@@ -7,7 +7,7 @@
 
 [source,YAML]
 ----
-include::../../../openapi/schemas/common/linkTemplate.yaml[]
+include::../../../openapi/schemas/linkTemplate.yaml[]
 ----
 
 ^|B |The `uriTemplate` member SHALL supply the templated link URI.

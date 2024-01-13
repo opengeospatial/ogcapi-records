@@ -1,5 +1,5 @@
 ---
-description: |-
+description:
   The response is a document consisting of records in the collection.
   The records included in the response are determined by the server
   based on the query parameters of the request. To support access to
@@ -22,7 +22,7 @@ description: |-
 content:
   application/geo+json:
     schema:
-      $ref: '../schemas/featureCollectionGeoJSON.yaml'
+      $ref: '../schemas/recordsGeoJSON.yaml'
   text/html:
     schema:
       type: string

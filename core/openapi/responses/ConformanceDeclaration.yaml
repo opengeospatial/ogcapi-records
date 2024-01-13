@@ -1,15 +1,10 @@
 ---
-description: |-
+description:
   The URIs of all conformance classes supported by the server.
-
-  To support "generic" clients that want to access multiple
-  OGC API - Records implementations - and not "just" a specific
-  API / server, the server declares the conformance
-  classes it implements and conforms to.
 content:
   application/json:
     schema:
-      $ref: '../schemas/common/confClasses.yaml'
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/confClasses.yaml'
   text/html:
     schema:
       type: string

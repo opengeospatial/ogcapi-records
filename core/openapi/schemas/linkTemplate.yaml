@@ -1,8 +1,9 @@
 ---
 allOf:
-  - $ref: linkBase.yaml
+  - $ref: 'linkBase.yaml'
   - type: object
-    required: uriTemplate
+    required:
+      - uriTemplate
     properties: 
       uriTemplate:
         type: string

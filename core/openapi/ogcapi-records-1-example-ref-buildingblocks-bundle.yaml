@@ -1,0 +1,184 @@
+openapi: 3.0.3
+info:
+  title: "OGC API - Records - Part 1: Core"
+  version: '1.0.0'
+  description: |-
+    This is a sample OpenAPI definition that conforms to the conformance
+    classes "Core", "GeoJSON", "HTML" and "OpenAPI 3.0" of the draft
+    standard "OGC API - Records - Part 1: Core".
+
+    This example is a generic OGC API - Records definition that uses path
+    parameters to describe all record collections and all records.
+    The generic OpenAPI definition does not provide any details on the
+    collections or the record content. This information is only available
+    from accessing the record collection resources.
+
+    There is [another example](ogcapi-records-1-example2.yaml)
+    that specifies each collection explicitly.
+  contact:
+    name: CubeWerx Inc.
+    email: pvretano@cubewerx.com
+    url: 'https://www.cubewerx.com'
+  license:
+    name: CC-BY 4.0 license
+    url: 'https://creativecommons.org/licenses/by/4.0/'
+servers:
+  - url: 'https://example.org/data'
+    description: Production server
+  - url: 'https://example.org/data-dev'
+    description: Development server
+tags:
+  - name: Capabilities
+    description: |-
+      essential characteristics of this API
+  - name: Conformance
+    description: |-
+      list of conformance classes implemented by this API
+  - name: Collections
+    description: |-
+      list of catalogs offered by this API
+  - name: Collection
+    description: |-
+      description of a catalog offered by this API
+  - name: Sortables
+    description: |-
+      list of record properties by which responses can be sorted
+  - name: Records
+    description: |-
+      access to records
+  - name: Record
+    description: |-
+      access to a single record
+paths:
+  '/':
+    get:
+      tags:
+        - Capabilities
+      summary: landing page
+      description: |-
+        The landing page provides links to the API definition, the conformance
+        statements and to the record collections in this dataset.
+      operationId: getLandingPage
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/LandingPage'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+  '/conformance':
+    get:
+      tags:
+        - Conformance
+      summary: information about specifications that this API conforms to
+      description: |-
+        A list of all conformance classes specified in a standard that the
+        server conforms to.
+      operationId: getConformanceDeclaration
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ConformanceDeclaration'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+  '/collections':
+    get:
+      tags:
+        - Collections
+      summary: the record collections
+      description: |-
+        Fetch list of catalogs offered by this API
+      operationId: getCollections
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Catalogs'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+  '/collections/{catalogId}':
+    get:
+      tags:
+        - Collection
+      summary: |-
+        describe the record collection with id `catalogId`
+      description: |-
+        Fetch a detailed description of a catalog or collection of records
+        with id `catalogId`.
+      operationId: describeCollection
+      parameters:
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Catalog'
+        '404':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+  '/collections/{catalogId}/sortables':
+    get:
+      tags:
+        - Sortables
+      summary: |-
+       get the list of sortable properties
+      description: |-
+        Fetch the list of properties which can be used to sort the getRecords
+        response.
+      operationId: getSortables
+      parameters:
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Sortables'
+        '404':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+  '/collections/{catalogId}/items':
+    get:
+      tags:
+        - Records
+      summary: fetch records
+      description: |-
+        Fetch records from the record collection with id `catalogId`.
+
+        Every record in a dataset belongs to a collection. A dataset may
+        consist of multiple record collections. A record collection is often a
+        collection of records of a similar type, based on a common schema.
+
+        Use content negotiation to request HTML or GeoJSON.
+      operationId: getRecords
+      parameters:
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/bbox'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/datetime'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/externalId'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Records'
+        '400':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/InvalidParameter'
+        '404':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+  '/collections/{catalogId}/items/{recordId}':
+    get:
+      tags:
+        - Record
+      summary: fetch a single record
+      description: |-
+        Fetch the record with id `recordId` from the record collection
+        with id `catalogId`.
+
+        Use content negotiation to request HTML or GeoJSON.
+      operationId: getRecord
+      parameters:
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/recordId'
+      responses:
+        '200':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Record'
+        '404':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
+        '500':
+          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'

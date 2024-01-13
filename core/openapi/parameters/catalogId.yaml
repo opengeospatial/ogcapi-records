@@ -1,0 +1,7 @@
+---
+name: catalogId
+in: path
+description: local identifier of a catalog
+required: true
+schema:
+  type: string
