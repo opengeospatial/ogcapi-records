@@ -1,7 +1,7 @@
-[[req_records-core-query-parameters_q-response]]
+[[req_record-core-query-parameters_q-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/q-response*
+^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/q-response*
 
 ^|A |If a single search term is specified, then only records that contain that search term in one or more of the searched text fields SHALL be in the result set.
 ^|B |For multiple search terms that are comma separated (logical OR), only records that contain one or more the specified search terms in one or more of the searched text fields SHALL be in the result set.

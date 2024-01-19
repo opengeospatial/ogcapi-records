@@ -1,7 +1,7 @@
-[[req_records-core-query-parameters_ids-response]]
+[[req_record-core-query-parameters_ids-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/ids-response*
+^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/ids-response*
 
 Only records whose identifier match one of the identifiers specified using `ids` parameter SHALL be in the results set.
 |===

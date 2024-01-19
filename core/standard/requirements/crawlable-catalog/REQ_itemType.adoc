@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/itemType*
 
-^|A |The _itemType_ member of the _collection_ SHALL be an array whose elements enumerate the types of resources referenced by this collection.
+^|A |The `itemType` member of the collection SHALL be an array whose elements enumerate the types of resources referenced by this collection.
 ^|B |The value `record` SHALL be used to indicate that this collection includes references to <<clause-record-core,records>>.
 ^|C |The value `catalog` SHALL be used to indicate that this collection includes references to <<clause-record-collection,collections of records or catalogs>>.
 ^|D |The value `collection` SHALL be used to indicate that this collection includes references to other <<crawlable-collections,collections>>.

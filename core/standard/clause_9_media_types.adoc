@@ -24,7 +24,7 @@ GeoJSON provides a simple way of representing OGC Records in JSON and is support
 
 ==== Media types
 
-A description of the MIME-types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME-types for the API - Records standard in provided in <<media-types-table>>.
+A description of the MIME types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME types for the API - Records standard in provided in <<media-types-table>>.
 
 [#media-types-table,reftext='{table-caption} {counter:table-num}']
 .API - Records MIME Types

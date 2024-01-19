@@ -101,7 +101,7 @@ This conformance class specifies requirements and recommendations for supporting
 
 include::requirements/searchable-catalog_filtering/REQ_mandatory-queryables.adoc[]
 
-include::recommendations/searchable-catalog_filtering/REQ_additional-queryables.adoc[]
+include::recommendations/searchable-catalog_filtering/PER_additional-queryables.adoc[]
 
 ===== Coordinate reference systems
 
@@ -148,13 +148,13 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 [cols="25,25,25,25",options="header"]
 |===
 |`/collections` property |Requirement |Core Property  |Requirement
-|id                      |M           |id             |M
-|title                   |O           |title          |M
-|description             |O           |description    |M
-|itemType                |O           |--             |--
-|extent                  |O           |extent         |O
-|links                   |M           |links          |O
-|crs                     |O           |--             |--
+|id                      |**required**           |id             |**required**
+|title                   |optional           |title          |**required**
+|description             |optional           |description    |**required**
+|itemType                |optional           |--             |--
+|extent                  |optional           |extent         |optional
+|links                   |**required**           |links          |optional
+|crs                     |optional           |--             |--
 |===
 
 It is evident that there is significant overlap of the properties of each resource.  This standard defines the following requirements and recommendations with regard to information content of a local resources object such as the collection object that is retrievable from the `/collections` endpoint.

@@ -1,9 +1,9 @@
-[[ats_records-core-query-parameters_datetime]]
+[[ats_record-core-query-parameters_datetime]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/records-core-query-parameters/datetime*
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/datetime*
 ^|Test Purpose |Validate datetime query parameter.
-^|Requirement |<<req_records-core-query-parameters_datetime,/req/records-core-query-parameters/datetime>>
+^|Requirement |<<req_record-core-query-parameters_datetime,/req/record-core-query-parameters/datetime>>
 ^|Test Method |. Construct a path for a searchable endpoint
 . Issue an HTTP GET request on the path
 . Check that the HTTP response header value is `+200+`.
