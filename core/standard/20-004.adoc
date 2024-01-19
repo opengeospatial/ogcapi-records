@@ -1,4 +1,4 @@
-:Title: DRAFT OGC API - Records - Part 1: Core
+:Title: OGC API - Records - Part 1: Core
 :titletext: DRAFT OGC API - Records - Part 1: Core
 :doctype: book
 :encoding: utf-8
