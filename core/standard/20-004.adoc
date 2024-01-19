@@ -1,5 +1,5 @@
 :Title: OGC API - Records - Part 1: Core
-:titletext: DRAFT OGC API - Records - Part 1: Core
+:titletext: OGC API - Records - Part 1: Core
 :doctype: book
 :encoding: utf-8
 :lang: en
