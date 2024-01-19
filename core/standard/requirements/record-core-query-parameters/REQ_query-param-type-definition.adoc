@@ -1,7 +1,7 @@
-[[req_records-core-query-parameters_type-definition]]
+[[req_record-core-query-parameters_type-definition]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/type-definition*
+^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/type-definition*
 ^|A |A searchable endpoint SHALL support the search by Type (`type`) parameter for the operation.
 ^|B |The `type` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 

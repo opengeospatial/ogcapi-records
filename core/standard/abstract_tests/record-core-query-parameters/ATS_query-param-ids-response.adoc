@@ -1,9 +1,9 @@
-[[ats_records-core-query-parameters_ids-response]]
+[[ats_record-core-query-parameters_ids-response]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/records-core-query-parameters/ids-response*
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/ids-response*
 ^|Test Purpose |Validate ids query parameter.
-^|Requirement |<<req_records-core-query-parameters_ids-response,/req/records-core-query-parameters/ids-response>>
+^|Requirement |<<req_record-core-query-parameters_ids-response,/req/record-core-query-parameters/ids-response>>
 ^|Test Method |. Construct a path for a searchable endpoint
 . Issue an HTTP GET request on the path
 . Check that the HTTP response header value is `+200+`.

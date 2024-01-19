@@ -1,7 +1,7 @@
-[[req_records-core-query-parameters_q-definition]]
+[[req_record-core-query-parameters_q-definition]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/records-core-query-parameters/q-definition*
+^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/q-definition*
 ^|A |A searchable endpoint SHALL support the Text Search (`q`) parameter for the operation.
 ^|B |The `q` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 

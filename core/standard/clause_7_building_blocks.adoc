@@ -26,8 +26,8 @@ It is anticipated that the schema of a record will be extended to describe speci
 
 Although this document does not mandate any particular encoding for a record, this document does define conformance classes for two encodings:
 
-* a <<record_json_encoding,GeoJSON>> record encoding,
-* and an <<record_html_encoding,HTML>> encoding.
+* a <<record_json_encoding,GeoJSON>> record encoding, and
+* an <<record_html_encoding,HTML>> encoding.
 
 Other encoding are allowed but are not described in this document.
 
@@ -43,10 +43,10 @@ Other encoding are allowed but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
-|recordId |**required** |A unique record identifier assigned by the server. |id
-|created |optional |The date this record was created in the server. |properties.created
-|updated |optional |The most recent date on which the record was changed. |properties.updated
-|conformsTo |optional |The extensions/conformance classes used in this record. |conformsTo
+|recordId |**required** |A unique record identifier assigned by the server. |`id`
+|created |optional |The date this record was created in the server. |`properties.created`
+|updated |optional |The most recent date on which the record was changed. |`properties.updated`
+|conformsTo |optional |The extensions/conformance classes used in this record. |`conformsTo`
 |===
 
 [#core-properties-resource-table,reftext='{table-caption} {counter:table-num}']
@@ -54,22 +54,22 @@ Other encoding are allowed but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
-|geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry. |geometry
-|time |**required** |The temporal extent of the resource. Can be null if there is no associated temporal extent. |time
-|type |**required** |The nature or genre of the resource. |properties.type
-|title |**required** |A human-readable name given to the resource. |properties.title
-|description |optional |A free-text description of the resource. |properties.description
-|keywords |optional |A list of free-form keywords or tags associated with the resource. |properties.keywords
-|language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this record. |properties.language
-|languages |optional |The list of other languages in which this record is available. |properties.languages
-|resourceLanguages |optional |The list of languages in which the resource described by this record can be retrieved. |properties.resourceLanguages
-|externalIds |optional |One or more identifiers for the resource assigned by an external entity. |properties.externalIds
-|themes |optional |A knowledge organization system used to classify the resource. |properties.themes
-|formats |optional |A list of available distributions for the resource. |properties.formats
-|contacts |optional |A list of contacts qualified by their role(s) in association to the record or resource. |properties.contacts
-|license |optional |The legal provisions under which the resource is made available. |properties.license
-|rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |properties.rights
-|links |**required** |A list of links related to this record.
+|geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry. |`geometry`
+|time |**required** |The temporal extent of the resource. Can be null if there is no associated temporal extent. |`time`
+|type |**required** |The nature or genre of the resource. |`properties.type`
+|title |**required** |A human-readable name given to the resource. |`properties.title`
+|description |optional |A free-text description of the resource. |`properties.description`
+|keywords |optional |A list of free-form keywords or tags associated with the resource. |`properties.keywords`
+|language |optional |The language used for textual values (i.e. titles, descriptions, etc) of this record. |`properties.language`
+|languages |optional |The list of other languages in which this record is available. |`properties.languages`
+|resourceLanguages |optional |The list of languages in which the resource described by this record can be retrieved. |`properties.resourceLanguages`
+|externalIds |optional |One or more identifiers for the resource assigned by an external entity. |`properties.externalIds`
+|themes |optional |A knowledge organization system used to classify the resource. |`properties.themes`
+|formats |optional |A list of available distributions for the resource. |`properties.formats`
+|contacts |optional |A list of contacts qualified by their role(s) in association to the record or resource. |`properties.contacts`
+|license |optional |The legal provisions under which the resource is made available. |`properties.license`
+|rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |`properties.rights`
+|links |**required** |A list of links related to this record.|`links`
 |===
 
 include::requirements/record-core/REQ_mandatory-properties-record.adoc[]
@@ -109,9 +109,9 @@ This standard does not place any containts on the number of additional temporal 
 [cols="20,10a,70a",options="header"]
 |===
 |Property |Type |Description
-|date |string |An instant with a granularity of a date. See below for more details about instants.
-|timestamp |string |An instant with the granularity of a timestamp. See below for more details about instants.
-|interval |[ string ] |An interval, described by an array of the two instants (start and end). See below for more details about intervals.
+|`date` |string |An instant with a granularity of a date. See below for more details about instants.
+|`timestamp` |string |An instant with the granularity of a timestamp. See below for more details about instants.
+|`interval` |[ string ] |An interval, described by an array of the two instants (start and end). See below for more details about intervals.
 |===
 
 Including both an instant and an interval is valid, if both values intersect. In this case, clients should use the interval property and may use the date or timestamp property to determine the temporal characteristics of the resource being described by the record.
@@ -140,7 +140,9 @@ NOTE: This Standard only provides guidance how to represent record data in JSON.
 ====
 [source,json,linenumbers]
 ----
-"time" : { "date": "1969-07-20" }
+"time" : {
+    "date": "1969-07-20"
+}
 ----
 ====
 
@@ -149,7 +151,9 @@ NOTE: This Standard only provides guidance how to represent record data in JSON.
 ====
 [source,json,linenumbers]
 ----
-"time" : { "timestamp": "1969-07-20T20:17:40Z" }
+"time" : {
+    "timestamp": "1969-07-20T20:17:40Z"
+}
 ----
 ====
 
@@ -163,14 +167,19 @@ include::recommendations/record-core/PER_temporal_comparison.adoc[]
 
 An interval is described by start and end instants. Both start and end instants are included in the interval, i.e., the interval is closed.
 
-The end of unbounded intervals are represented by a double-dot string ("..") for the start/end. This follows the convention of ISO 8601-2 for an open start or end.
+The end of unbounded intervals are represented by a double-dot string (`..`) for the start/end. This follows the convention of ISO 8601-2 for an open start or end.
 
 [#ex-time-3,reftext='{listing-caption} {counter:listing-num}']
 .An interval with dates
 ====
 [source,json,linenumbers]
 ----
-"time" : { "interval": [ "1969-07-16", "1969-07-24" ] }
+"time" : {
+    "interval": [
+        "1969-07-16",
+        "1969-07-24"
+    ]
+}
 ----
 ====
 
@@ -179,7 +188,12 @@ The end of unbounded intervals are represented by a double-dot string ("..") for
 ====
 [source,json,linenumbers]
 ----
-"time" : { "interval": [ "1969-07-16T05:32:00Z", "1969-07-24T16:50:35Z" ] }
+"time" : {
+    "interval": [
+        "1969-07-16T05:32:00Z",
+        "1969-07-24T16:50:35Z"
+    ]
+}
 ----
 ====
 
@@ -188,7 +202,12 @@ The end of unbounded intervals are represented by a double-dot string ("..") for
 ====
 [source,json,linenumbers]
 ----
-"time" : { "interval": [ "2014-04-24T10:50:18Z", ".." ] }
+"time" : {
+    "interval": [
+        "2014-04-24T10:50:18Z",
+        ".."
+    ]
+}
 ----
 ====
 
@@ -207,7 +226,7 @@ include::requirements/record-core/REQ_time-zone.adoc[]
 [[sc_keywords_and_themes]]
 ===== Keywords and Themes
 
-A record allows for one `properties.keywords` and zero to many `properties.themes` properties.  Keywords are free form terms or tags associated with the resource(s) that the record describes.  Themes are concepts associated with the resource(s) that a record describes taken from one or more formal knowledge organization systems or schemes.  The list of knowledge organization systems or schemes used in a <<clause-searchable-catalog,searchable>> or <<clause-local-resources-catalog,local resources>> catalog can be determined by inspecting the server's OpenAPI document or, if the server implements CQL2, by exposing a queryable (e.g. named `scheme`) and enumerating the list of schemes used in the queryable's schema definition.
+A record allows for one `properties.keywords` and one to many `properties.themes` properties.  Keywords are free form terms or tags associated with the resource(s) that the record describes.  Themes are concepts associated with the resource(s) that a record describes taken from one or more formal knowledge organization systems or schemes.  The list of knowledge organization systems or schemes used in a <<clause-searchable-catalog,searchable>> or <<clause-local-resources-catalog,local resources>> catalog can be determined by inspecting the server's OpenAPI document or, if the server implements CQL2, by exposing a queryable (e.g. named `scheme`) and enumerating the list of schemes used in the queryable's schema definition.
 
 include::recommendations/record-core/REC_record-keywords-themes.adoc[]
 
@@ -253,7 +272,7 @@ Navigation links are meant to encode relationships between catalog entities (i.e
 
 include::requirements/record-core/REQ_record-links.adoc[]
 
-include::recommendations/record-core/REQ_links.adoc[]
+include::recommendations/record-core/REC_links.adoc[]
 
 Links in the `links` section may also encode canoncial URIs for record properties such as `type` and `license`.
 
@@ -333,7 +352,7 @@ include::../examples/json/templated-link-ref.json[]
    CLIENT                                                     SERVER
      |                                                           |
      |   GET variables/bbox HTTP/1.1                             |
-     |   Host: www.someserver.com                                |
+     |   Host: example.org                                       |
      |   Accept: application/json                                |
      |---------------------------------------------------------->|
      |                                                           |
@@ -367,8 +386,8 @@ A <<core-queryables,record>> contains information, encoded in the links and link
 A catalog record can include language information about:
 
 * the resource that the record describes,
-* the language used for text values in the current record representation,
-* and alternate languages in which the current record can be represented.
+* the language used for text values in the current record representation, and
+* alternate languages in which the current record can be represented.
 
 ====== Language of the record
 
@@ -411,14 +430,14 @@ A _collection_ is an object that provides information about and access to a set 
 
 The schema for the collection resource is an extension of the collection schema defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features].
 
-While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the collection in the <<clause-records-api,Record API>> conformance class.  Otherwise the collection resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
+While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the collection in the <<clause-records-api,Record API>> conformance class.  Otherwise, the collection resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
 
-Although this document does not mandate any particular encoding for a record collection, this document does define conformance classes for two encodings:
+Although this document does not mandate any particular encoding for a record collection, two define conformance classes are defined:
 
-* a <<record_json_encoding,GeoJSON>> record encoding,
-* and an <<record_html_encoding,HTML>> encoding.
+* a <<record_json_encoding,GeoJSON>> record encoding, and
+* an <<record_html_encoding,HTML>> encoding.
 
-Other encoding are allowed but are not described in this document.
+Other encodings are allowed but are not described in this document.
 
 [[record-collection-schema]]
 ==== Record collection schema
@@ -502,7 +521,7 @@ The parameters `bbox`, `datetime`, `limit` and `ids` are inherited from https://
 |===
 |Parameter name |Description
 |https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_parameter_bbox[bbox] |A bounding box. If the spatial extent of the record intersects the specified bounding box then the record shall be presented in the response document.
-|https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_parameter_datetime[datetime] |A time instance or time period. If the temporal extent of the record intersects the specified data/time value then the record shall be presented in the response document.
+|https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_parameter_datetime[datetime] |A time instance or time period. If the temporal extent of the record intersects the specified date/time value then the record shall be presented in the response document.
 |https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_parameter_limit[limit] |The number of records to be presented in a response document.
 |<<core-query-parameters-q,q>> |A comma-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed then this records shall appear in the response set.
 |<<core-query-parameters-type,type>> |An equality predicate consistent of a comma-separated list of resource types.  Only records of the listed type shall appear in the resource set.
@@ -884,16 +903,16 @@ The following examples illustrate each of these linking patterns:
       {
         "title" : "A related record",
         "href" : "https://example.org/related-record-path/rec15"
-	   }
+      }
     ],
     "license": {
       "title" : "CC BY 2.0",
       "href" : "https://creativecommons.org/licenses/by/2.0/"
-	 },
+    },
     "enclosure": {
       "title": "GeoPackage of Feature Data",
-￼     "href" : "https://www.someserver.com/collections/MyCollection/items?f=application/geopackage+vnd.sqlite3&bbox={bbox}",
-￼     "varBase": "https://www.someserver.com/variables"
+￼      "href" : "https:/example.org/collections/MyCollection/items?f=application/geopackage+vnd.sqlite3&bbox={bbox}",
+ ￼     "varBase": "https://example.org/variables/
     },
     ...
   }
@@ -975,13 +994,13 @@ The use of keywords from a controlled voacbulary is encoded in a record using th
 Using https://docs.ogc.org/DRAFTS/19-079r1.html[OGC API - Feature - Part 3: Filtering], a server would need to expose two https://docs.ogc.org/DRAFTS/19-079r1.html#queryables[queryables], `scheme` and `concept` for the purpose of filtering using keywords from a specific controlled vocabulary.  Using these queryables, the following filter could be expressed:
 
 ----
-https://www.someserver.com/collections/myCatalog/items?filter-lang=cql2-text&filter=scheme%3D%27https%3A%2F%2Fgeo.woudc.org%2Fcodelists.xml%23WOUDC_InstrumentCode%27%20and%20concept%3D%27spectral%27%2C%0Ahoelper%27
+https://example.org/collections/myCatalog/items?filter-lang=cql2-text&filter=scheme%3D%27https%3A%2F%2Fgeo.woudc.org%2Fcodelists.xml%23WOUDC_InstrumentCode%27%20and%20concept%3D%27spectral%27%2C%0Ahoelper%27
 ----
 
 An alternative approach that does rely on using https://docs.ogc.org/DRAFTS/19-079r1.html[OGC API - Feature - Part 3: Filtering] and https://docs.ogc.org/DRAFTS/21-065.html[CQL2] would rely on the server defining a set of https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameters_for_filtering_on_feature_properties[query parameters] in the server's https://docs.ogc.org/is/17-069r4/17-069r4.html#_api_definition[API description document], again named `scheme` and `concept`, that would allow the following filter to be expressed:
 
 ----
-https://www.someserver.com/collections/myCatalog/items?scheme=https%3A%2F%2Fgeo.woudc.org%2Fcodelists.xml%23WOUDC_InstrumentCode&concept=spectral,hoelper
+https://example.org/collections/myCatalog/items?scheme=https%3A%2F%2Fgeo.woudc.org%2Fcodelists.xml%23WOUDC_InstrumentCode&concept=spectral,hoelper
 ----
 
 [[clause-autodiscovery]]
@@ -1074,7 +1093,7 @@ be read by machines, such as JSON or XML, have two issues:
 
 * The data is not discoverable using the most common mechanism for discovering information, that is the search engines of the Web;
 
-* The data can not be viewed directly in a browser - additional tools are required to view the data.
+* The data cannot be viewed directly in a browser (additional tools are required to view the data).
 
 Therefore, sharing data on the Web should include publication in HTML. To be consistent with the Web, it should be done in a way that enables users and search engines to access all data.
 

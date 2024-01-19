@@ -1,9 +1,9 @@
-[[ats_records-core-query-parameters_externalIds-definition]]
+[[ats_record-core-query-parameters_externalIds-definition]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/records-core-query-parameters/externalIds-definition*
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/externalIds-definition*
 ^|Test Purpose |Validate datetime query parameter.
-^|Requirement |<<req_records-core-query-parameters_externalIds-definition,/req/records-core-query-parameters/externalIds-definition>>
+^|Requirement |<<req_record-core-query-parameters_externalIds-definition,/req/record-core-query-parameters/externalIds-definition>>
 ^|Test Method |. Construct a path for a searchable endpoint
 . Issue an HTTP GET request on the path
 . Check that the HTTP response header value is `+200+`.
