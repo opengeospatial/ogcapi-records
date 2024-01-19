@@ -24,10 +24,10 @@
 |[big]*Open Geospatial Consortium*
 |Submission Date: <yyyy-mm-dd>
 |Approval Date: <yyyy-mm-dd>
-|Publication Date: 2020-01-13
+|Publication Date: 2024-01-19
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/is/ogcapi-records-1/1.0
 |Internal reference number of this OGC(R) document: 20-004
-|Version: 1.0.0-draft.1
+|Version: 1.0.0-oab-review.1
 |Category: OGC(R) Implementation Standard
 |Editors:  Panagiotis (Peter) A. Vretanos, Tom Kralidis, Charles Heazel, Angelos Tzotsos
 |===
