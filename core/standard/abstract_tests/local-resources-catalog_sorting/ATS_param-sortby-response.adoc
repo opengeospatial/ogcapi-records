@@ -1,5 +1,6 @@
 [[ats_local-resources-catalog_sorting_param-sortby-response]]
 [width="90%",cols="2,6a"]
+|===
 ^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/sorting/param-sortby-response*
 ^|Test Purpose |Validate the availability of the `+sortby+` query parameter.
 ^|Requirement |<<req_local-resources-catalog_sorting_param-sortby-response,/req/local-resources-catalog/sorting/param-sortby-response>>

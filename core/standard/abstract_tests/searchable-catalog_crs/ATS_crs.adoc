@@ -1,4 +1,4 @@
-[[ats_searchable-catalog_crs]]
+[[ats_crs]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/crs*

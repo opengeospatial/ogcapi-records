@@ -8,10 +8,6 @@
 |Requirements class |<<rc_cql-filter,Requirements Class "Filtering using the Common Query Language (CQL)">>
 |===
 
-==== Conformance
-
-include::record-filter/ATS_conformance.adoc[]
-
 ==== Filter Response
 
 include::record-filter/ATS_response.adoc[]

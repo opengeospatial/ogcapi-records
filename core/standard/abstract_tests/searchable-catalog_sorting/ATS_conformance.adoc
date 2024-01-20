@@ -1,4 +1,4 @@
-[[ats_searchable-catalog_sorting]]
+[[ats_searchable-catalog_sorting_conformance]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/sorting*
