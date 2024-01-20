@@ -4,7 +4,7 @@ The OGC API family of standards are being developed to make it easy for anyone t
 
 This document defines the OGC API for Records.
 
-A Record makes a resource discoverable by providing summary information (metadata) about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, styles, assets, machine models, services, processes, widgets, etc.
+A Record makes a resource discoverable by providing summary information (metadata) about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, styles, assets, machine models, services, processes, widgets, notebooks etc.
 
 OGC API - Records provides a way to browse or search a curated collection of records known as a catalog.  This specification envisions deploying a catalog using one of the following patterns:
 
