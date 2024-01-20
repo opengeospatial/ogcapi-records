@@ -37,13 +37,7 @@ The standardization target of the conformance classes:
 
 is "Document encoding".
 
-https://docs.ogc.org/is/19-072/19-072.html[OGC API - Common] provides a common foundation for OGC API standards. Therefore, this standard should be viewed as an extension to OGC API - Common. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of http://docs.ogc.org/DRAFTS/19-072.html#_conformance[OGC API - Common].
-
-NOTE: Should we remove this statement about Common?  Records is really an extension of Features and so the reference to Features conformance should be sufficient.  Features should then reference common ... but it does not currently do so.
-
-NOTE TK: suggest to reference OGC API - Features and open issue on the OGC API - Features issue tracker to update their specification accordingly.
-
-https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for OGC API standards for feature access. Therefore, this standard should also be viewed as an extension to OGC API - Features. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features].
+https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for OGC API standards for feature access. Therefore, this standard should be viewed as an extension to OGC API - Features. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features].
 
 The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
 

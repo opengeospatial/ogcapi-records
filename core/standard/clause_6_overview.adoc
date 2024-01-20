@@ -49,7 +49,7 @@ The choice of which properties to include in the set of core properties was prim
 
 It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being made discoverable by the record.
 
-It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, dataset series, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suit specific needs is allowed, expected, expected and encouraged by this specification.
+It is anticipated that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, dataset series, Earth observation products, machine models, services, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suit specific needs is allowed, expected and encouraged by this specification.
 
 Although this document does not mandate any particular encoding for a record, the document defines conformance classes for two encodings:
 
@@ -80,7 +80,7 @@ It is anticipated that this set of properties will be extended to enrich the inf
 
 The Records API allows a subset of records to be retrieved from a catalog using a logically connected set of predicates that may include spatial and/or temporal predicates.
 
-The Records API extends https://github.com/opengeospatial/ogcapi-common[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] to:
+The Records API extends http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Core: Part 1] to:
 
 . Provide modern API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
 . Provide functionality comparable to that of the <<api-behaviour-model-overview,OGC Catalogue Service (CSW) standard>> so that a facade can be created over legacy services thus allowing them to participate in the new OGC API ecosystem.
@@ -147,11 +147,9 @@ The third level of search capability, defined by the <<clause-record-filter,_Fil
 [[dependencies-overview]]
 ==== Dependencies
 
-The OGC API - Records standard is an extension of the https://github.com/opengeospatial/ogcapi-common[OGC API - Common] and the https://www.ogc.org/standards/ogcapi-features[OGC API - Features] standards.
+The OGC API - Records standard is an extension of the https://www.ogc.org/standards/ogcapi-features[OGC API - Features] standard.
 
-NOTE: reference only OGC API - Features?
-
-An implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from API - Common and OGC API - Features.  <<req-mappings>>, identifies the OGC API - Common and OGC API - Features Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
+An implementation of OGC API - Records must first satisfy the appropriate Requirements Classes from OGC API - Common and OGC API - Features.  <<req-mappings>>, identifies the OGC API - Common and OGC API - Features Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
 
 [#req-mappings,reftext='{table-caption} {counter:table-num}']
 .Required OGC API - Common and OGC API - Features Requirements Classes
