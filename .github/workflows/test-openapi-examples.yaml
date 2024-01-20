@@ -1,0 +1,29 @@
+name: Test OpenAPI examples
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'core/openapi/ogcapi-records-1-example-ref-buildingblocks-bundle.yaml'
+      - 'core/openapi/ogcapi-records-1-example-ref-schema-repo.yaml'
+
+jobs:
+  test-build-openapi-bundle:
+    name: Test OpenAPI examples
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup npm
+      uses: actions/setup-node@v2
+    - name: Install dependencies
+      run: npm install -g @apidevtools/swagger-cli
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+        ref: ${{ github.event.pull_request.head.ref }}
+    - name: Generate OpenAPI bundle
+      run: |
+        cd core/openapi
+        swagger-cli validate ogcapi-records-1-example-ref-buildingblocks-bundle.yaml
+        swagger-cli validate ogcapi-records-1-example-ref-schema-repo.yaml
