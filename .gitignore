@@ -1,3 +1,4 @@
 core/*.html
 core/*.pdf
+.vscode/settings.json
 .DS_Store
