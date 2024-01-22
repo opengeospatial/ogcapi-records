@@ -3,7 +3,7 @@
 
 === Overview
 
-Conformance with this standard shall be checked using the tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+Conformance with this Standard shall be checked using the tests specified in <<annex_ats,Annex A (normative)>> of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 
 The standardization target of the conformance classes:
 
@@ -17,7 +17,7 @@ The standardization target of the conformance classes:
 * <<clause-record-core-query-parameters,Record query parameters>>
 * <<clause-records-api,Records API>>
 * <<clause-sorting,Sorting>>
-* <<clause-filter,Filtering>>
+* <<clause-filtering,Filtering>>
 * <<clause-searchable-catalog,Searchable Catalog>>
 * <<clause-searchable-catalog_filtering,Searchable Catalog - Filtering>>
 * <<clause-searchable-catalog_sorting,Searchable Catalog - Sorting>>
@@ -26,7 +26,7 @@ The standardization target of the conformance classes:
 * <<clause-local-resources-catalog_filtering,Local Resources Catalog - Filtering>>
 * <<clause-local-resources-catalog_sorting,Local Resources Catalog - Sorting>>
 * <<clause-autodiscovery,Autodiscovery>>
-* <<rc_oas30,OpenAPI 3.0>>
+* <<clause-oas30,OpenAPI 3.0>>
 
 is "Web APIs".
 
@@ -37,14 +37,14 @@ The standardization target of the conformance classes:
 
 is "Document encoding".
 
-https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for OGC API standards for feature access. Therefore, this standard should be viewed as an extension to OGC API - Features. Conformance to this standard requires demonstrated conformance to the applicable Conformance Classes of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features].
+https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for OGC API standards for feature access. Therefore, this Standard should be viewed as an extension to OGC API - Features. Conformance to this Standard requires demonstrated conformance to the applicable Conformance Classes of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features].
 
-The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the <<landing-page,landing page>>. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Class.
+The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[landing page]. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Test.
 
 [[building-block-requirements-classes]]
 === Building blocks
 
-This standard also identifies nine (9) building block requirements classes:
+This standard also identifies ten (10) building block requirements classes:
 
 * <<clause-record-core,Record Core>>
 * <<clause-record-collection,Record collection>>
@@ -54,6 +54,7 @@ This standard also identifies nine (9) building block requirements classes:
 * <<clause-filtering,Filtering>>
 * <<requirements-class-json-clause,JSON>>
 * <<requirements-class-html-clause,HTML>>
+* <<clause-oas30,OpenAPI 3.0>>
 * <<clause-autodiscovery,Autodiscovery>>
 
 The <<clause-record-core,_Record Core_>> conformance class defines the requirements for the core schema of a catalog record which is a set of properties (<<core-properties,core properties>>) that can be used to make any resource discoverable via a catalog.  This core set of properties can be extended as required by specific communities of interest and/or use cases.
@@ -72,12 +73,14 @@ The <<requirements-class-json-clause,_JSON_>> conformance class defines the requ
 
 The <<requirements-class-html-clause,_HTML_>> conformance class defines the requirements for an HTML representation of a standard catalog record.
 
-The <<clause-autodiscovery,Autodiscovery>> conformance class defines requirements that allow catalogs associated with a web page or web site to be discovered. 
+The <<<<clause-oas30,OpenAPI 3.0>> conformance class defines the requirements for server that use an http://spec.openapis.org/oas/v3.0.3#openapi-document[OpenAPI 3.0] document to define their API.
+
+The <<clause-autodiscovery,Autodiscovery>> conformance class defines requirements that allow catalogs that conform to this Standard and are associated with a web page or web site to be automatically discovered. 
 
 [[catalog-requirements-classes]]
 === Catalog deployments
 
-Using the above-mentioned building blocks, this standard identifies the following catalog requirements classes:
+Using the above-mentioned building blocks, this Standard identifies the following catalog requirements classes:
 
 * <<clause-crawlable-catalog,Crawlable Catalog>>
 * <<clause-searchable-catalog,Searchable Catalog>>
@@ -104,19 +107,20 @@ The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-r
 |<<clause-record-collection,Record collection>> |_Optional_ |Mandatory |N/A
 |<<clause-record-core-query-parameters,Record query parameters>> |N/A |_Mandatory_ |_Mandatory_
 |<<clause-records-api,Records API>> |N/A |Mandatory |N/A
-|<<clause-sorting,Sorting>> |N/A_ |_Optional_ |_Optional_
-|<<clause-filter,Filtering>> |N/A |_Optional_ |_Optional_
+|<<clause-sorting,Sorting>> |N/A |_Optional_ |_Optional_
+|<<clause-filtering,Filtering>> |N/A |_Optional_ |_Optional_
 |<<requirements-class-json-clause,JSON>> |_Optional_ |_Optional_ |_Optional_
 |<<requirements-class-html-clause,HTML>> |_Optional_ |_Optional_ |_Optional_
+|<<clause-oas30,OpenAPI 3.0>> |N/A |_Optional_ |_Optional_
 |===
 
 === Implementations
 
-Implementors of this specification select one or more of the <<catalog-requirements-classes,catalog requirements classes>> they wish to implement and then implement the required building block requirements classes.
+Implementors of this Standard select one or more of the <<catalog-requirements-classes,catalog deployment requirements classes>> they wish to implement and then implement the required building block requirements classes.
 
 === Conformance testing
 
-Conformance with this standard shall be checked using all the relevant tests
+Conformance with this Standard shall be checked using all the relevant tests
 specified in <<ats,Annex A>> of this document. The framework, concepts, and
 methodology for testing, and the criteria to be achieved to claim conformance
 are specified in the OGC Compliance Testing Policies and Procedures and the
@@ -127,9 +131,9 @@ OGC Compliance Testing web site.
 [cols="30,70",options="header"]
 |===
 |Conformance class |URI
-|<<ats_crawlable-catalog,Crawlable Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog
+|<<ats_crawlable_catalog,Crawlable Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog
 |<<ats_searchable-catalog,Searchable Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
-|<<ats_searchable-catalog_filtering,Searchable Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-filtering
+|<<ats_searchable_catalog_filtering,Searchable Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-filtering
 |<<ats_searchable-catalog_sorting,Searchable Catalog - Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-sorting
 |<<ats_local-resources-catalog,Local Resources Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
 |<<ats_local-resources-catalog_filtering,Local Resources Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-filtering
@@ -141,12 +145,12 @@ OGC Compliance Testing web site.
 [cols="30,70",options="header"]
 |===
 |Conformance class |URI
-|<<ats_core_record,Record Core>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
-|<<ats_record_collection,Record Collection>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
-|<<ats_record_core-query-parameters,Record query parameters>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters
-|<<ats_record_api,Records API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api
+|<<ats_record-core,Record Core>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
+|<<ats_record-collection,Record Collection>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
+|<<ats_record-core-query-parameters,Record query parameters>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters
+|<<ats_records-api,Records API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api
 |<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
-|<<ats_filtering,Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/filtering
+|<<ats_cql-filter,Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/filtering
 |<<ats_json,JSON>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 |<<ats_html,HTML>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 |<<ats_oas30,OpenAPI 3.0>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30

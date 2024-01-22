@@ -6,6 +6,6 @@
 ^|A |A web page SHALL include a link that points to a catalog associated with that page.
 ^|B |The link SHALL include a `rel` attribute with the value `http://www.opengis.net/def/rel/ogc/1.0/catalog`.
 ^|C |The link SHALL include a `type` attribute.
-^|D |The value of the `type` attribute SHALL indicate the media type of the catalog resource (see: <<crawlable-catalog,crawlable catalog>>, <<clause-core-record-collection,searchable catalog>>.
+^|D |The value of the `type` attribute SHALL indicate the media type of the catalog resource (see: <<crawlable-catalog,crawlable catalog>>, <<clause-core-record-collection,searchable catalog>>).
 ^|E |The link SHALL include a `href` attribute whose value is the URI of the catalog.
 |===

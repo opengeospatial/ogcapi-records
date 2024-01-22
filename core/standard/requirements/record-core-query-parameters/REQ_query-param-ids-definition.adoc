@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/ids-definition*
 ^|A |A Records API SHALL support the query by Ids (`ids`) parameter for the operation.
-^|B |The characteristics of the `ids` parameter SHALL be as defined by requirement http://fix.em[`req/ids/fc-ids-definition`] of the http://fix.me[OGC API - Features - Part X: Title Unknown] standard.  The definition is copied here for convenience.  NOTE: fix reference/URL
+^|B |The following OpenAPI 3.0 schema fragment SHALL define the characteristics of the `ids` parameter:
 
 [source,YAML]
 ----
@@ -15,6 +15,7 @@ schema:
   items:
     type: string
 explode: false
+style: form
 ----
 
 ^|C |An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.

@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/record*
 
-A <<rc_record_core,record>> SHALL be created for each resource to be made discoverable.
+A <<clause-record-core,record>> SHALL be created for each resource to be made discoverable.
 |===

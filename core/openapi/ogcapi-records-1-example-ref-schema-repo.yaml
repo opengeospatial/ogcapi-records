@@ -150,6 +150,7 @@ paths:
         - $ref: 'parameters/q.yaml'
         - $ref: 'parameters/type.yaml'
         - $ref: 'parameters/externalId.yaml'
+        - $ref: 'parameters/ids.yaml'
         - $ref: 'parameters/sortby.yaml'
       responses:
         '200':

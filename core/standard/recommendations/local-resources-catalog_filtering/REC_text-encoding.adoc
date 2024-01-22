@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalog/filter/cql2-text-encoding*
 
-If a filter expression can be represented for its intended use as text, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/19-079.html#cql-text[CQL text] encoding.
+If a filter expression can be represented for its intended use as text, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/21-065.html#cql2-text[CQL text] encoding.
 |===

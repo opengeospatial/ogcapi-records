@@ -73,6 +73,16 @@ components:
           type: string
       explode: false
       style: form
+    ids:
+      name: ids
+      in: query
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      explode: false
+      style: form
     language:
       name: language
       in: query

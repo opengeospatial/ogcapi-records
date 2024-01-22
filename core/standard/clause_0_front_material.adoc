@@ -32,7 +32,7 @@ A record is the atomic unit of information in a catalog, It contains descriptive
 * links to access the resource,
 * etc.
 
-This information is generic and can be used to describe a wide variety of resources.  This specification expects and encourages implementations to enrich the information content of a record to suit specific use cases, requirements, domains or communities.
+This information is generic and can be used to describe a wide variety of resources.  This specification expects and encourages implementations to enrich the information content of a record to suit specific use cases, requirements, domains or communities of interest.
 
 A collection of records is itself described by a record that provides descriptive information about the catalog.  The collection also provides access to the records of the collection either by explicitly linking to each record that is an item of the collection or by providing a search endpoint that allows the collection of records to be searched.
 
@@ -43,7 +43,7 @@ The search API allows collections of records to be searched using logically conn
 [cols="25,35,10,20",options="header"]
 |===
 |Resource |Path |HTTP method |Document reference
-|Landing page |`/` |GET |<<landing-page,API landing page>>
+|Landing page |`/` |GET |https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[API landing page]
 |Conformance declaration |`/conformance` |GET |<<conformance_class,Conformance>>
 |Record collections |`/collections` |GET |<<record-collections,Record collections>>
 |Record collection |`/collections/{collectionId}` |GET |<<clause-record-collection,Record Collection>>
@@ -51,7 +51,7 @@ The search API allows collections of records to be searched using logically conn
 |Record |`/collections/{collectionId}/items/{recordId}` |GET |<<clause-record-core,Record Core>>
 |===
 
-A special use case of the catalog deployed as an API is the _local resources catalog_.  A local resources catalog is a catalog deployed to make local resources offered by a provider searchable using the catalog information model and API.  An example of a local resources catalog is the `/collections` endpoint of http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data] or http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].  Adding catalog capabilities to this endpoint allows a client to search for collections that satisfy a specified filter expression.  Any API endpoint whose function is to provide a list of resources, such as the `/collections` endpoint, can be extended to be a local resources catalog to search for records describing resources served by that API.
+A special use case of the catalog deployed as an API is the _local resources catalog_.  A local resources catalog is a catalog deployed to make local resources offered by a provider searchable using the catalog information model and API.  An example of a local resources catalog is the `/collections` endpoint of http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data] or http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].  Adding catalog capabilities to this endpoint allows a client to search for collections that satisfy a specified filter expression.  Any API endpoint defined in an OGC API specification whose function is to provide a list of resources, such as the `/collections` endpoint, can be extended to be a local resources catalog that can be searched for records describing resources served by that API.
 
 [[keywords]]
 [big]*ii.    Keywords*

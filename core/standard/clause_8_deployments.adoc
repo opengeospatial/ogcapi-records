@@ -3,7 +3,7 @@
 
 === Overview
 
-This clause uses the <<building-blocks,building blocks>> defined in this standard to define various catalog deployments.
+This clause uses the <<building-blocks,building blocks>> defined in this Standard to define various catalog deployments.
 
 [[clause-crawlable-catalog]]
 === Requirements Class "Crawlable Catalog" (Deployment)
@@ -17,18 +17,18 @@ The `Crawlable Catalog` Requirements Class defines the requirements for a catalo
 
 The goal of a crawlable catalog is to expose metadata about resources online with as low an entry barrier as possible, thus making those resource more easily discoverable.
 
-A crawlable catalog is a deployment pattern that uses the <<clause-core-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this standard.  It is simply a set of files deployed on the web that encode, usually in HTML or JSON, the <<clause-record-collection,collection>> and <<clause-record-core,record schema>> defined in this standard.  The files contain embedded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalog.
+A crawlable catalog is a deployment pattern that uses the <<clause-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this Standard.  It is simply a set of files deployed on the web that encode, usually in HTML or JSON, the <<clause-record-collection,collection>> and <<clause-record-core,record schema>> defined in this Standard.  The files contain embedded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalog.
 
 A crawlable catalog is not searchable and does not respond to query requests.  As the name implies, it can only be crawled (or harvested) by following the embedded links; typically by search engines and other active catalogs or browsed using a web browser.  However, due to its simplicity, a crawlable catalog is easy to deploy and maintain, and is very reliable.
 
-NOTE: It should be pointed out that a <<clause-searchable-catalog,searchable catalog>> can also behave as a crawlable catalog as long as the requirements in this clause are satisfied by the <<lause-searchable-catalog,searchable catalog>> implementation.
+NOTE: It should be pointed out that a <<clause-searchable-catalog,searchable catalog>> can also behave as a crawlable catalog as long as the requirements in this clause are satisfied by the <<clause-searchable-catalog,searchable catalog>> implementation.
 
 [[crawlable-catalog-record]]
 ==== Making a resource discoverable
 
 include::requirements/crawlable-catalog/REQ_record.adoc[]
 
-Attention is drawn to requirement <<per_core_additional-properties-record,/per/core/additional-properties-record>> that allows the information content of the record to be enriched as required to describe the resource being made discoverable.
+Attention is drawn to requirement <<per_record-core_additional-properties-record,/per/record-core/additional-properties-record>> that allows the information content of the record to be enriched as required to describe the resource being made discoverable.
 
 include::requirements/crawlable-catalog/REQ_record-links.adoc[]
 
@@ -52,7 +52,7 @@ include::requirements/crawlable-catalog/REQ_catalog-links.adoc[]
 [[crawlable-collections]]
 ==== Grouping catalogs (and other resources) into collections
 
-In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g. a hierarchy) the same catalog object (see: http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[catalog.yaml]) used to organized related collections of records into a catalog may also be used as a common entry point for crawling to multiple, related, sub-collections, catalogs, records and other resources.  In this use case, the term _collection_ is used to refer to a http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[catalog object].
+In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g. a hierarchy) the same catalog object (see: https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog.yaml]) used to organized related collections of records into a catalog may also be used as a common entry point for crawling to multiple, related, sub-collections, catalogs, records and other resources.  In this use case, the term _collection_ is used to refer to a https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog object].
 
 include::requirements/crawlable-catalog/REQ_collection.adoc[]
 
@@ -103,10 +103,6 @@ include::requirements/searchable-catalog_filtering/REQ_mandatory-queryables.adoc
 
 include::recommendations/searchable-catalog_filtering/PER_additional-queryables.adoc[]
 
-===== Coordinate reference systems
-
-include::requirements/searchable-catalog_crs/REQ_crs.adoc[]
-
 [[clause-local-resources-catalog]]
 === Requirements Class "Local Resources Catalog" (Deployment)
 
@@ -118,7 +114,7 @@ include::requirements/requirements_class_local-resources-catalog.adoc[]
 This conformance class specifies requirements for a _local resources catalog_.
 
 The OGC API defines a number of resource endpoints that provide lists of
-sub-resources.  These endpoints are referred to as _local resources catalogs_ in this standard because they provide metadata about resources offered locally by an OGC API deployment.
+sub-resources.  These endpoints are referred to as _local resources catalogs_ in this Standard because they provide metadata about resources offered locally by an OGC API deployment.
 
 NOTE: The term _local resources endpoint_ is used to reference to the resource path of the _local resources catalog_.  The term _local resources object_ is used to refer to an instance of the object or resource that can be retrieved from the _local resources endpoint_.
 
