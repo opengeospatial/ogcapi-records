@@ -3,6 +3,6 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/crawlable-catalog/additional-collection-properties*
 
-^|A |A collection MAY contain zero or more of the optional properties listed in <<collections-properties-table>>.
-^|B |A collections MAY contain any number of additional properties not listed in <<collections-properties-table>>.  The meaning of these additional properties is not specified in this document.
+^|A |A collection MAY contain zero or more of the optional properties listed in <<collection-properties-table>>.
+^|B |A collections MAY contain any number of additional properties not listed in <<collection-properties-table>>.  The meaning of these additional properties is not specified in this document.
 |===

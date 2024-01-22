@@ -26,8 +26,8 @@ It is anticipated that the schema of a record will be extended to describe speci
 
 Although this document does not mandate any particular encoding for a record, this document does define conformance classes for two encodings:
 
-* a <<record_json_encoding,GeoJSON>> record encoding, and
-* an <<record_html_encoding,HTML>> encoding.
+* a <<clause-record-encoding-json,GeoJSON>> record encoding, and
+* an <<requirements-class-html-clause,HTML>> encoding.
 
 Other encoding are allowed but are not described in this document.
 
@@ -82,7 +82,7 @@ include::recommendations/record-core/PER_additional-properties-record.adoc[]
 [[sc_record_extensions]]
 ===== Record extensions
 
-In tables <<core-properties-record-table>> and <<core-properties-resource-table>> this standard defines a set of core properties for describing discoverable resources.  It is anticipated that this set of core properties will be extended to suite specific use cases or requirements.  For example, a catalog record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalog record has been extended in this way can be advertised using the `conformsTo` member.  The `conformsTo` member is a list of identifiers that indicate each extension used in a record.  This specification does not define the specific identifiers that are used to identify specific extensions; it simply provides a place where these identifiers can be listed.
+In <<core-properties-record-table>> and <<core-properties-resource-table>> this Standard defines a set of core properties for describing discoverable resources.  It is anticipated that this set of core properties will be extended to suite specific use cases or requirements.  For example, a catalog record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalog record has been extended in this way can be advertised using the `conformsTo` member.  The `conformsTo` member is a list of identifiers that indicate each extension used in a record.  This Specification does not define the specific identifiers that are used to identify specific extensions; it simply provides a place where these identifiers can be listed.
 
 include::recommendations/record-core/REC_record-extensions.adoc[]
 
@@ -103,7 +103,7 @@ Records can have multiple properties that describe the temporal characteristics 
 
 * Multiple temporal properties are sometimes used to describe different temporal characteristics of the resource(s) the record describes. For example, the time instant or interval when the information in the record is valid (sometimes called "valid time") and the time when the record was recorded in the catalog (sometimes called "transaction time"). Another example is the https://www.ogc.org/standards/om[Observations & Measurements standard], where an observation has multiple temporal properties including "phenomenon time", "result time" and "valid time".
 
-This standard does not place any containts on the number of additional temporal properties that may be added to a record to characterize temporal aspects of the resource being described by a record.  This can make it difficult for a naive client to recognize and utilize temporal information stored in the record.  For this reason, this standard includes the `time` property in a record.  This `time` member is set by the publisher of the record and describes characteristic temporal information (an instant or an internval) associated with the resource described by a record.   This `time` member can thus be used by a naive clients without the need to inspect or undestand the schema of an extended record.  The value of the `time` member is either `null` (no temporal information) or an object encoding a time instant or interval.
+This standard does not place any containts on the number of additional temporal properties that may be added to a record to characterize temporal aspects of the resource being described by a record.  This can make it difficult for a naive client to recognize and utilize temporal information stored in the record.  For this reason, this Standard includes the `time` property in a record.  This `time` member is set by the publisher of the record and describes characteristic temporal information (an instant or an internval) associated with the resource described by a record.   This `time` member can thus be used by a naive clients without the need to inspect or undestand the schema of an extended record.  The value of the `time` member is either `null` (no temporal information) or an object encoding a time instant or interval.
 
 .Properties of the "time" object
 [cols="20,10a,70a",options="header"]
@@ -268,7 +268,7 @@ include::requirements/record-core/REQ_record-license.adoc[]
 
 A record must contain a `links` section and may contain a <<sc_templated_links_with_variables,`linkTemplates`>> section.  These sections contain navigation links and/or association links.
 
-Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-core-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, and -- in the context of an API -- navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
+Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, and -- in the context of an API -- navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
 
 include::requirements/record-core/REQ_record-links.adoc[]
 
@@ -292,7 +292,7 @@ In some instances additional context may be desirable or required in order to ac
 
 include::recommendations/record-core/REC_record-associations_templated.adoc[]
 
-NOTE: This specification does not define any specific link relations that should be used for links in the `links` or <<sc_templated_links_with_variables,`linkTemplates`>> sections.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the relations that links should use.
+NOTE: This Specification does not define any specific link relations that should be used for links in the `links` or <<sc_templated_links_with_variables,`linkTemplates`>> sections.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the relations that links should use.
 
 The following provides an example of using association links for related resources of a record, as both traditional links as well as link templates.
 
@@ -320,7 +320,7 @@ Consider the case where a record describing a coverage resource is discovered by
 
 Templated links may also be used to bind to resources that may require additional information in order to access the resources.  For example, simply knowing the URL of a legacy OGC service such as https://portal.ogc.org/files/?artifact_id=14416[WMS] or https://docs.ogc.org/is/09-025r2/09-025r2.html[WFS] is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values are required in order to have a complete link to a resource.  A templated link with variables can provide this additional context.
 
-This specification defines a new schema, https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml],  based on the https://github.com/opengeospatial/ogcapi-common/blob/master/core/openapi/schemas/link.json[schema for a link] that includes substitution variables who's values are filled in at runtime prior to resolving the link.  
+This Specification defines a new schema, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml],  based on the https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[schema for a link] that includes substitution variables who's values are filled in at runtime prior to resolving the link.  
 
 Information about the substitution variables can be obtained in one of two ways.  The `variable` property may be used to encode the definitions of substitution variables in-line in the link.  Alternatively, the `varBase` property can be used to specify a base URI to which a variable name may be appended in order to retrieve the definition of the specified substitution variable.
 
@@ -328,7 +328,7 @@ include::requirements/record-core/REQ_templated-link.adoc[]
 
 include::recommendations/record-core/REC_templated-link.adoc[]
 ￼
-::requirements/record-core/REQ_templated-link-header.adoc[]
+include::requirements/record-core/REQ_templated-link-header.adoc[]
 ￼
 following example illustrates a link template to a legacy OGC Web service.  The example includes both an in-line and referenced dictionaries of substitution variables.
 ￼
@@ -376,7 +376,7 @@ include::../examples/json/templated-link-ref.json[]
 
 ===== Resource timestamps
 
-A <<core-queryables,record>> contains information, encoded in the links and link templates sections, for accessing one or more resources described by the record.  Since a resource may have multiple representations there may be multiple links pointing to each represention of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link schema] is extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
+A <<clause-record-core,record>> contains information, encoded in the links and link templates sections, for accessing one or more resources described by the record.  Since a resource may have multiple representations there may be multiple links pointing to each represention of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link schema] is extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
 
 [[sc_record_language_handling]]
 ===== Language handling
@@ -393,7 +393,7 @@ A catalog record can include language information about:
 
 include::recommendations/record-core/REC_record-lang.adoc[]
 
-The https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/linkTemplated.yaml[templated link object] are based on https://docs.ogc.org/is/17-069r4/17-069r4.html#rfc8228[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languges. 
+The https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[templated link object] are based on https://datatracker.ietf.org/doc/html/rfc8288[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languges. 
 
 [[minting-language-specific-uris]]
 A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs in order to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any particular approach how such a capability is supported by a server. 
@@ -404,7 +404,7 @@ Two common approaches are:
 
 * an additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language-specific path element like `.../en-ca/...`);
 
-* an additional query parameter (for example, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/parameter/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
+* an additional query parameter (for example, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/parameters/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
 ======================================================================
 
 [NOTE]
@@ -430,12 +430,12 @@ A _collection_ is an object that provides information about and access to a set 
 
 The schema for the collection resource is an extension of the collection schema defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features].
 
-While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the collection in the <<clause-records-api,Record API>> conformance class.  Otherwise, the collection resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
+While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the collection in the <<clause-records-api,Records API>> conformance class.  Otherwise, the collection resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
 
 Although this document does not mandate any particular encoding for a record collection, two define conformance classes are defined:
 
-* a <<record_json_encoding,GeoJSON>> record encoding, and
-* an <<record_html_encoding,HTML>> encoding.
+* a <<clause-record-encoding-json,GeoJSON>> record encoding, and
+* an <<requirements-class-html-clause,HTML>> encoding.
 
 Other encodings are allowed but are not described in this document.
 
@@ -469,7 +469,7 @@ Other encodings are allowed but are not described in this document.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |===
 
-NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features].
+NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core].
 
 include::requirements/record-collection/REQ_mandatory-properties.adoc[]
 
@@ -501,7 +501,7 @@ include::recommendations/record-collection/REC_record-langs.adoc[]
 
 ==== Encodings
 
-This specification defines requirements for JSON and HTML encoding of a catalog. See <<clause-catalog-encoding,Encodings>>.
+This Specification defines requirements for JSON and HTML encoding of a catalog. See <<clause-catalog-encoding,Encodings>>.
 
 [[clause-record-core-query-parameters]]
 === Requirements Class "Record Core Query Parameters" (Building Block)
@@ -513,7 +513,7 @@ include::requirements/requirements_class_record-core-query-parameters.adoc[]
 
 This conformance class defines a minimum core set of query parameters that shoule be implemented at an searchable catalog endpoint.  The <<core-query-parameters-table,following table>> lists this minimum set of query parameters.
 
-The parameters `bbox`, `datetime`, `limit` and `ids` are inherited from https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API Features - Part 1: Core].  The remaining parameters are defined in this standard.
+The parameters `bbox`, `datetime`, `limit` and `ids` are inherited from https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API Features - Part 1: Core].  The remaining parameters are defined in this Standard.
 
 [#core-query-parameters-table,reftext='{table-caption} {counter:table-num}']
 .Table of Core Query Parameters
@@ -548,11 +548,11 @@ include::requirements/record-core-query-parameters/REQ_query-param-limit.adoc[]
 [[core-query-parameters-q]]
 ===== Parameter q
 
-The `q` parameter is meant to provide a simple, easy-to-implement keyword search capability across one or more text fields in a record.  
+The `q` parameter provides a simple, easy-to-implement keyword search capability across one or more text fields in a record.  
 
 include::requirements/record-core-query-parameters/REQ_query-param-q-definition.adoc[]
 
-The specific text fields in a record that are to be searched is not mandated in this standard.
+The specific text fields in a record that are to be searched is not mandated in this Standard.
 
 include::recommendations/record-core-query-parameters/REC_param-q.adoc[]
 
@@ -574,9 +574,9 @@ represents the query predicate:
 
 NOTES:
 
-* The term `anytext` is meant to represent the set of text fields that are searched by the operation.
-* The `CONTAINS` operator used above is just an example of an operator that searches a text field(s) for specific search terms.  How this operator is implemented and what it is named in the system backing a catalog implementation is beyond the scope of this standard.
-* The regular expression `\s+` is meant to represent one or more white spaces.
+* The term `anytext` represents the set of text fields that are searched by the operation.
+* The `CONTAINS` operator used above is just an example of an operator that searches a text field(s) for specific search terms.  How this operator is implemented and what it is named in the system backing a catalog implementation is beyond the scope of this Standard.
+* The regular expression `\s+` represents one or more white spaces.
 
 [[core-query-parameters-type]]
 ===== Parameter type
@@ -640,7 +640,7 @@ include::recommendations/records-api/REC_html.adoc[]
 
 include::recommendations/records-api/REC_json.adoc[]
 
-The requirements specified in the <<sc_http,HTTP 1.1>> sub-clause imply that the encoding of a server response is determined using content negotiation as specified by the HTTP RFC.
+The encoding of a server response is determined according to the mechanisms defined in https://www.rfc-editor.org/rfc/rfc2616#section-12[Clause 12] of the https://www.rfc-editor.org/rfc/rfc2616[HTTP 1.1] Standard.
 
 The <<media-types-section,Media Types>> sub-clause includes guidance on media types for encodings that are specified in this document.
 
@@ -690,8 +690,8 @@ Any combination of query parameters from the <<core-query-parameters-table,Table
 [width=40%,cols="30%,70%",options="header"]
 |===
 |Representation |Requirements
-|JSON/GeoJSON |<<record_json_encoding,Requirements Class JSON>>
-|HTML |<<record_html_encoding,Requirements Class HTML>>
+|JSON/GeoJSON |<<clause-record-encoding-json,Requirements Class JSON>>
+|HTML |<<requirements-class-html-clause,Requirements Class HTML>>
 |===
 
 ===== Examples
@@ -763,7 +763,7 @@ include::recommendations/sorting/REC_sortables-schema.adoc[]
 In an OpenAPI 3.0 document, the Sortables resource has the following schema:
 
 [[schema_sortables]]
-.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/responses/Sortables.yaml[Schema for the list of sortable properties (Sortables.yaml)]
+.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/responses/Sortables.yaml[Schema for the list of sortable properties (Sortables.yaml)]
 [source,YAML]
 ----
 include::../openapi/responses/Sortables.yaml[]
@@ -771,7 +771,7 @@ include::../openapi/responses/Sortables.yaml[]
 
 ==== Declaring default sort order
 
-This specification does not mandate a specific default sort order for records
+This Specification does not mandate a specific default sort order for records
 fetched from a searchable catalog.  However, servers can declare a default
 sort order.
 
@@ -817,7 +817,7 @@ include::../examples/json/sortables.json[]
 
 include::requirements/requirements_class_record-filter.adoc[]
 
-This clause defines the binding to the filter parameters defined in the https://docs.ogc.org/DRAFTS/19-079.html#_requirements_class_filter[OGC API - Features - Part 3: Filtering and the Common Query Language (CQL), Requirements Class "Filter"] clause.
+This clause defines the binding to the filtering parameters defined in the https://docs.ogc.org/DRAFTS/19-079r1.html#_requirements_class_filter[OGC API - Features - Part 3: Filtering] and the use of the https://docs.ogc.org/DRAFTS/21-065.html[Common Query Language (CQL2)] as the query language.
 
 ==== Records
 
@@ -855,7 +855,7 @@ Links can be added to the following sections in a catalog record:
 . the <<query-response,linkTemplates>> section,
 . the <<query-response,properties>> section.
 
-The schema for links added to the <<query-response,links>> and <<query-response,linkTemplates>> sections is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://docs.ogc.org/DRAFTS/19-072.html#link-relation-conventions[OGC API - Common - Part 1: Core] and http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
+The schema for links added to the <<query-response,links>> and <<query-response,linkTemplates>> sections is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
 
 Links added directly to the <<query-response,properties>> section of a catalog record can be added using the following patterns:
 
@@ -1030,7 +1030,7 @@ include::recommendations/autodiscovery/PER_autodiscovery_links.adoc[]
 
 include::requirements/requirements_class_json.adoc[]
 
-[[clause-record-encoding]]
+[[clause-record-encoding-json]]
 ===== Record encoding
 
 GeoJSON is a commonly used format base on JSON that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format supporting GeoJSON is recommended, if record data can be represented in GeoJSON for the intended use.
@@ -1070,13 +1070,13 @@ include::requirements/json/REQ_collection-response.adoc[]
 include::requirements/json/REQ_collection-content.adoc[]
 
 [[schema_json_collection]]
-.link:http://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[Schema for a catalog or record collection in JSON(catalog.yaml)]
+.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog or record collection in JSON(catalog.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/catalog.yaml[]
 ----
 
-NOTE: Referenced schemas can be found at http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/confClasses.yaml[confClasses.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml].
+NOTE: Referenced schemas can be found at http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml].
 
 [[requirements-class-html-clause]]
 ==== Requirements Class HTML (Building Block)
@@ -1105,3 +1105,14 @@ include::requirements/html/REQ_content.adoc[]
 
 include::recommendations/html/REC_schema-org.adoc[]
 
+[[clause-oas30]] 
+=== Requirements Class "OpenAPI 3.0" (Building Block)
+
+==== Basic requirements
+
+Servers conforming to this requirments class define their API using an 
+http://spec.openapis.org/oas/v3.0.3#openapi-document[OpenAPI Document].
+
+include::requirements/oas30/REQ_oas30.adoc[]
+
+include::requirements/oas30/REQ_oas-conformance.adoc[]

@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalog/filtering/cql2-JSON-encoding*
 
-If a filter expression can be represented for its intended use as JSON, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/19-079.html#cql-json[CQL JSON] encoding.
+If a filter expression can be represented for its intended use as JSON, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/21-065.html#cql2-json[CQL JSON] encoding.
 |===

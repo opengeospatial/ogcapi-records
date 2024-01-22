@@ -6,33 +6,14 @@ The following normative documents contain provisions that, through reference in 
 * [[rfc3339]] Klyne, G., Newman, C.: IETF RFC 3339, *Date and Time on the Internet: Timestamps*, https://tools.ietf.org/rfc/rfc3339.txt[RFC 3339]
 * [[rfc3986]] Berners-Lee, T., Fielding, R., Masinter, L.: IETF RFC 3986, *Uniform Resource Identifier (URI): Generic Syntax*, https://tools.ietf.org/html/rfc3986[RFC 3986]
 * [[rfc3987]] Duerst, M., Suignard, M.: IETF RFC 3987, *Internationalized Resource Identifiers (IRIs)*, https://tools.ietf.org/html/rfc3987[RFC 3987]
-* [[rfc4287]] Nottingham, M., Sayre, R.: IETF RFC 4287, *The Atom Syndication Format*, https://tools.ietf.org/html/rfc4287[RFC 4287]
 * [[rfc6570]] Gregorio, J., Fielding, R., Hadley, M., Nottingham, M., Orchard, D.: IETF RFC 6570, *URI Template*, https://tools.ietf.org/html/rfc6570[RFC 6570]
-* [[GeoJSON]] IETF RFC 7946: *The GeoJSON Format*, https://tools.ietf.org/rfc/rfc7946.txt[GeoJSON]
+* [[rfc7159]] Bray, T.: IETF RFC 7159, *The JavaScript Object Notation (JSON) Data Interchange Format*, https://www.ietf.org/rfc/rfc7159.txt[RFC 7159]
+* [[GeoJSON]] Butler, H., Daly, M., Doyle, A., Gillies, S., Hagen, S., Schaub, T.: IETF RFC 7946: *The GeoJSON Format*, https://tools.ietf.org/rfc/rfc7946.txt[RFC 7946]
 * [[rfc8288]] Nottingham, M.: IETF RFC 8288, *Web Linking*, https://tools.ietf.org/rfc/rfc8288.txt[RFC 8288]
-
-* [[OACommon]] OGC 19-072: *OGC API - Common Specification*, (Draft) https://github.com/opengeospatial/oapi_common[API Common]
+* [[link-template]] Nottingham, M.: IETF, *The Link-Template HTTP Header Field*, https://ietf-wg-httpapi.github.io/link-template/draft-ietf-httpapi-link-template.html[draft-ietf-httpapi-link-template-latest]
 * [[OAFeat-1]] OGC 17-069r3: *OGC API - Features - Part 1: Core*, http://docs.opengeospatial.org/is/17-069r3/17-069r3.html 
-* [[OAFeat-3]] OGC 19-079: *OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)*, https://docs.ogc.org/DRAFTS/19-079.html
-* [[OpenAPI]] Open API Initiative: *OpenAPI Specification 3.0.2*, https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md[OpenAPI]
+* [[OAFeat-3]] OGC 19-079: *OGC API - Features - Part 3: Filtering*, https://docs.ogc.org/DRAFTS/19-079r1.html
+* [[CQL2]] OGC 21-065: *Common Query Language (CQL2)*, https://docs.ogc.org/DRAFTS/21-065.html
+* [[OpenAPI]] Open API Initiative: *OpenAPI Specification 3.0.3*, https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md[OpenAPI]
 * [[schema.org]] *Schema.org*: https://schema.org/docs/schemas.html[Schema.org]
 * [[HTML5]] W3C: *HTML5*, W3C Recommendation, https://www.w3.org/TR/html5/[HTML5]
-* [[RDF]] W3C, *RDF 1.1 Semantics*, February 2014, https://www.w3.org/TR/rdf11-mt/
-* [[xml]] W3C, *Extensible Markup Language (XML) 1.0 (Fifth Edition)*, November 2008, https://www.w3.org/TR/xml/
-* [[opensearch]] OASIS, https://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part4-opensearch/searchRetrieve-v1.0-os-part4-opensearch.html#_Toc313525766[searchRetrieve: Part 4. APD Binding for OpenSearch Version 1.0]
-* OGC: OGC 07-036, Geography Markup Language (GML) Encoding Standard, version 3.2.1, 2007
-* OGC: OGC 10-129r1, OGC® Geography Markup Language (GML) – Extended schemas and encoding rules (GML 3.3), version 3.3, 2012
-* W3C: W3C Recommendation, XML Path Language (XPath), version 2, 2007
-* W3C: W3C Recommendation, XML Linking Language (XLink), version 1, 2001
-* W3C: W3C Working Draft, The app: URI scheme, 2013
-* ISO/IEC: ISO/IEC 19757-3:2006 Information technology – Document Schema Definition Languages (DSDL) – Part 3: Rule-based validation – Schematron, 2006
-* ISO 8601: ISO 8601:2004: Data elements and interchange formats — Information interchange — Representation of dates and times, https://www.iso.org/standard/40874.html, 2004
-* [[link-template]] IETF: https://ietf-wg-httpapi.github.io/link-template/draft-ietf-httpapi-link-template.html[draft-ietf-httpapi-link-template-latest]
-* IETF: RFC 2183, 1997
-* IETF: RFC 2387, 1998
-* IETF: RFC 2392, 1998
-[18] IETF: RFC 3986, 2005
-[19] IETF: RFC 7159, The JavaScript Object Notation (JSON) Data Interchange Format  https://www.ietf.org/rfc/rfc7159.txt, 2014
-* W3C: W3C JSON-LD 1.0, A JSON-based Serialization for Linked Data. https://www.w3.org/TR/json-ld/, 2014
-* W3C: W3C JSON-LD 1.0 Processing Algorithms and API. https://www.w3.org/TR/json-ld-api, 2014
-* W3C: W3C RDF 1.1 Concepts and Abstract Syntax. https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/, 2014

@@ -1,0 +1,13 @@
+---
+name: ids
+in: query
+description: 
+  The optional ids parameter allows a specified of records to be fetched
+  from a catalogue using their identifiers.
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+style: form

@@ -1,5 +1,6 @@
 [appendix]
 :appendix-caption: Annex
+[[annex_ats]]
 == Conformance Class Abstract Test Suite (Normative)
 
 === Conformance Class: Record Core
@@ -50,7 +51,7 @@ include::abstract_tests/ATS_class_oas30.adoc[]
 
 include::abstract_tests/ATS_class_record-core-query-parameters.adoc[]
 
-=== Conformance Class: Filtering using the Common Query Language (CQL)
+=== Conformance Class: Filtering using the Common Query Language (CQL2)
 
 include::abstract_tests/ATS_class_record-filter.adoc[]
 
@@ -61,10 +62,6 @@ include::abstract_tests/ATS_class_sorting.adoc[]
 === Conformance Class: Searchable Catalog
 
 include::abstract_tests/ATS_class_searchable-catalog.adoc[]
-
-=== Conformance Class: Searchable Catalog CRS
-
-include::abstract_tests/ATS_class_searchable-catalog_crs.adoc[]
 
 === Conformance Class: Searchable Catalog Filtering
 

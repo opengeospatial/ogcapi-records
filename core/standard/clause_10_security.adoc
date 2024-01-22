@@ -3,4 +3,4 @@
 
 Given the dependencies on <<OACommon,OGC API - Common>> and <<OAFeat-1,OGC API - Features>> and OGC API - Features and OGC API - Common, aspects of security are discussed in those specifications.
 
-Metadata record encryption is out of scope for this specification, however communities who wish to implement record encryption are free to do so as needed.
+Metadata record encryption is out of scope for this Standard, however communities who wish to implement record encryption are free to do so as needed.

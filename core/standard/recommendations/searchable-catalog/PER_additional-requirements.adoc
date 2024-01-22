@@ -1,8 +1,8 @@
-[[per_core_additional-conformance]]
+[[per_searchable-catalog_additional-conformance]]
 [width="90%",cols="2,6a"]
 |===
-^|*Permission {counter:per-id}* |*/per/core/additional-conformance*
-2+|Implementation of this conformance MAY, additionally, implement the following requirements:
+^|*Permission {counter:per-id}* |*/per/searchable-catalog/additional-conformance*
+2+|Implementations of this conformance class MAY, additionally, implement the following requirements:
 ^|A |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering
 ^|B |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting
 ^|C |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json
