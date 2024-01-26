@@ -1,7 +1,7 @@
 [[media-types-section]]
 == Media Types
 
-This standard does not mandate any particular encoding or format. However, it does provide extensions for encodings which are commonly used in OGC APIs. These extensions include:
+This Standard does not mandate any particular encoding or format. However, it does provide extensions for encodings which are commonly used in implementations of OGC API Standards. These extensions include:
 
 * <<requirements-class-json-clause,JSON>>
 * <<requirements-class-html-clause,HTML>>
