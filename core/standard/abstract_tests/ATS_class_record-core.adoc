@@ -22,6 +22,7 @@ include::record-core/ATS_record-links.adoc[]
 ==== Templated links with variables
 
 include::record-core/ATS_templated-link.adoc[]
+include::record-core/ATS_templated-link-header.adoc[]
 
 ==== License
 
