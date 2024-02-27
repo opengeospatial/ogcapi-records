@@ -6,6 +6,6 @@
 ^|Requirement |<<req_oas30_conformance,/req/oas30/conformance>>
 ^|Test Method |. Construct a path for a conformance page
 . Issue an HTTP GET request on the path
-. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-common-1/1.0/req/oas30+`.
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30+`.
 |===
 
