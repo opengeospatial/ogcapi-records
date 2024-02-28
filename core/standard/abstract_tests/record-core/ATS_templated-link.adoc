@@ -10,6 +10,6 @@
 . Check that one link has a ``uriTemplate`` property
 . Check that a ``variables`` object exists
 . Check that a ``varBase`` object exists
-. Validate the link against the ``https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml`` schema
+. Check that the collection validates against the schema as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/linkTemplate.yaml
 |===
 

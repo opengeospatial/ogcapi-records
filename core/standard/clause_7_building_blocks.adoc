@@ -855,7 +855,7 @@ Links can be added to the following sections in a catalog record:
 . the <<query-response,linkTemplates>> section,
 . the <<query-response,properties>> section.
 
-The schema for links added to the <<query-response,links>> and <<query-response,linkTemplates>> sections is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
+The schema for links added to the <<query-response,links>> and <<query-response,linkTemplates>> sections is based on https://tools.ietf.org/html/rfc8288[RFC 8288] and is described in https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[OGC API - Features - Part 1: Core].
 
 Links added directly to the <<query-response,properties>> section of a catalog record can be added using the following patterns:
 
@@ -1076,7 +1076,7 @@ include::requirements/json/REQ_collection-content.adoc[]
 include::../openapi/schemas/catalog.yaml[]
 ----
 
-NOTE: Referenced schemas can be found at http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml].
+NOTE: Referenced schemas can be found at https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml].
 
 [[requirements-class-html-clause]]
 ==== Requirements Class HTML (Building Block)

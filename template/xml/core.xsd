@@ -24,7 +24,7 @@
    <xsd:import namespace="http://www.w3.org/1999/xlink"
     schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
    <xsd:import namespace="http://www.w3.org/2005/Atom"
-    schemaLocation="http://schemas.opengis.net/kml/2.3/atom-author-link.xsd"/>
+    schemaLocation="https://schemas.opengis.net/kml/2.3/atom-author-link.xsd"/>
 
    <!-- ================================================================== -->
    <!-- =   LandingPage element                                          = -->

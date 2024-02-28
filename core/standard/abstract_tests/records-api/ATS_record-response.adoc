@@ -7,13 +7,8 @@
 ^|Test Method |. Construct a path for a collection endpoint and send a HTTP GET request.
 . Validate that a document was returned with a status code 200
 . Select a record id and send a HTTP GET request to retrieve the record.
+. Check that the collection validates against the schema as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml
 . Validate the body of the response using the following yaml schema:
-
-[source,YAML]
-----
-include::../../../openapi/schemas/recordGeoJSON.yaml[]
-----
-
 . Check that the `links` section of the record contains the following links:
 * a link to this response document (relation: self),
 * a typed link to the response document in every other media type supported by the service (relation: alternate), and

@@ -115,7 +115,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
 
 The Collection building block is used to describe a collection of resources.  This can be a collection of related records (also called a catalogue) but it can also be a collection of any other type of resource (e.g. feature, coverage, etc.).
 
-The `Collection` building block [extends](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/extendedCollectionInfo.yaml) the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+The `Collection` building block [extends](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/extendedCollectionInfo.yaml) the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
 
 * include additional metadata to enhanced the description of a collection 
 * and, to provide links for accessing the items of the collection.
