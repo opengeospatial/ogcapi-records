@@ -9,7 +9,7 @@
 . Check that the HTTP response header value is `+200+`.
 . For every record collection identified in Collections, issue an HTTP GET request to the URL `/collections/{collectionId}/items` where `{collectionId}` is the id property for a Collection described in the Collections content.
 . Validate that a document was returned with a status code 200.
-. Validate the contents of the returned document http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml.
+. Validate the contents of the returned document https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml.
 . Validate that the bounding box query parameters are constructed correctly using the test from https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-bbox-definition
 . Validate that the bounding box query parameters are processed correctly using the test from https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-bbox-response
 . All references to the term "features" have to be replaced by the term "record" or "local resource" as the context may indicate
