@@ -20,5 +20,3 @@ style: form
 
 ^|C |An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
 |===
-
-NOTE:  Is the behavior in C correct?  If the `ids` parameter is empty should the server just ignore it?  ... which would imply that all records should be part of results set (subject to any other filters of course).
