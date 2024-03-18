@@ -434,7 +434,7 @@ While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OG
 
 Although this Standard does not mandate any particular encoding for a record collection, two conformance classes are defined:
 
-* a <<clause-record-encoding-json,GeoJSON>> record encoding, and
+* a <<clause-catalog-encoding,JSON>> record collection encoding, and
 * an <<requirements-class-html-clause,HTML>> encoding.
 
 Other encodings are allowed but are not described in this document.
