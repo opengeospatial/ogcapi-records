@@ -743,8 +743,16 @@ The `Sorting` Requirements Class defines the requirements for specifying how rec
 
 include::requirements/sorting/REQ_sortby-definition.adoc[]
 
-NOTE: The core definition of the `sortby` parameter only defines a single directive that controls the sort order of the corresponding property.  It is anticipated extensions would add additional search facets such as directives for:
-handling missing values; specifying a high value indicating that the corresponding property be sorted as if it were the highest possible value; specifying a low value indicating that the corresponding property be sorted as if it were the lowest possible value; allowing records to be omitted from the result set based on their sort order; specify a fixed value and a fixed value that sorts the corresponding property as if it were the specified fixed value.
+[NOTE]
+======================================================================
+The core definition of the `sortby` parameter only defines a single directive that controls the sort order of the corresponding property.  It is anticipated extensions would add additional search facets such as directives for:
+
+. Handling missing values,
+. Specifying a high value indicating that the corresponding property be sorted as if it were the highest possible value,
+. Specifying a low value indicating that the corresponding property be sorted as if it were the lowest possible value,
+. Allowing records to be omitted from the result set based on their sort order,
+. Specify a fixed value and a fixed value that sorts the corresponding property as if it were the specified fixed value.
+======================================================================
 
 include::requirements/sorting/REQ_sortby-response.adoc[]
 
