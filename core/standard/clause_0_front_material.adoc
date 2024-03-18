@@ -13,7 +13,7 @@ An implementation of the OGC API - Records Standard provides a way to browse or 
 
 A catalog can be deployed as a static collection of records stored in web-accessible files and typically co-located with the resources each record is describing.  Such a deployment is amenable to browsing using a web browser, being crawled by a search engine crawler, or traversed by automated tools.
 
-A catalog can also be deployed as an implementation of a Web API consisting of well known endpoints for retrieving information about the catalog, retrieving records from the catalog and searching the catalog for subsets of records that satisfy user-defined search criteria (area of interest, temporal extent, keywords, etc.).
+A catalog can also be deployed as an implementation of a Web API consisting of well-known endpoints for retrieving information about the catalog, retrieving records from the catalog and searching the catalog for subsets of records that satisfy user-defined search criteria (area of interest, temporal extent, keywords, etc.).
 
 To enable this kind of flexible deployment of a collection of records, the Records API Standard defines the following set of building blocks:
 
