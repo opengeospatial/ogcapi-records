@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/sorting/defaultSortOrder-definition*
-^|Test Purpose |Validate the behaviour of sort order definitions.
+^|Test Purpose |Validate the behavior of sort order definitions.
 ^|Requirement |<<req_sorting_defaultSortOrder-definition,/req/sorting/defaultSortOrder-definition>>
 ^|Test Method |. Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
@@ -28,5 +28,5 @@
 . Issue an HTTP GET request on the path.
 . Using the same sortable, construct a path for an `+.../items+` query with `+sortby+` using implicit ascending order (i.e. no `+`).
 . Issue an HTTP GET request on the path.
-. Verify that the records returned in both reponses are identical.
+. Verify that the records returned in both responses are identical.
 |===

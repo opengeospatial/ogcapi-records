@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/json/record-content*
-^|Test Purpose |Validate the behaviour of link relations for record geojson.
+^|Test Purpose |Validate the behavior of link relations for record geojson.
 ^|Requirement |<<req_json_record-content,/req/json/record-content>>
 ^|Test Method |. Construct a path for a `+collections/items+` page.
 . Issue an HTTP GET request on the path

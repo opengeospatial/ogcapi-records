@@ -17,6 +17,6 @@ or `\https://json-schema.org/draft/2020-12/schema`.
 
 ^|C |Each property SHALL include a `type` member, except for spatial properties.
 ^|D |Each spatial property SHALL not include a `type` or `$ref` member.
-^|E |Each spatial property SHALL include a `format` member with a string value "geometry", followed by a hyphen, followed by the name of the geometry type in lower case with "any" as the wildcard for any geometry type. I.e., the values for the Simple Feature geometry types are: `geometry-any`, `geometry-point`, `geometry-multipoint`, `geometry-linestring`, `geometry-multilinestring`, `geometry-polygon`, `geometry-multipolygon`, and `geometry-geometrycollection`.
+^|E |Each spatial property SHALL include a `format` member with a string value "geometry", followed by a hyphen, followed by the name of the geometry type in lower case with "any" as the wildcard for any geometry type. In other words, the values for the https://portal.ogc.org/files/?artifact_id=25355[Simple Feature] geometry types are: `geometry-any`, `geometry-point`, `geometry-multipoint`, `geometry-linestring`, `geometry-multilinestring`, `geometry-polygon`, `geometry-multipolygon`, and `geometry-geometrycollection`.
 ^|F |If included, the `additionalProperties` member SHALL have a value of `false`.
 |===

@@ -1,7 +1,7 @@
 [[media-types-section]]
 == Media Types
 
-This Standard does not mandate any particular encoding or format. However, it does provide extensions for encodings which are commonly used in implementations of OGC API Standards. These extensions include:
+The OGC API - Records Standard does not mandate any particular encoding or format. However, it does provide extensions for encodings which are commonly used in implementations of OGC API Standards. These extensions include:
 
 * <<requirements-class-json-clause,JSON>>
 * <<requirements-class-html-clause,HTML>>
@@ -18,13 +18,13 @@ Schema structures documented in this Standard are defined using OpenAPI 3.0 Sche
 Support for JSON is recommended. JSON is a commonly used format that is simple to understand and well supported by numerous tools and software libraries.
 
 ==== GeoJSON
-"GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the manner in which they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
+"GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and way they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
 
 GeoJSON provides a simple way of representing OGC Records in JSON and is supported by numerous geospatial tools and software libraries. It is best used for content which has a spatial extent that can be used with the World Geodetic System 1984 Coordinate Reference System.
 
 ==== Media types
 
-A description of the MIME types is mandatory for any OGC standard which involves data encodings. The list of suitable MIME types for the API - Records standard in provided in <<media-types-table>>.
+A description of the MIME types is mandatory for any OGC Standard which involve data encodings. The list of suitable MIME types for the OGC API - Records Standard is provided in <<media-types-table>>.
 
 [#media-types-table,reftext='{table-caption} {counter:table-num}']
 .API - Records MIME Types
@@ -42,6 +42,6 @@ A description of the MIME types is mandatory for any OGC standard which involves
 [[media-type-defaults]]
 === Default Encodings
 
-The media type used to encode a response to a request shall be determined through the HTTP content negotiation protocol as specified in API - Common. However, content negotiation is not required by the HTTP standard. So default encodings must be established.
+The media type used to encode a response to a request shall be determined through the HTTP content negotiation protocol as specified in the OGC API - Common Standard. However, content negotiation is not required by the HTTP standard. Therefore, default encodings must be established.
 
 include::requirements/record-collection/REQ_media-type-default.adoc[]

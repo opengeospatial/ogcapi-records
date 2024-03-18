@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/ids-definition*
-^|A |A Records API SHALL support the query by Ids (`ids`) parameter for the operation.
+^|A |A Records API implementation SHALL support the query by Ids (`ids`) parameter for the operation.
 ^|B |The following OpenAPI 3.0 schema fragment SHALL define the characteristics of the `ids` parameter:
 
 [source,YAML]
@@ -21,4 +21,4 @@ style: form
 ^|C |An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
 |===
 
-NOTE:  Is the behaviour in C correct?  If the `ids` parameter is empty should the server just ignore it?  ... which would imply that all records should be part of results set (subject to any other filters of course).
+NOTE:  Is the behavior in C correct?  If the `ids` parameter is empty should the server just ignore it?  ... which would imply that all records should be part of results set (subject to any other filters of course).

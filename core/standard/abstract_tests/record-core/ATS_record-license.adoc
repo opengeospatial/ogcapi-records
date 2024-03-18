@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/record-license*
-^|Test Purpose |Validate the behaviour of license object.
+^|Test Purpose |Validate the behavior of license object.
 ^|Requirement |<<req_core_license,/req/core/license>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path

@@ -37,9 +37,8 @@ The standardization target of the conformance classes:
 
 is "Document encoding".
 
-https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for OGC API standards for feature access. Therefore, this Standard should be viewed as an extension to OGC API - Features. Conformance to this Standard requires demonstrated conformance to the applicable Conformance Classes of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features].
 
-The Conformance Classes implemented by an API are advertised through the <<conformance-classes,`/conformance`>> path on the https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[landing page]. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Test.
+The Conformance Classes implemented in an API are advertised through the <<conformance-classes,`/conformance`>> path on the https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[landing page]. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Test.
 
 [[building-block-requirements-classes]]
 === Building blocks
@@ -63,7 +62,7 @@ The <<clause-record-collection,_Record Collection_>> conformance class defines r
 
 The <<clause-record-core-query-parameters,_Record query parameters_>> conformance class defines a minimum set of query parameters that all queryable catalogs should provide.
 
-The <<clause-records-api,_Records API_>> conformance class defines the requirements for an API for searching collections of records based on logically connected predicates that can include spatial and/or temporal predicates.  The Records API is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API - Records.
+The <<clause-records-api,_Records API_>> conformance class defines the requirements for an API implementation for searching collections of records based on logically connected predicates that can include spatial and/or temporal predicates.  The Records API Standard is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API - Records.  https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for other OGC API Standards for feature access. Therefore, this conformance class should be viewed as an extension to OGC API - Features. Conformance to this class requires demonstrated conformance to the applicable Conformance Classes define in the of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features] Standard.
 
 The <<clause-sorting,_Sorting_>> conformance class defines the requirements to support sorting of records in a query response.
 

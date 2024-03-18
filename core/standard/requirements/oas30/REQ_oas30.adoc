@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/oas30/oas-common* 
 ^|**Extends** |/req/core/api-common
-^|A |The API SHALL demonstrate conformance to the https://docs.ogc.org/is/17-069r4/17-069r4.html#_requirements_class_openapi_3_0[OpenAPI 3.0] requirements class of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Feature - Part 1: Core] Standard.
+^|A |The API implementation SHALL demonstrate conformance to the https://docs.ogc.org/is/17-069r4/17-069r4.html#_requirements_class_openapi_3_0[OpenAPI 3.0] requirements class of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Feature - Part 1: Core] Standard.
 |===

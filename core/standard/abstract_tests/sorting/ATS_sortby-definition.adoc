@@ -9,6 +9,6 @@
 . Parse all link objects
 . Find the link object `+href+` attribute whose link object's `+rel+` attribute value is `+service-desc+` and `+type+` attribute value is `+application/vnd.oai.openapi+json;version=3.0+`.
 . Issue an HTTP GET request on the `+href+`.
-. Parse the resulting OpenAPI document, and detect a `+path+` object whose endpoint value ends with `+.../items`.
+. Parse the resulting OpenAPI document and detect a `+path+` object whose endpoint value ends with `+.../items`.
 . Check that the `+get.parameters+` object contains an object defining a `+sortby+` parameter.
 |===

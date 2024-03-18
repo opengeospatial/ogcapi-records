@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/records-api/record-collections-response*
 ^|A |The schema of each record collection or catalog in the response SHALL be based upon the schema defined in the <<req_records-api_record-collection-response,/req/records-api/record-collection-response>> requirement.
-^|B |For an operation that select a list of collection objects, only collections where the value of the `itemType` property (JSONPath: `$.collections[*].itemType`) is `record` SHALL be considered record collections or catalogs.
+^|B |For an operation that selects a list of collection objects, only collections where the value of the `itemType` property (JSONPath: `$.collections[*].itemType`) is `record` SHALL be considered record collections or catalogs.
 |===

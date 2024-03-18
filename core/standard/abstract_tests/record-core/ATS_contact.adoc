@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/contact*
-^|Test Purpose |Validate the behaviour of contacts objects.
+^|Test Purpose |Validate the behavior of contacts objects.
 ^|Requirement |<<req_core_contact,/req/core/contact>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path

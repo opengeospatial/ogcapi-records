@@ -7,4 +7,4 @@
 ^|C |Each record SHALL, if they exist, include typed links (`rel="alternate"`) to each alternative representation of this record.
 |===
 
-NOTE: The term "typed link" means a link that specifies a value for the `type` attribute
+NOTE: The term "typed link" means a link that specifies a value for the `type` attribute.

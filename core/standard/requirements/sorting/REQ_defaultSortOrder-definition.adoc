@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/sorting/defaultSortOrder-definition*
 
-^|A |The schema of a collection (collectionInfo.yaml) SHALL be extended with the addition of the `defaultSortOrder` member with the following characteristics (using an OpenAPI Sepcification 3.0 fragment):
+^|A |The schema of a collection (collectionInfo.yaml) SHALL be extended with the addition of the `defaultSortOrder` member with the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
 [source,YAML]
 ----
@@ -14,8 +14,8 @@
 ----
 
 ^|B |Each string in the array SHALL be the name of a sortable.
-^|C |If a listed sortable is prepended with a `+` this SHALL indiciate that the sort order is ascending.
+^|C |If a listed sortable is prepended with a `+` this SHALL indicate that the sort order is ascending.
 ^|D |If a listed sortable is prepended with a `-` this SHALL indicate that the sort order is descending.
 ^|E |If a listed sortables is not prepended with a `+` or `-` then the sort order SHALL be assumed to be ascending.
-^|F |If the `defaultSortOrder` member is not present in the collection response then no sorting information SHALL be assumed.
+^|F |If the `defaultSortOrder` member is not present in the collection response, then no sorting information SHALL be assumed.
 |===

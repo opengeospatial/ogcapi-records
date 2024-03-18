@@ -1,28 +1,28 @@
 [big]*i.     Abstract*
 
-The OGC API family of standards are being developed to make it easy for anyone to provide geospatial data to the web. These standards build upon the legacy of the OGC Web Service standards (WMS, WFS, WCS, WPS, CSW, etc.), but define resource-centric APIs that take advantage of modern web development practices.
+The OGC API family of Standards is being developed to make it easy for anyone to provide geospatial data over the web. These Standards build upon the legacy of the OGC Web Service Standards (WMS, WFS, WCS, WPS, CSW, etc.), but define resource-centric APIs that take advantage of modern web development practices.
 
-This document defines the OGC API for Records.
+This document defines the OGC API - Records - Part 1: Core Standard.  In this document "Records API" refers to the OGC API - Records - Part 1: Core Standard.
 
-A Record makes a resource discoverable by providing summary information (metadata) about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, styles, assets, machine models, services, processes, widgets, notebooks etc.
+The content of a Record makes a resource discoverable by providing summary information (metadata) about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, styles, assets, machine models, services, processes, widgets, notebooks etc.
 
-OGC API - Records provides a way to browse or search a curated collection of records known as a catalog.  This specification envisions deploying a catalog using one of the following patterns:
+An implementation of the OGC API - Records Standard provides a way to browse or search a curated collection of records known as a catalog.  The Records API Standard envisions deploying a catalog using one of the following patterns:
 
 * a collection of static files,
 * a collection of records accessed via an API.
 
 A catalog can be deployed as a static collection of records stored in web-accessible files and typically co-located with the resources each record is describing.  Such a deployment is amenable to browsing using a web browser, being crawled by a search engine crawler, or traversed by automated tools.
 
-A catalog can also be deployed as an API with well known endpoints for retrieving information about the catalog, retrieving records from the catalog and searching the catalog for subsets of records that satisfy user-defined search criteria (area of interest, temporal extent, keywords, etc.).
+A catalog can also be deployed as an implementation of a Web API consisting of well known endpoints for retrieving information about the catalog, retrieving records from the catalog and searching the catalog for subsets of records that satisfy user-defined search criteria (area of interest, temporal extent, keywords, etc.).
 
-To enable this kind of flexible deployment of a collection of records, this specification defines the following set of building blocks:
+To enable this kind of flexible deployment of a collection of records, the Records API Standard defines the following set of building blocks:
 
 * a record,
 * a collection (of records),
-* a set of common query parameters
-* a search API.
+* a set of common query parameters,
+* the requirements and characteristics for implementation instances of a Recordssearch API (hereafter termed the "search API").
 
-A record is the atomic unit of information in a catalog, It contains descriptive information (metadata) about a resource such as:
+A record is the atomic unit of information in a catalog. It contains descriptive information (metadata) about a resource such as:
 
 * a title,
 * a human readable description of the resource,
@@ -32,11 +32,11 @@ A record is the atomic unit of information in a catalog, It contains descriptive
 * links to access the resource,
 * etc.
 
-This information is generic and can be used to describe a wide variety of resources.  This specification expects and encourages implementations to enrich the information content of a record to suit specific use cases, requirements, domains or communities of interest.
+This information is generic and can be used to describe a wide variety of resources.  The Records API Standard expects and encourages implementations to enrich the information content of a record to suit specific use cases, requirements, domains, or communities of interest.
 
 A collection of records is itself described by a record that provides descriptive information about the catalog.  The collection also provides access to the records of the collection either by explicitly linking to each record that is an item of the collection or by providing a search endpoint that allows the collection of records to be searched.
 
-The search API allows collections of records to be searched using logically connected spatial, temporal and scalar predicates.  This standard uses the https://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] specification as the core of the Records search API.  Additional parts from the https://ogcapi.ogc.org/features/[OGC API - Features] suite of standards can also be implemented to enhance the capabilities of the search API.  The following table lists the endpoints of the core OGC API - Records API that allow a collection of records to be searched:
+An implementation of a search API allows collections of records to be searched using logically connected spatial, temporal and scalar predicates.  This Standard uses the https://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard for specifying requirements of the core of the Records search API.  Additional parts from the https://ogcapi.ogc.org/features/[OGC API - Features] suite of standards can also be implemented to enhance the capabilities of the search API.  The following table lists the endpoints of the core OGC API - Records API that allow a collection of records to be searched:
 
 [reftext='{table-caption} {counter:table-num}']
 .Overview of resources, applicable HTTP methods and links to the document sections[[table_1]][[tldnr]]
@@ -51,7 +51,7 @@ The search API allows collections of records to be searched using logically conn
 |Record |`/collections/{collectionId}/items/{recordId}` |GET |<<clause-record-core,Record Core>>
 |===
 
-A special use case of the catalog deployed as an API is the _local resources catalog_.  A local resources catalog is a catalog deployed to make local resources offered by a provider searchable using the catalog information model and API.  An example of a local resources catalog is the `/collections` endpoint of http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data] or http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].  Adding catalog capabilities to this endpoint allows a client to search for collections that satisfy a specified filter expression.  Any API endpoint defined in an OGC API specification whose function is to provide a list of resources, such as the `/collections` endpoint, can be extended to be a local resources catalog that can be searched for records describing resources served by that API.
+A special use case a the catalog deployed as an implementation of a Web API is the _local resources catalog_.  A local resources catalog is a catalog deployed as on implementation of a Web API that makes local resources offered by a provider searchable using the catalog information model and accessed via the API.  An example of a local resources catalog is the `/collections` endpoint of http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data] or http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].  Adding catalog capabilities to this endpoint enables a client to search for collections that satisfy a specified filter expression.  Any API endpoint defined in an OGC API Standard whose function is to provide a list of resources, such as the `/collections` endpoint, can be extended to be a local resources catalog that can be searched for records describing resources served by that API.
 
 [[keywords]]
 [big]*ii.    Keywords*

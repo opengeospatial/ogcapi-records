@@ -27,6 +27,10 @@ EXAMPLE: a downloadable file, an RSS feed or a web service that provides the dat
 === Executable Test Suite (ETS)
 set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.ogc.org/files/?artifact_id=55234[(OGC 08-134)]
 
+[[ogc-api-resource-tree]]
+=== OGC API Resource tree
+a collection of resources defined by the set of https://ogcapi.ogc.org/[OGC API Standards] that are hierarchically organized and exposed through a root node that is common to all OGC APIs
+
 [[record-def]]
 === Record
 atomic unit of information of a catalog that is used to provide information about a particular resource
@@ -56,4 +60,38 @@ entity to which some requirements of a standard apply (<<ogc08-131,OGC 08-131>>)
 
 NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
 
+=== Abbreviated terms
+
+API::
+  Application Programming Interface
+CORS::
+  Cross-Origin Resource Sharing
+CRS::
+  Coordinate Reference System
+CSW::
+  Catalog Service for the Web
+HTTP::
+  Hypertext Transfer Protocol
+HTTPS::
+  Hypertext Transfer Protocol Secure
+IANA::
+  Internet Assigned Numbers Authority
+OGC::
+  Open Geospatial Consortium
+RFC::
+  Request for Comment
+TRS::
+    Temporal Coordinate Reference System
+URI::
+  Uniform Resource Identifier
+WMS::
+  Web Map Service
+WFS::
+  Web Feature Service
+WCS::
+  Web Coverage Service
+WPS::
+  Web Processing Service
+YAML::
+  YAML Ain't Markup Language
 

@@ -2,7 +2,7 @@
 [width="90%",cols="2,7a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/time-instant*
-^|Test Purpose |Validate the behaviour of time instances for time objects.
+^|Test Purpose |Validate the behavior of time instances for time objects.
 ^|Requirement |<<req_core_time-instant,/req/core/time-instant>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path
