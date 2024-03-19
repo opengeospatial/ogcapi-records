@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/links*
-^|Test Purpose |Validate the behaviour of link relations for collection link objects.
+^|Test Purpose |Validate the behavior of link relations for collection link objects.
 ^|Requirement |<<req_record-collection_links,/req/record-collection/links>>
 ^|Test Method |. Construct a path for a given collection
 . Issue a HTTP GET request on the path

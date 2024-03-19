@@ -24,6 +24,6 @@ include::sorting/ATS_get-sortables-success.adoc[]
 
 include::sorting/ATS_sortby-definition.adoc[]
 
-==== Query parameter behaviour
+==== Query parameter behavior
 
 include::sorting/ATS_sortby-response.adoc[]

@@ -2,7 +2,7 @@
 [width="90%",cols="2,7a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/time-zone*
-^|Test Purpose |Validate the behaviour of time zone for time member.
+^|Test Purpose |Validate the behavior of time zone for time member.
 ^|Requirement |<<req_core_time-zone,/req/core/time-zone>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path

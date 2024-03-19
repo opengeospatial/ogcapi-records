@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/record-links*
-^|Test Purpose |Validate the behaviour of link relations for link objects.
+^|Test Purpose |Validate the behavior of link relations for link objects.
 ^|Requirement |<<req_core_links,/req/core/links>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path

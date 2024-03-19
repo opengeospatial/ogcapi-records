@@ -8,6 +8,6 @@
 . Issue an HTTP GET request on the path
 . Check that the HTTP response header value is `+200+`.
 . Validate that the limit query parameters are constructed correctly using the test from https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-limit-definition
-. All references to the term "features" have to be replaced by the term "record" or "local resource" as the context may indicate
+. All references to the term "features" must be replaced by the term "record" or "local resource" as the context may indicate
 |===
 

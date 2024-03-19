@@ -3,6 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/records-api/resource-name-mapping*
 
-Each reference to `features` or `feature` in the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard SHALL be replaced by the terms `records` or `record` when interpreting an http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] requirement for the Records API.
+Each reference to `features` or `feature` in the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard SHALL be replaced by the terms `records` or `record` when interpreting an http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] requirement for the Records API.
 |===
 

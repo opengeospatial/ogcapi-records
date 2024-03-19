@@ -4,9 +4,9 @@
 ^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/record-links*
 ^|Test Purpose |Validate crawlable catalog record links.
 ^|Requirement |<<req_crawlable-catalog_record-links,/req/crawlable-catalog/record-links>>
-^|Test Method |. Parse the catalog structure and create a list of all records available
-. For each item in the list, retrieve the record object
+^|Test Method |. Parse the catalog structure and create a list of all available records.
+. For each item in the list, retrieve the record object.
 . Check that each record includes a link (``rel=self``) that points to itself.
 . Check that each record includes one typed link (``rel=alternate``) for each alternative representation of this record.
-. Check taht each record includes one link (``rel=collection``) that points to the collection to which this record belongs to.
+. Check that each record includes one link (``rel=collection``) that points to the collection to which this record belongs to.
 |===

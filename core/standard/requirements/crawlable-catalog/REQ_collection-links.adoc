@@ -5,7 +5,7 @@
 
 ^|A |A collection SHALL include a link (`rel=self`) that points to itself.
 ^|B |A collection SHALL include a link (`rel=root`) that points to its root collection.
-^|C |If this collection object is the root then it SHALL point to itself.
+^|C |If this collection object is the root then, this collection object SHALL point to itself.
 ^|C |A collection SHALL include one typed link (`rel=alternate`) for each alternative representation of itself.
 |===
 

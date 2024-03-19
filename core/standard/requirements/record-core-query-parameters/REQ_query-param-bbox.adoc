@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/bbox*
-^|A |A searchable endpoint SHALL support the Bounding Box Search (`bbox`) parameter as defined in https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox[OGC API - Features - Part 1: Core].
-^|B |All references to the term "features" in https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox[OGC API - Features - Part 1: Core] SHALL be replaced by the term "record" or "local resource" as the context may indicate.
+^|A |A searchable endpoint SHALL support the Bounding Box Search (`bbox`) parameter as defined in the https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox[OGC API - Features - Part 1: Core] Standard.
+^|B |All references to the term "features" in the https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox[OGC API - Features - Part 1: Core] Standard SHALL be replaced by the term "record" or "local resource" as the context may indicate.
 |===

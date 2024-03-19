@@ -3,6 +3,6 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-core/langs*
 ^|A |The language used to express text values in a record SHOULD be specified using the <<core-properties-resource-table,`language`>> property of the record.
-^|B |The list of other languges in which a record may be retrieved SHOULD be specified in the record using the <<core-properties-resource-table,`languages`>> property.
+^|B |The list of other languages in which a record may be retrieved SHOULD be specified in the record using the <<core-properties-resource-table,`languages`>> property.
 ^|C |If one or more language-specific links are included in the links section of a record (path: `links`) pointing to alternate language representations of this record, the language used as the `hreflang` value SHOULD be one of the languages listed as the value of the <<core-properties-resource-table,`languages`>> property of the record.
 |===

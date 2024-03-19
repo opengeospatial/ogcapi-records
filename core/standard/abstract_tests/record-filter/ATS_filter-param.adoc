@@ -5,5 +5,5 @@
 ^|Test Purpose |Validate filter parameter.
 ^|Requirement |<<req_record-filter_filter-param,/req/record-filter/filter-param>>
 ^|Test Method |. Construct a path for a collection items page ``/collections/{collectionId}/items``
-. Check that the the HTTP GET operation on the path supports the `filter` parameter as defined in https://portal.ogc.org/files/96288#filter-param[Parameter filter].
+. Check that the HTTP GET operation on the path supports the `filter` parameter as defined in https://portal.ogc.org/files/96288#filter-param[Parameter filter].
 |===

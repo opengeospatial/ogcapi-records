@@ -15,6 +15,6 @@ include::local-resources-catalog_sorting/ATS_conformance.adoc[]
 
 include::local-resources-catalog_sorting/ATS_param-sortby-def.adoc[]
 
-==== Query parameter behaviour
+==== Query parameter behavior
 
 include::local-resources-catalog_sorting/ATS_param-sortby-response.adoc[]

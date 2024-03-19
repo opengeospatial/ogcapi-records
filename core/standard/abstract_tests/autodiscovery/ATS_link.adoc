@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/autodiscovery/link*
-^|Test Purpose |Validate the behaviour of link relations for catalog autodiscovery.
+^|Test Purpose |Validate the behavior of link relations for catalog autodiscovery.
 ^|Requirement |<<req_autodiscovery_link,/req/autodiscovery/link>>
 ^|Test Method |. Construct a path for a landing page
 . Issue an HTTP GET request on the path

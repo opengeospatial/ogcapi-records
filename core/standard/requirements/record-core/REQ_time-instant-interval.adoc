@@ -5,6 +5,6 @@
 ^|A |If the `time` object in a record includes both a `date` and a `timestamp` member, the `full-date` parts SHALL be identical.
 ^|B |If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end dates, the interval SHALL contain the date of the timestamp.
 ^|C |If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end timestamps, the interval SHALL contain the timestamp.
-^|D |If the `time` object in a record includes both a `date` and an `interval` member with with start/end dates, the interval SHALL contain the date.
-^|E |If the `time` object in a record includes both a `date` and an `interval` member with with start/end timestamps, the interval SHALL include timestamps on the date.
+^|D |If the `time` object in a record includes both a `date` and an `interval` member with start/end dates, the interval SHALL contain the date.
+^|E |If the `time` object in a record includes both a `date` and an `interval` member with start/end timestamps, the interval SHALL include timestamps on the date.
 |===

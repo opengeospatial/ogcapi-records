@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/filtering/filter-lang-param*
 
-Implementation of the conformance class SHALL, at the local resource endpoint and for the HTTP GET operation, support the `filter-lang` parameter as defined as defined by the <<req_record-filter_filter-lang-param,Filtering>> building block.
+Implementation of the requirements class SHALL, at the local resource endpoint and for the HTTP GET operation, support the `filter-lang` parameter as defined as defined by the <<req_record-filter_filter-lang-param,Filtering>> building block.
 |===

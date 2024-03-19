@@ -6,6 +6,6 @@
 |Target type |Document encoding
 |Dependency |http://www.w3.org/TR/html5/[HTML5]
 |Pre-conditions |
-1) The API advertises conformance to the HTML Conformance Class +
-2) The client negotiates use of the HTML encoding.
+1) The deployed API implementing the Records API Standard advertises conformance to the HTML Conformance Class. +
+2) The client negotiates that the content of the server's response be encoded as HTML.
 |===

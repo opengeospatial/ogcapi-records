@@ -10,7 +10,7 @@ All requirements and conformance tests that appear in this document are denoted 
 
 === Examples
 
-Most of the examples provided in this Standard are encoded in JSON. JSON is chosen because it is widely understood by implementers and easy to include in a text document. This convention should NOT be interpreted as a requirement that JSON must be used. Implementers are free to use any format they desire as long as there is a Conformance Class for that format and the API advertises its support for the associated Conformance Class.
+Most of the examples provided in this Standard are encoded in JSON. JSON was chosen because it is widely understood by implementers and easy to include in a text document. This convention should NOT be interpreted as a requirement that JSON must be used. Implementers are free to use any format they desire as long as there is a Conformance Class for that format and the deployed API advertises its support for the associated Conformance Class.
 
 === Schema
 

@@ -2,7 +2,7 @@
 [width="90%",cols="2,7a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/time-instant-interval*
-^|Test Purpose |Validate the behaviour of time instance and intervals in time object.
+^|Test Purpose |Validate the behavior of time instance and intervals in time object.
 ^|Requirement |<<req_core_time-instant-interval,/req/core/time-instant-interval>>
 ^|Test Method |. Construct a path for a given record
 . Issue a HTTP GET request on the path
@@ -11,5 +11,5 @@
 . If the time object includes both a ``timestamp`` and an ``interval`` member with start/end dates, check that the interval contains the date of the timestamp.
 . If the time object includes both a ``timestamp`` and an ``interval`` member with start/end timestamps check that the interval contains the timestamp.
 . If the time object includes both a ``date`` and an ``interval`` member with start/end dates, check that the interval contains the date.
-. If the time object includes both a ``date`` and an ``interval`` member with with start/end timestamps, check that the interval includes timestamps on the date.
+. If the time object includes both a ``date`` and an ``interval`` member with start/end timestamps, check that the interval includes timestamps on the date.
 |===

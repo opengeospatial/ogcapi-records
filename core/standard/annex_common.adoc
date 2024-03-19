@@ -316,7 +316,7 @@ include::requirements/record-api/REQ_query-param-invalid.adoc[]
 
 The criteria for a parameter to be "specified" in the API definition depends on the API definition language used, the complexity of the resources exposed, and the ability of the API server to tolerate errors. 
 
-A service implementer should endeavour to provide as much detail in the server's API definition as the API definition language allows. However, there is no requirement for it to list every endpoint for which there is a non-404 behaviour, for it to list every possible query parameter that might affect the behaviour of an endpoint, or for it to list every possible value that each query parameter might accept.
+A service implementer should endeavour to provide as much detail in the server's API definition as the API definition language allows. However, there is no requirement for it to list every endpoint for which there is a non-404 behavior, for it to list every possible query parameter that might affect the behavior of an endpoint, or for it to list every possible value that each query parameter might accept.
 
 include::recommendations/record-api/PER_query-param-specified.adoc[]
 

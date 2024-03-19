@@ -4,6 +4,6 @@
 ^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/catalog-location*
 ^|Test Purpose |Validate crawlable catalog location.
 ^|Requirement |<<req_crawlable-catalog_catalog-location,/req/crawlable-catalog/catalog-location>>
-^|Test Method |. Retrieve the top level collection object
+^|Test Method |. Retrieve the top-level collection object
 . Check that the collection path is a valid web-accessible location
 |===
