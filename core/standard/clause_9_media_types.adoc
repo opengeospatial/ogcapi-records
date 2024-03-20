@@ -18,13 +18,13 @@ Schema structures documented in this Standard are defined using OpenAPI 3.0 Sche
 Support for JSON is recommended. JSON is a commonly used format that is simple to understand and well supported by numerous tools and software libraries.
 
 ==== GeoJSON
-"GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and way they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
+"GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the way they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
 
 GeoJSON provides a simple way of representing OGC Records in JSON and is supported by numerous geospatial tools and software libraries. It is best used for content which has a spatial extent that can be used with the World Geodetic System 1984 Coordinate Reference System.
 
 ==== Media types
 
-A description of the MIME types is mandatory for any OGC Standard which involve data encodings. The list of suitable MIME types for the OGC API - Records Standard is provided in <<media-types-table>>.
+A description of the MIME types is mandatory for any OGC API Standard that specifies requirements for data encoding(s). The list of suitable MIME types for the OGC API - Records Standard is provided in <<media-types-table>>.
 
 [#media-types-table,reftext='{table-caption} {counter:table-num}']
 .API - Records MIME Types

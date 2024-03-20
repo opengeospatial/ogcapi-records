@@ -455,7 +455,7 @@ Other encodings are allowed but are not described in this document.
 |_**links**_ |**required** |A list of links related to this collection.
 |_**extent**_ |optional |The spatiotemporal coverage of this collection.
 |_**itemType**_ |**required** |Fixed to the value "record".
-|_**crs**_ |optional |A list of coordinate reference systems used for spatialtemporal values.
+|_**crs**_ |optional |A list of coordinate reference systems used for spatiotemporal values.
 |type |**required** |The nature or genre of the resource. Fixed to "Catalog".
 |keywords |optional |A list of free-form keywords or tags associated with this collection.
 |language |optional |The language used for textual values (i.e. titles, descriptions, etc.) of this collection object. 
