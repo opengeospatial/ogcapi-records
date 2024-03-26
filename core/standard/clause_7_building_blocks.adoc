@@ -524,7 +524,7 @@ The parameters `bbox`, `datetime`, `limit` and `ids` are inherited from https://
 |https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_parameter_datetime[datetime] |A time instance or time period. If the temporal extent of the record intersects the specified date/time value, then the record shall be presented in the response document.
 |https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_parameter_limit[limit] |The number of records to be presented in a response document.
 |<<core-query-parameters-q,q>> |A comma-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed, then this record shall appear in the response set.
-|<<core-query-parameters-type,type>> |An equality predicate consisting of a comma-separated list of resource types.  Only records of the listed type shall appear in the resource set.
+|<<core-query-parameters-type,type>> |An equality predicate consisting of a comma-separated list of resource types.  Only records of the listed type shall appear in the response set.
 |https://fix.me[ids] |An equality predicate consisting of a comma-separated list of record identifiers. Only records with the specified identifiers shall appear in the response set.
 |<<core-query-parameters-externalIds,externalIds>> |An equality predicate consisting of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
 |<<additional-query-parameters,_prop_=_value_>> |Equality predicates with any <<additional-query-parameters,queryable>> not already listed in this table.
