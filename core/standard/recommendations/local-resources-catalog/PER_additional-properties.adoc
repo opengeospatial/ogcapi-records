@@ -2,20 +2,26 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/local-resources-catalog/additional-properties*
-^|A |<<local-resources-catalog-additional-properties>> table contains a list of recommended additional properties that MAY be added to information model of a local resource object to enhance its searchability.
-^|B |Each local resource object in a response MAY contain any number of other additional properties not listed in <<local-resources-catalog-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
+^|A |<<local-resources-catalog-additional-properties>> table contains a list of recommended additional properties that MAY be added to information model of a local resources object to enhance its searchability.
+^|B |Each local resources object in a response MAY contain any number of other additional properties not listed in <<local-resources-catalog-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
 |===
 
 [[local-resources-catalog-additional-properties]]
 [reftext='{table-caption} {counter:table-num}']
-.Additional local resource object information properties
+.Additional properties for a local resources object
 [cols="30,70",options="header"]
 |===
 |Property |Description
-|language |This refers to the natural language used for textual values (i.e. titles, descriptions, etc.) of a resource.
-|themes |A knowledge organization system used to classify the resource.
-|formats |A list of available distributions for the resource.
-|contacts |A list of entities to contact about the resource.
-|license |A legal document under which the resource is made available.
-|rights |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|conformsTo |If all items of this local resources object conform to the same set of extensions/conformance classes then this member may be used to advertise this fact rather than copying this information into each item.
+|created |Date of creation of this local resources object.
+|updated |The most recent date on which this local resources object was changed.
+|keywords |The topic or topics of this local resources object. Typically represented using free-form keywords, tags, key phrases, or classification codes.
+|language |The language used for textual values for this local resources object.
+|languages |This list of other languages in which this local resources object can be retrieved.
+|themes |A knowledge organization system used to classify this local resources object.
+|contacts |A list of contacts qualified by their role(s).
+|license |A legal document under which this local reosurces object is made available.
+|rights |A statement that concerns all rights not addresses by the license such as a copyright statement.
+|defaultSortOrder |If sorting is implemented at a local resources endpoint, the default sort order.
+|linkTemplates |An array or zero or more link templates.
 |===

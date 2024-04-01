@@ -6,7 +6,7 @@ The OGC API - Records Standard does not mandate any particular encoding or forma
 * <<requirements-class-json-clause,JSON>>
 * <<requirements-class-html-clause,HTML>>
 
-None of these encodings are mandatory. An implementer of this Standard may choose to implement none of them, selecting different encodings instead.
+None of these encodings are mandatory. An implementation of this Standard may choose to implement none of them, selecting different encodings instead.
 
 === HTML Encoding
 Support for HTML is recommended. HTML is the core language of the World Wide Web. An API that supports HTML will support browsing the spatial resources with a web browser and will also enable search engines to crawl and index those resources.
@@ -20,7 +20,7 @@ Support for JSON is recommended. JSON is a commonly used format that is simple t
 ==== GeoJSON
 "GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the way they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
 
-GeoJSON provides a simple way of representing OGC Records in JSON and is supported by numerous geospatial tools and software libraries. It is best used for content which has a spatial extent that can be used with the World Geodetic System 1984 Coordinate Reference System.
+GeoJSON provides a simple way of representing records in JSON and is supported by numerous geospatial tools and software libraries. It is best used for content which has a spatial extent that can be used with the World Geodetic System 1984 Coordinate Reference System.
 
 ==== Media types
 

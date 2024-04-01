@@ -3,8 +3,8 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/searchable-catalog/additional-conformance*
 2+|Implementations of this conformance class MAY, additionally, implement the following requirements:
-^|A |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering
-^|B |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting
-^|C |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json
-^|D |http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html
+^|A |<<rc_searchable-catalog_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
+^|B |<<rc_searchable-catalog_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
+^|C |<<rc_json,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json>>
+^|D |<<rc_html,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html>>
 |===

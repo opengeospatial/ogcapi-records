@@ -1,0 +1,8 @@
+[[req_autodiscovery_searchable-catalog-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/autodiscovery/searchable-catalog-links*
+
+^|A |A web page SHALL include one or more links (`rel="http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog"`) that point to <<clause-searchable-catalog,searchable catalogs>> associated with the page.
+^|B |The value of the `href` member SHALL point to the landing page of the <<clause-searchable-catalog,searchable catalog>>.
+|===

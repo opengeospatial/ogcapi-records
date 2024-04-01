@@ -17,7 +17,7 @@ The `Crawlable Catalog` Requirements Class defines the requirements for a catalo
 
 The goal of a crawlable catalog is to expose metadata about resources online with as low an entry barrier as possible, thus making those resources more easily discoverable.
 
-A crawlable catalog is a deployment pattern that uses the <<clause-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this Standard.  It is simply a set of files deployed on the web that encode, usually in HTML or JSON, the <<clause-record-collection,collection>> and <<clause-record-core,record schema>> defined in this Standard.  The files contain embedded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalog.
+A crawlable catalog is a deployment pattern that uses the <<clause-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this Standard.  It is simply a set of files deployed on the web, usually encoded as HTML or JSON, that conform to the <<clause-record-collection,collection>> and <<clause-record-core,record>> schemas defined in this Standard.  The files contain embedded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalog.
 
 A crawlable catalog is not searchable and does not respond to query requests.  As the name implies, it can only be crawled (or harvested) by following the embedded links, typically by search engines and other active catalogs or browsed using a web browser.  However, due to its simplicity, a crawlable catalog is easy to deploy and maintain, and is very reliable.
 
@@ -29,8 +29,6 @@ NOTE: It should be pointed out that a <<clause-searchable-catalog,searchable cat
 include::requirements/crawlable-catalog/REQ_record.adoc[]
 
 Attention is drawn to requirement <<per_record-core_additional-properties-record,/per/record-core/additional-properties-record>> that allows the information content of the record to be enriched as required to describe the resource being made discoverable.
-
-include::requirements/crawlable-catalog/REQ_record-links.adoc[]
 
 include::requirements/crawlable-catalog/REQ_record-file-location.adoc[]
 
@@ -47,24 +45,18 @@ include::requirements/crawlable-catalog/REQ_catalog.adoc[]
 
 include::requirements/crawlable-catalog/REQ_catalog-location.adoc[]
 
-include::requirements/crawlable-catalog/REQ_catalog-links.adoc[]
-
 [[crawlable-collections]]
-==== Grouping catalogs (and other resources) into collections
+==== Organizing crawlable catalogs
 
-In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g. a hierarchy) the same catalog object (see: https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog.yaml]) used to organized related collections of records into a catalog may also be used as a common entry point for crawling to multiple, related, sub-collections, catalogs, records and other resources.  In this use case, the term _collection_ is used to refer to a https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog object].
+In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g. a hierarchy) this requirements class extends the <<clause-record-collection,Record Collection>> object used to organized related collections of records and allows a catalog to also provide information about and access to a related subordinate catalogs.  As such, the <<clause-record-collection,Record Collection>> can be used as a common entry point for crawling to multiple, related, sub-catalogs, records and other resource types.
 
-include::requirements/crawlable-catalog/REQ_collection.adoc[]
+include::requirements/crawlable-catalog/REQ_catalog_collection.adoc[]
 
-include::recommendations/crawlable-catalog/PER_additional-collection-properties.adoc[]
+include::requirements/crawlable-catalog/REQ_catalog-collection-itemType.adoc[]
 
-include::requirements/crawlable-catalog/REQ_collection-location.adoc[]
+include::requirements/crawlable-catalog/REQ_catalog-collection-location.adoc[]
 
-include::requirements/crawlable-catalog/REQ_itemType.adoc[]
-
-include::requirements/crawlable-catalog/REQ_collection-links.adoc[]
-
-include::recommendations/crawlable-catalog/REC_collection-links.adoc[]
+include::requirements/crawlable-catalog/REQ_catalog-collection-links.adoc[]
 
 [[clause-searchable-catalog]]
 === Requirements Class "Searchable Catalog" (Deployment)
@@ -115,15 +107,16 @@ The Local Resources Catalog requirements class specifies requirements for a _loc
 
 The <<ogc-api-resource-tree,set of OGC API Standards>> define a number of resource endpoints that provide lists of sub-resources.  These endpoints are referred to as _local resources catalogs_ in this Standard because they provide metadata about resources offered locally by a deployment of some or all of the <<ogc-api-resource-tree, set of OGC API Standards>>.
 
+[[local-resources-endpoint]]
 NOTE: The term _local resources endpoint_ is used to reference the resource path of the _local resources catalog_.  The term _local resources object_ is used to refer to an instance of the object or resource that can be retrieved from the _local resources endpoint_.
 
-The `/collections` endpoint is an example of a _local resources endpoint_.  This endpoint provides a list of objects describing the collections of items offered by an OGC API deployment.  Each offered collection (path `/collections/{collectionId}`) is described by a _local resources object_ containing a small number of properties.  A common set of properties is defined in  https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and can be extended by resource-specific specifications (e.g. http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core]).  In this respect, the `/collections` endpoint is a catalog of records (i.e. `/collections/{collectionId}` objects) describing the collections of items offered by the OGC API deployment.
+The `/collections` endpoint is an example of a _local resources endpoint_.  This endpoint provides a list of objects describing the collections of items offered by an OGC API deployment.  Each offered collection (path `/collections/{collectionId}`) is described by a _local resources object_ containing a small number of properties.  A common set of properties is defined in  https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data] and can be extended by resource-specific specifications (e.g. http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core]).  In this respect, the `/collections` endpoint is a catalog of collections (i.e. `/collections/{collectionId}` objects) describing the collections of items offered by the OGC API deployment.
 
 Other _local resources catalogs_ available in the <<ogc-api-resource-tree,OGC API resource tree>> include the `/processes` endpoint which provides a list of offered processes and the `/collections/{collectionId}/scenes` endpoint which provides a list of source images of a coverage.
 
 In order to enable catalog-like searching at these local resources endpoints, this requirements class defines requirements and recommendations that:
 
-1. enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<core-properties,core properties>> defined for a catalog <<clause-records-core,record>>,
+1. enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<collection-properties-table,record collection properties>>.
 
 2. define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to enhance its searchability.
 
@@ -142,67 +135,51 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 .Crosswalk of core properties with collection information object properties
 [cols="25,25,25,25",options="header"]
 |===
-|`/collections` property |Requirement |Core Property  |Requirement
-|id                      |**required**           |id             |**required**
-|title                   |optional           |title          |**required**
-|description             |optional           |description    |**required**
-|itemType                |optional           |--             |--
-|extent                  |optional           |extent         |optional
-|links                   |**required**           |links          |optional
-|crs                     |optional           |--             |--
+|Property of `/collections` object |Requirement  |Property of <<collection-properties-table,Record Collection>> object |Requirement
+|id                      |**required**  |id             |**required**
+|title                   |optional      |title          |**required**
+|description             |optional      |description    |optional
+|itemType                |optional      |itemType       |**required**
+|--                      |--            |type           |**required**
+|extent                  |optional      |extent         |optional
+|links                   |**required**  |links          |**required**
+|linkTemplates           |optional      |linkTemplates  |optional
+|crs                     |optional      |--             |--
 |===
 
 As can be seen, there is a significant overlap of the properties of each resource.  This standard defines the following requirements and recommendations regarding information content of a local resources object such as the collection object that is retrievable from the `/collections` endpoint.
 
-===== Property `title`
+==== Property `title`
 
 include::requirements/local-resources-catalog/REQ_property-title.adoc[]
 
-include::recommendations/local-resources-catalog/REC_core-property-title-requirement.adoc[]
-
-===== Property `description`
-
-include::requirements/local-resources-catalog/REQ_property-description.adoc[]
+==== Property `description`
 
 include::recommendations/local-resources-catalog/PER_common-mark.adoc[]
 
-===== Property `extent`
+==== Property `itemType`
 
-include::recommendations/local-resources-catalog/REC_property-extent.adoc[]
+include::requirements/local-resources-catalog/REQ_property-itemType.adoc[]
 
-===== Property `links`
-
-include::recommendations/local-resources-catalog/REC_property-links.adoc[]
-
-===== Property `type`
+==== Property `type`
 
 include::requirements/local-resources-catalog/REQ_property-type.adoc[]
 
-include::recommendations/local-resources-catalog/REC_core-property-type-requirement.adoc[]
-
-===== Property `created`
-
-include::requirements/local-resources-catalog/REQ_property-created.adoc[]
-
-include::recommendations/local-resources-catalog/REC_core-property-created-requirement.adoc[]
-
-===== Property `updated`
-
-include::requirements/local-resources-catalog/REQ_property-updated.adoc[]
-
-include::recommendations/local-resources-catalog/REC_core-property-updated-requirement.adoc[]
-
-NOTE: Adding, modifying, or deleting items from a collection are all examples of changes that may occur that would require an update of the collection object that can be retrieved from the `/collections` endpoint.
-
-===== Property `keywords`
-
-include::requirements/local-resources-catalog/REQ_property-keywords.adoc[]
-
-===== Additional properties
+==== Additional properties
 
 include::recommendations/local-resources-catalog/PER_additional-properties.adoc[]
 
-===== Example
+==== Property `created`
+
+include::requirements/local-resources-catalog/REQ_property-created.adoc[]
+
+==== Property `updated`
+
+include::requirements/local-resources-catalog/REQ_property-updated.adoc[]
+
+NOTE: Adding, modifying, or deleting items from a collection are all examples of changes that may occur that would require an update of the collection object that can be retrieved from the `/collections` endpoint.
+
+==== Example
 
 The following JSON Schema fragment illustrates how the feature collection object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
 
@@ -220,6 +197,10 @@ include::requirements/local-resources-catalog/REQ_query-parameters.adoc[]
 ==== Response
 
 include::requirements/local-resources-catalog/REQ_response.adoc[]
+
+==== Discovery of local resources endpoints
+
+Discovery of which local resources endpoints in an OGC API deployment are instrumented for catalog-like searching is accomplished using <<clause-autodiscovery,Autodiscovery>>.
 
 [[clause-local-resources-catalog_sorting]]
 ==== Requirements Class "Local Resources Catalog - Sorting" (Deployment)

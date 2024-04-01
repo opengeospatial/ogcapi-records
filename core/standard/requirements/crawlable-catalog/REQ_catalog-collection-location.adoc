@@ -1,9 +1,9 @@
-[[req_crawlable-catalog_collection-location]]
+[[req_crawlable-catalog_catalog-collection-location]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/collection-location*
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/catalog-collection-location*
 
-A collection SHALL be placed in a web-accessible location.
+The catalog collection object SHALL be placed in a web-accessible location.
 |===
 
 NOTE: This Standard is primarily concerned with making resources discoverable on the open https://en.wikipedia.org/wiki/World_Wide_Web[Web] that sits on top of the public https://en.wikipedia.org/wiki/Internet[Internet].  However, the same requirement applies in more restricted contexts such as a company https://en.wikipedia.org/wiki/Intranet[Intranet] or within classified networks.  In other words, the collection should be placed in a location that is accessible to the intended audience.

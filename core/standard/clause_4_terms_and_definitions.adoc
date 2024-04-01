@@ -29,7 +29,7 @@ set of code (e.g. Java and CTL) that provides runtime tests for the assertions d
 
 [[ogc-api-resource-tree]]
 === OGC API Resource tree
-a collection of resources defined by the set of https://ogcapi.ogc.org/[OGC API Standards] that are hierarchically organized and exposed through a root node that is common to all OGC APIs
+a collection of resources defined by the set of https://ogcapi.ogc.org/[OGC API Standards] that are hierarchically organized and exposed by implementations of the https://ogcapi.ogc.org/[OGC API Standards] through a root node that is common to all OGC APIs
 
 [[record-def]]
 === Record

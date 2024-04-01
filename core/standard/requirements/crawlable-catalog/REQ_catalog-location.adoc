@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/catalog-location*
 
-A catalog SHALL be placed in a web-accessible location.
+The catalog SHALL be placed in a web-accessible location.
 |===

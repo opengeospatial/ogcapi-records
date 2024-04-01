@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/property-title-def*
 
-The `title` property SHALL be present in the information model of the local resource object.
+The `title` property SHALL be present in the information model of the local resources object.
 |===

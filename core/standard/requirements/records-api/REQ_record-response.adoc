@@ -13,7 +13,7 @@ include::../../../openapi/schemas/recordGeoJSON.yaml[]
 
 * a link to this response document (relation: self),
 * a typed link to the response document in every other media type supported by the service (relation: alternate), and
-* a link to the feature collection that contains this feature (relation: collection).
+* a link to the record collection that contains this record (relation: collection).
 
 ^|C |All links SHALL include the `rel` parameter.
 |===
