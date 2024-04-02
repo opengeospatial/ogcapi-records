@@ -25,7 +25,7 @@ allOf:
       type:
         descripton:
           Fixed to catalog for collections of records
-          and/or subordicate catalogs.
+          and/or subordinate catalogs.
         type: string
         enum:
           - catalog
