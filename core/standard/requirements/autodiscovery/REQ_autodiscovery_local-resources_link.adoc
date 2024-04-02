@@ -1,0 +1,8 @@
+[[req_autodiscovery_local-resources-catalog-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/autodiscovery/local-resources-catalog-links*
+
+^|A |A web page SHALL include one or more links (`rel="http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog-local"`) that point to <<clause-local-resources-catalog,local resources catalogs>> associated with the page.
+^|B |The value of the `href` member SHALL point to the <<local-resources-endpoint,local resources endpoint>>.
+|===

@@ -3,5 +3,5 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/local-resources-catalog/common-mark*
 
-For any `description` member in a local resource object, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
+For any `description` member in a local resources object, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
 |===

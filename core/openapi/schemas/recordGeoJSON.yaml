@@ -47,9 +47,10 @@ properties:
       type:
         type: string
         description:
-          The nature or genre of the resource. The value should be a code,
-          convenient for filtering records. Where available, a link to
-          the canonical URI of the record type resource will be added to
+          The nature or genre of the resource. The value
+          should be a code, convenient for filtering
+          records. Where available, a link to the canonical
+          URI of the record type resource will be added to
           the 'links' property.
         maxLength: 64
       title:
@@ -63,41 +64,45 @@ properties:
       keywords:
         type: array
         description:
-          The topic or topics of the resource. Typically represented using
-          free-form keywords, tags, key phrases, or classification codes.
+          The topic or topics of the resource. Typically
+          represented using free-form keywords, tags, key
+          phrases, or classification codes.
         items:
           type: string
       language:
         description:
-          The language used for textual values in this record representation.
+          The language used for textual values in this
+          record representation.
         $ref: 'language.yaml'
       languages:
         type: array
         description:
-          This list of languages in which this record is available.
+          This list of languages in which this record is
+          available.
         items:
           $ref: 'language.yaml'
       resourceLanguages:
         type: array
         description:
-          The list of languages in which the resource described by this
-          record is available.
+          The list of languages in which the resource
+          described by this record is available.
         items:
           $ref: 'language.yaml'
       externalIds:
         type: array
         description:
-          An identifier for the resource assigned by an external (to the
-          catalog) entity.
+          An identifier for the resource assigned by an
+          external (to the catalog) entity.
         items:
           type: object
           properties:
             scheme:
               type: string
               description:
-                A reference to an authority or identifier for a knowledge
-                organization system from which the external identifier was
-                obtained.  It is recommended that the identifier be a
+                A reference to an authority or identifier
+                for a knowledge organization system from
+                which the external identifier was obtained.
+                It is recommended that the identifier be a
                 resolvable URI.
             value:
               type: string
@@ -107,7 +112,8 @@ properties:
       themes:
         type: array
         description:
-          A knowledge organization system used to classify the resource.
+          A knowledge organization system used to classify
+          the resource.
         minItems: 1
         items:
           $ref: 'theme.yaml'
@@ -120,8 +126,9 @@ properties:
       contacts:
         type: array
         description:
-          A list of contacts qualified by their role(s) in association
-          to the record or the resource described by the record.
+          A list of contacts qualified by their role(s) in
+          association to the record or the resource described
+          by the record.
         items:
           $ref: 'contact.yaml'
       license:
@@ -129,8 +136,8 @@ properties:
       rights:
         type: string
         description:
-          A statement that concerns all rights not addressed by the license
-          such as a copyright statement.
+          A statement that concerns all rights not addressed
+          by the license such as a copyright statement.
   links:
     type: array
     items:

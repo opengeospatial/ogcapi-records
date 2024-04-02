@@ -3,5 +3,6 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/searchable-catalog/additional-properties*
 
-In addition to the properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>> servers may add any number of additional properties to the schema of a record.
+^|A |Each record accessible via a searchable catalog MAY include zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+^|B |Each record accessible via a searchable catalog MAY include any number of additional properties not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>. The meaning of these additional properties is not specified in this document.
 |===
