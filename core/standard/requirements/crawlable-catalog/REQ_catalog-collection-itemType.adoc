@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/catalog-collection-itemType*
 
-^|A |If a catalog collection object homogenously references records then, its `itemType` member SHALL be a string with the fixed value of `record`.
+^|A |If a catalog collection object homogeneously references records then, its `itemType` member SHALL be a string with the fixed value of `record`.
 ^|B |If a catalog collection object references both records and other catalog collection objects then, its `itemType` member SHALL be an array whose elements enumerate the types of catalog resources referenced by this catalog collection object.
 ^|C |The value `catalog` SHALL be used to indicate that this catalog collection object includes references to other <<clause-record-collection,catalogs>>.
 ^|D |The value `record` SHALL be used to indicate that this catalog collection object includes references to <<clause-record-core,records>>.
