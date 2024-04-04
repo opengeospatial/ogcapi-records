@@ -86,7 +86,11 @@ The following is an example of a catalogue record encoded as GeoJSON:
           "Ag Preserve"
         ],
         "language": "en-US",
-        "externalIds": [ "urn:uuid:dc9b6d52-932a-11ea-ad6f-823cf448c401" ],
+        "externalIds": [
+          {
+            "value": "urn:uuid:dc9b6d52-932a-11ea-ad6f-823cf448c401"
+          }
+        ],
         "formats": [
           "vector digital data"
         ]
