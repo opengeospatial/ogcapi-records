@@ -1,0 +1,7 @@
+[[rec_record-core_time]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/record-contact*
+^|A |A record SHOULD include the top-level `time` member that indicates some characteristic temporal aspect of the resource that the record describes.
+^|B |If such chracteristic temporal information about the resource is not available then the `time` member SHOULD, even though it is optional, still be included in the record and its values SHOULD be set to `null`.
+|===

@@ -4,7 +4,7 @@
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/time-zone*
 ^|Test Purpose |Validate the behavior of time zone for time member.
 ^|Requirement |<<req_core_time-zone,/req/core/time-zone>>
-^|Test Method |. Construct a path for a given record
+^|Test Method |. Construct a path for a given record that includes the `time` member
 . Issue a HTTP GET request on the path
 . Parse time member
 . Check that timestamps in the time member use UTC "Z" as the time zone.

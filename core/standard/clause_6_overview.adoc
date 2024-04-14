@@ -39,7 +39,7 @@ A special use case of the _searchable catalog_ is the _**local resources catalog
 === Record Schema
 
 The core set of record properties that may be used to describe a resource
-include the  _recordId_, _time_, _type_, _title_, _description_ and _geometry_.
+include the  _recordId_, _type_, _title_, _description_ and _geometry_.
 A complete definition of a record can be found in clause <<core-properties,Core properties>>.
 
 The choice of which properties to include in the set of core properties was primarily informed by the following record models:

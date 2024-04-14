@@ -4,7 +4,7 @@
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/time-instant-interval*
 ^|Test Purpose |Validate the behavior of time instance and intervals in time object.
 ^|Requirement |<<req_core_time-instant-interval,/req/core/time-instant-interval>>
-^|Test Method |. Construct a path for a given record
+^|Test Method |. Construct a path for a given record that includes the `time` member
 . Issue a HTTP GET request on the path
 . Parse time object
 . If the time object includes both a ``date`` and a ``timestamp`` member, check that the `full-date` parts are identical.
