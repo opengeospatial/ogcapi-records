@@ -13,22 +13,18 @@
 
 include::crawlable-catalog/ATS_conformance.adoc[]
 
-==== Catalog
-
-include::crawlable-catalog/ATS_catalog.adoc[]
-include::crawlable-catalog/ATS_catalog-links.adoc[]
-include::crawlable-catalog/ATS_catalog-location.adoc[]
-
 ==== Record
 
 include::crawlable-catalog/ATS_record.adoc[]
-include::crawlable-catalog/ATS_record-links.adoc[]
-include::crawlable-catalog/ATS_record-file-location.adoc[]
 
-==== Collections
+include::crawlable-catalog/ATS_record-location.adoc[]
 
-include::crawlable-catalog/ATS_collection.adoc[]
-include::crawlable-catalog/ATS_collection-location.adoc[]
-include::crawlable-catalog/ATS_collection-links.adoc[]
-include::crawlable-catalog/ATS_itemType.adoc[]
+==== Catalog
 
+include::crawlable-catalog/ATS_catalog.adoc[]
+
+include::crawlable-catalog/ATS_catalog-location.adoc[]
+
+include::crawlable-catalog/ATS_catalog-itemType.adoc[]
+
+include::crawlable-catalog/ATS_catalog-links.adoc[]

@@ -30,7 +30,7 @@ include::requirements/crawlable-catalog/REQ_record.adoc[]
 
 Attention is drawn to requirement <<per_record-core_additional-properties-record,/per/record-core/additional-properties-record>> that allows the information content of the record to be enriched as required to describe the resource being made discoverable.
 
-include::requirements/crawlable-catalog/REQ_record-file-location.adoc[]
+include::requirements/crawlable-catalog/REQ_record-location.adoc[]
 
 include::recommendations/crawlable-catalog/REC_record-file-name.adoc[]
 
@@ -45,18 +45,18 @@ include::requirements/crawlable-catalog/REQ_catalog.adoc[]
 
 include::requirements/crawlable-catalog/REQ_catalog-location.adoc[]
 
+include::requirements/crawlable-catalog/REQ_conformance.adoc[]
+
 [[crawlable-collections]]
 ==== Organizing crawlable catalogs
 
-In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g. a hierarchy) this requirements class extends the <<clause-record-collection,Record Collection>> object used to organized related collections of records and allows a catalog to also provide information about and access to a related subordinate catalogs.  As such, the <<clause-record-collection,Record Collection>> can be used as a common entry point for crawling to multiple, related, sub-catalogs, records and other resource types.
+In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g. a hierarchy) this requirements class extends the <<clause-record-collection,Record Collection>> object used to organized related collections of records and allows a catalog to also provide information about and access to a related subordinate catalogs.  As such, the <<clause-record-collection,Record Collection object>> can be used as a common entry point for crawling to multiple, related, sub-catalogs, records and other resource types.
 
-include::requirements/crawlable-catalog/REQ_catalog_collection.adoc[]
+include::recommendations/crawlable-catalog/PER_other-catalogs.adoc[]
 
-include::requirements/crawlable-catalog/REQ_catalog-collection-itemType.adoc[]
+include::requirements/crawlable-catalog/REQ_catalog-itemType.adoc[]
 
-include::requirements/crawlable-catalog/REQ_catalog-collection-location.adoc[]
-
-include::requirements/crawlable-catalog/REQ_catalog-collection-links.adoc[]
+include::requirements/crawlable-catalog/REQ_catalog-links.adoc[]
 
 [[clause-searchable-catalog]]
 === Requirements Class "Searchable Catalog" (Deployment)

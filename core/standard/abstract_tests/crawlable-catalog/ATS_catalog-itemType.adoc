@@ -1,0 +1,13 @@
+[[ats_crawlable-catalog_itemType]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/itemType*
+^|Test Purpose |Validate the `itemType` member of the catalog
+^|Requirement |<<req_crawlable-catalog_itemType,/req/crawlable-catalog/itemType>>
+^|Test Method |. Retrieve the catalog object
+. Parse the `itemType` member
+. If the `itemType` member of the catalog is a string and has the value of `record` then verify that the catalog includes one or more links (`rel="item"`) pointing to each record of the catalog
+. If the `itemType` member of the catalog is a strin and has the value of `catalog` then verify that the catalog includes one or more links (`rel="child"`) pointing to each child catalog
+. If the `itemType` member of the catalog is an array and the array contains the value `record` verify that links (`rel="item"`) are included in the links or link templates sections
+. If the `itemType` member of the catalog is an array and the array contains the value `catalog` verify that links (`rel="catalog"`) are included in the links or link templates sections
+|===

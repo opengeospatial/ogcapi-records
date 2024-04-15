@@ -7,7 +7,7 @@
 
 [source,YAML]
 ----
-include::../../../openapi/schemas/collection.yaml[]
+include::../../../openapi/schemas/catalog.yaml[]
 ----
 
 ^|B |The `itemType` member SHALL be a string with the value `record`.

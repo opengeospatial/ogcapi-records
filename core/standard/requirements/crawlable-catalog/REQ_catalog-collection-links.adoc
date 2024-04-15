@@ -1,9 +1,0 @@
-[[req_crawlable-catalog_catalog-collection-links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/catalog-collection-links*
-
-^|A |A catalog collection object referencing a subordinate catalog collection object SHALL include a link (`rel="child"`) pointing to the subordinate catalog collection object.
-^|B |A child catalog collection object SHALL include a link (`rel=parent`) pointing to its immediate parent catalog collection object.
-^|C |A child catalog collection object SHALL include a link (`rel=root`) pointing to its root catalog collection object.
-|===

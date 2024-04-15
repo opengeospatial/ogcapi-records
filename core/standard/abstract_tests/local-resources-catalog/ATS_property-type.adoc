@@ -10,4 +10,3 @@
 . Check that there is a `type` property present
 . Check that the value of the `type` property is the same as the value of the `itemType` property if the latter is present
 |===
-

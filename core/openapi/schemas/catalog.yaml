@@ -1,13 +1,19 @@
 ---
 allOf:
-  - $ref: 'collection.yaml'
+  - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml'
   - type: object
+  - required:
+    - type
+    - title
     properties:
       itemType:
         description:
           If this collection is a homogenous collection
           of records then itemType is a string of fixed
           value of record.
+          If this collection is a homogenous collection
+          of other catalogs then itemType is a string of
+          fixed value of catalog.
           If this collection is a heterogenous collection
           of records and catalogs then itemType is a array
           indicated that item types of the members of this
@@ -16,6 +22,7 @@ allOf:
           - type: string
             enum:
               - record
+              - catalog
           - type: array
             items:
               type: string
@@ -29,3 +36,73 @@ allOf:
         type: string
         enum:
           - catalog
+      keywords:
+        type: array
+        description:
+          The topic or topics of the resource. Typically
+          represented using free-form keywords, tags, key
+          phrases, or classification codes.
+        items:
+          type: string
+      language:
+        description:
+          The language used for textual values in this
+          catalog representation.
+        $ref: 'language.yaml'
+      languages:
+        type: array
+        description:
+          The list of languages in which this catalog
+          object is available.
+        items:
+          $ref: 'language.yaml'
+      recordLanguages:
+        type: array
+        description:
+          The list of languages in which the records
+          of this catalog available.
+        items:
+          $ref: 'language.yaml'
+      created:
+        type: string
+        description:
+          Date of creation of this catalog.
+        format: date-time
+      updated:
+        type: string
+        description:
+          The most recent date on which the catalog was changed.
+        format: date-time
+      contacts:
+        type: array
+        description:
+          A list of contacts qualified by their role(s) in
+          association to the catalog.
+        items:
+          $ref: 'contact.yaml'
+      themes:
+        type: array
+        description:
+          A knowledge organization system used to classify
+          this catalog.
+        minItems: 1
+        items:
+          $ref: 'theme.yaml'
+      license:
+        $ref: 'license.yaml'
+      rights:
+        type: string
+        description:
+          A statement that concerns all rights not addressed
+          by the license such as a copyright statement.
+      conformsTo:
+        type: array
+        description:
+          The extensions/conformance classes this catalog
+          object implements.
+        items:
+          type: string
+      linkTemplates:
+        type: array
+        items:
+          $ref: 'linkTemplate.yaml'

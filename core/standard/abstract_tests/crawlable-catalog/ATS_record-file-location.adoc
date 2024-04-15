@@ -1,9 +1,0 @@
-[[ats_crawlable-catalog_record-file-location]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/record-file-location*
-^|Test Purpose |Validate crawlable catalog record location.
-^|Requirement |<<req_crawlable-catalog_record-file-location,/req/crawlable-catalog/record-file-location>>
-^|Test Method |. Parse the catalog structure and create a list of all available records.
-. For each item in the list, check that the path is a valid web-accessible location
-|===
