@@ -1,0 +1,9 @@
+[[req_crawlable-catalog_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/catalog-collection-links*
+
+^|A |A catalog referencing subordinate catalogs SHALL include a link (`rel="child"`) pointing to each subordinate catalog.
+^|B |A child catalog SHALL include a link (`rel=parent`) pointing to its immediate parent catalog.
+^|C |A child catalog SHALL include a link (`rel=root`) pointing to its root catalog.
+|===

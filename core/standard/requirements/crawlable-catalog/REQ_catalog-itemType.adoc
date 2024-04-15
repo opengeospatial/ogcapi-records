@@ -1,0 +1,9 @@
+[[req_crawlable-catalog_itemType]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/itemType*
+
+^|A |If a catalog homogeneously references <<clause-record-core,records>> then, its `itemType` member SHALL be a string with the fixed value of `record`.
+^|B |If a catalog homogeneously references other <<clause-record-collection,catalogs>> then, its `itemType` member SHALL be a string with the fixed value of `catalog`.
+^|C |If a catalog references both <<clause-record-core,records>> and other <<clause-record-collection,catalogs>> then, its `itemType` member SHALL be an array whose elements enumerate the types of resources referenced by this catalog (i.e. records and/or other catalogs).
+|===

@@ -1,14 +1,9 @@
 [[ats_crawlable-catalog_catalog]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/catalog*
-^|Test Purpose |Validate crawlable catalog collections.
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/collection*
+^|Test Purpose |Validate a crawlable catalog object
 ^|Requirement |<<req_crawlable-catalog_catalog,/req/crawlable-catalog/catalog>>
-^|Test Method |. Parse the catalog structure and create a list of all collections available
-. For each item in the list, retrieve the collection object
-. Check that the collection includes an ``id`` property
-. Check that the collection includes a ``title`` property
-. Check that the collection includes a ``links`` property
-. Check that the collection includes a ``itemType`` property
-. Check that the collection includes a ``type`` property with the value set to ``collection``
+^|Test Method |. Obtain a catalog object
+. Check that the catalog object validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml
 |===

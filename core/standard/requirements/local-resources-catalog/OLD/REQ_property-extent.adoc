@@ -1,6 +1,0 @@
-[[req_local-resources-catalog_property-extent-def]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirements {counter:req-id}* |*/req/local-resources-catalog/property-extent-def*
-^|A |The `extent` property SHALL be present in the information model of the local resource object.
-|===

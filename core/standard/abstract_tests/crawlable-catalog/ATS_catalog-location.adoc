@@ -1,9 +1,9 @@
-[[ats_crawlable-catalog_catalog-location]]
+[[ats_crawlable-catalog_location]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/catalog-location*
-^|Test Purpose |Validate crawlable catalog location.
-^|Requirement |<<req_crawlable-catalog_catalog-location,/req/crawlable-catalog/catalog-location>>
-^|Test Method |. Retrieve the top-level collection object
-. Check that the collection path is a valid web-accessible location
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/location*
+^|Test Purpose |Verify that a catalog is retrievable from the Web
+^|Requirement |<<req_crawlable-catalog_location,/req/crawlable-catalog/location>>
+^|Test Method |. Determine the URL of the crawlable catalog
+. Verify that the URL can be resolved and retrieve the catalog object
 |===

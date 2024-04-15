@@ -1,0 +1,15 @@
+[[ats_autodiscovery_link-crawlable]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/autodiscovery/link-crawlable*
+^|Test Purpose |Validate the behavior of link relations for crawlable catalog autodiscovery.
+^|Requirement |<<req_autodiscovery_link-crawlable,/req/autodiscovery/link-crawlable>>
+^|Test Method |. Construct a path for a Web page (e.g. the landing page of an OGC API endpoint)
+. Issue an HTTP GET request on the path
+. Parse all link objects
+. Check that at least one link contains a `+rel+` of `+http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog-crawlable+`.
+. Check that the `+type+` attribute exists with a valid media type.
+. Check that the `+href+` attribute exists.
+. Issue an HTTP GET request on the value of the `+href+` attribute.
+. Validate that the link resolves with the associated media type identified in the `+type+` attribute.
+|===

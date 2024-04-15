@@ -9,4 +9,3 @@
 . Parse the local resource object
 . Check that there is a `title` property present
 |===
-
