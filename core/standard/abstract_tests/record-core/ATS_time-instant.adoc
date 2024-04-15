@@ -4,7 +4,7 @@
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/time-instant*
 ^|Test Purpose |Validate the behavior of time instances for time objects.
 ^|Requirement |<<req_core_time-instant,/req/core/time-instant>>
-^|Test Method |. Construct a path for a given record
+^|Test Method |. Construct a path for a given record that includes the `time` member
 . Issue a HTTP GET request on the path
 . Parse time object
 . If the time object includes a ``date`` member, check that the value conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches the production rule ``full-date``

@@ -51,9 +51,9 @@ Other encodings are allowed but are not described in this document.
 |===
 |Property |Requirement |Description |GeoJSON key
 |geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry. |`geometry`
-|time |**required** |The temporal extent of the resource. Can be null if there is no associated temporal extent. |`time`
 |type |**required** |The nature or genre of the resource. |`properties.type`
 |title |**required** |A human-readable name given to the resource. |`properties.title`
+|time |optional |The temporal extent of the resource. Can be null if there is no associated temporal extent. |`time`
 |description |optional |A free-text description of the resource. |`properties.description`
 |keywords |optional |A list of free-form keywords or tags associated with the resource. |`properties.keywords`
 |language |optional |The language used for textual values (i.e. titles, descriptions, etc.) of this record. |`properties.language`
@@ -99,7 +99,11 @@ Records can have multiple properties that describe the temporal characteristics 
 
 * Multiple temporal properties are sometimes used to describe different temporal characteristics of the resource(s) the record describes. For example, the time instant or interval when the information in the record is valid (sometimes called "valid time") and the time when the record was recorded in the catalog (sometimes called "transaction time"). Another example is the https://www.ogc.org/standards/om[Observations & Measurements standard], where an observation has multiple temporal properties including "phenomenon time", "result time" and "valid time".
 
-This Standard does not place any constraints on the number of additional temporal properties that may be added to a record to characterize temporal aspects of the resource being described by a record.  This can make it difficult for a naive client to recognize and utilize temporal information stored in the record.  For this reason, this Standard includes the `time` property in a record.  This `time` member is set by the publisher of the record and describes characteristic temporal information (an instant or an interval) associated with the resource described by a record.   This `time` member can thus be used by naive clients without the need to inspect or understand the schema of an extended record.  The value of the `time` member is either `null` (no temporal information) or an object encoding a time instant or interval.
+This Standard does not place any constraints on the number of additional temporal properties that may be added to a record to characterize temporal aspects of the resource being described by a record.  This can make it difficult for a naive client to recognize and utilize temporal information stored in the record.  For this reason, this Standard includes the `time` property in a record.  
+
+include::recommendations/record-core/REC_time.adoc[]
+
+This `time` member is set by the publisher of the record and describes characteristic temporal information (an instant or an interval) associated with the resource described by a record.   This `time` member can thus be used by naive clients without the need to inspect or understand the schema of an extended record.  If included in the record, the value of the `time` member is either `null` (no temporal information) or an object encoding a time instant or interval.
 
 .Properties of the "time" object
 [cols="20,10a,70a",options="header"]

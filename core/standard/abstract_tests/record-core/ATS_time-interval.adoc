@@ -4,7 +4,7 @@
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/interval*
 ^|Test Purpose |Validate the behavior of time interval for time objects.
 ^|Requirement |<<req_core_interval,/req/core/interval>>
-^|Test Method |. Construct a path for a given record
+^|Test Method |. Construct a path for a given record that includes the `time` member
 . Issue a HTTP GET request on the path
 . Parse time object
 . If the time object includes an ``interval`` member, check that each array item is a string that is a double-dot (``..``) or conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches one of the following production rules: ``full-date`` (a date) or ``date-time`` (a timestamp)

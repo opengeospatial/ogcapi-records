@@ -8,7 +8,6 @@
 . Issue an HTTP GET request on the path
 . Check that the list of queryables includes a ``recordId`` property
 . Check that the list of queryables includes a ``geometry`` property
-. Check that the list of queryables includes a ``time`` property
 . Check that the list of queryables includes a ``type`` property
 . Check that the list of queryables includes a ``title`` property
 |===
