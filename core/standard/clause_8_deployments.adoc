@@ -143,7 +143,7 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 |itemType                |optional      |--             |--
 |--                      |--            |type           |**required**
 |extent                  |optional      |--             |--
-|--                      |--            |geometry       |optional
+|--                      |--            |geometry       |**required**
 |links                   |**required**  |links          |**required**
 |linkTemplates           |optional      |linkTemplates  |optional
 |crs                     |optional      |--             |--
