@@ -3,10 +3,10 @@
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/type*
 ^|Test Purpose |Validate type property.
-^|Requirement |<<req_local-resources-catalog_type,/req/local-resources-catalog/type>>
+^|Requirement |<<req_local-resources-catalog_type,/req/local-resources-catalog/type>>, <<req_local-resources-catalog_type-value,/req/local-resources-catalog/type-value>>
 ^|Test Method |. Construct a path for a local resource object
 . Issue an HTTP GET request on the path
 . Parse the local resource object
 . Check that there is a `type` property present
-. Check that the value of the `type` property is the same as the value of the `itemType` property if the latter is present
+. Verify that the value of the `type` property conforms to the requirements of the responsible OGC Standard.
 |===

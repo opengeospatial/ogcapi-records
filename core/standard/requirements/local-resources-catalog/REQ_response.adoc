@@ -4,5 +4,5 @@
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/response*
 ^|A |A successful execution of the operation SHALL be reported as a response with a HTTP status code `200`.
 ^|B |The response SHALL conform to the requirements of the local resource being extended.
-^|C |The response SHALL only include local resources selected by the request (e.g. only collections that satisfy the <<req_local-resource-catalog_query-parameters,query predicates>> applied to the `/collections` endpoint).
+^|C |The response SHALL only include local resources objects selected by the request (e.g. only collections that satisfy the <<req_local-resource-catalog_query-parameters,query predicates>> applied to the `/collections` endpoint).
 |===

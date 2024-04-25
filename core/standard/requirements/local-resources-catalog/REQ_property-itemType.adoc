@@ -1,8 +1,0 @@
-[[req_local-resources-catalog_itemType]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/itemType*
-
-^|A |The `itemType` property SHALL be present in the information model of the local resources object.
-^|B |The value of the `itemType` property SHALL be set by the OGC Standard responsible for defining the local resources object and SHALL indicate the type of items in the collection described by this local resources object (e.g. "feature" for http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[OGC API - Features - Part 1: Core]).
-|===

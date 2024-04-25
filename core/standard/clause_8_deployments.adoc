@@ -116,11 +116,11 @@ Other _local resources catalogs_ available in the <<ogc-api-resource-tree,OGC AP
 
 In order to enable catalog-like searching at these local resources endpoints, this requirements class defines requirements and recommendations that:
 
-1. enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<collection-properties-table,record collection properties>>.
+1. enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<core-properties,core record properties>>.
 
 2. define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to enhance its searchability.
 
-The Local Resources Catalog requirements class does not define the specific endpoints in the <<ogc-api-resource-tree,OGC API resource tree>> that should be enabled with catalog-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalog-line searching be identified by the responsible OGC Standard.
+The Local Resources Catalog requirements class does not define the specific endpoints in the <<ogc-api-resource-tree,OGC API resource tree>> that should be enabled with catalog-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalog-line searching be identified by the responsible OGC Standard.  It is anticipated that the responsible OGC standard will define a requirements class or extension to enable local resources catalog capabilities at that endpoint.
 
 ==== Resource Description
 
@@ -135,13 +135,14 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 .Crosswalk of core properties with collection information object properties
 [cols="25,25,25,25",options="header"]
 |===
-|Property of `/collections` object |Requirement  |Property of <<collection-properties-table,Record Collection>> object |Requirement
+|Property of `/collections` object |Requirement  |Property of <<core-properties,Record>> object |Requirement
 |id                      |**required**  |id             |**required**
 |title                   |optional      |title          |**required**
 |description             |optional      |description    |optional
-|itemType                |optional      |itemType       |**required**
+|itemType                |optional      |--             |--
 |--                      |--            |type           |**required**
-|extent                  |optional      |extent         |optional
+|extent                  |optional      |--             |--
+|--                      |--            |geometry       |optional
 |links                   |**required**  |links          |**required**
 |linkTemplates           |optional      |linkTemplates  |optional
 |crs                     |optional      |--             |--
@@ -157,13 +158,11 @@ include::requirements/local-resources-catalog/REQ_property-title.adoc[]
 
 include::recommendations/local-resources-catalog/PER_common-mark.adoc[]
 
-==== Property `itemType`
-
-include::requirements/local-resources-catalog/REQ_property-itemType.adoc[]
-
 ==== Property `type`
 
 include::requirements/local-resources-catalog/REQ_property-type.adoc[]
+
+include::requirements/local-resources-catalog/REQ_property-type-value.adoc[]
 
 ==== Additional properties
 
