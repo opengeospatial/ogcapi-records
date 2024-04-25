@@ -1,0 +1,8 @@
+[[req_local-resources-catalog_recordId]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/type*
+
+^|A |The `recordId` property SHALL be present in the information model of the local resources object.
+^|B |The value of the `recordId` property SHALL match the value of the `id` member.
+|===
