@@ -126,7 +126,7 @@ The Local Resources Catalog requirements class does not define the specific endp
 
 ===== Overview
 
-The clause defines requirements and recommendations for the information content of a local resources object that can be retrieved from local resources endpoint.
+The clause defines requirements and recommendations for the information content of a local resources object that can be retrieved from a local resources endpoint.
 
 As an example of a local resources endpoint, consider the `/collections` endpoint.  The object that can be retrieved from this endpoint is defined in https://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_[OGC API - Features].  The following table cross-walks the information content of the collection object with the <<core-properties,core properties>> defined for the <<clause-record-core,record>> building block:
 
