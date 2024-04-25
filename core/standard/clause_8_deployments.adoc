@@ -136,7 +136,8 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 [cols="25,25,25,25",options="header"]
 |===
 |Property of `/collections` object |Requirement  |Property of <<core-properties,Record>> object |Requirement
-|id                      |**required**  |id             |**required**
+|id                      |**required**  |--             |--          
+|--                      |--            |recordId       |**required**
 |title                   |optional      |title          |**required**
 |description             |optional      |description    |optional
 |itemType                |optional      |--             |--
@@ -149,6 +150,10 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 |===
 
 As can be seen, there is a significant overlap of the properties of each resource.  This standard defines the following requirements and recommendations regarding information content of a local resources object such as the collection object that is retrievable from the `/collections` endpoint.
+
+==== Property `recordId`
+
+include::requirements/local-resources-catalog/REQ_property-recordId.adoc[]
 
 ==== Property `title`
 
@@ -163,6 +168,12 @@ include::recommendations/local-resources-catalog/PER_common-mark.adoc[]
 include::requirements/local-resources-catalog/REQ_property-type.adoc[]
 
 include::requirements/local-resources-catalog/REQ_property-type-value.adoc[]
+
+==== Property `geometry`
+
+include::requirements/local-resources-catalog/REQ_property-geometry.adoc[]
+
+include::recommendations/local-resources-catalog/REC_property-geometry.adoc[]
 
 ==== Additional properties
 

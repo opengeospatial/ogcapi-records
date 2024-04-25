@@ -4,7 +4,6 @@
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/type*
 
 ^|A |The `type` property SHALL be present in the information model of the local resources object.
-^|B |If the local resources object includes the `itemType` member and its value is `record`, the value of the `type` property SHALL be `Catalog`.
-^|C |If the local resources object includes the `itemType` member and its value is NOT `record`, the value of the `type` property SHALL be `Collection`.
-^|D |If the local resources object does not include the `itemType` member, the value of the `type` property SHALL be set to indicate the nature or genre of the sub-resource(s) describes by this local resources object.
+^|B |If the local resources object includes the `itemType` member, the value of the `type` property SHALL match the value of the `itemType` member.
+^|C |If the local resources object does not include the `itemType` member, the value of the `type` property SHALL be set to indicate the nature or genre of the sub-resource(s) describes by this local resources object.
 |===
