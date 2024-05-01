@@ -1,9 +1,0 @@
-[[req_local-resources-catalog_geometry]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/type*
-
-^|A |The `geometry` property SHALL be present in the information model of the local resources object.
-^|B |The value of the `geometry` property SHALL indicate the spatial characteristics of the local resources object.
-^|C |If no spatial characteristics are associated with the local resources object then the value of the `geometry` property SHALL be `null`.
-|===

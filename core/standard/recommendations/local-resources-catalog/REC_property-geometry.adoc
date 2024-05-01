@@ -1,7 +1,0 @@
-[[rec_local-resources-catalog_geometry]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendations {counter:rec-id}* |*/rec/local-resources-catalog/geometry*
-
-If the local resources object already includes spatial properties (e.g. `extent`) then the value of the `geometry` property SHOULD be derived from the existing spatial properties.
-|===

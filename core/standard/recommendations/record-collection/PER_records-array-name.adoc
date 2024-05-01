@@ -1,0 +1,10 @@
+[[per_record-collection_records-array-name]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/record-collection/records-array-name*
+
+The name of the in-line records array property in the catalog (default: `records`) MAY be changed to something else.
+|===
+
+
+

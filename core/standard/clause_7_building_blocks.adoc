@@ -50,9 +50,9 @@ Other encodings are allowed but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
-|geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry. |`geometry`
 |type |**required** |The nature or genre of the resource. |`properties.type`
 |title |**required** |A human-readable name given to the resource. |`properties.title`
+|geometry |optional |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry. |`geometry`
 |time |optional |The temporal extent of the resource. Can be null if there is no associated temporal extent. |`time`
 |description |optional |A free-text description of the resource. |`properties.description`
 |keywords |optional |A list of free-form keywords or tags associated with the resource. |`properties.keywords`
@@ -83,6 +83,14 @@ In <<core-properties-record-table>> and <<core-properties-resource-table>> this 
 include::recommendations/record-core/REC_record-extensions.adoc[]
 
 In the case where all the records of a catalog use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` member at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[collection or catalog level] that may be used to declare which extensions are used in all records of the catalog.  Extensions listed at the catalog and record levels are cumulative.
+
+[[sc_spatial_information]]
+==== Spatial information
+The spatial characteristic of the resource described by a record is specified using the optional `geometry` property.
+
+include::recommendations/record-core/PER_record-geometry.adoc[]
+
+For example, the <<rc_json,JSON>> requirements class makes the `geometry` member mandatory because the record encoding (i.e. https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON]) requires that the `geometry` member be mandatory.
 
 [[sc_temporal_information]]
 ==== Temporal information
@@ -430,23 +438,23 @@ include::requirements/requirements_class_record-collection.adoc[]
 
 The Record Collection requirements class defines the requirements for a record collection.
 
-A _collection_ is an object that provides information about and access to a set of related <<clause-core-record,records>>.  Such a collection of records is also referred to as a _catalog_. 
+A _record collection_ is an object that provides information about and access to a set of related <<clause-core-record,records>>.  Such a collection of records is also referred to as a _catalog_. 
 
-The schema for the collection resource is an extension of the collection schema defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features Standard].
+The schema for the catalog is an extension of the collection schema defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features Standard].
 
-While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the collection in the <<clause-records-api,Records API>> conformance class.  Otherwise, the collection resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
+While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the catalog in the <<clause-records-api,Records API>> conformance class.  Otherwise, the catalog resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
 
-Although this Standard does not mandate any particular encoding for a record collection, two conformance classes are defined:
+Although this Standard does not mandate any particular encoding for a catalog, two conformance classes are defined:
 
-* a <<clause-catalog-encoding,JSON>> record collection encoding, and
+* a <<clause-catalog-encoding,JSON>> catalog encoding, and
 * an <<requirements-class-html-clause,HTML>> encoding.
 
 Other encodings are allowed but are not described in this document.
 
 [[record-collection-schema]]
-==== Record collection schema
+==== Catalog schema
 
-<<collection-properties-table>> defines the set of properties that may be used to describe a collection of records.
+<<collection-properties-table>> defines the set of properties that may be used to describe a catalog.
 
 [#collection-properties-table,reftext='{table-caption} {counter:table-num}']
 .Table of collection properties
@@ -472,6 +480,8 @@ Other encodings are allowed but are not described in this document.
 |license |optional |The legal provisions under which this collection is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |conformsTo |optional |The extensions/conformance classes used in this catalog object.
+|recordsArrayName |optional |The name of the array member in the catalog used to encode records in-line.  The default value is `records`.
+|records |optional |An array of records encoded in-line in the catalog.
 |===
 
 NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core].
@@ -491,6 +501,16 @@ See <<sc_keywords_and_themes,Keywords and Themes>> for a record.
 include::requirements/record-collection/REQ_links.adoc[]
 
 include::recommendations/record-collection/PER_links.adoc[]
+
+==== Records
+
+include::recommendations/record-collection/PER_records.adoc[]
+
+include::requirements/record-collection/REQ_records.adoc[]
+
+include::recommendations/record-collection/PER_records-array-name.adoc[]
+
+include::requirements/record-collection/REQ_records-array-name.adoc[]
 
 ==== Templated links with variables
 
@@ -1052,12 +1072,12 @@ include::requirements/requirements_class_json.adoc[]
 [[clause-record-encoding-json]]
 ===== Record encoding
 
-GeoJSON is a commonly used format based on JSON that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format, supporting GeoJSON is recommended. The caveat is, if record data can be represented in GeoJSON for the intended use.
+https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON] is a commonly used format based on JSON that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format, supporting GeoJSON is recommended. The caveat is, if record data can be represented in GeoJSON for the intended use.
 
 The following requirements apply when:
 
 . The Records API endpoint advertises conformance to the JSON Conformance Class.
-. The client negotiates that the content of the server's response be GeoJSON.
+. The client negotiates that the content of the server's response be https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON].
 
 include::requirements/json/REQ_record-response.adoc[]
 

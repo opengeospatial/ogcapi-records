@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-collection/record-langs*
 
-The languages in which records from the collection can be represented SHOULD be listed in the collection object using the <<collection-properties-table,`recordLanguages`>> property.
+The languages in which the records of the catalog can be represented SHOULD be listed using the <<collection-properties-table,`recordLanguages`>> property.
 |===

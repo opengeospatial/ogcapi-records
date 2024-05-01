@@ -63,6 +63,8 @@ include::requirements/crawlable-catalog/REQ_catalog-links.adoc[]
 
 include::requirements/requirements_class_searchable-catalog.adoc[]
 
+==== Overview
+
 The Searchable Catalog Requirements Class defines the requirements for a catalog that is searchable through an API.  A searchable catalog is an implementation of the <<OAFeat-1,OGC API - Features - Part 1: Core>> Standard that uses a defined information model.  In the case of the OGC API - Records Standard, that information model is the <<clause-record-core,Record>>.
 
 include::requirements/searchable-catalog/REQ_core.adoc[]
@@ -73,6 +75,17 @@ include::requirements/searchable-catalog/REQ_mandatory-properties.adoc[]
 
 include::recommendations/searchable-catalog/PER_additional-properties.adoc[]
 
+[[clause-searchable-catalog_filtering]]
+==== Requirements Class "Searchable Catalog - Filtering" (Deployment)
+
+include::requirements/requirements_class_searchable-catalog_filtering.adoc[]
+
+This requirements class specifies requirements and recommendations for supporting advanced filtering at searchable catalog endpoints.  Advanced filter expressions can only reference properties from an advertised set of queryables.
+ 
+include::requirements/searchable-catalog_filtering/REQ_mandatory-queryables.adoc[]
+
+include::recommendations/searchable-catalog_filtering/PER_additional-queryables.adoc[]
+
 [[clause-searchable-catalog_sorting]]
 ==== Requirements Class "Searchable Catalog - Sorting" (Deployment)
 
@@ -81,19 +94,6 @@ include::requirements/requirements_class_searchable-catalog_sorting.adoc[]
 The Searchable Catalog - Sorting requirements class specifies requirements for supporting sorting of responses at searchable catalog endpoints.
 
 include::requirements/searchable-catalog_sorting/REQ_sorting.adoc[]
-
-[[clause-searchable-catalog_filtering]]
-==== Requirements Class "Searchable Catalog - Filtering" (Deployment)
-
-include::requirements/requirements_class_searchable-catalog_filtering.adoc[]
-
-The Searchable Catalog - Filtering requirements class specifies requirements and recommendations for supporting advanced filtering at searchable catalog endpoints.
- 
-===== Filter queryables
-
-include::requirements/searchable-catalog_filtering/REQ_mandatory-queryables.adoc[]
-
-include::recommendations/searchable-catalog_filtering/PER_additional-queryables.adoc[]
 
 [[clause-local-resources-catalog]]
 === Requirements Class "Local Resources Catalog" (Deployment)
@@ -114,17 +114,19 @@ The `/collections` endpoint is an example of a _local resources endpoint_.  This
 
 Other _local resources catalogs_ available in the <<ogc-api-resource-tree,OGC API resource tree>> include the `/processes` endpoint which provides a list of offered processes and the `/collections/{collectionId}/scenes` endpoint which provides a list of source images of a coverage.
 
-In order to enable catalog-like searching at these local resources endpoints, this requirements class defines requirements and recommendations that:
+In order to enable catalog-like searching at these local resources endpoints, this requirements class defines requirements and recommendations that enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<core-properties,core record properties>>.
 
-1. enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<core-properties,core record properties>>.
+Other requirements classes in this Standard:
 
-2. define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to enhance its searchability.
+1. optionally define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to enhance its basic searchability,
+
+2. optionally define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to support advanced searching using a filter language,
+
+3. optionally support sorting of the response from a local resources endpoint.
 
 The Local Resources Catalog requirements class does not define the specific endpoints in the <<ogc-api-resource-tree,OGC API resource tree>> that should be enabled with catalog-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalog-line searching be identified by the responsible OGC Standard.  It is anticipated that the responsible OGC standard will define a requirements class or extension to enable local resources catalog capabilities at that endpoint.
 
 ==== Resource Description
-
-===== Overview
 
 The clause defines requirements and recommendations for the information content of a local resources object that can be retrieved from a local resources endpoint.
 
@@ -143,7 +145,7 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 |itemType                |optional      |--             |--
 |--                      |--            |type           |**required**
 |extent                  |optional      |--             |--
-|--                      |--            |geometry       |**required**
+|--                      |--            |geometry       |optional
 |links                   |**required**  |links          |**required**
 |linkTemplates           |optional      |linkTemplates  |optional
 |crs                     |optional      |--             |--
@@ -168,12 +170,6 @@ include::recommendations/local-resources-catalog/PER_common-mark.adoc[]
 include::requirements/local-resources-catalog/REQ_property-type.adoc[]
 
 include::requirements/local-resources-catalog/REQ_property-type-value.adoc[]
-
-==== Property `geometry`
-
-include::requirements/local-resources-catalog/REQ_property-geometry.adoc[]
-
-include::recommendations/local-resources-catalog/REC_property-geometry.adoc[]
 
 ==== Additional properties
 
@@ -200,17 +196,47 @@ include::../examples/yaml/collection-extended.yaml[]
 
 NOTE: T.D.B.  Should add an instance example of a collection object.
 
-==== Query parameters
-
-include::requirements/local-resources-catalog/REQ_query-parameters.adoc[]
-
-==== Response
-
-include::requirements/local-resources-catalog/REQ_response.adoc[]
-
 ==== Discovery of local resources endpoints
 
 Discovery of which local resources endpoints in an OGC API deployment are instrumented for catalog-like searching is accomplished using <<clause-autodiscovery,Autodiscovery>>.
+
+[[clause-local-resources-catalog_query-parameters]]
+==== Requirements Class "Local Resources Catalog - Query Parameters" (Deployment)
+
+include::requirements/requirements_class_local-resources-catalog_query-parameters.adoc[]
+
+===== Operation
+
+include::requirements/local-resources-catalog_query-parameters/REQ_query-parameters.adoc[]
+
+===== Response
+
+include::requirements/local-resources-catalog_query-parameters/REQ_response.adoc[]
+
+[[clause-local-resources-catalog_filtering]]
+==== Requirements Class "Local Resources Catalog - Filtering" (Deployment)
+
+include::requirements/requirements_class_local-resources-catalog_filtering.adoc[]
+
+The Local Resources Catalog - Filtering requirements class specifies requirements and recommendations for supporting advanced filtering at _local resource catalog_ endpoints.
+
+===== Operation
+
+include::requirements/local-resources-catalog_filtering/REQ_filter-param.adoc[]
+
+include::requirements/local-resources-catalog_filtering/REQ_filter-lang-param.adoc[]
+
+include::recommendations/local-resources-catalog_filtering/REC_text-encoding.adoc[]
+
+include::recommendations/local-resources-catalog_filtering/REC_json-encoding.adoc[]
+
+include::requirements/local-resources-catalog_filtering/REQ_filter-crs-param.adoc[]
+
+include::requirements/local-resources-catalog_filtering/REQ_queryables-link.adoc[]
+
+===== Response
+
+include::requirements/local-resources-catalog_filtering/REQ_filter-response.adoc[]
 
 [[clause-local-resources-catalog_sorting]]
 ==== Requirements Class "Local Resources Catalog - Sorting" (Deployment)
@@ -248,27 +274,3 @@ Example 1: List all the collections that lie within a specific bounding box and 
      |<--------------------------------------------------------------|
 ----
 
-[[clause-local-resources-catalog_filtering]]
-==== Requirements Class "Local Resources Catalog - Filtering" (Deployment)
-
-include::requirements/requirements_class_local-resources-catalog_filtering.adoc[]
-
-The Local Resources Catalog - Filtering requirements class specifies requirements and recommendations for supporting advanced filtering at _local resource catalog_ endpoints.
-
-===== Operation
-
-include::requirements/local-resources-catalog_filtering/REQ_filter-param.adoc[]
-
-include::requirements/local-resources-catalog_filtering/REQ_filter-lang-param.adoc[]
-
-include::recommendations/local-resources-catalog_filtering/REC_text-encoding.adoc[]
-
-include::recommendations/local-resources-catalog_filtering/REC_json-encoding.adoc[]
-
-include::requirements/local-resources-catalog_filtering/REQ_filter-crs-param.adoc[]
-
-include::requirements/local-resources-catalog_filtering/REQ_queryables-link.adoc[]
-
-===== Response
-
-include::requirements/local-resources-catalog_filtering/REQ_filter-response.adoc[]

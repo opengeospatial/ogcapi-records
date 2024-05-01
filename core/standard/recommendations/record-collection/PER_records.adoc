@@ -1,0 +1,10 @@
+[[per_record-collection_records]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/record-collection/records*
+
+The records of a catalog MAY be referenced from the <<req_record-collection_links,links section>> of the catalog or they MAY be encoded in-line in the catalog or both.
+|===
+
+
+
