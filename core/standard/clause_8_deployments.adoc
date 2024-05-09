@@ -196,7 +196,13 @@ The following JSON Schema fragment illustrates how the feature collection object
 include::../examples/yaml/collectionLocalResource.yaml[]
 ----
 
-NOTE: Referenced schemas can be found at https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml], https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
+[NOTE]
+======================================================================
+Referenced schemas can be found at:
+
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml],
+* https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
+======================================================================
 
 ===== Process Summary local resource
 
@@ -207,7 +213,13 @@ The following JSON Schema fragment illustrates how the process summary object (p
 include::../examples/yaml/processSummaryLocalResource.yaml[]
 ----
 
-NOTE: Referenced schemas can be found at https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml], https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
+[NOTE]
+======================================================================
+Referenced schemas can be found at:
+
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml],
+* https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
+======================================================================
 
 NOTE: T.D.B.  Should add an instance example of a collection object.
 
