@@ -138,14 +138,12 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 [cols="25,25,25,25",options="header"]
 |===
 |Property of `/collections` object |Requirement  |Property of <<core-properties,Record>> object |Requirement
-|id                      |**required**  |--             |--          
-|--                      |--            |recordId       |**required**
+|id                      |**required**  |recordId       |**required**
 |title                   |optional      |title          |**required**
 |description             |optional      |description    |optional
 |itemType                |optional      |--             |--
 |--                      |--            |type           |**required**
-|extent                  |optional      |--             |--
-|--                      |--            |geometry       |optional
+|extent                  |optional      |geometry       |optional
 |links                   |**required**  |links          |**required**
 |linkTemplates           |optional      |linkTemplates  |optional
 |crs                     |optional      |--             |--
@@ -161,15 +159,13 @@ include::requirements/local-resources-catalog/REQ_property-recordId.adoc[]
 
 include::requirements/local-resources-catalog/REQ_property-title.adoc[]
 
-==== Property `description`
-
-include::recommendations/local-resources-catalog/PER_common-mark.adoc[]
-
 ==== Property `type`
 
 include::requirements/local-resources-catalog/REQ_property-type.adoc[]
 
 include::requirements/local-resources-catalog/REQ_property-type-value.adoc[]
+
+For example, the value of the `type` member in an extended feature collection object (path: `/collections/{collectionId}`) might be defined to be `featureCollection`.  Similarly, the value of the `type` member in an extended process summary (path: `processes/{processId}`) might be defined to be `process`.
 
 ==== Additional properties
 
@@ -185,14 +181,33 @@ include::requirements/local-resources-catalog/REQ_property-updated.adoc[]
 
 NOTE: Adding, modifying, or deleting items from a collection are all examples of changes that may occur that would require an update of the collection object that can be retrieved from the `/collections` endpoint.
 
-==== Example
+==== Property `description`
+
+include::recommendations/local-resources-catalog/PER_common-mark.adoc[]
+
+==== Examples
+
+===== Collection local resource
 
 The following JSON Schema fragment illustrates how the feature collection object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
 
 [source,yaml]
 ----
-include::../examples/yaml/collection-extended.yaml[]
+include::../examples/yaml/collectionLocalResource.yaml[]
 ----
+
+NOTE: Referenced schemas can be found at https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml], https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
+
+===== Process Summary local resource
+
+The following JSON Schema fragment illustrates how the process summary object (path: `/processes/{processId}`) can be extended to include properties required and recommended by this conformance class:
+
+[source,yaml]
+----
+include::../examples/yaml/processSummaryLocalResource.yaml[]
+----
+
+NOTE: Referenced schemas can be found at https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml], https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
 
 NOTE: T.D.B.  Should add an instance example of a collection object.
 

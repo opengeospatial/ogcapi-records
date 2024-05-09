@@ -1,0 +1,43 @@
+---
+allOf:
+  - $ref: 'recordCommonProperties.yaml'
+  - type:
+      object
+    required:
+      - id
+      - type
+      - title
+      - links
+    properties:
+      id:
+        type: string
+        description:
+          The unique identifier for this catalog record.
+      time:
+        description:
+          A characteristic time or time interval associated
+          with the resource that this record described.
+        oneOf:
+          - enum:
+            - null
+          - $ref: 'time.yaml'
+      geometry:
+        description:
+          A characteristic spatial extent association with
+          the resource that this record described.
+        oneOf:
+          - enum:
+            - null
+          - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
+      links:
+        description:
+          A list of static links associated with this record.
+        type: array
+        items:
+          $ref: 'linkBase.yaml'
+      linkTemplates:
+        description:
+          A list of dynamic links associated with this record.
+        type: array
+        items:
+          $ref: 'linkTemplate.yaml'

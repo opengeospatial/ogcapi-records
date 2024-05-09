@@ -65,11 +65,11 @@ Accessing collections of records through an implementations of the Records API i
 [[sc_record-collection-overview]]
 === Record collection (catalog)
 
-A record collection or catalog is an object that groups and describes a set of related <<record-schema-overview,records>>.  The collection resource is the primary access point from which a deployed set of records can be accessed.  Having found the collection resource (i.e. the catalog) a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
+A record collection or catalog is an object that groups and describes a set of related <<record-schema-overview,records>>.  The catalog is the primary access point from which a deployed set of records can be accessed.  Having found a catalog a client can, by following the appropriate hypermedia controls contained therein, navigate to the records of the collection.  
 
-Depending on the deployment pattern, the collection may provide a link to each individual record of the collection or a link to a search access point for retrieving subsets of records.
+Depending on the deployment pattern, the catalog may provide a link to each individual record of the collection or a link to a search access point for retrieving subsets of records.
 
-The core set of properties that may be used to describe a record collection or catalog include _id_, _type_, _title_, _description_, _extent_ and _links_.  A complete definition of a catalog can be found in clause <<clause-record-collection,Record collection>>.  It should be noted that this list of properties is very similar to the list of properties defined for a <<record-schema-overview,catalog record>>.  This is intentional since the record collection object can be considered a _record_ that describes a catalog resource.
+The core set of properties that may be used to describe a catalog include _id_, _type_, _title_, _description_, _extent_ and _links_.  A complete definition of a catalog can be found in clause <<clause-record-collection,Record collection>>.  It should be noted that this list of properties is very similar to the list of properties defined for a <<record-schema-overview,catalog record>>.  This is intentional since the catalog can be considered a _record_ that describes a related set of records.
 
 It is anticipated that this set of properties will be extended to enrich the information content of the collection metadata to suit specific needs.
 
@@ -111,7 +111,7 @@ To facilitate access to records in a catalog, the https://docs.ogc.org/is/17-069
 
 Where:
 
-* `{catalogId}` = An identifier for a specific record collection (i.e. catalog identifier).
+* `{catalogId}` = An identifier for a specific catalog.
 * `{recordId}` = An identifier for a specific record within a collection.
 
 [[api-behavior-model-overview]]

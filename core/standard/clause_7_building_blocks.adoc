@@ -42,7 +42,7 @@ Other encodings are allowed but are not described in this document.
 |recordId |**required** |A unique record identifier assigned by the server. |`id`
 |created |optional |The date this record was created in the server. |`properties.created`
 |updated |optional |The most recent date on which the record was changed. |`properties.updated`
-|conformsTo |optional |The extensions/conformance classes used in this record. |`conformsTo`
+|conformsTo |optional |The extensions/conformance classes used in this record. |`properties.conformsTo`
 |===
 
 [#core-properties-resource-table,reftext='{table-caption} {counter:table-num}']
@@ -1090,7 +1090,13 @@ include::requirements/json/REQ_record-content.adoc[]
 include::../openapi/schemas/recordGeoJSON.yaml[]
 ----
 
-NOTE: Referenced schemas can be found at https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/confClasses.yaml[confClasses.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/time.yaml[time.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/geometryGeoJSON.yaml[geometryGeoJSON.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[common/link.yaml].
+.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[Schema the set of common record properties (recordCommonProperties.yaml)]
+[source,YAML]
+----
+include::../openapi/schemas/recordCommonProperties.yaml[]
+----
+
+NOTE: Referenced schemas can be found at https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/recordCommonProperties.yaml[recordCommonProperties.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/time.yaml[time.yaml], https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml[geometryGeoJSON.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/linkBase.yaml[common/linkBase.yaml].
 
 include::recommendations/json/PER_time.adoc[]
 
@@ -1109,7 +1115,7 @@ include::requirements/json/REQ_collection-response.adoc[]
 include::requirements/json/REQ_collection-content.adoc[]
 
 [[schema_json_collection]]
-.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog or record collection in JSON(catalog.yaml)]
+.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog in JSON(catalog.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/catalog.yaml[]

@@ -1,0 +1,10 @@
+---
+allOf:
+  - $ref: 'recordCommonProperties.yaml'
+  - $ref: 'https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/processSummary.yaml'
+  - type: object
+    required:
+      - id
+      - type
+      - title
+      - version
