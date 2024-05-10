@@ -1146,7 +1146,7 @@ include::requirements/json/REQ_collection-response.adoc[]
 include::requirements/json/REQ_collection-content.adoc[]
 
 [[schema_json_collection]]
-.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog in JSON(catalog.yaml)]
+.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog encoded as JSON(catalog.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/catalog.yaml[]
