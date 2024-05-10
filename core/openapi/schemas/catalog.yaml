@@ -29,14 +29,14 @@ allOf:
         oneOf:
           - type: string
             enum:
-              - Record
-              - Catalog
+              - record
+              - catalog
           - type: array
             items:
               type: string
               enum: 
-                - Record
-                - Catalog
+                - record
+                - catalog
       type:
         descripton:
           Fixed to catalog for collections of records
