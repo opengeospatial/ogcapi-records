@@ -8,3 +8,10 @@ allOf:
       - type
       - title
       - version
+    properties:
+      conformsTo:
+        type: array
+        description:
+          The extensions/conformance classes used in this record.
+        items:
+          type: string
