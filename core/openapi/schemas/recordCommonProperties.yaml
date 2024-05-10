@@ -19,7 +19,6 @@ properties:
       records. Where available, a link to the canonical
       URI of the record type resource will be added to
       the 'links' property.
-    maxLength: 64
   title:
     type: string
     description:
