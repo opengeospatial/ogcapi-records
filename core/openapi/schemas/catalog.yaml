@@ -8,6 +8,12 @@ allOf:
       - type
       - title
     properties:
+      conformsTo:
+        type: array
+        description:
+          The extensions/conformance classes used in this record.
+        items:
+          type: string
       itemType:
         description:
           If this collection is a homogenous collection

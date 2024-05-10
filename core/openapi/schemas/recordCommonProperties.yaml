@@ -11,12 +11,6 @@ properties:
     description:
       The most recent date on which the record was changed.
     format: date-time
-  conformsTo:
-    type: array
-    description:
-      The extensions/conformance classes used in this record.
-    items:
-      type: string
   type:
     type: string
     description:
