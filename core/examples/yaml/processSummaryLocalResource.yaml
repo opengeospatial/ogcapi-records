@@ -7,7 +7,7 @@ allOf:
       - id
       - type
       - title
-      - version
+      - links
     properties:
       conformsTo:
         type: array
