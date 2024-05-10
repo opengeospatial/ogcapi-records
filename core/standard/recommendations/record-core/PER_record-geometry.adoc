@@ -1,0 +1,7 @@
+[[per_record-core_geometry]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/record-core/geometry*
+
+Specific communities of interest and/or use cases MAY alter this obligation and make the `geometry` property mandatory.  
+|===

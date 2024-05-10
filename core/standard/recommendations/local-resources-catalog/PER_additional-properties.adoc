@@ -15,13 +15,15 @@
 |conformsTo |If all items of this local resources object conform to the same set of extensions/conformance classes then this member may be used to advertise this fact rather than copying this information into each item.
 |created |Date of creation of this local resources object.
 |updated |The most recent date on which this local resources object was changed.
+|description |A free-text account of the local resources object.
 |keywords |The topic or topics of this local resources object. Typically represented using free-form keywords, tags, key phrases, or classification codes.
 |language |The language used for textual values for this local resources object.
 |languages |This list of other languages in which this local resources object can be retrieved.
+|resourceLanguages |The list of languages in which the sub-resource described by this local resources object is available.
+|externalIds |An identifier for this local resources object assigned by an exteranl (to the deployment) entity.
 |themes |A knowledge organization system used to classify this local resources object.
+|formats |A list of available distributions of the sub-resource described by this local resources object.
 |contacts |A list of contacts qualified by their role(s).
 |license |A legal document under which this local resources object is made available.
 |rights |A statement that concerns all rights not addresses by the license such as a copyright statement.
-|defaultSortOrder |If sorting is implemented at a local resources endpoint, the default sort order.
-|linkTemplates |An array or zero or more link templates.
 |===

@@ -1,8 +1,9 @@
 [[req_local-resources-catalog_recordId]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/type*
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/recordId*
 
-^|A |The `recordId` property SHALL be present in the information model of the local resources object.
-^|B |The value of the `recordId` property SHALL match the value of the `id` member.
+The `recordId` property SHALL be present in the information model of the local resources object.
 |===
+
+NOTE: Depending on the particular encoding of a record, the actual name of the `recordId` property may map to a differently named member.  For example, in the <<clause-record-encoding-json,GeoJSON encoding>> of a record, the `recordId` property maps to the `id` member.

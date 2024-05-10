@@ -1,7 +1,7 @@
-[[rec_record-links]]
+[[rec_record-core_links]]
 [width="90%",cols="2,6a"]
 |===
-^|*Recommendation {counter:rec-id}* |*/rec/core/record-links*
+^|*Recommendation {counter:rec-id}* |*/rec/record-core/links*
 
 Each record SHOULD include one or more links (`rel="describes"`) pointing to the resource(s) that this record describes.
 |===

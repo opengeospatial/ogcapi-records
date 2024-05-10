@@ -50,17 +50,19 @@ Other encodings are allowed but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
-|geometry |**required** |A geometry associated with the resource that is used for discovery.  Can be null if there is no associated geometry. |`geometry`
 |type |**required** |The nature or genre of the resource. |`properties.type`
 |title |**required** |A human-readable name given to the resource. |`properties.title`
-|time |optional |The temporal extent of the resource. Can be null if there is no associated temporal extent. |`time`
 |description |optional |A free-text description of the resource. |`properties.description`
+|geometry |optional |A spatial extent associated with the resource. +
+Can be `null` if there is no associated spatial extent. |`geometry`
+|time |optional |A temporal extent associated with the resource. +
+Can be `null` if there is no associated temporal extent. |`time`
 |keywords |optional |A list of free-form keywords or tags associated with the resource. |`properties.keywords`
+|themes |optional |A knowledge organization system used to classify the resource. |`properties.themes`
 |language |optional |The language used for textual values (i.e. titles, descriptions, etc.) of this record. |`properties.language`
 |languages |optional |The list of other languages in which this record is available. |`properties.languages`
 |resourceLanguages |optional |The list of languages in which the resource described by this record can be retrieved. |`properties.resourceLanguages`
 |externalIds |optional |One or more identifiers for the resource assigned by an external entity. |`properties.externalIds`
-|themes |optional |A knowledge organization system used to classify the resource. |`properties.themes`
 |formats |optional |A list of available distributions for the resource. |`properties.formats`
 |contacts |optional |A list of contacts qualified by their role(s) in association to the record or resource. |`properties.contacts`
 |license |optional |The legal provisions under which the resource is made available. |`properties.license`
@@ -74,7 +76,6 @@ include::recommendations/record-core/PER_common-mark.adoc[]
 
 include::recommendations/record-core/PER_additional-properties-record.adoc[]
 
-
 [[sc_record_extensions]]
 ==== Record extensions
 
@@ -83,6 +84,25 @@ In <<core-properties-record-table>> and <<core-properties-resource-table>> this 
 include::recommendations/record-core/REC_record-extensions.adoc[]
 
 In the case where all the records of a catalog use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` member at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[collection or catalog level] that may be used to declare which extensions are used in all records of the catalog.  Extensions listed at the catalog and record levels are cumulative.
+
+[[sc_type]]
+==== Type
+
+A record has one `type` property.  The value of this property denotes the nature or genre of the resource the record describes.  The value of this property should be a code, convenient for filtering records.
+
+include::recommendations/record-core/REC_record-type.adoc[]
+
+include::recommendations/record-core/PER_record-type.adoc[]
+
+In addition, links to external resources describing the record type vocabulary used to populate the `type` member are recommended, as described in <<sc_associations_and_links,Associations and Links>>.
+
+[[sc_spatial_information]]
+==== Spatial information
+The spatial characteristic of the resource described by a record is specified using the optional `geometry` property.
+
+include::recommendations/record-core/PER_record-geometry.adoc[]
+
+For example, the <<rc_json,JSON>> requirements class makes the `geometry` member mandatory because the record encoding (i.e. https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON]) requires that the `geometry` member be mandatory.
 
 [[sc_temporal_information]]
 ==== Temporal information
@@ -226,7 +246,7 @@ include::requirements/record-core/REQ_time-zone.adoc[]
 [[sc_keywords_and_themes]]
 ==== Keywords and Themes
 
-A record allows for one `properties.keywords` and one to many `properties.themes` properties.  Keywords are free form terms or tags associated with the resource(s) that the record describes.  Themes are concepts associated with the resource(s) that a record describes taken from one or more formal knowledge organization systems or schemes.  The list of knowledge organization systems or schemes used in a <<clause-searchable-catalog,searchable>> or <<clause-local-resources-catalog,local resources>> catalog can be determined by inspecting the server's OpenAPI document or, if the server implements CQL2, by exposing a queryable (e.g. named `scheme`) and enumerating the list of schemes used in the queryable's schema definition.
+A record allows for one `keywords` and one to many `themes` properties.  Keywords are free form terms or tags associated with the resource(s) that the record describes.  Themes are concepts associated with the resource(s) that a record describes taken from one or more formal knowledge organization systems or schemes.  The list of knowledge organization systems or schemes used in a <<clause-searchable-catalog,searchable>> or <<clause-local-resources-catalog,local resources>> catalog can be determined by inspecting the server's OpenAPI document or, if the server implements CQL2, by exposing a queryable (e.g. named `scheme`) and enumerating the list of schemes used in the queryable's schema definition.
 
 include::recommendations/record-core/REC_record-keywords-themes.adoc[]
 
@@ -239,27 +259,73 @@ The following provides an example of using keywords for free form terms (e.g. ta
 include::../examples/json/keywords-themes.json[]
 ----
 
+==== Formats
+
+The `formats` property indicates the list of available distribution formats for the resource that a record describes.  These can include both physical and digital distribution formats.
+
+The following example illustrates a resources that is a available is several formats.
+
+[#formats-example,reftext=`Formats Example`]
+.Formats Example
+[source,json]
+----
+"formats": [
+  { "name": "TK50" },
+  { "name": "GRIB", "mediaType": "application/x-grib" },
+  { "mediaType": "application/zip"}
+]
+----
+
+include::recommendations/record-core/REC_format.adoc[]
+
+[[sc_record_language_handling]]
+==== Language handling
+
+===== Overview
+
+A catalog record can include language information about:
+
+* The resource that the record describes.
+* The language used for text values in the current record representation.
+* Alternate languages in which the current record can be represented.
+
+===== Language of the record
+
+include::recommendations/record-core/REC_record-lang.adoc[]
+
+The https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[templated link object] are based on https://datatracker.ietf.org/doc/html/rfc8288[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languages. 
+
+[[minting-language-specific-uris]]
+A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any approach how such a capability is supported by a server. 
+
+[NOTE]
+======================================================================
+Two common approaches are:
+
+* An additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language-specific path element like `.../en-ca/...`);
+
+* An additional query parameter (for example, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/parameters/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
+======================================================================
+
+[NOTE]
+======================================================================
+There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple languages would require multiple requests to the server each negotiating to a desired language.
+======================================================================
+
+===== Language of the resource
+
+include::recommendations/record-core/REC_resource-langs.adoc[]
+
 [[sc_contacts]]
 ==== Contacts
 
 include::requirements/record-core/REQ_contact.adoc[]
 include::recommendations/record-core/REC_contact.adoc[]
 
-[[sc_type]]
-==== Type
-
-A record has one `properties.type` property. The value of this property should be a code, convenient for filtering records. 
-
-include::recommendations/record-core/REC_record-type.adoc[]
-
-include::recommendations/record-core/PER_record-type.adoc[]
-
-In addition, links to external resources describing the record type vocabulary used to populate the `properties.type` member are recommended, as described in <<sc_associations_and_links,Associations and Links>>.
-
 [[sc_license]]
 ==== License
 
-A record may have one `properties.license` property. If present, the value of this property should be a code, convenient for filtering records.
+A record may have one `license` property. If present, the value of this property should be a code, convenient for filtering records.
 
 include::requirements/record-core/REQ_record-license.adoc[]
 
@@ -378,45 +444,7 @@ include::../examples/json/templated-link-ref.json[]
 
 A <<clause-record-core,record>> contains information, encoded in the links and link templates sections, for accessing one or more resources described by the record.  Since a resource may have multiple representations there may be multiple links pointing to each representation of a resource.  Furthermore, representations of a resource may be created and updated at different times.  In order to capture this life cycle information of resource representations, the https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link schema] is extended with the addition of two properties named `created` and `updated`.  The values of these properties are used to indicate the creation and last updated dates of the resource representation pointed to by the link.
 
-[[sc_record_language_handling]]
-==== Language handling
-
-===== Overview
-
-A catalog record can include language information about:
-
-* The resource that the record describes.
-* The language used for text values in the current record representation.
-* Alternate languages in which the current record can be represented.
-
-===== Language of the record
-
-include::recommendations/record-core/REC_record-lang.adoc[]
-
-The https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[templated link object] are based on https://datatracker.ietf.org/doc/html/rfc8288[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languages. 
-
-[[minting-language-specific-uris]]
-A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any approach how such a capability is supported by a server. 
-
-[NOTE]
-======================================================================
-Two common approaches are:
-
-* An additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language-specific path element like `.../en-ca/...`);
-
-* An additional query parameter (for example, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/parameters/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
-======================================================================
-
-[NOTE]
-======================================================================
-There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple languages would require multiple requests to the server each negotiating to a desired language.
-======================================================================
-
-===== Language of the resource
-
-include::recommendations/record-core/REC_resource-langs.adoc[]
-
-==== Encodings
+==== Record encodings
 
 This Standard defines requirements classes for JSON and HTML encoding of a record. See <<clause-catalog-encoding,Encodings>>.
 
@@ -430,23 +458,23 @@ include::requirements/requirements_class_record-collection.adoc[]
 
 The Record Collection requirements class defines the requirements for a record collection.
 
-A _collection_ is an object that provides information about and access to a set of related <<clause-core-record,records>>.  Such a collection of records is also referred to as a _catalog_. 
+A _record collection_ is an object that provides information about and access to a set of related <<clause-core-record,records>>.  Such a collection of records is also referred to as a _catalog_. 
 
-The schema for the collection resource is an extension of the collection schema defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features Standard].
+The schema for the catalog is an extension of the collection schema defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features Standard].
 
-While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the collection in the <<clause-records-api,Records API>> conformance class.  Otherwise, the collection resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
+While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the catalog in the <<clause-records-api,Records API>> conformance class.  Otherwise, the catalog resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
 
-Although this Standard does not mandate any particular encoding for a record collection, two conformance classes are defined:
+Although this Standard does not mandate any particular encoding for a catalog, two conformance classes are defined:
 
-* a <<clause-catalog-encoding,JSON>> record collection encoding, and
+* a <<clause-catalog-encoding,JSON>> catalog encoding, and
 * an <<requirements-class-html-clause,HTML>> encoding.
 
 Other encodings are allowed but are not described in this document.
 
 [[record-collection-schema]]
-==== Record collection schema
+==== Catalog schema
 
-<<collection-properties-table>> defines the set of properties that may be used to describe a collection of records.
+<<collection-properties-table>> defines the set of properties that may be used to describe a catalog.
 
 [#collection-properties-table,reftext='{table-caption} {counter:table-num}']
 .Table of collection properties
@@ -472,6 +500,8 @@ Other encodings are allowed but are not described in this document.
 |license |optional |The legal provisions under which this collection is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
 |conformsTo |optional |The extensions/conformance classes used in this catalog object.
+|recordsArrayName |optional |The name of the array member in the catalog used to encode records in-line.  The default value is `records`.
+|records |optional |An array of records encoded in-line in the catalog.
 |===
 
 NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core].
@@ -491,6 +521,16 @@ See <<sc_keywords_and_themes,Keywords and Themes>> for a record.
 include::requirements/record-collection/REQ_links.adoc[]
 
 include::recommendations/record-collection/PER_links.adoc[]
+
+==== Records
+
+include::recommendations/record-collection/PER_records.adoc[]
+
+include::requirements/record-collection/REQ_records.adoc[]
+
+include::recommendations/record-collection/PER_records-array-name.adoc[]
+
+include::requirements/record-collection/REQ_records-array-name.adoc[]
 
 ==== Templated links with variables
 
@@ -1052,25 +1092,42 @@ include::requirements/requirements_class_json.adoc[]
 [[clause-record-encoding-json]]
 ===== Record encoding
 
-GeoJSON is a commonly used format based on JSON that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format, supporting GeoJSON is recommended. The caveat is, if record data can be represented in GeoJSON for the intended use.
+https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON] is a commonly used format based on JSON that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format, supporting GeoJSON is recommended. The caveat is, if record data can be represented in GeoJSON for the intended use.
 
 The following requirements apply when:
 
 . The Records API endpoint advertises conformance to the JSON Conformance Class.
-. The client negotiates that the content of the server's response be GeoJSON.
+. The client negotiates that the content of the server's response be https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON].
 
 include::requirements/json/REQ_record-response.adoc[]
 
 include::requirements/json/REQ_record-content.adoc[]
 
 [[schema_json_record]]
-.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml[Schema for a catalog record in GeoJSON (recordGeoJSON.yaml)]
+.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml[Schema for a catalog record encoded as GeoJSON (recordGeoJSON.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/recordGeoJSON.yaml[]
 ----
 
-NOTE: Referenced schemas can be found at https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/confClasses.yaml[confClasses.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/time.yaml[time.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/geometryGeoJSON.yaml[geometryGeoJSON.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/link.yaml[common/link.yaml].
+.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[Common record properties schema (recordCommonProperties.yaml)]
+[source,YAML]
+----
+include::../openapi/schemas/recordCommonProperties.yaml[]
+----
+
+[NOTE]
+======================================================================
+Referenced schemas can be found at:
+
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/time.yaml[time.yaml],
+* https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml[geometryGeoJSON.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/linkBase.yaml[linkBase.yaml].
+======================================================================
 
 include::recommendations/json/PER_time.adoc[]
 
@@ -1089,13 +1146,22 @@ include::requirements/json/REQ_collection-response.adoc[]
 include::requirements/json/REQ_collection-content.adoc[]
 
 [[schema_json_collection]]
-.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog or record collection in JSON(catalog.yaml)]
+.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog encoded as JSON(catalog.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/catalog.yaml[]
 ----
 
-NOTE: Referenced schemas can be found at https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml], https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml].
+[NOTE]
+======================================================================
+Referenced schemas can be found at:
+
+* https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml].
+======================================================================
 
 [[requirements-class-html-clause]]
 ==== Requirements Class HTML (Building Block)

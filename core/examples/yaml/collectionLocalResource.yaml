@@ -1,0 +1,18 @@
+---
+allOf:
+  - $ref: 'recordCommonProperties.yaml'
+  - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml'
+  - type: object
+    required:
+      - id
+      - type
+      - title
+      - links
+    properties:
+      conformsTo:
+        type: array
+        description:
+          The extensions/conformance classes used in this record.
+        items:
+          type: string
+

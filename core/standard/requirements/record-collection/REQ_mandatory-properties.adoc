@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-collection/mandatory-properties-collection*
 
-A collection object SHALL contain all the mandatory properties listed in <<collection-properties-table>>.
+A catalog SHALL include all the mandatory properties listed in <<collection-properties-table>>.
 |===

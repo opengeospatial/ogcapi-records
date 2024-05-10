@@ -1,11 +1,19 @@
 ---
 allOf:
   - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml'
+  - $ref: 'recordCommonProperties.yaml'
   - type: object
-  - required:
-    - type
-    - title
+    required:
+      - id
+      - type
+      - title
     properties:
+      conformsTo:
+        type: array
+        description:
+          The extensions/conformance classes used in this record.
+        items:
+          type: string
       itemType:
         description:
           If this collection is a homogenous collection
@@ -36,72 +44,17 @@ allOf:
         type: string
         enum:
           - Catalog
-      keywords:
-        type: array
-        description:
-          The topic or topics of the resource. Typically
-          represented using free-form keywords, tags, key
-          phrases, or classification codes.
-        items:
-          type: string
-      language:
-        description:
-          The language used for textual values in this
-          catalog representation.
-        $ref: 'language.yaml'
-      languages:
-        type: array
-        description:
-          The list of languages in which this catalog
-          object is available.
-        items:
-          $ref: 'language.yaml'
-      recordLanguages:
-        type: array
-        description:
-          The list of languages in which the records
-          of this catalog available.
-        items:
-          $ref: 'language.yaml'
-      created:
+      recordsArrayName:
         type: string
-        description:
-          Date of creation of this catalog.
-        format: date-time
-      updated:
-        type: string
-        description:
-          The most recent date on which the catalog was changed.
-        format: date-time
-      contacts:
+        default:
+          - records
+      records:
         type: array
-        description:
-          A list of contacts qualified by their role(s) in
-          association to the catalog.
+        description: 
+           An array of records that are part of this catalog that
+           are encoded in-line with the catalog.
         items:
-          $ref: 'contact.yaml'
-      themes:
-        type: array
-        description:
-          A knowledge organization system used to classify
-          this catalog.
-        minItems: 1
-        items:
-          $ref: 'theme.yaml'
-      license:
-        $ref: 'license.yaml'
-      rights:
-        type: string
-        description:
-          A statement that concerns all rights not addressed
-          by the license such as a copyright statement.
-      conformsTo:
-        type: array
-        description:
-          The extensions/conformance classes this catalog
-          object implements.
-        items:
-          type: string
+          $ref: 'recordGeoJSON.yaml'
       linkTemplates:
         type: array
         items:

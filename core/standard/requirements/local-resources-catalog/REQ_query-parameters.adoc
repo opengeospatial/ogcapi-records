@@ -1,7 +1,0 @@
-[[req_local-resource-catalog_query-parameters]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/query-parameters*
-
-Implementations of this requirements class SHALL, at the local resources endpoint, implement the parameters defined by the <<rc_record-core-query-parameters,Record Core Query Parameters>> building block.
-|===

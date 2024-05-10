@@ -1,0 +1,7 @@
+[[req_record-collection_records-array-name]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-collection/records-array-name*
+
+If the name of the in-line records array property in the catalog is changed to something other than `records` then that name SHALL be indicated in the catalog using a property named `recordsArrayName`.
+|===

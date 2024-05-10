@@ -1,29 +1,46 @@
 [[media-types-section]]
 == Media Types
 
-The OGC API - Records Standard does not mandate any particular encoding or format. However, it does provide extensions for encodings which are commonly used in implementations of OGC API Standards. These extensions include:
+=== Overview
+
+The OGC API - Records Standard does not mandate any particular encoding for a catalog or record. However, it does provide requirements for encodings which are commonly used in implementations of OGC API Standards. These encodings include:
 
 * <<requirements-class-json-clause,JSON>>
 * <<requirements-class-html-clause,HTML>>
 
 None of these encodings are mandatory. An implementation of this Standard may choose to implement none of them, selecting different encodings instead.
 
-=== HTML Encoding
-Support for HTML is recommended. HTML is the core language of the World Wide Web. An API that supports HTML will support browsing the spatial resources with a web browser and will also enable search engines to crawl and index those resources.
+NOTE: Schema structures documented in this Standard are defined using OpenAPI 3.0 Schema objects. These are available in YAML format from https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas[https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas]
 
-=== Schema Encoding
-Schema structures documented in this Standard are defined using OpenAPI 3.0 Schema objects. These are available in YAML format from https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas[https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas]
+=== Catalog encoding
 
-=== JSON Encoding
-Support for JSON is recommended. JSON is a commonly used format that is simple to understand and well supported by numerous tools and software libraries.
+==== HTML encoding
+HTML is the core language of the World Wide Web. An API that supports HTML will support browsing the spatial resources with a web browser and will also enable search engines to crawl and index those resources.
 
-==== GeoJSON
+Support for an HTML encoding of a catalog is **recommended**.
+
+==== JSON encoding
+JSON is a commonly used format that is simple to understand and well supported by numerous tools and software libraries.
+
+Support for a JSON encoding of a catalog is **recommended** (see https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog.yaml]).
+
+=== Record encoding
+
+==== HTML encoding
+
+Support for an HTML encoding of a record is **recommended**.
+
+==== GeoJSON encoding
 "GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the way they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
 
 GeoJSON provides a simple way of representing records in JSON and is supported by numerous geospatial tools and software libraries. It is best used for content which has a spatial extent that can be used with the World Geodetic System 1984 Coordinate Reference System.
 
-==== Media types
+Support of the GeoJSON encoding of a record is **recommended** (see https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml[recordGeoJSON.yaml]).
 
+==== JSON encoding
+If a JSON (rather that GeoJSON) encoding of a record is required, this Standard defines an informative schema for a JSON record (see https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordJSON.yaml[recordJSON.yaml]).
+
+=== Media types
 A description of the MIME types is mandatory for any OGC API Standard that specifies requirements for data encoding(s). The list of suitable MIME types for the OGC API - Records Standard is provided in <<media-types-table>>.
 
 [#media-types-table,reftext='{table-caption} {counter:table-num}']
@@ -35,13 +52,10 @@ A description of the MIME types is mandatory for any OGC API Standard that speci
  |Record encoded as GeoJSON  |`application/geo+json; application=ogc-record`
  |Catalog encoded as HTML    |`text/html`
  |Catalog encoded as JSON    |`application/ogc-catalog+json`
- |Collection encoded as HTML |`text/html`
- |Collection encoded as JSON |`application/ogc-collection+json`
 |====
 
 [[media-type-defaults]]
 === Default Encodings
-
 The media type used to encode a response to a request shall be determined through the HTTP content negotiation protocol as specified in the OGC API - Common Standard. However, content negotiation is not required by the HTTP standard. Therefore, default encodings must be established.
 
 include::requirements/record-collection/REQ_media-type-default.adoc[]
