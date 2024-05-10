@@ -42,7 +42,7 @@ Other encodings are allowed but are not described in this document.
 |recordId |**required** |A unique record identifier assigned by the server. |`id`
 |created |optional |The date this record was created in the server. |`properties.created`
 |updated |optional |The most recent date on which the record was changed. |`properties.updated`
-|conformsTo |optional |The extensions/conformance classes used in this record. |`properties.conformsTo`
+|conformsTo |optional |The extensions/conformance classes used in this record. |`conformsTo`
 |===
 
 [#core-properties-resource-table,reftext='{table-caption} {counter:table-num}']
