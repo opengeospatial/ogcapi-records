@@ -7,7 +7,6 @@ allOf:
       - id
       - type
       - title
-      - links
     properties:
       id:
         type: string

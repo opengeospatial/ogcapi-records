@@ -259,6 +259,25 @@ The following provides an example of using keywords for free form terms (e.g. ta
 include::../examples/json/keywords-themes.json[]
 ----
 
+==== Formats
+
+The `formats` property indicates the list of available distribution formats for the resource that a record describes.  These can include both physical and digital distribution formats.
+
+The following example illustrates a resources that is a available is several formats.
+
+[#formats-example,reftext=`Formats Example`]
+.Formats Example
+[source,json]
+----
+"formats": [
+  { "name": "TK50" },
+  { "name": "GRIB", "mediaType": "application/x-grib" },
+  { "mediaType": "application/zip"}
+]
+----
+
+include::recommendations/record-core/REC_format.adoc[]
+
 [[sc_record_language_handling]]
 ==== Language handling
 

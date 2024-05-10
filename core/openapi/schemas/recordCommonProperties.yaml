@@ -95,7 +95,7 @@ properties:
     description:
       A list of available distributions of the resource.
     items:
-      type: string
+      $ref: 'format.yaml'
   contacts:
     type: array
     description:

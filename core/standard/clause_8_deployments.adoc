@@ -124,7 +124,7 @@ Other requirements classes in this Standard:
 
 3. optionally support sorting of the response from a local resources endpoint.
 
-The Local Resources Catalog requirements class does not define the specific endpoints in the <<ogc-api-resource-tree,OGC API resource tree>> that should be enabled with catalog-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalog-line searching be identified by the responsible OGC Standard.  It is anticipated that the responsible OGC standard will define a requirements class or extension to enable local resources catalog capabilities at that endpoint.
+The Local Resources Catalog requirements class does not define the specific endpoints in the <<ogc-api-resource-tree,OGC API resource tree>> that should be enabled with catalog-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalog-like searching be identified by the responsible OGC Standard.  It is anticipated that the responsible OGC standard will define a requirements class or extension to enable local resources catalog capabilities at that endpoint.
 
 ==== Resource Description
 

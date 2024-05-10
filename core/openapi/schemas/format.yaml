@@ -1,0 +1,12 @@
+---
+type: object
+anyOf:
+- required:
+  - name
+- required:
+  - mediaType
+properties:
+  name:
+    type: string
+  mediaType:
+    type: string

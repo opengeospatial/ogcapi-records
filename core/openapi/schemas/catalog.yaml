@@ -4,6 +4,7 @@ allOf:
   - $ref: 'recordCommonProperties.yaml'
   - type: object
     required:
+      - id
       - type
       - title
     properties:
