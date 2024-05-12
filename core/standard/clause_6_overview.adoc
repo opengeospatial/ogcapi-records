@@ -15,7 +15,7 @@ In the modern scenario, the catalog records can be distributed and linked togeth
 
 The atomic unit of information in a catalog is the _record_.
 
-A _catalog_ is a collection of _records_.  The terms **collection of records** and **catalog** are used interchangeably in this Standard.
+A _catalog_ is a collection of related _records_.  The terms **collection of records** and **catalog** are used interchangeably in this Standard.
 
 A record provides a summary description (metadata) of a resource that the provider of the resource wishes to make discoverable.  The record schema defined in this Standard includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouraged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
 
@@ -26,7 +26,7 @@ The Records API Standard defines the following building blocks that may be used 
 . The _core_ schema of a record.
 . The definition of a _collection_ resource that groups and describes a set of related records (i.e. a catalog).
 . The definition of a core set of query parameters for searchable catalogs.
-. An API that allows collections of records (i.e. a catalog) to be searched using logically connected predicates that can include spatial and/or temporal predicates.
+. An API that allows a catalog to be searched using logically connected predicates that can include spatial and/or temporal predicates.
 
 Using these building blocks a catalog can be deployed as:
 
@@ -58,9 +58,9 @@ Although the Records API Standard does not mandate any particular encoding for a
 
 Other encodings are allowed but are not described in this Standard.
 
-Accessing collections of records deployed as static files is described in the <<clause-crawlable-catalog,Crawlable records deployment>> clause.
+Accessing a catalog deployed as static files is described in the <<clause-crawlable-catalog,Crawlable records deployment>> clause.
 
-Accessing collections of records through an implementations of the Records API is described in the <<records-access,Records access>> clause.
+Accessing a catalog through an implementations of the Records API is described in the <<records-access,Records access>> clause.
 
 [[sc_record-collection-overview]]
 === Record collection (catalog)
@@ -103,7 +103,7 @@ To facilitate access to records in a catalog, the https://docs.ogc.org/is/17-069
 |https://docs.ogc.org/is/17-069r4/17-069r4.html#_api_definition_2[/api] |`service-desc` or `service-doc` |API Description (optional)
 |https://docs.ogc.org/is/17-069r4/17-069r4.html#_declaration_of_conformance_classes[/conformance] | `conformance` |Conformance Classes
 |https://docs.ogc.org/is/17-069r4/17-069r4.html#_collections_[/collections] | `data` |Metadata describing the catalogs available from this API implementation instance.
-|<<clause-record-collection,/collections/{catalogId}>> |`collection` |Metadata describing the collection which has the unique identifier `{catalogId}`
+|<<clause-record-collection,/collections/{catalogId}>> |`collection` |Metadata describing a catalog which has the unique identifier `{catalogId}`
 3+^|**Records**
 |<<records-access,/collections/{catalogId}/items>> |`items` |Search results based on querying the service for records satisfying 0..n query parameters.
 |<<record-access,/collections/{catalogId}/items/{recordId}>> |`item` |Record of metadata which has the unique identifier `{recordId}`.

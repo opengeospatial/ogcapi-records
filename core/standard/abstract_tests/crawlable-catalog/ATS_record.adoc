@@ -7,5 +7,5 @@
 ^|Test Method |. Determine the URL of a record
 . Resolve the URL and retrieve the record
 .  Check that the record validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml
-. Locate each link (`rel="describes"`) in the links or linkTemplates section of the record and verify that each link target is retrieveable
+. Locate each link (relation: `describes`) in the links or linkTemplates section of the record and verify that each link target is retrieveable
 |===

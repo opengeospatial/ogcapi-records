@@ -1,7 +1,7 @@
 [[req_record-core_time-instant-interval]]
 [width="90%",cols="2,7a"]
 |===
-^|*Requirement {counter:req-num}* |*/req/core/time-instant-interval*
+^|*Requirement {counter:req-num}* |*/req/record-core/time-instant-interval*
 ^|A |If the `time` object in a record includes both a `date` and a `timestamp` member, the `full-date` parts SHALL be identical.
 ^|B |If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end dates, the interval SHALL contain the date of the timestamp.
 ^|C |If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end timestamps, the interval SHALL contain the timestamp.

@@ -3,8 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-collection/links*
 
-^|A |The catalog SHALL include a link (`rel=self`) that points to itself.
-^|B |The catalog SHALL include one link (`rel=alternate`) for each alternative representation of itself.
-^|C |If the records of the catalog are accessed individually then, the catalog SHALL contain one or more links (`rel="item"`) for each record that is member of this catalog.
-^|C |If the records of the catalog are accessed via and API then, the catalog SHALL contain one link (`rel="items"`) pointing to the endpoint for accessing the records of this catalog via the API.
+^|A |The catalog SHALL include a link (relation: `self`) that points to itself.
+^|B |The catalog SHALL include one link (relation: `alternate`) for each alternative representation of itself.
 |===

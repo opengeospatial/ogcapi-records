@@ -1,0 +1,7 @@
+[[rec_record-collection_description]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/record-core/description*
+
+A catalog SHOULD include the `description` property.
+|===

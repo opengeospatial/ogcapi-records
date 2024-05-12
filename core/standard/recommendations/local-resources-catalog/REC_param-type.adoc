@@ -1,7 +1,0 @@
-[[rec_local-resources-catalog_param-type]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalog/param-type*
-
-The definition of the `type` parameter SHOULD be extended to enumerate the list of known resource types.
-|===

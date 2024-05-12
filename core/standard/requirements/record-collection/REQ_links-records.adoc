@@ -1,0 +1,7 @@
+[[req_record-collection_links-records]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-collection/links-records*
+
+A link (relation: `items`) SHALL be included in the <<catalog-links-section,links section>> of the catalog pointing to an endpoint for accessing the records of this catalog via an API.
+|===

@@ -6,7 +6,7 @@ allOf:
     required:
       - id
       - type
-      - title
+      - links
     properties:
       conformsTo:
         type: array

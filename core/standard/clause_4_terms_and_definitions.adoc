@@ -4,7 +4,7 @@ This document uses the terms defined in Sub-clause 5 of https://docs.ogc.org/DRA
 For the purposes of this document, the following additional terms and definitions apply.
 
 === Catalog; Record collection
-a collection of <<record-def,records>>
+a collection of related <<record-def,records>>
 
 === Conformance Module; Conformance Test Module
 set of related tests, all within a single conformance test class (<<ogc08-131,OGC 08-131>>)
@@ -33,7 +33,7 @@ a collection of resources defined by the set of https://ogcapi.ogc.org/[OGC API 
 
 [[record-def]]
 === Record
-atomic unit of information of a catalog that is used to provide information about a particular resource
+atomic unit of information of a catalog that is used to provide information about a particular resource that the publisher of that resources wishes to make discoverable
 
 === Recommendation
 expression in the content of a document conveying that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is deprecated but not prohibited (<<ogc08-131,OGC 08-131>>) 

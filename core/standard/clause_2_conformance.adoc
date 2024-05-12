@@ -23,6 +23,7 @@ The standardization target of the conformance classes:
 * <<clause-searchable-catalog_sorting,Searchable Catalog - Sorting>>
 * <<clause-crawlable-catalog,Crawlable Catalog>>
 * <<clause-local-resources-catalog,Local Resources Catalog>>
+* <<clause-local-resources-catalog_query-parameters,Local Resources Catalog - Query Parameters>>
 * <<clause-local-resources-catalog_filtering,Local Resources Catalog - Filtering>>
 * <<clause-local-resources-catalog_sorting,Local Resources Catalog - Sorting>>
 * <<clause-autodiscovery,Autodiscovery>>
@@ -58,11 +59,11 @@ This standard also identifies ten (10) building block requirements classes:
 
 The <<clause-record-core,_Record Core_>> conformance class defines the requirements for the core schema of a catalog record which is a set of properties (<<core-properties,core properties>>) that can be used to make any resource discoverable via a catalog.  This core set of properties can be extended as required by specific communities of interest and/or use cases.
 
-The <<clause-record-collection,_Record Collection_>> conformance class defines requirements for the metadata used to describe a collection of related records.
+The <<clause-record-collection,_Record Collection_>> conformance class defines requirements for the metadata used to describe a collection of related records referred to as a _catalog_ in this Standard.
 
 The <<clause-record-core-query-parameters,_Record query parameters_>> conformance class defines a minimum set of query parameters that all queryable catalogs should provide.
 
-The <<clause-records-api,_Records API_>> conformance class defines the requirements for an API implementation for searching collections of records based on logically connected predicates that can include spatial and/or temporal predicates.  The Records API Standard is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API - Records.  https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for other OGC API Standards for feature access. Therefore, this conformance class should be viewed as an extension to OGC API - Features. Conformance to this class requires demonstrated conformance to the applicable Conformance Classes define in the of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features] Standard.
+The <<clause-records-api,_Records API_>> conformance class defines the requirements for an API implementation for searching catalogs based on logically connected predicates that can include spatial and/or temporal predicates.  The Records API Standard is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API - Records.  https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for other OGC API Standards for feature access. Therefore, this conformance class should be viewed as an extension to OGC API - Features. Conformance to this class requires demonstrated conformance to the applicable Conformance Classes define in the of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features] Standard.
 
 The <<clause-sorting,_Sorting_>> conformance class defines the requirements to support sorting of records in a query response.
 
@@ -87,6 +88,7 @@ Using the above-mentioned building blocks, this Standard identifies the followin
 ** <<clause-searchable-catalog_filtering,Searchable Catalog - Filtering>>
 
 * <<clause-local-resources-catalog,Local Resources Catalog>>
+** <<clause-local-resources-catalog_query-parameters,Local Resources Catalog - Query Parameters>>
 ** <<clause-local-resources-catalog_sorting,Local Resources Catalog - Sorting>>
 ** <<clause-local-resources-catalog_filtering,Local Resources Catalog - Filtering>>
 
@@ -94,7 +96,7 @@ The <<clause-crawlable-catalog,Crawlable Catalog>> conformance class defines the
 
 The <<clause-searchable-catalog,Searchable Catalog>>, <<clause-searchable-catalog_sorting,Searchable Catalog - Sorting>>, <<clause-searchable-catalog_filtering,Searchable Catalog - Filtering>> conformance classes define the requirements for a catalog composed of a collection of records that is searchable via an API.
 
-The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-resources-catalog_sorting,Local Resources Catalog - Sorting>>, <<clause-local-resources-catalog_filtering,Local Resources Catalog - Filtering>> conformance classes define the requirements for a local resources catalog which is a catalog composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resources catalog but other endpoints may exist in an OGC API deployment as well.
+The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-resources-catalog_query-parameters,Local Resources Catalog - Query Parameters>>, <<clause-local-resources-catalog_sorting,Local Resources Catalog - Sorting>>, <<clause-local-resources-catalog_filtering,Local Resources Catalog - Filtering>> conformance classes define the requirements for a local resources catalog which is a catalog composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resources catalog but other endpoints may exist in an OGC API deployment as well.
 
 [#required_building_blocks,reftext='{table-caption} {counter:table-num}']
 .Required building blocks by catalog deployment type
@@ -104,7 +106,7 @@ The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-r
 | |<<clause-crawlable-catalog,_**Crawlable**_>> |<<clause-searchable-catalog,_**Searchable**_>> |<<clause-local-resources-catalog,_**Local Resources catalog**_>>
 |<<clause-record-core,Record Core>> |Mandatory |Mandatory |Mandatory
 |<<clause-record-collection,Record collection>> |_Optional_ |Mandatory |N/A
-|<<clause-record-core-query-parameters,Record query parameters>> |N/A |_Mandatory_ |_Mandatory_
+|<<clause-record-core-query-parameters,Record query parameters>> |N/A |_Mandatory_ |_Optional_
 |<<clause-records-api,Records API>> |N/A |Mandatory |N/A
 |<<clause-sorting,Sorting>> |N/A |_Optional_ |_Optional_
 |<<clause-filtering,Filtering>> |N/A |_Optional_ |_Optional_
@@ -135,10 +137,12 @@ OGC Compliance Testing web site.
 |<<ats_searchable_catalog_filtering,Searchable Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-filtering
 |<<ats_searchable-catalog_sorting,Searchable Catalog - Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-sorting
 |<<ats_local-resources-catalog,Local Resources Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
+|<<ats_local-resources-catalog_query-parameters,Local Resources Catalog - Query Parameters>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-query-parameters
 |<<ats_local-resources-catalog_filtering,Local Resources Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-filtering
 |<<ats_local-resources-catalog_sorting,Local Resources Catalog - Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-sorting
 |===
 
+////
 [#building_block_conf_class_uris,reftext='{table-caption} {counter:table-num}']
 .Building Block Conformance class URIs
 [cols="30,70",options="header"]
@@ -155,3 +159,4 @@ OGC Compliance Testing web site.
 |<<ats_oas30,OpenAPI 3.0>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
 |<<ats_autodiscovery,Autodiscovery>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery
 |===
+////

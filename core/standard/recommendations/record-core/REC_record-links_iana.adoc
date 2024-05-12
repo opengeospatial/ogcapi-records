@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-core/links_iana*
 
-Using the official https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA Link Relation Types] for links in the `links` or `linkTemplates` sections is recommended.
+Links relations for links in the `links` or `linkTermplates` sections SHOULD be taked from the official https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA Link Relation Types] registry.
 |===

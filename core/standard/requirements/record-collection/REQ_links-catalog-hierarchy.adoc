@@ -1,0 +1,7 @@
+[[req_record-collection_links-catalog-hierarchy]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-collection/links-catalog-hierarchy*
+
+A catalog referencing sub-ordinate catalogs SHALL include a link (relation: `child`) pointing to each immediate sub-ordinate catalog in the hierarchy.
+|===

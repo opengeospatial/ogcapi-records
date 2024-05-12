@@ -2,6 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-core/type*
-^|A |The list of codes that can occur in records of a catalog for the property `type` SHOULD use a formal controlled vocabulary defined by an organization (e.g. ISO), or a community of interest/domain (e.g. WMO).
-^|B |The list of codes that can occur in records of a catalog for the property `type` SHOULD be listed as enum values in the API definition of the record schema.
+^|A |A record SHOULD include the `type` property to indicate the nature or genre of the resource that the record is describing.
+^|B |The list of codes that can occur in records of a catalog for the property `type` SHOULD use a formal, controlled vocabulary defined by an organization (e.g. ISO), or a community of interest/domain (e.g. WMO).
+^|C |The list of codes that can occur in records of a catalog for the property `type` SHOULD be listed as enum values in the API definition of the record schema.
 |===

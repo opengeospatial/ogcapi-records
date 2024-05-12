@@ -1,0 +1,7 @@
+[[req_record-collection_links-record]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-collection/links-record*
+
+A link (relation: `item`) SHALL be included in the <<catalog-links-section,links section>> of the catalog for each individually referenced record that is a member of this catalog.
+|===
