@@ -1,0 +1,9 @@
+[[req_record-collection_itemType]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-collection/itemType*
+
+^|A |If a catalog homogeneously references <<clause-record-core,records>> then, its `itemType` property SHALL be a string with the fixed value of `record`.
+^|B |If a catalog homogeneously references other <<clause-record-collection,catalogs>> then, its `itemType` property SHALL be a string with the fixed value of `catalog`.
+^|C |If a catalog references both <<clause-record-core,records>> and other <<clause-record-collection,catalogs>> then, its `itemType` property SHALL be an array of strings whose elements enumerate the types of resources referenced by this catalog (i.e. `record` and `catalog`).
+|===

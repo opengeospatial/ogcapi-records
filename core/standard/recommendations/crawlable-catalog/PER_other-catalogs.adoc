@@ -1,7 +1,0 @@
-[[per_crawlable-catalog_other-catalogs]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/crawlable-catalog/other-catalogs*
-
-A catalog MAY include zero or more references to other related catalogs.
-|===

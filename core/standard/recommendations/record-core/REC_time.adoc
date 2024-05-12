@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-core/time*
-^|A |A record SHOULD include the top-level `time` member that indicates the temporal aspect of the resource that the record describes.
-^|B |If temporal information about the resource is not available then the `time` member SHOULD, even though it is optional, still be included in the record and its value SHOULD be set to `null`.
+^|A |A record SHOULD include a `time` property that indicates the temporal aspect of the resource that the record describes.
+^|B |If temporal information about the resource is not available then the `time` property SHOULD, even though it is optional, still be included in the record and its value SHOULD be set to `null`.
 |===

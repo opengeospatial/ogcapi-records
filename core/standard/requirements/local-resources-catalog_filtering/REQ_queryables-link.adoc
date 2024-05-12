@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/features-filter/filtering/queryables-link*
-^|A |Implementations SHALL, at the local resources endpoint, include a `links` section that contains a link with `rel="http://www.opengis.net/def/rel/ogc/1.0/queryables"`.
+^|A |Implementations SHALL, at the local resources endpoint, include a `links` section that contains a link (relation: `http://www.opengis.net/def/rel/ogc/1.0/queryables`).
 ^|B |This link SHALL point to a resource for discovering the list of record properties (and their types) that may be used to construct a filter expression.
 |===

@@ -2,8 +2,8 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/local-resources-catalog/additional-properties*
-^|A |<<local-resources-catalog-additional-properties>> table contains a list of recommended additional properties that MAY be added to information model of a local resources object to enhance its searchability.
-^|B |Each local resources object in a response MAY contain any number of other additional properties not listed in <<local-resources-catalog-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
+
+<<local-resources-catalog-additional-properties>> table contains a list of recommended additional properties that MAY be added to information model of a local resources object to enhance its searchability.
 |===
 
 [[local-resources-catalog-additional-properties]]
@@ -12,18 +12,19 @@
 [cols="30,70",options="header"]
 |===
 |Property |Description
-|conformsTo |If all items of this local resources object conform to the same set of extensions/conformance classes then this member may be used to advertise this fact rather than copying this information into each item.
+|<<sc_record_extensions,conformsTo>> |The extensions/conformance classes used in this local resources object.
 |created |Date of creation of this local resources object.
 |updated |The most recent date on which this local resources object was changed.
-|description |A free-text account of the local resources object.
-|keywords |The topic or topics of this local resources object. Typically represented using free-form keywords, tags, key phrases, or classification codes.
-|language |The language used for textual values for this local resources object.
-|languages |This list of other languages in which this local resources object can be retrieved.
-|resourceLanguages |The list of languages in which the sub-resource described by this local resources object is available.
-|externalIds |An identifier for this local resources object assigned by an exteranl (to the deployment) entity.
-|themes |A knowledge organization system used to classify this local resources object.
-|formats |A list of available distributions of the sub-resource described by this local resources object.
-|contacts |A list of contacts qualified by their role(s).
-|license |A legal document under which this local resources object is made available.
+|<<sc_type,type>> |The nature or genre of the resource described by this local resources object.
+|<<sc_title-description,title>> |A human readable name assigned to the resource describes by this local resources object.
+|<<sc_title-description,description>> |A free-text account about the resource described by this local resources object.
+|<<sc_keywords_and_themes,keywords>> |The topic or topics associated with the resource describes by this local resources object. Typically represented using free-form keywords, tags, key phrases, or classification codes.
+|<<sc_keywords_and_themes,themes>> |A knowledge organization system used to classify the resource described by this local resources object.
+|<<sc_record_language_handling,language>> |The language used for textual values for this local resources object.
+|<<sc_record_language_handling,languages>> |This list of other languages in which this local resources object can be retrieved.
+|<<sc_record_language_handling,resourceLanguages>> |The list of languages in which the resource described by this local resources object is available.
+|<<sc_formats,formats>> |A list of available distributions of the resource described by this local resources object.
+|<<sc_sc_contacts,contacts>> |A list of contacts qualified by their role(s).
+|<<sc_license,license>> |A legal document under which the resource describes by this local resources object is made available.
 |rights |A statement that concerns all rights not addresses by the license such as a copyright statement.
 |===

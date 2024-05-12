@@ -1,7 +1,0 @@
-[[req_local-resources-catalog_updated]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/updated*
-
-When included in the information model of a local resources object, the value of the `updated` property SHALL conform to the date-time production of https://tools.ietf.org/html/rfc3339#section-5.6[RFC 3339].
-|===

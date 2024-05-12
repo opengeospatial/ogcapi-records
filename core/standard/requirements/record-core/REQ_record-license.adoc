@@ -1,10 +1,10 @@
 [[req_record-core_license]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/record-license*
-^|A |If the resource is being made available under a common license then a https://spdx.org/licenses/[SPDX license identifier] SHALL be used as the value of the `license` member.
-^|B |If the resource is being made available under multiple common licenses then a https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/[SPDX license expression string] SHALL be used as the value of `license` member.
-^|C |If the resource is being made available under one or more licenses that have not been assigned an https://spdx.org/licenses/[SPDX license identifier] or one or more custom licenses then the value of the `license` member SHALL be the value `other` and one or more links (relation: `license`) SHALL be included in the `links` section of the record pointing to the file(s) that contain the text of the licenses.
+^|*Requirement {counter:req-id}* |*/req/record-core/license*
+^|A |If the resource is being made available under a common license then a https://spdx.org/licenses/[SPDX license identifier] SHALL be used as the value of the `license` property.
+^|B |If the resource is being made available under multiple common licenses then a https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/[SPDX license expression string] SHALL be used as the value of `license` property.
+^|C |If the resource is being made available under one or more licenses that have not been assigned an https://spdx.org/licenses/[SPDX license identifier] or one or more custom licenses then the value of the `license` property SHALL be the value `other` and one or more links (relation: `license`) SHALL be included in the `links` section of the record pointing to the file(s) that contain the text of the licenses.
 |===
 
 NOTE: There is also the case of a resource that is private or unpublished and is thus unlicensed.  In this case do not register such a resource in the catalog in the first place since there is no point in making such a resource discoverable.

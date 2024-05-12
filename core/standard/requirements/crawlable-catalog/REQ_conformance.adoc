@@ -3,6 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/conformance*
 
-^|A |The `conformsTo` member SHALL be included in the catalog.
+^|A |The `conformsTo` property SHALL be included in the catalog.
 ^|B |The `conformsTo` array SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog`.
 |===

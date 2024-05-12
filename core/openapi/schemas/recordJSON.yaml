@@ -4,11 +4,9 @@ allOf:
   - type:
       object
     required:
-      - id
-      - type
-      - title
+      - recordId
     properties:
-      id:
+      recordId:
         type: string
         description:
           The unique identifier for this catalog record.

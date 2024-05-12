@@ -3,5 +3,5 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-core/links*
 
-Each record SHOULD include one or more links (`rel="describes"`) pointing to the resource(s) that this record describes.
+Each record SHOULD include one or more links (relation: `describes`) pointing to the resource(s) that this record describes.
 |===

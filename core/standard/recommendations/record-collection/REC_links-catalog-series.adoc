@@ -1,0 +1,7 @@
+[[rec_record-collection_links-catalog-series]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/record-collection/links-catalog-series*
+^|A |A catalog referencing another catalog in a series of related catalogs SHOULD include a link (relation: `prev` or `previous`) pointing to the previous related catalog in the series.
+^|B |A catalog referencing another catalog in a series of related catalogs SHOULD include a link (relation: `first`) pointing to the first catalog in the series.
+|===

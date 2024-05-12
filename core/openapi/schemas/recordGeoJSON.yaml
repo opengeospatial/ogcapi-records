@@ -5,7 +5,6 @@ required:
   - type
   - geometry
   - properties
-  - links
 properties:
   id:
     type: string
@@ -37,9 +36,6 @@ properties:
       - $ref: 'recordCommonProperties.yaml'
       - type:
           object
-        required:
-          - type
-          - title
   links:
     type: array
     items:

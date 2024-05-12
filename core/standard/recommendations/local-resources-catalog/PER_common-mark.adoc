@@ -1,7 +1,0 @@
-[[per_local-resources-catalog_common-mark]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/local-resources-catalog/common-mark*
-
-For any `description` member in a local resources object, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
-|===

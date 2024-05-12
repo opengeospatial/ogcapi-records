@@ -13,10 +13,8 @@ This Building Blocks clause specifies the requirements classes that define build
 
 include::requirements/requirements_class_record-core.adoc[]
 
-The `Record` Requirements Class defines the requirements for a catalog record.
-
 [[record-model]]
-The atomic unit of information in a catalog is a **_record_** which is defined in this clause.
+The `Record` Requirements Class defines the requirements for a catalog record which is the atomic unit of information of a catalog.
 
 It is expected that the information necessary to populate the fields/properties of a catalog record is readily available for any resource that is being registered in the catalog.
 
@@ -50,8 +48,8 @@ Other encodings are allowed but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
-|type |**required** |The nature or genre of the resource. |`properties.type`
-|title |**required** |A human-readable name given to the resource. |`properties.title`
+|type |optional |The nature or genre of the resource. |`properties.type`
+|title |optional |A human-readable name given to the resource. |`properties.title`
 |description |optional |A free-text description of the resource. |`properties.description`
 |geometry |optional |A spatial extent associated with the resource. +
 Can be `null` if there is no associated spatial extent. |`geometry`
@@ -67,7 +65,7 @@ Can be `null` if there is no associated temporal extent. |`time`
 |contacts |optional |A list of contacts qualified by their role(s) in association to the record or resource. |`properties.contacts`
 |license |optional |The legal provisions under which the resource is made available. |`properties.license`
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |`properties.rights`
-|links |**required** |A list of links related to this record.|`links`
+|[[record-links-section]]links |optional |A list of links related to this record.|`links`
 |===
 
 include::requirements/record-core/REQ_mandatory-properties-record.adoc[]
@@ -79,22 +77,33 @@ include::recommendations/record-core/PER_additional-properties-record.adoc[]
 [[sc_record_extensions]]
 ==== Record extensions
 
-In <<core-properties-record-table>> and <<core-properties-resource-table>> this Standard defines a set of core properties for describing discoverable resources.  It is anticipated that this set of core properties will be extended to suit specific use cases or requirements.  For example, a catalog record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalog record has been extended in this way can be advertised using the `conformsTo` member.  The `conformsTo` member is a list of identifiers that indicate each extension used in a record.  This Standard does not define the specific identifiers that are used to identify specific extensions; it simply provides a place where these identifiers can be listed.
+In <<core-properties-record-table>> and <<core-properties-resource-table>> this Standard defines a set of core properties for describing discoverable resources.  It is anticipated that this set of core properties will be extended to suit specific use cases or requirements.  For example, a catalog record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalog record has been extended in this way can be advertised using the `conformsTo` property.  The `conformsTo` property is a list of identifiers that indicate each extension used in a record.  This Standard does not define the specific identifiers that are used to identify specific extensions; it simply provides a place where these identifiers can be listed.
 
 include::recommendations/record-core/REC_record-extensions.adoc[]
 
-In the case where all the records of a catalog use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` member at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[collection or catalog level] that may be used to declare which extensions are used in all records of the catalog.  Extensions listed at the catalog and record levels are cumulative.
+In the case where all the records of a catalog use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` property at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog level] that may be used to declare which extensions are used in all records of the catalog.  
+
+NOTE: Extensions listed at the catalog and record levels are cumulative.
 
 [[sc_type]]
 ==== Type
 
-A record has one `type` property.  The value of this property denotes the nature or genre of the resource the record describes.  The value of this property should be a code, convenient for filtering records.
+In order to facilitate the ability to discover resources of a particular type(s), this Standard makes the following recommendations:
 
 include::recommendations/record-core/REC_record-type.adoc[]
 
 include::recommendations/record-core/PER_record-type.adoc[]
 
-In addition, links to external resources describing the record type vocabulary used to populate the `type` member are recommended, as described in <<sc_associations_and_links,Associations and Links>>.
+In addition, links to external resources describing the record type vocabulary used to populate the `type` property are recommended, as described in <<sc_associations_and_links,Associations and Links>>.
+
+[[sc_title-description]]
+==== Title and description
+
+In order to facilitate the discovery of resources utilizing keyword or free-text searches, this Standard makes the following recommendation:
+
+include::recommendations/record-core/REC_record-title.adoc[]
+
+include::recommendations/record-core/REC_record-description.adoc[]
 
 [[sc_spatial_information]]
 ==== Spatial information
@@ -123,7 +132,7 @@ This Standard does not place any constraints on the number of additional tempora
 
 include::recommendations/record-core/REC_time.adoc[]
 
-This `time` member is set by the publisher of the record and describes characteristic temporal information (an instant or an interval) associated with the resource described by a record.   This `time` member can thus be used by naive clients without the need to inspect or understand the schema of an extended record.  If included in the record, the value of the `time` member is either `null` (no temporal information) or an object encoding a time instant or interval.
+This `time` property is set by the publisher of the record and describes characteristic temporal information (an instant or an interval) associated with the resource described by a record.   This `time` property can thus be used by naive clients without the need to inspect or understand the schema of an extended record.  If included in the record, the value of the `time` property is either `null` (no temporal information) or an object encoding a time instant or interval.
 
 .Properties of the "time" object
 [cols="20,10a,70a",options="header"]
@@ -136,9 +145,9 @@ This `time` member is set by the publisher of the record and describes character
 
 If both values interest, including both an instant and an interval is valid. In this case, clients should use the interval property and may use the date or timestamp property to determine the temporal characteristics of the resource being described by the record.
 
-The "time" object may be extended with additional members. Clients processing a "time" object must be prepared to parse additional members. Clients should ignore members that they do not understand. For example, in cases where the "time" member neither includes an "instant" nor "interval", a client may process the record as a record without temporal information.
+The "time" object may be extended with additional properties. Clients processing a "time" object must be prepared to parse additional properties. Clients should ignore properties that they do not understand. For example, in cases where the "time" property neither includes an "instant" nor "interval", a client may process the record as a record without temporal information.
 
-NOTE: The data publisher decides how additional temporal properties are encoded in a record. The schema for the `time` member does not imply a recommendation that temporal feature properties reuse the same schema. For example, it is expected that a date-valued feature attribute will in most cases be represented as string with an RFC 3339 date value.
+NOTE: The data publisher decides how additional temporal properties are encoded in a record. The schema for the `time` property  does not imply a recommendation that temporal properties reuse the same schema. For example, it is expected that a date-valued record properties will in most cases be represented as a string with an RFC 3339 date value.
 
 ===== Instants
 
@@ -259,6 +268,7 @@ The following provides an example of using keywords for free form terms (e.g. ta
 include::../examples/json/keywords-themes.json[]
 ----
 
+[[sc_formats]]
 ==== Formats
 
 The `formats` property indicates the list of available distribution formats for the resource that a record describes.  These can include both physical and digital distribution formats.
@@ -320,6 +330,7 @@ include::recommendations/record-core/REC_resource-langs.adoc[]
 ==== Contacts
 
 include::requirements/record-core/REQ_contact.adoc[]
+
 include::recommendations/record-core/REC_contact.adoc[]
 
 [[sc_license]]
@@ -334,7 +345,7 @@ include::requirements/record-core/REQ_record-license.adoc[]
 
 A record must contain a `links` section and may contain a <<sc_templated_links_with_variables,`linkTemplates`>> section.  These sections contain navigation links and/or association links.
 
-Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (`rel="collection`) of which a record is a member, alternative representations (`rel="alternate"`) of the record, and -- in the context of an API -- navigation links to previous (`rel="prev"`) or next (`rel="next"`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (`rel="root"`, `rel="parent"`, `rel="child`).
+Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (eotion: `collection`) of which a record is a member, alternative representations (relation: `alternate`) of the record, and -- in the context of an API -- navigation links to previous (relation: `prev` or `previous`) or next (relation: `next`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (relation: `root`, relation: `parent`, relation: `child`).
 
 include::requirements/record-core/REQ_record-links.adoc[]
 
@@ -481,30 +492,31 @@ Other encodings are allowed but are not described in this document.
 [cols="30,5,65",options="header"]
 |===
 |Property |Requirement |Description
-|_**id**_ |**required** |A unique identifier for this collection.
-|_**title**_ |**required** |A human-readable name given to this collection.
-|_**description**_ |optional |A free-text description of this collection.
-|_**links**_ |**required** |A list of links related to this collection.
-|_**extent**_ |optional |The spatiotemporal coverage of this collection.
-|_**itemType**_ |**required** |Indicates the type of items in this collection. Fixed to "record".
-|_**crs**_ |optional |A list of coordinate reference systems used for spatiotemporal values.
-|type |**required** |The nature or genre of this collection. Fixed to "catalog".
+|id |**required** |A unique identifier for this catalog.
+|created |optional |The date this collection was created.
+|updated |optional |The more recent date on which this collection was changed.
+|conformsTo |optional |The extensions/conformance classes used in this catalog object.
+|type |**required** |Fixed value of "Catalog".
+|itemType |**required** |Fixed value of "record", "catalog" or both.
+|title |optional |A human-readable name given to this catalog.
+|description |optional |A free-text description of this catalog.
+|extent |optional |The spatiotemporal coverage of this catalog.
+|crs |optional |A list of coordinate reference systems used for spatiotemporal values.
 |keywords |optional |A list of free-form keywords or tags associated with this collection.
+|themes |optional |A knowledge organization system used to classify this collection.
 |language |optional |The language used for textual values (i.e. titles, descriptions, etc.) of this collection object. 
 |languages |optional |The list of other languages in which this collection object is available. 
 |recordLanguages |optional |The list of languages in which records from the collection can be represented.
-|created |optional |The date this collection was created.
-|updated |optional |The more recent date on which this collection was changed.
 |contacts |optional |A list of contacts qualified by their role(s).
-|themes |optional |A knowledge organization system used to classify this collection.
 |license |optional |The legal provisions under which this collection is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|conformsTo |optional |The extensions/conformance classes used in this catalog object.
-|recordsArrayName |optional |The name of the array member in the catalog used to encode records in-line.  The default value is `records`.
+|recordsArrayName |optional |The name of the array property in the catalog used to encode records in-line.  The default value is `records`.
 |records |optional |An array of records encoded in-line in the catalog.
+|[[catalog-links-section]]_**links**_ |**required** |A list of links related to this catalog.
+|linkTemplates |optional |A list of link templates related to this catalog.
 |===
 
-NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core].
+NOTE: The properties _id_, _itemType_, title_, _description_, _extent_, _crs_ and _links_ are inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core].
 
 include::requirements/record-collection/REQ_mandatory-properties.adoc[]
 
@@ -512,19 +524,58 @@ include::recommendations/record-collection/PER_common-mark.adoc[]
 
 include::recommendations/record-collection/PER_additional-properties.adoc[]
 
+==== Catalog extensions
+
+In <<record-collection-schema>> this Standard defines a set of core properties for describing a catalog.  It is anticipated that this set of properties will be extended to suit specific use cases or requirements.  The `conformsTo` property is a list of identifiers that indicate each extension used in the description of the catalog.  This Standard does not define the specific identifiers that are used to identify specific extensions; it simply provides a place where these identifiers can be listed.  
+
+In the case where all the records of a catalog use the same set of extensions, and to prevent unnecessary duplication, the `conformsTo` property of the catalog can also be used to declare which extensions are used that apply to all records.
+
+See <<sc_record_extensions,Record extensions>>.
+
+==== Item type
+
+A catalog can include references to records, other catalogs or both.
+
+include::requirements/record-collection/REQ_itemType.adoc[]
+
+==== Title and description
+
+In order to facilitate the discovery of resources utilizing keyword or free-text searches, this Standard makes the following recommendation:
+
+include::recommendations/record-collection/REC_title.adoc[]
+
+include::recommendations/record-collection/REC_description.adoc[]
+
 ==== Keywords and Themes
 
-See <<sc_keywords_and_themes,Keywords and Themes>> for a record.
+include::recommendations/record-collection/REC_keywords-themes.adoc[]
 
-==== Links
+See <<sc_keywords_and_themes,Keywords and Themes>>.
 
-include::requirements/record-collection/REQ_links.adoc[]
+==== Language handling
 
-include::recommendations/record-collection/PER_links.adoc[]
+include::recommendations/record-collection/REC_catalog-lang.adoc[]
 
+include::recommendations/record-collection/REC_record-langs.adoc[]
+
+See <<sc_record_language_handling,Language handling>>.
+
+==== Contacts
+
+include::requirements/record-collection/REQ_contact.adoc[]
+
+==== License
+
+include::requirements/record-collection/REQ_license.adoc[]
+
+[[sc_catalog-record-links]]
 ==== Records
 
 include::recommendations/record-collection/PER_records.adoc[]
+
+include::requirements/record-collection/REQ_links-record.adoc[]
+
+include::requirements/record-collection/REQ_links-records.adoc[]
 
 include::requirements/record-collection/REQ_records.adoc[]
 
@@ -532,17 +583,44 @@ include::recommendations/record-collection/PER_records-array-name.adoc[]
 
 include::requirements/record-collection/REQ_records-array-name.adoc[]
 
+[[sc_catalog-catalog-links]]
+==== Other catalogs
+
+===== Overview
+
+include::recommendations/record-collection/PER_catalogs.adoc[]
+
+Related catalogs may be organized as:
+
+* an unorganized set of related catalogs,
+* as a series of related catalogs (e.g. for paging),
+* as a hierarchy of related catalogs.
+
+===== Related catalogs
+
+include::requirements/record-collection/REQ_links-catalog-related.adoc[]
+
+===== Series of related catalogs
+
+include::requirements/record-collection/REQ_links-catalog-series.adoc[]
+
+include::recommendations/record-collection/REC_links-catalog-series.adoc[]
+
+===== Hierarchy if related catalog
+
+include::requirements/record-collection/REQ_links-catalog-hierarchy.adoc[]
+
+include::recommendations/record-collection/REC_links-catalog-hierarchy.adoc[]
+
+==== Links
+
+include::requirements/record-collection/REQ_links.adoc[]
+
+include::recommendations/record-collection/PER_links.adoc[]
+
 ==== Templated links with variables
 
-See <<sc_templated_links_with_variables,Templated links with variables>> for a record.
-
-==== Language handling
-
-Language handling for the collection object is analogous to <<sc_record_language_handling,Language handling>> for a record.
-
-include::recommendations/record-collection/REC_collection-lang.adoc[]
-
-include::recommendations/record-collection/REC_record-langs.adoc[]
+See <<sc_templated_links_with_variables,Templated links with variables>>.
 
 ==== Encodings
 
@@ -1014,7 +1092,7 @@ properties.related LIKE '%/rec15' AND properties.license LIKE 'https://creativec
 
 The following example illustrates how to use https://docs.ogc.org/DRAFTS/19-079r1.html[OGC API - Feature - Part 3: Filtering] and https://docs.ogc.org/DRAFTS/21-065.html[CQL2] to query by keywords from a specific controlled vocabulary.
 
-The use of keywords from a controlled vocabulary is encoded in a record using the <<sc_keywords_and_themes,`themes`>> member.  Consider a record that have the following `themes` member:
+The use of keywords from a controlled vocabulary is encoded in a record using the <<sc_keywords_and_themes,`themes`>> property.  Consider a record that has the following `themes` property:
 
 ----
    "themes": [
@@ -1063,21 +1141,11 @@ https://example.org/collections/myCatalog/items?scheme=https%3A%2F%2Fgeo.woudc.o
 
 include::requirements/requirements_class_autodiscovery.adoc[]
 
-The purpose of autodiscovery is, knowing the location of a web page, to find the addresses(s) of that page's associated catalog(s).  For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site's searchable catalog by locating the `rel=http://www.opengis.net/def/rel/ogc/1.0/catalog` link in the landing page and then using that catalog to search for resources offered by the site.
+The purpose of autodiscovery is, knowing the location of a web page, to find the addresses(s) of that page's associated catalog(s).  For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site's searchable catalog by locating the `rel="http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog"` link in the landing page and then, using that catalog, search for resources offered by the site.
 
 ==== Autodiscovery links
 
-===== Discovering searchable catalogs
-
-include::requirements/autodiscovery/REQ_autodiscovery_searchable_link.adoc[]
-
-===== Discovering crawlable catalogs
-
-include::requirements/autodiscovery/REQ_autodiscovery_crawlable_link.adoc[]
-
-===== Discovering local resources catalogs
-
-include::requirements/autodiscovery/REQ_autodiscovery_local-resources_link.adoc[]
+include::requirements/autodiscovery/REQ_autodiscovery.adoc[]
 
 [[clause-encodings]]
 === Encodings
@@ -1130,6 +1198,11 @@ Referenced schemas can be found at:
 ======================================================================
 
 include::recommendations/json/PER_time.adoc[]
+
+[NOTE]
+=================================================
+This standard does not define a normative schema for a record encoding that is not GeoJSON.  However, this https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordJSON.yaml[informative schema] is offered as an example of what a such record schema might look like.
+=================================================
 
 [[clause-catalog-encoding]]
 ===== Catalog encoding

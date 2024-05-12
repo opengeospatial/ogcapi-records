@@ -5,10 +5,10 @@
 ^|Test Purpose |Validate the catalog links
 ^|Requirement |<<req_crawlable-catalog_links,/req/crawlable-catalog/links>>
 ^|Test Method |. Retrieve a catalog object
-. Locate all the links (`rel="child"`) in the links or linkTemplates sections and retreive each child catalog
+. Locate all the links (relation: `child`) in the links or linkTemplates sections and retreive each child catalog
 . Check that the each retrieved child catalog validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml
-. Locate the link (`rel="parent"`) in the links or linkTemplates sections and retrieve the parent catalog
+. Locate the link (relation: `parent`) in the links or linkTemplates sections and retrieve the parent catalog
 . Check that the retrieved parent catalog validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml
-. Locate the link (`rel="root"`) in the links or linkTemplates sections and retrieve the root catalog
+. Locate the link (relation: `root`) in the links or linkTemplates sections and retrieve the root catalog
 . Check that the retrieved root catalog validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml
 |===

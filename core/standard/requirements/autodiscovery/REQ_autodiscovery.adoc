@@ -1,0 +1,15 @@
+[[req_autodiscovery_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/autodiscovery/searchable-catalog-links*
+
+^|A |A web page SHALL include one or more links (relation: `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`) that point to a <<clause-crawlable-catalog,crawlable catalog>>, <<clause-searchable-catalog,searchable catalogs>> or <<clause-local-resources-catalog,local resource catalog>> associated with the page.
+^|B |The value of the `href` member SHALL point to the access endpoint of the corresponding catalog.
+|===
+
+[NOTE]
+====================================================
+* For a <<clause-crawlable-catalog,crawlable catalog>> the access endpoint is the URL of the <<clause-record-collection,catalog>>.
+* For a <<clause-searchable-catalog,searchable catalog>> the access endpoint is the URL of the `/collections/{catalogId}/items` endpoint.
+* For a <<clause-local-resources-catalog,local resource catalog>> the access endpoint is the URL of the local resources endpoint (e.g. `/processes`).
+====================================================

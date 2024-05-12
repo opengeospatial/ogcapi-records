@@ -1,9 +1,0 @@
-[[rec_local-resources-catalog_updated]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendations {counter:rec-id}* |*/rec/local-resources-catalog/updated*
-
-^|A |The `updated` property SHOULD be present in the information model of the local resources object.
-^|B |The value of the `updated` property SHOULD conform to the date-time production of https://tools.ietf.org/html/rfc3339#section-5.6[RFC 3339].
-^|B |The value of the `updated` property SHOULD indicate the  most recent date on which the collection was changed.
-|===

@@ -1,7 +1,0 @@
-[[req_local-resources-catalog_type-value]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/type-value*
-
-The OGC Standard responsible for a local resources endpoint SHALL define the value of the `type` member to indicate the nature or genre of the sub-resources described by each local resource object retrievable from that local resources endpoint.
-|===

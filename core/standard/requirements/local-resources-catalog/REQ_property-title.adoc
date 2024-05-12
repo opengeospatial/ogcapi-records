@@ -1,7 +1,0 @@
-[[req_local-resources-catalog_property-title-def]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/property-title-def*
-
-The `title` property SHALL be present in the information model of the local resources object.
-|===
