@@ -189,7 +189,7 @@ As an example of a local resources item, consider the _collection_ object define
 [cols="25,25,25,25",options="header"]
 |===
 |Collection property     |Requirement   |<<core-properties,Record>> property |Requirement
-|id                      |**required**  |recordId          |**required**
+|id                      |**required**  |id                |**required**
 |--                      |--            |created           |optional
 |--                      |--            |updated           |optional
 |--                      |--            |conformsTo        |optional
