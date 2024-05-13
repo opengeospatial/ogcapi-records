@@ -37,7 +37,7 @@ Other encodings are allowed but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
-|recordId |**required** |A unique record identifier assigned by the server. |`id`
+|id |**required** |A unique record identifier assigned by the server. |`id`
 |created |optional |The date this record was created in the server. |`properties.created`
 |updated |optional |The most recent date on which the record was changed. |`properties.updated`
 |conformsTo |optional |The extensions/conformance classes used in this record. |`conformsTo`
@@ -498,7 +498,7 @@ Other encodings are allowed but are not described in this document.
 |updated |optional |The more recent date on which this collection was changed.
 |conformsTo |optional |The extensions/conformance classes used in this catalog object.
 |type |**required** |Fixed value of "Catalog".
-|itemType |**required** |Fixed value of "record", "catalog" or both.
+|itemType |optional |Fixed value of "record", "catalog" or both.
 |title |optional |A human-readable name given to this catalog.
 |description |optional |A free-text description of this catalog.
 |extent |optional |The spatiotemporal coverage of this catalog.

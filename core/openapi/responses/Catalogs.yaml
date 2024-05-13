@@ -4,7 +4,18 @@ description:
 content:
   application/json:
     schema:
-      $ref: '../schemas/catalogs.yaml'
+      allOf:
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collections.yaml'
+        - type: object
+          properties:
+            collections:
+              type: array
+              items:
+                $ref: 'catalog.yaml'
+            linkTemplates:
+              type: array
+              items:
+                $ref: 'linkTemplate.yaml'
   text/html:
     schema:
       type: string

@@ -4,12 +4,12 @@ allOf:
   - type:
       object
     required:
-      - recordId
+      - id
     properties:
-      recordId:
+      id:
         type: string
         description:
-          The unique identifier for this catalog record.
+          The unique identifier for this record.
       time:
         description:
           A characteristic time or time interval associated
@@ -26,12 +26,6 @@ allOf:
           - enum:
             - null
           - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
-      conformsTo:
-        type: array
-        description:
-          The extensions/conformance classes used in this record.
-        items:
-          type: string
       links:
         description:
           A list of static links associated with this record.

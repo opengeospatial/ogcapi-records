@@ -1,6 +1,5 @@
 ---
 allOf:
-  - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml'
   - $ref: 'recordCommonProperties.yaml'
   - type: object
     required:
@@ -8,21 +7,19 @@ allOf:
       - type
       - links
     properties:
-      conformsTo:
-        type: array
+      id:
         description:
-          The extensions/conformance classes used in this record.
-        items:
-          type: string
+          The identifier of the catalog.
+        type: string
       itemType:
         description:
-          If this collection is a homogenous collection
+          If this catalog is a homogenous collection
           of records then itemType is a string of fixed
           value of record.
-          If this collection is a homogenous collection
+          If this catalog is a homogenous collection
           of other catalogs then itemType is a string of
           fixed value of catalog.
-          If this collection is a heterogenous collection
+          If this catalog is a heterogenous collection
           of records and catalogs then itemType is a array
           indicated that item types of the members of this
           collections (i.e. record and/or catalog).
@@ -44,6 +41,16 @@ allOf:
         type: string
         enum:
           - Catalog
+      extent:
+        $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml'
+      crs:
+        description:
+          The list of supported coordinate reference systems.
+        type: array
+        items:
+          type: string
+        default:
+          - http://www.opengis.net/def/crs/OGC/1.3/CRS84
       recordsArrayName:
         type: string
         default:
@@ -55,6 +62,10 @@ allOf:
            are encoded in-line with the catalog.
         items:
           $ref: 'recordGeoJSON.yaml'
+      links:
+        type: array
+        items:
+          $ref: 'linkBase.yaml'
       linkTemplates:
         type: array
         items:

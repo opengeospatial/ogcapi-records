@@ -1,0 +1,7 @@
+[[per_local-resources-catalog_other-record-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/local-resources-catalog/other-record-properties*
+
+Each local resources item MAY contain any number of other additional properties not listed in <<local-resources-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
+|===

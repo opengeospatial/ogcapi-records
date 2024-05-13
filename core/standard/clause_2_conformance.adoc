@@ -105,14 +105,14 @@ The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-r
 |Building block 3+|Catalog requirements class
 | |<<clause-crawlable-catalog,_**Crawlable**_>> |<<clause-searchable-catalog,_**Searchable**_>> |<<clause-local-resources-catalog,_**Local Resources catalog**_>>
 |<<clause-record-core,Record Core>> |Mandatory |Mandatory |Mandatory
-|<<clause-record-collection,Record collection>> |_Optional_ |Mandatory |N/A
-|<<clause-record-core-query-parameters,Record query parameters>> |N/A |_Mandatory_ |_Optional_
+|<<clause-record-collection,Record collection>> |Optional |Mandatory |N/A
+|<<clause-record-core-query-parameters,Record query parameters>> |N/A |Mandatory |Optional
 |<<clause-records-api,Records API>> |N/A |Mandatory |N/A
-|<<clause-sorting,Sorting>> |N/A |_Optional_ |_Optional_
-|<<clause-filtering,Filtering>> |N/A |_Optional_ |_Optional_
-|<<requirements-class-json-clause,JSON>> |_Optional_ |_Optional_ |_Optional_
-|<<requirements-class-html-clause,HTML>> |_Optional_ |_Optional_ |_Optional_
-|<<clause-oas30,OpenAPI 3.0>> |N/A |_Optional_ |_Optional_
+|<<clause-sorting,Sorting>> |N/A |Optional |Optional
+|<<clause-filtering,Filtering>> |N/A |Optional |Optional
+|<<requirements-class-json-clause,JSON>> |Optional |Optional |Optional
+|<<requirements-class-html-clause,HTML>> |Optional |Optional |Optional
+|<<clause-oas30,OpenAPI 3.0>> |N/A |Optional |Optional
 |===
 
 === Implementations

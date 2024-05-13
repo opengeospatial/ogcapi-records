@@ -1,12 +1,12 @@
-[[per_local-resources-catalog_additional-properties]]
+[[per_local-resources-catalog_additional-catalog-properties]]
 [width="90%",cols="2,6a"]
 |===
-^|*Permission {counter:per-id}* |*/per/local-resources-catalog/additional-properties*
+^|*Permission {counter:per-id}* |*/per/local-resources-catalog/additional-catalog-properties*
 
-<<local-resources-catalog-additional-properties>> table contains a list of recommended additional properties that MAY be added to information model of a local resources object to enhance its searchability.
+<<local-resources-additional-properties>> contains a list of recommended additional properties that MAY be added to the information model of a local resources catalog.
 |===
 
-[[local-resources-catalog-additional-properties]]
+[[local-resources-additional-properties]]
 [reftext='{table-caption} {counter:table-num}']
 .Additional properties for a local resources object
 [cols="30,70",options="header"]

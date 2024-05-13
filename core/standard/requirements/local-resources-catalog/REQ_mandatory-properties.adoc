@@ -1,7 +1,0 @@
-[[req_local-resources-catalog_mandatory-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/mandatory-properties*
-
-The information model of the local resources object SHALL contain all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
-|===

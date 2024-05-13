@@ -1,7 +1,0 @@
-[[per_local-resources-catalog_other-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/local-resources-catalog/other-properties*
-
-Each local resources object in a response MAY contain any number of other additional properties not listed in <<local-resources-catalog-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
-|===

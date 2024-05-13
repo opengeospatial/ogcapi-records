@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/features-filter/filtering/filter-param*
 
-Implementations SHALL, at the local resources endpoint and for the HTTP GET operation, support the `filter` parameter as defined by the <<clause-filtering,Filtering>> building block.
+Implementations of this requirements class SHALL, at the local resources endpoint and for the HTTP GET operation, support the `filter` parameter as defined by the <<clause-filtering,Filtering>> building block.
 |===
