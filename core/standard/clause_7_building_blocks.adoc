@@ -66,6 +66,7 @@ Can be `null` if there is no associated temporal extent. |`time`
 |license |optional |The legal provisions under which the resource is made available. |`properties.license`
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |`properties.rights`
 |[[record-links-section]]links |optional |A list of links related to this record.|`links`
+|linkTemplates |optional |A links of link templates related to this record. |`linkTemplates`
 |===
 
 include::requirements/record-core/REQ_mandatory-properties-record.adoc[]
@@ -488,7 +489,7 @@ Other encodings are allowed but are not described in this document.
 <<collection-properties-table>> defines the set of properties that may be used to describe a catalog.
 
 [#collection-properties-table,reftext='{table-caption} {counter:table-num}']
-.Table of collection properties
+.Table of catalog properties
 [cols="30,5,65",options="header"]
 |===
 |Property |Requirement |Description
