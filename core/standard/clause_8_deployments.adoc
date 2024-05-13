@@ -101,34 +101,87 @@ include::requirements/searchable-catalog_sorting/REQ_sorting.adoc[]
 
 include::requirements/requirements_class_local-resources-catalog.adoc[]
 
-The Local Resources Catalog requirements class specifies requirements for a _local resources catalog_.
-
-The <<ogc-api-resource-tree,set of OGC API Standards>> define a number of resource endpoints from which can be retrived summary information about sub-resources accessible via the API of the server.  These endpoints are referred to as _local resources catalogs_ in this Standard because they provide metadata about resources offered locally by a deployment of some or all of the <<ogc-api-resource-tree, set of OGC API Standards>>.
+The <<ogc-api-resource-tree,set of OGC API Standards>> define a number of resource endpoints from which summary information about resources accessible via the server's API can be retrieved.  These endpoints are referred to as _local resources catalogs_ in this Standard because they provide metadata about resources offered locally by a deployment of some or all of the <<ogc-api-resource-tree, set of OGC API Standards>>.
 
 [[local-resources-endpoint]]
-NOTE: The term _local resources endpoint_ is used to refer the resource path of the _local resources catalog_. +
-The term _local resources object_ is used to refer to an instance of the object or resource that can be retrieved from the _local resources endpoint_. +
-A _local resources object_ is essentially a <<clause-record-core,record>> describing the resources (e.g. feature collection, process, scenes, etc.) accessible via the server's API.
+[NOTE]
+==================================================
+* _**local_resources_endpoint**_ +
+Refers to the path from which a list of accessible local resources can be retrieved.
 
-The `/collections` endpoint is an example of a _local resources endpoint_.  This endpoint provides a list of objects describing the collections of items offered by an OGC API deployment.  Each offered collection (path: `/collections/{collectionId}`) is described by a _local resources object_ containing a small number of properties.  In this respect, the `/collections` endpoint is a catalog of collections (i.e. `/collections/{collectionId}` objects) describing the collections of items offered by the OGC API deployment.
+* _**local_resources_catalog**_ +
+Refers to an instance of the resource that can be retrieved from the _local resources endpoint_.
 
-Other _local resources catalogs_ available in the <<ogc-api-resource-tree,OGC API resource tree>> include the `/processes` endpoint which provides a list of offered processes and the `/collections/{collectionId}/scenes` endpoint which provides a list of source images of a coverage.
+* _**local_resources_item**_ +
+Each local resources catalog includes an array member.  The items of that array are objects that contain summary metadata about resources retrievable via the server's API.  These objects are referred to as _**local resources items**_.
+==================================================
 
-In order to enable catalog-like searching at these local resources endpoints, this requirements class defines requirements and recommendations that enhance the information content of each local resources object  (e.g. the `/collection/{collectionId}` object) with additional members from the list of <<core-properties,core record properties>>.
+The `/collections` endpoint is an example of a _local resources endpoint_.  Doing a GET operation at the local resources endpoint (i.e. `GET /collections`) returns a document that is an example of a _local resources catalog_.  This document contains an array member named `collections` and the items of that array are the _local resources items_.  Each of these _local resources items_ provides medata about some resource (e.g. a feature collection) that is accessible via the server's API.
 
-Other requirements classes in this Standard:
+Other _local resources endpoints_ available in the <<ogc-api-resource-tree,OGC API resource tree>> include the `/processes` endpoint which provides summary metadata about processes and the `/collections/{collectionId}/scenes` endpoint which provides metadata about the source images of a coverage.
 
-1. optionally define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to enhance its basic searchability,
+In order to enable catalog-like searching at these local resources endpoints, this requirements class:
 
-2. optionally define or extend the set of query parameters available at the local resources endpoint (e.g. `/collections`) to support advanced searching using a filter language such as CQL2,
+1. Extends the information content of the local resources catalog to satisfy the requirements of the <<clause-record-collection,Record Collection>> building block.
 
-3. optionally support sorting of the response from a local resources endpoint.
+2. Extends the information content of the local resources item to satisfy the requirements of the <<clause-record-core,Record Core>> building block.
+
+3. Optionally extends the local resources endpoint with a set of query parameters that support a basic capability.
+
+4. Optionally extends the local resources endpoint with a set of query parameters that support an advanced searching capability using a filter language such as CQL2.
+
+5. Optionally extends the local resources endpoint with a set of query parameters that support sorting of the server's response.
 
 The Local Resources Catalog requirements class does not define the specific endpoints in the <<ogc-api-resource-tree,OGC API resource tree>> that should be enabled with catalog-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalog-like searching be identified by the responsible OGC Standard.  It is anticipated that the responsible OGC standard will define a requirements class or extension to enable local resources catalog capabilities at that endpoint.
 
-==== Extending the local resources object
+==== Extending the local resources catalog
 
-As an example of a local resources endpoint, consider the `/collections` endpoint.  The object that can be retrieved from this endpoint, called a _collection_, is defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_[OGC API - Features].  The following table cross-walks the information content of the collection with the <<core-properties,properties>> defined for the <<clause-record-core,record-core>> building block:
+As an example of a local resources endpoint, consider the `/collections` endpoint.  The resource, called _collections_, that can be retrieved from this endpoint is defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_[OGC API - Features].  The following table cross-walks the information content of the collections object with the <<clause-record-collection,catalog>>.
+
+[[collections-catalog-crosswalk]]
+[reftext='{table-caption} {counter:table-num}']
+.Crosswalk of collections object and catalog
+[cols="25,25,25,25",options="header"]
+|===
+|Collections property    |Requirement   |<<clause-record-collection,Catalog>> property |Requirement
+|--                      |--            |id                |**required**
+|--                      |--            |title             |optional
+|--                      |--            |description       |optional
+|--                      |--            |links             |optional
+|--                      |--            |extent            |optional
+|--                      |--            |itemType          |optional
+|--                      |--            |crs               |optional
+|--                      |--            |created           |optional
+|--                      |--            |updated           |optional
+|--                      |--            |type              |**required**
+|--                      |--            |keywords          |optional
+|--                      |--            |themes            |optional
+|--                      |--            |language          |optional
+|--                      |--            |languages         |optional
+|--                      |--            |resourceLanguages |optional
+|--                      |--            |externalIds       |optional
+|--                      |--            |formats           |optional
+|--                      |--            |contacts          |optional
+|--                      |--            |license           |optional
+|--                      |--            |rights            |optional
+|--                      |--            |conformsTo        |optional
+|--                      |--            |recordsArrayName  |optional
+|collections             |**required**  |records           |optional
+|links                   |**required**  |links             |**required**
+|linkTemplates           |optional      |linkTemplates     |optional
+|===
+
+The information content of the _collections_ object, a local resources catalog, is sparse and so the following requirements and recommendations are made:
+
+include::requirements/local-resources-catalog/REQ_mandatory-catalog-properties.adoc[]
+
+include::recommendations/local-resources-catalog/PER_additional-catalog-properties.adoc[]
+
+include::recommendations/local-resources-catalog/PER_other-catalog-properties.adoc[]
+
+==== Extending the local resources item
+
+As an example of a local resources item, consider the _collection_ object defined in defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection_[OGC API - Features].  The following table cross-walks the information content of the collection object with the <<core-properties,properties>> defined for the <<clause-record-core,Record Core>> building block:
 
 [[record-collection-crosswalk]]
 [reftext='{table-caption} {counter:table-num}']
@@ -145,8 +198,8 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 |title                   |optional      |title             |optional
 |description             |optional      |description       |optional
 |extent (space)          |optional      |geometry          |optional
-|crs                     |optional      |--                |--
 |extent (time)           |optional      |time              |optional
+|crs                     |optional      |--                |--
 |--                      |--            |keywords          |optional
 |--                      |--            |themes            |optional
 |--                      |--            |language          |optional
@@ -161,55 +214,75 @@ As an example of a local resources endpoint, consider the `/collections` endpoin
 |linkTemplates           |optional      |linkTemplates     |optional
 |===
 
-As can be seen, most of the properties of a collection are also record properties.
+Many of the properties of the collection, a local resources item, are also properties of a record but the searchability of the collection can be improved by enhancing its information content.  Thus, the following requirements and recommendations are made:
 
-include::requirements/local-resources-catalog/REQ_mandatory-properties.adoc[]
+include::requirements/local-resources-catalog/REQ_mandatory-record-properties.adoc[]
 
-include::recommendations/local-resources-catalog/PER_additional-properties.adoc[]
+include::recommendations/local-resources-catalog/PER_additional-record-properties.adoc[]
 
-include::recommendations/local-resources-catalog/PER_other-properties.adoc[]
+include::recommendations/local-resources-catalog/PER_other-record-properties.adoc[]
 
 ==== Examples
 
-===== Collection local resource
+===== Collections example
 
 The following JSON Schema fragment illustrates how the feature collection object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
 
+The following JSON Schema fragments illustrate how to extended the collections object (a local resources catalog) and the collection object (a local resources item) to include properties required and recommended by this requirements class.
+
 [source,yaml]
 ----
-include::../examples/yaml/collectionLocalResource.yaml[]
+include::../examples/yaml/collections/localResourcesCatalog.yaml[]
+----
+
+[source,yaml]
+----
+include::../examples/yaml/collections/localResourcesItem.yaml[]
 ----
 
 [NOTE]
 ======================================================================
 Referenced schemas can be found at:
 
+* https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collections.yaml[collections.yaml],
+* https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog.yaml],
 * https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml],
-* https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkBase.yaml[linkBase.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml].
 ======================================================================
 
-===== Process Summary local resource
+===== Processes example
 
-The following JSON Schema fragment illustrates how the process summary object (path: `/processes/{processId}`) can be extended to include properties required and recommended by this conformance class:
+The following JSON Schema fragments illustrate how to extended the processes object (a local resources catalog) and the process summary (a local resources item) to include properties required and recommended by this requirements class.
 
 [source,yaml]
 ----
-include::../examples/yaml/processSummaryLocalResource.yaml[]
+include::../examples/yaml/processes/localResourcesCatalog.yaml[]
+----
+
+[source,yaml]
+----
+include::../examples/yaml/processes/localResourcesItem.yaml[]
 ----
 
 [NOTE]
 ======================================================================
 Referenced schemas can be found at:
 
+* https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/processList.yaml[processList.yaml],
+* https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/processSummary.yaml[processSummary.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog.yaml],
 * https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml],
-* https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkBase.yaml[linkBase.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml].
 ======================================================================
 
 NOTE: T.D.B.  Should add an instance example of a collection object.
 
-==== Discovery of local resources endpoints
+==== Discovery of local resources catalog endpoints
 
-Discovery of which local resources endpoints in an OGC API deployment are instrumented for catalog-like searching is accomplished using <<clause-autodiscovery,Autodiscovery>>.
+Discovery of which local resources catalog endpoints in an OGC API deployment are instrumented for catalog-like searching is accomplished using <<clause-autodiscovery,Autodiscovery>>.
 
 [[clause-local-resources-catalog_query-parameters]]
 ==== Requirements Class "Local Resources Catalog - Query Parameters" (Deployment)

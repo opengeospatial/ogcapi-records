@@ -5,4 +5,5 @@
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog
 |Target type |Web API
 |Dependency |<<rc_record-core,Record>>
+|Dependency |<<rc_record-collection,Record Collection>>
 |===

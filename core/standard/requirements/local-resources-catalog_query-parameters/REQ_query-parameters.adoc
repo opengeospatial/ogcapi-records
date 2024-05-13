@@ -4,5 +4,5 @@
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/query-parameters*
 
 ^|A |The server SHALL, at the local resources endpoint, implement one or more of the <<rc_record-core-query-parameters,Record Core Query Parameters>> as required to satisfy the server's search requirements.
-^|B |The set of <<rc_record-core-query-parameters,Record Core Query Parameters>>implemented at the local resources endpoint SHALL be defined in the server's API definition document.
+^|B |The set of <<rc_record-core-query-parameters,Record Core Query Parameters>> implemented at the local resources endpoint SHALL be defined in the server's API definition document.
 |===
