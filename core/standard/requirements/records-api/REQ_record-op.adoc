@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/records-api/record-op*
-^|A |For every record in a record collection (path `/collections/{collectionId}`) the server SHALL support the HTTP GET operation at the `/collection/{collectionId}/items/{recordId}` path.
-^|B |The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the value of the `itemType` (JSONPath `$.collections[*].itemType`) is `record`. `id` is a local identifier of the record.
+^|A |For every record in a record collection (path `/collections/{catalogId}`) the server SHALL support the HTTP GET operation at the `/collection/{catalogId}/items/{recordId}` path.
+^|B |The parameter `catalogId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the value of the `itemType` (JSONPath `$.collections[*].itemType`) is `record`. `id` is a local identifier of the record.
 |===

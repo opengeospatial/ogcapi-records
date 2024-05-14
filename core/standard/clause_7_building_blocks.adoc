@@ -1,12 +1,12 @@
 [[building-blocks]]
-== Building Blocks
+== Common Components
 
 === Overview
 
-This Building Blocks clause specifies the requirements classes that define building blocks that can be used to define various <<catalog-deployments,catalog deployments>>.
+This clause specifies requirements classes that define common components that can be used to define various <<catalog-deployments,catalog deployments>>.
 
 [[clause-record-core]]
-=== Requirements Class "Record Core" (Building Block)
+=== Requirements Class "Record Core" (Common Component)
 
 [[record-core-overview]]
 ==== Overview
@@ -461,7 +461,7 @@ A <<clause-record-core,record>> contains information, encoded in the links and l
 This Standard defines requirements classes for JSON and HTML encoding of a record. See <<clause-catalog-encoding,Encodings>>.
 
 [[clause-record-collection]]
-=== Requirements Class "Record Collection" (Building Block)
+=== Requirements Class "Record Collection" (Common Component)
 
 [[record-collection-overview]]
 ==== Overview
@@ -628,7 +628,7 @@ See <<sc_templated_links_with_variables,Templated links with variables>>.
 This Standard defines requirements for JSON and HTML encoding of a catalog. See <<clause-catalog-encoding,Encodings>>.
 
 [[clause-record-core-query-parameters]]
-=== Requirements Class "Record Core Query Parameters" (Building Block)
+=== Requirements Class "Record Core Query Parameters" (Common Component)
 
 [[record-core-query-parameters-overview]]
 ==== Overview
@@ -739,7 +739,7 @@ resource.
 include::recommendations/record-core-query-parameters/REC_additional-query-parameters.adoc[]
 
 [[clause-records-api]]
-=== Requirements Class "Records API" (Building Block)
+=== Requirements Class "Records API" (Common Component)
 
 [[records-api-overview]]
 ==== Overview
@@ -853,7 +853,7 @@ include::requirements/records-api/REQ_record-op.adoc[]
 include::requirements/records-api/REQ_record-response.adoc[]
 
 [[clause-sorting]]
-=== Requirements Class "Sorting" (Building Block)
+=== Requirements Class "Sorting" (Common Component)
 
 [[sorting-overview]]
 ==== Overview
@@ -884,6 +884,8 @@ include::requirements/sorting/REQ_get-sortables-op.adoc[]
 
 include::requirements/sorting/REQ_get-sortables-success.adoc[]
 
+include::recommendations/sorting/PER_synthetic.adoc[]
+
 The response is returned as a JSON Schema document that describes a single JSON object where each property is a sortable. Note that the sortables schema does not specify a schema of any object that can be retrieved from a Records API endpoint. JSON Schema is used for the sortables to have a consistent approach for describing schema information and JSON Schema is/will be used in other parts of OGC API - Features suite of standards to describe schemas for GeoJSON feature content including in OpenAPI documents.
 
 NOTE: The OGC Features API Standards Working Group has a schema harmonization task that could lead to a future OGC API Standard that will deprecate the approach for the sortables resource specified in this document.
@@ -909,6 +911,14 @@ sort order.
 
 include::requirements/sorting/REQ_defaultSortOrder-definition.adoc[]
 
+==== Sorting by relevance (informative)
+
+A common practice is to sort search results by relevance.
+
+This capability is accomodated in this Standard by using <<per_sorting_sortables-synthetic,synthetic>> sortables.  That is, sortables that are derived or synthesized by the server.
+
+A sever implementing relevance ranking might include, in the list of sortables, a sortable named `relevance` that is dynamically computed for each result in a result set.  The value of the synthetic `relevance` sortable could, for example, be between 0 and 10 with zero indicating least relevance and 10 indicating most relevance.  A `sortBy` clause specified on a request specifying a descending sort by the `relevance` property would present search results from most to least relevant.
+
 ==== Examples
 
 [#defaultSortOrder-example,reftext=`Default Sort Order Example`]
@@ -918,10 +928,10 @@ include::requirements/sorting/REQ_defaultSortOrder-definition.adoc[]
 include::../examples/json/defaultSortOrder.json[]
 ----
 
-This examples below show that by default, response records are sorted by the `updated` sortable and the `area` sortable with the most recent record with the largest area being presented first.
+The following examples assume the following set of sortables retrieved from the servers `/collection/{catalogId}/sortables` endpoint:
 
 [#sortables-example,reftext=`Sortables Example`]
-.Sortables Example
+.List of sortables
 [source,json]
 ----
 include::../examples/json/sortables.json[]
@@ -931,18 +941,25 @@ include::../examples/json/sortables.json[]
 .sortby Example of descending sort by updated date and ascending sort of record identifier.
 [source]
 ----
-.../collections/mycat/items?...&sortby=-updated,id&...
+.../collections/mycat/items?...&sortby=%2Dupdated,%2Bid&...
 ----
 
 [#sortby-extent-example,reftext=`SortBy Extent Example`]
-.sortby Example of an ascending sort by extent (i.e. smaller area first)
+.sortby Example of an ascending sort by extent (i.e. smallest area first)
 [source]
 ----
 .../collections/mycat/items?...&sortby=%2Bextent&...
 ----
 
+[#sortby-relevance-example,reftext=`SortBy Relevance Example`]
+.sortby Example of a descending sort by relevance (i.e. most relevant first)
+[source]
+----
+.../collections/mycat/items?...&sortby=%2Drelevance&...
+----
+
 [[clause-filtering]]
-=== Requirements Class "Filtering" (Building Block)
+=== Requirements Class "Filtering" (Common Component)
 
 [[record-filter-overview]]
 ==== Overview
@@ -1136,7 +1153,7 @@ https://example.org/collections/myCatalog/items?scheme=https%3A%2F%2Fgeo.woudc.o
 ----
 
 [[clause-autodiscovery]]
-=== Requirements Class "Autodiscovery" (Building Block)
+=== Requirements Class "Autodiscovery" (Common Component)
 
 ==== Overview
 
@@ -1152,7 +1169,7 @@ include::requirements/autodiscovery/REQ_autodiscovery.adoc[]
 === Encodings
 
 [[requirements-class-json-clause]]
-==== Requirements Class JSON (Building Block)
+==== Requirements Class JSON (Common Component)
 
 ===== Overview
 
@@ -1238,7 +1255,7 @@ Referenced schemas can be found at:
 ======================================================================
 
 [[requirements-class-html-clause]]
-==== Requirements Class HTML (Building Block)
+==== Requirements Class HTML (Common Component)
 
 include::requirements/requirements_class_html.adoc[]
 
@@ -1265,7 +1282,7 @@ include::requirements/html/REQ_content.adoc[]
 include::recommendations/html/REC_schema-org.adoc[]
 
 [[clause-oas30]] 
-=== Requirements Class "OpenAPI 3.0" (Building Block)
+=== Requirements Class "OpenAPI 3.0" (Common Component)
 
 ==== Basic requirements
 

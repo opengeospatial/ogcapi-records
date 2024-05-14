@@ -42,9 +42,9 @@ is "Document encoding".
 The Conformance Classes implemented in an API are advertised through the <<conformance-classes,`/conformance`>> path on the https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[landing page]. Each Conformance Class has an associated Requirements Class. The Requirements Classes define the functional requirements which will be tested through the associated Conformance Test.
 
 [[building-block-requirements-classes]]
-=== Building blocks
+=== Common components
 
-This standard also identifies ten (10) building block requirements classes:
+This standard also identifies ten (10) requirements classes for common components:
 
 * <<clause-record-core,Record Core>>
 * <<clause-record-collection,Record collection>>
@@ -80,7 +80,7 @@ The <<clause-autodiscovery,Autodiscovery>> conformance class defines requirement
 [[catalog-requirements-classes]]
 === Catalog deployments
 
-Using the above-mentioned building blocks, this Standard identifies the following catalog requirements classes:
+Using the above-mentioned common components, this Standard identifies the following catalog requirements classes:
 
 * <<clause-crawlable-catalog,Crawlable Catalog>>
 * <<clause-searchable-catalog,Searchable Catalog>>
@@ -92,17 +92,17 @@ Using the above-mentioned building blocks, this Standard identifies the followin
 ** <<clause-local-resources-catalog_sorting,Local Resources Catalog - Sorting>>
 ** <<clause-local-resources-catalog_filtering,Local Resources Catalog - Filtering>>
 
-The <<clause-crawlable-catalog,Crawlable Catalog>> conformance class defines the core requirements for a catalog composed of a collection of web-accessible static files.
+The <<clause-crawlable-catalog,Crawlable Catalog>> conformance class defines the core requirements for a catalog composed of a collection of web-accessible files.  The files of a crawlable catalog may be static web pages or dynamically generated but regardless, they exist at a fixed URL and can be retrieved without the use for query parameters.
 
 The <<clause-searchable-catalog,Searchable Catalog>>, <<clause-searchable-catalog_sorting,Searchable Catalog - Sorting>>, <<clause-searchable-catalog_filtering,Searchable Catalog - Filtering>> conformance classes define the requirements for a catalog composed of a collection of records that is searchable via an API.
 
 The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-resources-catalog_query-parameters,Local Resources Catalog - Query Parameters>>, <<clause-local-resources-catalog_sorting,Local Resources Catalog - Sorting>>, <<clause-local-resources-catalog_filtering,Local Resources Catalog - Filtering>> conformance classes define the requirements for a local resources catalog which is a catalog composed of a list of resources offered by an OGC API deployment.  The `/collections` endpoint is an example of a local resources catalog but other endpoints may exist in an OGC API deployment as well.
 
 [#required_building_blocks,reftext='{table-caption} {counter:table-num}']
-.Required building blocks by catalog deployment type
+.Required common components by catalog deployment type
 [cols="<25,^25,^25,^25",options="header"]
 |===
-|Building block 3+|Catalog requirements class
+|Common Component 3+|Catalog requirements class
 | |<<clause-crawlable-catalog,_**Crawlable**_>> |<<clause-searchable-catalog,_**Searchable**_>> |<<clause-local-resources-catalog,_**Local Resources catalog**_>>
 |<<clause-record-core,Record Core>> |Mandatory |Mandatory |Mandatory
 |<<clause-record-collection,Record collection>> |Optional |Mandatory |N/A
@@ -117,7 +117,7 @@ The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-r
 
 === Implementations
 
-Implementors of this Standard select one or more of the <<catalog-requirements-classes,catalog deployment requirements classes>> they wish to implement and then implement the required building block requirements classes.
+Implementors of this Standard select one or more of the <<catalog-requirements-classes,catalog deployment requirements classes>> they wish to implement and then implement the required common component requirements classes.
 
 === Conformance testing
 
@@ -144,7 +144,7 @@ OGC Compliance Testing web site.
 
 ////
 [#building_block_conf_class_uris,reftext='{table-caption} {counter:table-num}']
-.Building Block Conformance class URIs
+.Common Component Conformance class URIs
 [cols="30,70",options="header"]
 |===
 |Conformance class |URI

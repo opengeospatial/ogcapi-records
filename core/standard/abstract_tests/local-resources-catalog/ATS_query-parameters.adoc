@@ -6,5 +6,5 @@
 ^|Requirement |<<req_local-resource-catalog_query-parameters,/req/local-resources-catalog/query-parameters>>
 ^|Test Method |. Construct a path for a local resource catalog endpoint
 . Issue an HTTP GET request on the path
-. Check that the server implements the parameters defined by the <<rc_record-core-query-parameters,Record Core Query Parameters>> building block.
+. Check that the server implements the parameters defined by the <<rc_record-core-query-parameters,Record Core Query Parameters>> common component.
 |===
