@@ -67,13 +67,13 @@ The <<clause-records-api,_Records API_>> conformance class defines the requireme
 
 The <<clause-sorting,_Sorting_>> conformance class defines the requirements to support sorting of records in a query response.
 
-The <<clause-filtering,_Filtering_>> conformance class defines the requirements to support record filtering using https://docs.ogc.org/DRAFTS/19-079r1.html[CQL2].
+The <<clause-filtering,_Filtering_>> conformance class defines the requirements to support record filtering using https://docs.ogc.org/DRAFTS/21-065.html[CQL2].
 
 The <<requirements-class-json-clause,_JSON_>> conformance class defines the requirements for a JSON representation of a catalog object and a GeoJSON (see RFC 7946) representation of a standard catalog record.
 
 The <<requirements-class-html-clause,_HTML_>> conformance class defines the requirements for an HTML representation of a standard catalog record.
 
-The <<<<clause-oas30,OpenAPI 3.0>> conformance class defines the requirements for server that use an http://spec.openapis.org/oas/v3.0.3#openapi-document[OpenAPI 3.0] document to define their API.
+The <<clause-oas30,OpenAPI 3.0>> conformance class defines the requirements for server that use an http://spec.openapis.org/oas/v3.0.3#openapi-document[OpenAPI 3.0] document to define their API.
 
 The <<clause-autodiscovery,Autodiscovery>> conformance class defines requirements that allow catalogs that conform to this Standard and are associated with a web page or web site to be automatically discovered. 
 
