@@ -917,7 +917,7 @@ A common practice is to sort search results by relevance.
 
 This capability is accomodated in this Standard by using <<per_sorting_sortables-synthetic,synthetic>> sortables.  That is, sortables that are derived or synthesized by the server.
 
-A sever implementing relevance sorting might include, in the list of sortables, a sortable named `relevance` that is dynamically computed for each result in a result set.  The value of the synthetic `relevance` sortable could, for example, be between 0 and 10 with zero indicating least relevance and 10 indicating most relevance.  A `sortBy` clause specified on a request specifying a descending sort be the `relevance` property would present search results from most to least relevant.
+A sever implementing relevance ranking might include, in the list of sortables, a sortable named `relevance` that is dynamically computed for each result in a result set.  The value of the synthetic `relevance` sortable could, for example, be between 0 and 10 with zero indicating least relevance and 10 indicating most relevance.  A `sortBy` clause specified on a request specifying a descending sort by the `relevance` property would present search results from most to least relevant.
 
 ==== Examples
 
