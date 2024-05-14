@@ -21,7 +21,7 @@
       },
       "relevance": {
          "title": "Relevance of the result",
-         "description": "This is a synthetic sortable that the server computes on the fly to assign a relevance to the result with respect to the query parameters specified in the original request",
+         "description": "This is a synthetic sortable that the server computes on the fly to assign a relevance score to each result with respect to the query parameters specified in the original request.  How exactly the relevance score is computed is up to the discretion of the server.",
          "type": "number",
          "minimum": 0,
          "maximum": 10
