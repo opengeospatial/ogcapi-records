@@ -15,7 +15,7 @@ A catalog can be deployed as a static collection of records stored in web-access
 
 A catalog can also be deployed as an implementation of a Web API consisting of well-known endpoints for retrieving information about the catalog, retrieving records from the catalog and searching the catalog for subsets of records that satisfy user-defined search criteria (area of interest, temporal extent, keywords, etc.).
 
-To enable this kind of flexible deployment of a collection of records, the Records API Standard defines the following set of building blocks:
+To enable this kind of flexible deployment of a collection of records, the Records API Standard defines the following set of common components:
 
 * a record,
 * a collection (of records),
@@ -51,7 +51,7 @@ An implementation of a search API allows collections of records to be searched u
 |Record |`/collections/{collectionId}/items/{recordId}` |GET |<<clause-record-core,Record Core>>
 |===
 
-A special use case of a catalog deployed as an implementation of a Web API is the _local resources catalog_.  A local resources catalog is a catalog deployed as on implementation of a Web API that makes local resources offered by a provider searchable using the catalog information model and accessed via the API.  An example of a local resources catalog is the `/collections` endpoint of http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data] or http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].  Adding catalog capabilities to this endpoint enables a client to search for collections that satisfy a specified filter expression.  Any API endpoint defined in an OGC API Standard whose function is to provide a list of resources, such as the `/collections` endpoint, can be extended to be a local resources catalog that can be searched for records describing resources served by that API.
+A special use case of a catalog deployed as an implementation of a Web API is the _local resources catalog_.  A local resources catalog is a catalog deployed as an implementation of a Web API that makes local resources offered by a provider searchable using the catalog information model and accessed via the API.  An example of a local resources catalog is the `/collections` endpoint of http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data] or http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].  Adding catalog capabilities to this endpoint enables a client to search for collections that satisfy a specified filter expression.  Any API endpoint defined in an OGC API Standard whose function is to provide descriptive metadata about other sub-resources accessible via the API can be extended to behave as a local resources catalog.  The `/collections` endpoint is an examples of such an endpoint.  The `/collections` endpoint provides metadata about the collections that a server offers.  One can well imagine the benefits of being able to search for a specific subset of collection descriptions on a server that offers thousands of data collections.
 
 [[keywords]]
 [big]*ii.    Keywords*

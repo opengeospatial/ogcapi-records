@@ -4,7 +4,7 @@
 [[records-role]]
 === Role of OGC API - Records
 
-Historically, catalogs have been used as large repositories of formal metadata such as ISO 19115, ISO 19119, FGDC, etc. More recently, catalogs are migrating to a more distributed model where the metadata is closely coupled with the resource that it describes. A current example is https://stacspec.org/en[STAC] which relies on well-defined building blocks that can be integrated in different ways.
+Historically, catalogs have been used as large repositories of formal metadata such as ISO 19115, ISO 19119, FGDC, etc. More recently, catalogs are migrating to a more distributed model where the metadata is closely coupled with the resource that it describes. A current example is https://stacspec.org/en[STAC] which relies on well-defined common components that can be integrated in different ways.
 
 Although OGC API - Records is built upon the legacy of the OGC Catalog Service Web (CSW) Standard, which was primarily focused on accessing a large repository of metadata documents, the Records API Standard can also support catalogs composed of a distributed set of static records.
 
@@ -19,21 +19,21 @@ A _catalog_ is a collection of related _records_.  The terms **collection of rec
 
 A record provides a summary description (metadata) of a resource that the provider of the resource wishes to make discoverable.  The record schema defined in this Standard includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouraged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
 
-=== Building blocks
+=== Common components
 
-The Records API Standard defines the following building blocks that may be used to deploy a catalog:
+The Records API Standard defines the following common components that may be used to deploy a catalog:
 
 . The _core_ schema of a record.
 . The definition of a _collection_ resource that groups and describes a set of related records (i.e. a catalog).
 . The definition of a core set of query parameters for searchable catalogs.
 . An API that allows a catalog to be searched using logically connected predicates that can include spatial and/or temporal predicates.
 
-Using these building blocks a catalog can be deployed as:
+Using these common components a catalog can be deployed as:
 
 * A set of web-accessible records that can be crawled by a search engine crawler, using (for example) a web browser, or by using automated tools.
 * A searchable catalog with records accessible through an API endpoint.
 
-A special use case of the _searchable catalog_ is the _**local resources catalog**_.  The <<ogc-api-resource-tree,OGC API resource tree>> has several endpoints that provide lists of resources.  Examples of such endpoints include the `/collections` and the `/processes` endpoints.  One can readily imagine a large deployment of APIs implementing https://ogcapi.ogc.org/[OGC API building blocks] with thousands of collections where the ability to search would enhance the client's interaction with the server.  Using the building blocks defined in this Standard, these endpoints can be extended to support catalog-like searching using filter expressions that may also include spatial and/or temporal predicates.  Implementations of OGC API endpoints extended in this way behave like a catalog of local resources.
+A special use case of the _searchable catalog_ is the _**local resources catalog**_.  The <<ogc-api-resource-tree,OGC API resource tree>> has several endpoints that provide lists of resources.  Examples of such endpoints include the `/collections` and the `/processes` endpoints.  One can readily imagine a large deployment of APIs implementing https://ogcapi.ogc.org/[OGC API building blocks] with thousands of collections where the ability to search would enhance the client's interaction with the server.  Using the common components defined in this Standard, these endpoints can be extended to support catalog-like searching using filter expressions that may also include spatial and/or temporal predicates.  Implementations of OGC API endpoints extended in this way behave like a catalog of local resources.
 
 [[record-schema-overview]]
 === Record Schema

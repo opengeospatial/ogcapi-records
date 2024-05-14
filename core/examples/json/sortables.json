@@ -19,6 +19,14 @@
          "description": "This is a synthetic sortable that the server computes on the fly based on the spatial extent of the resource.  Resources without spatial extent have zero area.",
          "type": "number"
       },
+      "relevance": {
+         "title": "Relevance of the result",
+         "description": "This is a synthetic sortable that the server computes on the fly to assign a relevance to the result with respect to the query parameters specified in the original request",
+         "type": "number",
+         "minimum": 0,
+         "maximum": 10
+      },
+      
       "extent": {
          "title": "Spatio-Temporal Extent",
          "description": "The spatio-temporal coverage of the resource.",

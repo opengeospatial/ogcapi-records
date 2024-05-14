@@ -4,5 +4,5 @@
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/filtering/filter-crs-param*
 ^|Condition |Server implements https://docs.ogc.org/is/18-058r1/18-058r1.html[OGC API - Features - Part 2: Coordinate Reference Systems by Reference]
 
-Implementations of this requirements class SHALL, at the local resources endpoint and for the HTTP GET operation, support the `filter-crs` parameter as defined by the <<req_record-filter_filter-crs-param,Filtering>> building block.
+Implementations of this requirements class SHALL, at the local resources endpoint and for the HTTP GET operation, support the `filter-crs` parameter as defined by the <<req_record-filter_filter-crs-param,Filtering>> common component.
 |===

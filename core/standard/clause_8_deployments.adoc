@@ -3,7 +3,7 @@
 
 === Overview
 
-This clause uses the <<building-blocks,building blocks>> defined in this Standard to define various catalog deployments.
+This clause uses the <<building-blocks,common components>> defined in this Standard to define various catalog deployments.
 
 [[clause-crawlable-catalog]]
 === Requirements Class "Crawlable Catalog" (Deployment)
@@ -17,7 +17,7 @@ The `Crawlable Catalog` Requirements Class defines the requirements for a catalo
 
 The goal of a crawlable catalog is to expose metadata about resources online with as low an entry barrier as possible, thus making those resources more easily discoverable.
 
-A crawlable catalog is a deployment pattern that uses the <<clause-record-collection,collection>> and <<clause-record-core,record>> building blocks defined in this Standard.  It is simply a set of files deployed on the web, usually encoded as HTML or JSON, that conform to the <<clause-record-collection,collection>> and <<clause-record-core,record>> schemas defined in this Standard.  The files contain embedded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalog.
+A crawlable catalog is a deployment pattern that uses the <<clause-record-collection,collection>> and <<clause-record-core,record>> common components defined in this Standard.  It is simply a set of files deployed on the web, usually encoded as HTML or JSON, that conform to the <<clause-record-collection,collection>> and <<clause-record-core,record>> schemas defined in this Standard.  The files contain embedded links to enable navigation from one to another.  Any HTTP server or cloud storage service, for example, could be used to expose the files of a crawlable catalog.
 
 A crawlable catalog is not searchable and does not respond to query requests.  As the name implies, it can only be crawled (or harvested) by following the embedded links, typically by search engines and other active catalogs or browsed using a web browser.  However, due to its simplicity, a crawlable catalog is easy to deploy and maintain, and is very reliable.
 
@@ -116,15 +116,15 @@ Refers to an instance of the resource that can be retrieved from the _local reso
 Each local resources catalog includes an array member.  The items of that array are objects that contain summary metadata about resources retrievable via the server's API.  These objects are referred to as _**local resources items**_.
 ==================================================
 
-The `/collections` endpoint is an example of a _local resources endpoint_.  Doing a GET operation at the local resources endpoint (i.e. `GET /collections`) returns a document that is an example of a _local resources catalog_.  This document contains an array member named `collections` and the items of that array are the _local resources items_.  Each of these _local resources items_ provides medata about some resource (e.g. a feature collection) that is accessible via the server's API.
+The `/collections` endpoint is an example of a _local resources endpoint_.  Doing a GET operation at the local resources endpoint (i.e. `GET /collections`) returns a document that is an example of a _local resources catalog_.  This document contains an array member named `collections` and the items of that array are the _local resources items_.  Each of these _local resources items_ provides metadata about some resource (e.g. a feature collection) that is accessible via the server's API.
 
 Other _local resources endpoints_ available in the <<ogc-api-resource-tree,OGC API resource tree>> include the `/processes` endpoint which provides summary metadata about processes and the `/collections/{collectionId}/scenes` endpoint which provides metadata about the source images of a coverage.
 
 In order to enable catalog-like searching at these local resources endpoints, this requirements class:
 
-1. Extends the information content of the local resources catalog to satisfy the requirements of the <<clause-record-collection,Record Collection>> building block.
+1. Extends the information content of the local resources catalog to satisfy the requirements of the <<clause-record-collection,Record Collection>> common component.
 
-2. Extends the information content of the local resources item to satisfy the requirements of the <<clause-record-core,Record Core>> building block.
+2. Extends the information content of the local resources item to satisfy the requirements of the <<clause-record-core,Record Core>> common component.
 
 3. Optionally extends the local resources endpoint with a set of query parameters that support a basic capability.
 
@@ -179,9 +179,11 @@ include::recommendations/local-resources-catalog/PER_additional-catalog-properti
 
 include::recommendations/local-resources-catalog/PER_other-catalog-properties.adoc[]
 
+In practice the responsible standard would define how the two sets of properties are merged into the local resources catalog.  In this case it is straight forward since the collections object is very sparse and most catalog properties can be added without issue.  The difference between the `collections` property and the `records` property is handled by requirement <<req_record-collection_records-array-name,/req/record-collection/records-array-name>>.
+
 ==== Extending the local resources item
 
-As an example of a local resources item, consider the _collection_ object defined in defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection_[OGC API - Features].  The following table cross-walks the information content of the collection object with the <<core-properties,properties>> defined for the <<clause-record-core,Record Core>> building block:
+As an example of a local resources item, consider the _collection_ object defined in defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection_[OGC API - Features].  The following table cross-walks the information content of the collection object with the <<core-properties,properties>> defined for the <<clause-record-core,Record Core>> common component:
 
 [[record-collection-crosswalk]]
 [reftext='{table-caption} {counter:table-num}']
@@ -222,13 +224,13 @@ include::recommendations/local-resources-catalog/PER_additional-record-propertie
 
 include::recommendations/local-resources-catalog/PER_other-record-properties.adoc[]
 
+In practice the responsible standard would define how the two sets of properties are merged into the local resources item.  In this case it is straight forward since the collection object and the record share a large number of properties.  Where there is a difference, `extent` versus `geometry` and `time`, can be handled by including both sets of properties in the local resources item and ensuring that their values are the simlar.
+
 ==== Examples
 
 ===== Collections example
 
-The following JSON Schema fragment illustrates how the feature collection object (path: `/collection/{collectionId}`) can be extended to include properties required and recommended by this conformance class:
-
-The following JSON Schema fragments illustrate how to extended the collections object (a local resources catalog) and the collection object (a local resources item) to include properties required and recommended by this requirements class.
+The following JSON Schema fragments illustrate how to extended the https://docs.ogc.org/is/17-069r4/17-069r4.html#_collections_[collections object] (a local resources catalog) and the https://docs.ogc.org/is/17-069r4/17-069r4.html#_collection_[collection object] (a local resources item) to include properties required and recommended by this requirements class.
 
 [source,yaml]
 ----
@@ -254,7 +256,7 @@ Referenced schemas can be found at:
 
 ===== Processes example
 
-The following JSON Schema fragments illustrate how to extended the processes object (a local resources catalog) and the process summary (a local resources item) to include properties required and recommended by this requirements class.
+The following JSON Schema fragments illustrate how to extended the https://docs.ogc.org/is/18-062r2/18-062r2.html#toc30[processes object] (a local resources catalog) and the https://docs.ogc.org/is/18-062r2/18-062r2.html#toc30[process summary] (a local resources item) to include properties required and recommended by this requirements class.
 
 [source,yaml]
 ----

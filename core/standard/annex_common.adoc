@@ -1,7 +1,7 @@
 [appendix]
 :appendix-caption: Annex
 [[annex_common]]
-== Common building blocks (Normative)
+== Common components (Normative)
 
 [[common-overview]]
 === Overview
