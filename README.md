@@ -93,7 +93,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
           }
         ],
         "formats": [
-          { "name": "ector digital data", "mediaType": "application/zip" }
+          { "name": "vector digital data", "mediaType": "application/zip" }
         ]
       },
       "links": [
