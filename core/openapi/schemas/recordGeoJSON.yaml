@@ -10,7 +10,6 @@ properties:
     type: string
     description:
       A unique identifier of the catalog record.
-    format: uri
   type:
     type: string
     enum:
