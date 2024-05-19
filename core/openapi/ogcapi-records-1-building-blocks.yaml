@@ -393,7 +393,6 @@ components:
       properties:
         id:
           type: string
-          format: uri
         conformsTo:
           type: array
           items:
