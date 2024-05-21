@@ -33,7 +33,7 @@ Other encodings are allowed but are not described in this document.
 <<core-properties-record-table>> and <<core-properties-resource-table>> define the set of properties, called the _core properties_, that may be included in a record.
 
 [#core-properties-record-table,reftext='{table-caption} {counter:table-num}']
-.Table of Core Properties related to the catalog record
+.Core properties related to the catalog record
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
@@ -48,7 +48,7 @@ Other encodings are allowed but are not described in this document.
 |===
 
 [#core-properties-resource-table,reftext='{table-caption} {counter:table-num}']
-.Table of Core Properties related to the resource
+.Core properties related to the resource
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
@@ -135,6 +135,7 @@ include::recommendations/record-core/REC_time.adoc[]
 
 This `time` property is set by the publisher of the record and describes characteristic temporal information (an instant or an interval) associated with the resource described by a record.   This `time` property can thus be used by naive clients without the need to inspect or understand the schema of an extended record.  If included in the record, the value of the `time` property is either `null` (no temporal information) or an object encoding a time instant or interval.
 
+[#time-object-properties,reftext='{table-caption} {counter:table-num}']
 .Properties of the "time" object
 [cols="20,10a,70a",options="header"]
 |===
@@ -489,7 +490,7 @@ Other encodings are allowed but are not described in this document.
 <<collection-properties-table>> defines the set of properties that may be used to describe a catalog.
 
 [#collection-properties-table,reftext='{table-caption} {counter:table-num}']
-.Table of catalog properties
+.Catalog properties
 [cols="30,5,65",options="header"]
 |===
 |Property |Requirement |Description
@@ -635,12 +636,12 @@ This Standard defines requirements for JSON and HTML encoding of a catalog. See 
 
 include::requirements/requirements_class_record-core-query-parameters.adoc[]
 
-The Record Core Query Parameters requirements class defines a minimum core set of query parameters that should be implemented at a searchable catalog endpoint.  The <<core-query-parameters-table,following table>> lists this minimum set of query parameters.
+The Record Core Query Parameters requirements class defines a minimum set of query parameters that should be implemented at a searchable catalog endpoint.  <<core-query-parameters-table>> lists this set of query parameters.
 
 The parameters `bbox`, `datetime`, `limit` and `ids` are inherited from https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API Features - Part 1: Core].  The remaining parameters are defined in this Standard.
 
 [#core-query-parameters-table,reftext='{table-caption} {counter:table-num}']
-.Table of Core Query Parameters
+.Core query parameters
 [cols="15,85",options="header"]
 |===
 |Parameter name |Description
