@@ -33,7 +33,7 @@ a collection of resources defined by the set of https://ogcapi.ogc.org/[OGC API 
 
 [[record-def]]
 === Record
-atomic unit of information of a catalog that is used to provide information about a particular resource that the publisher of that resources wishes to make discoverable
+atomic unit of information of a catalog that is used to provide information (i.e. metadata) about a particular resource that the publisher of that resources wishes to make discoverable
 
 === Recommendation
 expression in the content of a document conveying that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is deprecated but not prohibited (<<ogc08-131,OGC 08-131>>) 
@@ -48,7 +48,7 @@ aggregate of all requirement modules that must all be satisfied to satisfy a con
 aggregate of requirements and recommendations of a specification against a single standardization target type (<<ogc08-131,OGC 08-131>>)
 
 === Resource
-an asset of interest that may be described by metadata in a catalog for the purpose of discovery and access (i.e. binding)
+an asset of interest that may be described by metadata (i.e. a <<record-def,record>>) in a catalog for the purpose of discovery and access (i.e. binding)
 
 === Searchable catalog endpoint
 an endpoint in the OGC API resource tree that designed to support catalog queries

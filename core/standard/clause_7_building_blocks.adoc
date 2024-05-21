@@ -52,20 +52,20 @@ Other encodings are allowed but are not described in this document.
 [cols="20,5,55,20",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
-|type |optional |The nature or genre of the resource. |`properties.type`
-|title |optional |A human-readable name given to the resource. |`properties.title`
-|description |optional |A free-text description of the resource. |`properties.description`
-|geometry |optional |A spatial extent associated with the resource. +
+|type |optional |The nature or genre of the resource described by this record. |`properties.type`
+|title |optional |A human-readable name given to the resource described by this record. |`properties.title`
+|description |optional |A free-text description of the resource described by this record. |`properties.description`
+|geometry |optional |A spatial extent associated with the resource described by this record. +
 Can be `null` if there is no associated spatial extent. |`geometry`
-|time |optional |A temporal extent associated with the resource. +
+|time |optional |A temporal extent associated with the resource described by this record. +
 Can be `null` if there is no associated temporal extent. |`time`
-|keywords |optional |A list of free-form keywords or tags associated with the resource. |`properties.keywords`
-|themes |optional |A knowledge organization system used to classify the resource. |`properties.themes`
+|keywords |optional |A list of free-form keywords or tags associated with the resource described by this record. |`properties.keywords`
+|themes |optional |A knowledge organization system used to classify the resource described by this resource. |`properties.themes`
 |resourceLanguages |optional |The list of languages in which the resource described by this record can be retrieved. |`properties.resourceLanguages`
-|externalIds |optional |One or more identifiers for the resource assigned by an external entity. |`properties.externalIds`
-|formats |optional |A list of available distributions for the resource. |`properties.formats`
-|contacts |optional |A list of contacts qualified by their role(s) in association to the record or resource. |`properties.contacts`
-|license |optional |The legal provisions under which the resource is made available. |`properties.license`
+|externalIds |optional |One or more identifiers, assigned by an external entity, for the resource described by this record. |`properties.externalIds`
+|formats |optional |A list of available distributions for the resource described by this record. |`properties.formats`
+|contacts |optional |A list of contacts qualified by their role(s) in association to the record or the resource described by this record. |`properties.contacts`
+|license |optional |The legal provisions under which the resource described by this record is made available. |`properties.license`
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |`properties.rights`
 |===
 
