@@ -41,6 +41,10 @@ Other encodings are allowed but are not described in this document.
 |created |optional |The date this record was created in the server. |`properties.created`
 |updated |optional |The most recent date on which the record was changed. |`properties.updated`
 |conformsTo |optional |The extensions/conformance classes used in this record. |`conformsTo`
+|language |optional |The language used for textual values (i.e. titles, descriptions, etc.) of this record. |`properties.language`
+|languages |optional |The list of other languages in which this record is available. |`properties.languages`
+|[[record-links-section]]links |optional |A list of links related to this record.|`links`
+|linkTemplates |optional |A list of link templates related to this record. |`linkTemplates`
 |===
 
 [#core-properties-resource-table,reftext='{table-caption} {counter:table-num}']
@@ -57,16 +61,12 @@ Can be `null` if there is no associated spatial extent. |`geometry`
 Can be `null` if there is no associated temporal extent. |`time`
 |keywords |optional |A list of free-form keywords or tags associated with the resource. |`properties.keywords`
 |themes |optional |A knowledge organization system used to classify the resource. |`properties.themes`
-|language |optional |The language used for textual values (i.e. titles, descriptions, etc.) of this record. |`properties.language`
-|languages |optional |The list of other languages in which this record is available. |`properties.languages`
 |resourceLanguages |optional |The list of languages in which the resource described by this record can be retrieved. |`properties.resourceLanguages`
 |externalIds |optional |One or more identifiers for the resource assigned by an external entity. |`properties.externalIds`
 |formats |optional |A list of available distributions for the resource. |`properties.formats`
 |contacts |optional |A list of contacts qualified by their role(s) in association to the record or resource. |`properties.contacts`
 |license |optional |The legal provisions under which the resource is made available. |`properties.license`
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |`properties.rights`
-|[[record-links-section]]links |optional |A list of links related to this record.|`links`
-|linkTemplates |optional |A list of link templates related to this record. |`linkTemplates`
 |===
 
 include::requirements/record-core/REQ_mandatory-properties-record.adoc[]
@@ -1168,6 +1168,18 @@ include::requirements/autodiscovery/REQ_autodiscovery.adoc[]
 [[clause-encodings]]
 === Encodings
 
+==== Overview
+
+This Standard defines two requirements classes, <<requirements-class-html-clause,HTML>> and <<requirements-class-json-clause,JSON>> for encoding resources defined in this Standard.
+
+HTML is the core language of the World Wide Web. An API that supports HTML supports browsing resources with a web browser and also enables search engines to crawl and index those resources.
+
+JSON is a language-independent file format that uses human-readable text to store and transmit data objects consisting of key-value pairs and arrays.  It is a commonly used data format in machine-to-machine communication including that between web applications and servers.  It is well supported by numerous tools and sofware libraries.
+
+"GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the way they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
+
+GeoJSON provides a simple way of representing records in JSON and is supported by numerous geospatial tools and software libraries. It is best used for content which has a spatial extent that can be used with the World Geodetic System 1984 Coordinate Reference System.
+
 [[requirements-class-json-clause]]
 ==== Requirements Class JSON (Common Component)
 
@@ -1219,7 +1231,7 @@ include::recommendations/json/PER_time.adoc[]
 
 [NOTE]
 =================================================
-This standard does not define a normative schema for a record encoding that is not GeoJSON.  However, this https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordJSON.yaml[informative schema] is offered as an example of what a such record schema might look like.
+This standard does not define a normative schema for a record encoding that is not GeoJSON.  However, this https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordJSON.yaml[informative schema] is offered as an example of what a plain JSON record schema might look like.
 =================================================
 
 [[clause-catalog-encoding]]

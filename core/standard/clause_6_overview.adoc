@@ -2,26 +2,26 @@
 == Overview
 
 [[records-role]]
-=== Role of OGC API - Records
+=== Role of catalogs
 
 Historically, catalogs have been used as large repositories of formal metadata such as ISO 19115, ISO 19119, FGDC, etc. More recently, catalogs are migrating to a more distributed model where the metadata is closely coupled with the resource that it describes. A current example is https://stacspec.org/en[STAC] which relies on well-defined common components that can be integrated in different ways.
 
-Although OGC API - Records is built upon the legacy of the OGC Catalog Service Web (CSW) Standard, which was primarily focused on accessing a large repository of metadata documents, the Records API Standard can also support catalogs composed of a distributed set of static records.
+Although OGC API - Records is built upon the legacy of the https://docs.ogc.org/is/12-176r7/12-176r7.html[OGC Catalog Service Web (CSW) Standard], which was primarily focused on accessing a large repository of metadata documents, this Standard also supports other catalog deployment patterns such as a catalog composed of a distributed set of static records.
 
-In the modern scenario, the catalog records can be distributed and linked together so that they can be crawled, or they can be harvested into a service endpoint to make them searchable. In addition, a searchable catalog can harvest not only a metadata document describing the resource but in some cases the resource itself (e.g. harvesting the collections object from an OGC API). The implications of this are subtle yet important. In the traditional cataloging approach (e.g. based on CSW) a client could find the record and the record might include binding information to access the resource. Using the new approach, a client interacts more intimately with the catalog and the catalog becomes integral accessing the resource. An example is the cloud native ecosystem: HTTP range requests to Cloud Optimized GeoTIFF (COG) data cannot be used properly unless there is a STAC item telling the client in what ranges the bands exists. Therefore the catalog becomes an integral component (discovery, evaluation) in the process of accessing a resource.
+In the modern scenario, the catalog records can be distributed and linked together so that they can be crawled, or they can be harvested into a service endpoint to make them searchable. In addition, a searchable catalog can harvest not only a metadata document describing the resource but, in some cases, the resource itself (e.g. harvesting the collections object from an OGC API). The implications of this are subtle yet important. In the traditional cataloging approach (e.g. based on CSW) a client could find the record and the record might include binding information to access the resource. Using the new approach, a client interacts more intimately with the catalog and the catalog becomes integral to accessing the resource. An example is the cloud native ecosystem: HTTP range requests to Cloud Optimized GeoTIFF (COG) data cannot be used properly unless there is a STAC item telling the client in what ranges the bands exists. Therefore the catalog becomes an integral component (discovery, evaluation) in the process of accessing a resource.
 
 [[general-overview]]
-=== General
+=== Records and catalogs
 
 The atomic unit of information in a catalog is the _record_.
 
 A _catalog_ is a collection of related _records_.  The terms **collection of records** and **catalog** are used interchangeably in this Standard.
 
-A record provides a summary description (metadata) of a resource that the provider of the resource wishes to make discoverable.  The record schema defined in this Standard includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouraged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
+A record provides a summary description (metadata) of a resource that a provider of the resource wishes to make discoverable.  The record schema defined in this Standard includes a small number of properties that can be used to provide a summary description of any resource.  It is anticipated, and encouraged, that this list of properties be extended to enhance the information content of a record as required by specific communities of interest and/or use cases.
 
 === Common components
 
-The Records API Standard defines the following common components that may be used to deploy a catalog:
+This Standard defines the following common components that may be used to deploy a catalog:
 
 . The _core_ schema of a record.
 . The definition of a _collection_ resource that groups and describes a set of related records (i.e. a catalog).
@@ -51,9 +51,9 @@ It is expected that the information necessary to populate this core set of prope
 
 The expectation is that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, dataset series, Earth observation products, machine models, services, etc.).  The core can also be extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suit specific needs is allowed, expected, and encouraged by this Specification.
 
-Although the Records API Standard does not mandate any particular encoding for a record, the Standard does define conformance classes for two encodings:
+Although this Standard does not mandate any particular encoding for a record or a catalog, it does define conformance classes for two encodings:
 
-* A <<requirements-class-geojson-clause,GeoJSON>> record encoding, and
+* A <<requirements-class-json-clause,JSON>>, and
 * An <<requirements-class-html-clause,HTML>> encoding.
 
 Other encodings are allowed but are not described in this Standard.

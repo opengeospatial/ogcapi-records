@@ -7,30 +7,8 @@
   },
   "geometry": {
     "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          -180,
-          -90
-        ],
-        [
-          -180,
-          90
-        ],
-        [
-          180,
-          90
-        ],
-        [
-          180,
-          -90
-        ],
-        [
-          -180,
-          -90
-        ]
-      ]
-    ]
+    "coordinates": [ [ [ -180, -90 ], [ -180, 90 ],
+          [ 180, 90 ], [ 180, -90 ], [ -180, -90 ] ] ]
   },
   "conformsTo": [
      "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
@@ -41,15 +19,8 @@
     "type": "dataset",
     "title": "Total Ozone - daily observations",
     "description": "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily",
-    "keywords": [
-      "total",
-      "ozone",
-      "level 1.0",
-      "column",
-      "dobson",
-      "brewer",
-      "saoz"
-    ],
+    "keywords": [ "total", "ozone", "level 1.0", "column",
+                  "dobson", "brewer", "saoz" ],
     "language": {
       "code": "en-CA",
       "name": "English (Canada)"
@@ -87,63 +58,28 @@
     "themes": [
       {
         "concepts": [
-          {
-            "id": "dobson"
-          },
-          {
-            "id": "brewer"
-          },
-          {
-            "id": "vassey"
-          },
-          {
-            "id": "pion"
-          },
-          {
-            "id": "microtops"
-          },
-          {
-            "id": "spectral"
-          },
-          {
-            "id": "hoelper"
-          },
-          {
-            "id": "saoz"
-          },
-          {
-            "id": "filter"
-          }
+          { "id": "dobson" }, { "id": "brewer" },
+          { "id": "vassey" }, { "id": "pion" },
+          { "id": "microtops" }, { "id": "spectral" },
+          { "id": "hoelper" }, { "id": "saoz" },
+          { "id": "filter" }
         ],
         "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
       },
       {
         "concepts": [
-          {
-            "id": "atmosphericComposition"
-          },
-          {
-            "id": "pollution"
-          },
-          {
-            "id": "observationPlatform"
-          },
-          {
-            "id": "rocketSounding"
-          }
+          { "id": "atmosphericComposition" }, { "id": "pollution" },
+          { "id": "observationPlatform" }, { "id": "rocketSounding" }
         ],
         "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"
       }
     ],
-    "formats": [
-      "CSV",
-      "GeoJSON"
-    ],
+    "formats": [ "CSV", "GeoJSON" ],
     "license": "other"
   },
   "linkTemplates": [
     {
-      "rel": "item",
+      "rel": "describes",
       "type": "image/png",
       "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
       "uriTemplate": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
