@@ -8,36 +8,64 @@ The normative provisions in this Standard are denoted by the URI `http://www.ope
 
 All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
 
+=== Use of HTTPS
+
+For simplicity, this document in general only refers to the HTTP protocol. This is not meant to exclude the use of HTTPS and simply is a shorthand notation for "HTTP or HTTPS." In fact, most servers are expected to use https://www.rfc-editor.org/rfc/rfc2818.html[HTTPS], not https://www.rfc-editor.org/rfc/rfc7230.html[HTTP].
+
+[[link-relations]]
+=== Link relations
+
+To express relationships between resources, https://www.rfc-editor.org/rfc/rfc8288.html[RFC 8288 (Web Linking)] is used.
+
+The following https://www.iana.org/assignments/link-relations/link-relations.xhtml[registered link relation types \[IANA\]] are used in this document.
+
+* **alternate**: Refers to a substitute for this context.
+
+* **collection**: The target IRI points to a resource which represents the collection resource for the context IRI.
+
+* **describes**: Refers to a resource that is described by this context (i.e. the record).
+
+* **icon**: Refers to an icon representing this context.
+
+* **item**: Refers to a resource that is a member of the collection represented by this context.
+
+* **license**: Refers to a license associated with this context.
+
+* **next**: Indicates that the link’s context is a part of a series, and that the next in the series is the link target.
+
+* **prev**, **previous**:  Indicates that the link’s context is a part of a series, and that the previous in the series is the link target.
+
+* **self**: Conveys an identifier for this context.
+
+* **service-desc**: Identifies service description for this context that is primarily intended for consumption by machines.  API definitions are considered service descriptions.
+
+* **service-doc**: Identifies service documentation for this context that is primarily intended for human consumption.
+
+In addition, the following link relation types are used for which no applicable registered link relation type could be identified.
+
+* **catalog**: Refers to a resource that is a catalog associated with this context.
+
+* **child**:  Indicates that the link's context is part of a hierarchy, and that a child resource in the hierarchy is the link target.
+
+* **conformance**: Refers to a resource that identifies the specifications that this context conforms to.
+
+* **items**: Refers to a resource that is comprised of members of the collection represented by this context.
+
+* **parent**:  Indicates that the link's context is part of a hierarchy, and that the parent resource in the hierarchy is the link target.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/queryables**: Refers to a resource, for this context, that provides a list of properties that may be used to create a filter expression.
+
+* **root**:  Indicates that the link's context is part of a hierarchy, and that the root resource of the hierarchy is the link target.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/sortables**: Refers to a resource, for this context, that provides a list of properties that my be used to create a sortby expression.
+
+Each resource representation includes an array of links. Implementations are free to add additional links for all resources provided by the API. For example, an enclosure link could reference a bulk download of a collection. Or a related link on a record could reference a related record.
+
 === Examples
 
 Most of the examples provided in this Standard are encoded in JSON. JSON was chosen because it is widely understood by implementers and easy to include in a text document. This convention should NOT be interpreted as a requirement that JSON must be used. Implementers are free to use any format they desire as long as there is a Conformance Class for that format and the deployed API advertises its support for the associated Conformance Class.
 
-=== Schema
+=== Schemas
 
 OpenAPI 3.0 Schema objects are used throughout this Standard to define the structure of resources. These schema are typically represented using YAML encoding. This convention is for the ease of the user. It does not prohibit the use of another schema language or encoding. Nor does it indicate that OpenAPI 3.0 Schema objects are required. Implementations should use a schema language and encoding appropriate for the format of the resource.  Note that for property values in JSON for which `null` is not explicitly supported/required, server implementations are recommended to drop the property (as opposed to specifying the property with a value of `null`).
 
-=== UML Notation
-
-Diagrams using the Unified Modelling Language (UML) adhere to the following conventions:
-
-* UML elements having a package name of “GML” are those defined in the UML model of GML 3.2.1
-* UML elements having a package name of “SWE Common” are those defined in the UML model of SWE Common 2.0
-* UML elements not qualified with a package name, or with “CIS”, are those defined in this Standard.
-
-Further, in any class where an attribute name or association role name is identical to a name in some superclass the local definition overrides the superclass definition.
-
-[[namespace-prefixes]]
-=== Namespace Prefix Conventions
-
-UML diagrams and XML code fragments adhere to the namespace conventions shown in <<namespaces>>. The namespace prefixes used in this document are not normative and are merely chosen for convenience. The namespaces to which the prefixes correspond are normative, however.
-
-[#namespaces,reftext='{table-caption} {counter:table-num}']
-.Namespace mapping conventions
-[width="90%",cols="2,6,6",options="header"]
-|====
-|*GML/XML prefix* |*Namespace URL* |*Description*
-|core |http://www.opengis.net/ogcapi-record-1/1.0 |OGC API - Records core elements
-|dc |http://purl.org/dc/elements/1.1/ |Dublin core elements
-|dcat |http://www.w3.org/ns/dcat# |DCAT vocabulary
-|dct |http://purl.org/dc/terms/ |Dublin core terms
-|====

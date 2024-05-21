@@ -1,8 +1,0 @@
-[[req_record-collection_rc-mediatype-default]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-collection/rc-mediatype-default*
-
-^|A |If the <<rc_json,JSON conformance class>> is advertised, then the default media type for catalog content SHALL be JSON and for record content SHALL be GeoJSON.
-^|B |If the <<rc_json,JSON conformance class>> is not advertised, then the default media type for both catalog and record content SHALL be HTML. 
-|===
