@@ -1,0 +1,4 @@
+[[security-section]]
+== Security Considerations
+
+See <<OARec-1,OGC API - Records - Part 1: Core>>, Clause 10.

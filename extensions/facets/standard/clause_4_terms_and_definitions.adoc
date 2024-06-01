@@ -1,0 +1,10 @@
+== Terms and Definitions
+This document uses the terms defined in Sub-clause 5 of https://docs.ogc.org/DRAFTS/19-072.html[OGC API - Common Part 1] (OGC 19-072), which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "shall" (not "must") is the verb form used to indicate a requirement to be strictly followed to conform to this Standard.
+
+For the purposes of this document, the following additional terms, definitions and abbreviated terms apply in addition to those defined in <<OARec-1,OGC API - Records - Part 1: Core>>.
+
+=== bucket
+A means to partition a domain of terms, ranges or queries into logical groups.
+
+=== facet
+A high-level piece of information that is computed over a set of records in a collection.

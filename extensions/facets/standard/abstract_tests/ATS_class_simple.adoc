@@ -1,0 +1,12 @@
+[[ats_simple]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/simple
+|Target type |Web API
+|Requirements class |<<rc_simple,Requirements Class "Simple Facets">>
+|===
+
+==== Conformance
+
+include::simple/ATS_conformance.adoc[]
