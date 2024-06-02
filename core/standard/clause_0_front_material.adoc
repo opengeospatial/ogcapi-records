@@ -91,3 +91,7 @@ All questions regarding this submission should be directed to the editor or the 
 | Linda van den Brink | Geonovum
 | Angelos Tzotsos (editor) | Open Source Geospatial Foundation
 |===
+
+[big]*vi. Acknowledgements*
+
+This specification acknowledges and remembers Douglas Nebert. As part of USGS and FGDC, Doug was internationally recognized as a champion of metadata, discovery and interoperability. He was one of the editors of the OGC Catalogue Services specification and a longtime champion of spatial data infrastructure initiatives including the US data.gov efforts, GEOSS and beyond. Doug’s vision and expertise will always be remembered and appreciated by the specification editors and community.
