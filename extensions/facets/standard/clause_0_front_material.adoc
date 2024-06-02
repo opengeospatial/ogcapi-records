@@ -1,0 +1,49 @@
+[big]*i.     Abstract*
+
+The OGC API family of Standards is being developed to make it easy for anyone to provide geospatial data over the web. These Standards build upon the legacy of the OGC Web Service Standards (WMS, WFS, WCS, WPS, CSW, etc.), but define resource-centric APIs that take advantage of modern web development practices.
+
+This document defines the OGC API - Records - Part 2: Facets Standard.  In this document "Records API" refers to the OGC API - Records - Part 1: Core Standard.
+
+An implementation of a search API allows collections of records to be searched using logically connected spatial, temporal and scalar predicates.  As part of a given search response, additional information in the form of aggregations (facets) can provide enhanced navigation as well as valuable information about the spatio-temporal distribution of a given result set.
+
+This Standard uses the https://docs.ogc.org/DRAFTS/20-004.html[OGC API - Records - Part 1: Core] Standard for specifying requirements of Records search API faceting.
+
+[[keywords]]
+[big]*ii.    Keywords*
+
+The following are keywords to be used by search engines and document catalogs.
+
+ogcdoc, OGC document, OGC API, catalog, record, records, resource, metadata, discovery, CSW, API, GeoJSON, HTML, schema.org, JSON-LD, facet, facets, aggregration, aggregations
+
+[[preface]]
+[big]*iii.   Preface*
+
+*OGC Declaration*
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium Inc. shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+[[submitting_organizations]]
+[big]*iv.    Submitting organizations*
+
+The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
+
+* Meteorological Service of Canada
+* Camptocamp
+* Cubewerx Inc.
+* Open Source Geospatial Foundation
+* International Soil Reference and Information Centre
+
+[big]*v.     Submitters*
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+^|Name  ^|Affiliation
+| Tom Kralidis (editor) | Meteorological Service of Canada
+| Florent Gravin | Camptocamp
+| Paul van Genuchten | International Soil Reference and Information Centre
+| Panagiotis (Peter) A. Vretanos | Cubewerx Inc.
+| Angelos Tzotsos | Open Source Geospatial Foundation
+|===
