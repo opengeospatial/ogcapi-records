@@ -1,6 +1,6 @@
-Aggregation:
+Facet:
   type: object
-  description: An aggregation is linked to a item property and contains the top set of occurences (buckets) of values of the property
+  description: A facet is linked to an item property and contains the top set of occurrences (buckets) of values of the property
   required:
     - key
   properties:
