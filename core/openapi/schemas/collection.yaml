@@ -1,0 +1,16 @@
+---
+allOf:
+  - $ref: 'catalog.yaml'
+  - type: object
+    required:
+      - id
+      - type
+      - links
+    properties:
+      itemType:
+        description:
+          For a collection of records, the itemType is
+          fixed to "record".
+        type: string
+        enum:
+          - record
