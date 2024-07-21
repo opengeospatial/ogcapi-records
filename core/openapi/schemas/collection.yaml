@@ -1,0 +1,12 @@
+---
+allOf:
+  - $ref: 'catalog.yaml'
+  - type: object
+    properties:
+      itemType:
+        description:
+          For a collection of records, the itemType is
+          fixed to "record".
+        type: string
+        enum:
+          - record

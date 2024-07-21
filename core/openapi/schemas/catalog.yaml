@@ -70,3 +70,9 @@ allOf:
         type: array
         items:
           $ref: 'linkTemplate.yaml'
+      schemes:
+        type: array
+        description:
+          A list of schemes used in this context.
+        items:
+          $ref: 'scheme.yaml'

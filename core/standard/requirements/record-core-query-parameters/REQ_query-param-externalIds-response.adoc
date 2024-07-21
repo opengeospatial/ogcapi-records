@@ -3,5 +3,8 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/externalIds-response*
 
-Only records that have an external identifier, as indicated by the values of the `externalIds` core queryable, equal to one of the listed values specified using the `externalIds` parameter SHALL be in the result set. 
+^|A |Only records that have an external identifier that matches one of the values listed using the `externalIds` parameter SHALL be in the result set. 
+^|B |If the search value is qualified with a scheme then both the scheme and the value of the record's external identifier SHALL match in order for the record to be in the result set.
+^|C |If the search value is not qualified with a scheme then only the value of the record's external identifier SHALL match in order for the record to be in the result set.
+^|D |If the search value is only the scheme then the scheme component of the record's external identified  SHALL match in order for the record to be in the result set.
 |===

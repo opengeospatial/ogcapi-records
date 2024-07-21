@@ -57,6 +57,8 @@ This standard also identifies ten (10) requirements classes for common component
 * <<clause-oas30,OpenAPI 3.0>>
 * <<clause-autodiscovery,Autodiscovery>>
 
+These common components are not intended to be implemented independently but rather implemented as components of one or more <<catalog-requirements-classes,catalog deployment types>>.
+
 The <<clause-record-core,_Record Core_>> conformance class defines the requirements for the core schema of a catalog record which is a set of properties (<<core-properties,core properties>>) that can be used to make any resource discoverable via a catalog.  This core set of properties can be extended as required by specific communities of interest and/or use cases.
 
 The <<clause-record-collection,_Record Collection_>> conformance class defines requirements for the metadata used to describe a collection of related records referred to as a _catalog_ in this Standard.
@@ -92,7 +94,9 @@ Using the above-mentioned common components, this Standard identifies the follow
 ** <<clause-local-resources-catalog_sorting,Local Resources Catalog - Sorting>>
 ** <<clause-local-resources-catalog_filtering,Local Resources Catalog - Filtering>>
 
-The <<clause-crawlable-catalog,Crawlable Catalog>> conformance class defines the core requirements for a catalog composed of a collection of web-accessible files.  The files of a crawlable catalog may be static web pages or dynamically generated but regardless, they exist at a fixed URL and can be retrieved without the use for query parameters.
+Each of the top-level requirements classes, <<clause-crawlable-catalog,Crawlable Catalog>>, <<clause-searchable-catalog,Searchable Catalog>> and <<clause-local-resources-catalog,Local Resources Catalog>> represent an implementable catalog composed of aggregations of the <<building-block-requirements-classes ,common components described above>>.
+
+The <<clause-crawlable-catalog,Crawlable Catalog>> conformance class defines the core requirements for a catalog composed of a collection of web-accessible files.  The files of a crawlable catalog may be static web pages or dynamically generated but regardless, they exist at a fixed URL and can be retrieved without the use of query parameters.
 
 The <<clause-searchable-catalog,Searchable Catalog>>, <<clause-searchable-catalog_sorting,Searchable Catalog - Sorting>>, <<clause-searchable-catalog_filtering,Searchable Catalog - Filtering>> conformance classes define the requirements for a catalog composed of a collection of records that is searchable via an API.
 
@@ -102,10 +106,10 @@ The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-r
 .Required common components by catalog deployment type
 [cols="<25,^25,^25,^25",options="header"]
 |===
-|Common Component 3+|Catalog requirements class
+|Common Component 3+|Deployment Type
 | |<<clause-crawlable-catalog,_**Crawlable**_>> |<<clause-searchable-catalog,_**Searchable**_>> |<<clause-local-resources-catalog,_**Local Resources catalog**_>>
 |<<clause-record-core,Record Core>> |Mandatory |Mandatory |Mandatory
-|<<clause-record-collection,Record collection>> |Optional |Mandatory |Mandatory
+|<<clause-record-collection,Record collection>> |Mandatory |Mandatory |Mandatory
 |<<clause-record-core-query-parameters,Record query parameters>> |N/A |Mandatory |Optional
 |<<clause-records-api,Records API>> |N/A |Mandatory |N/A
 |<<clause-sorting,Sorting>> |N/A |Optional |Optional

@@ -7,8 +7,9 @@
 
 [source,YAML]
 ----
-include::../../../openapi/schemas/catalog.yaml[]
+include::../../../openapi/schemas/collection.yaml[]
 ----
 
-^|B |The `itemType` member SHALL be a string with the value `record`.
+^|B |The collection SHALL homogeneously reference records.
+^|C |The value of the `itemType` property SHALL be a string with a fixed value of `record`.
 |===
