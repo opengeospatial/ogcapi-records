@@ -2,10 +2,6 @@
 allOf:
   - $ref: 'catalog.yaml'
   - type: object
-    required:
-      - id
-      - type
-      - links
     properties:
       itemType:
         description:
