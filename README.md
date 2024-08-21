@@ -312,13 +312,13 @@ GET /collections/DataCatalog/items?bbox=160.6,-55.95,-170,-25.89
 Searches the catalog for records that describe resources in the New Zealand economic zone.
 
 ```
-GET /collections/DataCatal/items?34.5322,18.9328,41.6715,27.0956&dattime=2021-07-15/2021-08-08
+GET /collections/DataCatal/items?34.5322,18.9328,41.6715,27.0956&datetime=2021-07-15/2021-08-08
 ```
 
 Searches the catalog for records that describe resources from Greece between July 15th, 2021 and August 8th, 2021.
 
 ```
-GET /collections/DataCatalog/items?34.5322,18.9328,41.6715,27.0956&dattime=2021-07-15/2021-08-08&q=burn,fire
+GET /collections/DataCatalog/items?34.5322,18.9328,41.6715,27.0956&datetime=2021-07-15/2021-08-08&q=burn,fire
 ```
 
 Searches the catalog for records that describe resources from Greece between July 15th, 2021 and August 8th, 2021 and that contain the keywords `burn` and `fire`.
