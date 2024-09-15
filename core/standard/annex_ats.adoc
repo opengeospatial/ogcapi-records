@@ -39,7 +39,7 @@ include::abstract_tests/ATS_class_local-resources-catalog_filtering.adoc[]
 
 include::abstract_tests/ATS_class_local-resources-catalog_sorting.adoc[]
 
-=== Searchable Catalos
+=== Searchable Catalog
 
 include::abstract_tests/ATS_class_searchable-catalog.adoc[]
 
