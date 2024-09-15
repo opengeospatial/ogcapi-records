@@ -1,0 +1,13 @@
+[[ats_record-collection_links-catalog-series]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/links-catalog-series*
+^|Test Purpose |Validate the behavior of a series of catalogs.
+^|Requirement |<<req_record-collection_links-catalog-series,/req/record-collection/links-catalog-series>>
+^|Test Method |. Construct a path for catalog object. 
+. Issue a HTTP GET request on that path.
+. Parse all link objects.
+. Check if the catalog has links with `rel` property with value of `next`.
+. Issue a HTTP GET request on each resulting path.
+. If the media type of the retrived content indicates a catalog, validate that the retrieved content is a valid catalog object.
+|===

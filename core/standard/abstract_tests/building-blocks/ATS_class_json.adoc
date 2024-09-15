@@ -1,0 +1,22 @@
+[[ats_json]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
+|Target type |Web API
+|Requirements class |<<rc_json,JSON>>
+|===
+
+==== Conformance
+
+include::json/ATS_conformance.adoc[]
+
+==== Catalog
+
+include::json/ATS_catalog-content.adoc[]
+include::json/ATS_catalog-response.adoc[]
+
+==== Record
+
+include::json/ATS_record-content.adoc[]
+include::json/ATS_record-response.adoc[]

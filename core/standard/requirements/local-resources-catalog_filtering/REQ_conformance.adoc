@@ -1,0 +1,9 @@
+[[req_local-resources-catalog_filtering-conformance]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resource-catalog/filtering-conformance*
+^|A |A server's conformance declaration SHALL be retrieved from the `/conformance` endpoint as defined in the http://docs.ogc.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes[Declaration of conformance classes] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard.
+^|B |An implementation of this requirements class SHALL declare the following conformance classes in the conformance declaration:
+
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog/filtering
+|===

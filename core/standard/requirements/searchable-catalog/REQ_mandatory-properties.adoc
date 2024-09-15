@@ -1,7 +1,0 @@
-[[req_searchable-catalog_mandatory-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/searchable-catalog/mandatory-properties*
-
-Each record accessibles via a searchable catalog SHALL include all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
-|===

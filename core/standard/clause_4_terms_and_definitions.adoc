@@ -34,6 +34,18 @@ EXAMPLE: a downloadable file, an RSS feed or a web service that provides the dat
 === executable test suite (ETS)
 set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.ogc.org/files/?artifact_id=55234[(OGC 08-134)]
 
+[[local-resources-endpoint-def]]
+=== local resources endpoint
+the path from which a catalog of local resources can be retrieved (e.g. `/collections`)
+
+[[local-resources-catalog-def]]
+=== local resources catalog
+an instance of the document or resource that is retrieved from a <<local-resources-endpoint-def,local resources endpoint>>
+
+[[local-resources-item-def]]
+=== local resources item
+an instance of an object that provides summary information about a discoverable local resource retrieved from a <<local-resources-catalog-def,local resources catalog>> (e.g. `/collections{/collectionID}`)
+
 [[ogc-api-resource-tree]]
 === OGC API resource tree
 a collection of resources defined by the set of https://ogcapi.ogc.org/[OGC API Standards] that are hierarchically organized and exposed by implementations of the https://ogcapi.ogc.org/[OGC API Standards] through a root node that is common to all OGC APIs

@@ -1,7 +1,7 @@
 [[ats_crawlable-catalog_catalog]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/collection*
+^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/catalog*
 ^|Test Purpose |Validate a crawlable catalog object
 ^|Requirement |<<req_crawlable-catalog_catalog,/req/crawlable-catalog/catalog>>
 ^|Test Method |. Obtain a catalog object

@@ -1,0 +1,7 @@
+[[req_searchable-catalog_mandatory-catalog-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/searchable-catalog/mandatory-catalog-properties*
+
+The information model describing a searchable catalog SHALL contain all the mandatory properties listed in <<collection-properties-table>>.
+|===

@@ -22,8 +22,8 @@ A description of the MIME types is mandatory for any OGC API Standard that speci
 [[media-type-defaults]]
 === Default Encodings
 
-The canonical of selecting a desired response encoding is to use https://datatracker.ietf.org/doc/html/rfc7231#section-3.4[HTTP content negotiation].  However, content negotiation is not required by the HTTP standard.  Therefore, default encodings must be established.
+The canonical method of selecting a desired response encoding is to use https://datatracker.ietf.org/doc/html/rfc7231#section-3.4[HTTP content negotiation].  However, content negotiation is not required by the HTTP standard.  Therefore, default encodings must be established.
 
-include::requirements/record-core/REQ_default-mediatype.adoc[]
+include::requirements/building-blocks/record-core/REQ_default-mediatype.adoc[]
 
-include::requirements/record-collection/REQ_default-mediatype.adoc[]
+include::requirements/building-blocks/record-collection/REQ_default-mediatype.adoc[]

@@ -4,11 +4,11 @@
   "numberReturned": 10,
   "numberMatched": 347,
   "features": [
-     { ... },
-     { ... },
-     { ... },
-     { ... },
-     { ... },
+     { ... record ... },
+     { ... record ... },
+     { ... record ... },
+     { ... record ... },
+     { ... record ... },
      ...
   ],
   "links": [

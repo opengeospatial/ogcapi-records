@@ -4,10 +4,28 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
 |Target type |Web API
-|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
-|Requirements class |<<rc_local-resources-catalog,Requirements Class "Local Resources Catalog">>
+|Requirements class |<<rc_local-resources-catalog,Local Resources Catalog>>
+|Dependency |<<ats_record-core,Record Core>>
+|Dependency |<<ats_record-collection,Record Collection>>
+|Dependency |<<ats_autodiscovery,Autodiscovery>>
 |===
 
 ==== Conformance
 
 include::local-resources-catalog/ATS_conformance.adoc[]
+
+==== Local resources catalog
+
+include::local-resources-catalog/ATS_local-resource-catalog.adoc[]
+
+==== Discovery
+
+include::local-resources-catalog/ATS_discovery.adoc[]
+
+==== Mandatory catalog properties
+
+include::local-resources-catalog/ATS_mandatory-catalog-properties.adoc[]
+
+==== Mandatory record properties
+
+include::local-resources-catalog/ATS_mandatory-record-properties.adoc[]

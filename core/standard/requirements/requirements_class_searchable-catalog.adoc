@@ -4,10 +4,8 @@
 2+|*Requirements Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog
 |Target type |Web API
+|ependency |<<rc_records-api,Records API>>
 |Dependency |<<rc_record-core,Record Core>>
 |Dependency |<<rc_record-collection,Record Collection>>
 |Dependency |<<rc_record-core-query-parameters,Records Core Query Parameters>>
-|Dependency |<<rc_records-api,Records API>>
-|Dependency |<<rc_html,HTML>>
-|Dependency |<<rc_json,JSON>>
 |===

@@ -1,0 +1,13 @@
+[[ats_record-collection_links-catalog-hierarchy]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/links-catalog-hierarchy*
+^|Test Purpose |Validate the behavior of link relations to sub-ordinate catalogs.
+^|Requirement |<<req_record-collection_links-catalog-hierarchy,/req/record-collection/links-catalog-hierarchy>>
+^|Test Method |. Construct a path for catalog object. 
+. Issue a HTTP GET request on that path.
+. Parse all link objects.
+. Check if the catalog has links with `rel` property with value of `child`.
+. Issue a HTTP GET request on each resulting path.
+. Validate that the retrieved content is a catalog object.
+|===

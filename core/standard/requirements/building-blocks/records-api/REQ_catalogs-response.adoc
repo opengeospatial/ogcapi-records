@@ -1,0 +1,7 @@
+[[req_records-api_catalogs-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/catalogs-response*
+^|A |For an operation that selects a list of collection objects, only collections where the `itemType` property (JSONPath: `$.collections[*].itemType`) is a string with the value `record` SHALL be considered to be catalogs.
+^|B |The schema of each catalog in the response SHALL be based upon the schema defined in the <<req_records-api_catalog-response,/req/records-api/catalog-response>> requirement.
+|===

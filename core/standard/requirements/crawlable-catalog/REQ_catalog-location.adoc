@@ -6,4 +6,4 @@
 The catalog SHALL be placed in a web-accessible location.
 |===
 
-NOTE: This Standard is primarily concerned with making resources discoverable on the open https://en.wikipedia.org/wiki/World_Wide_Web[Web] that sits on top of the public https://en.wikipedia.org/wiki/Internet[Internet].  However, the same requirement applies in more restricted contexts such as a company https://en.wikipedia.org/wiki/Intranet[Intranet] or within classified networks.  In other words, the collection should be placed in a location that is accessible to the intended audience.
+NOTE: This Standard is primarily concerned with making resources discoverable on the open https://en.wikipedia.org/wiki/World_Wide_Web[Web] that sits on top of the public https://en.wikipedia.org/wiki/Internet[Internet].  However, the same requirement applies in more restricted contexts such as a company https://en.wikipedia.org/wiki/Intranet[Intranet] or within classified networks.  In other words, the catalog should be placed in a location that is accessible to the intended audience.

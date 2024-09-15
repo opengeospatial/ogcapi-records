@@ -4,17 +4,15 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/sorting
 |Target type |Web API
-|Requirements class |<<rc_local-resources-catalog_sorting,Requirements Class "Local Resources Catalog">>
+|Requirements class |<<rc_local-resources-catalog_sorting,Local Resources Catalog - Sorting>>
+|Dependency |<<ats_local-resources-catalog,Local Resources Catalog>>
+|Dependency |<<ats_sorting,Sorting>>
 |===
 
 ==== Conformance
 
 include::local-resources-catalog_sorting/ATS_conformance.adoc[]
 
-==== Query parameter definition
+==== Sorting
 
-include::local-resources-catalog_sorting/ATS_param-sortby-def.adoc[]
-
-==== Query parameter behavior
-
-include::local-resources-catalog_sorting/ATS_param-sortby-response.adoc[]
+include::local-resources-catalog_sorting/ATS_sorting.adoc[]

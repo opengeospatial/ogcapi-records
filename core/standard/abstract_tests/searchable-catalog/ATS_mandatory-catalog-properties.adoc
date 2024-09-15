@@ -1,0 +1,12 @@
+[[ats_searchable-catalog_manadatory-catalog-properties]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatatory-catalog-properties*
+^|Test Purpose |Verify that all mandatory catalog properties are present.
+^|Requirement |<<req_searchable-catalog_mandatory-catalog-properties,/req/searchable-catalog/mandatory-catalog-properties>>
+^|Test Method |. Construct a path for retrieving a catalog description document (path: `/collections/{collectionId}`).
+. The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the `itemType` (JSONPath `$.collections[*].itemType`) property is a string and its value is `record`.
+. Issue a HTTP GET request on that path.
+. Parse each retrieved catalog description.
+. Check that each record includes all the mandatory properties listed in <<collection-properties-table>>.
+|===

@@ -1,0 +1,12 @@
+[[ats_record-collection_records]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/records*
+^|Test Purpose |Validate that inline records are correctly represented.
+^|Requirement |<<req_record-collection_records,/req/record-collection/records>>
+^|Test Method |. Construct a path for a given catalog.
+. Issue a HTTP GET request on that path.
+. If the retrieved content contains a `recordsArrayName` then local a member whose name is the value of the `recordsArrayName` member.  Otherwise locate a member named `records`.
+. If this member exists, verify that it is an array.
+. If this member exists, verify that each member of this array is a valid record.
+|===

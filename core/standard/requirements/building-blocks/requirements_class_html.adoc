@@ -1,0 +1,8 @@
+[[rc_html]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html
+|Target type |Document encoding
+|Dependency |http://www.w3.org/TR/html5/[HTML5]
+|===

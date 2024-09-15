@@ -1,0 +1,12 @@
+[[ats_records-api_catalog-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-api/catalog-response*
+^|Test Purpose |Validate collection API endpoint.
+^|Requirement |<<req_records-api_catalog-response,/req/records-api/catalog-response>>
+^|Test Method |. Construct a path to retrieve a catalog description (path: `/collections/{collectionId}`).
+. Issue a HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Verify that the collection validates against the schema as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/collection.yaml[collection.yaml].
+. Verify that the `itemType` property is a string with the value `record`.
+|===

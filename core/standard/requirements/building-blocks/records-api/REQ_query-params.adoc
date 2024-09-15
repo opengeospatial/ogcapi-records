@@ -1,0 +1,8 @@
+[[req_records-api_query-params]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/query-params*
+
+^|A |Only records satisfying all the predicates specified by the included <<clause-record-core-query-parameters,query parameters>> and <<additional-query-parameters,additional query parameters>> SHALL be in the result set.
+^|B |The implied logical operation between <<clause-record-core-query-parameters,query parameters>>/<<additional-query-parameters,additional query parameters>> SHALL be **"AND"**.
+|===

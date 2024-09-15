@@ -2,9 +2,9 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/searchable-catalog/additional-conformance*
-2+|Implementations of this conformance class MAY, additionally, implement the following requirements:
-^|A |<<rc_searchable-catalog_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
-^|B |<<rc_searchable-catalog_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
-^|C |<<rc_json,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json>>
-^|D |<<rc_html,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html>>
+2+|Implementations of this conformance class MAY, additionally, implement the following common components:
+^|A |<<rc_oas30,http://www.opengis.net/spec/ogcapi-records/1.0/req/oas30>>
+^|B |<<rc_json,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json>>
+^|C |<<rc_html,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html>>
+^|D |<<rc_autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscover>>
 |===

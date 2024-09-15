@@ -1,11 +1,12 @@
-[[ats_local-resources-catalog_filtering_conformance]]
+[[ats_local-resources-catalog_filtering-conformance]]
 [width="90%",cols="2,6a"]
 |===
-^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog_filtering/conformance*
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/filtering-conformance*
 ^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_local-resources-catalog_filtering_conformance,/req/local-resources-catalog_filtering/conformance>>
-^|Test Method |. Construct a path for a conformance page
-. Issue an HTTP GET request on the path
-. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog_cql2-filter+`.
+^|Requirement |<<req_local-resources-catalog_filtering-conformance,/req/local-resources-catalog/filtering-conformance>>
+^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Check that the `conformsTo` array contains the values:
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog/filtering
 |===
-

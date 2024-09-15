@@ -1,0 +1,12 @@
+[[ats_record-collection_license]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/license*
+^|Test Purpose |Validate the behavior of the `license` member.
+^|Requirement |<<req_record-collection_license,/req/record-collection/license>>
+^|Test Method |. Construct a path for a catalog object.
+. Issue a HTTP GET request on that path
+. Parse the `license` member if it exists.
+. Check if the license includes a SPDX license identifier or a SPDX license expression string or the value `other`.
+. If the value `other` is used, check that one link has a `rel` property with value of `license`.
+|===

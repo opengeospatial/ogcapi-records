@@ -1,0 +1,9 @@
+[[req_record-filter_filter-crs-param]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-filter/filter-crs-param*
+^|Condition |Server implements <<OAFeat-2,OGC API - Features - Part 2: Coordinate Reference Systems by Reference>>
+^|A |The HTTP GET operation SHALL support the `filter-crs` parameter as defined in https://portal.ogc.org/files/96288#filter-filter-crs[Parameter filter-crs].
+^|B |For searchable catalogs, the path for which this parameter is supported SHALL be `/collections/{collectionId}/items`.
+^|C |For local resources catalogs, the path for which this parameter is supported SHALL be whichever path is being extended for catalog-like search capabilities (e.g. `/collections`).
+|===

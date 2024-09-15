@@ -18,9 +18,9 @@ A catalog can also be deployed as an implementation of a Web API consisting of w
 To enable this kind of flexible deployment of a collection of records, the Records API Standard defines the following set of common components:
 
 * a record,
-* a collection (of records),
+* a catalog (a collection of records),
 * a set of common query parameters,
-* the requirements and characteristics for implementation instances of a Recordssearch API (hereafter termed the "search API").
+* the requirements and characteristics for implementation instances of a Records search API (hereafter termed the "search API").
 
 A record is the atomic unit of information in a catalog. It contains descriptive information (metadata) about a resource such as:
 

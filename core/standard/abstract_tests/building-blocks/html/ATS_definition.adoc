@@ -1,0 +1,12 @@
+[[ats_html_definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/html/definition*
+^|Test Purpose |Validate the content type of HTML response.
+^|Requirement |<<req_html_definition,/req/html/definition>>
+^|Test Method |. Construct a path for each server operation.
+. Issue an HTTP GET request on the path
+. Check that the value of the returned HTTP status header is +200+.
+. Check that the HTTP Content-Type header value is `+text/html+`.
+|===
+

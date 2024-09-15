@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/mandatory-record-properties*
 
-The information model of the local resources item SHALL contain all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+Each record accessible via the local resource catalog SHALL contain all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
 |===

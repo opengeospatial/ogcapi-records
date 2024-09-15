@@ -1,7 +1,0 @@
-[[req_records-api_records-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/records-op*
-^|A |An implementation of the Records API requirements class SHALL comply with requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_operation_6[`/req/core/fc-op`] of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard.
-^|B |The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the value of the `itemsType` property (JSONPath: `$.collections[*].itemType`) is `record`.
-|===

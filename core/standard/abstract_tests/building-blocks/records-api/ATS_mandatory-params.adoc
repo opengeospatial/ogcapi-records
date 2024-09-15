@@ -1,0 +1,19 @@
+[[ats_records-api_mandatory-params]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/records-api/mandatory-params*
+^|Test Purpose |Validate each record containing the mandatory properties.
+^|Requirement |<<req_records-api_mandatory-params,/req/records-api/mandatory-params>>
+^|Test Method |. Construct a path to retrieve the server's API description.
+. Issue an HTTP GET operation on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Inspect the API description document and verify that the following parameters, listed in <<core-query-parameters-table>>, are defined for the `/collections/{collectionId}/items` endpoint for all collections where the value of the `itemType` (JSONPath `$.collections[*].itemType`) property is `record`:
+
+* <<req_record-core-query-parameters_bbox,bbox>>
+* <<req_record-core-query-parameters_datetime,datetime>>
+* <<externalIds,req_record-core-query-parameters_externalIds-definition>>
+* <<req_record-core-query-parameters_ids-definition,ids>>
+* <<req_record-core-query-parameters_limit,limit>>
+* <<req_record-core-query-parameters_q-definition,q>>
+* <<req_record-core-query-parameters_type-definition,type>>
+|===
