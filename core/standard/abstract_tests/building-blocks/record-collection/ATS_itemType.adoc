@@ -1,0 +1,13 @@
+[[ats_record-collection_itemType]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/itemType*
+^|Test Purpose |Validate the behavior of `itemType` member.
+^|Requirement |<<req_record-collection_itemType,/req/record-collection/itemType>>
+^|Test Method |. Construct a path for a catalog object.
+. Issue a HTTP GET request on that path.
+. Parse a `itemType` member if it exists.
+. If the value of the `itemType` member is `record` verify that the catalog contains or references only record objects.
+. If the value of the `itemType` member is `catalog` verify that the catalog only references other catalog objects.
+. If the value of the `itemType` member is an array containing the values `record` and `catalog` verify that the catalog only references other record and catalog objects.
+|===

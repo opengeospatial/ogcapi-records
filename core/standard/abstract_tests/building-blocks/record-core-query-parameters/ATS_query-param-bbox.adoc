@@ -1,0 +1,13 @@
+[[ats_record-core-query-parameters_bbox]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/bbox*
+^|Test Purpose |Validate `bbox` query parameter.
+^|Requirement |<<req_record-core-query-parameters_bbox,/req/record-core-query-parameters/bbox>>
+^|Test Method |. Construct a path for a searchable endpoint and include a `bbox` query parameter.
+. Validate that the `bbox` query parameter is constructed correctly using the test https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-bbox-definition[/conf/core/fc-bbox-definition].
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Validate that the `bbox` query parameter is processed correctly using the test from https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-bbox-response[/conf/core/fc-bbox-response].
+. All references to the term "features" must be replaced by the term "record" or "local resources" as the context may indicate
+|===

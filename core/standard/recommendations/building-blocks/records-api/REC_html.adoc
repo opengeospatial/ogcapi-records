@@ -1,0 +1,7 @@
+[[rec_records-api_html]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/records-api/html* 
+
+To support browsing the catalog and its records with a web browser and to enable search engines to crawl and index the catalog, implementations SHOULD consider supporting a <<rc_html,HTML encoding>>.
+|===

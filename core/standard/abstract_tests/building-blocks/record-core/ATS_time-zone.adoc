@@ -1,0 +1,11 @@
+[[ats_record-core_time-zone]]
+[width="90%",cols="2,7a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core/time-zone*
+^|Test Purpose |Validate the behavior of time zone for time member.
+^|Requirement |<<req_record-core_time-zone,/req/record-core/time-zone>>
+^|Test Method |. Construct a path for a given record that includes the `time` member.
+. Issue a HTTP GET request on that path.
+. Parse time member.
+. Check that timestamps in the time member use UTC "Z" as the time zone.
+|===

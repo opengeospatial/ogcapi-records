@@ -1,0 +1,12 @@
+[[ats_local-resource-catalog]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog*
+^|Test Purpose |Validate conformance identification.
+^|Requirement |<<req_local-resource-catalog,/req/local-resource-catalog>>
+^|Test Method |. Demonstrate conformance to the following tests:
+
+* <<ats_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core>>
+* <<ats_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-colection>>
+* <<ats_autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery>>
+|===

@@ -11,7 +11,7 @@ This clause specifies requirements classes that define common components that ca
 [[record-core-overview]]
 ==== Overview
 
-include::requirements/requirements_class_record-core.adoc[]
+include::requirements/building-blocks/requirements_class_record-core.adoc[]
 
 [[record-model]]
 The `Record` Requirements Class defines the requirements for a catalog record which is the atomic unit of information of a catalog.
@@ -69,18 +69,18 @@ Can be `null` if there is no associated temporal extent. |`time`
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement. |`properties.rights`
 |===
 
-include::requirements/record-core/REQ_mandatory-properties-record.adoc[]
+include::requirements/building-blocks/record-core/REQ_mandatory-properties-record.adoc[]
 
-include::recommendations/record-core/PER_common-mark.adoc[]
+include::recommendations/building-blocks/record-core/PER_common-mark.adoc[]
 
-include::recommendations/record-core/PER_additional-properties-record.adoc[]
+include::recommendations/building-blocks/record-core/PER_additional-properties-record.adoc[]
 
 [[sc_record_extensions]]
 ==== Record extensions
 
 In <<core-properties-record-table>> and <<core-properties-resource-table>> this Standard defines a set of core properties for describing discoverable resources.  It is anticipated that this set of core properties will be extended to suit specific use cases or requirements.  For example, a catalog record may be extended to include additional properties from the https://semiceu.github.io/GeoDCAT-AP/releases/[GeoDCAT] vocabulary.  The fact that a catalog record has been extended in this way can be advertised using the `conformsTo` property.  The `conformsTo` property is a list of identifiers that indicate each extension used in a record.  This Standard does not define the specific identifiers that are used to identify specific extensions; it simply provides a place where these identifiers can be listed.
 
-include::recommendations/record-core/REC_record-extensions.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-extensions.adoc[]
 
 In the case where all the records of a catalog use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` property at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog level] that may be used to declare which extensions are used in all records of the catalog.  
 
@@ -91,9 +91,9 @@ NOTE: Extensions listed at the catalog and record levels are cumulative.
 
 In order to facilitate the ability to discover resources of a particular type(s), this Standard makes the following recommendations:
 
-include::recommendations/record-core/REC_record-type.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-type.adoc[]
 
-include::recommendations/record-core/PER_record-type.adoc[]
+include::recommendations/building-blocks/record-core/PER_record-type.adoc[]
 
 In addition, links to external resources describing the record type vocabulary used to populate the `type` property are recommended, as described in <<sc_associations_and_links,Associations and Links>>.
 
@@ -102,15 +102,15 @@ In addition, links to external resources describing the record type vocabulary u
 
 In order to facilitate the discovery of resources utilizing keyword or free-text searches, this Standard makes the following recommendation:
 
-include::recommendations/record-core/REC_record-title.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-title.adoc[]
 
-include::recommendations/record-core/REC_record-description.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-description.adoc[]
 
 [[sc_spatial_information]]
 ==== Spatial information
 The spatial characteristic of the resource described by a record is specified using the optional `geometry` property.
 
-include::recommendations/record-core/PER_record-geometry.adoc[]
+include::recommendations/building-blocks/record-core/PER_record-geometry.adoc[]
 
 For example, the <<rc_json,JSON>> requirements class makes the `geometry` member mandatory because the record encoding (i.e. https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON]) requires that the `geometry` member be mandatory.
 
@@ -131,7 +131,7 @@ Records can have multiple properties that describe the temporal characteristics 
 
 This Standard does not place any constraints on the number of additional temporal properties that may be added to a record to characterize temporal aspects of the resource being described by a record.  This can make it difficult for a naive client to recognize and utilize temporal information stored in the record.  For this reason, this Standard includes the `time` property in a record.  
 
-include::recommendations/record-core/REC_time.adoc[]
+include::recommendations/building-blocks/record-core/REC_time.adoc[]
 
 This `time` property is set by the publisher of the record and describes characteristic temporal information (an instant or an interval) associated with the resource described by a record.   This `time` property can thus be used by naive clients without the need to inspect or understand the schema of an extended record.  If included in the record, the value of the `time` property is either `null` (no temporal information) or an object encoding a time instant or interval.
 
@@ -190,9 +190,9 @@ NOTE: This Standard only provides guidance as to how record data is represented 
 
 Dates and timestamps are the initial range of instant values. The range may be extended in the future to support additional use cases. Clients processing values of `time` must be prepared to receive other values. Clients may ignore values that they do not understand.
 
-include::requirements/record-core/REQ_time-instant.adoc[]
+include::requirements/building-blocks/record-core/REQ_time-instant.adoc[]
 
-include::recommendations/record-core/PER_temporal_comparison.adoc[]
+include::recommendations/building-blocks/record-core/PER_temporal_comparison.adoc[]
 
 ===== Intervals
 
@@ -244,22 +244,22 @@ The end of unbounded intervals is represented by a double-dot string (`..`) for 
 
 The options described above are the initial range of interval values - the granularity is either days or (sub-)seconds and interval ends may be unbounded. The value range may be extended in the future to support additional use cases. Clients processing values of `time` must be prepared to receive other values. Clients may ignore values that they do not understand.
 
-include::requirements/record-core/REQ_time-interval.adoc[]
+include::requirements/building-blocks/record-core/REQ_time-interval.adoc[]
 
 ===== Instants and intervals
 
-include::requirements/record-core/REQ_time-instant-interval.adoc[]
+include::requirements/building-blocks/record-core/REQ_time-instant-interval.adoc[]
 
 ===== Time zones
 
-include::requirements/record-core/REQ_time-zone.adoc[]
+include::requirements/building-blocks/record-core/REQ_time-zone.adoc[]
 
 [[sc_keywords_and_themes]]
 ==== Keywords and Themes
 
 A record allows for one `keywords` and one to many `themes` properties.  Keywords are free form terms or tags associated with the resource(s) that the record describes.  Themes are concepts associated with the resource(s) that a record describes taken from one or more formal knowledge organization systems or schemes.  The list of knowledge organization systems or schemes used in a <<clause-searchable-catalog,searchable>> or <<clause-local-resources-catalog,local resources>> catalog can be determined by inspecting the server's OpenAPI document or, if the server implements CQL2, by exposing a queryable (e.g. named `scheme`) and enumerating the list of schemes used in the queryable's schema definition.
 
-include::recommendations/record-core/REC_record-keywords-themes.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-keywords-themes.adoc[]
 
 The following provides an example of using keywords for free form terms (e.g. tags) as well as themes to articulate terms from formal vocabularies or classification systems.
 
@@ -288,7 +288,7 @@ The following example illustrates a resources that is a available is several for
 ]
 ----
 
-include::recommendations/record-core/REC_format.adoc[]
+include::recommendations/building-blocks/record-core/REC_format.adoc[]
 
 [[sc_record_language_handling]]
 ==== Language handling
@@ -303,7 +303,7 @@ A catalog record can include language information about:
 
 ===== Language of the record
 
-include::recommendations/record-core/REC_record-lang.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-lang.adoc[]
 
 The https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[templated link object] are based on https://datatracker.ietf.org/doc/html/rfc8288[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languages. 
 
@@ -326,21 +326,21 @@ There is no provision in the record schema to allow a response containing text f
 
 ===== Language of the resource
 
-include::recommendations/record-core/REC_resource-langs.adoc[]
+include::recommendations/building-blocks/record-core/REC_resource-langs.adoc[]
 
 [[sc_contacts]]
 ==== Contacts
 
-include::requirements/record-core/REQ_contact.adoc[]
+include::requirements/building-blocks/record-core/REQ_contact.adoc[]
 
-include::recommendations/record-core/REC_contact.adoc[]
+include::recommendations/building-blocks/record-core/REC_contact.adoc[]
 
 [[sc_license]]
 ==== License
 
 A record may have one `license` property. If present, the value of this property should be a code, convenient for filtering records.
 
-include::requirements/record-core/REQ_record-license.adoc[]
+include::requirements/building-blocks/record-core/REQ_record-license.adoc[]
 
 [[sc_associations_and_links]]
 ==== Associations and Links
@@ -349,15 +349,15 @@ A record must contain a `links` section and may contain a <<sc_templated_links_w
 
 Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (eotion: `collection`) of which a record is a member, alternative representations (relation: `alternate`) of the record, and -- in the context of an API -- navigation links to previous (relation: `prev` or `previous`) or next (relation: `next`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (relation: `root`, relation: `parent`, relation: `child`).
 
-include::requirements/record-core/REQ_record-links.adoc[]
+include::requirements/building-blocks/record-core/REQ_record-links.adoc[]
 
-include::recommendations/record-core/REC_links.adoc[]
+include::recommendations/building-blocks/record-core/REC_links.adoc[]
 
 Links in the `links` section may also encode canonical URIs for record properties such as `type` and `license`.
 
-include::recommendations/record-core/REC_record-links_type.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-links_type.adoc[]
 
-include::recommendations/record-core/REC_record-links_iana.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-links_iana.adoc[]
 
 Association links point to the resource(s) being described by a record. Such links allow binding to a resource once it has been discovered by searching a catalog.  Depending on how the target resource of a record is represented and how it may be accessed, there may be one or more association links.  For example, if the target resource is an Earth observation imagery file, links may point to the individually accessible bands of the image file.
 
@@ -365,11 +365,11 @@ Association links are also meant to point to other records related to the contai
 
 Finally, association links are meant to point to other resources external to the catalog that are related to the containing record or the resource(s) that the record describes.
 
-include::recommendations/record-core/REC_record-associations_relate.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-associations_relate.adoc[]
 
 In some instances, additional context may be desirable or required to access (or bind to) the resource(s) being described by a record.  This is the case when, for example, access to the resource is through a service interface that requires mandatory parameters to be provided.  An implementation of the OGC Web Map Service (WMS) Standard is an example of such a service.  It may also be the case that efficient access to the resource would be facilitated by providing additional context.  Accessing data from a large data repository such as a data cube would be more efficient if the context of the query used to discover the resource (e.g. bbox, datetime) were passed down to the link used to access the data.
 
-include::recommendations/record-core/REC_record-associations_templated.adoc[]
+include::recommendations/building-blocks/record-core/REC_record-associations_templated.adoc[]
 
 NOTE: This Standard does not define any specific link relations that should be used for links in the `links` or <<sc_templated_links_with_variables,`linkTemplates`>> sections.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the relations that links should use.
 
@@ -403,11 +403,11 @@ This Standard defines a new schema, https://github.com/opengeospatial/ogcapi-rec
 
 Information about the substitution variables can be obtained in one of two ways.  The `variable` property may be used to encode the definitions of substitution variables in-line in the link.  Alternatively, the `varBase` property can be used to specify a base URI to which a variable name may be appended to retrieve the definition of the specified substitution variable.
 
-include::requirements/record-core/REQ_templated-link.adoc[]
+include::requirements/building-blocks/record-core/REQ_templated-link.adoc[]
 
-include::recommendations/record-core/REC_templated-link.adoc[]
+include::recommendations/building-blocks/record-core/REC_templated-link.adoc[]
 ￼
-include::requirements/record-core/REQ_templated-link-header.adoc[]
+include::requirements/building-blocks/record-core/REQ_templated-link-header.adoc[]
 ￼
 following example illustrates a link template to a legacy OGC Web service.  The example includes both an in-line and referenced dictionaries of substitution variables.
 ￼
@@ -467,7 +467,7 @@ This Standard defines requirements classes for JSON and HTML encoding of a recor
 [[record-collection-overview]]
 ==== Overview
 
-include::requirements/requirements_class_record-collection.adoc[]
+include::requirements/building-blocks/requirements_class_record-collection.adoc[]
 
 The Record Collection requirements class defines the requirements for a record collection.
 
@@ -521,11 +521,11 @@ Other encodings are allowed but are not described in this document.
 
 NOTE: The properties _id_, _itemType_, title_, _description_, _extent_, _crs_ and _links_ are inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core].
 
-include::requirements/record-collection/REQ_mandatory-properties.adoc[]
+include::requirements/building-blocks/record-collection/REQ_mandatory-properties.adoc[]
 
-include::recommendations/record-collection/PER_common-mark.adoc[]
+include::recommendations/building-blocks/record-collection/PER_common-mark.adoc[]
 
-include::recommendations/record-collection/PER_additional-properties.adoc[]
+include::recommendations/building-blocks/record-collection/PER_additional-properties.adoc[]
 
 ==== Catalog extensions
 
@@ -537,61 +537,61 @@ See <<sc_record_extensions,Record extensions>>.
 
 ==== Item type
 
-A catalog can include references to records, other catalogs or both.
+A catalog can include references to records, other catalogs or both.  A catalog can also contain an array of catalog records.
 
-include::requirements/record-collection/REQ_itemType.adoc[]
+include::requirements/building-blocks/record-collection/REQ_itemType.adoc[]
 
 ==== Title and description
 
 In order to facilitate the discovery of resources utilizing keyword or free-text searches, this Standard makes the following recommendation:
 
-include::recommendations/record-collection/REC_title.adoc[]
+include::recommendations/building-blocks/record-collection/REC_title.adoc[]
 
-include::recommendations/record-collection/REC_description.adoc[]
+include::recommendations/building-blocks/record-collection/REC_description.adoc[]
 
 ==== Keywords and Themes
 
-include::recommendations/record-collection/REC_keywords-themes.adoc[]
+include::recommendations/building-blocks/record-collection/REC_keywords-themes.adoc[]
 
 See <<sc_keywords_and_themes,Keywords and Themes>>.
 
 ==== Language handling
 
-include::recommendations/record-collection/REC_catalog-lang.adoc[]
+include::recommendations/building-blocks/record-collection/REC_catalog-lang.adoc[]
 
-include::recommendations/record-collection/REC_record-langs.adoc[]
+include::recommendations/building-blocks/record-collection/REC_record-langs.adoc[]
 
 See <<sc_record_language_handling,Language handling>>.
 
 ==== Contacts
 
-include::requirements/record-collection/REQ_contact.adoc[]
+include::requirements/building-blocks/record-collection/REQ_contact.adoc[]
 
 ==== License
 
-include::requirements/record-collection/REQ_license.adoc[]
+include::requirements/building-blocks/record-collection/REQ_license.adoc[]
 
 [[sc_catalog-record-links]]
 ==== Records
 
-include::recommendations/record-collection/PER_records.adoc[]
+include::recommendations/building-blocks/record-collection/PER_records.adoc[]
 
-include::requirements/record-collection/REQ_links-record.adoc[]
+include::requirements/building-blocks/record-collection/REQ_links-record.adoc[]
 
-include::requirements/record-collection/REQ_links-records.adoc[]
+include::requirements/building-blocks/record-collection/REQ_links-records.adoc[]
 
-include::requirements/record-collection/REQ_records.adoc[]
+include::requirements/building-blocks/record-collection/REQ_records.adoc[]
 
-include::recommendations/record-collection/PER_records-array-name.adoc[]
+include::recommendations/building-blocks/record-collection/PER_records-array-name.adoc[]
 
-include::requirements/record-collection/REQ_records-array-name.adoc[]
+include::requirements/building-blocks/record-collection/REQ_records-array-name.adoc[]
 
 [[sc_catalog-catalog-links]]
 ==== Other catalogs
 
 ===== Overview
 
-include::recommendations/record-collection/PER_catalogs.adoc[]
+include::recommendations/building-blocks/record-collection/PER_catalogs.adoc[]
 
 Related catalogs may be organized as:
 
@@ -601,25 +601,25 @@ Related catalogs may be organized as:
 
 ===== Related catalogs
 
-include::requirements/record-collection/REQ_links-catalog-related.adoc[]
+include::requirements/building-blocks/record-collection/REQ_links-catalog-related.adoc[]
 
 ===== Series of related catalogs
 
-include::requirements/record-collection/REQ_links-catalog-series.adoc[]
+include::requirements/building-blocks/record-collection/REQ_links-catalog-series.adoc[]
 
-include::recommendations/record-collection/REC_links-catalog-series.adoc[]
+include::recommendations/building-blocks/record-collection/REC_links-catalog-series.adoc[]
 
 ===== Hierarchy if related catalog
 
-include::requirements/record-collection/REQ_links-catalog-hierarchy.adoc[]
+include::requirements/building-blocks/record-collection/REQ_links-catalog-hierarchy.adoc[]
 
-include::recommendations/record-collection/REC_links-catalog-hierarchy.adoc[]
+include::recommendations/building-blocks/record-collection/REC_links-catalog-hierarchy.adoc[]
 
 ==== Links
 
-include::requirements/record-collection/REQ_links.adoc[]
+include::requirements/building-blocks/record-collection/REQ_links.adoc[]
 
-include::recommendations/record-collection/PER_links.adoc[]
+include::recommendations/building-blocks/record-collection/PER_links.adoc[]
 
 ==== Templated links with variables
 
@@ -659,7 +659,7 @@ This Standard defines requirements for JSON and HTML encoding of a catalog. See 
 [[record-core-query-parameters-overview]]
 ==== Overview
 
-include::requirements/requirements_class_record-core-query-parameters.adoc[]
+include::requirements/building-blocks/requirements_class_record-core-query-parameters.adoc[]
 
 The Record Core Query Parameters requirements class defines a minimum set of query parameters that should be implemented at a searchable catalog endpoint.  <<core-query-parameters-table>> lists this set of query parameters.
 
@@ -685,28 +685,28 @@ The parameters `bbox`, `datetime`, `limit` and `ids` are inherited from https://
 
 [[core-query-parameters-bbox]]
 ===== Parameter bbox
-include::requirements/record-core-query-parameters/REQ_query-param-bbox.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-bbox.adoc[]
 
 [[core-query-parameters-datetime]]
 ===== Parameter datetime
-include::requirements/record-core-query-parameters/REQ_query-param-datetime.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-datetime.adoc[]
 
 [[core-query-parameters-limit]]
 ===== Parameter limit
-include::requirements/record-core-query-parameters/REQ_query-param-limit.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-limit.adoc[]
 
 [[core-query-parameters-q]]
 ===== Parameter q
 
 The `q` parameter provides a simple, easy-to-implement keyword search capability across one or more text fields in a record.  
 
-include::requirements/record-core-query-parameters/REQ_query-param-q-definition.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-q-definition.adoc[]
 
 The specific text fields in a record that are to be searched is not mandated in this Standard.
 
-include::recommendations/record-core-query-parameters/REC_param-q.adoc[]
+include::recommendations/building-blocks/record-core-query-parameters/REC_param-q.adoc[]
 
-include::requirements/record-core-query-parameters/REQ_query-param-q-response.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-q-response.adoc[]
 
 For example, the following `q` parameter specification:
 
@@ -731,25 +731,25 @@ NOTES:
 [[core-query-parameters-type]]
 ===== Parameter type
 
-include::requirements/record-core-query-parameters/REQ_query-param-type-definition.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-type-definition.adoc[]
 
-include::recommendations/record-core-query-parameters/REC_query-param-type-definition.adoc[]
+include::recommendations/building-blocks/record-core-query-parameters/REC_query-param-type-definition.adoc[]
 
-include::requirements/record-core-query-parameters/REQ_query-param-type-response.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-type-response.adoc[]
 
 [[core-query-parameters-ids]]
 ===== Parameter ids
 
-include::requirements/record-core-query-parameters/REQ_query-param-ids-definition.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-ids-definition.adoc[]
 
-include::requirements/record-core-query-parameters/REQ_query-param-ids-response.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-ids-response.adoc[]
 
 [[core-query-parameters-externalIds]]
 ===== Parameter externalIds
 
-include::requirements/record-core-query-parameters/REQ_query-param-externalIds-definition.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-externalIds-definition.adoc[]
 
-include::requirements/record-core-query-parameters/REQ_query-param-externalIds-response.adoc[]
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-externalIds-response.adoc[]
 
 [[additional-query-parameters]]
 ===== Additional query parameters
@@ -762,7 +762,7 @@ resource.
 * <<core-query-parameters-type,type>>
 * <<core-query-parameters-externalIds,externalIds>>
 
-include::recommendations/record-core-query-parameters/REC_additional-query-parameters.adoc[]
+include::recommendations/building-blocks/record-core-query-parameters/REC_additional-query-parameters.adoc[]
 
 [[clause-records-api]]
 === Requirements Class "Records API" (Common Component)
@@ -770,25 +770,21 @@ include::recommendations/record-core-query-parameters/REC_additional-query-param
 [[records-api-overview]]
 ==== Overview
 
-include::requirements/requirements_class_records-api.adoc[]
+include::requirements/building-blocks/requirements_class_records-api.adoc[]
+
+include::requirements/building-blocks/records-api/REQ_features-api.adoc[]
 
 The core requirements for an API that enables searching a catalog are defined by the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard.
 
-include::requirements/records-api/REQ_resource-name-mapping.adoc[]
-
-==== Declarations of conformance class
-
-include::requirements/records-api/REQ_conformance-classes.adoc[]
-
-include::recommendations/records-api/PER_conformance-classes.adoc[]
+include::requirements/building-blocks/records-api/REQ_resource-name-mapping.adoc[]
 
 ==== Encodings
 
-While the OGC API - Records - Part 1: Core Standard does not specify any mandatory encoding, support for the following encodings is recommended.
+While this Standard does not specify any mandatory response encoding, support for the following encodings is recommended.
 
-include::recommendations/records-api/REC_html.adoc[]
+include::recommendations/building-blocks/records-api/REC_html.adoc[]
 
-include::recommendations/records-api/REC_json.adoc[]
+include::recommendations/building-blocks/records-api/REC_json.adoc[]
 
 The encoding of a server response is determined according to the mechanisms defined in https://www.rfc-editor.org/rfc/rfc2616#section-12[Clause 12] of the https://www.rfc-editor.org/rfc/rfc2616[HTTP 1.1] Standard.
 
@@ -812,26 +808,30 @@ the Accept header of the HTTP request.
 [[record-collection]]
 ==== Record collection response
 
-include::requirements/records-api/REQ_record-collection-response.adoc[]
+include::requirements/building-blocks/records-api/REQ_catalog-response.adoc[]
 
 [[record-collections]]
 ==== Record collections response
 
-include::requirements/records-api/REQ_record-collections-response.adoc[]
+include::requirements/building-blocks/records-api/REQ_catalogs-response.adoc[]
 
 [[records-access]]
 ==== Records access
 
 ===== Operation
 
-include::requirements/records-api/REQ_records-op.adoc[]
+include::requirements/building-blocks/records-api/REQ_records-op.adoc[]
 
-===== Combinations of Filtering Parameters
+include::requirements/building-blocks/records-api/REQ_mandatory-params.adoc[]
 
-Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> may be specified for filtering. Note that the requirements on these parameters imply that only records matching all the predicates are in the result set, i.e., the logical operator between the predicates is **AND** (exclusive).
+include::recommendations/building-blocks/records-api/PER_query-params.adoc[]
 
 [[query-response]]
 ===== Response
+
+include::requirements/building-blocks/records-api/REQ_query-params.adoc[]
+
+===== Response encoding 
 
 <<response-encodings>> lists specific requirements based on the negotiated representation of the response.
 
@@ -872,11 +872,11 @@ include::../examples/json/record.json[]
 
 ===== Operation
 
-include::requirements/records-api/REQ_record-op.adoc[]
+include::requirements/building-blocks/records-api/REQ_record-op.adoc[]
 
 ===== Response
 
-include::requirements/records-api/REQ_record-response.adoc[]
+include::requirements/building-blocks/records-api/REQ_record-response.adoc[]
 
 [[clause-sorting]]
 === Requirements Class "Sorting" (Common Component)
@@ -884,14 +884,14 @@ include::requirements/records-api/REQ_record-response.adoc[]
 [[sorting-overview]]
 ==== Overview
 
-include::requirements/requirements_class_sorting.adoc[]
+include::requirements/building-blocks/requirements_class_sorting.adoc[]
 
 The `Sorting` Requirements Class defines the requirements for specifying how records in a response should be ordered for presentation.
 
 [[sorting-parameter-sortby]]
 ==== Parameter sortby
 
-include::requirements/sorting/REQ_sortby-definition.adoc[]
+include::requirements/building-blocks/sorting/REQ_sortby-definition.adoc[]
 
 [NOTE]
 ======================================================================
@@ -904,13 +904,13 @@ The core definition of the `sortby` parameter only defines a single directive th
 . Specify a fixed value and a fixed value that sorts the corresponding property as if it were the specified fixed value.
 ======================================================================
 
-include::requirements/sorting/REQ_sortby-response.adoc[]
+include::requirements/building-blocks/sorting/REQ_sortby-response.adoc[]
 
-include::requirements/sorting/REQ_get-sortables-op.adoc[]
+include::requirements/building-blocks/sorting/REQ_get-sortables-op.adoc[]
 
-include::requirements/sorting/REQ_get-sortables-success.adoc[]
+include::requirements/building-blocks/sorting/REQ_get-sortables-success.adoc[]
 
-include::recommendations/sorting/PER_synthetic.adoc[]
+include::recommendations/building-blocks/sorting/PER_synthetic.adoc[]
 
 The response is returned as a JSON Schema document that describes a single JSON object where each property is a sortable. Note that the sortables schema does not specify a schema of any object that can be retrieved from a Records API endpoint. JSON Schema is used for the sortables to have a consistent approach for describing schema information and JSON Schema is/will be used in other parts of OGC API - Features suite of standards to describe schemas for GeoJSON feature content including in OpenAPI documents.
 
@@ -918,7 +918,7 @@ NOTE: The OGC Features API Standards Working Group has a schema harmonization ta
 
 To support clients, providing additional detail about the meaning of the sortables is recommended:
 
-include::recommendations/sorting/REC_sortables-schema.adoc[]
+include::recommendations/building-blocks/sorting/REC_sortables-schema.adoc[]
 
 In an OpenAPI 3.0 document, the Sortables resource has the following schema:
 
@@ -935,7 +935,7 @@ This Specification does not mandate a specific default sort order for records
 fetched from a searchable catalog.  However, servers can declare a default
 sort order.
 
-include::requirements/sorting/REQ_defaultSortOrder-definition.adoc[]
+include::requirements/building-blocks/sorting/REQ_defaultSortOrder-definition.adoc[]
 
 ==== Sorting by relevance (informative)
 
@@ -990,7 +990,7 @@ include::../examples/json/sortables.json[]
 [[record-filter-overview]]
 ==== Overview
 
-include::requirements/requirements_class_record-filter.adoc[]
+include::requirements/building-blocks/requirements_class_record-filter.adoc[]
 
 This clause defines the binding to the filtering parameters defined in the https://docs.ogc.org/DRAFTS/19-079r1.html#_requirements_class_filter[OGC API - Features - Part 3: Filtering] and the use of the https://docs.ogc.org/DRAFTS/21-065.html[Common Query Language (CQL2)] as the query language.
 
@@ -1000,19 +1000,19 @@ This clause defines the binding to the filtering parameters defined in the https
 
 As specified in the <<records-access,Records Access>> clause, records are accessed using the HTTP GET method via the `/collections/{collectionId}/items` path.  The following additional requirements bind the parameters https://docs.ogc.org/DRAFTS/19-079.html#filter-param[filter], https://docs.ogc.org/DRAFTS/19-079.html#filter-lang-param[filter-lang] and https://docs.ogc.org/DRAFTS/19-079.html#filter-filter-crs[filter-crs] to the GET operation on this path.
 
-include::requirements/record-filter/REQ_filter-param.adoc[]
+include::requirements/building-blocks/record-filter/REQ_filter-param.adoc[]
 
-include::requirements/record-filter/REQ_filter-lang-param.adoc[]
+include::requirements/building-blocks/record-filter/REQ_filter-lang-param.adoc[]
 
-include::recommendations/record-filter/REC_text-encoding.adoc[]
+include::recommendations/building-blocks/record-filter/REC_text-encoding.adoc[]
 
-include::recommendations/record-filter/REC_json-encoding.adoc[]
+include::recommendations/building-blocks/record-filter/REC_json-encoding.adoc[]
 
-include::requirements/record-filter/REQ_filter-crs-param.adoc[]
+include::requirements/building-blocks/record-filter/REQ_filter-crs-param.adoc[]
 
 ===== Response
 
-include::requirements/record-filter/REQ_response.adoc[]
+include::requirements/building-blocks/record-filter/REQ_response.adoc[]
 
 ==== Filtering on links
 
@@ -1183,13 +1183,13 @@ https://example.org/collections/myCatalog/items?scheme=https%3A%2F%2Fgeo.woudc.o
 
 ==== Overview
 
-include::requirements/requirements_class_autodiscovery.adoc[]
+include::requirements/building-blocks/requirements_class_autodiscovery.adoc[]
 
 The purpose of autodiscovery is, knowing the location of a web page, to find the addresses(s) of that page's associated catalog(s).  For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site's searchable catalog by locating the `rel="http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog"` link in the landing page and then, using that catalog, search for resources offered by the site.
 
 ==== Autodiscovery links
 
-include::requirements/autodiscovery/REQ_autodiscovery.adoc[]
+include::requirements/building-blocks/autodiscovery/REQ_links.adoc[]
 
 [[clause-encodings]]
 === Encodings
@@ -1211,7 +1211,9 @@ GeoJSON provides a simple way of representing records in JSON and is supported b
 
 ===== Overview
 
-include::requirements/requirements_class_json.adoc[]
+include::requirements/building-blocks/requirements_class_json.adoc[]
+
+include::requirements/building-blocks/json/REQ_conformance.adoc[]
 
 [[clause-record-encoding-json]]
 ===== Record encoding
@@ -1223,9 +1225,9 @@ The following requirements apply when:
 . The Records API endpoint advertises conformance to the JSON Conformance Class.
 . The client negotiates that the content of the server's response be https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON].
 
-include::requirements/json/REQ_record-response.adoc[]
+include::requirements/building-blocks/json/REQ_record-response.adoc[]
 
-include::requirements/json/REQ_record-content.adoc[]
+include::requirements/building-blocks/json/REQ_record-content.adoc[]
 
 [[schema_json_record]]
 .link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml[Schema for a catalog record encoded as GeoJSON (recordGeoJSON.yaml)]
@@ -1253,7 +1255,7 @@ Referenced schemas can be found at:
 * https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/linkBase.yaml[linkBase.yaml].
 ======================================================================
 
-include::recommendations/json/PER_time.adoc[]
+include::recommendations/building-blocks/json/PER_time.adoc[]
 
 [NOTE]
 =================================================
@@ -1270,9 +1272,9 @@ The following requirements apply when:
 . The Records API endpoint advertises conformance to the JSON Conformance Class
 . The client negotiates that the content of the server's response be JSON.
 
-include::requirements/json/REQ_collection-response.adoc[]
+include::requirements/building-blocks/json/REQ_catalog-response.adoc[]
 
-include::requirements/json/REQ_collection-content.adoc[]
+include::requirements/building-blocks/json/REQ_catalog-content.adoc[]
 
 [[schema_json_collection]]
 .link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog encoded as JSON(catalog.yaml)]
@@ -1295,12 +1297,9 @@ Referenced schemas can be found at:
 [[requirements-class-html-clause]]
 ==== Requirements Class HTML (Common Component)
 
-include::requirements/requirements_class_html.adoc[]
+include::requirements/building-blocks/requirements_class_html.adoc[]
 
-The following requirements apply to an OGC API - Records implementation when the following conditions apply:
-
-. The API advertises conformance to the HTML Conformance Class
-. The client negotiates that the content of the server's response be encoded as HTML.
+include::requirements/building-blocks/html/REQ_conformance.adoc[]
 
 Catalog information that is only accessible in formats primarily intended to
 be read by machines, such as JSON or XML, have two issues:
@@ -1313,11 +1312,11 @@ Therefore, sharing catalog data on the Web should include publication in HTML. T
 
 This is discussed in detail in link:https://www.w3.org/TR/sdw-bp/#indexable-by-search-engines[Best Practice 2: Make your spatial data indexable by search engines] <<SDWBP>>. The Records API Standard therefore <<rec_html,recommends supporting HTML as an encoding>>.
 
-include::requirements/html/REQ_definition.adoc[]
+include::requirements/building-blocks/html/REQ_definition.adoc[]
 
-include::requirements/html/REQ_content.adoc[]
+include::requirements/building-blocks/html/REQ_content.adoc[]
 
-include::recommendations/html/REC_schema-org.adoc[]
+include::recommendations/building-blocks/html/REC_schema-org.adoc[]
 
 [[clause-oas30]] 
 === Requirements Class "OpenAPI 3.0" (Common Component)
@@ -1327,6 +1326,6 @@ include::recommendations/html/REC_schema-org.adoc[]
 Servers conforming to this requirements class define their API using an 
 http://spec.openapis.org/oas/v3.0.3#openapi-document[OpenAPI Document].
 
-include::requirements/oas30/REQ_oas30.adoc[]
+include::requirements/building-blocks/oas30/REQ_oas30.adoc[]
 
-include::requirements/oas30/REQ_oas-conformance.adoc[]
+include::requirements/building-blocks/oas30/REQ_oas-conformance.adoc[]

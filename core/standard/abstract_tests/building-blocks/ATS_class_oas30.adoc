@@ -1,0 +1,16 @@
+[[ats_oas30]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
+|Target type |Web API
+|Requirements class |<<rc_oas30,Requirements Class "OpenAPI 3.0">>
+|===
+
+==== Conformance
+
+include::oas30/ATS_conformance.adoc[]
+
+==== API description document
+
+include::oas30/ATS_oas30.adoc[]

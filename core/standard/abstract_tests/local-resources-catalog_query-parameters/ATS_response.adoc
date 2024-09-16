@@ -1,0 +1,11 @@
+[[ats_local-resources-catalog_query-parameters-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/query-parameters/query-parameters-response*
+^|Test Purpose |Validate query parameters response.
+^|Requirement |<<req_local-resources-catalog_query-parameters-response,/req/local-resources-catalog/query-parameters/query-parameters-response>>
+^|Test Method |. Validate via the server's API document which query parameters are supported (see test <<ats_local-resources-catalog_query-parameters,/conf/local-resources-catalog/query-parameters/query-parameters>>).
+. Construct a path for records from the local resource catalog and include one or more of the supported query parameters.
+. Issue an HTTP GET request on that path.
+. Check that all records in the response satisfy the query predicates specified using the query parameters.
+|===

@@ -1,0 +1,13 @@
+[[ats_record-core-query-parameters_datetime]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/datetime*
+^|Test Purpose |Validate `datetime` query parameter.
+^|Requirement |<<req_record-core-query-parameters_datetime,/req/record-core-query-parameters/datetime>>
+^|Test Method |. Construct a path for a searchable endpoint and include a `datetime` query parameter.
+. Validate that the `datetime` query parameter is constructed correctly using the test from https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-time-definition[/conf/core/fc-time-definition].
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Validate that the `datetime` query parameter is processed correctly using the test https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-time-response[/conf/core/fc-time-response].
+. All references to the term "features" must be replaced by the term "record" or "local resource" as the context may indicate
+|===

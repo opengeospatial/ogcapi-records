@@ -1,0 +1,11 @@
+[[ats_record-core-query-parameters_ids-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/ids-response*
+^|Test Purpose |Validate `ids` query parameter.
+^|Requirement |<<req_record-core-query-parameters_ids-response,/req/record-core-query-parameters/ids-response>>
+^|Test Method |. Construct a path for a searchable endpoint as per test <<ats_record-core-query-parameters_ids-definition,/conf/record-core-query-parameters/ids-definition>>.
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Check that only records whose identifier match one of the identifiers specified using `ids` query parameter are in the results set.
+|===

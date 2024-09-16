@@ -2,11 +2,10 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatory-queryables*
-^|Test Purpose |Validate searchable catalog CQL filtering.
+^|Test Purpose |Validate existence of mandatory queryables.
 ^|Requirement |<<req_searchable-catalog_mandatory-queryables,/req/searchable-catalog/mandatory-queryables>>
-^|Test Method |. Construct a path for a collection queryables page
-. Issue an HTTP GET request on the path
-. Check that the list of queryables includes a ``id`` property
-. Check that the list of queryables includes a ``type`` property
-. Check that the list of queryables includes a ``title`` property
+^|Test Method |. Construct a path for a collection queryables page.
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Inspect the response and verify that the list of queryables includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
 |===

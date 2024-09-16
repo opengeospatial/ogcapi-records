@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/searchable-catalog/sorting*
-2+|Implementations that offer sorting SHALL implement the following requirements:
-^|A | <<clause-sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
+2+|Implementations of sorting of record responses SHALL implement the following requirements class at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
+^|A |<<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
 |===

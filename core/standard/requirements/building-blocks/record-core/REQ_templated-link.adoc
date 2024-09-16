@@ -1,0 +1,15 @@
+[[req_record-core_templated-link]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/record-core/templated-link*
+
+^|A |A templated link SHALL be defined by the following schema fragment:
+
+[source,YAML]
+----
+include::../../../../openapi/schemas/linkTemplate.yaml[]
+----
+
+^|B |The `uriTemplate` member SHALL supply the templated link URI.
+^|C |Substitution variables in the templated link URI SHALL have the form `{_variable name_}`.
+|===

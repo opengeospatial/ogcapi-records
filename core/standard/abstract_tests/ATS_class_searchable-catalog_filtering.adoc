@@ -4,15 +4,19 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/filtering
 |Target type |Web API
-|Dependency |<<ats_searchable_catalog,Searchable Catalog>>
-|Dependency |<<ats_cql-filter,Filtering using the Common Query Language (CQL2)>>
 |Requirements class |<<rc_searchable-catalog_cql2-filter,Requirements Class "Searchable Catalog">>
+|Dependency |<<ats_searchable_catalog,Searchable Catalog>>
+|Dependency |<<ats_cql-filter,Filtering>>
 |===
 
 ==== Conformance
 
 include::searchable-catalog_filtering/ATS_conformance.adoc[]
 
-==== Queryables
+==== Filtering
+
+include::searchable-catalog_filtering/ATS_filtering.adoc[]
+
+==== Mandatory queryables
 
 include::searchable-catalog_filtering/ATS_mandatory-queryables.adoc[]

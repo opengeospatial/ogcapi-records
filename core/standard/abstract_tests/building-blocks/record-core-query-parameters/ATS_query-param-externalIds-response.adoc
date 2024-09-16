@@ -1,0 +1,11 @@
+[[ats_record-core-query-parameters_externalIds-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/externalIds-response*
+^|Test Purpose |Validate `externalIds` query parameter.
+^|Requirement |<<req_record-core-query-parameters_externalIds-response,/req/record-core-query-parameters/externalIds-response>>
+^|Test Method |. Construct a path for a searchable endpoint as per test <<ats_record-core-query-parameters_externalIds-definition,/conf/record-core-query-parameters/externalIds-definition>>.
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Check that only records that have an external identifier, as indicated by the values of the `externalIds` core queryable, equal to one of the listed values specified using the `externalIds` parameter are in the result set.
+|===

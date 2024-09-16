@@ -1,0 +1,12 @@
+[[ats_record-core_default-mediatype]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-core/default-mediatype*
+^|Test Purpose |Check the default encoding for a catalog record.
+^|Requirement |<<req_record-core_default-mediatype,/req/record-core/default-mediatype>>
+^|Test Method |. Construct a path for a given catalog record.
+. Issue a HTTP GET request on that path.
+. Check if the <<rc_json,JSON conformance class>> is advertised for the catalog.
+. If yes, then check that the media type for content is `application/geo+json; application=ogc-record`.
+. If no, then check that the media type for content is HTML.
+|===

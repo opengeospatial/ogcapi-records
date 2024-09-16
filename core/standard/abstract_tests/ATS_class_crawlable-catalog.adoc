@@ -4,9 +4,9 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/crawlable-catalog
 |Target type |Web API
+|Requirements class |<<rc_crawlable-catalog,Crawlable Catalog>>
 |Dependency |<<ats_record-collection,Record Collection>>
 |Dependency |<<ats_record-core,Record>>
-|Requirements class |<<rc_crawlable-catalog,Requirements Class "Crawlable Catalog">>
 |===
 
 ==== Conformance
@@ -24,7 +24,3 @@ include::crawlable-catalog/ATS_record-location.adoc[]
 include::crawlable-catalog/ATS_catalog.adoc[]
 
 include::crawlable-catalog/ATS_catalog-location.adoc[]
-
-include::crawlable-catalog/ATS_catalog-itemType.adoc[]
-
-include::crawlable-catalog/ATS_catalog-links.adoc[]

@@ -1,4 +1,4 @@
-[[req_local-resource-catalog_query-parameters]]
+[[req_local-resources-catalog_query-parameters]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/query-parameters*

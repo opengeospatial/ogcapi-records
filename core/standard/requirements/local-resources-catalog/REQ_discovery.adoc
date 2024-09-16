@@ -1,0 +1,7 @@
+[[req_local-resources-catalog_discovery]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/discovery*
+
+The 'links` section of a server's landing page SHALL include one link (relation: `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`) for each API endpoint (e.g. `/collections`) that has been instrumented to be a local resources catalog.
+|===

@@ -1,9 +1,0 @@
-[[ats_record-filter_filter-lang-param]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-filter/filter-lang-param*
-^|Test Purpose |Validate filter language parameter.
-^|Requirement |<<req_record-filter_filter-lang-param,/req/record-filter/filter-lang-param>>
-^|Test Method |. Construct a path for a collection items page ``/collections/{collectionId}/items``
-. Check that the HTTP GET operation on the path supports the `filter-lang` parameter as defined in https://portal.ogc.org/files/96288#filter-lang-param[Parameter filter-lang].
-|===

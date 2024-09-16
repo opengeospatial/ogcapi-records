@@ -1,0 +1,16 @@
+[[ats_autodiscovery_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/autodiscovery/links*
+^|Test Purpose |Validate the behavior of link relations for searchable catalog autodiscovery.
+^|Requirement |<<req_autodiscovery_links,/req/autodiscovery/links>>
+^|Test Method |. Construct a path for the landing page of an OGC API deployment.
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Parse all link objects.
+. Check that at least one link contains a `rel` of `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`.
+. Check that the `type` attribute exists with a valid media type.
+. Check that the `href` attribute exists.
+. Issue an HTTP GET request on the value of the `href` attribute.
+. Validate that the link resolves with the associated media type identified in the `type` attribute.
+|===

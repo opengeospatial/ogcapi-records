@@ -1,6 +1,0 @@
-[[req_record-filter_filter-param]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/features-filter/filter-param*
-^|A |The HTTP GET operation on the `/collections/{collectionId}/items` path SHALL support the `filter` parameter as defined in https://portal.ogc.org/files/96288#filter-param[Parameter filter].
-|===

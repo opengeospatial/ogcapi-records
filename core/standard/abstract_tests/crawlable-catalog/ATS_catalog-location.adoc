@@ -4,6 +4,6 @@
 ^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/location*
 ^|Test Purpose |Verify that a catalog is retrievable from the Web
 ^|Requirement |<<req_crawlable-catalog_location,/req/crawlable-catalog/location>>
-^|Test Method |. Determine the URL of the crawlable catalog
-. Verify that the URL can be resolved and retrieve the catalog object
+^|Test Method |. Determine the URL of the crawlable catalog.
+. Verify that the URL can be resolved and retrieve the catalog object.
 |===

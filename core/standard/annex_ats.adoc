@@ -3,70 +3,46 @@
 [[annex_ats]]
 == Conformance Class Abstract Test Suite (Normative)
 
-=== Conformance Class: Record Core
+=== Common components
 
-include::abstract_tests/ATS_class_record-core.adoc[]
+include::abstract_tests/building-blocks/ATS_class_record-core.adoc[]
 
-=== Conformance Class: Record Collection
+include::abstract_tests/building-blocks/ATS_class_record-collection.adoc[]
 
-include::abstract_tests/ATS_class_record-collection.adoc[]
+include::abstract_tests/building-blocks/ATS_class_records-api.adoc[]
 
-=== Conformance Class: Autodiscovery
+include::abstract_tests/building-blocks/ATS_class_record-core-query-parameters.adoc[]
 
-include::abstract_tests/ATS_class_autodiscovery.adoc[]
+include::abstract_tests/building-blocks/ATS_class_record-filter.adoc[]
 
-=== Conformance Class: Crawlable Catalog
+include::abstract_tests/building-blocks/ATS_class_sorting.adoc[]
+
+include::abstract_tests/building-blocks/ATS_class_html.adoc[]
+
+include::abstract_tests/building-blocks/ATS_class_json.adoc[]
+
+include::abstract_tests/building-blocks/ATS_class_oas30.adoc[]
+
+include::abstract_tests/building-blocks/ATS_class_autodiscovery.adoc[]
+
+=== Crawlable catalog
 
 include::abstract_tests/ATS_class_crawlable-catalog.adoc[]
 
-=== Conformance Class: HTML
-
-include::abstract_tests/ATS_class_html.adoc[]
-
-=== Conformance Class: JSON
-
-include::abstract_tests/ATS_class_json.adoc[]
-
-=== Conformance Class: Local Resources Catalog
+=== Local Resources Catalog
 
 include::abstract_tests/ATS_class_local-resources-catalog.adoc[]
 
-=== Conformance Class: Local Resources Catalog Filtering
+include::abstract_tests/ATS_class_local-resources-catalog_query-parameters.adoc[]
 
 include::abstract_tests/ATS_class_local-resources-catalog_filtering.adoc[]
 
-=== Conformance Class: Local Resources Catalog Sorting
-
 include::abstract_tests/ATS_class_local-resources-catalog_sorting.adoc[]
 
-=== Conformance Class: Records API
-
-include::abstract_tests/ATS_class_records-api.adoc[]
-
-=== Conformance Class: OpenAPI 3.0
-
-include::abstract_tests/ATS_class_oas30.adoc[]
-
-=== Conformance Class: Record Core Query Parameters
-
-include::abstract_tests/ATS_class_record-core-query-parameters.adoc[]
-
-=== Conformance Class: Filtering using the Common Query Language (CQL2)
-
-include::abstract_tests/ATS_class_record-filter.adoc[]
-
-=== Conformance Class: Sorting
-
-include::abstract_tests/ATS_class_sorting.adoc[]
-
-=== Conformance Class: Searchable Catalog
+=== Searchable Catalog
 
 include::abstract_tests/ATS_class_searchable-catalog.adoc[]
 
-=== Conformance Class: Searchable Catalog Filtering
-
 include::abstract_tests/ATS_class_searchable-catalog_filtering.adoc[]
-
-=== Conformance Class: Searchable Catalog Sorting
 
 include::abstract_tests/ATS_class_searchable-catalog_sorting.adoc[]

@@ -1,7 +1,0 @@
-[[req_local-resources-catalog_filtering_filter-lang-param]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/filtering/filter-lang-param*
-
-Implementation of this requirements class SHALL, at the local resource endpoint and for the HTTP GET operation, support the `filter-lang` parameter as defined as defined by the <<req_record-filter_filter-lang-param,Filtering>> common component.
-|===

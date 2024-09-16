@@ -1,0 +1,14 @@
+[[req_records-api_catalog-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/catalog-response*
+^|A |For an operation that selects a collection object, the body of the response SHALL contain a description of the catalog based upon the following schema fragment which extends the https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml] schema defined in the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] standard:
+
+[source,YAML]
+----
+include::../../../../openapi/schemas/collection.yaml[]
+----
+
+^|B |The collection SHALL homogeneously reference records.
+^|C |The value of the `itemType` property SHALL be a string with a fixed value of `record`.
+|===

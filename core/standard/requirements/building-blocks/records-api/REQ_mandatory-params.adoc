@@ -1,0 +1,8 @@
+[[req_records-api_mandatory-params]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records-api/mandatory-params*
+
+^|A |An implementation of the Records API SHALL support the parameters listed in <<core-query-parameters-table>> at the `/collections/{collectionId}/items` endpoint.
+^|B |The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the value of the `itemType` (JSONPath `$.collections[*].itemType`) is `record`. `id` is a local identifier of the record.
+|===

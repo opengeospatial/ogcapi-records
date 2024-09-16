@@ -5,5 +5,5 @@
 
 ^|A |A successful execution of the operation SHALL be reported as a response with a HTTP status code `200`.
 ^|B |The response SHALL conform to the requirements of the local resources endpoint being extended.
-^|C |The response SHALL only include local resources objects selected by the request (e.g. only collections that satisfy the <<req_local-resource-catalog_query-parameters,query predicates>> are retrieved from the `/collections` endpoint).
+^|C |The response SHALL only include local resources objects selected by the request (e.g. only collections that satisfy the <<req_local-resources-catalog_query-parameters,query predicates>> are retrieved from the `/collections` endpoint).
 |===

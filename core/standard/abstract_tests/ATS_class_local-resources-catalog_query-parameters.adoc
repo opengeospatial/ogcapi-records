@@ -1,0 +1,22 @@
+[[ats_local-resource-catalog_query-parameters]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resource-catalog/query-parameters
+|Target type |Web API
+|Requirements class |<<rc_local-resources-catalog_query-parameters,Requirements Class "Query Parameters">>
+|Dependency |<<ats_local-resource-catalog,Local Resources Catalog>>
+|Dependency |<<ats_record-core-query-parameters,Record Core Query Parameters>>
+|===
+
+==== Conformance
+
+include::local-resources-catalog_query-parameters/ATS_conformance.adoc[]
+
+==== Query Parameters
+
+include::local-resources-catalog_query-parameters/ATS_query-parameters.adoc[]
+
+==== Response
+
+include::local-resources-catalog_query-parameters/ATS_response.adoc[]

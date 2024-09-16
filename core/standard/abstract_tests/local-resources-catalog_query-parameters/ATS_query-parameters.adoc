@@ -1,0 +1,9 @@
+[[ats_local-resources-catalog_query-parameters]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/query-parameters/query-parameters*
+^|Test Purpose |Determine the set of supported query parameters.
+^|Requirement |<<req_local-resources-catalog_query-parameters,/req/local-resources-catalog/query-parameters/query-parameters>>
+^|Test Method |. Fetch the https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_2[server's API document] (e.g. path: `/api`).
+. Inspect the API document and verify that one or more of the <<core-query-parameters-bbox,bbox>>, <<core-query-parameters-datetime,datetime>>, <<core-query-parameters-q,q>>, <<core-query-parameters-type,type>>, <<core-query-parameters-externalid,externalId>> and any <<additional-query-parameters,additional query parameters>> are supported.
+|===

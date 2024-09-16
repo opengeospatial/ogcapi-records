@@ -1,0 +1,12 @@
+[[ats_record-filter_response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/record-filter/response*
+^|Test Purpose |Validate filter response.
+^|Requirement |<<req_record-filter_response,/req/record-filter/response>>
+^|Test Method |. Construct a path for a searchable endpoint and include the <<ats_record-filter_filter-param,`filter`>> query parameter.  The path may optionally include the <<ats_record-filter_filter-lang-param,`filter-lang`>> and <<ats_record-filter_filter-crs-param,`filter-crs`>> query parmeters.
+. Issue an HTTP GET on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Validate that the filter query parameters are processed correctly as per https://portal.ogc.org/files/96288#filter-response[/req/filter/response].
+. All references to the term "features" must be replaced by the term "record" or "local resources" as the context may indicate
+|===

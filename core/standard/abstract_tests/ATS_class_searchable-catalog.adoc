@@ -4,9 +4,28 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
 |Target type |Web API
-|Requirements class |<<rc_searchable-catalog,Requirements Class "HTML">>
+|Requirements class |<<rc_searchable-catalog,Requirements Class "Searchable Catalog">>
+|Dependency |<<ats_records-api,Records API>>
+|Dependency |<<ats_records-core,Record Core>>
+|Dependency |<<ats_records-collection,Record Collection>>
+|Dependency |<<ats_records-core-query-parameters,Record Core Query Parameters>>
+|Dependency |<<ats_html,HTML>>
+|Dependency |<<ats_json,JSON>>
+|Dependency |<<ats_oas30,OpenAPI 3.0>>
 |===
 
 ==== Conformance
 
 include::searchable-catalog/ATS_conformance.adoc[]
+
+==== Searchable catalog
+
+include::searchable-catalog/ATS_searchable-catalog.adoc[]
+
+==== Mandatory catalog properties
+
+include::searchable-catalog/ATS_mandatory-catalog-properties.adoc[]
+
+==== Mandatory record properties
+
+include::searchable-catalog/ATS_mandatory-record-properties.adoc[]
