@@ -1250,6 +1250,7 @@ Referenced schemas can be found at:
 * https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml[geometryGeoJSON.yaml],
 * https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml],
 * https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml],
+* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/format.yaml[format.yaml],
 * https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml],
 * https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml],
 * https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/linkBase.yaml[linkBase.yaml].
