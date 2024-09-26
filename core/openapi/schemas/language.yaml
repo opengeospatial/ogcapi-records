@@ -14,7 +14,7 @@ properties:
     type: string
     minLength: 1
     description:
-      The untranslated name of of the language.
+      The untranslated name of the language.
     example: Ελληνικά
   alternate:
     type: string
@@ -36,5 +36,4 @@ properties:
       - rtl
       - ttb
       - btt
-    default:
-      - ltr
+    default: ltr
