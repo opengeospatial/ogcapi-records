@@ -1,0 +1,7 @@
+[[req_simple_conformance]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/simple/conformance*
+2+|The list of Conformance Classes advertised by the API SHALL include:
+^|A |http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/simple
+|===

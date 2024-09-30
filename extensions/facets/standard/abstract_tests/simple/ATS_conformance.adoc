@@ -1,0 +1,11 @@
+[[ats_simple_conformance]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/simple/conformance*
+^|Test Purpose |Validate simple identification.
+^|Requirement |<<req_simple_conformance,/req/simple/conformance>>
+^|Test Method |. Construct a path for a conformance page
+. Issue an HTTP GET request on the path
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/simple+`.
+|===
+
