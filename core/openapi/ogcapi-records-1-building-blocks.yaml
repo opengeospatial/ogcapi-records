@@ -380,7 +380,7 @@ components:
               type: object
             varBase:
               type: string
-              format: url
+              format: uri
     recordGeoJSON:
       type: object
       required:
@@ -751,7 +751,7 @@ components:
           properties:
             href:
               type: string
-              format: url
+              format: uri
               example: https://example.org/data/buildings/123
     multilinestringGeoJSON:
       type: object
