@@ -11,11 +11,11 @@ content:
             collections:
               type: array
               items:
-                $ref: 'catalog.yaml'
+                $ref: '../schemas/catalog.yaml'
             linkTemplates:
               type: array
               items:
-                $ref: 'linkTemplate.yaml'
+                $ref: '../schemas/linkTemplate.yaml'
   text/html:
     schema:
       type: string

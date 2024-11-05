@@ -24,6 +24,12 @@ properties:
       - enum:
         - null
       - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
+  conformsTo:
+    type: array
+    description:
+      The extensions/conformance classes used in this record.
+    items:
+      type: string
   properties:
     allOf:
       - $ref: 'recordCommonProperties.yaml'
@@ -32,7 +38,7 @@ properties:
   links:
     type: array
     items:
-      $ref: 'linkBase.yaml'
+      $ref: 'link.yaml'
   linkTemplates:
     type: array
     items:
