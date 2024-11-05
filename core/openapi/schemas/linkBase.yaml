@@ -4,30 +4,26 @@ properties:
   rel:
     type: string
     description: The type or semantics of the relation.
-    examples:
-      - "alternate"
+    example: "alternate"
   type:
     type: string
     description:
       A hint indicating what the media type of the
       result of dereferencing the link should be.
-    examples:
-      - "application/geo+json"
+    example: "application/geo+json"
   hreflang:
     type: string
     description:
       A hint indicating what the language of the
       result of dereferencing the link should be.
-    examples:
-      - "en"
+    example: "en"
   title:
     type: string
     description:
       Used to label the destination of a link
       such that it can be used as a human-readable
       identifier.
-    examples:
-      - "Trierer Strasse 70, 53115 Bonn"
+    example: "Trierer Strasse 70, 53115 Bonn"
   length:
     type: integer
   created:

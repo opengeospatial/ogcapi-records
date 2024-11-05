@@ -61,9 +61,9 @@ paths:
       operationId: getLandingPage
       responses:
         '200':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/LandingPage'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/LandingPage'
         '500':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/conformance':
     get:
       tags:
@@ -75,9 +75,9 @@ paths:
       operationId: getConformanceDeclaration
       responses:
         '200':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ConformanceDeclaration'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ConformanceDeclaration'
         '500':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections':
     get:
       tags:
@@ -88,9 +88,9 @@ paths:
       operationId: getCollections
       responses:
         '200':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Catalogs'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Catalogs'
         '500':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections/{catalogId}':
     get:
       tags:
@@ -102,14 +102,14 @@ paths:
         with id `catalogId`.
       operationId: describeCollection
       parameters:
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
       responses:
         '200':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Catalog'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Catalog'
         '404':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
         '500':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections/{catalogId}/sortables':
     get:
       tags:
@@ -121,14 +121,14 @@ paths:
         response.
       operationId: getSortables
       parameters:
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
       responses:
         '200':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Sortables'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Sortables'
         '404':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
         '500':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections/{catalogId}/items':
     get:
       tags:
@@ -144,24 +144,24 @@ paths:
         Use content negotiation to request HTML or GeoJSON.
       operationId: getRecords
       parameters:
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/bbox'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/datetime'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/externalId'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/bbox'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/datetime'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
       responses:
         '200':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Records'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Records'
         '400':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/InvalidParameter'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/InvalidParameter'
         '404':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
         '500':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections/{catalogId}/items/{recordId}':
     get:
       tags:
@@ -174,12 +174,12 @@ paths:
         Use content negotiation to request HTML or GeoJSON.
       operationId: getRecord
       parameters:
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/parameters/recordId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/recordId'
       responses:
         '200':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/Record'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Record'
         '404':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
         '500':
-          $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'

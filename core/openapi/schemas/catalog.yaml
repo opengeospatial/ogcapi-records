@@ -1,16 +1,11 @@
 ---
 allOf:
+  - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml'
   - $ref: 'recordCommonProperties.yaml'
   - type: object
     required:
-      - id
       - type
-      - links
     properties:
-      id:
-        description:
-          The identifier of the catalog.
-        type: string
       itemType:
         description:
           If this catalog is a homogenous collection
@@ -41,16 +36,12 @@ allOf:
         type: string
         enum:
           - Catalog
-      extent:
-        $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml'
-      crs:
-        description:
-          The list of supported coordinate reference systems.
+      conformsTo:
         type: array
+        description:
+          The extensions/conformance classes used in this record.
         items:
           type: string
-        default:
-          - http://www.opengis.net/def/crs/OGC/1.3/CRS84
       recordsArrayName:
         type: string
         default:
@@ -65,7 +56,7 @@ allOf:
       links:
         type: array
         items:
-          $ref: 'linkBase.yaml'
+          $ref: 'link.yaml'
       linkTemplates:
         type: array
         items:
