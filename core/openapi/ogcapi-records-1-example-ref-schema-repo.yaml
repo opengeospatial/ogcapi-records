@@ -62,7 +62,11 @@ paths:
       responses:
         '200':
           $ref: 'responses/LandingPage.yaml'
-        '500':
+        '4XX':
+          $ref: 'responses/BadRequest.yaml'
+        '406':
+          $ref: 'responses/NotAcceptable.yaml'
+        '5XX':
           $ref: 'responses/ServerError.yaml'
   '/conformance':
     get:
@@ -76,7 +80,11 @@ paths:
       responses:
         '200':
           $ref: 'responses/ConformanceDeclaration.yaml'
-        '500':
+        '4XX':
+          $ref: 'responses/BadRequest.yaml'
+        '406':
+          $ref: 'responses/NotAcceptable.yaml'
+        '5XX':
           $ref: 'responses/ServerError.yaml'
   '/collections':
     get:
@@ -89,6 +97,10 @@ paths:
       responses:
         '200':
           $ref: 'responses/Catalogs.yaml'
+        '4XX':
+          $ref: 'responses/BadRequest.yaml'
+        '406':
+          $ref: 'responses/NotAcceptable.yaml'
         '500':
           $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}':
@@ -105,9 +117,13 @@ paths:
       responses:
         '200':
           $ref: 'responses/Catalog.yaml'
+        '4XX':
+          $ref: 'responses/BadRequest.yaml'
         '404':
           $ref: 'responses/NotFound.yaml'
-        '500':
+        '406':
+          $ref: 'responses/NotAcceptable.yaml'
+        '5XX':
           $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/sortables':
     get:
@@ -124,9 +140,13 @@ paths:
       responses:
         '200':
           $ref: 'responses/Sortables.yaml'
+        '4XX':
+          $ref: 'responses/BadRequest.yaml'
         '404':
           $ref: 'responses/NotFound.yaml'
-        '500':
+        '406':
+          $ref: 'responses/NotAcceptable.yaml'
+        '5XX':
           $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/items':
     get:
@@ -155,11 +175,13 @@ paths:
       responses:
         '200':
           $ref: 'responses/Records.yaml'
-        '400':
-          $ref: 'responses/InvalidParameter.yaml'
+        '4XX':
+          $ref: 'responses/BadRequest.yaml'
         '404':
           $ref: 'responses/NotFound.yaml'
-        '500':
+        '406':
+          $ref: 'responses/NotAcceptable.yaml'
+        '5XX':
           $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/items/{recordId}':
     get:
@@ -178,7 +200,18 @@ paths:
       responses:
         '200':
           $ref: 'responses/Record.yaml'
+        '4XX':
+          $ref: 'responses/BadRequest.yaml'
         '404':
           $ref: 'responses/NotFound.yaml'
-        '500':
+        '406':
+          $ref: 'responses/NotAcceptable.yaml'
+        '5XX':
           $ref: 'responses/ServerError.yaml'
+components:
+  securitySchemes:
+    openIdConnect:
+      type: "openIdConnect"
+      openIdConnectUrl: "https://accounts.google.com/.well-known/openid-configuration"
+security:
+  - openIdConnect: []

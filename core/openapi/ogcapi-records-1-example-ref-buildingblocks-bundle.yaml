@@ -62,7 +62,11 @@ paths:
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/LandingPage'
-        '500':
+        '4XX':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/BadRequest'
+        '406':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotAcceptable'
+        '5XX':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/conformance':
     get:
@@ -76,7 +80,11 @@ paths:
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ConformanceDeclaration'
-        '500':
+        '4XX':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/BadRequest'
+        '406':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotAcceptable'
+        '5XX':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections':
     get:
@@ -89,7 +97,11 @@ paths:
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Catalogs'
-        '500':
+        '4XX':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/BadRequest'
+        '406':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotAcceptable'
+        '5XX':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections/{catalogId}':
     get:
@@ -106,9 +118,13 @@ paths:
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Catalog'
+        '4XX':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/BadRequest'
         '404':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
-        '500':
+        '406':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotAcceptable'
+        '5XX':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections/{catalogId}/sortables':
     get:
@@ -125,9 +141,13 @@ paths:
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Sortables'
+        '4XX':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/BadRequest'
         '404':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
-        '500':
+        '406':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotAcceptable'
+        '5XX':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections/{catalogId}/items':
     get:
@@ -156,11 +176,13 @@ paths:
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Records'
-        '400':
-          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/InvalidParameter'
+        '4XX':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/BadRequest'
         '404':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
-        '500':
+        '406':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotAcceptable'
+        '5XX':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
   '/collections/{catalogId}/items/{recordId}':
     get:
@@ -179,7 +201,18 @@ paths:
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Record'
+        '4XX':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/BadRequest'
         '404':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotFound'
-        '500':
+        '406':
+          $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/NotAcceptable'
+        '5XX':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/ServerError'
+components:
+  securitySchemes:
+    openIdConnect:
+      type: "openIdConnect"
+      openIdConnectUrl: "https://accounts.google.com/.well-known/openid-configuration"
+security:
+  - openIdConnect: []
