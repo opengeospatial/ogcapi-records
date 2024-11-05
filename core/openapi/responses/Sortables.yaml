@@ -4,7 +4,9 @@ description:
 content:
   application/json:
     schema:
-      $ref: '../schemas/schema.yaml'
+      type: object
+      description:
+         A JSON Schema document that defines all the sortables.
   text/html:
     schema:
       type: string 

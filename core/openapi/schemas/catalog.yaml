@@ -30,7 +30,7 @@ allOf:
                 - record
                 - catalog
       type:
-        descripton:
+        description:
           Fixed to catalog for collections of records
           and/or subordinate catalogs.
         type: string

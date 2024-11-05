@@ -10,7 +10,8 @@ allOf:
         description:
           Supplies a resolvable URI to a remote resource
           (or resource fragment).
-        example: "http://data.example.com/buildings/(building-id}"
+        example:
+          - "http://data.example.com/buildings/(building-id}"
       varBase:
         type: string
         description:
