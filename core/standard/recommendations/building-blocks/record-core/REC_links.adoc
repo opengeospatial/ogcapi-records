@@ -2,6 +2,9 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/record-core/links*
-
-Each record SHOULD include one or more links (relation: `describes`) pointing to the resource(s) that this record describes.
+^|A |Each record SHOULD include one or more links (relation: `describes`) pointing to the resource(s) that this record describes.
+^|B |Each record SHOULD include a link (relation: `self`) to itself.
+^|C |Each record SHOULD, if they exist, include typed links (relation: `alternate`) to each alternative representation of this record.
 |===
+
+NOTE: The term "typed link" means a link that specifies a value for the `type` attribute.
