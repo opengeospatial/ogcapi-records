@@ -19,6 +19,8 @@ A description of the MIME types is mandatory for any OGC API Standard that speci
 |JSON     |`application/ogc-catalog+json`
 |====
 
+include::recommendations/building-blocks/record-core/PER_json-media-types.adoc[]
+
 [[media-type-defaults]]
 === Default Encodings
 
