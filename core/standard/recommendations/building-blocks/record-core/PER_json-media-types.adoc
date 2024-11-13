@@ -3,7 +3,7 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/record-core/json-media-types*
 
-Record or catalog resources MAY be accompanied by a generic media type. Thus a JSON-encoded record or catalog resource MAY be accompanied by an `application/json` media type.
+Record or catalog resources MAY be accompanied by generic media types. Thus a JSON-encoded record, for example, may be accompanied by an `application/geo+json` or even an `application/json` media type rather than the specific `application/geo+json; application=ogc-record` media type.  Similarly, a JSON-encoded catalog resource may be accompanied by the generic `application/json` media type rather than the specific `application/ogc-catalog+json` media type.
 |===
 
 NOTE: It should be noted, however, that the use of a generic media type may require that a resource be retrived and inspected to determine conclusively that it is a record or a catalog resource.  Using the resource-specific media types, on the other hand, indicates the specific type of resource being dealt with without the need to first retrieve and inspect that resource in order to make the type determination.
