@@ -57,7 +57,7 @@
       },
       {
         "name": "GeoJSONSeq",
-        "mediaType": "application/geo+json"
+        "mediaType": "application/geo+json-seq"
       },
       {
         "name": "FlatGeobuf"
