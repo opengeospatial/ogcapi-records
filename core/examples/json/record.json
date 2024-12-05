@@ -154,8 +154,14 @@
       }
     ],
     "formats": [
-      "CSV",
-      "GeoJSON"
+      {
+        "name": "CSV",
+        "mediaType": "text/csv"
+      },
+      {
+        "name": "GeoJSON",
+        "mediaType": "application/geo+json"
+      }
     ],
     "license": "other"
   },
