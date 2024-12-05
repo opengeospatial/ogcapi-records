@@ -51,9 +51,17 @@
       ]
     },
     "formats": [
-      "GeoPackage",
-      "GeoJSONSeq",
-      "FlatGeobuf"
+      {
+        "name": "GeoPackage",
+        "mediaType": "application/geopackage+sqlite3"
+      },
+      {
+        "name": "GeoJSONSeq",
+        "mediaType": "application/geo+json-seq"
+      },
+      {
+        "name": "FlatGeobuf"
+      }
     ],
     "license": "CC-BY-4.0"
   },
