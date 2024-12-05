@@ -572,7 +572,7 @@ include::requirements/building-blocks/record-collection/REQ_contact.adoc[]
 include::requirements/building-blocks/record-collection/REQ_license.adoc[]
 
 [[sc_catalog-record-links]]
-==== Records
+==== Records and RecordsArrayName
 
 ===== Overview
 
