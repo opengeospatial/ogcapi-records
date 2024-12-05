@@ -1,0 +1,7 @@
+[[per_record-collection_record-access-modes]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/record-collection/record-access-modes*
+
+A catalog MAY simultaneously include all three of the aforementioned access modes.
+|===

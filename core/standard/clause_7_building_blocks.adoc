@@ -512,8 +512,8 @@ Other encodings are allowed but are not described in this document.
 |contacts |optional |A list of contacts qualified by their role(s).
 |license |optional |The legal provisions under which this collection is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|recordsArrayName |optional |The name of the array property in the catalog used to encode records in-line.  The default value is `records`.
-|records |optional |An array of records encoded in-line in the catalog.
+|<<req_record-collection_records-array-name,recordsArrayName>> |optional |The name of the array property in the catalog used to encode records in-line.  The default value is `records`.
+|<<req_record-collection_records,records>> |optional |An array of records encoded in-line in the catalog.
 |[[catalog-links-section]]_**links**_ |**required** |A list of links related to this catalog.
 |linkTemplates |optional |A list of link templates related to this catalog.
 |schemes |optional |A list of schemes related to this catalog. |`schemes`
@@ -572,19 +572,65 @@ include::requirements/building-blocks/record-collection/REQ_contact.adoc[]
 include::requirements/building-blocks/record-collection/REQ_license.adoc[]
 
 [[sc_catalog-record-links]]
-==== Records
+==== Records and RecordsArrayName
+
+===== Overview
 
 include::recommendations/building-blocks/record-collection/PER_records.adoc[]
 
+include::recommendations/building-blocks/record-collection/PER_record-access-modes.adoc[]
+
+Thus a catalog may simultaneously include links to individual records, a link to an API endpoint for accessing records and also include records encoded in-line in the catalog.
+
+===== Referencing individual catalog records
+
 include::requirements/building-blocks/record-collection/REQ_links-record.adoc[]
 
+A <<crawlable-catalog,crawlable catalog>> is an example of catalog where the records can be individually accessed via links (relation: item) in the catalog's <<catalog-links-section,links section>>.
+
+===== Referencing records accessible via an API
+
 include::requirements/building-blocks/record-collection/REQ_links-records.adoc[]
+
+A <<clause-searchable-catalog,searchable catalog>> is an example of a catalog where the records are accessed from an API endpoint identified using a link (relation: items) in the catalog's <<catalog-links-section,links section>>.
+
+===== Encoding records in-line
 
 include::requirements/building-blocks/record-collection/REQ_records.adoc[]
 
 include::recommendations/building-blocks/record-collection/PER_records-array-name.adoc[]
 
+A <<clause-local-resources-catalog,local-resources-catalog>> is an example of a catalog where its records are encoded in-line in the catalog.  In the case of a <<clause-local-resources-catalog,local resources catalog>>, however, the name of the array property containing the records is typically named something other than _"records"_.  
+
 include::requirements/building-blocks/record-collection/REQ_records-array-name.adoc[]
+
+For example, a <<clause-local-resources-catalog,local resources catalog>> at the `/collections` endpoint uses an array property named `collections` to encode the records of the catalog and so the value of the `recordsArrayName` property in this case would be:
+
+[source,json]
+----
+"recordsArrayName": "collections"
+"collections": [
+  {... record describing a collection ... },
+  {... record describing a collection ... },
+  .
+  .
+  .
+  ]
+----
+
+Similarly, a <<clause-local-resources-catalog,local resources catalog>> at the `/processes` endpoint uses an array named `processes` to encoode the records of the catalog and so the value of the `recordsArrayName` property would be:
+
+[source,json]
+----
+"recordsArrayName": "processes"
+"processes": [
+  { ... record describing a process ... },
+  { ... record describing a process ... },
+  .
+  .
+  .
+  ]
+----
 
 [[sc_catalog-catalog-links]]
 ==== Other catalogs
