@@ -6,6 +6,6 @@
 ^|Requirement |<<req_record-collection_records-array-name,/req/record-collection/records-array-name>>
 ^|Test Method |. Construct a path for a given catalog.
 . Issue a HTTP GET request on that path.
-. If the retrieved content contains a `recordsArrayName` then local a member whose name is the value of the `recordsArrayName` member.
+. If the retrieved content contains a `recordsArrayName` then locate a member whose name is the value of the `recordsArrayName` member.
 . Verify that this member exists in the catalog object and that it is an array.
 |===
