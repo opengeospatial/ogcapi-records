@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/record-collection/records-array-name*
 
-If the name of the in-line records array property in the catalog is changed to something other than `records` then that name SHALL be indicated in the catalog using a property named `recordsArrayName`.
+If the name of the in-line records array property in the catalog is changed to something other than <<req_record-collection_records,`records`>> then that name SHALL be indicated in the catalog using a property named `recordsArrayName`.
 |===

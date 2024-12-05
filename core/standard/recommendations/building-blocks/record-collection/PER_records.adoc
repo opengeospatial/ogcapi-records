@@ -3,8 +3,9 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/record-collection/records*
 
-The records of a catalog MAY be referenced from the <<catalog-links-section,links section>> of the catalog or they MAY be encoded in-line in the catalog or both.
+The records of a catalog MAY be:
+
+. accessed indivdually via one or more links in the catalog's <<catalog-links-section,links section>>,
+. accessed via an API whose access endpoint is indentified by a link in the catalog's <<catalog-links-section,links section>>,
+. accessed from an array encoded directly in-line in the catalog.
 |===
-
-
-
