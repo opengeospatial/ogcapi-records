@@ -180,8 +180,7 @@ components:
                 type: string
             recordsArrayName:
               type: string
-              default:
-                - records
+              default: records
             records:
               type: array
               description: 
