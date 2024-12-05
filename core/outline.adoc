@@ -360,7 +360,7 @@ NOTE: This particular file was the early outline developed for OGC API - Records
      {
         "numberMatched": 100,
         "numberReturned": 17,
-        "timeStamp": "2019-05-21T13:28:04",
+        "timeStamp": "2019-05-21T13:28:04Z",
         "links": [ ... ],
         "records": [
            { ... },
