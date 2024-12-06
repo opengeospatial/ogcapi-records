@@ -1,0 +1,9 @@
+[appendix]
+:appendix-caption: Annex
+[[Bibliography]]
+= Bibliography
+
+* [[Elasticsearch]] Elasticsearch aggregations, 30 May 2024, https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html
+* [[SOLR]] SOLR aggregations, 30 May 2024,  https://solr.apache.org/guide/8_8/json-facet-api.html
+* [[PostgreSQL]] PostgreSQL aggregations, 30 May 2024, https://akorotkov.github.io/blog/2016/06/17/faceted-search
+* [[Oracle]] Oracle aggreations, 30 May 2024, (https://blogs.oracle.com/apex/apex-192-faceted-search
