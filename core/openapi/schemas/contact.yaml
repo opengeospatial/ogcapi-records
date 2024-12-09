@@ -52,8 +52,6 @@ properties:
           type: string
           description: The value is the phone number itself.
           pattern: "^\\+[1-9]{1}[0-9]{3,14}$"
-          example:
-            - "+14165550142"
         roles:
           description:
             The type of phone number (e.g. home, work, fax, etc.).
@@ -113,8 +111,6 @@ properties:
   hoursOfService:
     type: string
     description: Time period when the contact can be contacted.
-    example:
-      - "Hours: Mo-Fr 10am-7pm Sa 10am-22pm Su 10am-21pm"
   contactInstructions:
     type: string
     description: |-
