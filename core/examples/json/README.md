@@ -3,11 +3,11 @@
 - associations.json
   -  A link and link-templates section of a record pointing to related resources.
 - catalog.json
-  - A JSON document describing a catalog.  This document can exists as a static JSON document or it can be retrieved from the "/collections/tepcat" endpoint of a searchable catalog.
+  - A JSON document describing a catalog.  This document can exist as a static JSON document or it can be retrieved from the **/collections/tepcat** endpoint of a searchable catalog.
 - collections.json
-  - The response document retrieved from the "/collections" endpoint of a searchable catalog.
+  - The response document retrieved from the **/collections** endpoint of a searchable catalog.
 - conformance.json
-  - The response document retrieved from the "/conformance" endpoint of a searchable catalog.
+  - The response document retrieved from the **/conformance** endpoint of a searchable catalog.
 - defaultSortOrder.json
   - A JSON fragment declaring the default sort order of a catalog.
 - keywords-themes.json
@@ -15,16 +15,16 @@
 - landingPage.json
   - The response document retrieved from the root endpoint of a searchable catalog.
 - queryables.json
-  - The response document retrieved from the "/collections/{catalogId}/queryables" endpoint of a searchable catalog.
+  - The response document retrieved from the **/collections/{catalogId}/queryables** endpoint of a searchable catalog.
 - record.json
   - An example of record encoded as GeoJSON.
 - records.json
-  - An example respond document retrieved from the "/collections/{catalogId}/items" endpoint of a searchable catalog.
+  - An example respond document retrieved from the **/collections/{catalogId}/items** endpoint of a searchable catalog.
 - sortables.json
-  - The response document retrieved from the "/collections/{catalogId}/sortables" endpoint of a searchable catalog.
+  - The response document retrieved from the **/collections/{catalogId}/sortables** endpoint of a searchable catalog.
 - templated-link-inline.json
   - An example of a templated link where the substitution variable dictionary is encoded in-line.
 - templated-link-ref.json
-  - An example of a templated link where the substitution variable dictionary is reference via the "varBase" property.
+  - An example of a templated link where the substitution variable dictionary is reference via the **varBase** property.
 - variables.json
   - An example of a substitution variable dictionary.
