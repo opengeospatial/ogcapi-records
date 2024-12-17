@@ -1,30 +1,30 @@
 # JSON Examples
 
-- associations.json
+- [associations.json](associations.json)
   -  A link and link-templates section of a record pointing to related resources.
-- catalog.json
+- [catalog.json](catalog.json)
   - A JSON document describing a catalog.  This document can exist as a static JSON document or it can be retrieved from the **/collections/tepcat** endpoint of a searchable catalog.
-- collections.json
+- [collections.json](collections.json)
   - The response document retrieved from the **/collections** endpoint of a searchable catalog.
-- conformance.json
+- [conformance.json](conformance.json)
   - The response document retrieved from the **/conformance** endpoint of a searchable catalog.
-- defaultSortOrder.json
+- [defaultSortOrder.json](defaultSortOrder.json)
   - A JSON fragment declaring the default sort order of a catalog.
-- keywords-themes.json
+- [keywords-themes.json](keywords-themes.json)
   - A JSON fragment showing how keywords and themes can be encoded in a record encoded as JSON or GeoJSON.
-- landingPage.json
+- [landingPage.json](landingPage.json)
   - The response document retrieved from the root endpoint of a searchable catalog.
-- queryables.json
+- [queryables.json](queryables.json)
   - The response document retrieved from the **/collections/{catalogId}/queryables** endpoint of a searchable catalog.
-- record.json
+- [record.json](record.json)
   - An example of record encoded as GeoJSON.
-- records.json
+- [records.json](records.json)
   - An example respond document retrieved from the **/collections/{catalogId}/items** endpoint of a searchable catalog.
-- sortables.json
+- [sortables.json](sortables.json)
   - The response document retrieved from the **/collections/{catalogId}/sortables** endpoint of a searchable catalog.
-- templated-link-inline.json
+- [templated-link-inline.json](templated-link-inline.json)
   - An example of a templated link where the substitution variable dictionary is encoded in-line.
-- templated-link-ref.json
+- [templated-link-ref.json](templated-link-ref.json)
   - An example of a templated link where the substitution variable dictionary is reference via the **varBase** property.
-- variables.json
+- [variables.json](variables.json)
   - An example of a substitution variable dictionary.
