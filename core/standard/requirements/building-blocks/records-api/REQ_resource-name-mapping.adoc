@@ -3,6 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/records-api/resource-name-mapping*
 
-Each reference to `features` or `feature` in the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard SHALL be replaced by the terms `records` or `record` when interpreting an http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] requirement for the Records API.
+Each reference to `features` or `feature` in the narrative text of http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard SHALL be replaced by the terms `records` or `record` when interpreting an http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] requirement for the Records API.
 |===
 
+NOTE: This requirement does not imply that the terms `features` or `feature` in the schemas or code examples of http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] should be replaced by the terms `records` or `record`.  For example, the <<clause-record-encoding-json,GeoJSON encoding of a record>> includes a top-level field named `type` whose value is fixed to `Feature`.  This requirement does not imply that the value `Feature` specified in the schema should be changed to the value `Record` since that would invalidate the GeoJSON document.
