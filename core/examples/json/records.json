@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "timeStamp": "2021-03-06T07:10:00Z",
+  "numberReturned": 10,
+  "numberMatched": 347,
+  "features": [
+     { ... record ... },
+     { ... record ... },
+     { ... record ... },
+     { ... record ... },
+     { ... record ... },
+     .
+     .
+     .
+  ],
+  "links": [
+    {
+       "href": "https://www.someserver.com/ogcapi/collections/tepcat?f=json...",
+       "rel": "collection",
+       "type": "application/geo+json",
+       "title": "Link to the containing collection in JSON"
+    },
+    {
+       "href": "https://www.someserver.com/ogcapi/collections/tepcat?f=html...",
+       "rel": "collection",
+       "type": "text/html",
+       "title": "Link to the containing collection in HTML"
+    },
+    {
+       "href": "https://www.someserver.com/ogcapi/collections/tepcat/items?f=json&...",
+       "rel": "self",
+       "type": "application/geo+json",
+       "title": "Link to this response"
+    },
+    {
+       "href": "https://www.someserver.com/ogcapi/collections/tepcat/items?f=html&...",
+       "rel": "alternate",
+       "type": "text/html",
+       "title": "Link to this response in HTML"
+    },
+    {
+       "href": "https://www.someserver.com/ogcapi/collections/tepcat/items?f=json&startIndex=20&limit=10...",
+       "rel": "next",
+       "type": "application/geo+json",
+       "title": "Link to the next set of records in GeoJSON"
+    },
+    {
+       "href": "https://www.someserver.com/ogcapi/collections/tepcat/items?f=html&startIndex=20&limit=10...",
+       "rel": "next",
+       "type": "text/html",
+       "title": "Link to the next set of records in HTML"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "tepcat",
+  "itemType": "record",
+  "type": "Collection",
+  "title": "Satellite Imagery Catalog",
+  "description": "A catalog of satellite imagery products.",
+  "keywords": [
+    "satellite",
+    "imagery",
+    "sentinel",
+    "radarsat",
+    "rcm"
+  ],
+  "defaultSortOrder": [
+    {
+      "field": "updated",
+      "direction": "desc"
+    },
+    {
+      "field": "area",
+      "direction": "desc"
+    }
+  ],
+  "language": "en-CA",
+  "links": [
+    {
+      "href": "https://www.someserver.com/ogcapi/collections/tepcat/items",
+      "rel": "items",
+      "title": "Catalog records describing satellite imagery products."
+    }
+  ]
+}

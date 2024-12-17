@@ -6,6 +6,4 @@
 |Target type |Web API
 |Dependency |<<rc_record-core,Record Core>>
 |Dependency |<<rc_record-collection,Record Collection>>
-|Dependency |<<rc_html,HTML>>
-|Dependency |<<rc_json,JSON>>
 |===

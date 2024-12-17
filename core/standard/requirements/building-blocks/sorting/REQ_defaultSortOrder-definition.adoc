@@ -7,15 +7,11 @@
 
 [source,YAML]
 ----
-  defaultSortOrder:
-    type: array
-    items:
-      type: string
+include::../../../../openapi/schemas/defaultSortOrder.yaml[]
 ----
 
-^|B |Each string in the array SHALL be the name of a sortable.
-^|C |If a listed sortable is prepended with a `+` this SHALL indicate that the sort order is ascending.
-^|D |If a listed sortable is prepended with a `-` this SHALL indicate that the sort order is descending.
-^|E |If a listed sortables is not prepended with a `+` or `-` then the sort order SHALL be assumed to be ascending.
-^|F |If the `defaultSortOrder` member is not present in the response, then no sorting information SHALL be assumed.
+^|B |Each object in the array SHALL include the properties `field` containing the name of the sortable and `direction` indicating the direction of sorting
+^|C |If the value of the `direction` property is `asc` this SHALL indicate that the sort order is ascending.
+^|C |If the value of the `direction` property is `desc` this SHALL indicate that the sort order is descending.
+^|D |If the `defaultSortOrder` member is not present in the response, then no sorting information SHALL be assumed.
 |===

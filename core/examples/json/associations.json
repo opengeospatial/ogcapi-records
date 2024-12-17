@@ -1,0 +1,132 @@
+{
+  .
+  .
+  .
+  "links": [
+    {
+      "rel": "collection",
+      "href": "https://woudc.org/data/dataset_info.php"
+    },
+    {
+      "rel": "describes",
+      "title": "OGC Web Map Service (WMS)",
+      "href": "https://geo.woudc.org/ows?service=WMS&request=GetCapabilities"
+    },
+    {
+      "rel": "describes",
+      "title": "OGC Web Feature Service (WFS)",
+      "href": "https://geo.woudc.org/ows?service=WFS&request=GetCapabilities"
+    },
+    {
+      "rel": "preview",
+      "type": "image/png",
+      "title": "Total Ozone Preview Image",
+      "href": "https://woudc.org/data/preview.png"
+    },
+    {
+      "rel": "enclosure",
+      "type": "text/html",
+      "title": "Web Accessible Folder (WAF)",
+      "href": "https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1",
+      "created": "2015-01-23T00:00:00Z",
+      "updated": "2015-01-23T00:00:00Z"
+    },
+    {
+      "rel": "enclosure",
+      "type": "application/zip",
+      "title": "Static dataset archive file",
+      "href": "https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip",
+      "created": "2015-01-23T00:00:00Z",
+      "updated": "2015-01-23T00:00:00Z"
+    },
+    {
+      "rel": "search",
+      "type": "text/html",
+      "title": "Data Search / Download User Interface",
+      "href": "https://woudc.org/data/explore.php?dataset=totalozone"
+    },
+    {
+      "rel": "license",
+      "href": "https://woudc.org/about/data-policy.php"
+    }
+  ],
+  "linkTemplates": [
+    {
+      "rel": "describes",
+      "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
+      "uriTemplate": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format={format}",
+      "variables": {
+        "bbox": {
+          "description": "...",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "crs": {
+          "description": "...",
+          "type": "string",
+          "enum": [
+            "EPSG:4326",
+            "EPSG:3857"
+          ]
+        },
+        "width": {
+          "description": "...",
+          "type": "number",
+          "format": "integer",
+          "minimum": 600,
+          "maximum": 5000
+        },
+        "height": {
+          "description": "...",
+          "type": "number",
+          "format": "integer",
+          "minimum": 600,
+          "maximum": 5000
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "application/vnd.google-earth.kml+xml",
+            "application/vnd.google-earth.kmz",
+            "image/png",
+            "image/jpeg",
+            "image/gif",
+            "image/png; mode=8bit",
+            "application/x-pdf",
+            "image/svg+xml",
+            "image/tiff"
+          ]
+        }
+      }
+    },
+    {
+      "rel": "describes",
+      "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
+      "uriTemplate": "https://geo.woudc.org/ows?service=WFS&version=1.1.0&request=GetFeature&typeName=woudc:totalozone&maxFeatures={maxFeatures}&outputFormat={outputFormat}",
+      "variables": {
+        "maxFeatures": {
+          "type": "number",
+          "default": 10
+        },
+        "outputFormat": {
+          "type": "string",
+          "enum": [
+            "text/xml; subtype=gml/3.1.1",
+            "text/xml; subtype=gml/2.1.2; driver=ogr",
+            "application/json; subtype=geojson",
+            "application/vnd.google-earth.kml+xml",
+            "application/shapefile",
+            "text/plain",
+            "text/csv"
+          ],
+          "default": "text/xml; subtype=gml/2.1.2; driver=ogr"
+        }
+      }
+    }
+  ]
+}

@@ -373,22 +373,34 @@ include::recommendations/building-blocks/record-core/REC_record-associations_tem
 
 NOTE: This Standard does not define any specific link relations that should be used for links in the `links` or <<sc_templated_links_with_variables,`linkTemplates`>> sections.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the relations that links should use.
 
-The following provides an example of using association links for related resources of a record, as both traditional links as well as link templates.
+The following example uses links and link templates to point to resources related to a record.  The `describes` links can be used to retrieve the resources described by the record.  Other links, such as `enclosure`, can be used to retrieve the same information is archived formats.
 
 [#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
-.Associations simple and Link Template Example
+.Example of Links and Link-Templates in a Record
 [source,json]
 ----
-include::../examples/json/associations-simple-and-uri-template.json[]
+include::../examples/json/associations.json[]
 ----
 
+The following example shows links and link-templates specified in the HTTP header of a response.
+
 [#links-in-https-headers,reftext=`Example of links in HTTP headers`]
-￼.Example of links and link templates in HTTP headers
+.Example of Links and Link-Templates in HTTP Headers
 [source]
 ----
-Link: <https://woudc.org/data/stations>; rel="search"; type="text/html"
-Link-Template: <https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png>; rel="item"; type="image/png"; varBase="https://geo.woudc.org/variables/"
+Link-Template: <https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format={format}>; rel="describes"; title="World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations"; varBase="https://geo.woudc.org/variables
+Link-Template: <https://geo.woudc.org/ows?service=WFS&version=1.1.0&request=GetFeature&typeName=woudc:totalozone&maxFeatures={maxFeatures}&outputFormat={outputFormat}; rel="describes"; title="World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations"; varBase="https://geo.woudc.org/variables
+Link: <https://woudc.org/data/dataset_info.php>; rel="collection"
+Link: <https://geo.woudc.org/ows?service=WMS&request=GetCapabilities>; rel="describes"; title="OGC Web Map Service (WMS)"
+Link: <https://geo.woudc.org/ows?service=WFS&request=GetCapabilities>; rel="describes"; title="OGC Web Feature Service (WFS)"
+Link: <https://woudc.org/data/preview.png>; rel="preview"; type="image/png"; title="Total Ozone Preview Image"
+Link: <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1>; rel="enclosure"; type="text/html", title="Web Accessible Folder (WAF)"; created="2015-01-23T00:00:00Z"; updated="2015-01-23T00:00:00Z"
+Link: <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip>; rel="enclosure"; type="application/zip", title="Static dataset archive file"; created="2015-01-23T00:00:00Z"; updated="2015-01-23T00:00:00Z"
+Link: <https://woudc.org/data/explore.php?dataset=totalozone">; rel="search"; type="text/html"; title="Data Search / Download User Interface"
+Link: <https://woudc.org/about/data-policy.php>; rel="license"
 ----
+
+NOTE: Care should be exercised when there is a large number of links that need to be presented.  In such cases, it would be prudent to avoid encoding all the links in the HTTP header and instead including them in the body of the response in the link and/or link templates sections.
 
 [[sc_templated_links_with_variables]]
 ==== Templated links with variables
@@ -498,7 +510,7 @@ Other encodings are allowed but are not described in this document.
 |created |optional |The date this collection was created.
 |updated |optional |The more recent date on which this collection was changed.
 |conformsTo |optional |The extensions/conformance classes used in this catalog object.
-|type |**required** |Fixed value of "Catalog".
+|type |**required** |Fixed value of "Collection".
 |itemType |optional |Fixed value of "record", "catalog" or both.
 |title |optional |A human-readable name given to this catalog.
 |description |optional |A free-text description of this catalog.
@@ -898,7 +910,7 @@ The following is an example of a response to an OGC API - Records query operatio
 .Records Example in GeoJSON
 [source,json]
 ----
-include::../examples/json/record-collection.json[]
+include::../examples/json/records.json[]
 ----
 
 The following is an example of a single catalog record encoded in GeoJSON.

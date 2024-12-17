@@ -7,6 +7,6 @@
 ^|Test Method |. Construct a path for a catalog object.
 . Issue a HTTP GET request on that path
 . Parse the `license` member if it exists.
-. Check if the license includes a SPDX license identifier or a SPDX license expression string or the value `other`.
+. Check if the license includes a SPDX license identifier or the value `other`.
 . If the value `other` is used, check that one link has a `rel` property with value of `license`.
 |===

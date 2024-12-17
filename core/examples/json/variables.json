@@ -16,5 +16,50 @@
       "EPSG:4326",
       "EPSG:3857"
     ]
+  },
+  "width": {
+    "description": "...",
+    "type": "number",
+    "format": "integer",
+    "minimum": 600,
+    "maximum": 5000
+  },
+  "height": {
+    "description": "...",
+    "type": "number",
+    "format": "integer",
+    "minimum": 600,
+    "maximum": 5000
+  },
+  "format": {
+    "type": "string",
+    "enum": [
+      "application/vnd.google-earth.kml+xml",
+      "application/vnd.google-earth.kmz",
+      "image/png",
+      "image/jpeg",
+      "image/gif",
+      "image/png; mode=8bit",
+      "application/x-pdf",
+      "image/svg+xml",
+      "image/tiff"
+    ]
+  },
+  "maxFeatures": {
+    "type": "number",
+    "default": 10
+  },
+  "outputFormat": {
+    "type": "string",
+    "enum": [
+      "text/xml; subtype=gml/3.1.1",
+      "text/xml; subtype=gml/2.1.2; driver=ogr",
+      "application/json; subtype=geojson",
+      "application/vnd.google-earth.kml+xml",
+      "application/shapefile",
+      "text/plain",
+      "text/csv"
+    ],
+    "default": "text/xml; subtype=gml/2.1.2; driver=ogr"
   }
 }

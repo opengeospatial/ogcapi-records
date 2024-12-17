@@ -1,0 +1,15 @@
+---
+type: array
+items:
+  type: object
+  required:
+    - field
+    - direction
+  properties:
+    field:
+      type: string
+    direction:
+      type: string
+      enum:
+        - asc
+        - desc
