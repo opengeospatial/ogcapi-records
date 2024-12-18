@@ -1,64 +1,64 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://example.orgnet/api/collections/my-dataset/queryables",
-    "type": "object",
-    "title": "My dataset",
-    "properties": {
-        "geometry": {
-            "$ref": "https://geojson.org/schema/Geometry.json"
-        },
-        "recordId": {
-            "type": "string"
-        },
-        "created": {
-            "type": "string",
-            "format": "date-time"
-        },
-        "updated": {
-            "type": "string",
-            "format": "date-time"
-        },
-        "conformsTo": {
-            "type": "string"
-        },
-        "title": {
-            "type": "string"
-        },
-        "type": {
-            "type": "string"
-        },
-        "description": {
-            "type": "string"
-        },
-        "keywords": {
-            "type": "array"
-        },
-        "languages": {
-            "type": "string"
-        },
-        "resourceLanguages": {
-            "type": "string"
-        },
-        "externalIds": {
-            "type": "string"
-        },
-        "themes": {
-            "type": "array"
-        },
-        "formats": {
-            "type": "string"
-        },
-        "contacts": {
-            "type": "array"
-        },
-        "license": {
-            "type": "string"
-        },
-        "rights": {
-            "type": "string"
-        },
-        "links": {
-            "type": "string"
-        }
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://example.orgnet/api/collections/my-dataset/queryables",
+  "type": "object",
+  "title": "My dataset",
+  "properties": {
+    "geometry": {
+      "$ref": "https://geojson.org/schema/Geometry.json"
+    },
+    "recordId": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "conformsTo": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "array"
+    },
+    "languages": {
+      "type": "string"
+    },
+    "resourceLanguages": {
+      "type": "string"
+    },
+    "externalIds": {
+      "type": "string"
+    },
+    "themes": {
+      "type": "array"
+    },
+    "formats": {
+      "type": "string"
+    },
+    "contacts": {
+      "type": "array"
+    },
+    "license": {
+      "type": "string"
+    },
+    "rights": {
+      "type": "string"
+    },
+    "links": {
+      "type": "string"
     }
+  }
 }

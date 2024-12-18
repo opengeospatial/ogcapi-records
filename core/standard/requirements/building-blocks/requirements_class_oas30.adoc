@@ -5,5 +5,4 @@
 2+|http://www.opengis.net/spec/ogcapi-records/1.0/req/oas30
 |Target type |Web API
 |Dependency |<<rc_oas30,OpenAPI Specification 3.0>>
-|Dependency |<<ogcapi-common,OGC API - Common Specification 1.0>>
 |===

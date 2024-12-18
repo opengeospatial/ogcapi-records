@@ -1,10 +1,8 @@
 ---
 allOf:
   - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml'
-  - $ref: 'recordCommonProperties.yaml'
+  - $ref: 'catalogCommonProperties.yaml'
   - type: object
-    required:
-      - type
     properties:
       itemType:
         description:
@@ -29,54 +27,3 @@ allOf:
               enum: 
                 - record
                 - catalog
-      type:
-        description:
-          Fixed to catalog for collections of records
-          and/or subordinate catalogs.
-        type: string
-        enum:
-          - Catalog
-      conformsTo:
-        type: array
-        description:
-          The extensions/conformance classes used in this record.
-        items:
-          type: string
-      recordsArrayName:
-        description:
-          If records are encoded in-line within the catalog object,
-          this member advertises the name of the array member that 
-          contains the catalog records.  By default the name of the
-          records array is "records".  However, the name of this 
-          array member may be different.  A local resources catalog
-          is an example of a circumstance where the records array
-          member may be named something other than "records".  For
-          example, in the case of a local resource catalog at the 
-          /collections endpoint, the name of the records array is
-          "collections".
-        type: string
-        default: records
-      records:
-        type: array
-        description: 
-          An array of records that are part of this catalog that
-          are encoded in-line within the catalog object.
-          The items schema is intentionally general (i.e. object)
-          to accomodate records that have been extended beyond
-          the core record schema.
-        items:
-          type: object
-      links:
-        type: array
-        items:
-          $ref: 'link.yaml'
-      linkTemplates:
-        type: array
-        items:
-          $ref: 'linkTemplate.yaml'
-      schemes:
-        type: array
-        description:
-          A list of schemes used in this context.
-        items:
-          $ref: 'scheme.yaml'

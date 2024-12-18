@@ -1,7 +1,6 @@
 # Examples
 
-The sub-folders contain examples of responses of implementations of
-OGC API - Records - Part 1: Core.
+This sub-folder contains the following:
 
-* [JSON/GeoJSON examples](json)
-* [YAML examples](yaml)
+* [Examples of catalog responses in JSON/GeoJSON](json)
+* [Examples of extending OGC API endpoints to behave like catalogs](yaml)

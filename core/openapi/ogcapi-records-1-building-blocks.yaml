@@ -165,11 +165,11 @@ components:
                       - catalog
             type:
               description:
-                Fixed to catalog for collections of records
+                Fixed to Collection for collections of records
                 and/or subordinate catalogs.
               type: string
               enum:
-                - Catalog
+                - Collection
             conformsTo:
               type: array
               description:

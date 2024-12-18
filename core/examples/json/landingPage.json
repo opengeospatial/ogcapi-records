@@ -1,34 +1,49 @@
 {
-    "links": [
-        {
-            "href": "https://example.org/",
-            "rel": "self",
-            "type": "application/json",
-            "title": "This Document"
-        },
-        {
-            "href": "https://example.org/api",
-            "rel": "service-desc",
-            "type": "application/openapi+json;version=3.0",
-            "title": "The API Definition"
-        },
-        {
-            "href": "https://example.org/api",
-            "rel": "service-doc",
-            "type": "text/html",
-            "title": "The API Document"
-        },
-        {
-            "href": "https://example.org/conformance",
-            "rel": "conformance",
-            "type": "application/json",
-            "title": "OGC Conformance Classes Implemented by this API"
-        },
-        {
-            "href": "https://example.org/collections",
-            "rel": "data",
-            "type": "application/json",
-            "title": "Metadata About the Resource Collections"
-        }
-    ]
+  "links": [
+    {
+      "href": "https://www.someserver.com/ogcapi?f=json",
+      "rel": "self",
+      "type": "application/json",
+      "title": "this OGC API landing page as JSON"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi?f=xml",
+      "rel": "alternate",
+      "type": "application/xml",
+      "title": "this OGC API landing page as XML"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi?f=html",
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "this OGC API landing page as HTML"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi/api?f=json",
+      "rel": "service-desc",
+      "type": "application/vnd.oai.openapi+json; version=3.0",
+      "title": "the API definition (OpenAPI document)"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi/api?f=html",
+      "rel": "service-doc",
+      "type": "text/html",
+      "title": "the API documentation (SwaggerUI HTML page)"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi/conformance",
+      "rel": "conformance",
+      "title": "the OGC API conformance classes supported"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi/collections",
+      "rel": "data",
+      "title": "the set of available collections"
+    },
+    {
+      "href": "https://www.someserver.com/ogcapi/collection/tepcat/items",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog",
+      "title": "Searchable Catalog of Sentinel-1, Radarsat-2 and RCM Imagery Products"
+    }
+  ]
 }
