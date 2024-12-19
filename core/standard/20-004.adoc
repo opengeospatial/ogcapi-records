@@ -27,7 +27,7 @@
 |Publication Date: 2024-05-14
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/is/ogcapi-records-1/1.0
 |Internal reference number of this OGC(R) document: 20-004
-|Version: 1.0.0-rfc.2
+|Version: 1.0.0
 |Category: OGC(R) Implementation Standard
 |Editors:  Panagiotis (Peter) A. Vretanos, Tom Kralidis, Angelos Tzotsos, Charles Heazel
 |===
