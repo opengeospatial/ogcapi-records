@@ -244,7 +244,9 @@ components:
                     - icon
         phones:
           type: array
-          description: Telephone numbers at which contact can be made.
+          description: |-
+            Telephone numbers at which contact can be made.  The type of
+            phone number is indicated using the roles property.
           items:
             type: object
             required:
@@ -255,12 +257,12 @@ components:
                 description: The value is the phone number itself.
                 pattern: "^\\+[1-9]{1}[0-9]{3,14}$"
               roles:
-                description:
-                  The type of phone number (e.g. home, work, fax, etc.).
                 $ref: '#/components/schemas/roles'
         emails:
           type: array
-          description: Email addresses at which contact can be made.
+          description: |-
+            Email addresses at which contact can be made.  The type of 
+            email address is indicated using the roles property.
           items:
             type: object
             required:
@@ -271,12 +273,12 @@ components:
                 description: The value is the email number itself.
                 format: email
               roles:
-                description:
-                  The type of email (e.g. home, work, etc.).
                 $ref: '#/components/schemas/roles'
         addresses:
           type: array
-          description: Physical location at which contact can be made.
+          description: |-
+            Physical location at which contact can be made.  The type of
+            address is indicated using the roles property.
           items:
             type: object
             properties:
@@ -296,10 +298,9 @@ components:
                 description: ZIP or other postal code.
               country:
                 type: string
-                description: Country of the physical address.  ISO 3166-1 is recommended.
-              roles:
                 description:
-                  The type of address (e.g. office, home, etc.).
+                  Country of the physical address.  ISO 3166-1 is recommended.
+              roles:
                 $ref: '#/components/schemas/roles'
         links:
           type: array
@@ -317,12 +318,11 @@ components:
           type: string
           description: |-
             Supplemental instructions on how or when to contact the
-            responsible party.
+            responsible party. The roles property is used to associate
+            a set of named duties, job functions and/or permissions
+            associated with this contact. (e.g. developer,
+            administrator, etc.).
         roles:
-          description:
-            The set of named duties, job functions and/or permissions
-            associated with this contact.
-            (e.g. developer, administrator, etc.).
           $ref: '#/components/schemas/roles'
     format:
       type: object
