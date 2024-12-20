@@ -39,7 +39,7 @@ The OGC API - Records specification being developed in this repository defines t
 * JSON encoding
 * HTML encoding
 
-⚠️ **These components are not independently implementable.  You can use these components to implement several types of catalog [described below](#deployments).**
+⚠️ **These components are not independently implementable.  You can use these components to implement several types of catalogs [described below](#deployments).**
 
 #### Record Core
 
