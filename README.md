@@ -422,7 +422,7 @@ This deployment pattern imposes a very low implementation burden because it reli
 |[Records API](#records-api) |mandatory
 |[Record Core Query Parameters](#record-core-query-parameters) |mandatory
 |[Sorting](#sorting) |optional
-|[Filtering]{#filtering) |optional
+|[Filtering](#filtering) |optional
 |[Autodiscovery](#autodiscovery) |optional
 |[HTML and/or JSON encodings](#encodings) |optional
 
