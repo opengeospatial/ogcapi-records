@@ -47,7 +47,7 @@ The _**Record**_ is the atomic unit of information in a catalog.
 
 A record provides a description (i.e. metadata) about a resource that the provider of the resource wishes to make discoverable.
 
-The record common component defines the core schema of a catalog record.  It includes a small number of properties that are common across all resource types.  The following table lists the core set of record properties (called queryables):
+The record common component defines the core schema of a catalog record.  It includes a small number of properties that are common across all resource types.  The following table lists the core set of record properties:
 
 |Property |Requirement |Description 
 |-----------|------------|-----------------------------------
@@ -132,7 +132,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
 
 A record collection is an object that provides information about and access to a set of related records. Such a collection of records is also referred to as a catalog.
 
-The `Catalog` common component [extends](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) the information defined for a collection by [OGC API - Features - Part 1: Core](https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+The `Catalog` component [extends](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) the information defined for a collection by [OGC API - Features - Part 1: Core](https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
 
 * include additional metadata to enhanced the description of a catalog
 * and, to provide links for accessing the records of the catalog.
@@ -162,6 +162,10 @@ The `Catalog` common component [extends](http://schemas.opengis.net/ogcapi/featu
 |links            |**M** |A list of links related to this catalog.
 |linkTemplates    |O     |A list of link templates related to this catalog.
 |schemes          |O     |A list of schemes related to this catalog.
+
+The records of a catalog are usually referenced using links in the `links` and/or `linkTemplates` sections.  
+
+However, records may also be encoded in-line in a catalog using an array whose name is declared using the `recordsArrayName` property.  The default value of the `recordsArrayName` property is `records` which means that in-line records are (by default) encoded in the `records` array.
 
 The following is an example of a searchable record catalog encoded as JSON:
 
