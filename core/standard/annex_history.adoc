@@ -5,4 +5,5 @@
 [cols="12,18,12,12,46",options="header"]
 |===
 |Date |Release |Editor | Primary clauses modified |Description
+|2024-12-19 |1.0.0 |P. Vretanos, T. Kralidis, A. Tzotsos |all|Review for 1.0.0.
 |===

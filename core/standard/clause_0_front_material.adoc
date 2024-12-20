@@ -77,8 +77,8 @@ The following organizations submitted this Document to the Open Geospatial Conso
 
 * CubeWerx Inc.
 * Meteorological Service of Canada
-* Geonovum
 * Open Source Geospatial Foundation
+* Geonovum
 
 [big]*v.     Submitters*
 
@@ -88,8 +88,9 @@ All questions regarding this submission should be directed to the editor or the 
 ^|Name  ^|Affiliation
 | Panagiotis (Peter) A. Vretanos (editor) | CubeWerx Inc.
 | Tom Kralidis (editor) | Meteorological Service of Canada
-| Linda van den Brink | Geonovum
 | Angelos Tzotsos (editor) | Open Source Geospatial Foundation
+| Charles Heazel (editor) | HeazelTech
+| Linda van den Brink | Geonovum
 |===
 
 [big]*vi. Acknowledgements*

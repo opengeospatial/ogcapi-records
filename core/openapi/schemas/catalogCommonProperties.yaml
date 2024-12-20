@@ -15,7 +15,7 @@ allOf:
       conformsTo:
         type: array
         description:
-          The extensions/conformance classes used in this record.
+          The extensions/conformance classes used in this collection.
         items:
           type: string
       recordsArrayName:
