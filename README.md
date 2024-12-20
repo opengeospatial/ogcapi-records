@@ -49,12 +49,12 @@ A record provides a description (i.e. metadata) about a resource that the provid
 
 The record common component defines the core schema of a catalog record.  It includes a small number of properties that are common across all resource types.  The following table lists the core set of record properties (called queryables):
 
-|Queryables |Requirement |Description 
+|Property |Requirement |Description 
 |-----------|------------|-----------------------------------
 |id |**M** |A unique record identifier assigned by the server.
 |created |O |The date this record was created in the server.
 |updated |O |The most recent date on which this record was changed.
-|conformsTo |O |A list of identifiers indicating that the record conforms to one or more extensionsl  Ideally, the requirements of each listed extension is formally published.
+|conformsTo |O |A list of identifiers indicating that the record conforms to one or more extensions. Ideally, the requirements of each listed extension is formally published.
 |language |O |The natural language used for textual values (i.e. titles, descriptions, etc) of this record.
 |languages |O |The list of languages in which this record can be requested.
 |links |O |A list of links including links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats, links to other resources associated with this resource and links for navigating the API (e.g. prev, next, alternate, etc.). See [link schema.](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkBase.yaml).
@@ -136,6 +136,32 @@ The `Catalog` common component [extends](http://schemas.opengis.net/ogcapi/featu
 
 * include additional metadata to enhanced the description of a catalog
 * and, to provide links for accessing the records of the catalog.
+
+|Property |Requirement   |Description 
+|-----------------|------|-----------------------------------
+|id               |**M** |A unique identifier for this catalog.
+|created          |O     |The date this collection was created.
+|updated          |O     |The more recent date on which this collection was changed.
+|conformsTo       |O     |The extensions/conformance classes used in this catalog object.
+|type             |**M** |Fixed value of "Collection".
+|itemType         |O     |Fixed value of "record", "catalog" or both.
+|title            |O     |A human-readable name given to this catalog.
+|description      |O     |A free-text description of this catalog.
+|extent           |O     |The spatiotemporal coverage of this catalog.
+|crs              |O     |A list of coordinate reference systems used for spatiotemporal values.
+|keywords         |O     |A list of free-form keywords or tags associated with this collection.
+|themes           |O     |A knowledge organization system used to classify this collection.
+|language         |O     |The language used for textual values (i.e. titles, descriptions, etc.) of this collection object.
+|languages        |O     |The list of other languages in which this collection object is available.
+|recordLanguages  |O     |The list of languages in which records from the collection can be represented.
+|contacts         |O     |A list of contacts qualified by their role(s).
+|license          |O     |The legal provisions under which this collection is made available.
+|rights           |O     |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|recordsArrayName |O     |The name of the array property in the catalog used to encode records in-line. The default value is records.
+|records          |O     |An array of records encoded in-line in the catalog.
+|links            |**M** |A list of links related to this catalog.
+|linkTemplates    |O     |A list of link templates related to this catalog.
+|schemes          |O     |A list of schemes related to this catalog.
 
 The following is an example of a searchable record catalog encoded as JSON:
 
@@ -345,7 +371,7 @@ The purpose of autodiscovery is, knowing the location of a web page, to find the
 
 #### Encodings
 
-The JSON and HTML components define the requirments for encoding records and catalogs in JSON or HTML.
+The JSON and HTML components define the requirements for encoding records and catalogs in JSON or HTML.
 
 <a name="deployments"></a>
 ## Catalog implementations
@@ -414,8 +440,7 @@ Searches the catalog for records that describe resources from Greece between Jul
 
 In all search cases, the response format is determined using standard [HTTP content negotiation](https://restfulapi.net/content-negotiation/).
 
-Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core API specification supports a basic set of filters roughly analogous to the [OpenSearch](https://github.com/dewitt/opensearch) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
-
+Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  
 
 ### Local resources catalog
 
