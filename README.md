@@ -23,13 +23,25 @@ against different versions of the evolving draft:
 
 OGC API - Records provides discovery and access to metadata about geospatial resources (e.g. data, services, ML models, etc.).  Having found a record describing a resource, binding information contained therein allows the discovered resources to be accessed.
 
-The OGC API - Records specification being developed in this repository defines three main **common components**:
+### Components
 
-* Record
+#### Overview
+
+The OGC API - Records specification being developed in this repository defines the following **common components**:
+
+* Record Core
 * Record Collection (Catalog)
+* Record Core Query Parameters
 * Records API
+* Sorting
+* Filtering
+* Autodiscovery
+* JSON encoding
+* HTML encoding
 
-## The Record common component
+⚠️ **These components are not independently implementable.  You can use these components to implement several types of catalog [described below](#deployments).**
+
+#### Record Core
 
 The _**Record**_ is the atomic unit of information in a catalog.
 
@@ -37,12 +49,16 @@ A record provides a description (i.e. metadata) about a resource that the provid
 
 The record common component defines the core schema of a catalog record.  It includes a small number of properties that are common across all resource types.  The following table lists the core set of record properties (called queryables):
 
-|Queryables |Requirement |Description 
+|Property |Requirement |Description 
 |-----------|------------|-----------------------------------
 |id |**M** |A unique record identifier assigned by the server.
 |created |O |The date this record was created in the server.
 |updated |O |The most recent date on which this record was changed.
-|conformsTo |O |A list of identifiers indicating that the record conforms to one or more extensionsl  Ideally, the requirements of each listed extension is formally published.
+|conformsTo |O |A list of identifiers indicating that the record conforms to one or more extensions. Ideally, the requirements of each listed extension is formally published.
+|language |O |The natural language used for textual values (i.e. titles, descriptions, etc) of this record.
+|languages |O |The list of languages in which this record can be requested.
+|links |O |A list of links including links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats, links to other resources associated with this resource and links for navigating the API (e.g. prev, next, alternate, etc.). See [link schema.](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkBase.yaml).
+|linkTemplates |O |A list of link templates related to this record.
 |type |O |The nature or genre of the resource described by this record.
 |title |O |A human-readable name given to the resource described by this record.
 |description |O |A free-text description of the resource.
@@ -50,16 +66,12 @@ The record common component defines the core schema of a catalog record.  It inc
 |time |O |A characteristic temporal instance or interval associated with the resource; can be _null_ if not known or applicable.
 |keywords |O |A list of free-form keywords or tags associated with the resource.
 |themes |O |A knowledge organization system used to classify the resource.
-|language |O |The natural language used for textual values (i.e. titles, descriptions, etc) of this record.
-|languages |O |The list of languages in which this record can be requested.
 |resourceLanguages |O |A list of languages in which the resource can be requested.
 |externalIds |O |A list of identifiers for the resource assigned by one or more external entities.
 |formats |O |A list of available distributions for the resource.
 |contacts |O |A list of entities to contact about the resource.
 |license |O |A legal document under which the resource is made available.
 |rights |O |A statement that concerns all rights not addressed by the license such as a copyright statement.
-|links |O |A list of links including links for accessing the resource (e.g. download link, access link, etc.) in one of the supported distribution formats, links to other resources associated with this resource and links for navigating the API (e.g. prev, next, alternate, etc.). See [link schema.](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkBase.yaml).
-|linkTemplates |O |A list of link templates related to this record.
 
 It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
 
@@ -116,14 +128,40 @@ The following is an example of a catalogue record encoded as GeoJSON:
     }
 ```
 
-## The Record Collection (Catalog) common component
+#### Record Collection (Catalog)
 
-The Record Collection common component (also called a Catalog) is used to describe a collection of resources.  This can be a collection of related records  but it can also be a collection of any other type of resource (e.g. feature, coverage, etc.).
+A record collection is an object that provides information about and access to a set of related records. Such a collection of records is also referred to as a catalog.
 
-The `Catalog` common component [extends](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/catalog.yaml) the information defined for a collection by [OGC API - Common - Part 2: Geospatial Data](http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description) and [OGC API - Features - Part 1: Core](https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
+The `Catalog` common component [extends](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) the information defined for a collection by [OGC API - Features - Part 1: Core](https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml) to:
 
 * include additional metadata to enhanced the description of a catalog
-* and, to provide links for accessing the items of the catalog.
+* and, to provide links for accessing the records of the catalog.
+
+|Property |Requirement   |Description 
+|-----------------|------|-----------------------------------
+|id               |**M** |A unique identifier for this catalog.
+|created          |O     |The date this collection was created.
+|updated          |O     |The more recent date on which this collection was changed.
+|conformsTo       |O     |The extensions/conformance classes used in this catalog object.
+|type             |**M** |Fixed value of "Collection".
+|itemType         |O     |Fixed value of "record", "catalog" or both.
+|title            |O     |A human-readable name given to this catalog.
+|description      |O     |A free-text description of this catalog.
+|extent           |O     |The spatiotemporal coverage of this catalog.
+|crs              |O     |A list of coordinate reference systems used for spatiotemporal values.
+|keywords         |O     |A list of free-form keywords or tags associated with this collection.
+|themes           |O     |A knowledge organization system used to classify this collection.
+|language         |O     |The language used for textual values (i.e. titles, descriptions, etc.) of this collection object.
+|languages        |O     |The list of other languages in which this collection object is available.
+|recordLanguages  |O     |The list of languages in which records from the collection can be represented.
+|contacts         |O     |A list of contacts qualified by their role(s).
+|license          |O     |The legal provisions under which this collection is made available.
+|rights           |O     |A statement that concerns all rights not addressed by the license such as a copyright statement.
+|recordsArrayName |O     |The name of the array property in the catalog used to encode records in-line. The default value is records.
+|records          |O     |An array of records encoded in-line in the catalog.
+|links            |**M** |A list of links related to this catalog.
+|linkTemplates    |O     |A list of link templates related to this catalog.
+|schemes          |O     |A list of schemes related to this catalog.
 
 The following is an example of a searchable record catalog encoded as JSON:
 
@@ -148,7 +186,7 @@ The following is an example of a searchable record catalog encoded as JSON:
       "hreflang": "en-US"
     },
     {
-       "rel": "search",
+       "rel": "items",
        "href": "https://demo.pycsw.org/gisdata/collections/metadata:main/items"
     }
   ],
@@ -172,11 +210,7 @@ The following is an example of a searchable record catalog encoded as JSON:
   },
   "license": "https://creativecommons.org/licenses/by/4.0/legalcode"
 }
-
-<<This is example is still being revised.>>
 ```
-
-NOTE: In OGC API - Features and OGC API - Common, the link relation `items` is used to point to a searchable endpoint for accessing the resources of a collections.  This endpoint should, more correctly, use the IANA link relation `search` since the `/items` endpoint is really a search endpoint returnings subsets of resource depending to query parameters specified at the endpoint.
 
 The following is an example of a crawlable record collection encoded as JSON.  In this case, it is a catalog of other catalogs of RADARSAT Earth observation products.
 
@@ -222,38 +256,55 @@ The following is an example of a crawlable record collection encoded as JSON.  I
       "title": "license"
     },
     {
-      "rel": "item",
+      "rel": "child",
       "href": "slc/collection.json"
     },
     {
-      "rel": "item",
+      "rel": "child",
       "href": "raw/collection.json"
     },
     {
-      "rel": "item",
+      "rel": "child",
       "href": "sgf/collection.json"
     },
     {
-      "rel": "item",
+      "rel": "child",
       "href": "sgx/collection.json"
     },
     {
-      "rel": "item",
+      "rel": "child",
       "href": "scn/collection.json"
     },
     {
-      "rel": "item",
+      "rel": "child",
       "href": "scw/collection.json"
     }
   ]
 }
 ```
 
-## The Records API
+#### Record Core Query Parameters
 
-The OGC API - Records specification defines a core catalog access and search API by extending OGC API - Common - Part 2: Geospatial Data and the OGC API - Features - Part 1: Core APIs.
+The Record Core Query Parameters component defines a minimum set of query parameters that should be implemented at a searchable catalog endpoint. The following table lists this set of query parameters.
 
-OGC API - Common specifies a well-defined access path to information about collections (i.e. `/collections`).  OGC API - Features specifies a well-defined access path to the records (i.e. `/collections/{collectionId}/items`) of a catalog (i.e. a record collection).  OGC API - Records extended each of these endpoints with additional query parameters to enable catalog search capabilities.
+The parameters bbox, datetime, limit and ids are inherited from OGC API Features - Part 1: Core. The remaining parameters are defined in this Standard.
+
+|Parameter Name |Description 
+|---------------|-----------------------------------------------------------
+|bbox           |A bounding box. If the spatial extent of the record intersects the specified bounding box, then the record shall be presented in the response document.
+|datetime       |A time instance or time period. If the temporal extent of the record intersects the specified date/time value, then the record shall be presented in the response document.
+|limit          |The number of records to be presented in a response document.
+|q              |A comma-separated list of search terms. If any server-chosen text field in the record contains 1 or more of the terms listed, then this record shall appear in the response set.
+|type           |An equality predicate consisting of a comma-separated list of resource types. Only records of the listed type shall appear in the response set.
+|ids            |An equality predicate consisting of a comma-separated list of record identifiers. Only records with the specified identifiers shall appear in the response set.
+|externalIds    |An equality predicate consisting of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
+|prop=value     |Equality predicates with any queryable not already listed in this table
+
+#### The Records API
+
+The OGC API - Records specification defines a core catalog access and search API by extending OGC API - Features - Part 1: Core APIs.
+
+OGC API - Features specifies a well-defined access path to the records (i.e. `/collections/{collectionId}/items`) of a catalog (i.e. a record collection).  OGC API - Records extended each of these endpoints with additional query parameters to enable catalog search capabilities.
 
 In the first case this allows deployments with a large number of collections to be searched as a sort of mini-catalogs of the deployment's resource collections (i.e. features, coverages, etc.).
 
@@ -261,7 +312,71 @@ In the latter case, this allows collections of records (i.e. catalogs) to be sea
 
 The search capabilities of the Records API are organized into various levels of complexity starting from simple spatial, temporal, keyword and type search predicates (i.e. `bbox=`, `datetime=`, `q=`, `type=`) that can be combined using a logical `AND` all the way up to a full blown predicate language (based on OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)), that supports complex filter expressions of logically connected query predicates.
 
-## Deployment patterns
+#### Sorting
+
+The Sorting component defines the requirements for specifying how records in a response should be ordered for presentation.
+
+The list of "sortables", that is the list of property names that can be used in a sorting expression can be retrieved from the `/collections/{catalogId}/sortables` endpoint of a Records API.
+
+The "sortby" query parameter can be used to specify the sorting expression.  The default sort direction is ascending unless the property names specified in a "sortby" expression is prepended by a minus ("-") sign.  In this case, the sorting direction is descending.
+
+````
+.../collections/mycat/items?...&sortby=%2Dupdated,%2Bid&...
+````
+
+````
+.../collections/mycat/items?...&sortby=%2Bextent&...
+````
+
+````
+.../collections/mycat/items?...&sortby=%2Drelevance&...
+````
+
+A server can declare what the defaultsort order shall be using the `defaultSortOrder` property in the description of a catalog (i.e. in the `/collections/{catalogId}` document).
+
+````
+{
+  .
+  .
+  .
+  "defaultSortOrder": [
+    {
+      "field": "updated",
+      "direction": "desc"
+    },
+    {
+      "field": "area",
+      "direction": "desc"
+    }
+  ],
+  .
+  .
+  .
+}
+````
+
+If no `defaultSortOrder` property is present then no particular order should be assumed when fetching records from the catalog.
+
+#### Filtering
+
+This component defines the binding to the filtering parameters (`filter`, `filter-lang`, `filter-crs`) defined in the [OGC API - Features - Part 3: Filtering](https://docs.ogc.org/DRAFTS/19-079r1.html#_requirements_class_filter) and the use of the [Common Query Language (CQL2)](https://docs.ogc.org/DRAFTS/21-065.html) as the query language.
+
+````
+properties.license LIKE 'https://creativecommons.org/licenses/%'
+````
+
+#### Autodiscovery
+
+The purpose of autodiscovery is, knowing the location of a web page, to find the addresses(s) of that page’s associated catalog(s). For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site’s searchable catalog by locating the rel="http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog" link in the landing page and then, using that catalog, search for resources offered by the site.
+
+#### Encodings
+
+The JSON and HTML components define the requirements for encoding records and catalogs in JSON or HTML.
+
+<a name="deployments"></a>
+## Catalog implementations
+
+### Overview
 
 There are a number of ways that records can be deployed as a "collection of records" or a catalog.  The OGC API - Records specification envisions three deployment patterns using the common components described above:
 
@@ -325,8 +440,7 @@ Searches the catalog for records that describe resources from Greece between Jul
 
 In all search cases, the response format is determined using standard [HTTP content negotiation](https://restfulapi.net/content-negotiation/).
 
-Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  The core API specification supports a basic set of filters roughly analogous to the [OpenSearch](https://github.com/dewitt/opensearch) and OGC OpenSearch Geo (https://portal.opengeospatial.org/files/?artifact_id=56866) query parameters.
-
+Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  
 
 ### Local resources catalog
 
@@ -343,15 +457,6 @@ GET /collections?bbox=-69.64,37.76,-56.12,46.63&datetime=2020-01-11T00:00:00/202
 ```
 
 Only collections that satisfy that specified predicates are included in the response.
-
-### OpenSearch
-
-The OpenSearch protocol defines an XML description document describing how to request search results from a service. If these search results are encoded in ATOM or RSS, this allows results from multiple services to be combined.  It is still used extensively by some communities within OGC and was originally part of Part 1.  It has, recently, been moved into own part, Part 2.  This was primarily done because of the current status of OpenSearch.
-
-The OpenSearch protocol used by OGC API - Records is based on a protocol that was launched in 2005 by A9.com, an Amazon subsidiary.  In 2021, Amazon.com launched the open source OpenSearch search engine project, unrelated to the OpenSearch launched by A9.com aside from repurposing the name.  The two projects will continue to independently co-exist, though the search protocol (now hosted [here](https://github.com/dewitt/opensearch)) has largely remained stable and unchanged for over ten years, with no significant updates expected on the horizon.  Neither of these two efforts is related to the Open Search Foundation project found [here](https://opensearchfoundation.org/).
-
-Because of this shift in status of OpenSearch isolating it in its part of the OGC API - Records suite of standards would allow the related conformance class(es) to be easilt deprecated or renamed in the future.  The work for this part, Part 2, is being carried out [here](https://github.com/opengeospatial/ogcapi-records/tree/master/extensions/OpenSearch).
-
 
 ## Communication
 
@@ -378,4 +483,3 @@ The OGC API - Records Standards Working Group (SWG) is the group at OGC responsi
 * [Copy of License Language](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/LICENSE)
 
 Pull Requests from contributors are welcomed. However, please note that by sending a Pull Request or Commit to this GitHub repository, you are agreeing to the terms in the Observer Agreement https://portal.ogc.org/files/?artifact_id=92169
-
