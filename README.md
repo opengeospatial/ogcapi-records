@@ -41,6 +41,7 @@ The OGC API - Records specification being developed in this repository defines t
 
 ⚠️ **These components are not independently implementable.  You can use these components to implement several types of catalogs [described below](#deployments).**
 
+<a name="record-core"></a>
 #### Record Core
 
 The _**Record**_ is the atomic unit of information in a catalog.
@@ -128,6 +129,7 @@ The following is an example of a catalogue record encoded as GeoJSON:
     }
 ```
 
+<a name="record-collection"></a>
 #### Record Collection (Catalog)
 
 A record collection is an object that provides information about and access to a set of related records. Such a collection of records is also referred to as a catalog.
@@ -287,6 +289,7 @@ The following is an example of a crawlable record collection encoded as JSON.  I
 }
 ```
 
+<a name="record-core-query-parameters"></a>
 #### Record Core Query Parameters
 
 The Record Core Query Parameters component defines a minimum set of query parameters that should be implemented at a searchable catalog endpoint. The following table lists this set of query parameters.
@@ -304,6 +307,7 @@ The parameters bbox, datetime, limit and ids are inherited from OGC API Features
 |externalIds    |An equality predicate consisting of a comma-separated list of external resource identifiers. Only records with the specified external identifiers shall appear in the response set.
 |prop=value     |Equality predicates with any queryable not already listed in this table
 
+<a name="records-api"></a>
 #### The Records API
 
 The OGC API - Records specification defines a core catalog access and search API by extending OGC API - Features - Part 1: Core APIs.
@@ -316,6 +320,7 @@ In the latter case, this allows collections of records (i.e. catalogs) to be sea
 
 The search capabilities of the Records API are organized into various levels of complexity starting from simple spatial, temporal, keyword and type search predicates (i.e. `bbox=`, `datetime=`, `q=`, `type=`) that can be combined using a logical `AND` all the way up to a full blown predicate language (based on OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)), that supports complex filter expressions of logically connected query predicates.
 
+<a name="sorting"></a>
 #### Sorting
 
 The Sorting component defines the requirements for specifying how records in a response should be ordered for presentation.
@@ -361,6 +366,7 @@ A server can declare what the defaultsort order shall be using the `defaultSortO
 
 If no `defaultSortOrder` property is present then no particular order should be assumed when fetching records from the catalog.
 
+<a name="filtering"></a>
 #### Filtering
 
 This component defines the binding to the filtering parameters (`filter`, `filter-lang`, `filter-crs`) defined in the [OGC API - Features - Part 3: Filtering](https://docs.ogc.org/DRAFTS/19-079r1.html#_requirements_class_filter) and the use of the [Common Query Language (CQL2)](https://docs.ogc.org/DRAFTS/21-065.html) as the query language.
@@ -369,10 +375,12 @@ This component defines the binding to the filtering parameters (`filter`, `filte
 properties.license LIKE 'https://creativecommons.org/licenses/%'
 ````
 
+<a name="autodiscovery"></a>
 #### Autodiscovery
 
 The purpose of autodiscovery is, knowing the location of a web page, to find the addresses(s) of that page’s associated catalog(s). For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site’s searchable catalog by locating the rel="http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog" link in the landing page and then, using that catalog, search for resources offered by the site.
 
+<a name="encodings"></a>
 #### Encodings
 
 The JSON and HTML components define the requirements for encoding records and catalogs in JSON or HTML.
@@ -392,6 +400,13 @@ There are a number of ways that records can be deployed as a "collection of reco
 
 ### Crawlable Catalog
 
+|Component used |Obligation 
+|---------------|----------
+|[Record Core](#record-core) | mandatory
+|[Record Collection (Catalog)](#record-collection) |optional
+|[Autodiscovery](#autodiscovery) |optional
+|[HTML and/or JSON encodings](#encodings) |optional
+
 The crawlable catalog deployment pattern involves creating a file that contains a record that describes each discoverable resource.  Each file (i.e. record) is then deployed to some web accessible location (e.g. S3 bucket, web accessible directory, etc.), usually co-located with the resource the record is describing.  Sets of related records are identified by creating a _Catalog_ object, another file also deployed to some web accessible location.  The catalog object provides metadata about this collection of records and also includes hypermedia controls (i.e. links, one per record) that allow navigation to the records of the collection.
 
 This deployment pattern imposes a very low implementation burden because it relies on HTTP to do most of the work of accessing the records of a catalog.  This makes it easy to deploy and to navigate to the records using a browser or by search engine crawlers.  However, complex searches using logically connect spatio-temporal and/or scalar predicates are not easily supported by this deployment pattern.
@@ -399,6 +414,17 @@ This deployment pattern imposes a very low implementation burden because it reli
 ![crawlable catalog](images/crawlable_catalogue_example.png)
 
 ### Searchable catalog
+
+|Component used |Obligation 
+|---------------|----------
+|[Record Core](#record-core) |mandatory
+|[Record Collection (Catalog)](#record-collection) |mandatory
+|[Records API](#records-api) |mandatory
+|[Record Core Query Parameters](#record-core-query-parameters) |mandatory
+|[Sorting](#sorting) |optional
+|[Filtering]{#filtering) |optional
+|[Autodiscovery](#autodiscovery) |optional
+|[HTML and/or JSON encodings](#encodings) |optional
 
 As is the case for a crawlable catalog, in a searchable catalog deployment, records are created to describe discoverable resources.  Collections of these records, rather than being deployed into web-space, are typically (but not necessarily) stored in some back end data management system such as a NO-SQL database or an RDBMS and access to the records is provided through the Records API.  The API also makes use of hypermedia controls (i.e. links) that allow navigation to records in a manner similar to that in the crawlable deployment case.  Information about the catalog (i.e. the record collection) itself is also accessible through the API.
 
@@ -447,6 +473,16 @@ In all search cases, the response format is determined using standard [HTTP cont
 Records are returned in pageable chunks, with each response containing a `next` link pointing to the next set of response records.  
 
 ### Local resources catalog
+
+|Component used |Obligation 
+|---------------|----------
+|[Record Core](#record-core) | mandatory
+|[Record Collection (Catalog)](#record-collection) |mandatory
+|[Record Core Query Parameters](#record-core-query-parameters) |mandatory
+|[Sorting](#sorting) |optional
+|[Filtering](#filtering) |optional
+|[Autodiscovery](#autodiscovery) |optional
+|[HTML and/or JSON encodings](#encodings) |optional
 
 The OGC API resource tree has a number of resource endpoints that represent lists of resources.  Some example endpoints include:
 
