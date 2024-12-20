@@ -5,10 +5,5 @@
 [cols="12,18,12,12,46",options="header"]
 |===
 |Date |Release |Editor | Primary clauses modified |Description
-|2020-01-13 |Template |C. Heazel |all |initial template
-|2020-04-22 |1.0-dev |T. Kralidis |all|changes to reflect Records, editorial updates, add Q parameter to clause 7
-|2021-06-18 |1.0-dev |T. Kralidis |all|full review for 1.0.0-draft.1
-|2023-01-27 |1.0-dev |A. Tzotsos |all|full review for 1.0.0-draft.1
-|2024-01-19 |1.0-dev |T. Kralidis |all|full review for 1.0.0-oab-review.1
-|2024-01-19 |1.0-dev |A. Tzotsos |all|full review for 1.0.0-oab-review.1
+|2024-12-19 |1.0.0 |P. Vretanos, T. Kralidis, A. Tzotsos |all|Review for 1.0.0.
 |===
