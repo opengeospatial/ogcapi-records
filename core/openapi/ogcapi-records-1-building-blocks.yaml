@@ -3,7 +3,7 @@ info:
   title: "Building Blocks specified in OGC API - Features - Part 1: Core"
   description: |-
     Common components used in the
-    [OGC standard "OGC API - Records - Part 1: Core"](https://docs.opengeospatial.org/is/20-004/20-004.html).
+    [OGC standard "OGC API - Records - Part 1: Core"](https://docs.opengeospatial.org/is/20-004r1/20-004r1.html).
 
     OGC API - Records - Part 1: Core 1.0 is an OGC Standard.
     Copyright (c) 2019 Open Geospatial Consortium.

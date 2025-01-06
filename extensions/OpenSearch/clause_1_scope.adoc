@@ -1,7 +1,7 @@
 == Scope
 
 This document specifies the requirements for adding an OpenSearch interface to
-a https://docs.ogc.org/DRAFTS/20-004.html#clause-searchable-catalogue[searchable OGC API - Records] implementation.
+a https://docs.ogc.org/DRAFTS/20-004r1.html#clause-searchable-catalogue[searchable OGC API - Records] implementation.
 
 The document defines requirements for retrieving an https://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part4-opensearch/searchRetrieve-v1.0-os-part4-opensearch.html#_Toc313525766[OpenSearch description document] from the service.
 

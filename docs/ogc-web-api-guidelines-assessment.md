@@ -13,7 +13,7 @@ This document outlines the support by OGC API Records of the design principles o
   - records and catalogs are resource types that have been in use for many years
   - IANA registered media types are used, except in the OpenAPI case, where [no registered media type exists yet](https://github.com/OAI/OpenAPI-Specification/issues/110)
 - [x] Principle #4 – Construct consistent URIs
-  - the resources are structured in a [simple path structure](https://docs.ogc.org/DRAFTS/20-004.html#api-path-table) that is intuitive and at the same time extensible (both for additional parts of Records that will make use of other HTTP methods beyond GET, HEAD, OPTIONS or add resources as well as for other top-level OGC API resource types)
+  - the resources are structured in a [simple path structure](https://docs.ogc.org/DRAFTS/20-004r1.html#api-path-table) that is intuitive and at the same time extensible (both for additional parts of Records that will make use of other HTTP methods beyond GET, HEAD, OPTIONS or add resources as well as for other top-level OGC API resource types)
   - the path structure is consistent with the examples in Principle #4
 - [x] Principle #5 – Use HTTP Methods consistent with RFC 9110
   - Part 1 uses GET (and recommend support for HEAD and OPTIONS). All methods are used in conformance with the requirements and semantics specified in RFC 9110
