@@ -4,7 +4,7 @@
 
 This GitHub repository contains the OGC API - Records for discovering geospatial information on the web. It focuses on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components with responses in JSON and HTML.
 
-The latest Editor's Draft version of _OGC API - Records - Part 1: Core_ is found here in [HTML](https://docs.ogc.org/DRAFTS/20-004.html) or [PDF](https://docs.ogc.org/DRAFTS/20-004.pdf).
+The latest Editor's Draft version of _OGC API - Records - Part 1: Core_ is found here in [HTML](https://docs.ogc.org/DRAFTS/20-004r1.html) or [PDF](https://docs.ogc.org/DRAFTS/20-004r1.pdf).
 
 Draft(s) are built daily based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file.
 
