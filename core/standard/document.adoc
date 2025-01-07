@@ -1,0 +1,64 @@
+= OGC API - Records - Part 1: Core
+:doctype: standard
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 3.0
+:external-id: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
+:docnumber: 20-004r1
+:received-date: 2025-01-07
+:issued-date: 2029-03-30
+:published-date: 2029-03-30
+:fullname: Panagiotis (Peter) A. Vretanos
+:fullname_2: Tom Kralidis
+:fullname_3: Angelos Tzotsos
+:fullname_4: Charles Heazel
+:docsubtype: Interface
+:keywords: ogcdoc, OGC document, OGC API, catalog, record, records, resource, metadata, discovery, CSW, API, GeoJSON, HTML, schema.org, JSON-LD
+:submitting-organizations: CubeWerx Inc.; Meteorological Service of Canada; Open Source Geospatial Foundation; Geonovum
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,pdf
+:local-cache-only:
+:data-uri-image:
+:pdf-uri: ./document.pdf
+:xml-uri: ./document.xml
+:doc-uri: ./document.doc
+:edition: 1.0
+
+
+////
+Make sure to complete each included document
+////
+include::sections/clause_0_front_material.adoc[]
+
+include::sections/clause_1_scope.adoc[]
+
+include::sections/clause_2_conformance.adoc[]
+
+include::sections/clause_3_references.adoc[]
+
+include::sections/clause_4_terms_and_definitions.adoc[]
+
+include::sections/clause_5_conventions.adoc[]
+
+include::sections/clause_6_informative_text.adoc[]
+
+include::sections/clause_7_normative_text.adoc[]
+
+include::sections/clause_8_media_types.adoc[]
+
+////
+add or remove annexes after "A" as necessary
+////
+include::sections/annex-a.adoc[]
+
+include::sections/annex-n.adoc[]
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+include::sections/annex-history.adoc[]
+
+include::sections/annex-bibliography.adoc[]
