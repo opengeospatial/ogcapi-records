@@ -96,7 +96,6 @@ Records:
 
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Geesten%20van%20Holland
-* https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json&title=Geesten%20van%20Holland&f=json
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items?bbox=4,51,7,53
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items?bbox=4,51,7,53&f=json
 * https://demo.pygeoapi.io/master/collections/dutch-metadata/items?q=Kaartboeck
