@@ -142,7 +142,7 @@ OGC Compliance Testing web site.
 |<<ats_searchable-catalog_sorting,Searchable Catalog - Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-sorting
 |<<ats_local-resources-catalog,Local Resources Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
 |<<ats_local-resources-catalog_query-parameters,Local Resources Catalog - Query Parameters>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-query-parameters
-|<<ats_local-resources-catalog_filtering,Local Resources Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog/filtering
+|<<ats_local-resources-catalog_filtering,Local Resources Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-filtering
 |<<ats_local-resources-catalog_sorting,Local Resources Catalog - Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-sorting
 |===
 

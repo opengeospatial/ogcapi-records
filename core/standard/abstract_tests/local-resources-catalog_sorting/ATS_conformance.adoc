@@ -8,5 +8,5 @@
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 . Check that the `conformsTo` array contains the values:
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog/sorting
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-sorting
 |===
