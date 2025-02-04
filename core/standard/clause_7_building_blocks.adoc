@@ -34,7 +34,7 @@ Other encodings are allowed but are not described in this document.
 
 [#core-properties-record-table,reftext='{table-caption} {counter:table-num}']
 .Core properties related to the catalog record
-[cols="20,5,55,20",options="header"]
+[cols=",,,",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
 |id |**required** |A unique record identifier assigned by the server. |`id`
@@ -49,7 +49,7 @@ Other encodings are allowed but are not described in this document.
 
 [#core-properties-resource-table,reftext='{table-caption} {counter:table-num}']
 .Core properties related to the resource
-[cols="20,5,55,20",options="header"]
+[cols=",,,",options="header"]
 |===
 |Property |Requirement |Description |GeoJSON key
 |type |optional |The nature or genre of the resource described by this record. |`properties.type`
@@ -503,7 +503,7 @@ Other encodings are allowed but are not described in this document.
 
 [#collection-properties-table,reftext='{table-caption} {counter:table-num}']
 .Catalog properties
-[cols="30,5,65",options="header"]
+[cols=",,",options="header"]
 |===
 |Property |Requirement |Description
 |id |**required** |A unique identifier for this catalog.
