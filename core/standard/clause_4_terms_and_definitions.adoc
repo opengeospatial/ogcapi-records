@@ -1,7 +1,4 @@
 == Terms and Definitions
-This document uses the terms defined in Sub-clause 5 of https://docs.ogc.org/DRAFTS/19-072.html[OGC API - Common Part 1] (OGC 19-072), which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "shall" (not "must") is the verb form used to indicate a requirement to be strictly followed to conform to this Standard.
-
-For the purposes of this document, the following additional terms and definitions apply.
 
 === catalog; record collection
 a collection of related <<record-def,records>>
@@ -78,39 +75,3 @@ NOTE: For <<clause-searchable-catalog,searchable catalogs>>, the searchable cata
 entity to which some requirements of a standard apply (<<ogc08-131,OGC 08-131>>)
 
 NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
-
-=== Abbreviated terms
-
-API::
-  Application Programming Interface
-CORS::
-  Cross-Origin Resource Sharing
-CRS::
-  Coordinate Reference System
-CSW::
-  Catalog Service for the Web
-HTTP::
-  Hypertext Transfer Protocol
-HTTPS::
-  Hypertext Transfer Protocol Secure
-IANA::
-  Internet Assigned Numbers Authority
-OGC::
-  Open Geospatial Consortium
-RFC::
-  Request for Comment
-TRS::
-    Temporal Coordinate Reference System
-URI::
-  Uniform Resource Identifier
-WMS::
-  Web Map Service
-WFS::
-  Web Feature Service
-WCS::
-  Web Coverage Service
-WPS::
-  Web Processing Service
-YAML::
-  YAML Ain't Markup Language
-
