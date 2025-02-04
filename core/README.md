@@ -13,8 +13,6 @@ The repo is organized as follows:
 ## Building
 
 ```
-cd ogcapi-records
-
 cd core
 
 docker run -v "$(pwd)":/metanorma -v ${HOME}/.fontist/fonts/:/config/fonts  metanorma/metanorma  metanorma compile --agree-to-terms -t ogc -x html standard/document.adoc
