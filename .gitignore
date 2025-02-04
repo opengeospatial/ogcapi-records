@@ -1,4 +1,8 @@
 core/*.html
 core/*.pdf
+core/relaton/*
+core/iev/*
+core/standard/*.html
 .vscode/settings.json
 .DS_Store
+core/standard/document.presentation.xml

@@ -1,4 +1,16 @@
-[big]*i.     Abstract*
+.Preface
+
+////
+*OGC Declaration*
+////
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+
+[abstract]
+== Abstract
 
 The OGC API family of Standards is being developed to make it easy for anyone to provide geospatial data over the web. These Standards build upon the legacy of the OGC Web Service Standards (WMS, WFS, WCS, WPS, CSW, etc.), but define resource-centric APIs that take advantage of modern web development practices.
 
@@ -54,33 +66,17 @@ An implementation of a search API allows collections of records to be searched u
 
 A special use case of a catalog deployed as an implementation of a Web API is the _local resources catalog_.  A local resources catalog is a catalog deployed as an implementation of a Web API that makes local resources offered by a provider searchable using the catalog information model and accessed via the API.  An example of a local resources catalog is the `/collections` endpoint of http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data] or http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core].  Adding catalog capabilities to this endpoint enables a client to search for collections that satisfy a specified filter expression.  Any API endpoint defined in an OGC API Standard whose function is to provide descriptive metadata about other sub-resources accessible via the API can be extended to behave as a local resources catalog.  The `/collections` endpoint is an examples of such an endpoint.  The `/collections` endpoint provides metadata about the collections that a server offers.  One can well imagine the benefits of being able to search for a specific subset of collection descriptions on a server that offers thousands of data collections.
 
-[[keywords]]
-[big]*ii.    Keywords*
 
-The following are keywords to be used by search engines and document catalogs.
+== Security considerations
 
-ogcdoc, OGC document, OGC API, catalog, record, records, resource, metadata, discovery, CSW, API, GeoJSON, HTML, schema.org, JSON-LD
+Given the dependencies on the <<OACommon,OGC API - Common>> and <<OAFeat-1,OGC API - Features>> Standard, aspects of security are discussed in those Standards.
 
-[[preface]]
-[big]*iii.   Preface*
+Metadata record encryption is out of scope for this Standard. However communities who wish to implement record encryption are free to do so as needed.
 
-*OGC Declaration*
 
-Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium Inc. shall not be held responsible for identifying any or all such patent rights.
 
-Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
-
-[[submitting_organizations]]
-[big]*iv.    Submitting organizations*
-
-The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
-
-* CubeWerx Inc.
-* Meteorological Service of Canada
-* Open Source Geospatial Foundation
-* Geonovum
-
-[big]*v.     Submitters*
+[.preface]
+== Submitters
 
 All questions regarding this submission should be directed to the editor or the submitters:
 
@@ -93,6 +89,7 @@ All questions regarding this submission should be directed to the editor or the 
 | Linda van den Brink | Geonovum
 |===
 
-[big]*vi. Acknowledgements*
+[.preface]
+== Acknowledgements
 
 This specification acknowledges and remembers Douglas Nebert. As part of USGS and FGDC, Doug was internationally recognized as a champion of metadata, discovery and interoperability. He was one of the editors of the OGC Catalogue Services specification and a longtime champion of spatial data infrastructure initiatives including the US data.gov efforts, GEOSS and beyond. Doug’s vision and expertise will always be remembered and appreciated by the specification editors and community.

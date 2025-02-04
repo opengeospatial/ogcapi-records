@@ -1,0 +1,37 @@
+[appendix,obligation=informative]
+== Abbreviated Terms
+
+
+API::
+  Application Programming Interface
+CORS::
+  Cross-Origin Resource Sharing
+CRS::
+  Coordinate Reference System
+CSW::
+  Catalog Service for the Web
+HTTP::
+  Hypertext Transfer Protocol
+HTTPS::
+  Hypertext Transfer Protocol Secure
+IANA::
+  Internet Assigned Numbers Authority
+OGC::
+  Open Geospatial Consortium
+RFC::
+  Request for Comment
+TRS::
+    Temporal Coordinate Reference System
+URI::
+  Uniform Resource Identifier
+WMS::
+  Web Map Service
+WFS::
+  Web Feature Service
+WCS::
+  Web Coverage Service
+WPS::
+  Web Processing Service
+YAML::
+  YAML Ain't Markup Language
+
