@@ -1,8 +1,17 @@
 [[req_record-collection_links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-collection/links*
 
-^|A |The catalog SHALL include a link (relation: `self`) that points to itself.
-^|B |The catalog SHALL include one link (relation: `alternate`) for each alternative representation of itself.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-collection/links*
+//
+//^|A |The catalog SHALL include a link (relation: `self`) that points to itself.
+//^|B |The catalog SHALL include one link (relation: `alternate`) for each alternative representation of itself.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-collection/links
+part:: The catalog SHALL include a link (relation: `self`) that points to itself.
+part:: The catalog SHALL include one link (relation: `alternate`) for each alternative representation of itself.
+====

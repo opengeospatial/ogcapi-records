@@ -1,7 +1,15 @@
 [[req_record-collection_links-catalog-series]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-collection/links-catalog-series*
 
-A catalog referencing another catalog in a series of related catalogs SHALL include a link (relation: `next`) pointing to the next related catalog in the series.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-collection/links-catalog-series*
+//
+//A catalog referencing another catalog in a series of related catalogs SHALL include a link (relation: `next`) pointing to the next related catalog in the series.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-collection/links-catalog-series
+part:: A catalog referencing another catalog in a series of related catalogs SHALL include a link (relation: `next`) pointing to the next related catalog in the series.
+====

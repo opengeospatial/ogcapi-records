@@ -1,7 +1,15 @@
 [[req_record-collection_records]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-collection/records*
 
-Records encoded in-line in the catalog SHALL be encoded using an array property named `records`.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-collection/records*
+//
+//Records encoded in-line in the catalog SHALL be encoded using an array property named `records`.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-collection/records
+part:: Records encoded in-line in the catalog SHALL be encoded using an array property named `records`.
+====

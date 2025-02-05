@@ -1,8 +1,16 @@
 [[req_record-core_links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-core/links*
-^|A |Each record SHALL, if it is a member of a catalog, include a link (relation: `collection`) pointing to the catalog of which this record is a member.
-^|B |Only a single link (relation: `collection`) SHALL be included in a record.  This implies that a record can only be a member of a single catalog.
-|===
 
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-core/links*
+//^|A |Each record SHALL, if it is a member of a catalog, include a link (relation: `collection`) pointing to the catalog of which this record is a member.
+//^|B |Only a single link (relation: `collection`) SHALL be included in a record.  This implies that a record can only be a member of a single catalog.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core/links
+part:: Each record SHALL, if it is a member of a catalog, include a link (relation: `collection`) pointing to the catalog of which this record is a member.
+part:: Only a single link (relation: `collection`) SHALL be included in a record.  This implies that a record can only be a member of a single catalog.
+====

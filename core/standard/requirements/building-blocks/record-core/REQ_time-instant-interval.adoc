@@ -1,10 +1,22 @@
 [[req_record-core_time-instant-interval]]
-[width="90%",cols="2,7a"]
-|===
-^|*Requirement {counter:req-num}* |*/req/record-core/time-instant-interval*
-^|A |If the `time` object in a record includes both a `date` and a `timestamp` member, the `full-date` parts SHALL be identical.
-^|B |If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end dates, the interval SHALL contain the date of the timestamp.
-^|C |If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end timestamps, the interval SHALL contain the timestamp.
-^|D |If the `time` object in a record includes both a `date` and an `interval` member with start/end dates, the interval SHALL contain the date.
-^|E |If the `time` object in a record includes both a `date` and an `interval` member with start/end timestamps, the interval SHALL include timestamps on the date.
-|===
+
+//[width="90%",cols="2,7a"]
+//|===
+//^|*Requirement {counter:req-num}* |*/req/record-core/time-instant-interval*
+//^|A |If the `time` object in a record includes both a `date` and a `timestamp` member, the `full-date` parts SHALL be identical.
+//^|B |If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end dates, the interval SHALL contain the date of the timestamp.
+//^|C |If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end timestamps, the interval SHALL contain the timestamp.
+//^|D |If the `time` object in a record includes both a `date` and an `interval` member with start/end dates, the interval SHALL contain the date.
+//^|E |If the `time` object in a record includes both a `date` and an `interval` member with start/end timestamps, the interval SHALL include timestamps on the date.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core/time-instant-interval
+part:: If the `time` object in a record includes both a `date` and a `timestamp` member, the `full-date` parts SHALL be identical.
+part:: If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end dates, the interval SHALL contain the date of the timestamp.
+part:: If the `time` object in a record includes both a `timestamp` and an `interval` member with start/end timestamps, the interval SHALL contain the timestamp.
+part:: If the `time` object in a record includes both a `date` and an `interval` member with start/end dates, the interval SHALL contain the date.
+part:: If the `time` object in a record includes both a `date` and an `interval` member with start/end timestamps, the interval SHALL include timestamps on the date.
+====

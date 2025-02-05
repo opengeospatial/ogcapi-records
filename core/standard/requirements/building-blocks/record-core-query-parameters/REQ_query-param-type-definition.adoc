@@ -1,9 +1,32 @@
 [[req_record-core-query-parameters_type-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/type-definition*
-^|A |A searchable endpoint SHALL support the search by Type (`type`) parameter for the operation.
-^|B |The `type` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/type-definition*
+//^|A |A searchable endpoint SHALL support the search by Type (`type`) parameter for the operation.
+//^|B |The `type` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+//
+//[source,YAML]
+//----
+//name: type
+//in: query
+//required: false
+//schema:
+//  type: array
+//  items:
+//    type: string
+//    maxLength: 64
+//explode: false
+//----
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core-query-parameters/type-definition
+part:: A searchable endpoint SHALL support the search by Type (`type`) parameter for the operation.
+part:: The `type` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment): +
 
 [source,YAML]
 ----
@@ -17,4 +40,4 @@ schema:
     maxLength: 64
 explode: false
 ----
-|===
+====

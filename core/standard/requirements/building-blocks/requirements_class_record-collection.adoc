@@ -1,8 +1,30 @@
 [[rc_record-collection]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
-|Target type |Document model
-|Dependency |https://docs.ogc.org/is/17-069r4/17-069r4.html#_response_5[Feature Collection]
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
+//|Target type |Document model
+//|Dependency |https://docs.ogc.org/is/17-069r4/17-069r4.html#_response_5[Feature Collection]
+//|===
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
+subject:: Document model
+inherit:: https://docs.ogc.org/is/17-069r4/17-069r4.html#_response_5[Feature Collection]
+requirement:: /req/record-collection/mandatory-properties-collection
+requirement:: /req/record-collection/itemType
+requirement:: /req/record-collection/contact
+requirement:: /req/record-collection/license
+requirement:: /req/record-collection/links-record
+requirement:: /req/record-collection/links-records
+requirement:: /req/record-collection/records
+requirement:: /req/record-collection/records-array-name
+requirement:: /req/record-collection/links-catalog-related
+requirement:: /req/record-collection/links-catalog-series
+requirement:: /req/record-collection/links-catalog-hierarchy
+requirement:: /req/record-collection/links
+requirement:: /req/record-collection/default-mediatype
+====

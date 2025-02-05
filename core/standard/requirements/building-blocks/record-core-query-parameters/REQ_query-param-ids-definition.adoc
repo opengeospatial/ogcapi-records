@@ -1,9 +1,34 @@
 [[req_record-core-query-parameters_ids-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/ids-definition*
-^|A |A Records API implementation SHALL support the query by Ids (`ids`) parameter for the operation.
-^|B |The following OpenAPI 3.0 schema fragment SHALL define the characteristics of the `ids` parameter:
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/ids-definition*
+//^|A |A Records API implementation SHALL support the query by Ids (`ids`) parameter for the operation.
+//^|B |The following OpenAPI 3.0 schema fragment SHALL define the characteristics of the `ids` parameter:
+//
+//[source,YAML]
+//----
+//name: ids
+//in: query
+//required: false
+//schema:
+//  type: array
+//  items:
+//    type: string
+//explode: false
+//style: form
+//----
+//
+//^|C |An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core-query-parameters/ids-definition
+part:: A Records API implementation SHALL support the query by Ids (`ids`) parameter for the operation.
+part:: The following OpenAPI 3.0 schema fragment SHALL define the characteristics of the `ids` parameter: +
 
 [source,YAML]
 ----
@@ -18,5 +43,6 @@ explode: false
 style: form
 ----
 
-^|C |An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
-|===
+part:: An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
+
+====

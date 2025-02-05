@@ -1,10 +1,22 @@
 [[req_record-core-query-parameters_externalIds-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/externalIds-response*
 
-^|A |Only records that have an external identifier that matches one of the values listed using the `externalIds` parameter SHALL be in the result set. 
-^|B |If the search value is qualified with a scheme then both the scheme and the value of the record's external identifier SHALL match in order for the record to be in the result set.
-^|C |If the search value is not qualified with a scheme then only the value of the record's external identifier SHALL match in order for the record to be in the result set.
-^|D |If the search value is only the scheme then the scheme component of the record's external identified  SHALL match in order for the record to be in the result set.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/externalIds-response*
+//
+//^|A |Only records that have an external identifier that matches one of the values listed using the `externalIds` parameter SHALL be in the result set. 
+//^|B |If the search value is qualified with a scheme then both the scheme and the value of the record's external identifier SHALL match in order for the record to be in the result set.
+//^|C |If the search value is not qualified with a scheme then only the value of the record's external identifier SHALL match in order for the record to be in the result set.
+//^|D |If the search value is only the scheme then the scheme component of the record's external identified  SHALL match in order for the record to be in the result set.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core-query-parameters/externalIds-response
+part:: Only records that have an external identifier that matches one of the values listed using the `externalIds` parameter SHALL be in the result set. 
+part:: If the search value is qualified with a scheme then both the scheme and the value of the record's external identifier SHALL match in order for the record to be in the result set.
+part:: If the search value is not qualified with a scheme then only the value of the record's external identifier SHALL match in order for the record to be in the result set.
+part:: If the search value is only the scheme then the scheme component of the record's external identified  SHALL match in order for the record to be in the result set.
+====

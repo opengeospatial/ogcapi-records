@@ -1,7 +1,26 @@
 [[rc_record-core-query-parameters]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters
-|Target type |Web API
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters
+//|Target type |Web API
+//|===
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters
+subject:: Web API
+requirement:: /req/record-core-query-parameters/bbox
+requirement:: /req/record-core-query-parameters/datetime
+requirement:: /req/record-core-query-parameters/limit
+requirement:: /req/record-core-query-parameters/q-definition
+requirement:: /req/record-core-query-parameters/q-response
+requirement:: /req/record-core-query-parameters/type-definition
+requirement:: /req/record-core-query-parameters/type-response
+requirement:: /req/record-core-query-parameters/ids-definition
+requirement:: /req/record-core-query-parameters/ids-response
+requirement:: /req/record-core-query-parameters/externalIds-definition
+requirement:: /req/record-core-query-parameters/externalIds-response
+====

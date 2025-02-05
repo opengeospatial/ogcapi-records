@@ -1,6 +1,14 @@
 [[req_record-core_time-zone]]
-[width="90%",cols="2,7a"]
-|===
-^|*Requirement {counter:req-num}* |*/req/record-core/time-zone*
-^|A |Timestamps in the `time` member in a record SHALL use UTC ("Z") as the time zone.
-|===
+
+//[width="90%",cols="2,7a"]
+//|===
+//^|*Requirement {counter:req-num}* |*/req/record-core/time-zone*
+//^|A |Timestamps in the `time` member in a record SHALL use UTC ("Z") as the time zone.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core/time-zone
+part:: Timestamps in the `time` member in a record SHALL use UTC ("Z") as the time zone. 
+====

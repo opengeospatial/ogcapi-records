@@ -1,7 +1,15 @@
 [[req_crawlable-catalog_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/conformance*
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/conformance*
+//
+//^|A |The `conformsTo` array found in the catalog SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog`.
+//|===
 
-^|A |The `conformsTo` array found in the catalog SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog`.
-|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/crawlable-catalog/conformance
+part:: The `conformsTo` array found in the catalog SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog`.
+====

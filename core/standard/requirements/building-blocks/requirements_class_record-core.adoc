@@ -1,7 +1,25 @@
 [[rc_record-core]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
-|Target type |Document model
-|===
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
+//|Target type |Document model
+//|===
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
+subject:: Document model
+requirement:: /req/record-core/mandatory-properties-record
+requirement:: /req/record-core/time-instant
+requirement:: /req/record-core/time-interval
+requirement:: /req/record-core/time-instant-interval
+requirement:: /req/record-core/time-zone
+requirement:: /req/record-core/contact
+requirement:: /req/record-core/license
+requirement:: /req/record-core/links
+requirement:: /req/record-core/templated-link
+requirement:: /req/record-core/templated-link-header
+requirement:: /req/record-core/default-mediatype
+====
