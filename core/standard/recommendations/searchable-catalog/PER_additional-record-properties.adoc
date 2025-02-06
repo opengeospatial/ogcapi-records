@@ -1,8 +1,18 @@
 [[per_searchable-catalog_additional-record-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/searchable-catalog/additional-record-properties*
 
-^|A |Each record accessible via a searchable catalog MAY include zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
-^|B |Each record accessible via a searchable catalog MAY include any number of additional properties not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>. The meaning of these additional properties is not specified in this document.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/searchable-catalog/additional-record-properties*
+//
+//^|A |Each record accessible via a searchable catalog MAY include zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+//^|B |Each record accessible via a searchable catalog MAY include any number of additional properties not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>. The meaning of these additional properties is not specified in this document.
+//|===
+
+
+[permission]
+====
+[%metadata]
+identifier:: /per/searchable-catalog/additional-record-properties
+part:: Each record accessible via a searchable catalog MAY include zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+part:: Each record accessible via a searchable catalog MAY include any number of additional properties not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>. The meaning of these additional properties is not specified in this document.
+====

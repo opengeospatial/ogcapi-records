@@ -1,6 +1,14 @@
 [[rec_record-core_contact]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/contact*
-^|A |A contact `country` property SHOULD use ISO 3166-1 notation.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/contact*
+//^|A |A contact `country` property SHOULD use ISO 3166-1 notation.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/contact
+part:: A contact `country` property SHOULD use ISO 3166-1 notation.
+====

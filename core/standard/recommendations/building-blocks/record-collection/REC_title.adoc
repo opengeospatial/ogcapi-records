@@ -1,7 +1,15 @@
 [[rec_record-collection_title]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/title*
 
-A catalog SHOULD include the `title` property.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/title*
+//
+//A catalog SHOULD include the `title` property.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/catalog-title
+part:: A catalog SHOULD include the `title` property.
+====

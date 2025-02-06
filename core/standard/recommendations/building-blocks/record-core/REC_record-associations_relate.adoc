@@ -1,7 +1,15 @@
 [[rec_record-core_associations_relate]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/associations_relate*
 
-Implementations SHOULD use links in the `links` sections to represent associations to other internal or external resources related to the current record or the resource the record is describing.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/associations_relate*
+//
+//Implementations SHOULD use links in the `links` sections to represent associations to other internal or external resources related to the current record or the resource the record is describing.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/associations_relate
+part:: Implementations SHOULD use links in the `links` sections to represent associations to other internal or external resources related to the current record or the resource the record is describing.
+====

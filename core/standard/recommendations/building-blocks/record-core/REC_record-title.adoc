@@ -1,7 +1,15 @@
 [[rec_record-core_title]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/title*
 
-A record SHOULD include the `title` property to provide a human-readable name for the resource that the record describes and also to provide a target of possible text searches of the catalog.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/title*
+//
+//A record SHOULD include the `title` property to provide a human-readable name for the resource that the record describes and also to provide a target of possible text searches of the catalog.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/record-title
+part:: A record SHOULD include the `title` property to provide a human-readable name for the resource that the record describes and also to provide a target of possible text searches of the catalog.
+====

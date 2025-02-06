@@ -1,12 +1,26 @@
 [[per_searchable-catalog_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/searchable-catalog/conformance*
 
-A conformance declaration MAY include one or more of the following conformance classes:
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/searchable-catalog/conformance*
+//
+//A conformance declaration MAY include one or more of the following conformance classes:
+//
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery
+//|===
 
+
+[permission]
+====
+[%metadata]
+identifier:: /per/searchable-catalog/conformance
+part:: A conformance declaration MAY include one or more of the following conformance classes:
++
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery
-|===
+====

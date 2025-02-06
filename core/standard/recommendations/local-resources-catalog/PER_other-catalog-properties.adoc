@@ -1,7 +1,15 @@
 [[per_local-resources-catalog_other-catalog-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/local-resources-catalog/other-catalog-properties*
 
-A local resources catalog MAY contain any number of other additional properties not listed in <<collection-properties-table>> and <<local-resources-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/local-resources-catalog/other-catalog-properties*
+//
+//A local resources catalog MAY contain any number of other additional properties not listed in <<collection-properties-table>> and <<local-resources-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
+//|===
+
+[permission]
+====
+[%metadata]
+identifier:: /per/local-resources-catalog/other-catalog-properties
+part:: A local resources catalog MAY contain any number of other additional properties not listed in <<collection-properties-table>> and <<local-resources-additional-properties>>.  The meaning of these other additional properties is not specified in this document.
+====

@@ -1,8 +1,19 @@
 [[per_searchable-catalog_filtering_additional-queryables]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/searchable-catalog/filtering/additional-queryables*
-2+|The list of queryables MAY also include:
-^|A |Zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>,
-^|B |Any number of additional properties that are part of the record but are not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>. 
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/searchable-catalog/filtering/additional-queryables*
+//2+|The list of queryables MAY also include:
+//^|A |Zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>,
+//^|B |Any number of additional properties that are part of the record but are not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>. 
+//|===
+
+
+[permission]
+====
+[%metadata]
+identifier:: /per/searchable-catalog/filtering/additional-queryables
+statement:: The list of queryables MAY also include:
+part:: Zero or more of the optional properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>,
+part:: Any number of additional properties that are part of the record but are not listed in <<core-properties-record-table>> and <<core-properties-resource-table>>. 
+====

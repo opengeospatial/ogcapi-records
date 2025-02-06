@@ -1,7 +1,16 @@
 [[rec_record-core_time]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/time*
-^|A |A record SHOULD include a `time` property that indicates the temporal aspect of the resource that the record describes.
-^|B |If temporal information about the resource is not available then the `time` property SHOULD, even though it is optional, still be included in the record and its value SHOULD be set to `null`.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/time*
+//^|A |A record SHOULD include a `time` property that indicates the temporal aspect of the resource that the record describes.
+//^|B |If temporal information about the resource is not available then the `time` property SHOULD, even though it is optional, still be included in the record and its value SHOULD be set to `null`.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/time
+part:: A record SHOULD include a `time` property that indicates the temporal aspect of the resource that the record describes.
+part:: If temporal information about the resource is not available then the `time` property SHOULD, even though it is optional, still be included in the record and its value SHOULD be set to `null`.
+====

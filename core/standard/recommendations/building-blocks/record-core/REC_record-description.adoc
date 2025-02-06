@@ -1,7 +1,15 @@
 [[rec_record-core_description]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/description*
 
-A record SHOULD include the `description` property to provide a free-text description of the resource that the record describes.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/description*
+//
+//A record SHOULD include the `description` property to provide a free-text description of the resource that the record describes.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/record-description
+part:: A record SHOULD include the `description` property to provide a free-text description of the resource that the record describes.
+====

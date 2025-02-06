@@ -1,7 +1,16 @@
 [[rec_record-collection_keywords-themes]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-collection/keywords-themes*
-^|A |Implementations SHOULD use the `keywords` property to provide free-form terms or tags associated with this catalog.
-^|B |Implementations SHOULD use the `themes` property to enumerate 1..n concepts, and their respective knowledge organization system/controlled vocabulary, associated with the catalog.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-collection/keywords-themes*
+//^|A |Implementations SHOULD use the `keywords` property to provide free-form terms or tags associated with this catalog.
+//^|B |Implementations SHOULD use the `themes` property to enumerate 1..n concepts, and their respective knowledge organization system/controlled vocabulary, associated with the catalog.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-collection/keywords-themes
+part:: Implementations SHOULD use the `keywords` property to provide free-form terms or tags associated with this catalog.
+part:: Implementations SHOULD use the `themes` property to enumerate 1..n concepts, and their respective knowledge organization system/controlled vocabulary, associated with the catalog.
+====

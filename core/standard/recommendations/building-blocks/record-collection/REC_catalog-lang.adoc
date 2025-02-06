@@ -1,8 +1,18 @@
 [[rec_record-collection_langs]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-collection/langs*
-^|A |The language used to express text values in a catalog SHOULD be specified using the <<collection-properties-table,`language`>> property.
-^|B |The list of other languages in which the catalog may be retrieved SHOULD be specified using the <<collection-properties-table,`languages`>> property.
-^|C |If one or more language-specific links are included in the links section of a catalog (path: `links`) pointing to alternate language representations of this catalog, the language used as the `hreflang` value SHOULD be one of the languages listed as the value of the <<collection-properties-table,`languages`>> property of the catalog.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-collection/langs*
+//^|A |The language used to express text values in a catalog SHOULD be specified using the <<collection-properties-table,`language`>> property.
+//^|B |The list of other languages in which the catalog may be retrieved SHOULD be specified using the <<collection-properties-table,`languages`>> property.
+//^|C |If one or more language-specific links are included in the links section of a catalog (path: `links`) pointing to alternate language representations of this catalog, the language used as the `hreflang` value SHOULD be one of the languages listed as the value of the <<collection-properties-table,`languages`>> property of the catalog.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-collection/langs
+part:: The language used to express text values in a catalog SHOULD be specified using the <<collection-properties-table,`language`>> property.
+part:: The list of other languages in which the catalog may be retrieved SHOULD be specified using the <<collection-properties-table,`languages`>> property.
+part:: If one or more language-specific links are included in the links section of a catalog (path: `links`) pointing to alternate language representations of this catalog, the language used as the `hreflang` value SHOULD be one of the languages listed as the value of the <<collection-properties-table,`languages`>> property of the catalog.
+====

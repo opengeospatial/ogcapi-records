@@ -1,8 +1,18 @@
 [[per_searchable-catalog_additional-catalog-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/searchable-catalog/additional-catalog-properties*
 
-^|A |A catalog object MAY include zero or more of the optional properties listed in <<collection-properties-table>>.
-^|B |A catalog object MAY include any number of additional properties not listed in <<collection-properties-table>>. The meaning of these additional properties is not specified in this document.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/searchable-catalog/additional-catalog-properties*
+//
+//^|A |A catalog object MAY include zero or more of the optional properties listed in <<collection-properties-table>>.
+//^|B |A catalog object MAY include any number of additional properties not listed in <<collection-properties-table>>. The meaning of these additional properties is not specified in this document.
+//|===
+
+
+[permission]
+====
+[%metadata]
+identifier:: /per/searchable-catalog/additional-catalog-properties
+part:: A catalog object MAY include zero or more of the optional properties listed in <<collection-properties-table>>.
+part:: |A catalog object MAY include any number of additional properties not listed in <<collection-properties-table>>. The meaning of these additional properties is not specified in this document.
+====

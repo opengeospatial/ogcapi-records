@@ -1,7 +1,15 @@
 [[rec_local-resource-catalog_filtering_cql2-JSON-encoding]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalog/filtering/cql2-JSON-encoding*
 
-If a filter expression can be represented for its intended use as JSON, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/21-065.html#cql2-json[CQL JSON] encoding.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/local-resources-catalog/filtering/cql2-JSON-encoding*
+//
+//If a filter expression can be represented for its intended use as JSON, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/21-065.html#cql2-json[CQL JSON] encoding.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/local-resources-catalog/filtering/cql2-JSON-encoding
+part:: If a filter expression can be represented for its intended use as JSON, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/21-065.html#cql2-json[CQL JSON] encoding.
+====

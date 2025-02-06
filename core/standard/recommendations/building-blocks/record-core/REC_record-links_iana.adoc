@@ -1,7 +1,15 @@
 [[rec_record-core_links_iana]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/links_iana*
 
-Links relations for links in the `links` or `linkTermplates` sections SHOULD be taked from the official https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA Link Relation Types] registry.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/links_iana*
+//
+//Links relations for links in the `links` or `linkTermplates` sections SHOULD be taked from the official https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA Link Relation Types] registry.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/links_iana
+part:: Links relations for links in the `links` or `linkTermplates` sections SHOULD be taked from the official https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA Link Relation Types] registry.
+====

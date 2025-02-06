@@ -1,6 +1,14 @@
 [[rec_record-core-query-parameters_param-type-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core-query-parameters/param-type-definition*
-^|A |The definition of the `type` parameter SHOULD be extended to enumerate the list of known record or resource types.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core-query-parameters/param-type-definition*
+//^|A |The definition of the `type` parameter SHOULD be extended to enumerate the list of known record or resource types.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core-query-parameters/param-type-definition
+part:: The definition of the `type` parameter SHOULD be extended to enumerate the list of known record or resource types.
+====

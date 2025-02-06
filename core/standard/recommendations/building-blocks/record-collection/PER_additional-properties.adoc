@@ -1,7 +1,17 @@
 [[per_record-collection_additional-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/record-collection/additional-properties*
-^|A |A catalog MAY contain zero or more of the optional properties listed in <<collection-properties-table>>.
-^|B |A catalog MAY include any number of additional properties not listed in <<collection-properties-table>>.  The meaning of these additional properties is not defined in this standard.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/record-collection/additional-properties*
+//^|A |A catalog MAY contain zero or more of the optional properties listed in <<collection-properties-table>>.
+//^|B |A catalog MAY include any number of additional properties not listed in <<collection-properties-table>>.  The meaning of these additional properties is not defined in this standard.
+//|===
+
+
+[permission]
+====
+[%metadata]
+identifier:: /per/record-collection/additional-properties
+part:: A catalog MAY contain zero or more of the optional properties listed in <<collection-properties-table>>.
+part:: A catalog MAY include any number of additional properties not listed in <<collection-properties-table>>.  The meaning of these additional properties is not defined in this standard.
+====

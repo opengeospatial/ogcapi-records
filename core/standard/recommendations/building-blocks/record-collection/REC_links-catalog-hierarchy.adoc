@@ -1,7 +1,16 @@
 [[rec_record-collection_links-catalog-hierarchy]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-collection/links-catalog-hierarchy*
-^|A |A child catalog SHOULD include a link (relation: `parent`) pointing to its immediate parent catalog in the hierarchy.
-^|B |A child catalog SHOULD include a link (relation: `root`) pointing to the root catalog of the hierarchy.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-collection/links-catalog-hierarchy*
+//^|A |A child catalog SHOULD include a link (relation: `parent`) pointing to its immediate parent catalog in the hierarchy.
+//^|B |A child catalog SHOULD include a link (relation: `root`) pointing to the root catalog of the hierarchy.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-collection/links-catalog-hierarchy
+part:: A child catalog SHOULD include a link (relation: `parent`) pointing to its immediate parent catalog in the hierarchy.
+part:: A child catalog SHOULD include a link (relation: `root`) pointing to the root catalog of the hierarchy.
+====

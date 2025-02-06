@@ -1,7 +1,16 @@
 [[per_record-collection_catalogs]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/record-collection/catalogs*
 
-A catalog MAY include zero or more references to other related catalogs.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/record-collection/catalogs*
+//
+//A catalog MAY include zero or more references to other related catalogs.
+//|===
+
+
+[permission]
+====
+[%metadata]
+identifier:: /per/record-collection/catalogs
+part:: A catalog MAY include zero or more references to other related catalogs.
+====

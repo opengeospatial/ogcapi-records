@@ -1,6 +1,14 @@
 [[rec_record-filtering_cql2-text-encoding]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-filtering/cql2-text-encoding*
-^|A |If a filter expression can be represented for its intended use as text, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/21-065.html#cql2-text[CQL text] encoding.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-filtering/cql2-text-encoding*
+//^|A |If a filter expression can be represented for its intended use as text, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/21-065.html#cql2-text[CQL text] encoding.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-filtering/cql2-text-encoding
+part:: If a filter expression can be represented for its intended use as text, servers SHOULD consider supporting the https://docs.ogc.org/DRAFTS/21-065.html#cql2-text[CQL text] encoding.
+====
