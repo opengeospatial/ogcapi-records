@@ -9,6 +9,14 @@
 |Dependency |<<ats_sorting,Sorting>>
 |===
 
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog/sorting
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/sorting
+classification:: Target Type:Web API
+====
+
 ==== Conformance
 
 include::searchable-catalog_sorting/ATS_conformance.adoc[]

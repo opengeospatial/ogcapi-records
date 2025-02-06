@@ -1,13 +1,24 @@
 [[ats_local-resource-catalog_query-parameters]]
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resource-catalog/query-parameters
-|Target type |Web API
-|Requirements class |<<rc_local-resources-catalog_query-parameters,Requirements Class "Query Parameters">>
-|Dependency |<<ats_local-resource-catalog,Local Resources Catalog>>
-|Dependency |<<ats_record-core-query-parameters,Record Core Query Parameters>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Conformance Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resource-catalog/query-parameters
+//|Target type |Web API
+//|Requirements class |<<rc_local-resources-catalog_query-parameters,Requirements Class "Query Parameters">>
+//|Dependency |<<ats_local-resource-catalog,Local Resources Catalog>>
+//|Dependency |<<ats_record-core-query-parameters,Record Core Query Parameters>>
+//|===
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resource-catalog/query-parameters
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resource-catalog/query-parameters
+classification:: Target Type:Web API
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters
+====
 
 ==== Conformance
 

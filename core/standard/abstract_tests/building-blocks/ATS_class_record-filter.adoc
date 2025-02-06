@@ -1,12 +1,23 @@
 [[ats_cql-filter]]
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter
-|Target type |Web API
-|Dependency |<<OAFeat-3,OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)>>
-|Requirements class |<<rc_cql-filter,Requirements Class "Filtering using the Common Query Language (CQL)">>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Conformance Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter
+//|Target type |Web API
+//|Dependency |<<OAFeat-3,OGC API - Features - Part 3: Filtering and the Common Query Language (CQL)>>
+//|Requirements class |<<rc_cql-filter,Requirements Class "Filtering using the Common Query Language (CQL)">>
+//|===
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/cql-filter
+classification:: Target Type:Web API
+inherit:: <<OGC19-079r2, OGC API - Features - Part 3: Filtering>>
+inherit:: <<OGC21-065r2, Common Query Language (CQL2)>>
+====
 
 ==== Filter Parameters
 

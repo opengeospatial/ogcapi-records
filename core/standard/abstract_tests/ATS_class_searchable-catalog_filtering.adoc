@@ -9,6 +9,14 @@
 |Dependency |<<ats_cql-filter,Filtering>>
 |===
 
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog/filtering
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/filtering
+classification:: Target Type:Web API
+====
+
 ==== Conformance
 
 include::searchable-catalog_filtering/ATS_conformance.adoc[]

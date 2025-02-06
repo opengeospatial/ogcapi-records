@@ -10,6 +10,14 @@
 |Dependency |<<ats_autodiscovery,Autodiscovery>>
 |===
 
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog
+classification:: Target Type:Web API
+====
+
 ==== Conformance
 
 include::local-resources-catalog/ATS_conformance.adoc[]
