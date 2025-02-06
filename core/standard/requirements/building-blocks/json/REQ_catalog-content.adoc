@@ -1,7 +1,15 @@
 [[req_json_catalog-content]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/json/catalog-content*
 
-The schema of all responses with the media type `application/ogc-catalog+json` SHALL validate against the OpenAPI 3.0 schema document https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[`catalog.yaml`].
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/json/catalog-content*
+//
+//The schema of all responses with the media type `application/ogc-catalog+json` SHALL validate against the OpenAPI 3.0 schema document https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[`catalog.yaml`].
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/catalog-content
+part:: The schema of all responses with the media type `application/ogc-catalog+json` SHALL validate against the OpenAPI 3.0 schema document https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[`catalog.yaml`].
+====

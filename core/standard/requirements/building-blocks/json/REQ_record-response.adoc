@@ -1,11 +1,25 @@
 [[req_json-record-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/json/record-response*
-^|A |200-responses of the server SHALL support the following media type:
 
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/json/record-response*
+//^|A |200-responses of the server SHALL support the following media type:
+//
+//* `application/geo+json` for resources that include record content.
+//
+//^|B |The `geometry` member SHALL be present and SHALL store a geometry, for the purpose of discovery, of the resource being described by the record.  This can be the actual geometry of the resource or some other representation of the space that the resource occupies.
+//^|C |The `extent` member SHALL include the bounding extent of the resource being described by the record.  If the server chooses to use the bounding box of the resource as the `geometry` of the resource, then the `geometry` and `extent` values may be the same.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/record-response
+part:: 200-responses of the server SHALL support the following media type:
++
 * `application/geo+json` for resources that include record content.
 
-^|B |The `geometry` member SHALL be present and SHALL store a geometry, for the purpose of discovery, of the resource being described by the record.  This can be the actual geometry of the resource or some other representation of the space that the resource occupies.
-^|C |The `extent` member SHALL include the bounding extent of the resource being described by the record.  If the server chooses to use the bounding box of the resource as the `geometry` of the resource, then the `geometry` and `extent` values may be the same.
-|===
+part:: The `geometry` member SHALL be present and SHALL store a geometry, for the purpose of discovery, of the resource being described by the record.  This can be the actual geometry of the resource or some other representation of the space that the resource occupies.
+part:: The `extent` member SHALL include the bounding extent of the resource being described by the record.  If the server chooses to use the bounding box of the resource as the `geometry` of the resource, then the `geometry` and `extent` values may be the same.
+====

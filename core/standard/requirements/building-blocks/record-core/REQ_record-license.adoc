@@ -19,8 +19,8 @@
 [%metadata]
 identifier:: /req/record-core/license
 part:: If the resource is being made available under a common license then a https://spdx.org/licenses/[SPDX license identifier] SHALL be used as the value of the `license` property.
-part:: If the resource is being made available under: +
-
+part:: If the resource is being made available under: 
++
 * more than one common license with a https://spdx.org/licenses/[SPDX license identifier],
 * one or more licenses that have not been assigned a https://spdx.org/licenses/[SPDX license identifier],
 * one or more custom licenses

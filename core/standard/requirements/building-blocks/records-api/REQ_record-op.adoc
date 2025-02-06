@@ -1,7 +1,17 @@
 [[req_records-api_record-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/records-api/record-op*
-^|A |For every record in a catalog the server SHALL support the HTTP GET operation at the `/collection/{collectionId}/items/{recordId}` path.
-^|B |The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the value of the `itemType` (JSONPath `$.collections[*].itemType`) is `record`. `id` is a local identifier of the record.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/records-api/record-op*
+//^|A |For every record in a catalog the server SHALL support the HTTP GET operation at the `/collection/{collectionId}/items/{recordId}` path.
+//^|B |The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the value of the `itemType` (JSONPath `$.collections[*].itemType`) is `record`. `id` is a local identifier of the record.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/records-api/record-op
+part:: For every record in a catalog the server SHALL support the HTTP GET operation at the `/collection/{collectionId}/items/{recordId}` path.
+part:: The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the value of the `itemType` (JSONPath `$.collections[*].itemType`) is `record`. `id` is a local identifier of the record.
+====

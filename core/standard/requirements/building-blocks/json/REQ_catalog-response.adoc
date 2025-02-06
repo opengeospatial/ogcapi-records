@@ -1,8 +1,18 @@
 [[req_json_collection-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/json/collection-response*
-^|A |200-responses of the server SHALL support the following media type:
 
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/json/collection-response*
+//^|A |200-responses of the server SHALL support the following media type:
+//
+//* `application/ogc-catalog+json` for catalog or record collection resources.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/collection-response
+part:: 200-responses of the server SHALL support the following media type:
++
 * `application/ogc-catalog+json` for catalog or record collection resources.
-|===
+====

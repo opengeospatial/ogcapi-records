@@ -26,8 +26,8 @@
 [%metadata]
 identifier:: /req/record-core-query-parameters/externalIds-definition
 part:: A searchable endpoint SHALL support search by External Identifiers (`externalIds`) parameter for the operation.
-part:: The `externalIds` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment): +
-
+part:: The `externalIds` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment): 
++
 [source,YAML]
 ----
 name: externalIds

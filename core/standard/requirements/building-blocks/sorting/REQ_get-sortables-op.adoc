@@ -6,3 +6,12 @@
 ^|A |For every catalog, the server SHALL support the HTTP GET operation at the sortables endpoint and the media type `application/schema+json`.
 ^|B |The sortables resource SHALL be referenced from the catalog with a link with the link relation type `http://www.opengis.net/def/rel/ogc/1.0/sortables`.
 |===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/sorting/get-sortables-op
+part:: For every catalog, the server SHALL support the HTTP GET operation at the sortables endpoint and the media type `application/schema+json`.
+part:: The sortables resource SHALL be referenced from the catalog with a link with the link relation type `http://www.opengis.net/def/rel/ogc/1.0/sortables`.
+====

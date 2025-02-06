@@ -21,6 +21,8 @@
 :mn-output-extensions: xml,html,pdf
 :local-cache-only:
 :data-uri-image:
+:htmltoclevels: 3
+:toclevels: 3
 :pdf-uri: ./document.pdf
 :xml-uri: ./document.xml
 :doc-uri: ./document.doc

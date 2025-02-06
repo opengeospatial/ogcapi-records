@@ -19,8 +19,8 @@
 ====
 [%metadata]
 identifier:: /req/record-core/templated-link
-part:: A templated link SHALL be defined by the following schema fragment: +
-
+part:: A templated link SHALL be defined by the following schema fragment: 
++
 [source,YAML]
 ----
 include::../../../../openapi/schemas/linkTemplate.yaml[]

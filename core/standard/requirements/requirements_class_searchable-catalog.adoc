@@ -1,8 +1,21 @@
 [[rc_searchable-catalog]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog
-|Target type |Web API
-|Dependency |<<rc_records-api,Records API>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog
+//|Target type |Web API
+//|Dependency |<<rc_records-api,Records API>>
+//|===
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog
+subject:: Web API
+inherit:: <<rc_records-api,Records API>>
+requirement:: /req/searchable-catalog/common
+requirement:: /req/searchable-catalog/conformance
+requirement:: /req/searchable-catalog/mandatory-catalog-properties
+requirement:: /req/searchable-catalog/mandatory-record-properties
+====

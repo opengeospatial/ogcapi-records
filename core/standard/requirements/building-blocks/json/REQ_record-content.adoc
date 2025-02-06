@@ -1,14 +1,29 @@
 [[req_json_record-content]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/json/record-content*
-^|A |Every 200-response with the media type `application/geo+json` SHALL be
 
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/json/record-content*
+//^|A |Every 200-response with the media type `application/geo+json` SHALL be
+//
+//* a link:https://tools.ietf.org/html/rfc7946#section-3.3[GeoJSON FeatureCollection Object] for records, and
+//* a link:https://tools.ietf.org/html/rfc7946#section-3.2[GeoJSON Feature Object] for a single record.
+//
+//^|B |The links specified in the requirements <<req_core_rc-links,/req/core/rc-links>> and <<req_core_record-links,/req/core/record-links>> SHALL be added in an extension property (foreign member) with the name `links`.
+//^|C |The schema of all responses with the media type `application/geo+json` SHALL validate against the OpenAPI 3.0 schema document `recordGeoJSON.yaml`.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/record-content
+part:: Every 200-response with the media type `application/geo+json` SHALL be
++
 * a link:https://tools.ietf.org/html/rfc7946#section-3.3[GeoJSON FeatureCollection Object] for records, and
 * a link:https://tools.ietf.org/html/rfc7946#section-3.2[GeoJSON Feature Object] for a single record.
 
-^|B |The links specified in the requirements <<req_core_rc-links,/req/core/rc-links>> and <<req_core_record-links,/req/core/record-links>> SHALL be added in an extension property (foreign member) with the name `links`.
-^|C |The schema of all responses with the media type `application/geo+json` SHALL validate against the OpenAPI 3.0 schema document `recordGeoJSON.yaml`.
-|===
+part:: The links specified in the requirements <<req_core_rc-links,/req/core/rc-links>> and <<req_core_record-links,/req/core/record-links>> SHALL be added in an extension property (foreign member) with the name `links`.
+part:: The schema of all responses with the media type `application/geo+json` SHALL validate against the OpenAPI 3.0 schema document `recordGeoJSON.yaml`.
+====
 
 NOTE: It should be noted that the `recordGeoJSON.yaml` schema makes the `geometry` member mandatory because the https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON RFC] requires that the `geometry` member be present.  If a resource described by a JSON-encoded record does not have any spatial characteristics, the values of the `geometry` member can be `null` as per the https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON RFC].

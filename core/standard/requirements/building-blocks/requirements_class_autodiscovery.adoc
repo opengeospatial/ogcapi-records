@@ -1,8 +1,19 @@
 [[rc_autodiscovery]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscovery
-|Target type |Web API
-|Dependency |<<rc_record-collection,Record Collection>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscovery
+//|Target type |Web API
+//|Dependency |<<rc_record-collection,Record Collection>>
+//|===
+
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscovery
+subject:: Web API
+inherit:: <<rc_record-collection,Record Collection>>
+requirement:: /req/autodiscovery/links
+====

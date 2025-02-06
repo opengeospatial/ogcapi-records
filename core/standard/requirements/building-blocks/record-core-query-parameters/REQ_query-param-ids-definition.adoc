@@ -28,8 +28,8 @@
 [%metadata]
 identifier:: /req/record-core-query-parameters/ids-definition
 part:: A Records API implementation SHALL support the query by Ids (`ids`) parameter for the operation.
-part:: The following OpenAPI 3.0 schema fragment SHALL define the characteristics of the `ids` parameter: +
-
+part:: The following OpenAPI 3.0 schema fragment SHALL define the characteristics of the `ids` parameter: 
++
 [source,YAML]
 ----
 name: ids

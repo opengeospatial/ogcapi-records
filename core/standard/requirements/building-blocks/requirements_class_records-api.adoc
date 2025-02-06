@@ -21,4 +21,13 @@ inherit:: http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 inherit:: <<rc_record-core-query-parameters,Records Core Query Parameters>>
 inherit::  <<rc_record-collection,Record Collection>>
 inherit:: <<rc_record-core,Record Core>>
+requirement:: /req/records-api/features-api
+requirement:: /req/records-api/resource-name-mapping
+requirement:: /req/records-api/catalog-response
+requirement:: /req/records-api/catalogs-response
+requirement:: /req/records-api/records-op
+requirement:: /req/records-api/mandatory-params
+requirement:: /req/records-api/query-params
+requirement:: /req/records-api/record-op
+requirement:: /req/records-api/record-response
 ====

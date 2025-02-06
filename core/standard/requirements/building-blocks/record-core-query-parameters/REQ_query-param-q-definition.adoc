@@ -30,8 +30,8 @@
 [%metadata]
 identifier:: /req/record-core-query-parameters/q-definition
 part:: A searchable endpoint SHALL support the Text Search (`q`) parameter for the operation.
-part:: The `q` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment): +
-
+part:: The `q` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment): 
++
 [source,YAML]
 ----
 name: q

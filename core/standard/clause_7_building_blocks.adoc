@@ -1382,6 +1382,8 @@ include::recommendations/building-blocks/html/REC_schema-org.adoc[]
 
 ==== Basic requirements
 
+include::requirements/building-blocks/requirements_class_oas30.adoc[]
+
 Servers conforming to this requirements class define their API using an 
 http://spec.openapis.org/oas/v3.0.3#openapi-document[OpenAPI Document].
 
