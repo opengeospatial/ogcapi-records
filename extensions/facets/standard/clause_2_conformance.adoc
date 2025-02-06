@@ -1,0 +1,25 @@
+== Conformance
+
+This standard defines one requirements / conformance class:
+
+   *  <<rc_simple,Simple Facets>>
+   *  <<rc_advanced,Advanced Facets>>
+
+The standardization target is "Web APIs".
+
+The URIs of the associated conformance classes are: 
+
+[#conf_class_uris,reftext='{table-caption} {counter:table-num}']
+.Conformance class URIs
+[cols="25,75",options="header"]
+|===
+|Conformance class |URI
+|Simple Facets |http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/simple
+|Advanced Facets |http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/advanced
+|===
+
+Conformance with this standard shall be checked using all the relevant tests
+specified in <<ats,Annex A>> of this document. The framework, concepts, and
+methodology for testing, and the criteria to be achieved to claim conformance
+are specified in the OGC Compliance Testing Policies and Procedures and the
+OGC Compliance Testing web site.
