@@ -1,7 +1,16 @@
 [[req_local-resources-catalog_mandatory-catalog-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/mandatory-catalog-properties*
 
-The information model of the local resources catalog SHALL contain all the mandatory properties listed in <<collection-properties-table>>.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/mandatory-catalog-properties*
+//
+//The information model of the local resources catalog SHALL contain all the mandatory properties listed in <<collection-properties-table>>.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/local-resources-catalog/mandatory-catalog-properties
+part:: The information model of the local resources catalog SHALL contain all the mandatory properties listed in <<collection-properties-table>>.
+====

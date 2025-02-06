@@ -1,17 +1,35 @@
 [[req_sorting_defaultSortOrder-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/sorting/defaultSortOrder-definition*
 
-^|A |The information model of a catalog SHALL include the `defaultSortOrder` member with the following characteristics (using an OpenAPI Specification 3.0 fragment):
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/sorting/defaultSortOrder-definition*
+//
+//^|A |The information model of a catalog SHALL include the `defaultSortOrder` member with the following characteristics (using an OpenAPI Specification 3.0 fragment):
+//
+//[source,YAML]
+//----
+//include::../../../../openapi/schemas/defaultSortOrder.yaml[]
+//----
+//
+//^|B |Each object in the array SHALL include the properties `field` containing the name of the sortable and `direction` indicating the direction of sorting
+//^|C |If the value of the `direction` property is `asc` this SHALL indicate that the sort order is ascending.
+//^|C |If the value of the `direction` property is `desc` this SHALL indicate that the sort order is descending.
+//^|D |If the `defaultSortOrder` member is not present in the response, then no sorting information SHALL be assumed.
+//|===
 
+[requirement]
+====
+[%metadata]
+identifier:: /req/sorting/defaultSortOrder-definition
+part:: The information model of a catalog SHALL include the `defaultSortOrder` member with the following characteristics (using an OpenAPI Specification 3.0 fragment): 
++
 [source,YAML]
 ----
 include::../../../../openapi/schemas/defaultSortOrder.yaml[]
 ----
 
-^|B |Each object in the array SHALL include the properties `field` containing the name of the sortable and `direction` indicating the direction of sorting
-^|C |If the value of the `direction` property is `asc` this SHALL indicate that the sort order is ascending.
-^|C |If the value of the `direction` property is `desc` this SHALL indicate that the sort order is descending.
-^|D |If the `defaultSortOrder` member is not present in the response, then no sorting information SHALL be assumed.
-|===
+part:: Each object in the array SHALL include the properties `field` containing the name of the sortable and `direction` indicating the direction of sorting
+part:: If the value of the `direction` property is `asc` this SHALL indicate that the sort order is ascending.
+part:: If the value of the `direction` property is `desc` this SHALL indicate that the sort order is descending.
+part:: If the `defaultSortOrder` member is not present in the response, then no sorting information SHALL be assumed.
+====

@@ -1,7 +1,16 @@
 [[rec_crawlable-catalog_record-file-location]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/crawlable-catalog/record-file-location*
 
-The record file SHOULD be located close to the resource(s) that the record describes.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/crawlable-catalog/record-file-location*
+//
+//The record file SHOULD be located close to the resource(s) that the record describes.
+//|===
+
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/crawlable-catalog/record-file-location
+part:: The record file SHOULD be located close to the resource(s) that the record describes.
+====

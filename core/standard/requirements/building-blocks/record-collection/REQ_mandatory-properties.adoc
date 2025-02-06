@@ -1,7 +1,15 @@
 [[req_record-collection_mandatory-properties-collection]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-collection/mandatory-properties-collection*
 
-A catalog SHALL include all the mandatory properties listed in <<collection-properties-table>>.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-collection/mandatory-properties-collection*
+//
+//A catalog SHALL include all the mandatory properties listed in <<collection-properties-table>>.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-collection/mandatory-properties-collection
+part:: A catalog SHALL include all the mandatory properties listed in <<collection-properties-table>>.
+====

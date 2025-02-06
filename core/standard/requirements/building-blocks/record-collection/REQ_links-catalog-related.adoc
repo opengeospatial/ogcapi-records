@@ -1,7 +1,15 @@
 [[req_record-collection_links-catalog-related]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-collection/links-catalog-related*
 
-A catalog referencing another related catalog in an unorganized set of catalogs SHALL include a link (relation: `related`) pointing to the related catalog.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-collection/links-catalog-related*
+//
+//A catalog referencing another related catalog in an unorganized set of catalogs SHALL include a link (relation: `related`) pointing to the related catalog.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-collection/links-catalog-related
+part:: A catalog referencing another related catalog in an unorganized set of catalogs SHALL include a link (relation: `related`) pointing to the related catalog.
+====

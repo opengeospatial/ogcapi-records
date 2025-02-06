@@ -1,8 +1,20 @@
 [[rc_html]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html
-|Target type |Document encoding
-|Dependency |http://www.w3.org/TR/html5/[HTML5]
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html
+//|Target type |Document encoding
+//|Dependency |http://www.w3.org/TR/html5/[HTML5]
+//|===
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html
+subject:: Document encoding
+inherit:: http://www.w3.org/TR/html5/
+requirement:: /req/html/conformance
+requirement:: /req/html/definition
+requirement:: /req/html/content
+====

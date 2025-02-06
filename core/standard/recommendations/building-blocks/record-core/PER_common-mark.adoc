@@ -1,7 +1,16 @@
 [[per_record-core_common-mark]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/record-core/common-mark*
 
-For any `description` member in a record, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/record-core/common-mark*
+//
+//For any `description` member in a record, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
+//|===
+
+
+[permission]
+====
+[%metadata]
+identifier:: /per/record-core/common-mark
+part:: For any `description` member in a record, https://spec.commonmark.org/current/[CommonMark] MAY be used for a rich text representation.
+====

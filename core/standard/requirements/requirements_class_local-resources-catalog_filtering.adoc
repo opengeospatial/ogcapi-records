@@ -1,9 +1,23 @@
 [[rc_local-resources-catalog_filtering]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/filtering
-|Target type |Web API
-|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
-|Dependency |<<rc_filtering,Filtering>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/filtering
+//|Target type |Web API
+//|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
+//|Dependency |<<rc_filtering,Filtering>>
+//|===
+
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/filtering
+subject:: Web API
+inherit:: <<rc_local-resources-catalog,Local Resources Catalog>>
+inherit:: <<rc_filtering,Filtering>>
+requirement:: /req/local-resource-catalog/filtering-conformance
+requirement:: /req/local-resources-catalog/filtering
+requirement:: /req/features-filter/filtering/queryables-link
+====

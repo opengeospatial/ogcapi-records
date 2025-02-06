@@ -1,7 +1,16 @@
 [[req_crawlable-catalog_record]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/record*
 
-A <<clause-record-core,record>> SHALL be created for each resource to be made discoverable.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/crawlable-catalog/record*
+//
+//A <<clause-record-core,record>> SHALL be created for each resource to be made discoverable.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/crawlable-catalog/record
+part:: A <<clause-record-core,record>> SHALL be created for each resource to be made discoverable.
+====

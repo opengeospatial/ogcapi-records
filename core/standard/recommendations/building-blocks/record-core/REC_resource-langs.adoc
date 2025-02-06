@@ -1,7 +1,15 @@
 [[rec_record-core_resource-langs]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/resource-langs*
 
-If there are one or more languages associated with the resource that a catalog record describes, those languages SHOULD be listed in the record using the <<core-properties-resource-table,`resourceLanguages`>> property.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/resource-langs*
+//
+//If there are one or more languages associated with the resource that a catalog record describes, those languages SHOULD be listed in the record using the <<core-properties-resource-table,`resourceLanguages`>> property.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/resource-langs
+part:: If there are one or more languages associated with the resource that a catalog record describes, those languages SHOULD be listed in the record using the <<core-properties-resource-table,`resourceLanguages`>> property.
+====

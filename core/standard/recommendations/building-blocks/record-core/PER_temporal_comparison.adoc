@@ -1,7 +1,16 @@
 [[per_record-core_temporal-comparison]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/record-core/temporal-comparison*
 
-`date` and `timestamp` are different datatypes and when attempting to compare them, a server MAY either return an error or it MAY cast the value(s) to compatible data types for comparison.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/record-core/temporal-comparison*
+//
+//`date` and `timestamp` are different datatypes and when attempting to compare them, a server MAY either return an error or it MAY cast the value(s) to compatible data types for comparison.
+//|===
+
+
+[permission]
+====
+[%metadata]
+identifier:: /per/record-core/temporal-comparison
+part:: `date` and `timestamp` are different datatypes and when attempting to compare them, a server MAY either return an error or it MAY cast the value(s) to compatible data types for comparison.
+====

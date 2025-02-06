@@ -1,11 +1,23 @@
 [[rec_record-core-query-parameters_param-q]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core-query-parameters/param-q*
 
-The `q` operator SHOULD, at least, be applied to the following core properties:
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core-query-parameters/param-q*
+//
+//The `q` operator SHOULD, at least, be applied to the following core properties:
+//
+//* title
+//* description
+//* keywords
+//|===
 
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core-query-parameters/param-q
+part:: The `q` operator SHOULD, at least, be applied to the following core properties:
++
 * title
 * description
 * keywords
-|===
+====

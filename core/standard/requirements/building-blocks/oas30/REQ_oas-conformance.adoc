@@ -1,7 +1,15 @@
 [[req_oas30_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/oas30/conformance*
 
-^|A |The `conformsTo` array found in the conformance path (path: `/conformance`) SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30`.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/oas30/conformance*
+//
+//^|A |The `conformsTo` array found in the conformance path (path: `/conformance`) SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30`.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/oas30/conformance
+part:: The `conformsTo` array found in the conformance path (path: `/conformance`) SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30`.
+====

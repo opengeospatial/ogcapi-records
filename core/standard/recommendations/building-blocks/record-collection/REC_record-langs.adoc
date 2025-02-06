@@ -1,7 +1,15 @@
 [[rec_record-collection_record-langs]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-collection/record-langs*
 
-The languages in which the records of the catalog can be represented SHOULD be listed using the <<collection-properties-table,`recordLanguages`>> property.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-collection/record-langs*
+//
+//The languages in which the records of the catalog can be represented SHOULD be listed using the <<collection-properties-table,`recordLanguages`>> property.
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-collection/record-langs
+part:: The languages in which the records of the catalog can be represented SHOULD be listed using the <<collection-properties-table,`recordLanguages`>> property.
+====

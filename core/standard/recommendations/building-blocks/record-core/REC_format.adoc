@@ -1,7 +1,15 @@
 [[rec_record-core_format]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/record-core/format*
 
-The value of the `mediaType` property should be taken from the list of https://www.iana.org/assignments/media-types/media-types.xhtml[IANA media types].
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/record-core/format*
+//
+//The value of the `mediaType` property should be taken from the list of https://www.iana.org/assignments/media-types/media-types.xhtml[IANA media types].
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/record-core/format
+part:: The value of the `mediaType` property should be taken from the list of https://www.iana.org/assignments/media-types/media-types.xhtml[IANA media types].
+====

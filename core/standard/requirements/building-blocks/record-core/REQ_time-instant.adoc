@@ -1,9 +1,18 @@
 [[req_record-core_time-instant]]
-[width="90%",cols="2,7a"]
-|===
-^|*Requirement {counter:req-num}* |*/req/record-core/time-instant*
-^|A |If the `time` object in a record includes a `date` member, the value SHALL conform to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match the production rule `full-date`.
-^|B |If the `time` object in a record includes a `timestamp` member, the value SHALL conform to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match the production rule `date-time`.
-|===
+
+//[width="90%",cols="2,7a"]
+//|===
+//^|*Requirement {counter:req-num}* |*/req/record-core/time-instant*
+//^|A |If the `time` object in a record includes a `date` member, the value SHALL conform to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match the production rule `full-date`.
+//^|B |If the `time` object in a record includes a `timestamp` member, the value SHALL conform to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match the production rule `date-time`.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core/time-instant
+part:: If the `time` object in a record includes a `date` member, the value SHALL conform to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match the production rule `full-date`.
+part:: If the `time` object in a record includes a `timestamp` member, the value SHALL conform to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match the production rule `date-time`.
+====
 
 NOTE: `date` and `timestamp` are different datatypes and so comparing them will require a cast.  This Standard does not prescribe how types are cast. The evaluation of comparison expressions that involve `date` and `timestamp` values will, therefore, be system dependent.

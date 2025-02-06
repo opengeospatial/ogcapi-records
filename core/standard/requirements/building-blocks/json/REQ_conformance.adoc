@@ -1,9 +1,17 @@
 [[req_json_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/json/conformance*
 
-^|A |The `conformsTo` array SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json`.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/json/conformance*
+//
+//^|A |The `conformsTo` array SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json`.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/conformance
+part:: The `conformsTo` array SHALL contain the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json`.
+====
 
 NOTE:  The location of the `conformsTo` array depends on the type of catalog being deployed.  In the case of the <<clause-searchable-catalog,searchable>> or <<clause-local-resources-catalog,local resources>> catalog, the `conformsTo` array can be found in the conformance page (path: `/conformance`) of the OGC API deployment or in the catalog.  In the case of a <<clause-crawlable-catalog,crawalable catalog>>, the `conformsTo` array is found in the catalog.

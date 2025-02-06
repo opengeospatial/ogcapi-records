@@ -1,7 +1,16 @@
 [[req_record-core-query-parameters_type-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/type-response*
 
-Only records whose type, as indicated by the value of the `type` core queryable, is equal to one of the listed values specified using the `type` parameter SHALL be in the result set.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/type-response*
+//
+//Only records whose type, as indicated by the value of the `type` core queryable, is equal to one of the listed values specified using the `type` parameter SHALL be in the result set.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core-query-parameters/type-response
+part:: Only records whose type, as indicated by the value of the `type` core queryable, is equal to one of the listed values specified using the `type` parameter SHALL be in the result set.
+====

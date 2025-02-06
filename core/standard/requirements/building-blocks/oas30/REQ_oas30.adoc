@@ -1,6 +1,15 @@
 [[req_oas30]] 
-[width="90%",cols="2,6"]
-|===
-^|*Requirement {counter:req-id}* |*/req/oas30* 
-^|A |The API implementation SHALL demonstrate conformance to the https://docs.ogc.org/is/17-069r4/17-069r4.html#_requirements_class_openapi_3_0[OpenAPI 3.0] requirements class of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Feature - Part 1: Core] Standard.
-|===
+
+//[width="90%",cols="2,6"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/oas30/oas-common* 
+//^|A |The API implementation SHALL demonstrate conformance to the https://docs.ogc.org/is/17-069r4/17-069r4.html#_requirements_class_openapi_3_0[OpenAPI 3.0] requirements class of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Feature - Part 1: Core] Standard.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/oas30/oas-common
+part:: The API implementation SHALL demonstrate conformance to the https://docs.ogc.org/is/17-069r4/17-069r4.html#_requirements_class_openapi_3_0[OpenAPI 3.0] requirements class of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Feature - Part 1: Core] Standard.
+====

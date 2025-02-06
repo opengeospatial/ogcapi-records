@@ -1,9 +1,24 @@
 [[rc_searchable-catalog_filtering]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/filtering
-|Target type |Web API
-|Dependency |<<rc_searchable-catalog,Searchable Catalog>>
-|Dependency |<<rc_filtering,Filtering>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/filtering
+//|Target type |Web API
+//|Dependency |<<rc_searchable-catalog,Searchable Catalog>>
+//|Dependency |<<rc_filtering,Filtering>>
+//|===
+
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/filtering
+subject:: Web API
+inherit:: <<rc_searchable-catalog,Searchable Catalog>>
+inherit:: <<rc_filtering,Filtering>>
+requirement:: /req/searchable-catalog/filtering
+requirement:: /req/searchable-catalog/filtering-conformance
+requirement:: /req/searchable-catalog/mandatory-queryables
+====
+

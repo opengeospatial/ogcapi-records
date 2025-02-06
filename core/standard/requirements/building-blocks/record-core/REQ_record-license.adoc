@@ -1,15 +1,31 @@
 [[req_record-core_license]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-core/license*
-^|A |If the resource is being made available under a common license then a https://spdx.org/licenses/[SPDX license identifier] SHALL be used as the value of the `license` property.
-^|B |If the resource is being made available under:
 
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-core/license*
+//^|A |If the resource is being made available under a common license then a https://spdx.org/licenses/[SPDX license identifier] SHALL be used as the value of the `license` property.
+//^|B |If the resource is being made available under:
+//
+//* more than one common license with a https://spdx.org/licenses/[SPDX license identifier],
+//* one or more licenses that have not been assigned a https://spdx.org/licenses/[SPDX license identifier],
+//* one or more custom licenses
+//
+//then the value of the `license` property SHALL be the value `other` and one or more links (relation: `license`) SHALL be included in the `links` section of the record pointing to the file(s) that contain the text of the licenses.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core/license
+part:: If the resource is being made available under a common license then a https://spdx.org/licenses/[SPDX license identifier] SHALL be used as the value of the `license` property.
+part:: If the resource is being made available under: 
++
 * more than one common license with a https://spdx.org/licenses/[SPDX license identifier],
 * one or more licenses that have not been assigned a https://spdx.org/licenses/[SPDX license identifier],
 * one or more custom licenses
 
 then the value of the `license` property SHALL be the value `other` and one or more links (relation: `license`) SHALL be included in the `links` section of the record pointing to the file(s) that contain the text of the licenses.
-|===
+====
 
 NOTE: There is also the case of a resource that is private or unpublished and is thus unlicensed.  In this case do not register such a resource in the catalog in the first place since there is no point in making such a resource discoverable.

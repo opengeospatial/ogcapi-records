@@ -1,7 +1,15 @@
 [[req_searchable-catalog_mandatory-record-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/searchable-catalog/mandatory-record-properties*
 
-Each record accessibles via a searchable catalog SHALL include all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/searchable-catalog/mandatory-record-properties*
+//
+//Each record accessibles via a searchable catalog SHALL include all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/searchable-catalog/mandatory-record-properties
+part:: Each record accessibles via a searchable catalog SHALL include all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+====

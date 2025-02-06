@@ -1,8 +1,17 @@
 [[rec_sorting_sortables-schema]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/sorting/sortables-schema*
-^|A |Each property SHOULD have a human readable title (`title`) and where
-necessary a description (`description`).
-^|B |Each property SHOULD have a single type (`type`).
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Recommendation {counter:rec-id}* |*/rec/sorting/sortables-schema*
+//^|A |Each property SHOULD have a human readable title (`title`) and where
+//necessary a description (`description`).
+//^|B |Each property SHOULD have a single type (`type`).
+//|===
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/sorting/sortables-schema
+part:: Each property SHOULD have a human readable title (`title`) and where necessary a description (`description`).
+part:: Each property SHOULD have a single type (`type`).
+====

@@ -1,10 +1,22 @@
 [[req_searchable-catalog]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/searchable-catalog*
-2+|Implementations of this requirements class SHALL implement the following common components:
-^|A |<<rc_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/records-api>>
-^|B |<<rc_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>>
-^|C |<<rc_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection>>
-^|D |<<rc_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters>>
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/searchable-catalog/common*
+//2+|Implementations of this requirements class SHALL implement the following common components:
+//^|A |<<rc_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/records-api>>
+//^|B |<<rc_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>>
+//^|C |<<rc_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection>>
+//^|D |<<rc_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters>>
+//|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/searchable-catalog/common
+statement:: Implementations of this requirements class SHALL implement the following common components:
+part:: <<rc_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/records-api>>
+part:: <<rc_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>>
+part:: <<rc_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection>>
+part:: <<rc_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters>>
+====

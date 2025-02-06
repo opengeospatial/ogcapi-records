@@ -1,7 +1,17 @@
 [[req_local-resources-catalog_sorting]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/sorting*
-2+|Implementations of sorting of record responses SHALL, at the local resources endpoint (e.g. `/collections`), implement the following requirements class.
-^|A |<<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/sorting*
+//2+|Implementations of sorting of record responses SHALL, at the local resources endpoint (e.g. `/collections`), implement the following requirements class.
+//^|A |<<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/local-resources-catalog/sorting
+statement:: Implementations of sorting of record responses SHALL, at the local resources endpoint (e.g. `/collections`), implement the following requirements class.
+part:: <<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
+====

@@ -1,7 +1,17 @@
 [[req_searchable-catalog_filtering]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/searchable-catalog/filtering*
-2+|Implementations that offer enhanced filtering SHALL implement the following requirements class at the searchable catalog enpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
-^|A |<<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/searchable-catalog/filtering*
+//2+|Implementations that offer enhanced filtering SHALL implement the following requirements class at the searchable catalog enpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
+//^|A |<<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/searchable-catalog/filtering
+statement:: Implementations that offer enhanced filtering SHALL implement the following requirements class at the searchable catalog enpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
+part:: <<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
+====

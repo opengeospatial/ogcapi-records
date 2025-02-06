@@ -1,7 +1,15 @@
 [[per_json_time]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/json/time*
 
-In the GeoJSON encoding of a record, the `time` member is a top-level field.  Since some popular GeoJSON tools only manipulate record properties encoded in the `properties` section of a GeoJSON record, implementations MAY duplicate the `time` member from the top level into the `properties` section to take advantage of these available tools.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Permission {counter:per-id}* |*/per/json/time*
+//
+//In the GeoJSON encoding of a record, the `time` member is a top-level field.  Since some popular GeoJSON tools only manipulate record properties encoded in the `properties` section of a GeoJSON record, implementations MAY duplicate the `time` member from the top level into the `properties` section to take advantage of these available tools.
+//|===
+
+[permission]
+====
+[%metadata]
+identifier:: /per/json/time
+part:: In the GeoJSON encoding of a record, the `time` member is a top-level field.  Since some popular GeoJSON tools only manipulate record properties encoded in the `properties` section of a GeoJSON record, implementations MAY duplicate the `time` member from the top level into the `properties` section to take advantage of these available tools.
+====

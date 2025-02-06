@@ -1,7 +1,16 @@
 [[req_record-collection_contact]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-collection/contact*
 
-See requirement <<req_record-core_contact,/req/record-core/contact>>.
-|===
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-collection/contact*
+//
+//See requirement <<req_record-core_contact,/req/record-core/contact>>.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-collection/contact
+part:: See requirement <<req_record-core_contact,/req/record-core/contact>>.
+====

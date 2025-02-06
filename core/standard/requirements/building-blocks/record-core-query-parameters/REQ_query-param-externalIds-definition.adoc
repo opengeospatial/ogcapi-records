@@ -1,10 +1,33 @@
 [[req_record-core-query-parameters_externalIds-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/externalIds-definition*
-^|A |A searchable endpoint SHALL support search by External Identifiers (`externalIds`) parameter for the operation.
-^|B |The `externalIds` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/externalIds-definition*
+//^|A |A searchable endpoint SHALL support search by External Identifiers (`externalIds`) parameter for the operation.
+//^|B |The `externalIds` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+//
+//[source,YAML]
+//----
+//name: externalIds
+//in: query
+//required: false
+//schema:
+//  type: array
+//  items:
+//    type: string
+//    pattern: ([^:]+:)?[^:]+
+//explode: false
+//----
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core-query-parameters/externalIds-definition
+part:: A searchable endpoint SHALL support search by External Identifiers (`externalIds`) parameter for the operation.
+part:: The `externalIds` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment): 
++
 [source,YAML]
 ----
 name: externalIds
@@ -17,4 +40,5 @@ schema:
     pattern: ([^:]+:)?[^:]+
 explode: false
 ----
-|===
+
+====
