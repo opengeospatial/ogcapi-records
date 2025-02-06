@@ -1,9 +1,21 @@
 [[rc_local-resources-catalog_sorting]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/sorting
-|Target type |Web API
-|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
-|Dependency |<<rc_sorting,Sorting>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/sorting
+//|Target type |Web API
+//|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
+//|Dependency |<<rc_sorting,Sorting>>
+//|===
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/sorting
+subject:: Web API
+inherit:: <<rc_local-resources-catalog,Local Resources Catalog>>
+inherit:: <<rc_sorting,Sorting>>
+requirement:: /req/local-resources-catalog/sorting-conformance
+requirement:: /req/local-resources-catalog/sorting
+====

@@ -1,7 +1,17 @@
 [[req_local-resource-catalog_filtering]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/filtering*
-2+|Implementations that offer enhanced filtering SHALL, at the local resources catalog endpoint (e.g. `/collections`), implement the following requirements class.
-^|A |<<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/filtering*
+//2+|Implementations that offer enhanced filtering SHALL, at the local resources catalog endpoint (e.g. `/collections`), implement the following requirements class.
+//^|A |<<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/local-resources-catalog/filtering
+statement:: Implementations that offer enhanced filtering SHALL, at the local resources catalog endpoint (e.g. `/collections`), implement the following requirements class.
+part:: <<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
+====

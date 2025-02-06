@@ -1,10 +1,26 @@
 [[rc_local-resources-catalog]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog
-|Target type |Web API
-|Dependency |<<rc_record-core,Record Core>>
-|Dependency |<<rc_record-collection,Record Collection>>
-|Dependency |<<rc_autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscovery>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog
+//|Target type |Web API
+//|Dependency |<<rc_record-core,Record Core>>
+//|Dependency |<<rc_record-collection,Record Collection>>
+//|Dependency |<<rc_autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscovery>>
+//|===
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog
+subject:: Web API
+inherit:: <<rc_record-core,Record Core>>
+inherit:: <<rc_record-collection,Record Collection>>
+inherit:: <<rc_autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscovery>>
+requirement:: /req/local-resources-catalog/common
+requirement:: /req/local-resources-catalog/conformance
+requirement:: /req/local-resources-catalog/mandatory-catalog-properties
+requirement:: /req/local-resources-catalog/mandatory-record-properties
+requirement:: /req/local-resources-catalog/discovery
+====

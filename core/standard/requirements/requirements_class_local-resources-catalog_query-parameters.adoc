@@ -1,9 +1,22 @@
 [[rc_local-resources-catalog_query-parameters]]
-[cols="1,4",width="90%"]
-|===
-2+|*Requirements Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/query-parameters
-|Target type |Web API
-|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
-|Dependency |<<rc_record-core-query-parameters,Record Core Query Parameters>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Requirements Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/query-parameters
+//|Target type |Web API
+//|Dependency |<<rc_local-resources-catalog,Local Resources Catalog>>
+//|Dependency |<<rc_record-core-query-parameters,Record Core Query Parameters>>
+//|===
+
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog/query-parameters
+subject:: Web API
+inherit:: <<rc_local-resources-catalog,Local Resources Catalog>>
+inherit:: <<rc_record-core-query-parameters,Record Core Query Parameters>>
+requirement:: /req/local-resource-catalog/query-parameters/conformance
+requirement:: /req/local-resources-catalog/query-parameters
+requirement:: /req/local-resources-catalog/response
+====

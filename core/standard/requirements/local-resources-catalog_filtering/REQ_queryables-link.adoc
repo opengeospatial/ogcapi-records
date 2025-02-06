@@ -1,7 +1,17 @@
 [[req_local-resources-catalog_filtering_queryables-link]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/features-filter/filtering/queryables-link*
-^|A |Implementations of this requirements class SHALL, in the `links` section of the local resources endpoint, include a link (relation: `http://www.opengis.net/def/rel/ogc/1.0/queryables`).
-^|B |This link SHALL point to a resource for discovering the list of record properties (and their types) that may be used to construct a filter expressions.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/features-filter/filtering/queryables-link*
+//^|A |Implementations of this requirements class SHALL, in the `links` section of the local resources endpoint, include a link (relation: `http://www.opengis.net/def/rel/ogc/1.0/queryables`).
+//^|B |This link SHALL point to a resource for discovering the list of record properties (and their types) that may be used to construct a filter expressions.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/features-filter/filtering/queryables-link
+part:: Implementations of this requirements class SHALL, in the `links` section of the local resources endpoint, include a link (relation: `http://www.opengis.net/def/rel/ogc/1.0/queryables`).
+part:: This link SHALL point to a resource for discovering the list of record properties (and their types) that may be used to construct a filter expressions.
+====
