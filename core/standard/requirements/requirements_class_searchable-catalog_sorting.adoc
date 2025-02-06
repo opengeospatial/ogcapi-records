@@ -17,4 +17,6 @@ identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-cat
 subject:: Web API
 inherit:: <<rc_searchable-catalog,Searchable Catalog>>
 inherit:: <<rc_sorting,Sorting>>
+requirement:: /req/searchable-catalog/sorting
+requirement:: /req/searchable-catalog/sorting-conformance
 ====

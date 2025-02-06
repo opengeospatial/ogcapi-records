@@ -17,4 +17,8 @@ identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-cat
 subject:: Web API
 inherit:: <<rc_searchable-catalog,Searchable Catalog>>
 inherit:: <<rc_filtering,Filtering>>
+requirement:: /req/searchable-catalog/filtering
+requirement:: /req/searchable-catalog/filtering-conformance
+requirement:: /req/searchable-catalog/mandatory-queryables
 ====
+

@@ -1,6 +1,15 @@
 [[req_searchable-catalog_mandatory-queryables]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/searchable-catalog/mandatory-queryables*
-2+|The list of queryables SHALL include all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Requirement {counter:req-id}* |*/req/searchable-catalog/mandatory-queryables*
+//2+|The list of queryables SHALL include all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+//|===
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/searchable-catalog/mandatory-queryables
+part:: The list of queryables SHALL include all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+====
