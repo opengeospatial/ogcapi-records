@@ -895,7 +895,7 @@ include::requirements/building-blocks/records-api/REQ_query-params.adoc[]
 
 [#response-encodings,reftext='{table-caption} {counter:table-num}']
 .Negotiated representation of response 
-[width=40%,cols="30%,70%",options="header"]
+[width=40%,cols=",",options="header"]
 |===
 |Representation |Requirements
 |JSON/GeoJSON |<<clause-record-encoding-json,Requirements Class JSON>>
