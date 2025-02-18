@@ -148,6 +148,16 @@ Records:
 OpenAPI page:
 * https://gpt.geocloud.com/geoportal2/#apiPanel
 
+### ArcGIS Hub Search API
+
+The [ArcGIS Hub](https://hub.arcgis.com/) Search API conforms to the new OGC API - Records specification.
+
+OpenAPI definition:
+* https://hub.arcgis.com/api/search/definition/
+
+User documentation: 
+* https://doc.arcgis.com/en/hub/content/federate-data-with-external-catalogs.htm#GUID-EAF833F8-FADA-4EC7-A1CA-F704DC987362
+
 ## GeoNetwork opensource
 
 [GeoNetwork](https://geonetwork-opensource.org) is a java/xml oriented catalogue application. As part of an ongoing effort, the GeoNetwork API component is extended to support OGC API - Records. The work in progress is available at https://github.com/geonetwork/geonetwork-microservices/pull/23.
