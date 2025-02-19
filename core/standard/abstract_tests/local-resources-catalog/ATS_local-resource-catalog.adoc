@@ -10,3 +10,16 @@
 * <<ats_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-colection>>
 * <<ats_autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery>>
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

@@ -9,3 +9,17 @@
 . Check that the value of the returned HTTP status header is +200+.
 . Check that only records whose identifier match one of the identifiers specified using `ids` query parameter are in the results set.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

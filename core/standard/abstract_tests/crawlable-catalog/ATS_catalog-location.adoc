@@ -7,3 +7,16 @@
 ^|Test Method |. Determine the URL of the crawlable catalog.
 . Verify that the URL can be resolved and retrieve the catalog object.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

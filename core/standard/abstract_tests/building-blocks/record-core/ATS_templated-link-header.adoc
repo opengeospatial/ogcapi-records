@@ -7,3 +7,16 @@
 ^|Test Method |. Construct a path for a given record with a templated link.
 . Check that a templated link appears in a HTTP header and is encoded according to https://ietf-wg-httpapi.github.io/link-template/draft-ietf-httpapi-link-template.html.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

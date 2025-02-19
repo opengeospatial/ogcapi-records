@@ -1,10 +1,26 @@
 [[ats_oas30_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/oas30/conformance*
-^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_oas30_conformance,/req/oas30/conformance>>
-^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/oas30/conformance*
+//^|Test Purpose |Validate conformance identification.
+//^|Requirement |<<req_oas30_conformance,/req/oas30/conformance>>
+//^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+//. Issue an HTTP GET request on that path.
+//. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30+`.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/oas30/conformance
+target:: /req/oas30/conformance
+test-purpose:: Validate conformance identification.
+test-method::
++
+--
+. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
 . Issue an HTTP GET request on that path.
 . Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30+`.
-|===
+--
+====

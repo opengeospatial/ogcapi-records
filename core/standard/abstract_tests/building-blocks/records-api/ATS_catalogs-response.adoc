@@ -9,3 +9,17 @@
 . Check that the value of the returned HTTP status header is +200+.
 . For each collection where the `itemType` property is a string with the value `record` use the test <<ats_records-api_catalog-response,/conf/records-api/catalog-response>> to validate the schema of each catalog description.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

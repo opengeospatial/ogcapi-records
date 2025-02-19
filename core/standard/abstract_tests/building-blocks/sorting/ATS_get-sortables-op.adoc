@@ -12,3 +12,16 @@
 . Issue an HTTP GET request on the path
 . For each sortable found in the `+defaultSortOrder+` array, check that it is  present in the results of the sortables result.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

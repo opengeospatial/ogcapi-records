@@ -10,3 +10,17 @@
 . Parse each retrieved record.
 . Check that each record includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

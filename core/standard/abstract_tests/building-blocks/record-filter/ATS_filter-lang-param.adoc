@@ -9,3 +9,16 @@
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

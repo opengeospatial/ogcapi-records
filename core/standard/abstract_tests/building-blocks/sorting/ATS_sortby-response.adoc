@@ -24,3 +24,17 @@
 ^|Test Method |. Construct a path for a collection page.
 . Check that the specific set of keys that may be used for sorting are specified by the `/collections/{collectionId}/sortables` resource
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

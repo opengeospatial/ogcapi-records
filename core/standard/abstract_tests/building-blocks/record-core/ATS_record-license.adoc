@@ -11,3 +11,16 @@
 . Check if the license includes a SPDX license identifier or the value `other`.
 . If the value `other` is used, check that one link has a `rel` property with value of `license`.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

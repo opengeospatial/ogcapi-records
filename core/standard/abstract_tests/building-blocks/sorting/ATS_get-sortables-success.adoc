@@ -15,3 +15,16 @@
   . Issue an HTTP GET request on the path.
   . Check that each sortable is available in the record's `+properties+` object.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

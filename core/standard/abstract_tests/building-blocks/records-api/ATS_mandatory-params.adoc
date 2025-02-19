@@ -17,3 +17,17 @@
 * <<req_record-core-query-parameters_q-definition,q>>
 * <<req_record-core-query-parameters_type-definition,type>>
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

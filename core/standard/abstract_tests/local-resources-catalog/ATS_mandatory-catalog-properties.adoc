@@ -10,3 +10,16 @@
 . Check that the response conforms to the requirements of the local resource being extended.
 . Check that the response includes all the mandatory properties listed in the <<collection-properties-table>>.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

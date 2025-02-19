@@ -6,3 +6,17 @@
 ^|Requirement |<<req_searchable-catalog_sorting,/req/searchable-catalog/sorting>>
 ^|Test Method |. Demonstrate conformance to <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

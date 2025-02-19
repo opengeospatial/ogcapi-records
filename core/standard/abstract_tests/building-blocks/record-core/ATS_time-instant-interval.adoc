@@ -13,3 +13,16 @@
 . If the time object includes both a `date` and an `interval` member with start/end dates, check that the interval contains the date.
 . If the time object includes both a `date` and an `interval` member with start/end timestamps, check that the interval includes timestamps on the date.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

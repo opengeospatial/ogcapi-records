@@ -30,3 +30,16 @@
 . Issue an HTTP GET request on the path.
 . Verify that the records returned in both responses are identical.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

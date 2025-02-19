@@ -13,3 +13,16 @@
 . Check that the value of the returned HTTP status header is +200+.
 . Inspect the API description document an verify that all the endpoints identified by links with relation `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog` are also defined as endpoints in the server's API description document.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

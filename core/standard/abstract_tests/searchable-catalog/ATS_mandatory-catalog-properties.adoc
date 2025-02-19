@@ -10,3 +10,17 @@
 . Parse each retrieved catalog description.
 . Check that each record includes all the mandatory properties listed in <<collection-properties-table>>.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

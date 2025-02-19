@@ -1,10 +1,34 @@
 [[ats_html_content]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/html/content*
-^|Test Purpose |Validate the HTML response content.
-^|Requirement |<<req_html_content,/req/html/content>>
-^|Test Method |. Construct a path for a `+collections/items+` page.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/html/content*
+//^|Test Purpose |Validate the HTML response content.
+//^|Requirement |<<req_html_content,/req/html/content>>
+//^|Test Method |. Construct a path for a `+collections/items+` page.
+//. Issue an HTTP GET request on the path
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that the HTTP Content-Type header value is `+text/html+`.
+//. Check that the response validates as an HTML 5 document
+//. Using the `+id+` of a given record, construct a path for a `+collections/items/<featureId>+` page.
+//. Issue an HTTP GET request on the path
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that the HTTP Content-Type header value is `+text/html+`.
+//. Check that the response validates as an HTML 5 document
+//. Check that all information identified in the schemas of the link:http://spec.openapis.org/oas/v3.0.3#responseObject[Response Object] exists in the HTML `<body>` and all links in HTML `<a>` elements in the HTML `<body>`
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/html/content
+target:: /req/html/content
+test-purpose:: Validate the HTML response content.
+test-method::
++
+--
+. Construct a path for a `+collections/items+` page.
 . Issue an HTTP GET request on the path
 . Check that the value of the returned HTTP status header is +200+.
 . Check that the HTTP Content-Type header value is `+text/html+`.
@@ -15,5 +39,5 @@
 . Check that the HTTP Content-Type header value is `+text/html+`.
 . Check that the response validates as an HTML 5 document
 . Check that all information identified in the schemas of the link:http://spec.openapis.org/oas/v3.0.3#responseObject[Response Object] exists in the HTML `<body>` and all links in HTML `<a>` elements in the HTML `<body>`
-|===
-
+--
+====

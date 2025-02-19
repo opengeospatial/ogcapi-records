@@ -1,12 +1,30 @@
 [[ats_record-collection_contact]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/contact*
-^|Test Purpose |Validate the behavior of `contacts` objects.
-^|Requirement |<<req_record-collection_contact,/req/record-collection/contact>>
-^|Test Method |. Construct a path for a catalog object.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/contact*
+//^|Test Purpose |Validate the behavior of `contacts` objects.
+//^|Requirement |<<req_record-collection_contact,/req/record-collection/contact>>
+//^|Test Method |. Construct a path for a catalog object.
+//. Issue a HTTP GET request on that path.
+//. Parse a `contacts` member if it exists.
+//. If there is a contacts `logo` member, check that the link has a `rel` property with value of `icon`. Check that the media type is an `image` media type. 
+//. If there is a contacts `links` member, check that the link has a `rel` property with value of `about`. Check that the media type indicates the content type of the link (e.g. `text/html` for a company's web page versus `text/vcard` for a virtual contact file).
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-collection/contact
+target:: /req/record-collection/contact
+test-purpose:: Validate the behavior of `contacts` objects.
+test-method::
++
+--
+. Construct a path for a catalog object.
 . Issue a HTTP GET request on that path.
 . Parse a `contacts` member if it exists.
 . If there is a contacts `logo` member, check that the link has a `rel` property with value of `icon`. Check that the media type is an `image` media type. 
 . If there is a contacts `links` member, check that the link has a `rel` property with value of `about`. Check that the media type indicates the content type of the link (e.g. `text/html` for a company's web page versus `text/vcard` for a virtual contact file).
-|===
+--
+====

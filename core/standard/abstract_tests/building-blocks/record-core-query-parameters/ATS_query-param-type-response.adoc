@@ -9,3 +9,17 @@
 . Check that the value of the returned HTTP status header is +200+.
 . Check that only records whose `type`, as indicated by the value of the `type` core queryable, is equal to one of the listed values specified using the `type` parameter are in the result set.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

@@ -12,3 +12,16 @@
 . Issue a HTTP GET request on that path.
 . Validate that the retrieved content is a valid catalog object.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

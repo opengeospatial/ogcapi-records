@@ -9,3 +9,17 @@
 . Check that the value of the returned HTTP status header is +200+.
 . Inspect the response and verify that the list of queryables includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

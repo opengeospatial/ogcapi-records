@@ -9,3 +9,17 @@
 . Check that the value of the returned HTTP status header is +200+.
 . Check that only records that have an external identifier, as indicated by the values of the `externalIds` core queryable, equal to one of the listed values specified using the `externalIds` parameter are in the result set.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

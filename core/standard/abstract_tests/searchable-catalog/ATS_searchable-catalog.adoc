@@ -9,3 +9,17 @@
 . Demonstrate conformance to <<rc_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection>> using test <<ats_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection>>.
 . Demonstrate conformance to <<rc_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters>> using test <<ats_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters>>.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

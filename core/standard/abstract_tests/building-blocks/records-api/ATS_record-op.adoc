@@ -8,3 +8,17 @@
 . Check that the value of the returned HTTP status header is +200+.
 . Validate the contents of the returned records using the test <<ats_records-api_record-response,/req/records-api/record-response>>.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

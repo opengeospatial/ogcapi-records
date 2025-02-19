@@ -11,3 +11,16 @@
 . If the start is a date, check that the end is a date, or `..`
 . If the start is a timestamp, check that the end is a timestamp or `..`
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

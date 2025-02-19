@@ -10,3 +10,16 @@
 . If the time object includes a `date` member, check that the value conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches the production rule `full-date`.
 . If the time object includes a `timestamp` member, check that the value conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches the production rule `date-time`.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

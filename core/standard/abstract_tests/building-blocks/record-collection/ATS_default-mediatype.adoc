@@ -1,12 +1,30 @@
 [[ats_record-collection_default-mediatype]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/default-mediatype*
-^|Test Purpose |Check the default encoding for a catalog.
-^|Requirement |<<req_record-collection_default-mediatype,/req/record-collection/default-mediatype>>
-^|Test Method |. Construct a path for a given catalog.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/default-mediatype*
+//^|Test Purpose |Check the default encoding for a catalog.
+//^|Requirement |<<req_record-collection_default-mediatype,/req/record-collection/default-mediatype>>
+//^|Test Method |. Construct a path for a given catalog.
+//. Issue a HTTP GET request on that path.
+//. Check if the <<rc_json,JSON conformance class>> is advertised for the catalog.
+//. If yes, then check that the media type for content is `application/ogc-catalog+json`.
+//. If no, then check that the media type for content is HTML.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-collection/default-mediatype
+target:: /req/record-collection/default-mediatype
+test-purpose:: Check the default encoding for a catalog.
+test-method::
++
+--
+. Construct a path for a given catalog.
 . Issue a HTTP GET request on that path.
 . Check if the <<rc_json,JSON conformance class>> is advertised for the catalog.
 . If yes, then check that the media type for content is `application/ogc-catalog+json`.
 . If no, then check that the media type for content is HTML.
-|===
+--
+====

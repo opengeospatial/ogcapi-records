@@ -6,3 +6,17 @@
 ^|Requirement |<<req_local-resources-catalog_sorting,/req/local-resources-catalog/sorting>>
 ^|Test Method |. Demonstrate conformance to <<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the local resources catalog endpoint (e.g. `/collections`) using the test <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>>.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

@@ -10,3 +10,17 @@
 . Validate that the filter query parameters are processed correctly as per https://portal.ogc.org/files/96288#filter-response[/req/filter/response].
 . All references to the term "features" must be replaced by the term "record" or "local resources" as the context may indicate
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

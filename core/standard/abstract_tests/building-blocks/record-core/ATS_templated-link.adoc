@@ -12,3 +12,15 @@
 . The link template may optionally include a `variables` property.
 |===
 
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

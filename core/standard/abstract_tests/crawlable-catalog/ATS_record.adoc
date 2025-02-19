@@ -9,3 +9,16 @@
 .  Check that the record validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml
 . Locate each link (relation: `describes`) in the links or linkTemplates section of the record and verify that each link target is retrieveable
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

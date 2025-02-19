@@ -10,3 +10,16 @@
 . If there is a contacts `logo` member, check that the link has a `rel` property with value of `icon`. Check that the media type is an `image` media type. 
 . If there is a contacts `links` member, check that the link has a `rel` property with value of `about`. Check that the media type indicates the content type of the link (e.g. `text/html` for a company's web page versus `text/vcard` for a virtual contact file).
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

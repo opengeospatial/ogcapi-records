@@ -17,3 +17,17 @@
 . Check that the value of the returned HTTP status header is +200+.
 . Check that only records that contain all the search terms specified, in the order specified and separated by any number of white spaces in one or more of the searched text fields are in the result set.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

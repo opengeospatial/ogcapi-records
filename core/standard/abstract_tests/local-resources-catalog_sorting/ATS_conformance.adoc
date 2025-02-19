@@ -10,3 +10,17 @@
 . Check that the `conformsTo` array contains the values:
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-sorting
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

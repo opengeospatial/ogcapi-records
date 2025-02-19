@@ -9,3 +9,16 @@
 . Parse time member.
 . Check that timestamps in the time member use UTC "Z" as the time zone.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

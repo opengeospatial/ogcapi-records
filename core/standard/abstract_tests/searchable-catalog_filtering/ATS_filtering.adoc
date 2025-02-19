@@ -6,3 +6,17 @@
 ^|Requirement |<<req_searchable-catalog_filtering,/req/searchable-catalog/filtering>>
 ^|Test Method |. Demonstrate conformance to <<ats_cql-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter>> at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

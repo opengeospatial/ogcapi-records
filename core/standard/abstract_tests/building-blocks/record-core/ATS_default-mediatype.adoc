@@ -10,3 +10,16 @@
 . If yes, then check that the media type for content is `application/geo+json; application=ogc-record`.
 . If no, then check that the media type for content is HTML.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

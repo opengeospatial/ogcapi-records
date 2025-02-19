@@ -15,3 +15,16 @@
 * a typed link to the response document in every other media type supported by the service (relation: `alternate`), and
 * a link to the catalog that contains this record (relation: `collection`).
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

@@ -6,3 +6,16 @@
 ^|Requirement |<<req_local-resources-catalog_filtering,/req/local-resources-catalog/filtering>>
 ^|Test Method |. Demonstrate conformance to <<ats_cql-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter>> at the local resources catalog endpoint (e.g. `/collections`).
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

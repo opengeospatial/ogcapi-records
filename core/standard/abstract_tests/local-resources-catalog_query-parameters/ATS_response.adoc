@@ -9,3 +9,17 @@
 . Issue an HTTP GET request on that path.
 . Check that all records in the response satisfy the query predicates specified using the query parameters.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

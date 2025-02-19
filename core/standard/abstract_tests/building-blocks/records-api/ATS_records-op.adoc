@@ -27,3 +27,17 @@ Type:
 
 . Execute requests with combinations of these query parameters and verify that only records that match all selection criteria are returned.
 |===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====

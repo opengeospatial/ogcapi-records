@@ -12,3 +12,16 @@
 . Parse the resulting OpenAPI document and detect a `+path+` object whose endpoint value ends with `+.../items`.
 . Check that the `+get.parameters+` object contains an object defining a `+sortby+` parameter.
 |===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: TBA
+target:: TBA
+test-purpose:: TBA
+test-method::
++
+--
+TBA
+--
+====
