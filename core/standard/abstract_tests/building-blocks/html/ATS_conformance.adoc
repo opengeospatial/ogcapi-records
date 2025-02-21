@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/html/conformance
 target:: /req/html/conformance
-test-purpose:: TBA
+test-purpose:: Validate html identification.
 test-method::
 +
 --

@@ -16,7 +16,7 @@
 ====
 [%metadata]
 identifier:: /conf/searchable-catalog/building-blocks
-target:: /req/searchable-catalog
+target:: /req/searchable-catalog/common
 test-purpose:: Validate conformance identification.
 test-method::
 +

@@ -1,13 +1,14 @@
 [[ats_searchable_catalog_filtering]]
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/filtering
-|Target type |Web API
-|Requirements class |<<rc_searchable-catalog_cql2-filter,Requirements Class "Searchable Catalog">>
-|Dependency |<<ats_searchable_catalog,Searchable Catalog>>
-|Dependency |<<ats_cql-filter,Filtering>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Conformance Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/filtering
+//|Target type |Web API
+//|Requirements class |<<rc_searchable-catalog_cql2-filter,Requirements Class "Searchable Catalog">>
+//|Dependency |<<ats_searchable_catalog,Searchable Catalog>>
+//|Dependency |<<ats_cql-filter,Filtering>>
+//|===
 
 [conformance_class]
 ====
@@ -15,6 +16,8 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog/filtering
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/filtering
 classification:: Target Type:Web API
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter
 ====
 
 ==== Conformance

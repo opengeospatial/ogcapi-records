@@ -47,6 +47,8 @@ schema:
     type: string
 explode: false
 ----
+
+[start=3]
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 --

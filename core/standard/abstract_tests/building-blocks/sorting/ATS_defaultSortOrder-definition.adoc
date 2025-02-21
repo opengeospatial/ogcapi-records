@@ -41,6 +41,8 @@ test-purpose:: Validate the behavior of sort order definitions.
 test-method::
 +
 --
+Sequence 1:
+
 . Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
 . Check that the `+defaultSortOrder+` attribute exists.
@@ -51,6 +53,8 @@ test-method::
 test-method::
 +
 --
+Sequence 2:
+
 . Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
 . Check that the `+defaultSortOrder+` attribute exists.
@@ -66,6 +70,8 @@ test-method::
 test-method::
 +
 --
+Sequence 3:
+
 . Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
 . Check that the `+defaultSortOrder+` attribute exists.

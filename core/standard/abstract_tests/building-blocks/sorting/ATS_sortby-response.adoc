@@ -36,6 +36,8 @@ test-purpose:: Validate the availability of the `+sortby+` query parameter.
 test-method::
 +
 --
+Sequence 1:
+
 . Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
 . Check that the `+defaultSortOrder+` attribute exists.
@@ -46,6 +48,8 @@ test-method::
 test-method::
 +
 --
+Sequence 2:
+
 . Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
 . Check that the `+defaultSortOrder+` attribute exists.
@@ -61,6 +65,8 @@ test-method::
 test-method::
 +
 --
+Sequence 3:
+
 . Construct a path for a collection page.
 . Check that the specific set of keys that may be used for sorting are specified by the `/collections/{collectionId}/sortables` resource
 --

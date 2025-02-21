@@ -15,8 +15,8 @@
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/local-resources-catalog
-target:: /req/local-resource-catalog
+identifier:: /conf/local-resources-catalog/building-blocks
+target:: /req/local-resource-catalog/common
 test-purpose:: Validate conformance identification.
 test-method::
 +
