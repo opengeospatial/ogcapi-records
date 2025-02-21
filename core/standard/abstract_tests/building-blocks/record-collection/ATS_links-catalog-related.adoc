@@ -1,13 +1,33 @@
 [[ats_record-collection_links-catalog-related]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/links-catalog-related*
-^|Test Purpose |Validate the behavior of link to related catalogs.
-^|Requirement |<<req_record-collection_links-catalog-related,/req/record-collection/links-catalog-related>>
-^|Test Method |. Construct a path for catalog object. 
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/links-catalog-related*
+//^|Test Purpose |Validate the behavior of link to related catalogs.
+//^|Requirement |<<req_record-collection_links-catalog-related,/req/record-collection/links-catalog-related>>
+//^|Test Method |. Construct a path for catalog object. 
+//. Issue a HTTP GET request on that path.
+//. Parse all link objects.
+//. Check if the catalog has links with `rel` property with value of `related`.
+//. Issue a HTTP GET request on each resulting path.
+//. If the media type of the retrived content indicates a catalog, validate that the retrieved content is a valid catalog object.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-collection/links-catalog-related
+target:: /req/record-collection/links-catalog-related
+test-purpose:: Validate the behavior of link to related catalogs.
+test-method::
++
+--
+. Construct a path for catalog object. 
 . Issue a HTTP GET request on that path.
 . Parse all link objects.
 . Check if the catalog has links with `rel` property with value of `related`.
 . Issue a HTTP GET request on each resulting path.
 . If the media type of the retrived content indicates a catalog, validate that the retrieved content is a valid catalog object.
-|===
+--
+====

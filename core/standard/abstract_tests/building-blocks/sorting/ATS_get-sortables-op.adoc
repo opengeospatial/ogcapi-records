@@ -1,14 +1,34 @@
 [[ats_sorting_get-sortables-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/sorting/get-sortables-op*
-^|Test Purpose |Validate the behavior of `+sortables+` endpoint.
-^|Requirement |<<req_sorting_get-sortables-op,/req/sorting/get-sortables-op>>
-^|Test Method |. Construct a path for a collection page.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/sorting/get-sortables-op*
+//^|Test Purpose |Validate the behavior of `+sortables+` endpoint.
+//^|Requirement |<<req_sorting_get-sortables-op,/req/sorting/get-sortables-op>>
+//^|Test Method |. Construct a path for a collection page.
+//. Issue an HTTP GET request on the path.
+//. Parse all link objects from collection objects whose `+itemType+` value is `+record+`.
+//. Check that at least one link contains a rel of http://www.opengis.net/def/rel/ogc/1.0/sortables with a media type of `+application/schema+json+`.
+//. Use the `+href+` attribute Construct a path for collection sortables.
+//. Issue an HTTP GET request on the path
+//. For each sortable found in the `+defaultSortOrder+` array, check that it is  present in the results of the sortables result.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/sorting/get-sortables-op
+target:: /req/sorting/get-sortables-op
+test-purpose:: Validate the behavior of `+sortables+` endpoint.
+test-method::
++
+--
+. Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
 . Parse all link objects from collection objects whose `+itemType+` value is `+record+`.
 . Check that at least one link contains a rel of http://www.opengis.net/def/rel/ogc/1.0/sortables with a media type of `+application/schema+json+`.
 . Use the `+href+` attribute Construct a path for collection sortables.
 . Issue an HTTP GET request on the path
 . For each sortable found in the `+defaultSortOrder+` array, check that it is  present in the results of the sortables result.
-|===
+--
+====

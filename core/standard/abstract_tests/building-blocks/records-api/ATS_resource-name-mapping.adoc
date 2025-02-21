@@ -1,10 +1,27 @@
 [[ats_records-api_resource-name-mapping]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/records-api/resource-name-mapping*
-^|Test Purpose |Validate the Records API implementation using Features API Standard with naming mapping.
-^|Requirement |<<req_records-api_resource-name-mapping,/req/records-api/resource-name-mapping>>
-^|Test Method |. Construct an API endpoint
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/records-api/resource-name-mapping*
+//^|Test Purpose |Validate the Records API implementation using Features API Standard with naming mapping.
+//^|Requirement |<<req_records-api_resource-name-mapping,/req/records-api/resource-name-mapping>>
+//^|Test Method |. Construct an API endpoint
+//. Check if the API conforms with http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard by replacing each reference to `features` or `feature` by the terms `records` or `record` when interpreting requirements from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard.
+//. Check the implementation of the Records API Standard with the https://docs.ogc.org/is/17-069r4/17-069r4.html#_abstract_test_suite_normative[Abstract Test Suite] from the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core] Standard.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/records-api/resource-name-mapping
+target:: /req/records-api/resource-name-mapping
+test-purpose:: Validate the Records API implementation using Features API Standard with naming mapping.
+test-method::
++
+--
+. Construct an API endpoint
 . Check if the API conforms with http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard by replacing each reference to `features` or `feature` by the terms `records` or `record` when interpreting requirements from the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard.
 . Check the implementation of the Records API Standard with the https://docs.ogc.org/is/17-069r4/17-069r4.html#_abstract_test_suite_normative[Abstract Test Suite] from the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core] Standard.
-|===
+--
+====

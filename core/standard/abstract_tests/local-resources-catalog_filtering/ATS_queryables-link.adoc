@@ -1,14 +1,34 @@
 [[ats_local-resources-catalog_filtering_queryables-link]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/filtering/queryables-link*
-^|Test Purpose |Validate queryables link for local resources catalog.
-^|Requirement |<<req_local-resources-catalog_filtering_queryables-link,/req/local-resources-catalog/filtering/queryables-link>>
-^|Test Method |. Construct a path to retrieve a local resources catalog.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/filtering/queryables-link*
+//^|Test Purpose |Validate queryables link for local resources catalog.
+//^|Requirement |<<req_local-resources-catalog_filtering_queryables-link,/req/local-resources-catalog/filtering/queryables-link>>
+//^|Test Method |. Construct a path to retrieve a local resources catalog.
+//. Issue an HTTP GET request and retrieve the catalog object.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Parse the `links` section of the response.
+//. Verify that a link with relation `http://www.opengis.net/def/rel/ogc/1.0/queryables` is present.
+//. Issue an HTTP GET request on the `href` of that link.
+//. Check that the value of the returned HTTP status header is +200+.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/local-resources-catalog/filtering/queryables-link
+target:: /req/local-resources-catalog/filtering/queryables-link
+test-purpose:: Validate queryables link for local resources catalog.
+test-method::
++
+--
+. Construct a path to retrieve a local resources catalog.
 . Issue an HTTP GET request and retrieve the catalog object.
 . Check that the value of the returned HTTP status header is +200+.
 . Parse the `links` section of the response.
 . Verify that a link with relation `http://www.opengis.net/def/rel/ogc/1.0/queryables` is present.
 . Issue an HTTP GET request on the `href` of that link.
 . Check that the value of the returned HTTP status header is +200+.
-|===
+--
+====

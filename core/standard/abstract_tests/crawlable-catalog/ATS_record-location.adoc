@@ -1,9 +1,24 @@
 [[ats_crawlable-catalog_record-location]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/record-location*
-^|Test Purpose |Validate a crawlable catalog.
-^|Requirement |<<req_crawlable-catalog_record-location,/req/crawlable-catalog/record-location>>
-^|Test Method |. Determine the URL of a record
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/record-location*
+//^|Test Purpose |Validate a crawlable catalog.
+//^|Requirement |<<req_crawlable-catalog_record-location,/req/crawlable-catalog/record-location>>
+//^|Test Method |. Determine the URL of a record
+//. Verify that the URL can be resolved and retrieve the record
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/crawlable-catalog/record-location
+target:: /req/crawlable-catalog/record-location
+test-purpose:: Validate a crawlable catalog.
+test-method::
++
+--
+. Determine the URL of a record
 . Verify that the URL can be resolved and retrieve the record
-|===
+--
+====

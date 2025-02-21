@@ -1,11 +1,29 @@
 [[ats_records-api_catalogs-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/records-api/catalogs-response*
-^|Test Purpose |Validate collections API endpoint.
-^|Requirement |<<req_records-api_catalogs-response,/req/records-api/catalogs-response>>
-^|Test Method |. Construct a path to retrieve a list of collections (path: `/collections`).
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/records-api/catalogs-response*
+//^|Test Purpose |Validate collections API endpoint.
+//^|Requirement |<<req_records-api_catalogs-response,/req/records-api/catalogs-response>>
+//^|Test Method |. Construct a path to retrieve a list of collections (path: `/collections`).
+//. Issue a HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. For each collection where the `itemType` property is a string with the value `record` use the test <<ats_records-api_catalog-response,/conf/records-api/catalog-response>> to validate the schema of each catalog description.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/records-api/catalogs-response
+target:: /req/records-api/catalogs-response
+test-purpose:: Validate collections API endpoint.
+test-method::
++
+--
+. Construct a path to retrieve a list of collections (path: `/collections`).
 . Issue a HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 . For each collection where the `itemType` property is a string with the value `record` use the test <<ats_records-api_catalog-response,/conf/records-api/catalog-response>> to validate the schema of each catalog description.
-|===
+--
+====

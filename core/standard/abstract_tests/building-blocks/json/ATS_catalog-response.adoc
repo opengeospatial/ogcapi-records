@@ -1,12 +1,28 @@
 [[ats_json_catalog-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/json/catalog-response*
-^|Test Purpose |Validate the JSON response of a catalog.
-^|Requirement |<<req_json_catalog-response,/req/json/catalog-response>>
-^|Test Method |. Construct a path for a `+catalog+` page.
-. Issue an HTTP GET request on the path
-. Check that the value of the returned HTTP status header is +200+.
-. Check that the HTTP Content-Type header value is `+application/ogc-catalog+json+`.
-|===
 
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/json/catalog-response*
+//^|Test Purpose |Validate the JSON response of a catalog.
+//^|Requirement |<<req_json_catalog-response,/req/json/catalog-response>>
+//^|Test Method |. Construct a path for a `+catalog+` page.
+//. Issue an HTTP GET request on the path
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that the HTTP Content-Type header value is `+application/ogc-catalog+json+`.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/json/catalog-response
+target:: /req/json/catalog-response
+test-purpose:: Validate the JSON response of a catalog.
+test-method::
++
+--
+. Construct a path for a `catalog` page.
+. Issue an HTTP GET request on the path
+. Check that the value of the returned HTTP status header is `200`.
+. Check that the HTTP Content-Type header value is `+application/ogc-catalog+json+`.
+--
+====

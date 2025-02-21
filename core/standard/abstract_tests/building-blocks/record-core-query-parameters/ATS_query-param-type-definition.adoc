@@ -1,10 +1,39 @@
 [[ats_record-core-query-parameters_type-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/type-definition*
-^|Test Purpose |Validate `type` query parameter.
-^|Requirement |<<req_record-core-query-parameters_type-definition,/req/record-core-query-parameters/type-definition>>
-^|Test Method |. Construct a path for a searchable endpoint and include the `type` query parameter.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/type-definition*
+//^|Test Purpose |Validate `type` query parameter.
+//^|Requirement |<<req_record-core-query-parameters_type-definition,/req/record-core-query-parameters/type-definition>>
+//^|Test Method |. Construct a path for a searchable endpoint and include the `type` query parameter.
+//. Validate that the `type` query parameter is constructed correctly using an OpenAPI Specification 3.0 fragment:
+//
+//[source,YAML]
+//----
+//name: type
+//in: query
+//required: false
+//schema:
+//  type: array
+//  items:
+//    type: string
+//    maxLength: 64
+//explode: false
+//----
+//. Issue an HTTP GET request on the path
+//. Check that the value of the returned HTTP status header is +200+.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core-query-parameters/type-definition
+target:: /req/record-core-query-parameters/type-definition
+test-purpose:: Validate `type` query parameter.
+test-method::
++
+--
+. Construct a path for a searchable endpoint and include the `type` query parameter.
 . Validate that the `type` query parameter is constructed correctly using an OpenAPI Specification 3.0 fragment:
 
 [source,YAML]
@@ -21,4 +50,5 @@ explode: false
 ----
 . Issue an HTTP GET request on the path
 . Check that the value of the returned HTTP status header is +200+.
-|===
+--
+====

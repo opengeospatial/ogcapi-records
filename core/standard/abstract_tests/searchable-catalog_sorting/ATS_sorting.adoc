@@ -1,8 +1,23 @@
 [[ats_searchable-catalog_building-blocks_sorting]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/building-blocks/sorting*
-^|Test Purpose |Validate sorting.
-^|Requirement |<<req_searchable-catalog_sorting,/req/searchable-catalog/sorting>>
-^|Test Method |. Demonstrate conformance to <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/building-blocks/sorting*
+//^|Test Purpose |Validate sorting.
+//^|Requirement |<<req_searchable-catalog_sorting,/req/searchable-catalog/sorting>>
+//^|Test Method |. Demonstrate conformance to <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/searchable-catalog/building-blocks/sorting
+target:: /req/searchable-catalog/sorting
+test-purpose:: Validate sorting.
+test-method::
++
+--
+. Demonstrate conformance to <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
+--
+====

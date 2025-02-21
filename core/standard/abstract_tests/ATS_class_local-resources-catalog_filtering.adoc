@@ -1,13 +1,24 @@
 [[ats_local-resources-catalog_filtering]]
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-filtering
-|Target type |Web API
-|Requirements class |<<rc_local-resources-catalog_filtering,Local Resources Catalog - Filtering>>
-|Dependency |<<ats_local-resources-catalog,Local Resources Catalog>>
-|Dependency |<<ats_cql-filter,Filtering>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Conformance Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-filtering
+//|Target type |Web API
+//|Requirements class |<<rc_local-resources-catalog_filtering,Local Resources Catalog - Filtering>>
+//|Dependency |<<ats_local-resources-catalog,Local Resources Catalog>>
+//|Dependency |<<ats_cql-filter,Filtering>>
+//|===
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-filtering
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-catalog-filtering
+classification:: Target Type:Web API
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
+====
 
 ==== Conformance
 

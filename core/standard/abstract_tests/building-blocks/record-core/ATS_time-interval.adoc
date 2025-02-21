@@ -1,13 +1,32 @@
 [[ats_record-core_time-interval]]
-[width="90%",cols="2,7a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/time-interval*
-^|Test Purpose |Validate the behavior of time interval for time objects.
-^|Requirement |<<req_record-core_time-interval,/req/record-core/time-interval>>
-^|Test Method |. Construct a path for a given record that includes the `time` member.
+
+//[width="90%",cols="2,7a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core/time-interval*
+//^|Test Purpose |Validate the behavior of time interval for time objects.
+//^|Requirement |<<req_record-core_time-interval,/req/record-core/time-interval>>
+//^|Test Method |. Construct a path for a given record that includes the `time` member.
+//. Issue a HTTP GET request on that path.
+//. Parse time object.
+//. If the time object includes an `interval` member, check that each array item is a string that is a double-dot (`..`) or conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches one of the following production rules: `full-date` (a date) or `date-time` (a timestamp)
+//. If the start is a date, check that the end is a date, or `..`
+//. If the start is a timestamp, check that the end is a timestamp or `..`
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core/time-interval
+target:: /req/record-core/time-interval
+test-purpose:: Validate the behavior of time interval for time objects.
+test-method::
++
+--
+. Construct a path for a given record that includes the `time` member.
 . Issue a HTTP GET request on that path.
 . Parse time object.
 . If the time object includes an `interval` member, check that each array item is a string that is a double-dot (`..`) or conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches one of the following production rules: `full-date` (a date) or `date-time` (a timestamp)
 . If the start is a date, check that the end is a date, or `..`
 . If the start is a timestamp, check that the end is a timestamp or `..`
-|===
+--
+====

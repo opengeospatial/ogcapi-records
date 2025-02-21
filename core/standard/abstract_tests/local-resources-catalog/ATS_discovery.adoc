@@ -1,10 +1,30 @@
 [[ats_local-resources-catalog_discovery]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/discovery*
-^|Test Purpose |Validate discovery identification.
-^|Requirement |<<req_local-resources-catalog_discovery,/req/local-resources-catalog/discovery>>
-^|Test Method |. Construct a path to retrieve a server's landing page.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/discovery*
+//^|Test Purpose |Validate discovery identification.
+//^|Requirement |<<req_local-resources-catalog_discovery,/req/local-resources-catalog/discovery>>
+//^|Test Method |. Construct a path to retrieve a server's landing page.
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Parse the links section of the landing page and identify all links with relation `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`.
+//. Construct a path to retrieve the server's API description document.
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Inspect the API description document an verify that all the endpoints identified by links with relation `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog` are also defined as endpoints in the server's API description document.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/local-resources-catalog/discovery
+target:: /req/local-resources-catalog/discovery
+test-purpose:: Validate discovery identification.
+test-method::
++
+--
+. Construct a path to retrieve a server's landing page.
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 . Parse the links section of the landing page and identify all links with relation `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`.
@@ -12,4 +32,5 @@
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 . Inspect the API description document an verify that all the endpoints identified by links with relation `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog` are also defined as endpoints in the server's API description document.
-|===
+--
+====

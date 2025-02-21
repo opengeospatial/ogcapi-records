@@ -1,11 +1,20 @@
 [[ats_oas30]]
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
-|Target type |Web API
-|Requirements class |<<rc_oas30,Requirements Class "OpenAPI 3.0">>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Conformance Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
+//|Target type |Web API
+//|Requirements class |<<rc_oas30,Requirements Class "OpenAPI 3.0">>
+//|===
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/oas30
+classification:: Target Type:Web API
+====
 
 ==== Conformance
 

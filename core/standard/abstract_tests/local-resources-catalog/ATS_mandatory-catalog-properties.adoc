@@ -1,12 +1,30 @@
 [[ats_local-resources-catalog_manadatory-catalog-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/mandatatory-catalog-properties*
-^|Test Purpose |Verify that all mandatory catalog properties are present.
-^|Requirement |<<req_local-resources-catalog_mandatory-catalog-properties,/req/local-resources-catalog/mandatory-catalog-properties>>
-^|Test Method |. Construct a path for a local resources catalog page.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/mandatatory-catalog-properties*
+//^|Test Purpose |Verify that all mandatory catalog properties are present.
+//^|Requirement |<<req_local-resources-catalog_mandatory-catalog-properties,/req/local-resources-catalog/mandatory-catalog-properties>>
+//^|Test Method |. Construct a path for a local resources catalog page.
+//. Issue an HTTP GET request on the path
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that the response conforms to the requirements of the local resource being extended.
+//. Check that the response includes all the mandatory properties listed in the <<collection-properties-table>>.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/local-resources-catalog/mandatatory-catalog-properties
+target:: /req/local-resources-catalog/mandatory-catalog-properties
+test-purpose:: Verify that all mandatory catalog properties are present.
+test-method::
++
+--
+. Construct a path for a local resources catalog page.
 . Issue an HTTP GET request on the path
 . Check that the value of the returned HTTP status header is +200+.
 . Check that the response conforms to the requirements of the local resource being extended.
 . Check that the response includes all the mandatory properties listed in the <<collection-properties-table>>.
-|===
+--
+====

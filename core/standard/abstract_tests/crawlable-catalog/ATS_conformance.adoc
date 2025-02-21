@@ -1,10 +1,26 @@
 [[ats_crawlable-catalog_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/conformance*
-^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_crawlable-catalog_conformance,/req/crawlable-catalog/conformance>>
-^|Test Method |. Obtain the path to a catalog
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/conformance*
+//^|Test Purpose |Validate conformance identification.
+//^|Requirement |<<req_crawlable-catalog_conformance,/req/crawlable-catalog/conformance>>
+//^|Test Method |. Obtain the path to a catalog
+//. Issue an HTTP GET request on the path
+//. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog+`.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/crawlable-catalog/conformance
+target:: Validate conformance identification.
+test-purpose:: /req/crawlable-catalog/conformance
+test-method::
++
+--
+. Obtain the path to a catalog
 . Issue an HTTP GET request on the path
 . Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog+`.
-|===
+--
+====

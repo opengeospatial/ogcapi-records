@@ -1,14 +1,34 @@
 [[ats_record-core_links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/links*
-^|Test Purpose |Validate the behavior of link relations for link objects.
-^|Requirement |<<req_record-core_links,/req/record-core/links>>
-^|Test Method |. Construct a path for a given record.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core/links*
+//^|Test Purpose |Validate the behavior of link relations for link objects.
+//^|Requirement |<<req_record-core_links,/req/record-core/links>>
+//^|Test Method |. Construct a path for a given record.
+//. Issue a HTTP GET request on that path.
+//. Parse all link objects.
+//. Check if the record includes links with a `rel` property value of `collection`.
+//. If it does, ensure that only one such link exists in the record.
+//. Issue a HTTP GET request on that path.
+//. Validate that the retrieved content is a valid catalog object.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core/links
+target:: /req/record-core/links
+test-purpose:: Validate the behavior of link relations for link objects.
+test-method::
++
+--
+. Construct a path for a given record.
 . Issue a HTTP GET request on that path.
 . Parse all link objects.
 . Check if the record includes links with a `rel` property value of `collection`.
 . If it does, ensure that only one such link exists in the record.
 . Issue a HTTP GET request on that path.
 . Validate that the retrieved content is a valid catalog object.
-|===
+--
+====

@@ -1,10 +1,27 @@
 [[ats_html_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/html/conformance*
-^|Test Purpose |Validate html identification.
-^|Requirement |<<req_html_conformance,/req/html/conformance>>
-^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/html/conformance*
+//^|Test Purpose |Validate html identification.
+//^|Requirement |<<req_html_conformance,/req/html/conformance>>
+//^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+//. Issue an HTTP GET request on that path.
+//. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html+`.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/html/conformance
+target:: /req/html/conformance
+test-purpose:: Validate html identification.
+test-method::
++
+--
+. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
 . Issue an HTTP GET request on that path.
-. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html+`.
-|===
+. Check that the `conformsTo` array contains the value `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html`.
+--
+====

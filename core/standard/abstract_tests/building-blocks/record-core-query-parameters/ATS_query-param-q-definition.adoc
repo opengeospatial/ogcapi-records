@@ -1,10 +1,39 @@
 [[ats_record-core-query-parameters_q-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/q-definition*
-^|Test Purpose |Validate `q` query parameter.
-|Requirement |<<req_record-core-query-parameters_q-definition,/req/record-core-query-parameters/q-definition>>
-^|Test Method |. Construct a path for a searchable endpoint and include the `q` query parameter.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/q-definition*
+//^|Test Purpose |Validate `q` query parameter.
+//|Requirement |<<req_record-core-query-parameters_q-definition,/req/record-core-query-parameters/q-definition>>
+//^|Test Method |. Construct a path for a searchable endpoint and include the `q` query parameter.
+//. Validate that the `q` parameter is constructed correctly using an OpenAPI Specification 3.0 fragment:
+//
+//[source,YAML]
+//----
+//name: q
+//in: query
+//required: false
+//schema:
+//  type: array
+//  items:
+//    type: string
+//explode: false
+//----
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core-query-parameters/q-definition
+target:: /req/record-core-query-parameters/q-definition
+test-purpose:: Validate `q` query parameter.
+test-method::
++
+--
+. Construct a path for a searchable endpoint and include the `q` query parameter.
 . Validate that the `q` parameter is constructed correctly using an OpenAPI Specification 3.0 fragment:
 
 [source,YAML]
@@ -20,4 +49,5 @@ explode: false
 ----
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
-|===
+--
+====

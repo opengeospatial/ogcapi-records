@@ -1,10 +1,27 @@
 [[ats_records-api_record-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/records-api/record-op*
-^|Test Purpose |Validate that a record can be retrieved from the expected location.
-^|Requirement |<<req_records-api_record-op,/req/records-api/record-op>>
-^|Test Method |. For a sufficiently large subset of all records in a catalog (path: `/collections/{collectionId}`), issue an HTTP GET request to the URL `/collections/{collectionId}/items/{recordId}` where `{collectionId}` is the id property for a collection, where the the `itemType` property is a string with the value `records`, and `{recordId}` is the id property of the record.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/records-api/record-op*
+//^|Test Purpose |Validate that a record can be retrieved from the expected location.
+//^|Requirement |<<req_records-api_record-op,/req/records-api/record-op>>
+//^|Test Method |. For a sufficiently large subset of all records in a catalog (path: `/collections/{collectionId}`), issue an HTTP GET request to the URL `/collections/{collectionId}/items/{recordId}` where `{collectionId}` is the id property for a collection, where the the `itemType` property is a string with the value `records`, and `{recordId}` is the id property of the record.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Validate the contents of the returned records using the test <<ats_records-api_record-response,/req/records-api/record-response>>.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/records-api/record-op
+target:: /req/records-api/record-op
+test-purpose:: Validate that a record can be retrieved from the expected location.
+test-method::
++
+--
+. For a sufficiently large subset of all records in a catalog (path: `/collections/{collectionId}`), issue an HTTP GET request to the URL `/collections/{collectionId}/items/{recordId}` where `{collectionId}` is the id property for a collection, where the the `itemType` property is a string with the value `records`, and `{recordId}` is the id property of the record.
 . Check that the value of the returned HTTP status header is +200+.
 . Validate the contents of the returned records using the test <<ats_records-api_record-response,/req/records-api/record-response>>.
-|===
+--
+====

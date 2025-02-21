@@ -1,10 +1,31 @@
 [[ats_record-collection_links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/links*
-^|Test Purpose |Validate the behavior of "self" and "alternate" links.
-^|Requirement |<<req_record-collection_links,/req/record-collection/links>>
-^|Test Method |. Construct a path for catalog object. 
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/links*
+//^|Test Purpose |Validate the behavior of "self" and "alternate" links.
+//^|Requirement |<<req_record-collection_links,/req/record-collection/links>>
+//^|Test Method |. Construct a path for catalog object. 
+//. Issue a HTTP GET request on that path.
+//. Parse all link objects.
+//. Check that one link has a `rel` property with value of `self`.
+//. Issue a HTTP GET request on the resulting path.
+//. Validate that the content between both requests is equal.
+//. Check if the catalog has alternative representations and check that it has links with `rel` property with value of `alternate`.
+//. Issue a HTTP GET request on each resulting path.
+//. Validate that the retrieved content satisfies the asserted media type of the alternate representation.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-collection/links
+target:: /req/record-collection/links
+test-purpose:: Validate the behavior of "self" and "alternate" links.
+test-method::
++
+--
+. Construct a path for catalog object. 
 . Issue a HTTP GET request on that path.
 . Parse all link objects.
 . Check that one link has a `rel` property with value of `self`.
@@ -13,4 +34,5 @@
 . Check if the catalog has alternative representations and check that it has links with `rel` property with value of `alternate`.
 . Issue a HTTP GET request on each resulting path.
 . Validate that the retrieved content satisfies the asserted media type of the alternate representation.
-|===
+--
+====

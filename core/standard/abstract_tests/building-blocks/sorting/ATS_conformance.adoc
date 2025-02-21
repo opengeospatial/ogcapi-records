@@ -1,11 +1,26 @@
 [[ats_sorting_conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/sorting/conformance*
-^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_sorting_conformance,/req/sorting/conformance>>
-^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/sorting/conformance*
+//^|Test Purpose |Validate conformance identification.
+//^|Requirement |<<req_sorting_conformance,/req/sorting/conformance>>
+//^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+//. Issue an HTTP GET request on that path.
+//. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting+`.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/sorting/conformance
+target:: /req/sorting/conformance
+test-purpose:: Validate conformance identification.
+test-method::
++
+--
+. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
 . Issue an HTTP GET request on that path.
 . Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting+`.
-|===
-
+--
+====

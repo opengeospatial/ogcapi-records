@@ -1,11 +1,28 @@
 [[ats_crawlable-catalog_record]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/record*
-^|Test Purpose |Verify that a record is retrieveble from the Web
-^|Requirement |<<req_crawlable-catalog_record,/req/crawlable-catalog/record>>
-^|Test Method |. Determine the URL of a record
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/record*
+//^|Test Purpose |Verify that a record is retrieveble from the Web
+//^|Requirement |<<req_crawlable-catalog_record,/req/crawlable-catalog/record>>
+//^|Test Method |. Determine the URL of a record
+//. Resolve the URL and retrieve the record
+//.  Check that the record validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml
+//. Locate each link (relation: `describes`) in the links or linkTemplates section of the record and verify that each link target is retrieveable
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/crawlable-catalog/record
+target:: /req/crawlable-catalog/record
+test-purpose:: Verify that a record is retrieveble from the Web
+test-method::
++
+--
+. Determine the URL of a record
 . Resolve the URL and retrieve the record
-.  Check that the record validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml
+. Check that the record validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml
 . Locate each link (relation: `describes`) in the links or linkTemplates section of the record and verify that each link target is retrieveable
-|===
+--
+====

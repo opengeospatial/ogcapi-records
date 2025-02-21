@@ -1,9 +1,24 @@
 [[ats_record-core_templated-link-header]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/templated-link-header*
-^|Test Purpose |Validate the behavior of templated link header.
-^|Requirement |<<req_record-core_templated-link-header,/req/record-core/templated-link-header>>
-^|Test Method |. Construct a path for a given record with a templated link.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core/templated-link-header*
+//^|Test Purpose |Validate the behavior of templated link header.
+//^|Requirement |<<req_record-core_templated-link-header,/req/record-core/templated-link-header>>
+//^|Test Method |. Construct a path for a given record with a templated link.
+//. Check that a templated link appears in a HTTP header and is encoded according to https://ietf-wg-httpapi.github.io/link-template/draft-ietf-httpapi-link-template.html.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core/templated-link-header
+target:: /req/record-core/templated-link-header
+test-purpose:: Validate the behavior of templated link header.
+test-method::
++
+--
+. Construct a path for a given record with a templated link.
 . Check that a templated link appears in a HTTP header and is encoded according to https://ietf-wg-httpapi.github.io/link-template/draft-ietf-httpapi-link-template.html.
-|===
+--
+====

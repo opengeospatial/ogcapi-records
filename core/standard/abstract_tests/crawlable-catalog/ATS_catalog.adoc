@@ -1,9 +1,24 @@
 [[ats_crawlable-catalog_catalog]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/catalog*
-^|Test Purpose |Validate a crawlable catalog object
-^|Requirement |<<req_crawlable-catalog_catalog,/req/crawlable-catalog/catalog>>
-^|Test Method |. Obtain a catalog object
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/catalog*
+//^|Test Purpose |Validate a crawlable catalog object
+//^|Requirement |<<req_crawlable-catalog_catalog,/req/crawlable-catalog/catalog>>
+//^|Test Method |. Obtain a catalog object
+//. Check that the catalog object validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/crawlable-catalog/catalog
+target:: /req/crawlable-catalog/catalog
+test-purpose:: Validate a crawlable catalog object
+test-method::
++
+--
+. Obtain a catalog object
 . Check that the catalog object validates against the schema defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml
-|===
+--
+====

@@ -1,10 +1,26 @@
 [[ats_record-collection_mandatory-properties-collection]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/mandatory-properties-collection*
-^|Test Purpose |Validate the a catalog objects includes all mandatory properties.
-^|Requirement |<<req_record-collection_mandatory-properties-collection,/req/record-collection/mandatory-properties-collection>>
-^|Test Method |. Construct a path for a catalog object.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-collection/mandatory-properties-collection*
+//^|Test Purpose |Validate the a catalog objects includes all mandatory properties.
+//^|Requirement |<<req_record-collection_mandatory-properties-collection,/req/record-collection/mandatory-properties-collection>>
+//^|Test Method |. Construct a path for a catalog object.
+//. Issue a HTTP GET request on that path.
+//. Validate that the retrieved content includes all the mandatory properties listed in <<collection-properties-table>>.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-collection/mandatory-properties-collection
+target:: /req/record-collection/mandatory-properties-collection
+test-purpose:: Validate the a catalog objects includes all mandatory properties.
+test-method::
++
+--
+. Construct a path for a catalog object.
 . Issue a HTTP GET request on that path.
 . Validate that the retrieved content includes all the mandatory properties listed in <<collection-properties-table>>.
-|===
+--
+====

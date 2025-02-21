@@ -1,9 +1,22 @@
 [[ats_oas30_oas-common]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/oas30/oas-common*
-^|Test Purpose |Validate oas30 service description document.
-^|Requirement |<<req_oas30_oas-common,/req/oas30/oas-common>>
-^|Test Method |. Verify that the server passes abstract tests https://docs.ogc.org/is/17-069r4/17-069r4.html#_conformance_class_openapi_3_0[/conf/oas30/completeness, /conf/oas30/exceptions-codes, /conf/oas30/oas-definition-1, /conf/oas30/oas-definition-2, /conf/oas30/oas-impl, /conf/oas30/security] from https://docs.ogc.org/is/17-069r4/17-069r4.html#_conformance_class_openapi_3_0[OGC API - Features - Part 1: Core]/
-|===
 
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/oas30/oas-common*
+//^|Test Purpose |Validate oas30 service description document.
+//^|Requirement |<<req_oas30_oas-common,/req/oas30/oas-common>>
+//^|Test Method |. Verify that the server passes abstract tests https://docs.ogc.org/is/17-069r4/17-069r4.html#_conformance_class_openapi_3_0[/conf/oas30/completeness, /conf/oas30/exceptions-codes, /conf/oas30/oas-definition-1, /conf/oas30/oas-definition-2, /conf/oas30/oas-impl, /conf/oas30/security] from https://docs.ogc.org/is/17-069r4/17-069r4.html#_conformance_class_openapi_3_0[OGC API - Features - Part 1: Core]/
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/oas30/oas-common
+target:: /req/oas30/oas-common
+test-purpose:: Validate oas30 service description document.
+test-method::
++
+--
+. Verify that the server passes abstract tests https://docs.ogc.org/is/17-069r4/17-069r4.html#_conformance_class_openapi_3_0[/conf/oas30/completeness, /conf/oas30/exceptions-codes, /conf/oas30/oas-definition-1, /conf/oas30/oas-definition-2, /conf/oas30/oas-impl, /conf/oas30/security] from https://docs.ogc.org/is/17-069r4/17-069r4.html#_conformance_class_openapi_3_0[OGC API - Features - Part 1: Core]/
+--
+====

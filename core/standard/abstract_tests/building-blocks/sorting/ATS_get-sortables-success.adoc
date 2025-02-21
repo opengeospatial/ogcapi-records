@@ -1,10 +1,32 @@
 [[ats_sorting_get-sortables-success]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/sorting/get-sortables-success*
-^|Test Purpose |Validate the behavior of `+sortables+` endpoint.
-^|Requirement |<<req_sorting_get-sortables-success,/req/sorting/get-sortables-success>>
-^|Test Method |. Construct a path for a collection sortables page.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/sorting/get-sortables-success*
+//^|Test Purpose |Validate the behavior of `+sortables+` endpoint.
+//^|Requirement |<<req_sorting_get-sortables-success,/req/sorting/get-sortables-success>>
+//^|Test Method |. Construct a path for a collection sortables page.
+//. Issue an HTTP GET request on the path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. If the HTTP Content Type is `+application/schema+json+`:
+//  . Check that the `+$schema+` attribute exists with a value of `+http://json-schema.org/draft-07/schema#+` or `+https://json-schema.org/draft/2019-09/schema+`.
+//  . Check that the `+$id+` attribute exists with a value of the name of the collection.
+//  . Check that the `+type+` attribute exists with a value of `+object+`.
+//  . Construct a path for a collections `+.../items+` query.
+//  . Issue an HTTP GET request on the path.
+//  . Check that each sortable is available in the record's `+properties+` object.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/sorting/get-sortables-success
+target:: /req/sorting/get-sortables-success
+test-purpose:: Validate the behavior of `+sortables+` endpoint.
+test-method::
++
+--
+. Construct a path for a collection sortables page.
 . Issue an HTTP GET request on the path.
 . Check that the value of the returned HTTP status header is +200+.
 . If the HTTP Content Type is `+application/schema+json+`:
@@ -14,4 +36,5 @@
   . Construct a path for a collections `+.../items+` query.
   . Issue an HTTP GET request on the path.
   . Check that each sortable is available in the record's `+properties+` object.
-|===
+--
+====

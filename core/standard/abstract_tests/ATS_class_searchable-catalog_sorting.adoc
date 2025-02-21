@@ -1,13 +1,24 @@
 [[ats_searchable-catalog_sorting]]
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/sorting
-|Target type |Web API
-|Requirements class |<<rc_searchable-catalog_sorting,Requirements Class "Sorting">>
-|Dependency |<<ats_searchable_catalog,Searchable Catalog>>
-|Dependency |<<ats_sorting,Sorting>>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Conformance Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/sorting
+//|Target type |Web API
+//|Requirements class |<<rc_searchable-catalog_sorting,Requirements Class "Sorting">>
+//|Dependency |<<ats_searchable_catalog,Searchable Catalog>>
+//|Dependency |<<ats_sorting,Sorting>>
+//|===
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog/sorting
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog/sorting
+classification:: Target Type:Web API
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
+====
 
 ==== Conformance
 

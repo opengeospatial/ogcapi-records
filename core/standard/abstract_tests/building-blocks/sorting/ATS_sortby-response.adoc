@@ -1,16 +1,56 @@
 [[ats_sorting_sortby-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/sorting/sortby-response*
-^|Test Purpose |Validate the availability of the `+sortby+` query parameter.
-^|Requirement |<<req_sorting_sortby-response,/req/sorting/sortby-response>>
-^|Test Method |. Construct a path for a collection page.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/sorting/sortby-response*
+//^|Test Purpose |Validate the availability of the `+sortby+` query parameter.
+//^|Requirement |<<req_sorting_sortby-response,/req/sorting/sortby-response>>
+//^|Test Method |. Construct a path for a collection page.
+//. Issue an HTTP GET request on the path.
+//. Check that the `+defaultSortOrder+` attribute exists.
+//. Construct a path for collection sortables.
+//. Issue an HTTP GET request on the path
+//. For each sortable found in the `+defaultSortOrder+` array, check that it is present in the results of the sortables result.
+//^|Test Method |. Construct a path for a collection page.
+//. Issue an HTTP GET request on the path.
+//. Check that the `+defaultSortOrder+` attribute exists.
+//. Using one sortable, construct a path for an `+.../items+` query with `+sortby+` using explicit ascending order (`+`).
+//. Issue an HTTP GET request on the path.
+//. Parse the response to capture the sortable property for each record returned.
+//. Verify that sorting the list of sortable properties in ascending order is consistent with the response of the server.
+//. Using one sortable, construct a path for an `+.../items+` query with `+sortby+` using descending order (`-`).
+//. Issue an HTTP GET request on the path.
+//. Parse the response to capture the sortable property for each record returned.
+//. Verify that reverse sorting the list of sortable properties in descending order is consistent with the response of the server.
+//^|Test Method |. Construct a path for a collection page.
+//. Check that the specific set of keys that may be used for sorting are specified by the `/collections/{collectionId}/sortables` resource
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/sorting/sortby-response
+target:: /req/sorting/sortby-response
+test-purpose:: Validate the availability of the `+sortby+` query parameter.
+test-method::
++
+--
+Sequence 1:
+
+. Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
 . Check that the `+defaultSortOrder+` attribute exists.
 . Construct a path for collection sortables.
 . Issue an HTTP GET request on the path
 . For each sortable found in the `+defaultSortOrder+` array, check that it is present in the results of the sortables result.
-^|Test Method |. Construct a path for a collection page.
+--
+test-method::
++
+--
+Sequence 2:
+
+. Construct a path for a collection page.
 . Issue an HTTP GET request on the path.
 . Check that the `+defaultSortOrder+` attribute exists.
 . Using one sortable, construct a path for an `+.../items+` query with `+sortby+` using explicit ascending order (`+`).
@@ -21,6 +61,13 @@
 . Issue an HTTP GET request on the path.
 . Parse the response to capture the sortable property for each record returned.
 . Verify that reverse sorting the list of sortable properties in descending order is consistent with the response of the server.
-^|Test Method |. Construct a path for a collection page.
+--
+test-method::
++
+--
+Sequence 3:
+
+. Construct a path for a collection page.
 . Check that the specific set of keys that may be used for sorting are specified by the `/collections/{collectionId}/sortables` resource
-|===
+--
+====

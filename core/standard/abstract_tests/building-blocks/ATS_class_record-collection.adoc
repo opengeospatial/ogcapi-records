@@ -1,11 +1,20 @@
 [[ats_record-collection]]
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-colection
-|Target type |Web API
-|Requirements class |<<rc_record-collection,Requirements Class "Record Collection">>
-|===
+
+//[cols="1,4",width="90%"]
+//|===
+//2+|*Conformance Class*
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-colection
+//|Target type |Web API
+//|Requirements class |<<rc_record-collection,Requirements Class "Record Collection">>
+//|===
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
+classification:: Target Type:Web API
+====
 
 ==== Catalog properties
 

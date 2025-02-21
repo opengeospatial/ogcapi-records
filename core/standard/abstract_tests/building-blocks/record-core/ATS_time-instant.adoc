@@ -1,12 +1,30 @@
 [[ats_record-core_time-instant]]
-[width="90%",cols="2,7a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/time-instant*
-^|Test Purpose |Validate the behavior of time instances for time objects.
-^|Requirement |<<req_record-core_time-instant,/req/record-core/time-instant>>
-^|Test Method |. Construct a path for a given record that includes the `time` member.
+
+//[width="90%",cols="2,7a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core/time-instant*
+//^|Test Purpose |Validate the behavior of time instances for time objects.
+//^|Requirement |<<req_record-core_time-instant,/req/record-core/time-instant>>
+//^|Test Method |. Construct a path for a given record that includes the `time` member.
+//. Issue a HTTP GET request on that path.
+//. Parse time object.
+//. If the time object includes a `date` member, check that the value conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches the production rule `full-date`.
+//. If the time object includes a `timestamp` member, check that the value conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches the production rule `date-time`.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core/time-instant
+target:: /req/record-core/time-instant
+test-purpose:: Validate the behavior of time instances for time objects.
+test-method::
++
+--
+. Construct a path for a given record that includes the `time` member.
 . Issue a HTTP GET request on that path.
 . Parse time object.
 . If the time object includes a `date` member, check that the value conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches the production rule `full-date`.
 . If the time object includes a `timestamp` member, check that the value conforms to RFC 3339 (Date and Time on the Internet: Timestamps) and matches the production rule `date-time`.
-|===
+--
+====

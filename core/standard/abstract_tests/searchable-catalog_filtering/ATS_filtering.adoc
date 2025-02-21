@@ -1,8 +1,23 @@
 [[ats_searchable-catalog_building-blocks_filtering]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/building-blocks/filtering*
-^|Test Purpose |Validate enhanced filtering.
-^|Requirement |<<req_searchable-catalog_filtering,/req/searchable-catalog/filtering>>
-^|Test Method |. Demonstrate conformance to <<ats_cql-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter>> at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/building-blocks/filtering*
+//^|Test Purpose |Validate enhanced filtering.
+//^|Requirement |<<req_searchable-catalog_filtering,/req/searchable-catalog/filtering>>
+//^|Test Method |. Demonstrate conformance to <<ats_cql-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter>> at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/searchable-catalog/building-blocks/filtering
+target:: /req/searchable-catalog/filtering
+test-purpose:: Validate enhanced filtering.
+test-method::
++
+--
+. Demonstrate conformance to <<ats_cql-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter>> at the searchable catalog endpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
+--
+====
