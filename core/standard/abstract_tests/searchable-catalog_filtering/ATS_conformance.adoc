@@ -1,27 +1,32 @@
 [[ats_searchable-catalog_filtering-conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/filtering-conformance*
-^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_searchable-catalog_filtering-conformance,/req/searchable-catalog/filtering-conformance>>
-^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
-. Issue an HTTP GET request on that path.
-. Check that the value of the returned HTTP status header is +200+.
-. Check that the `conformsTo` array contains the values:
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-filtering
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/filtering-conformance*
+//^|Test Purpose |Validate conformance identification.
+//^|Requirement |<<req_searchable-catalog_filtering-conformance,/req/searchable-catalog/filtering-conformance>>
+//^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that the `conformsTo` array contains the values:
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-filtering
+//|===
 
 
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/searchable-catalog/filtering-conformance
+target:: /req/searchable-catalog/filtering-conformance
+test-purpose:: Validate conformance identification.
 test-method::
 +
 --
-TBA
+. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Check that the `conformsTo` array contains the values:
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-filtering
 --
 ====

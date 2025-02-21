@@ -1,26 +1,31 @@
 [[ats_searchable-catalog_mandatory-record-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatory-record-properties*
-^|Test Purpose |Validate each record contains the mandatory properties.
-^|Requirement |<<req_searchable-catalog_mandatory-record-properties,/req/searchable-catalog/mandatory-record-properties>>
-^|Test Method |. Construct a path for retrieving records from a searchable catalog endpoint (path: `/collections/{collectionId}/items`).
-. The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the `itemType` (JSONPath `$.collections[*].itemType`) property is a string and its value is `record`.
-. Issue a HTTP GET request on that path.
-. Parse each retrieved record.
-. Check that each record includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatory-record-properties*
+//^|Test Purpose |Validate each record contains the mandatory properties.
+//^|Requirement |<<req_searchable-catalog_mandatory-record-properties,/req/searchable-catalog/mandatory-record-properties>>
+//^|Test Method |. Construct a path for retrieving records from a searchable catalog endpoint (path: `/collections/{collectionId}/items`).
+//. The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the `itemType` (JSONPath `$.collections[*].itemType`) property is a string and its value is `record`.
+//. Issue a HTTP GET request on that path.
+//. Parse each retrieved record.
+//. Check that each record includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+//|===
 
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/searchable-catalog/mandatory-record-properties
+target:: /req/searchable-catalog/mandatory-record-properties
+test-purpose:: Validate each record contains the mandatory properties.
 test-method::
 +
 --
-TBA
+. Construct a path for retrieving records from a searchable catalog endpoint (path: `/collections/{collectionId}/items`).
+. The parameter `collectionId` is each `id` property in the collections response (JSONPath: `$.collections[\*].id`) where the `itemType` (JSONPath `$.collections[*].itemType`) property is a string and its value is `record`.
+. Issue a HTTP GET request on that path.
+. Parse each retrieved record.
+. Check that each record includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
 --
 ====

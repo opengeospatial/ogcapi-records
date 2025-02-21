@@ -1,25 +1,29 @@
 [[ats_searchable-catalog_mandatory-queryables]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatory-queryables*
-^|Test Purpose |Validate existence of mandatory queryables.
-^|Requirement |<<req_searchable-catalog_mandatory-queryables,/req/searchable-catalog/mandatory-queryables>>
-^|Test Method |. Construct a path for a collection queryables page.
-. Issue an HTTP GET request on that path.
-. Check that the value of the returned HTTP status header is +200+.
-. Inspect the response and verify that the list of queryables includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatory-queryables*
+//^|Test Purpose |Validate existence of mandatory queryables.
+//^|Requirement |<<req_searchable-catalog_mandatory-queryables,/req/searchable-catalog/mandatory-queryables>>
+//^|Test Method |. Construct a path for a collection queryables page.
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Inspect the response and verify that the list of queryables includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
+//|===
 
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/searchable-catalog/mandatory-queryables
+target:: /req/searchable-catalog/mandatory-queryables
+test-purpose:: Validate existence of mandatory queryables.
 test-method::
 +
 --
-TBA
+. Construct a path for a collection queryables page.
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Inspect the response and verify that the list of queryables includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>.
 --
 ====

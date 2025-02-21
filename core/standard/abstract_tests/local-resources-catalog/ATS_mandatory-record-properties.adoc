@@ -1,25 +1,30 @@
 [[ats_local-resources-catalog_manadatory-record-properties]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/mandatatory-record-properties*
-^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_local-resources-catalog_mandatory-record-properties,/req/local-resources-catalog/mandatory-record-properties>>
-^|Test Method |. Construct a path for a record from local resources catalog.
-. Issue an HTTP GET request on the path
-. Check that the value of the returned HTTP status header is +200+.
-. Check that the response conforms to the requirements of the local resource object (e.g. /collection/{collectionId}) extended.
-. Check that the response includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/mandatatory-record-properties*
+//^|Test Purpose |Validate conformance identification.
+//^|Requirement |<<req_local-resources-catalog_mandatory-record-properties,/req/local-resources-catalog/mandatory-record-properties>>
+//^|Test Method |. Construct a path for a record from local resources catalog.
+//. Issue an HTTP GET request on the path
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that the response conforms to the requirements of the local resource object (e.g. /collection/{collectionId}) extended.
+//. Check that the response includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>
+//|===
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/local-resources-catalog/mandatatory-record-properties
+target:: /req/local-resources-catalog/mandatory-record-properties
+test-purpose:: Validate conformance identification.
 test-method::
 +
 --
-TBA
+. Construct a path for a record from local resources catalog.
+. Issue an HTTP GET request on the path
+. Check that the value of the returned HTTP status header is +200+.
+. Check that the response conforms to the requirements of the local resource object (e.g. /collection/{collectionId}) extended.
+. Check that the response includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>
 --
 ====

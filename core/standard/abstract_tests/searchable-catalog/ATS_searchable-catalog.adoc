@@ -1,25 +1,29 @@
 [[ats_searchable-catalog_building-blocks]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/building-blocks*
-^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_searchable-catalog_core,/req/searchable-catalog>>
-^|Test Method |. Demonstrate conformance to <<rc_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/records-api>> using test <<ats_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/records-api>>.
-. Demonstrate conformance to <<rc_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>> using test <<ats_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core>>.
-. Demonstrate conformance to <<rc_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection>> using test <<ats_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection>>.
-. Demonstrate conformance to <<rc_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters>> using test <<ats_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters>>.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/building-blocks*
+//^|Test Purpose |Validate conformance identification.
+//^|Requirement |<<req_searchable-catalog_core,/req/searchable-catalog>>
+//^|Test Method |. Demonstrate conformance to <<rc_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/records-api>> using test <<ats_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/records-api>>.
+//. Demonstrate conformance to <<rc_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>> using test <<ats_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core>>.
+//. Demonstrate conformance to <<rc_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection>> using test <<ats_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection>>.
+//. Demonstrate conformance to <<rc_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters>> using test <<ats_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters>>.
+//|===
 
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/searchable-catalog/building-blocks
+target:: /req/searchable-catalog
+test-purpose:: Validate conformance identification.
 test-method::
 +
 --
-TBA
+. Demonstrate conformance to <<rc_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/records-api>> using test <<ats_records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/records-api>>.
+. Demonstrate conformance to <<rc_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>> using test <<ats_record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core>>.
+. Demonstrate conformance to <<rc_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection>> using test <<ats_record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection>>.
+. Demonstrate conformance to <<rc_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters>> using test <<ats_record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters>>.
 --
 ====

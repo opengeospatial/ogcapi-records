@@ -1,22 +1,24 @@
 [[ats_crawlable-catalog_location]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/location*
-^|Test Purpose |Verify that a catalog is retrievable from the Web
-^|Requirement |<<req_crawlable-catalog_location,/req/crawlable-catalog/location>>
-^|Test Method |. Determine the URL of the crawlable catalog.
-. Verify that the URL can be resolved and retrieve the catalog object.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/crawlable-catalog/location*
+//^|Test Purpose |Verify that a catalog is retrievable from the Web
+//^|Requirement |<<req_crawlable-catalog_location,/req/crawlable-catalog/location>>
+//^|Test Method |. Determine the URL of the crawlable catalog.
+//. Verify that the URL can be resolved and retrieve the catalog object.
+//|===
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/crawlable-catalog/location
+target:: /req/crawlable-catalog/location
+test-purpose:: Verify that a catalog is retrievable from the Web
 test-method::
 +
 --
-TBA
+. Determine the URL of the crawlable catalog.
+. Verify that the URL can be resolved and retrieve the catalog object.
 --
 ====

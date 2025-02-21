@@ -1,21 +1,22 @@
 [[ats_local-resources-catalog_building-blocks_filtering]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/building-blocks/filtering*
-^|Test Purpose |Validate local-resources catalog CQL filtering.
-^|Requirement |<<req_local-resources-catalog_filtering,/req/local-resources-catalog/filtering>>
-^|Test Method |. Demonstrate conformance to <<ats_cql-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter>> at the local resources catalog endpoint (e.g. `/collections`).
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/building-blocks/filtering*
+//^|Test Purpose |Validate local-resources catalog CQL filtering.
+//^|Requirement |<<req_local-resources-catalog_filtering,/req/local-resources-catalog/filtering>>
+//^|Test Method |. Demonstrate conformance to <<ats_cql-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter>> at the local resources catalog endpoint (e.g. `/collections`).
+//|===
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/local-resources-catalog/building-blocks/filtering
+target:: /req/local-resources-catalog/filtering
+test-purpose:: Validate local-resources catalog CQL filtering.
 test-method::
 +
 --
-TBA
+. Demonstrate conformance to <<ats_cql-filter,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter>> at the local resources catalog endpoint (e.g. `/collections`).
 --
 ====

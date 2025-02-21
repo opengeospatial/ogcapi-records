@@ -1,26 +1,31 @@
 [[ats_searchable-catalog_sorting-conformance]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/sorting-conformance*
-^|Test Purpose |Validate conformance identification.
-^|Requirement |<<req_searchable-catalog_sorting-conformance,/req/searchable-catalog/sorting-conformance>>
-^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
-. Issue an HTTP GET request on that path.
-. Check that the value of the returned HTTP status header is +200+.
-. Check that the `conformsTo` array contains the values:
-* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-sorting
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/sorting-conformance*
+//^|Test Purpose |Validate conformance identification.
+//^|Requirement |<<req_searchable-catalog_sorting-conformance,/req/searchable-catalog/sorting-conformance>>
+//^|Test Method |. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that the `conformsTo` array contains the values:
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-sorting
+//|===
 
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/searchable-catalog/sorting-conformance
+target:: /req/searchable-catalog/sorting-conformance
+test-purpose:: Validate conformance identification.
 test-method::
 +
 --
-TBA
+. Construct a path for a https://docs.ogc.org/is/17-069r4/17-069r4.html#_operation_3[conformance page].
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Check that the `conformsTo` array contains the values:
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-sorting
 --
 ====
