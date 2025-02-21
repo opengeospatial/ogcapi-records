@@ -1,10 +1,30 @@
 [[ats_record-core_time-instant-interval]]
-[width="90%",cols="2,7a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/time-instant-interval*
-^|Test Purpose |Validate the behavior of time instance and intervals in time object.
-^|Requirement |<<req_record-core_time-instant-interval,/req/record-core/time-instant-interval>>
-^|Test Method |. Construct a path for a given record that includes the `time` member.
+
+//[width="90%",cols="2,7a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core/time-instant-interval*
+//^|Test Purpose |Validate the behavior of time instance and intervals in time object.
+//^|Requirement |<<req_record-core_time-instant-interval,/req/record-core/time-instant-interval>>
+//^|Test Method |. Construct a path for a given record that includes the `time` member.
+//. Issue a HTTP GET request on that path.
+//. Parse time object.
+//. If the time object includes both a `date` and a `timestamp` member, check that the `full-date` parts are identical.
+//. If the time object includes both a `timestamp` and an `interval` member with start/end dates, check that the interval contains the date of the timestamp.
+//. If the time object includes both a `timestamp` and an `interval` member with start/end timestamps check that the interval contains the timestamp.
+//. If the time object includes both a `date` and an `interval` member with start/end dates, check that the interval contains the date.
+//. If the time object includes both a `date` and an `interval` member with start/end timestamps, check that the interval includes timestamps on the date.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core/time-instant-interval
+target:: /req/record-core/time-instant-interval
+test-purpose:: Validate the behavior of time instance and intervals in time object.
+test-method::
++
+--
+. Construct a path for a given record that includes the `time` member.
 . Issue a HTTP GET request on that path.
 . Parse time object.
 . If the time object includes both a `date` and a `timestamp` member, check that the `full-date` parts are identical.
@@ -12,17 +32,5 @@
 . If the time object includes both a `timestamp` and an `interval` member with start/end timestamps check that the interval contains the timestamp.
 . If the time object includes both a `date` and an `interval` member with start/end dates, check that the interval contains the date.
 . If the time object includes both a `date` and an `interval` member with start/end timestamps, check that the interval includes timestamps on the date.
-|===
-
-[abstract_test]
-====
-[%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
-test-method::
-+
---
-TBA
 --
 ====

@@ -1,24 +1,28 @@
 [[ats_record-filter_filter-lang-param]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-filter/filter-lang-param*
-^|Test Purpose |Validate `filter-lang` query parameter.
-^|Requirement |<<req_record-filter_filter-lang-param,/req/record-filter/filter-lang-param>>
-^|Test Method |. Construct a path for a searchable endpoint and include a `filter-lang` query parameter.
-. Validate that the `filter-lang` query parameter is constructed correctly as per https://portal.ogc.org/files/96288#filter-lang-param[/req/filter/filter-lang-param].
-. Issue an HTTP GET request on that path.
-. Check that the value of the returned HTTP status header is +200+.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-filter/filter-lang-param*
+//^|Test Purpose |Validate `filter-lang` query parameter.
+//^|Requirement |<<req_record-filter_filter-lang-param,/req/record-filter/filter-lang-param>>
+//^|Test Method |. Construct a path for a searchable endpoint and include a `filter-lang` query parameter.
+//. Validate that the `filter-lang` query parameter is constructed correctly as per https://portal.ogc.org/files/96288#filter-lang-param[/req/filter/filter-lang-param].
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//|===
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/record-filter/filter-lang-param
+target:: /req/record-filter/filter-lang-param
+test-purpose:: Validate `filter-lang` query parameter.
 test-method::
 +
 --
-TBA
+. Construct a path for a searchable endpoint and include a `filter-lang` query parameter.
+. Validate that the `filter-lang` query parameter is constructed correctly as per https://portal.ogc.org/files/96288#filter-lang-param[/req/filter/filter-lang-param].
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
 --
 ====

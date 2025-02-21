@@ -1,24 +1,28 @@
 [[ats_record-filter_filter-crs-param]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-filter/filter-crs-param*
-^|Test Purpose |Validate `filter-crs` query parameter.
-^|Requirement |<<req_record-filter_filter-crs-param,/req/record-filter/filter-crs-param>>
-^|Test Method |. Construct a path for a searchable endpoint and include a `filter-crs` query parameter.
-. Validate that the `filter-crs` query parameter is constructed correctly as per https://portal.ogc.org/files/96288#filter-filter-crs[/req/filter/filter-crs-param].
-. Issue an HTTP GET request on that path.
-. Check that the value of the returned HTTP status header is +200+.
-|===
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-filter/filter-crs-param*
+//^|Test Purpose |Validate `filter-crs` query parameter.
+//^|Requirement |<<req_record-filter_filter-crs-param,/req/record-filter/filter-crs-param>>
+//^|Test Method |. Construct a path for a searchable endpoint and include a `filter-crs` query parameter.
+//. Validate that the `filter-crs` query parameter is constructed correctly as per https://portal.ogc.org/files/96288#filter-filter-crs[/req/filter/filter-crs-param].
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//|===
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
+identifier:: /conf/record-filter/filter-crs-param
+target:: /req/record-filter/filter-crs-param
+test-purpose:: Validate `filter-crs` query parameter.
 test-method::
 +
 --
-TBA
+. Construct a path for a searchable endpoint and include a `filter-crs` query parameter.
+. Validate that the `filter-crs` query parameter is constructed correctly as per https://portal.ogc.org/files/96288#filter-filter-crs[/req/filter/filter-crs-param].
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
 --
 ====

@@ -1,10 +1,35 @@
 [[ats_record-core-query-parameters_q-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/q-response*
-^|Test Purpose |Validate `q` query parameter.
-^|Requirement |<<req_record-core-query-parameters_q-response,/req/record-core-query-parameters/q-response>>
-^|Test Method |. Construct a search path with a single search term as per test <<ats_record-core-query-parameters_q-definition,/conf/record-core-query-parameters/q-definition>>.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core-query-parameters/q-response*
+//^|Test Purpose |Validate `q` query parameter.
+//^|Requirement |<<req_record-core-query-parameters_q-response,/req/record-core-query-parameters/q-response>>
+//^|Test Method |. Construct a search path with a single search term as per test <<ats_record-core-query-parameters_q-definition,/conf/record-core-query-parameters/q-definition>>.
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that only records that contain that search term in one or more of the searched text fields are in the result set.
+//. Construct a search path with multiple search terms that are comma separated (logical OR) as per test <<ats_record-core-query-parameters_q-definition,/conf/record-core-query-parameters/q-definition>>.
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that only records that contain one or more the specified search terms in one or more of the searched text fields are in the result set.
+//. Construct a search path with multiple search terms that are white space separated as per test <<ats_record-core-query-parameters_q-definition,/conf/record-core-query-parameters/q-definition>>.
+//. Issue an HTTP GET request on that path.
+//. Check that the value of the returned HTTP status header is +200+.
+//. Check that only records that contain all the search terms specified, in the order specified and separated by any number of white spaces in one or more of the searched text fields are in the result set.
+//|===
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core-query-parameters/q-response
+target:: /req/record-core-query-parameters/q-response
+test-purpose:: Validate `q` query parameter.
+test-method::
++
+--
+. Construct a search path with a single search term as per test <<ats_record-core-query-parameters_q-definition,/conf/record-core-query-parameters/q-definition>>.
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 . Check that only records that contain that search term in one or more of the searched text fields are in the result set.
@@ -16,18 +41,5 @@
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 . Check that only records that contain all the search terms specified, in the order specified and separated by any number of white spaces in one or more of the searched text fields are in the result set.
-|===
-
-
-[abstract_test]
-====
-[%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
-test-method::
-+
---
-TBA
 --
 ====

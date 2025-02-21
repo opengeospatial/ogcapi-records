@@ -1,26 +1,32 @@
 [[ats_record-core_templated-link]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/record-core/templated-link*
-^|Test Purpose |Validate the behavior of templated links.
-^|Requirement |<<req_record-core_templated-link,/req/record-core/templated-link>>
-^|Test Method |. Construct a path for a given record.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/record-core/templated-link*
+//^|Test Purpose |Validate the behavior of templated links.
+//^|Requirement |<<req_record-core_templated-link,/req/record-core/templated-link>>
+//^|Test Method |. Construct a path for a given record.
+//. Issue a HTTP GET request on that path.
+//. Parse all link template objects.
+//. Verify that each link template includes a `uriTemplate` property.
+//. The link template may optionally include a `varBase` property.
+//. The link template may optionally include a `variables` property.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/record-core/templated-link
+target:: /req/record-core/templated-link
+test-purpose:: Validate the behavior of templated links.
+test-method::
++
+--
+. Construct a path for a given record.
 . Issue a HTTP GET request on that path.
 . Parse all link template objects.
 . Verify that each link template includes a `uriTemplate` property.
 . The link template may optionally include a `varBase` property.
 . The link template may optionally include a `variables` property.
-|===
-
-[abstract_test]
-====
-[%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
-test-method::
-+
---
-TBA
 --
 ====

@@ -1,27 +1,34 @@
 [[ats_sorting_sortby-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test {counter:ats-id}* |*/conf/sorting/sortby-definition*
-^|Test Purpose |Validate the availability of the `+sortby+` query parameter.
-^|Requirement |<<req_sorting_sortby-definition-success,/req/sorting/sortby-definition>>
-^|Test Method |. Construct a path for a landing page.
+
+//[width="90%",cols="2,6a"]
+//|===
+//^|*Abstract Test {counter:ats-id}* |*/conf/sorting/sortby-definition*
+//^|Test Purpose |Validate the availability of the `+sortby+` query parameter.
+//^|Requirement |<<req_sorting_sortby-definition-success,/req/sorting/sortby-definition>>
+//^|Test Method |. Construct a path for a landing page.
+//. Issue an HTTP GET request on the path.
+//. Parse all link objects
+//. Find the link object `+href+` attribute whose link object's `+rel+` attribute value is `+service-desc+` and `+type+` attribute value is `+application/vnd.oai.openapi+json;version=3.0+`.
+//. Issue an HTTP GET request on the `+href+`.
+//. Parse the resulting OpenAPI document and detect a `+path+` object whose endpoint value ends with `+.../items`.
+//. Check that the `+get.parameters+` object contains an object defining a `+sortby+` parameter.
+//|===
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/sorting/sortby-definition
+target:: /req/sorting/sortby-definition
+test-purpose:: Validate the availability of the `+sortby+` query parameter.
+test-method::
++
+--
+. Construct a path for a landing page.
 . Issue an HTTP GET request on the path.
 . Parse all link objects
 . Find the link object `+href+` attribute whose link object's `+rel+` attribute value is `+service-desc+` and `+type+` attribute value is `+application/vnd.oai.openapi+json;version=3.0+`.
 . Issue an HTTP GET request on the `+href+`.
 . Parse the resulting OpenAPI document and detect a `+path+` object whose endpoint value ends with `+.../items`.
 . Check that the `+get.parameters+` object contains an object defining a `+sortby+` parameter.
-|===
-
-[abstract_test]
-====
-[%metadata]
-identifier:: TBA
-target:: TBA
-test-purpose:: TBA
-test-method::
-+
---
-TBA
 --
 ====
