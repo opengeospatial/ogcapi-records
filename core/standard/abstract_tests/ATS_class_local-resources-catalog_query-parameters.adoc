@@ -18,6 +18,9 @@ target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resource-cat
 classification:: Target Type:Web API
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters
+abstract-test:: /conf/local-resources-catalog/query-parameters/conformance
+abstract-test:: /conf/local-resources-catalog/query-parameters/query-parameters
+abstract-test:: /conf/local-resources-catalog/query-parameters/query-parameters-response
 ====
 
 ==== Conformance

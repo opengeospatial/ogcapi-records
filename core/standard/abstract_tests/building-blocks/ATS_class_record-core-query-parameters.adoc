@@ -14,6 +14,17 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core-query-parameters
 classification:: Target Type:Web API
+abstract-test:: /conf/record-core-query-parameters/bbox
+abstract-test:: /conf/record-core-query-parameters/datetime
+abstract-test:: /conf/record-core-query-parameters/externalIds-definition
+abstract-test:: /conf/record-core-query-parameters/externalIds-response
+abstract-test:: /conf/record-core-query-parameters/ids-definition
+abstract-test:: /conf/record-core-query-parameters/ids-response
+abstract-test:: /conf/record-core-query-parameters/limit
+abstract-test:: /conf/record-core-query-parameters/q-definition
+abstract-test:: /conf/record-core-query-parameters/q-response
+abstract-test:: /conf/record-core-query-parameters/type-definition
+abstract-test:: /conf/record-core-query-parameters/type-response
 ====
 
 ==== Query Parameters

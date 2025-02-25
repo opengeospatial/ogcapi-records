@@ -14,6 +14,7 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscovery
 classification:: Target Type:Web API
+abstract-test:: /conf/autodiscovery/links
 ====
 
 ==== Links

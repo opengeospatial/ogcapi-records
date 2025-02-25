@@ -18,6 +18,11 @@ target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/crawlable-catalog
 classification:: Target Type:Web API
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
+abstract-test:: /conf/crawlable-catalog/conformance
+abstract-test:: /conf/crawlable-catalog/record
+abstract-test:: /conf/crawlable-catalog/record-location
+abstract-test:: /conf/crawlable-catalog/catalog
+abstract-test:: /conf/crawlable-catalog/location
 ====
 
 ==== Conformance

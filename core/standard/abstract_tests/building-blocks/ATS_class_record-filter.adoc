@@ -17,6 +17,10 @@ target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/cql-filter
 classification:: Target Type:Web API
 inherit:: <<OGC19-079r2, OGC API - Features - Part 3: Filtering>>
 inherit:: <<OGC21-065r2, Common Query Language (CQL2)>>
+abstract-test:: /conf/record-filter/filter-param
+abstract-test:: /conf/record-filter/filter-lang-param
+abstract-test:: /conf/record-filter/filter-crs-param
+abstract-test:: /conf/record-filter/response
 ====
 
 ==== Filter Parameters

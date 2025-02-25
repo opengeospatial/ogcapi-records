@@ -2,7 +2,7 @@
 
 //[width="90%",cols="2,6a"]
 //|===
-//^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/mandatatory-record-properties*
+//^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/mandatory-record-properties*
 //^|Test Purpose |Validate conformance identification.
 //^|Requirement |<<req_local-resources-catalog_mandatory-record-properties,/req/local-resources-catalog/mandatory-record-properties>>
 //^|Test Method |. Construct a path for a record from local resources catalog.
@@ -15,7 +15,7 @@
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/local-resources-catalog/mandatatory-record-properties
+identifier:: /conf/local-resources-catalog/mandatory-record-properties
 target:: /req/local-resources-catalog/mandatory-record-properties
 test-purpose:: Validate conformance identification.
 test-method::

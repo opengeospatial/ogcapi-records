@@ -18,6 +18,9 @@ target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/local-resources-ca
 classification:: Target Type:Web API
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
+abstract-test:: /conf/local-resources-catalog/filtering-conformance
+abstract-test:: /conf/local-resources-catalog/building-blocks/filtering
+abstract-test:: /conf/local-resources-catalog/filtering/queryables-link
 ====
 
 ==== Conformance

@@ -18,6 +18,8 @@ target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog
 classification:: Target Type:Web API
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
+abstract-test:: /conf/searchable-catalog/sorting-conformance
+abstract-test:: /conf/searchable-catalog/building-blocks/sorting
 ====
 
 ==== Conformance
