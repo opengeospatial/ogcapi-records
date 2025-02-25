@@ -14,6 +14,8 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/oas30
 classification:: Target Type:Web API
+abstract-test:: /conf/oas30/conformance
+abstract-test:: /conf/oas30/oas-common
 ====
 
 ==== Conformance

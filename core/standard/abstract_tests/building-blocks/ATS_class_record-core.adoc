@@ -14,6 +14,17 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
 classification:: Target Type:Web API
+abstract-test:: /conf/record-core/mandatory-properties-record
+abstract-test:: /conf/record-core/links
+abstract-test:: /conf/record-core/templated-link
+abstract-test:: /conf/record-core/templated-link-header
+abstract-test:: /conf/record-core/license
+abstract-test:: /conf/record-core/contact
+abstract-test:: /conf/record-core/time-instant-interval
+abstract-test:: /conf/record-core/time-instant
+abstract-test:: /conf/record-core/time-interval
+abstract-test:: /conf/record-core/time-zone
+abstract-test:: /conf/record-core/default-mediatype
 ====
 
 ==== Mandatory properties

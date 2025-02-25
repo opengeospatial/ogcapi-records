@@ -14,6 +14,19 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
 classification:: Target Type:Web API
+abstract-test:: /conf/record-collection/mandatory-properties-collection
+abstract-test:: /conf/record-collection/itemType
+abstract-test:: /conf/record-collection/contact
+abstract-test:: /conf/record-collection/license
+abstract-test:: /conf/record-collection/links
+abstract-test:: /conf/record-collection/links-catalog-hierarchy
+abstract-test:: /conf/record-collection/links-catalog-related
+abstract-test:: /conf/record-collection/links-catalog-series
+abstract-test:: /conf/record-collection/links-record
+abstract-test:: /conf/record-collection/links-records
+abstract-test:: /conf/record-collection/records-array-name
+abstract-test:: /conf/record-collection/records
+abstract-test:: /conf/record-collection/default-mediatype
 ====
 
 ==== Catalog properties

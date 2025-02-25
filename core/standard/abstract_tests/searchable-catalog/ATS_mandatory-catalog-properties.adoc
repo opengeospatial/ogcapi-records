@@ -2,7 +2,7 @@
 
 //[width="90%",cols="2,6a"]
 //|===
-//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatatory-catalog-properties*
+//^|*Abstract Test {counter:ats-id}* |*/conf/searchable-catalog/mandatory-catalog-properties*
 //^|Test Purpose |Verify that all mandatory catalog properties are present.
 //^|Requirement |<<req_searchable-catalog_mandatory-catalog-properties,/req/searchable-catalog/mandatory-catalog-properties>>
 //^|Test Method |. Construct a path for retrieving a catalog description document (path: `/collections/{collectionId}`).
@@ -16,7 +16,7 @@
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/searchable-catalog/mandatatory-catalog-properties
+identifier:: /conf/searchable-catalog/mandatory-catalog-properties
 target:: /req/searchable-catalog/mandatory-catalog-properties
 test-purpose:: Verify that all mandatory catalog properties are present.
 test-method::

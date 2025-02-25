@@ -14,6 +14,11 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json
 classification:: Target Type:Web API
+abstract-test:: /conf/json/conformance
+abstract-test:: /conf/json/catalog-content
+abstract-test:: /conf/json/catalog-response
+abstract-test:: /conf/json/record-content
+abstract-test:: /conf/json/record-response
 ====
 
 ==== Conformance

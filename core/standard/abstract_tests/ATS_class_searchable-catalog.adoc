@@ -14,6 +14,10 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog
 classification:: Target Type:Web API
+abstract-test:: /conf/searchable-catalog/conformance
+abstract-test:: /conf/searchable-catalog/building-blocks
+abstract-test:: /conf/searchable-catalog/mandatory-catalog-properties
+abstract-test:: /conf/searchable-catalog/mandatory-record-properties
 ====
 
 ==== Conformance

@@ -18,6 +18,9 @@ target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/searchable-catalog
 classification:: Target Type:Web API
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/cql-filter
+abstract-test:: /conf/searchable-catalog/filtering-conformance
+abstract-test:: /conf/searchable-catalog/building-blocks/filtering
+abstract-test:: /conf/searchable-catalog/mandatory-queryables
 ====
 
 ==== Conformance

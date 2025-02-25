@@ -14,6 +14,13 @@
 identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
 target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting
 classification:: Target Type:Web API
+abstract-test:: /conf/sorting/conformance
+abstract-test:: /conf/sorting/defaultSortOrder-definition
+abstract-test:: /conf/sorting/get-sortables-op
+abstract-test:: /conf/sorting/get-sortables-success
+abstract-test:: /conf/sorting/sortby-definition
+abstract-test:: /conf/sorting/sortby-response
+
 ====
 
 ==== Conformance
