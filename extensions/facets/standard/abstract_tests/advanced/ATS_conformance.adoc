@@ -1,0 +1,11 @@
+[[ats_advanced_conformance]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/advanced/conformance*
+^|Test Purpose |Validate advanced identification.
+^|Requirement |<<req_advanced_conformance,/req/advanced/conformance>>
+^|Test Method |. Construct a path for a conformance page
+. Issue an HTTP GET request on the path
+. Check that the `+conformsTo+` array contains the value `+http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/advanced+`.
+|===
+
