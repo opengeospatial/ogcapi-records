@@ -531,7 +531,7 @@ Other encodings are allowed but are not described in this document.
 |schemes |optional |A list of schemes related to this catalog. |`schemes`
 |===
 
-NOTE: The properties _id_, _itemType_, title_, _description_, _extent_, _crs_ and _links_ are inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core].
+NOTE: The properties _id_, _itemType_, _title_, _description_, _extent_, _crs_ and _links_ are inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core].
 
 include::requirements/building-blocks/record-collection/REQ_mandatory-properties.adoc[]
 
@@ -630,7 +630,7 @@ For example, a <<clause-local-resources-catalog,local resources catalog>> at the
   ]
 ----
 
-Similarly, a <<clause-local-resources-catalog,local resources catalog>> at the `/processes` endpoint uses an array named `processes` to encoode the records of the catalog and so the value of the `recordsArrayName` property would be:
+Similarly, a <<clause-local-resources-catalog,local resources catalog>> at the `/processes` endpoint uses an array named `processes` to encode the records of the catalog and so the value of the `recordsArrayName` property would be:
 
 [source,json]
 ----
@@ -688,7 +688,7 @@ See <<sc_templated_links_with_variables,Templated links with variables>>.
 
 In various places in a catalog or catalog record property values can be qualified by an authority, scheme or namespace.  Typically such schemes are represented as a URI.  In order to alleviate the need to keep repeating such long URI strings, the schemes mechanism can be used to assign a short identified to each scheme and that identified can, instead, be used to qualify the value.
 
-Consider the value `atmosphericComposition` that is qualified with the schema `https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode`. Rather than, for example, specifying this value as `https%3A//wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode:atmosphericComposition` in an expression, the value `categoryCode` can be associated with the URI `https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode` and the value can be specified as `categoryCode:atmosphericComposition`.  The schemes mechanism provides the means to associated the identifier `categoryCode` with the URI `https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode` as shown in the following JSON fragment:
+Consider the value `atmosphericComposition` that is qualified with the schema `https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode`. Rather than, for example, specifying this value as `https//wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode:atmosphericComposition` in an expression, the value `categoryCode` can be associated with the URI `https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode` and the value can be specified as `categoryCode:atmosphericComposition`.  The schemes mechanism provides the means to associated the identifier `categoryCode` with the URI `https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode` as shown in the following JSON fragment:
 
 ----
   "schemes": [
