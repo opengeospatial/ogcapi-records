@@ -4,7 +4,7 @@
 //|===
 //^|*Recommendation {counter:rec-id}* |*/rec/record-core/keywords-themes*
 //^|A |Implementations SHOULD use the `keywords` property to provide free-form terms or tags associated with the resource(s) described by the current record.
-//^|B |Implementations SHOULD use the `themes` property to enumerate 1..n concepts, and their respective knowledge organization system/controlled vocabulary, associated with the resource(s) descrtibed by the current record.
+//^|B |Implementations SHOULD use the `themes` property to enumerate 1..n concepts, and their respective knowledge organization system/controlled vocabulary, associated with the resource(s) described by the current record.
 //|===
 
 [recommendation]
@@ -12,5 +12,5 @@
 [%metadata]
 identifier:: /rec/record-core/keywords-themes
 part:: Implementations SHOULD use the `keywords` property to provide free-form terms or tags associated with the resource(s) described by the current record.
-part:: Implementations SHOULD use the `themes` property to enumerate 1..n concepts, and their respective knowledge organization system/controlled vocabulary, associated with the resource(s) descrtibed by the current record.
+part:: Implementations SHOULD use the `themes` property to enumerate 1..n concepts, and their respective knowledge organization system/controlled vocabulary, associated with the resource(s) described by the current record.
 ====

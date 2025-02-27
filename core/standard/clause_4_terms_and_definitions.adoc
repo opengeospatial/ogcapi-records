@@ -67,7 +67,7 @@ aggregate of requirements and recommendations of a specification against a singl
 an asset of interest that may be described by metadata (i.e. a <<record-def,record>>) in a catalog for the purpose of discovery and access (i.e. binding)
 
 === searchable catalog endpoint
-an endpoint in the OGC API resource tree that designed to support catalog queries
+an endpoint in the OGC API resource tree that is designed to support catalog queries
 
 NOTE: For <<clause-searchable-catalog,searchable catalogs>>, the searchable catalog endpoint is at `/items`.  For <<clause-local-resources-catalog,local resources catalogs>>, an example of a searchable catalog endpoint might be `/collections` or `/processes`.
 

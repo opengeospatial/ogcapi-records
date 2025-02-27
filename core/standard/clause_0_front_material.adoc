@@ -59,7 +59,7 @@ An implementation of a search API allows collections of records to be searched u
 |Landing page |`/` |GET |https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[API landing page]
 |Conformance declaration |`/conformance` |GET |<<conformance_class,Conformance>>
 |Record collections |`/collections` |GET |<<record-collections,Record collections>>
-|Record collection |`/collections/{collectionId}` |GET |<<clause-record-collection,Record Collection>>
+|Record collection |`/collections/{collectionId}` |GET |<<clause-record-collection,Record collection>>
 |Records |`/collections/{collectionId}/items` |GET |<<records-access,Records access>>
 |Record |`/collections/{collectionId}/items/{recordId}` |GET |<<clause-record-core,Record Core>>
 |===

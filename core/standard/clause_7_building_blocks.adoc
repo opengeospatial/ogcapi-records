@@ -305,7 +305,7 @@ A catalog record can include language information about:
 
 include::recommendations/building-blocks/record-core/REC_record-lang.adoc[]
 
-The https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[templated link object] are based on https://datatracker.ietf.org/doc/html/rfc8288[RFC 8288 (Web Linking)] includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languages. 
+The https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[templated link object] are based on https://datatracker.ietf.org/doc/html/rfc8288[RFC 8288 (Web Linking)] which includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languages. 
 
 [[minting-language-specific-uris]]
 A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any approach how such a capability is supported by a server. 
@@ -347,7 +347,7 @@ include::requirements/building-blocks/record-core/REQ_record-license.adoc[]
 
 A record must contain a `links` section and may contain a <<sc_templated_links_with_variables,`linkTemplates`>> section.  These sections contain navigation links and/or association links.
 
-Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (eotion: `collection`) of which a record is a member, alternative representations (relation: `alternate`) of the record, and -- in the context of an API -- navigation links to previous (relation: `prev` or `previous`) or next (relation: `next`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (relation: `root`, relation: `parent`, relation: `child`).
+Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (relation: `collection`) of which a record is a member, alternative representations (relation: `alternate`) of the record, and -- in the context of an API -- navigation links to previous (relation: `prev` or `previous`) or next (relation: `next`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (relation: `root`, relation: `parent`, relation: `child`).
 
 include::requirements/building-blocks/record-core/REQ_record-links.adoc[]
 
@@ -373,7 +373,7 @@ include::recommendations/building-blocks/record-core/REC_record-associations_tem
 
 NOTE: This Standard does not define any specific link relations that should be used for links in the `links` or <<sc_templated_links_with_variables,`linkTemplates`>> sections.  Such relationships are typically domain specific and so it is left to communities of interest to standardize the relations that links should use.
 
-The following example uses links and link templates to point to resources related to a record.  The `describes` links can be used to retrieve the resources described by the record.  Other links, such as `enclosure`, can be used to retrieve the same information is archived formats.
+The following example uses links and link templates to point to resources related to a record.  The `describes` links can be used to retrieve the resources described by the record.  Other links, such as `enclosure`, can be used to retrieve the same information in archived formats.
 
 [#associations-simple-and-uri-template-example,reftext=`Associations simple and URI Template Example`]
 .Example of Links and Link-Templates in a Record
