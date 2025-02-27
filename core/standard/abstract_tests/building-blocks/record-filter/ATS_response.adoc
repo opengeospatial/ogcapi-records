@@ -9,7 +9,7 @@
 //. Issue an HTTP GET on that path.
 //. Check that the value of the returned HTTP status header is +200+.
 //. Validate that the filter query parameters are processed correctly as per https://portal.ogc.org/files/96288#filter-response[/req/filter/response].
-//. All references to the term "features" must be replaced by the term "record" or "local resources" as the context may indicate
+//. All references to the term "features" must be replaced by the term "records" or "local resources" as the context may indicate
 //|===
 
 
@@ -26,6 +26,6 @@ test-method::
 . Issue an HTTP GET on that path.
 . Check that the value of the returned HTTP status header is +200+.
 . Validate that the filter query parameters are processed correctly as per https://portal.ogc.org/files/96288#filter-response[/req/filter/response].
-. All references to the term "features" must be replaced by the term "record" or "local resources" as the context may indicate
+. All references to the term "features" must be replaced by the term "records" or "local resources" as the context may indicate
 --
 ====
