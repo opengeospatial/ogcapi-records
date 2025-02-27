@@ -33,5 +33,5 @@ WCS::
 WPS::
   Web Processing Service
 YAML::
-  YAML Ain't Markup Language
+  YAML Ain't Markup Language or Yet Another Markup Language
 

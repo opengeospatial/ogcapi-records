@@ -57,7 +57,7 @@ In addition, the following link relation types are used for which no applicable 
 
 * **root**:  Indicates that the link's context is part of a hierarchy, and that the root resource of the hierarchy is the link target.
 
-* **http://www.opengis.net/def/rel/ogc/1.0/sortables**: Refers to a resource, for this context, that provides a list of properties that my be used to create a sortby expression.
+* **http://www.opengis.net/def/rel/ogc/1.0/sortables**: Refers to a resource, for this context, that provides a list of properties that may be used to create a sortby expression.
 
 Each resource representation includes an array of links. Implementations are free to add additional links for all resources provided by the API. For example, an enclosure link could reference a bulk download of a collection. Or a related link on a record could reference a related record.
 
