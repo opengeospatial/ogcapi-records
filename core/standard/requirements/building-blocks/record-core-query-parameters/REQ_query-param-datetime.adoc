@@ -4,7 +4,7 @@
 //|===
 //^|*Requirement {counter:req-id}* |*/req/record-core-query-parameters/datetime*
 //^|A |A searchable endpoint SHALL support a Temporal Searching (`datetime`) parameter as defined in the https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_datetime[OGC API - Features - Part 1: Core] Standard.
-//^|B |All references to the term "features" in the https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_datetim[OGC API - Features - Part 1: Core] Standard SHALL be replaced by the term "record" or "local resource" as the context may indicate.
+//^|B |All references to the term "features" in the https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_datetim[OGC API - Features - Part 1: Core] Standard SHALL be replaced by the term "records" or "local resources" as the context may indicate.
 //|===
 
 
@@ -13,5 +13,5 @@
 [%metadata]
 identifier:: /req/record-core-query-parameters/datetime
 part:: A searchable endpoint SHALL support a Temporal Searching (`datetime`) parameter as defined in the https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_datetime[OGC API - Features - Part 1: Core] Standard.
-part:: All references to the term "features" in the https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_datetim[OGC API - Features - Part 1: Core] Standard SHALL be replaced by the term "record" or "local resource" as the context may indicate.
+part:: All references to the term "features" in the https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_datetim[OGC API - Features - Part 1: Core] Standard SHALL be replaced by the term "records" or "local resources" as the context may indicate.
 ====

@@ -10,7 +10,7 @@
 //. Issue an HTTP GET request on that path.
 //. Check that the value of the returned HTTP status header is +200+.
 //. Validate that the `bbox` query parameter is processed correctly using the test from https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-bbox-response[/conf/core/fc-bbox-response].
-//. All references to the term "features" must be replaced by the term "record" or "local resources" as the context may indicate
+//. All references to the term "features" must be replaced by the term "records" or "local resources" as the context may indicate
 //|===
 
 
@@ -28,6 +28,6 @@ test-method::
 . Issue an HTTP GET request on that path.
 . Check that the value of the returned HTTP status header is +200+.
 . Validate that the `bbox` query parameter is processed correctly using the test from https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-bbox-response[/conf/core/fc-bbox-response].
-. All references to the term "features" must be replaced by the term "record" or "local resources" as the context may indicate
+. All references to the term "features" must be replaced by the term "records" or "local resources" as the context may indicate
 --
 ====
