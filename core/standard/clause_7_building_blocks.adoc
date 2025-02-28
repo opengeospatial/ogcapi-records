@@ -895,7 +895,7 @@ include::requirements/building-blocks/records-api/REQ_query-params.adoc[]
 
 [#response-encodings,reftext='{table-caption} {counter:table-num}']
 .Negotiated representation of response 
-[width=40%,cols=",",options="header"]
+[width=60%,cols=",",options="header"]
 |===
 |Representation |Requirements
 |JSON/GeoJSON |<<clause-record-encoding-json,Requirements Class JSON>>
@@ -1001,7 +1001,7 @@ A common practice is to sort search results by relevance.
 
 This capability is accomodated in this Standard by using <<per_sorting_sortables-synthetic,synthetic>> sortables.  That is, using a sortable that is derived or synthesized by the server.
 
-A sever implementing relevance ranking might include, in its list of sortables, a sortable named `relevance` that is dynamically computed for each result in a result set.  How exactly the value of the `relevance` score is computed is left to the server's discretion.  The value of the synthetic `relevance` sortable could, for example, be between 0 and 10 with zero indicating least relevance and 10 indicating most relevance.  A `sortBy` clause specified on a request specifying a descending sort by the `relevance` property would present search results from most to least relevant.
+A server implementing relevance ranking might include, in its list of sortables, a sortable named `relevance` that is dynamically computed for each result in a result set.  How exactly the value of the `relevance` score is computed is left to the server's discretion.  The value of the synthetic `relevance` sortable could, for example, be between 0 and 10 with zero indicating least relevance and 10 indicating most relevance.  A `sortBy` clause specified on a request specifying a descending sort by the `relevance` property would present search results from most to least relevant.
 
 ==== Examples
 
