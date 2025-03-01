@@ -27,7 +27,7 @@ test-method::
 . Issue an HTTP GET request on the path.
 . Parse all link objects from collection objects whose `+itemType+` value is `+record+`.
 . Check that at least one link contains a rel of http://www.opengis.net/def/rel/ogc/1.0/sortables with a media type of `+application/schema+json+`.
-. Use the `+href+` attribute Construct a path for collection sortables.
+. Use the `+href+` attribute to construct a path for collection sortables page.
 . Issue an HTTP GET request on the path
 . For each sortable found in the `+defaultSortOrder+` array, check that it is  present in the results of the sortables result.
 --

@@ -12,11 +12,11 @@
 //* http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core
 //* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
 //. If the server supports JSON responses check that the `conformsTo` array contains the values:
-//* http://http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 //. If the server supports HTML responses check that the `conformsTo` array contains the values:
-//* http://http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 //. If the server supports an OpenAPI 3.0 service description document check that the `conformsTo` array contains the values:
-//* http://http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
+//* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
 //|===
 
 
@@ -36,10 +36,10 @@ test-method::
 * http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core
 * http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
 . If the server supports JSON responses check that the `conformsTo` array contains the values:
-* http://http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
 . If the server supports HTML responses check that the `conformsTo` array contains the values:
-* http://http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
 . If the server supports an OpenAPI 3.0 service description document check that the `conformsTo` array contains the values:
-* http://http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
+* http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
 --
 ====
