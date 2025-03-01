@@ -44,21 +44,25 @@ test-method::
 . Demonstrate compliance with test https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-op[/conf/core/fc-op].
 . In addition to the parameters tested in https://docs.ogc.org/is/17-069r4/17-069r4.html#ats_core_fc-op[/conf/core/fc-op], also test the following parameters:
 
-External Ids:
-* Parameter <<ats_record-core-query-parameters_externalIds-definition,/conf/record-core-query-parameters/externalIds-definition>>
-* Response <<ats_record-core-query-parameters_externalIds-response,/conf/record-core-query-parameters/externalIds-response>>
+    External Ids:
 
-Ids:
-* Parameter <<ats_record-core-query-parameters_ids-definition,/conf/record-core-query-parameters/ids-definition>>
-* Response <<ats_record-core-query-parameters_ids-response,/conf/record-core-query-parameters/ids-response>>
+        * Parameter <<ats_record-core-query-parameters_externalIds-definition,/conf/record-core-query-parameters/externalIds-definition>>
+        * Response <<ats_record-core-query-parameters_externalIds-response,/conf/record-core-query-parameters/externalIds-response>>
 
-Keyword search:
-* Parameter <<ats_record-core-query-parameters_q-definition,/conf/record-core-query-parameters/q-definition>>
-* Response <<ats_record-core-query-parameters_q-response,/conf/record-core-query-parameters/q-response>>
+    Ids:
 
-Type:
-* Parameter <<ats_record-core-query-parameters_type-definition,/conf/record-core-query-parameters/type-definition>>
-* Response <<ats_record-core-query-parameters_type-response,/conf/record-core-query-parameters/type-response>>
+        * Parameter <<ats_record-core-query-parameters_ids-definition,/conf/record-core-query-parameters/ids-definition>>
+        * Response <<ats_record-core-query-parameters_ids-response,/conf/record-core-query-parameters/ids-response>>
+
+    Keyword search:
+
+        * Parameter <<ats_record-core-query-parameters_q-definition,/conf/record-core-query-parameters/q-definition>>
+        * Response <<ats_record-core-query-parameters_q-response,/conf/record-core-query-parameters/q-response>>
+
+    Type:
+
+        * Parameter <<ats_record-core-query-parameters_type-definition,/conf/record-core-query-parameters/type-definition>>
+        * Response <<ats_record-core-query-parameters_type-response,/conf/record-core-query-parameters/type-response>>
 
 . Execute requests with combinations of these query parameters and verify that only records that match all selection criteria are returned.
 --
