@@ -172,7 +172,7 @@
       },
       {
         "name": "SHAPEFILE",
-        "mediaType": "application/shapefile"
+        "mediaType": "application/vnd.shp"
       },
       {
         "name": "KML",
@@ -204,11 +204,11 @@
       },
       {
         "name": "SVG",
-        "mediaType": "images/svg+xml"
+        "mediaType": "image/svg+xml"
       },
       {
         "name": "TIFF",
-        "mediaType": "images/tiff"
+        "mediaType": "image/tiff"
       }
     ],
     "license": "other"
@@ -283,7 +283,7 @@
             "text/xml; subtype=gml/2.1.2; driver=ogr",
             "application/json; subtype=geojson",
             "application/vnd.google-earth.kml+xml",
-            "application/shapefile",
+            "application/vnd.shp",
             "text/plain",
             "text/csv"
           ],

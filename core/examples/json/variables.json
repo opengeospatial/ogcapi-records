@@ -56,7 +56,7 @@
       "text/xml; subtype=gml/2.1.2; driver=ogr",
       "application/json; subtype=geojson",
       "application/vnd.google-earth.kml+xml",
-      "application/shapefile",
+      "application/vnd.shp",
       "text/plain",
       "text/csv"
     ],
