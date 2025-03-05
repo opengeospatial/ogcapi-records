@@ -3,7 +3,7 @@
 //[cols="1,4",width="90%"]
 //|===
 //2+|*Requirements Class*
-//2+|http://www.opengis.net/spec/ogcapi-records/1.0/req/oas30
+//2+|http://www.opengis.net/spec/ogcapi-records-1/1.0/req/oas30
 //|Target type |Web API
 //|Dependency |<<rc_oas30,OpenAPI Specification 3.0>>
 //|===
@@ -11,7 +11,7 @@
 [requirements_class]
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/ogcapi-records/1.0/req/oas30
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/oas30
 subject:: Web API
 inherit:: <<rc_oas30,OpenAPI Specification 3.0>>
 requirement:: /req/oas30/oas-common

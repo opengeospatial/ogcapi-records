@@ -246,7 +246,7 @@ In practice the responsible standard would define how the two sets of properties
 
 ===== Collections example
 
-The following JSON Schema fragments illustrate how to extended the https://docs.ogc.org/is/17-069r4/17-069r4.html#_collections_[collections object] (a local resources catalog) and the https://docs.ogc.org/is/17-069r4/17-069r4.html#_collection_[collection object] (a local resources item) to include properties required and recommended by this requirements class.
+The following JSON Schema fragments illustrate how to extend the https://docs.ogc.org/is/17-069r4/17-069r4.html#_collections_ [collections object] (a local resources catalog) and the https://docs.ogc.org/is/17-069r4/17-069r4.html#_collection_[collection object] (a local resources item) to include properties required and recommended by this requirements class.
 
 [source,yaml]
 ----
@@ -272,7 +272,7 @@ Referenced schemas can be found at:
 
 ===== Processes example
 
-The following JSON Schema fragments illustrate how to extended the https://docs.ogc.org/is/18-062r2/18-062r2.html#toc30[processes object] (a local resources catalog) and the https://docs.ogc.org/is/18-062r2/18-062r2.html#toc30[process summary] (a local resources item) to include properties required and recommended by this requirements class.
+The following JSON Schema fragments illustrate how to extend the https://docs.ogc.org/is/18-062r2/18-062r2.html#toc30[processes object] (a local resources catalog) and the https://docs.ogc.org/is/18-062r2/18-062r2.html#toc30[process summary] (a local resources item) to include properties required and recommended by this requirements class.
 
 [source,yaml]
 ----

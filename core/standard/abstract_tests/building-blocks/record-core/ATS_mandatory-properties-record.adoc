@@ -3,7 +3,7 @@
 //[width="90%",cols="2,6a"]
 //|===
 //^|*Abstract Test {counter:ats-id}* |*/conf/record-core/mandatory-properties-record*
-//^|Test Purpose |Validate the a catalog record includes all mandatory properties.
+//^|Test Purpose |Validate that a catalog record includes all mandatory properties.
 //^|Requirement |<<req_record-core_mandatory-properties-record,/req/record-core/mandatory-properties-record>>
 //^|Test Method |. Construct a path for a given catalog record.
 //. Issue a HTTP GET request on that path.
@@ -15,7 +15,7 @@
 [%metadata]
 identifier:: /conf/record-core/mandatory-properties-record
 target:: /req/record-core/mandatory-properties-record
-test-purpose:: Validate the a catalog record includes all mandatory properties.
+test-purpose:: Validate that a catalog record includes all mandatory properties.
 test-method::
 +
 --

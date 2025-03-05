@@ -26,15 +26,15 @@ part:: <<local-resources-additional-properties>> contains a list of recommended 
 |created |Date of creation of this local resources object.
 |updated |The most recent date on which this local resources object was changed.
 |<<sc_type,type>> |The nature or genre of the resource described by this local resources object.
-|<<sc_title-description,title>> |A human readable name assigned to the resource describes by this local resources object.
+|<<sc_title-description,title>> |A human readable name assigned to the resource described by this local resources object.
 |<<sc_title-description,description>> |A free-text account about the resource described by this local resources object.
-|<<sc_keywords_and_themes,keywords>> |The topic or topics associated with the resource describes by this local resources object. Typically represented using free-form keywords, tags, key phrases, or classification codes.
+|<<sc_keywords_and_themes,keywords>> |The topic or topics associated with the resource described by this local resources object. Typically represented using free-form keywords, tags, key phrases, or classification codes.
 |<<sc_keywords_and_themes,themes>> |A knowledge organization system used to classify the resource described by this local resources object.
 |<<sc_record_language_handling,language>> |The language used for textual values for this local resources object.
 |<<sc_record_language_handling,languages>> |This list of other languages in which this local resources object can be retrieved.
 |<<sc_record_language_handling,resourceLanguages>> |The list of languages in which the resource described by this local resources object is available.
 |<<sc_formats,formats>> |A list of available distributions of the resource described by this local resources object.
 |<<sc_sc_contacts,contacts>> |A list of contacts qualified by their role(s).
-|<<sc_license,license>> |A legal document under which the resource describes by this local resources object is made available.
+|<<sc_license,license>> |A legal document under which the resource described by this local resources object is made available.
 |rights |A statement that concerns all rights not addresses by the license such as a copyright statement.
 |===
