@@ -1,0 +1,12 @@
+[appendix]
+:appendix-caption: Annex
+[[ats]]
+== Conformance Class Abstract Test Suite (Normative)
+
+=== Conformance Class: Simple Facets
+
+include::abstract_tests/ATS_class_simple.adoc[]
+
+=== Conformance Class: Advanced Facets
+
+include::abstract_tests/ATS_class_advanced.adoc[]

@@ -1,0 +1,5 @@
+== Scope
+
+The OGC Records API Standard specifies requirements classes for a set of common components that can be assembled in various ways to deploy a collection of related descriptive information (metadata) about resources called a catalog.  The atomic unit of information in a catalog is the record.
+
+This Standard specifies the behaviour of representing facets.  A server implements one or more facets to selected properties of a record.  Facets can be based on terms, geometries, or time.

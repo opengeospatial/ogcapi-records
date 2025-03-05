@@ -1,0 +1,8 @@
+[[simple_clause]] 
+== Requirements Class "Simple Facets"
+
+=== Overview
+
+include::requirements/requirements_class_simple.adoc[]
+
+include::requirements/simple/REQ_simple-conformance.adoc[]

@@ -1,0 +1,8 @@
+[[rc_simple]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-records-2/1.0/req/simple
+|Target type |Web API
+|Dependency |<<OARec-1,OGC API - Records - Part 1: Core, Requirements Class "Records API">>
+|===
