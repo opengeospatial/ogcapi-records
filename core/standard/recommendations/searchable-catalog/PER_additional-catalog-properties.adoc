@@ -14,5 +14,5 @@
 [%metadata]
 identifier:: /per/searchable-catalog/additional-catalog-properties
 part:: A catalog object MAY include zero or more of the optional properties listed in <<collection-properties-table>>.
-part:: |A catalog object MAY include any number of additional properties not listed in <<collection-properties-table>>. The meaning of these additional properties is not specified in this document.
+part:: A catalog object MAY include any number of additional properties not listed in <<collection-properties-table>>. The meaning of these additional properties is not specified in this document.
 ====
