@@ -45,7 +45,7 @@ A complete definition of a record can be found in clause <<core-properties,Core 
 The choice of which properties to include in the set of core properties was primarily informed by the following record models:
 
 * The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalog schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
-* The https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabulary (DCAT) - Version 2] and the https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.58/2017/mtg3/2017-UNECE-topic-i-EC-GeoDCAT-ap-paper.pdf[GeoDCAT-AP] specifications.
+* The https://www.w3.org/TR/vocab-dcat-2/[Data Catalog Vocabulary (DCAT) version 2] and the https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/geodcat-application-profile-data-portals-europe/release/300[GeoDCAT-AP version 3.0.0] specifications.
 
 It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being made discoverable by a record.
 
