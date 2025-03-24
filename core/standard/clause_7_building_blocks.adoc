@@ -166,10 +166,11 @@ In the case of a date the granularity is a day and dates as instants will be use
 
 NOTE: This Standard only provides guidance as to how record data is represented in JSON. It is out-of-scope for this Standard to provide guidance how to cast record data to other data types. The https://docs.ogc.org/DRAFTS/21-065.html[Common Query Language (CQL2)] standard uses the same model of instants and intervals as used here and includes additional guidance on how to compare values.
 
-[#ex-time-1,reftext='{listing-caption} {counter:listing-num}']
+[#ex-time-1]
 .A date
+[example]
 ====
-[source,json,linenumbers]
+[source,json]
 ----
 "time" : {
     "date": "1969-07-20"
@@ -177,10 +178,11 @@ NOTE: This Standard only provides guidance as to how record data is represented 
 ----
 ====
 
-[#ex-time-2,reftext='{listing-caption} {counter:listing-num}']
+[#ex-time-2]
 .A timestamp
+[example]
 ====
-[source,json,linenumbers]
+[source,json]
 ----
 "time" : {
     "timestamp": "1969-07-20T20:17:40Z"
@@ -203,7 +205,7 @@ The end of unbounded intervals is represented by a double-dot string (`..`) for 
 [#ex-time-3,reftext='{listing-caption} {counter:listing-num}']
 .An interval with dates
 ====
-[source,json,linenumbers]
+[source,json]
 ----
 "time" : {
     "interval": [
@@ -217,7 +219,7 @@ The end of unbounded intervals is represented by a double-dot string (`..`) for 
 [#ex-time-4,reftext='{listing-caption} {counter:listing-num}']
 .An interval with timestamps
 ====
-[source,json,linenumbers]
+[source,json]
 ----
 "time" : {
     "interval": [
@@ -231,7 +233,7 @@ The end of unbounded intervals is represented by a double-dot string (`..`) for 
 [#ex-time-5,reftext='{listing-caption} {counter:listing-num}']
 .An half-bounded interval
 ====
-[source,json,linenumbers]
+[source,json]
 ----
 "time" : {
     "interval": [
