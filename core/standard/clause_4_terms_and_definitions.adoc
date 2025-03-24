@@ -14,7 +14,7 @@ set of conformance test modules that must be applied to receive a single certifi
 NOTE: When no ambiguity is possible, the word `test` may be omitted, so conformance test class may be called a conformance class.
 
 === dataset
-collection of data, published or curated by a single agent, and available for access or download in one or more formats (DCAT)
+collection of data, published or curated by a single agent, and available for access or download in one or more serializations or formats (<<DCAT>>)
 
 === deployment; deployment type 
 a set of components implemented to execute the runtime functions of a catalog
@@ -24,7 +24,7 @@ EXAMPLE: a crawlable catalog deployment composed of static, web-accessible files
 EXAMPLE: a searchable catalog deployment composed of an API that can be used to dynamically search a collection of catalog records
 
 === distribution
-represents an accessible form of a *dataset* (DCAT)
+represents an accessible form of a *dataset* (<<DCAT>>)
 
 EXAMPLE: a downloadable file, an RSS feed or a web service that provides the data
 
