@@ -418,25 +418,25 @@ Information about the substitution variables can be obtained in one of two ways.
 include::requirements/building-blocks/record-core/REQ_templated-link.adoc[]
 
 include::recommendations/building-blocks/record-core/REC_templated-link.adoc[]
-￼
+
 include::requirements/building-blocks/record-core/REQ_templated-link-header.adoc[]
-￼
-following example illustrates a link template to a legacy OGC Web service.  The example includes both an in-line and referenced dictionaries of substitution variables.
-￼
+
+The following example illustrates a link template to a legacy OGC Web service.  The example includes both an in-line and referenced dictionaries of substitution variables.
+
 [#templated-link-with-variables-inline,reftext=`Templated link example 1`]
 .Templated link with in-line dictionary of substitution variables:
 [source,json]
 ----
 include::../examples/json/templated-link-inline.json[]
 ----
-￼
+
 [#templated-link-with-variables-ref,reftext=`Templated link example 2`]
 .Templated link with `varBase` URI for retrieving substitution variable definitions:
 [source,json]
 ----
 include::../examples/json/templated-link-ref.json[]
 ----
-￼
+
 [#variable-def,reftext=`Variable definition example`]
 .Using `varBase` to retrieve the definition of the variable bbox
 ----
@@ -1144,8 +1144,8 @@ The following examples illustrate each of these linking patterns:
     },
     "enclosure": {
       "title": "GeoPackage of Feature Data",
-￼      "href" : "https:/example.org/collections/MyCollection/items?f=application/geopackage+vnd.sqlite3&bbox={bbox}",
- ￼     "varBase": "https://example.org/variables/
+       "href" : "https:/example.org/collections/MyCollection/items?f=application/geopackage+vnd.sqlite3&bbox={bbox}",
+       "varBase": "https://example.org/variables/"
     },
     ...
   }
