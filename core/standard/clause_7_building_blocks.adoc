@@ -1245,7 +1245,7 @@ https://example.org/collections/myCatalog/items?scheme=https%3A%2F%2Fgeo.woudc.o
 
 include::requirements/building-blocks/requirements_class_autodiscovery.adoc[]
 
-The purpose of autodiscovery is, knowing the location of a web page, to find the addresses(s) of that page's associated catalog(s).  For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site's searchable catalog by locating the `rel="http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog"` link in the landing page and then, using that catalog, search for resources offered by the site.
+The purpose of autodiscovery is, knowing the location of a web page, to find the addresses(s) of that page's associated catalog(s).  For example, a client could retrieve the landing page of an OGC API deployment, find the location of the site's searchable catalog by locating the link relation type that has the value `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog` in the landing page and then, using that catalog, search for resources offered by the site.
 
 ==== Autodiscovery links
 
