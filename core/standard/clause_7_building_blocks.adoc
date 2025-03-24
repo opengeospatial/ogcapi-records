@@ -1145,7 +1145,7 @@ The following examples illustrate each of these linking patterns:
     "enclosure": {
       "title": "GeoPackage of Feature Data",
        "href" : "https:/example.org/collections/MyCollection/items?f=application/geopackage+vnd.sqlite3&bbox={bbox}",
-       "varBase": "https://example.org/variables/
+       "varBase": "https://example.org/variables/"
     },
     ...
   }
