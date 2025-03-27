@@ -25,14 +25,14 @@ This annex describes common resource types when qualifying resources via a recor
 
 ===== OGC API
 
-* http://www.opengis.net/spec/ogcapi-records-1/1.0
-* http://www.opengis.net/spec/ogcapi-features-1/1.0
-* http://www.opengis.net/spec/ogcapi-coverages-1/1.0
-* http://www.opengis.net/spec/ogcapi-maps-1/1.0
-* http://www.opengis.net/spec/ogcapi-tiles-1/1.0
-* http://www.opengis.net/spec/ogcapi-styles-1/1.0
-* http://www.opengis.net/spec/ogcapi-processes-1/1.0
-* http://www.opengis.net/spec/ogcapi-edr-1/1.0
+* http://www.opengis.net/def/interface/ogcapi-records
+* http://www.opengis.net/def/interface/ogcapi-features
+* http://www.opengis.net/def/interface/ogcapi-coverages
+* http://www.opengis.net/def/interface/ogcapi-maps
+* http://www.opengis.net/def/interface/ogcapi-tiles
+* http://www.opengis.net/def/interface/ogcapi-styles
+* http://www.opengis.net/def/interface/ogcapi-processes
+* http://www.opengis.net/def/interface/ogcapi-environmental-data-retrieval
 
 ==== Additional Resource Type Vocabularies
 
