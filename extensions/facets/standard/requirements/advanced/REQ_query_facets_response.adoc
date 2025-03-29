@@ -1,0 +1,6 @@
+[[req_advanced_query_facets_response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/advanced/query_facets_response*
+^|A |Only properties matching the property names specified using the `facets` parameter SHALL be in the results set.
+|===

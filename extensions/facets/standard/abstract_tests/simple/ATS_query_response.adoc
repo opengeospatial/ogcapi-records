@@ -1,0 +1,16 @@
+[[ats_simple_query_response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/simple/query_response*
+^|Test Purpose |Validate facets in a query response.
+^|Requirement |<<req_simple_query_response,/req/simple/query_response>>
+^|Test Method |. Construct a path for a facets page
+. Issue an HTTP GET request on the path
+. Check that the response HTTP status code is `200`.
+. Check that the response contains a `facets` object with at least one property.
+. Foreach facet property:
+.. check that a `type` property exists.
+.. check that a `property` property exists.
+.. check that a `buckets` property exists, contains either a `value` property or both of `min` and `max` properties.
+|===
+

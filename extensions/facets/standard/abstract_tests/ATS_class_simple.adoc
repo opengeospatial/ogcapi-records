@@ -10,3 +10,15 @@
 ==== Conformance
 
 include::simple/ATS_conformance.adoc[]
+
+==== Media type
+
+include::simple/ATS_media_type.adoc[]
+
+==== Response
+
+include::simple/ATS_response.adoc[]
+
+==== Query response
+
+include::simple/ATS_query_response.adoc[]

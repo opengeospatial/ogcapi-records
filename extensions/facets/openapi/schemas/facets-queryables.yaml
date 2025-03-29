@@ -1,0 +1,16 @@
+$schema: 'https://json-schema.org/draft/2020-12/schema'
+$id: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/extensions/facets/openapi/schemas/facets-querayables.yaml'
+title: 'OGC API - Records - Part 2: Facets queryables extension'
+description: 'OGC API - Records - Part 2: Facets queryables extension'
+
+type: object
+properties:
+  properties:
+    patternProperties:
+      "^.*":
+        type: object
+        properties:
+          facets:
+            type: boolean
+            default: false
+            description: Whether facets can be applied to the property.

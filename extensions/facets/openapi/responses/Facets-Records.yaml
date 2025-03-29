@@ -1,0 +1,22 @@
+---
+description: |
+  This response extends the OGC API - Records - Part 1: Core records response with a `facets` object.
+
+  The response includes a facets object. The content represents an object of all facets available for that response,
+  each containing various buckets describing different facets of the search result. A facet is identified by a
+  property identifier and contains the top number of buckets with their respective count. A bucket is a number of
+  results in the result set matching the property. The facets object may also indicate how many buckets were omitted
+  in order to keep the response size low (e.g. 0 if all buckets were included in the overview), via the more property.
+content:
+  application/geo+json: &pResponse
+    schema:
+      allOf:
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/refs/heads/master/core/openapi/responses/Records.yaml'
+        - type: object
+          properties:
+            facets:
+              type: object
+              items:
+                $ref: '../schemas/facets-items.yaml'
+  application/json:
+    <<: *pResponse

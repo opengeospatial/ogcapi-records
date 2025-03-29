@@ -1,0 +1,12 @@
+[[ats_advanced_query_facets_response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/advanced/query_facets_response*
+^|Test Purpose |Validate `facets` query parameter handling.
+^|Requirement |<<req_advanced_query_facets_response,/req/advanced/query_facets_response>>
+^|Test Method |. Construct a path as per <<ats_advanced_query_facets_definition>>
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is 200.
+. Check that only facets whose property match one of the properties specified using `facets` query parameter are in the `facets` object of the results set.
+|===
+

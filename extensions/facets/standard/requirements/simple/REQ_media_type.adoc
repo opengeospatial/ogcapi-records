@@ -1,0 +1,6 @@
+[[req_simple_media_type]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/simple/media_type*
+^|A |The Facets resource SHALL support the HTTP GET operation and the media type `application/facets+json`.
+|===

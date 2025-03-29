@@ -1,0 +1,11 @@
+[[ats_simple_media_type]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/simple/media_type*
+^|Test Purpose |Validate media type.
+^|Requirement |<<req_simple_media_type,/req/simple/media_type>>
+^|Test Method |. Construct a path for a facets page
+. Issue an HTTP GET request on the path
+. Check that the media type returned as part of the HTTP `Content-Type` header is `application/facets+json`.
+|===
+

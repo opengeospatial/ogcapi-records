@@ -1,0 +1,6 @@
+[[per_simple_queryables]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/per/simple/queryables*
+^|A |A queryables response MAY indicate whether facets can be applied on a given queryable.
+|===

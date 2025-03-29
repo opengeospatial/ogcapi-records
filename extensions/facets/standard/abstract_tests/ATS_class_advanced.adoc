@@ -4,9 +4,17 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-records-2/1.0/conf/advanced
 |Target type |Web API
-|Requirements class |<<rc_advanced,Requirements Class "Simple Facets">>
+|Requirements class |<<rc_advanced,Requirements Class "Advanced Facets">>
 |===
 
 ==== Conformance
 
 include::advanced/ATS_conformance.adoc[]
+
+==== Facets query parameter definition
+
+include::advanced/ATS_query_facets_definition.adoc[]
+
+==== Facets query parameter response
+
+include::advanced/ATS_query_facets_response.adoc[]
