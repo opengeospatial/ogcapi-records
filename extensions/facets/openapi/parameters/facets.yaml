@@ -1,0 +1,17 @@
+---
+name: facets
+in: query
+description: |
+   The facets parameter is represented by a comma-separated list of values (,), delimited by colons (:), with the following tokens:
+
+    - `property name`: name of the property on which facets were computed against
+    - `count`: the number of buckets to return
+    - `direction`: whether to sort buckets ascending or descending (default descending)
+required: false
+schema:
+    type: array
+    items:
+      type: string
+explode: false
+style: form
+example: keywords:20:value_asc,organization:10

@@ -1,0 +1,14 @@
+[[ats_simple_response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/simple/response*
+^|Test Purpose |Validate facets endpoint response.
+^|Requirement |<<req_simple_response,/req/simple/response>>
+^|Test Method |. Construct a path for a facets page
+. Issue an HTTP GET request on the path
+. Check that the response HTTP status code is `200`.
+. Check that the response HTTP `Content-Type` header is `application/facets+json`.
+. Check that the response contains a `facets` object with at least one property.
+. Foreach facet property, check that a `type` property exists, Check that the response contains a `facets` object with at least one property.
+|===
+

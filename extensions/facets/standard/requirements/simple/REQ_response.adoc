@@ -1,0 +1,11 @@
+[[req_simple_response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/simple/response*
+^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code of 200.
+^|B |For responses that use application/schema+json as the `Content-Type` of the response, the response SHALL have the following characteristics:
+
+* The response contains an `id` (the identifier of the collection).
+* The response contains a `facets` object, and each property is a facet definition object.
+* Each facet definition object is a named object with a `type` property identifying a `term`, `histogram`, or `filter` facet.
+|===

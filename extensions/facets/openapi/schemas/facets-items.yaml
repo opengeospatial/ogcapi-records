@@ -1,0 +1,64 @@
+$schema: 'https://json-schema.org/draft/2020-12/schema'
+$id: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/extensions/facets/openapi/schemas/facets-items.yaml'
+title: 'OGC API - Records - Part 2: Facets items extension'
+description: 'OGC API - Records - Part 2: Facets items extension'
+
+allOf:
+  - https://raw.githubusercontent.com/opengeospatial/ogcapi-records/refs/heads/master/core/openapi/responses/Records.yaml
+  - type: object
+    properties:
+      facets:
+        type: object
+        description: Facets object definition
+        patternProperties:
+          "^.*":
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - term
+                  - histogram
+                  - filter
+              property:
+                type: string
+                description: The property that the facet is computed against
+              buckets:
+                type: array
+                description: The list of buckets as computed by the facet
+                items:
+                  type: object
+                  oneOf:
+                    - properties:
+                        min:
+                          type:
+                          description: Minimum value
+                            - integer
+                            - number
+                            - string
+                            - boolean
+                        max:
+                          type:
+                          description: Maximum value
+                            - integer
+                            - number
+                            - string
+                            - boolean
+                      required:
+                        - min
+                        - max
+                    - properties:
+                        count:
+                          type: integer
+                          description: facet count
+                      required:
+                        - count
+              more:
+                type: integer
+                description: The number of additional facets
+            required:
+              - type
+              - property
+              - buckets
+    required:
+      - facets

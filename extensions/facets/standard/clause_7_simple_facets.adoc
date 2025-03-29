@@ -1,0 +1,133 @@
+[[simple_clause]] 
+== Requirements Class "Simple Facets"
+
+include::requirements/requirements_class_simple.adoc[]
+
+This requirements class defines the Facets resource for discovering a list of resource properties onto which facets are applicable and may be computed on.
+
+In addition, a publisher may want to support facets that are not directly represented as resource properties iun the content schema of the record.  Or the publisher may choose to restrict facets on certain properties, in support of managing high-performance queries and computations on a given metadata repository backend.
+
+include::requirements/simple/REQ_conformance.adoc[]
+
+include::requirements/simple/REQ_media_type.adoc[]
+
+include::requirements/simple/REQ_response.adoc[]
+
+.Example encoding of a facets response for a given collection
+[source,json]
+----
+{
+    "id": "wis2-discovery-metadata",
+    "title": "WIS2 Discovery Metadata",
+    "facets": {
+        "date": {
+            "name": "updateDate",
+            "type": "histogram",
+            "bucketType": "fixedInterval"
+        },
+        "organization": {
+            "type": "term",
+            "sortedBy": "count",
+            "minimumOccurrenceCount": 50
+        },
+        "created": {
+            "type": "histogram",
+            "bucketType": "fixedBucketCount"
+        },
+        "format": {
+            "type": "terms",
+            "sortedBy": "value",
+            "minimumOccurrenceCount": 10
+        },
+        "usage": {
+            "type": "filter",
+            "view": "link.type = 'wms'",
+            "download": "link.type = 'wfs'"
+        }
+    },
+    "defaultBucketCount": 10
+}
+----
+
+=== Extending queryables
+
+As part of <<OAFeat-3, OGC API - Features - Part 3: Filtering>>, a queryables response can optionally advertise whether facets can be applied on a queryable, which a client can use to assess whether to invoke or skip a facets request:
+
+.Example queryable with facets enabled
+[source,json]
+----
+{
+    "properties": {
+        "organization": {
+            "title": "organization",
+            "type": "string",
+            "facets": true
+        }
+    }
+}
+----
+
+include::recommendations/simple/PER_queryables.adoc[]
+
+=== Extending search results
+
+As part of <<OARec-1, OGC API - Records - Part 1: Core>>, a catalogue query response might include a facet overview for any search result.  For example, given a query to:
+
+[source,bash]
+----
+GET /collections/wis2-discovery-metadata/items
+----
+
+The response includes a facets object. The content represents an object of all facets available for that response, each containing various buckets describing different facets of the search result.  A facet is identified by a property identifier and contains the top number of buckets with their respective count. A bucket is a number of results in the result set matching the property.  The facets object may also indicate how many buckets were omitted in order to keep the response size low (e.g. 0 if all buckets were included in the overview), via the `more` property.
+
+TODO: clarify `more` data type (integer? boolean?  Both)?
+
+.Example search results / response
+[source,json]
+----
+{
+    "type": "FeatureCollection",
+    "facets": {
+        "keywords": {
+            "type": "terms",
+            "property": "keyword",
+            "buckets": [
+                {
+                    "value": "Greece",
+                    "count": "202"
+                },
+                {
+                    "value": "Germany",
+                    "count": "150"
+                }
+            ],
+            "more": 0
+        },
+        "created": {
+            "type": "histogram",
+            "property": "created",
+            "buckets": [
+                {
+                    "min": "2010-01-01",
+                    "max": "2011-01-01",
+                    "count": 100
+                },
+                {
+                    "min": "2011-01-01",
+                    "max": "2012-01-01",
+                    "count": 220
+                }
+            ],
+            "more": 12
+        }
+    },
+    "features": [],
+    "numberMatched": 375,
+    "numberReturned": 0,
+    "links": []
+}
+----
+
+Note that in some situations, clients may be interested in the facets only.  In this case, a client can set a `limit` parameter of `0`.
+
+include::requirements/simple/REQ_query_response.adoc[]

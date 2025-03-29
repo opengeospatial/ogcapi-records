@@ -93,11 +93,13 @@ include::clause_4_terms_and_definitions.adoc[]
 
 include::clause_5_conventions.adoc[]
 
-include::clause_6_simple_facets.adoc[]
+include::clause_6_overview.adoc[]
 
-include::clause_7_advanced_facets.adoc[]
+include::clause_7_simple_facets.adoc[]
 
-include::clause_8_security.adoc[]
+include::clause_8_advanced_facets.adoc[]
+
+include::clause_9_security.adoc[]
 
 include::annex_ats.adoc[]
 

@@ -1,8 +1,0 @@
-[[advanced_clause]] 
-== Requirements Class "Advanced Facets"
-
-=== Overview
-
-include::requirements/requirements_class_advanced.adoc[]
-
-include::requirements/advanced/REQ_advanced-conformance.adoc[]

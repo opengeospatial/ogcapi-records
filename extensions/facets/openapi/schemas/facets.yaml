@@ -1,0 +1,46 @@
+$schema: 'https://json-schema.org/draft/2020-12/schema'
+$id: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/extensions/facets/openapi/schemas/facets.yaml'
+title: 'OGC API - Records - Part 2: Facets description'
+description: 'OGC API - Records - Part 2: Facets description'
+
+type: object
+properties:
+  facets:
+    patternProperties:
+      "^.*":
+        type: object
+        description: facets
+        properties:
+          type:
+            type: string
+            description: facet type
+            enum:
+              - term
+              - histogram
+              - filter
+          sortedBy:
+              type: string
+              description: the manner in which the facet is optionally sorted by
+              enum:
+                - count
+                - value
+          bucketType:
+              type: string
+              description: the type of bucket
+              enum:
+                - fixedInterval
+          minOccurs:
+              type: integer
+              description: the minimum number of occurences provided by the facet
+              enum:
+                - fixedInterval
+                - fixedBucketCount
+        required:
+          - type
+  defaultBucketCount:
+    type: integer
+    description: default bucket count (10)
+    default: 10
+
+required:
+  - facets

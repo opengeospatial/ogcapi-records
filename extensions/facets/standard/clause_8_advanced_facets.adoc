@@ -1,0 +1,27 @@
+[[advanced_clause]] 
+== Requirements Class "Advanced Facets"
+
+=== Overview
+
+include::requirements/requirements_class_advanced.adoc[]
+
+This requirements class defines the minimum set of query parameters that should be implemented at a searchable catalogue or local resources catalogue endpoint.
+
+include::requirements/advanced/REQ_conformance.adoc[]
+
+=== Query parameters
+
+==== Parameter facets
+
+The `facets` parameter allows a client to specify fine-grained access and computation of a facet against a given property, such as which facets to return and how many buckets to calculate.
+
+. Example facets query
+
+[source,bash]
+----
+GET /collections/wis2-discovery-metadata/items?facets=keywords:20:value_asc,organization:10
+----
+
+include::requirements/advanced/REQ_query_facets_definition.adoc[]
+
+include::requirements/advanced/REQ_query_facets_response.adoc[]
