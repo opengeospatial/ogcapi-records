@@ -6,3 +6,4 @@ core/standard/*.html
 .vscode/settings.json
 .DS_Store
 core/standard/document.presentation.xml
+extensions/*/standard/*.html
