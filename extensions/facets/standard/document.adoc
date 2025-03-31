@@ -1,11 +1,29 @@
 :Title: OGC API - Records - Part 2: Facets
 :titletext: OGC API - Records - Part 2: Facets
-:doctype: book
+:doctype: standard
 :encoding: utf-8
+:status: draft
+:committee: technical
+:draft: 1.0
+:external-id: http://www.opengis.net/doc/IS/ogcapi-records-2/1.0
+:docnumber: 25-013
 :lang: en
+:received-date: 2025-03-31
+:issued-date: 2025-03-31
+:published-date: 2025-03-31
+:fullname: Tom Kralidis
+:fullname_2: Florent Gravin
+:fullname_3: Paul van Genuchten
+:fullname_4: Panagiotis (Peter) A. Vretanos
+:fullname_5: Angelos Tzotsos
+:docsubtype: Interface
+:keywords: ogcdoc, OGC document, OGC API, catalog, record, records, resource, metadata, discovery, facets, aggregations, buckets
+:submitting-organizations: Meteorological Service of Canada; Camptocamp SA; ISRIC - World Soil Information; CubeWerx Inc., Open Source Geospatial Foundation
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,pdf
 :toc:
 :toc-placement!:
-:toclevels: 4
+:toclevels: 3
 :sectnums:
 :sectnumlevels: 4
 :sectanchors:
@@ -14,6 +32,10 @@
 :req-id: 0
 :rec-id: 0
 :per-id: 0
+:pdf-uri: ./document.pdf
+:xml-uri: ./document.xml
+:doc-uri: ./document.doc
+:edition: 1.0
 
 = {title}
 
@@ -22,11 +44,11 @@
 |===
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
-|Submission Date: <yyyy-mm-dd>
-|Approval Date: <yyyy-mm-dd>
-|Publication Date: <yyyy-mm-dd>
+|Submission Date: 2025-03-31
+|Approval Date: 2025-03-31
+|Publication Date: 2025-03-31
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/is/ogcapi-records-2/1.0
-|Internal reference number of this OGC(R) document: YY-xxx
+|Internal reference number of this OGC(R) document: 25-013
 |Version: 1.0.0-draft.1
 |Category: OGC(R) Implementation Standard
 |Editors:  Tom Kralidis, Florent Gravin, Paul van Genuchten, Panagiotis (Peter) A. Vretanos, Angelos Tzotsos
