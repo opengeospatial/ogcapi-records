@@ -8,8 +8,8 @@
 :external-id: http://www.opengis.net/doc/IS/ogcapi-records-1/1.0
 :docnumber: 20-004r1
 :received-date: 2025-01-07
-:issued-date: 2029-03-30
-:published-date: 2029-03-30
+:issued-date: 2025-03-30
+:published-date: 2025-03-30
 :fullname: Panagiotis (Peter) A. Vretanos
 :fullname_2: Tom Kralidis
 :fullname_3: Angelos Tzotsos
