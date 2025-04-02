@@ -14,4 +14,19 @@
                         "asciidoctor-diagram"
                 ]
         }
+        "1":  {
+                "OGC_doc_number": "25-013",
+                "urn":"http://www.opengis.net/doc/is/ogcapi-records-2/1.0",
+                "title":"OGC API - Records - Part 2: Facets",
+                "path":"extensions/facets/standard/document.adoc",
+                "options": ["--trace"],
+                "a":[
+                        "data-uri",
+                        "stylesdir=./resources/stylesheets",
+                        "dot=/usr/bin/dot"
+                ],
+                "r":[
+                        "asciidoctor-diagram"
+                ]
+        }        
 }
