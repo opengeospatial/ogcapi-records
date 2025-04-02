@@ -1,20 +1,5 @@
 {
         "0":  {
-                "OGC_doc_number": "20-004r1",
-                "urn":"http://www.opengis.net/doc/is/ogcapi-records-1/1.0",
-                "title":"OGC API - Records - Part 1: Core",
-                "path":"core/standard/20-004.adoc",
-                "options": ["--trace"],
-                "a":[
-                        "data-uri",
-                        "stylesdir=./resources/stylesheets",
-                        "dot=/usr/bin/dot"
-                ],
-                "r":[
-                        "asciidoctor-diagram"
-                ]
-        }
-        "1":  {
                 "OGC_doc_number": "25-013",
                 "urn":"http://www.opengis.net/doc/is/ogcapi-records-2/1.0",
                 "title":"OGC API - Records - Part 2: Facets",
