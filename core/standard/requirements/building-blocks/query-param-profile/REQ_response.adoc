@@ -1,0 +1,8 @@
+[[req_query-param-profile_response]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/query-param-profile/response
+part:: The query parameter is not required, that is, omitting the parameter in a request SHALL not result in an error. 
+part:: If the media type of the response supports web links in accordance with <<rfc8288,RFC 8288 Web Linking>>, the response SHALL include links to the selected profile(s) with the link relation type "profile".
+====
