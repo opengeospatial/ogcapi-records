@@ -30,14 +30,7 @@ part:: The `type` parameter SHALL have the following characteristics (using an O
 
 [source,YAML]
 ----
-name: type
-in: query
-required: false
-schema:
-  type: array
-  items:
-    type: string
-explode: false
-style: form
+include::../../../../openapi/parameters/type.yaml[]
 ----
+
 ====
