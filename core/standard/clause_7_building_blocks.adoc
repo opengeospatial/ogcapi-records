@@ -828,6 +828,11 @@ include::recommendations/building-blocks/record-core-query-parameters/REC_additi
 
 include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-empty-value.adoc[]
 
+If the value of the parameter is non-empty then its handling depends on the parameter.
+
+For `bbox`, for instance, `?bbox=,&` is invalid because `bbox` requires four values.  Similarly `?bbox=,,,&` is invalid because there are four empty of null values and bbox requires four numeric values.
+
+For `ids`, on the other hand, `?ids=,&` is valid.  It is a list of two null or empty identifiers which is a valid request.  In this case the response would be an empty result set since a records cannot have a null or empty identifier.
 
 [[clause-records-api]]
 === Requirements Class "Records API" (Common Component)
