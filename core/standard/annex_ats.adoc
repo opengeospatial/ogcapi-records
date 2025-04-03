@@ -12,6 +12,8 @@ include::abstract_tests/building-blocks/ATS_class_records-api.adoc[]
 
 include::abstract_tests/building-blocks/ATS_class_record-core-query-parameters.adoc[]
 
+include::abstract_tests/building-blocks/ATS_class_query-param-profile.adoc[]
+
 include::abstract_tests/building-blocks/ATS_class_record-filter.adoc[]
 
 include::abstract_tests/building-blocks/ATS_class_sorting.adoc[]

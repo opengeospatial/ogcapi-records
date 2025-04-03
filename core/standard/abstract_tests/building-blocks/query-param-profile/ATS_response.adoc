@@ -1,0 +1,16 @@
+[[ats_query-param-profile_response]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/query-param-profile/response
+target:: /req/query-param-profile/response
+test-purpose:: Validate `profile` query parameter.
+test-method::
++
+--
+. Construct a path for a searchable endpoint as per test <<ats_query-param-profile_definition,/conf/query-param-profile/definition>>.
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+. Check that that the content of response adheres to the requirements of the specified profile(s).
+--
+====

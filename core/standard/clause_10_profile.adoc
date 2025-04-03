@@ -1,0 +1,32 @@
+[[profile-parameter]]
+== Requirements Class "Profile query parameter"
+
+The Requirements Class "Profile query parameter" specifies additional provisions for properties that reference another resource.
+
+include::requirements/building-blocks/requirements_class_query-param-profile.adoc[]
+
+Some properties may be represented in multiple representations in the same format, depending on the intended use of the data. One example are references to another web resource (see the <<rc_profile-references>>).
+
+<<rfc6906,RFC 6906 The 'profile' Link Relation Type>> defines the concept of a profile to support such use cases.
+
+A profile is defined not to alter the semantics of the resource representation itself, but to allow clients to learn about additional semantics (constraints, conventions, extensions) that are associated with the resource representation, in addition to those defined by the media type and possibly other mechanisms.
+
+To request one or more profiles, a query parameter "profile" can be used:
+
+include::requirements/building-blocks/query-param-profile/REQ_definition.adoc[]
+
+include::recommendations/building-blocks/query-param-profile/PER_default.adoc[]
+
+Determining the profile(s) of the response is part of the content negotiation process after the proactive content negotiation as specified by the https://www.rfc-editor.org/rfc/rfc9110.html#name-content-negotiation[HTTP RFC] has been completed. The server determines the applicable profile(s) for the selected media type.
+
+Different media types have different characteristics. A consequence is that it can be impossible to support a profile for a media type or it can be against the design goals of a media type to support a profile.
+
+include::recommendations/building-blocks/query-param-profile/PER_profiles-of-media-type.adoc[]
+
+The server will select the profile(s) of the response, if any, from the list of profiles supported for the media type and resource.
+
+include::recommendations/building-blocks/query-param-profile/REC_negotiation.adoc[]
+
+include::requirements/building-blocks/query-param-profile/REQ_response.adoc[]
+
+include::recommendations/building-blocks/query-param-profile/REC_link-header.adoc[]

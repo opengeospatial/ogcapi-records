@@ -5,7 +5,7 @@ description: |-
   The optional q parameter supports keyword searching.  Only records
   whose text fields contain one or more of the specified search terms
   are selected.  The specific set of text keys/fields/properties of a
-  record to which the q operator is applied is up to the description
+  record to which the q operator is applied is up to the discretion
   of the server.   Implementations should, however, apply the q
   operator to the title, description and keywords keys/fields/properties.
 required: false

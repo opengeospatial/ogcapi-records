@@ -34,14 +34,7 @@ part:: The `q` parameter SHALL have the following characteristics (using an Open
 +
 [source,YAML]
 ----
-name: q
-in: query
-required: false
-schema:
-  type: array
-  items:
-    type: string
-explode: false
+include::../../../../openapi/parameters/q.yaml[]
 ----
 
 part:: Search terms that may appear together (logical OR) in a record SHALL be separated by literal commas.

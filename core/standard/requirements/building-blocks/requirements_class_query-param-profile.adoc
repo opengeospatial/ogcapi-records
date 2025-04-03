@@ -1,0 +1,9 @@
+[[rc_query-param-profile]]
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/query-param-profile
+subject:: Web API
+requirement:: /req/query-param-profile/definition
+requirement:: /req/query-param-profile/response
+====

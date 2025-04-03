@@ -53,13 +53,23 @@ In addition, the following link relation types are used for which no applicable 
 
 * **parent**:  Indicates that the link's context is part of a hierarchy, and that the parent resource in the hierarchy is the link target.
 
-* **http://www.opengis.net/def/rel/ogc/1.0/queryables**: Refers to a resource, for this context, that provides a list of properties that may be used to create a filter expression.
-
 * **root**:  Indicates that the link's context is part of a hierarchy, and that the root resource of the hierarchy is the link target.
 
-* **http://www.opengis.net/def/rel/ogc/1.0/sortables**: Refers to a resource, for this context, that provides a list of properties that may be used to create a sortby expression.
+* **`http://www.opengis.net/def/rel/ogc/1.0/sortables`**: Refers to a resource, for this context, that provides a list of properties that may be used to create a sortby expression.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/queryables**: Refers to a resource, for this context, that provides a list of properties that may be used to create a filter expression.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog**: Refers to a resource, for this context, that points to an associated catalog.
 
 Each resource representation includes an array of links. Implementations are free to add additional links for all resources provided by the API. For example, an enclosure link could reference a bulk download of a collection. Or a related link on a record could reference a related record.
+
+=== Profile URIs
+
+The following profile URIs are defined and used in this document.
+
+* **http://www.opengis.net/def/profile/OGC/0/ogc-catalog**: Refers to a profile of a base resource type (e.g. `application/json`) that is a catalog.
+
+* **http://www.opengis.net/def/profile/OGC/0/ogc-record**: Refers to a profile of a base resource type (e.g. `application/geo+json`) that is a record of a catalg.
 
 === Examples
 

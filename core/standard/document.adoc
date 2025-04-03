@@ -55,6 +55,8 @@ include::clause_8_deployments.adoc[]
 
 include::clause_9_media_types.adoc[]
 
+include::clause_10_profile.adoc[]
+
 ////
 add or remove annexes after "A" as necessary
 ////

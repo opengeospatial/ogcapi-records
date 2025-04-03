@@ -2,8 +2,10 @@
 name: ids
 in: query
 description: 
-  The optional ids parameter allows a specified of records to be fetched
-  from a catalog using their identifiers.
+  The optional ids parameter allows a specific list of records, identified
+  by their identifiers, to be fetched from a catalog.  Only records whose
+  identifier matches one of the values listed for this parameter shall appear
+  in the response.
 required: false
 schema:
   type: array

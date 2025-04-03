@@ -1,0 +1,16 @@
+[[ats_query-param-profile]]
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/query-param-profile
+target:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/query-param-profile
+classification:: Target Type:Web API
+abstract-test:: /conf/query-param-profile/definition
+abstract-test:: /conf/query-param-profile/response
+====
+
+==== Query Parameter Profile
+
+include::query-param-profile/ATS_definition.adoc[]
+
+include::query-param-profile/ATS_response.adoc[]

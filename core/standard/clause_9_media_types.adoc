@@ -10,16 +10,244 @@ A description of the MIME types is mandatory for any OGC API Standard that speci
 
 [#media-types-table,reftext='{table-caption} {counter:table-num}']
 .API - Records MIME Types
-[width="80%",cols="20,20,60",options="header"]
+[width="80%",cols="20,20,40,20",options="header"]
 |====
-2+^|*Encoding*               ^|*MIME Type*
-.2+|<<clause-record-core,Record>>  |HTML     |`text/html`
-|GeoJSON  |`application/geo+json; application=ogc-record`
-.2+|<<clause-record-collection,Catalog>> |HTML    |`text/html`
-|JSON     |`application/ogc-catalog+json`
+2+^|*Encoding* ^|*Media Type* ^|*Profile Identifier*
+.3+|<<clause-record-core,Record>> |HTML |`text/html` |n/a
+   |JSON |`application/json` |`ogc-record`
+   |GeoJSON |`application/geo+json` |`ogc-record`
+.3+|<<clause-record-collection,Catalog>> |HTML |`text/html` |n/a
+.2+|JSON |`application/json` |`ogc-catalog`
+   |`application/ogc-catalog+json` |n/a
 |====
 
-include::recommendations/building-blocks/record-core/PER_json-media-types.adoc[]
+
+A JSON-encoded record can be identified using the media type `application/json` or `application/geo+json`.  Neither media type, however, specifically identifies the content as a record as defined in this Standard.  For this reason, this Standard defines the profile identifier `http://www.opengis.net/def/profile/OGC/0/ogc-record` to more specifically identify JSON-encoded record content using the profiling mechanism defined in https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909, The 'profile' Link Relation Type>>.
+
+A JSON-encoded catalog resource can be specifically identified using the media type `application/ogc-catalog+json` but there might be situations where use of the generic media type, `application/json`, is more appropriate.  For these siturations this standard defines the profile identifier `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to more specifically identify JSON-encoded Catalog content using the profiling mechanism defined in https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909, The 'profile' Link Relation Type>>.
+
+[NOTE]
+======================================================================
+The tokens `ogc-record` and `ogc-catalog` in <<media-types-table>> are the profile identifiers extracted from the complete profile URIs of:
+
+* `http://www.opengis.net/def/profile/OGC/0/ogc-record`
+* `http://www.opengis.net/def/profile/OGC/0/ogc-catalog`.
+======================================================================
+
+[NOTE]
+======================================================================
+It should be noted that the use of a generic media type without profile links may require that a resource be completely retrieved and inspected to determine conclusively that it is a record or catalog resource. On the other hand, using resource-specific media types or generic media types with profile links indicates the specific type of resource being dealt with without the need to first retrieve and inspect the complete resource in order to make the type determination.
+======================================================================
+
+=== Examples
+
+==== Catalog example
+
+The following example illustrates two ways that a server could respond to a request for a JSON-encoded catalog.
+
+This first response example uses the specific media type, `application/ogc-catalog+json`, to indicate that the response content is a JSON-encoded catalog.
+----
+   Client                                                                         Server
+     |                                                                              |
+     |   GET /collections/dutch_windmills?f=json HTTP/1.1                           |
+     |----------------------------------------------------------------------------->|
+     |                                                                              |
+     |   HTTP/1.1 200 OK                                                            | 
+     |   Content-Type: application/ogc-catalog+json                                 |
+     |                                                                              |
+     |   {                                                                          |
+     |     "id":"dutch_windmills",                                                  |
+     |     "title":"Windmills within The Netherlands",                              |
+     |     "description":"Locations of windmills within the Netherlands",           |
+     |     "itemType":"record",                                                     |
+     |     "keywords":[                                                             |
+     |       "Netherlands",                                                         |
+     |       "INSPIRE",                                                             |
+     |       "Windmills",                                                           |
+     |       "Heritage",                                                            |
+     |       "Holland",                                                             |
+     |       "RD"                                                                   |
+     |     ],                                                                       |
+     |     "links":[                                                                |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       {                                                                      |
+     |         "type":"application/geo+json",                                       |
+     |         "rel":"items",                                                       |
+     |         "title":"Items as GeoJSON",                                          |
+     |         "href":"https://demo.pygeoapi.io/master/collections/dutch_windmills/items?f=json"
+     |       },                                                                     |
+     |       {                                                                      | 
+     |         "type":"application/ld+json",                                        |
+     |         "rel":"items",                                                       |
+     |         "title":"Items as RDF (GeoJSON-LD)",                                 |
+     |         "href":"https://demo.pygeoapi.io/master/collections/dutch_windmills/items?f=jsonld"
+     |       },                                                                     |
+     |       {                                                                      |
+     |          "href": "http://www.opengis.net/def/profile/OGC/0/ogc-catalog",     |
+     |          "rel": "profile",                                                   |
+     |          "title": "This is a Catalog"                                        |
+     |       },                                                                     |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       .                                                                      |
+     |     ],                                                                       |
+     |     "extent":{                                                               |
+     |       "spatial":{                                                            |
+     |         "bbox":[                                                             |
+     |           [                                                                  |
+     |             3.37,                                                            |
+     |             50.75,                                                           |
+     |             7.21,                                                            |
+     |             53.47                                                            |
+     |           ]                                                                  |
+     |         ],                                                                   |
+     |         "crs":"http://www.opengis.net/def/crs/OGC/1.3/CRS84"                 |
+     |       },                                                                     |
+     |       "temporal":{                                                           |
+     |         "interval":[                                                         |
+     |           [                                                                  |
+     |             null,                                                            |
+     |             null                                                             |
+     |           ]                                                                  |
+     |         ]                                                                    |
+     |       }                                                                      |
+     |     },                                                                       |
+     |     "crs":[                                                                  |
+     |       "http://www.opengis.net/def/crs/OGC/1.3/CRS84",                        |
+     |       "http://www.opengis.net/def/crs/EPSG/0/4326",                          |
+     |       "http://www.opengis.net/def/crs/EPSG/0/3857",                          |
+     |       "http://www.opengis.net/def/crs/EPSG/0/4258",                          |
+     |       "http://www.opengis.net/def/crs/EPSG/0/28992"                          |
+     |     ],                                                                       |
+     |     "storageCRS":"http://www.opengis.net/def/crs/EPSG/0/28992"               |
+     | }                                                                            |
+     |<-----------------------------------------------------------------------------|
+----
+
+This second response example uses a generic media type, `application/json`, with a profile link (identifier: `ogc-catalog`) to indicate that the response content is a JSON-encoded catalog.  As per https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909] and recommendation <<rec_query-param-profile_link-header,/rec/query-param-profile/link-header>> the response includes a profile link in the response HTTP headers.  
+
+----
+   Client                                                                         Server
+     |                                                                              |
+     |   GET /collections/dutch_windmills?f=json HTTP/1.1                           |
+     |----------------------------------------------------------------------------->|
+     |                                                                              |
+     |   HTTP/1.1 200 OK                                                            | 
+     |   Content-Type: application/json                                             |
+     |   Link: <http://www.opengis.net/def/profile/OGC/0/ogc-catalog>; rel="profile"|
+     |                                                                              |
+     |   {                                                                          |
+     |     "id":"dutch_windmills",                                                  |
+     |     "title":"Windmills within The Netherlands",                              |
+     |     "description":"Locations of windmills within the Netherlands",           |
+     |     "itemType":"record",                                                     |
+     |     "keywords":[                                                             |
+     |       "Netherlands",                                                         |
+     |       "INSPIRE",                                                             |
+     |       "Windmills",                                                           |
+     |       "Heritage",                                                            |
+     |       "Holland",                                                             |
+     |       "RD"                                                                   |
+     |     ],                                                                       |
+     |     "links":[                                                                |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       {                                                                      |
+     |         "type":"application/geo+json",                                       |
+     |         "rel":"items",                                                       |
+     |         "title":"Items as GeoJSON",                                          |
+     |         "href":"https://demo.pygeoapi.io/master/collections/dutch_windmills/items?f=json"
+     |       },                                                                     |
+     |       {                                                                      | 
+     |         "type":"application/ld+json",                                        |
+     |         "rel":"items",                                                       |
+     |         "title":"Items as RDF (GeoJSON-LD)",                                 |
+     |         "href":"https://demo.pygeoapi.io/master/collections/dutch_windmills/items?f=jsonld"
+     |       },                                                                     |
+     |       {                                                                      |
+     |          "href": "http://www.opengis.net/def/profile/OGC/0/ogc-catalog",     |
+     |          "rel": "profile",                                                   |
+     |          "title": "This is a Catalog"                                        |
+     |       },                                                                     |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       .                                                                      |
+     |     ],                                                                       |
+     |     "extent":{                                                               |
+     |       "spatial":{                                                            |
+     |         "bbox":[                                                             |
+     |           [                                                                  |
+     |             3.37,                                                            |
+     |             50.75,                                                           |
+     |             7.21,                                                            |
+     |             53.47                                                            |
+     |           ]                                                                  |
+     |         ],                                                                   |
+     |         "crs":"http://www.opengis.net/def/crs/OGC/1.3/CRS84"                 |
+     |       },                                                                     |
+     |       "temporal":{                                                           |
+     |         "interval":[                                                         |
+     |           [                                                                  |
+     |             null,                                                            |
+     |             null                                                             |
+     |           ]                                                                  |
+     |         ]                                                                    |
+     |       }                                                                      |
+     |     },                                                                       |
+     |     "crs":[                                                                  |
+     |       "http://www.opengis.net/def/crs/OGC/1.3/CRS84",                        |
+     |       "http://www.opengis.net/def/crs/EPSG/0/4326",                          |
+     |       "http://www.opengis.net/def/crs/EPSG/0/3857",                          |
+     |       "http://www.opengis.net/def/crs/EPSG/0/4258",                          |
+     |       "http://www.opengis.net/def/crs/EPSG/0/28992"                          |
+     |     ],                                                                       |
+     |     "storageCRS":"http://www.opengis.net/def/crs/EPSG/0/28992"               |
+     | }                                                                            |
+     |<-----------------------------------------------------------------------------|
+----
+
+In both cases the server follows good practice and includes the profile link in the `links` section of the catalog for those situations where the response document is dissociated from the server that generated it.
+
+==== Record example
+
+The following example illustrates how a server might respond to a request for a https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON-encoded] record.
+
+As per https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909] and recommendation <<rec_query-param-profile_link-header,/rec/query-param-profile/link-header>> the response includes a profile link in the response HTTP headers.  The same link is also included in the `links` section of the record for those situations where the response document is dissociated from the server that generated it.
+
+----
+   Client                                                                         Server
+     |                                                                              |
+     |   GET /collections/my_catalog/items/record01    HTTP/1.1                     |
+     |   Accept: application/geo+json                                               |
+     |----------------------------------------------------------------------------->|
+     |                                                                              |
+     |   HTTP/1.1 200 OK                                                            | 
+     |   Content-Type: application/geo+json                                         |
+     |   Link: <http://www.opengis.net/def/profile/OGC/0/ogc-record>; rel="profile" |
+     |                                                                              |
+     |   {                                                                          |
+     |                                                                              |
+     |     ... JSON-encoded records content ...                                     |
+     |                                                                              |
+     |     "links": [                                                               |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       {                                                                      |
+     |          "href": "http://www.opengis.net/def/profile/OGC/0/ogc-record",      |
+     |          "rel": "profile",                                                   |
+     |          "title": "This is a OARec Record"                                   |
+     |       },                                                                     |
+     |       .                                                                      |
+     |       .                                                                      |
+     |       .                                                                      |
+     |     ]                                                                        |
+     |   }                                                                          |
+     |<-----------------------------------------------------------------------------|
+----
 
 [[media-type-defaults]]
 === Default Encodings

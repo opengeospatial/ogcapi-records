@@ -1,0 +1,16 @@
+---
+name: externalIds
+in: query
+description: |-
+  The optional externalIds parameter allows a specific list of records,
+  identified by their external identifiers, to be fetched from a catalog.
+  Only records where one of their associated external identifiers equals
+  one of the values listed for this parameter shall appear in the response.
+required: false
+schema:
+  type: array
+  items:
+    type: string
+    pattern: ([^:]+:)?[^:]+
+explode: false
+style: form
