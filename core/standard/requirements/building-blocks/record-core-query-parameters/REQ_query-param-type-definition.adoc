@@ -37,7 +37,7 @@ schema:
   type: array
   items:
     type: string
-    maxLength: 64
 explode: false
+style: form
 ----
 ====

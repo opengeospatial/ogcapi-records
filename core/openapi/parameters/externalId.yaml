@@ -12,5 +12,6 @@ schema:
   type: array
   items:
     type: string
+    pattern: ([^:]+:)?[^:]+
 explode: false
 style: form

@@ -42,6 +42,7 @@ schema:
   items:
     type: string
 explode: false
+style: form
 ----
 
 part:: Search terms that may appear together (logical OR) in a record SHALL be separated by literal commas.
