@@ -824,6 +824,11 @@ resource.
 
 include::recommendations/building-blocks/record-core-query-parameters/REC_additional-query-parameters.adoc[]
 
+===== Empty parameter value handling
+
+include::requirements/building-blocks/record-core-query-parameters/REQ_query-param-empty-value.adoc[]
+
+
 [[clause-records-api]]
 === Requirements Class "Records API" (Common Component)
 

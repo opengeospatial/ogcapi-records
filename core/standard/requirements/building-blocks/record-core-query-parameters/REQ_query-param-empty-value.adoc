@@ -1,0 +1,7 @@
+[[req_record-core-query-parameters_empty-value]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/record-core-query-parameters/empty-value
+part:: If any query parameter defined in <<core-query-parameters-table>> is supplied with no value or an empty value (e.g. `?bbox=&f=json`) then that parameter SHALL be ignored for the purposes of processing the request.
+====
