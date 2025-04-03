@@ -25,7 +25,6 @@ abstract-test:: /conf/record-core-query-parameters/q-definition
 abstract-test:: /conf/record-core-query-parameters/q-response
 abstract-test:: /conf/record-core-query-parameters/type-definition
 abstract-test:: /conf/record-core-query-parameters/type-response
-abstract-test:: /conf/record-core-query-parameters/empty-value
 ====
 
 ==== Query Parameters
@@ -51,8 +50,3 @@ include::record-core-query-parameters/ATS_query-param-q-response.adoc[]
 include::record-core-query-parameters/ATS_query-param-type-definition.adoc[]
 
 include::record-core-query-parameters/ATS_query-param-type-response.adoc[]
-
-include::record-core-query-parameters/ATS_query-param-empty-value.adoc[]
-
-
-
