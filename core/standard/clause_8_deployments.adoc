@@ -357,20 +357,190 @@ See also: <<req_sorting_get-sortables-op,/req/sorting/get-sortables-op>>, <<req_
 
 ===== Examples
 
-Example 1: List all the collections that lie within a specific bounding box and contain the keyword `weather`.
+The following example illustrates a catalog filter expression being applied to the local resources endpoint /collections. In this case, the client is seeking all collection objects whose extent intersects a specified bounding box and that include the keyword "windmills".
 
 ----
    Client                                                          Server
      |                                                               |
-     |   GET /collections?bbox=41.875315,-96.767601,56.732861,-73.476|
-     |   586&q=weather   HTTP/1.1                                    |
+     |   GET /collections?bbox=3,50,8,54&q=windmills   HTTP/1.1      |
      |   Accept: application/json                                    |
      |-------------------------------------------------------------->|
      |                                                               |
      |   HTTP/1.1 200 OK                                             | 
      |   Content-Type: application/json                              |
      |                                                               |
-     |   T.B.D. Need example output here...                          |
+     |   {                                                           |
+     |     "collections": [                                          |
+     |       {                                                       |
+     |         "id": "dutch_windmills",                              |
+     |         "title": "Windmills within The Netherlands",          |
+     |         "description": "Locations of windmills within the Neth|
+     |          erlands from Rijksdienst voor het Cultureel Erfgoed (|
+     |          RCE) INSPIRE WFS. Uses GeoServer WFS v2 backend via O|
+     |          GRProvider.",                                        |
+     |         "keywords": [                                         |
+     |           "Netherlands",                                      |
+     |           "INSPIRE",                                          |
+     |           "Windmills",                                        |
+     |           "Heritage",                                         |
+     |           "Holland",                                          |
+     |           "RD"                                                |
+     |         ],                                                    |
+     |         "links": [                                            |
+     |           {                                                   |
+     |             "type": "text/html",                              |
+     |             "rel": "canonical",                               |
+     |             "title": "information",                           |
+     |             "href": "https://www.nationaalgeoregister.nl/geone|
+     |                      twork/srv/dut/catalog.search#/metadata/29|
+     |                      1afe4b-4f4b-497c-8026-fb437c4e9c7e",     |
+     |             "hreflang": "nl-NL"                               |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "application/json",                       |
+     |             "rel": "root",                                    |
+     |             "title": "Landing page of this server as JSON",   |
+     |             "href": "https://demo.pygeoapi.io/master?f=json"  |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "text/html",                              |
+     |             "rel": "root",                                    |
+     |             "title": "Landing page of this server as HTML",   |
+     |             "href": "https://demo.pygeoapi.io/master?f=html"  |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "application/json",                       |
+     |             "rel": "self",                                    |
+     |             "title": "This document as JSON",                 |
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills?f=json"               |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "application/ld+json",                    |
+     |             "rel": "alternate",                               |
+     |             "title": "This document as RDF (JSON-LD)",        |
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills?f=jsonld"             |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "text/html",                              |
+     |             "rel": "alternate",                               |
+     |             "title": "This document as HTML",                 |
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills?f=html"               |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "application/json",                       |
+     |             "rel": "http://www.opengis.net/def/rel/ogc/1.0/sch|
+     |                     ema",                                     |
+     |             "title": "Schema of collection in JSON",          |
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills/schema?f=json"        |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "text/html",                              |
+     |             "rel": "http://www.opengis.net/def/rel/ogc/1.0/sch|
+     |                     ema",                                     |
+     |             "title": "Schema of collection in HTML",          |
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills/schema?f=html"        |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "application/schema+json",                |
+     |             "rel": "http://www.opengis.net/def/rel/ogc/1.0/que|
+     |                     ryables",                                 |
+     |             "title": "Queryables for this collection as JSON",|
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills/queryables?f=json"    |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "text/html",                              |
+     |             "rel": "http://www.opengis.net/def/rel/ogc/1.0/que|
+     |                     ryables",                                 |
+     |             "title": "Queryables for this collection as HTML",|
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills/queryables?f=html"    |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "application/geo+json",                   |
+     |             "rel": "items",                                   |
+     |             "title": "Items as GeoJSON",                      |
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills/items?f=json"         |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "application/ld+json",                    |
+     |             "rel": "items",                                   |
+     |             "title": "Items as RDF (GeoJSON-LD)",             |
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills/items?f=jsonld"       |
+     |           },                                                  |
+     |           {                                                   |
+     |             "type": "text/html",                              |
+     |             "rel": "items",                                   |
+     |             "title": "Items as HTML",                         |
+     |             "href": "https://demo.pygeoapi.io/master/collectio|
+     |                      ns/dutch_windmills/items?f=html"         |
+     |           }                                                   |
+     |         ],                                                    |
+     |         "extent": {                                           |
+     |           "spatial": {                                        |
+     |             "bbox": [                                         |
+     |               [                                               |
+     |                 3.37,                                         |
+     |                 50.75,                                        |
+     |                 7.21,                                         |
+     |                 53.47                                         |
+     |               ]                                               |
+     |             ],                                                |
+     |             "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS|
+     |                     84"                                       |
+     |           },                                                  |
+     |           "temporal": {                                       |
+     |             "interval": [                                     |
+     |               [                                               |
+     |                 null,                                         |
+     |                 null                                          |
+     |               ]                                               |
+     |             ]                                                 |
+     |           }                                                   |
+     |         },                                                    |
+     |         "itemType": "feature",                                |
+     |         "crs": [                                              |
+     |           "http://www.opengis.net/def/crs/OGC/1.3/CRS84",     |
+     |           "http://www.opengis.net/def/crs/EPSG/0/4326",       |
+     |           "http://www.opengis.net/def/crs/EPSG/0/3857",       |
+     |           "http://www.opengis.net/def/crs/EPSG/0/4258",       |
+     |           "http://www.opengis.net/def/crs/EPSG/0/28992"       |
+     |         ],                                                    |
+     |         "storageCRS": "http://www.opengis.net/def/crs/EPSG/0/2|
+     |                        8992"                                  |
+     |       }                                                       |
+     |     ],                                                        |
+     |     "links": [                                                |
+     |       {                                                       |
+     |         "type": "application/json",                           |
+     |         "rel": "self",                                        |
+     |         "title": "This document as JSON",                     |
+     |         "href": "https://demo.pygeoapi.io/master/collections?f|
+     |                  =json"                                       |
+     |       },                                                      |
+     |       {                                                       |
+     |         "type": "application/ld+json",                        |
+     |         "rel": "alternate",                                   |
+     |         "title": "This document as RDF (JSON-LD)",            |
+     |         "href": "https://demo.pygeoapi.io/master/collections?f|
+     |                  =jsonld"                                     |
+     |       },                                                      |
+     |       {                                                       |
+     |         "type": "text/html",                                  |
+     |         "rel": "alternate",                                   |
+     |         "title": "This document as HTML",                     |
+     |         "href": "https://demo.pygeoapi.io/master/collections?f|
+     |                  =html"                                       |
+     |       }                                                       |
+     |     ]                                                         |
+     |   }                                                           |
      |<--------------------------------------------------------------|
 ----
 
