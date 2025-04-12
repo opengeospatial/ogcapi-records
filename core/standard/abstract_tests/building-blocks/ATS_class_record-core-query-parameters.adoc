@@ -50,6 +50,3 @@ include::record-core-query-parameters/ATS_query-param-q-response.adoc[]
 include::record-core-query-parameters/ATS_query-param-type-definition.adoc[]
 
 include::record-core-query-parameters/ATS_query-param-type-response.adoc[]
-
-
-

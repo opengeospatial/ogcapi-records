@@ -32,17 +32,7 @@ part:: The following OpenAPI 3.0 schema fragment SHALL define the characteristic
 +
 [source,YAML]
 ----
-name: ids
-in: query
-required: false
-schema:
-  type: array
-  items:
-    type: string
-explode: false
-style: form
+include::../../../../openapi/parameters/ids.yaml[]
 ----
-
-part:: An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
 
 ====

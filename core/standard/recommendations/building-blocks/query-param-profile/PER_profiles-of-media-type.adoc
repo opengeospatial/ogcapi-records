@@ -1,0 +1,8 @@
+[[per_query-param-profile_profiles-of-media-type]]
+[permission]
+====
+[%metadata]
+identifier:: /per/query-param-profile/profiles-of-media-type
+part:: For any media type that can represent a resource, the server MAY support only a subset of the profiles offered for the resource.
+part:: The subset of supported profiles for a media type MAY be empty, too.
+====

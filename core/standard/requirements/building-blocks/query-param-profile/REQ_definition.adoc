@@ -1,0 +1,28 @@
+[[req_query-param-profile_definition]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/query-param-profile/definition
+part:: A Records API implementation SHALL support the Profile (`profile`) parameter for the GET operation.
+part:: The following OpenAPI 3.0 schema fragment SHALL define the characteristics of the `profile` parameter: 
++
+[source,YAML]
+----
+name: profile
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+style: form
+----
+
+part:: An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
+part:: Each item SHALL be one of the following:
++
+* A HTTP(S) URI of a profile, e.g., in the OGC Profile Register (\http://www.opengis.net/def/profile);
+* A Safe CURIE of a profile in the OGC Profile Register (e.g., `[ogc-profile:my-profile]`);
+* A profile identifier (the `profileId` value in the URI template `\http://www.opengis.net/def/profile/OGC/0/{profileId}`)
+====

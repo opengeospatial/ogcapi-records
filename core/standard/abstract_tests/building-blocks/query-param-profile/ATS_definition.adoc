@@ -1,0 +1,29 @@
+[[ats_query-param-profile_definition]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/query-param-profile/definition
+target:: /req/query-param-profile/definition
+test-purpose:: Validate `profile` query parameter.
+test-method::
++
+--
+. Construct a path for a searchable endpoint and include the `profile` query parameter.
+. Validate that the `profile` query parameter is constructed correctly using an OpenAPI Specification 3.0 fragment:
+
+[source,YAML]
+----
+name: profile
+in: query
+required: false
+schema:
+  type: array
+  items:
+    type: string
+explode: false
+style: form
+----
+. Issue an HTTP GET request on that path.
+. Check that the value of the returned HTTP status header is +200+.
+--
+====

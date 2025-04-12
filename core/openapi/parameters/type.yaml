@@ -2,9 +2,10 @@
 name: type
 in: query
 description: |-
-  The optional type parameter supports searching by resource type.  Only
-  records whose type, as indicated by the value of the type core
-  queryable, is equal to one of the listed values shall be selected.
+  The optional type parameter allows a specific list of records, identified
+  by their resource type, to be fetched from a catalog.  Only records whose
+  resource type matches one of the values listed for this parameter shall
+  appear in the response.
 required: false
 schema:
   type: array
@@ -12,3 +13,5 @@ schema:
     type: string
 explode: false
 style: form
+
+
