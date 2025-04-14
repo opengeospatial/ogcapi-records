@@ -1,0 +1,1 @@
+This folder contains the extension that handle simple translactions (i.e. mutations on single records), harvesting and (eventually) complex transactions (i.e. atomic and batch mutations to multiple records)
