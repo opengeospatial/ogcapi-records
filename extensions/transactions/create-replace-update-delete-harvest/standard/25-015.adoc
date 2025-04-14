@@ -103,9 +103,11 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_records.adoc[]
 
-include::clause_7_media_types.adoc[]
+include::clause_7_harvest.adoc[]
 
-include::clause_8_security_considerations.adoc[]
+include::clause_8_media_types.adoc[]
+
+include::clause_9_security_considerations.adoc[]
 
 <<<
 include::annex_ats.adoc[]

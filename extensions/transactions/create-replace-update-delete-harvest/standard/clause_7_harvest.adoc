@@ -1,0 +1,10 @@
+[[harvest_clause]]
+== Requirements Class "Harvest"
+
+=== Overview
+
+include::requirements/requirements_class_harvest.adoc[]
+
+This clause defines requirements for a harvesting operation when the resource type is a record.
+
+T.B.D.

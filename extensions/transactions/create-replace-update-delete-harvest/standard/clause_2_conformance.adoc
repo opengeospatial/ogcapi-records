@@ -1,8 +1,9 @@
 == Conformance
 
-This Standard defines five requirements / conformance classes:
+This Standard defines two requirements / conformance classes:
 
    *  <<rc_records,Records>>
+   *  <<rc_harvest,Harvest>>
 
 The standardization target type is "Web APIs".
 
@@ -14,6 +15,7 @@ The URIs of the associated conformance classes are:
 |===
 |Conformance class |URI
 |Records |http://www.opengis.net/spec/ogcapi-records-3/1.0/conf/records
+|Harvest |http://www.opengis.net/spec/ogcapi-records-3/1.0/conf/harvest
 |===
 
 Conformance with this Standard shall be checked using all the relevant tests
