@@ -14,6 +14,10 @@ Draft(s) are built daily based on the configuration contained in the [asciidocto
 
 [OGC API standards](https://ogcapi.ogc.org) define modular API common components to spatially enable Web APIs in a consistent way. [OpenAPI](http://openapis.org) is used to define the reusable API common components.
 
+## Extensions
+* [OGC API - Records - Part 2: Facets](https://docs.ogc.org/DRAFTS/25-013.html)
+* [OGC API - Records - Part 3: Create, Replace, Update, Delete, Harvest](https://docs.ogc.org/DRAFTS/25-015.html)
+
 ## Implementations
 
 There have been several implementations of the draft standard, though they are
