@@ -1,0 +1,14 @@
+[[rc_records]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-records-3/1.0/req/records
+|Target type |Web API
+|Dependency |https://docs.ogc.org/DRAFTS/20-004r1.html#clause-searchable-catalog[OGC API - Records - Part 1: Core, Requirements Class "Searchable Catalog"]
+|Dependency |https://docs.ogc.org/DRAFTS/20-002r1.html#create-replace-delete_clause[OGC API - Features - Part 4: Create, Replace, Update and Delete, Requirements Class "Create/Replace/Delete"]
+|Conditional Dependency |https://docs.ogc.org/DRAFTS/20-004r1.html#requirements-class-json-clause[OGC API - Records - Part 1: Core, Requirements Class "JSON"]
+|Conditional Dependency |https://docs.ogc.org/DRAFTS/20-002r1.html#update_clause[OGC API - Features - Part 4: Create, Replace, Update and Delete, Requirements Class "Update"]
+|Conditional Dependency |<<rfc7396,RFC 7396 (JSON Merge Patch)>>
+|Conditional Dependency |<<OAFeat-2,OGC API - Features - Part 2: Coordinate Reference Systems by Reference>>
+|Conditional Dependency |https://docs.ogc.org/DRAFTS/23-058r1.html#rc_returnables-and-receivables[OGC API - Features - Part 5: Schemas, Requirements Class "Returnables and Receivables"]
+|===

@@ -1,0 +1,23 @@
+== Conformance
+
+This Standard defines five requirements / conformance classes:
+
+   *  <<rc_records,Records>>
+
+The standardization target type is "Web APIs".
+
+The URIs of the associated conformance classes are: 
+
+[#conf_class_uris,reftext='{table-caption} {counter:table-num}']
+.Conformance class URIs
+[cols="25,75",options="header"]
+|===
+|Conformance class |URI
+|Records |http://www.opengis.net/spec/ogcapi-records-3/1.0/conf/records
+|===
+
+Conformance with this Standard shall be checked using all the relevant tests
+specified in <<ats,Annex A>> of this document. The framework, concepts, and
+methodology for testing, and the criteria to be achieved to claim conformance
+are specified in the OGC Compliance Testing Policies and Procedures and the
+OGC Compliance Testing web site.
