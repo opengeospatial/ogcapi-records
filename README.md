@@ -84,7 +84,7 @@ The record common component defines the core schema of a catalog record.  It inc
 
 It is anticipated that the schema of a record will be extended to describe specific resource types (e.g. data sets, earth observation products, services, machine models, etc.) and also extended by information communities wishing to enrich the information content of the record to suit their needs.  The specification does not mandate a specific encoding for a record but conformance classes are defined for encoding records as GeoJSON feature and HTML.
 
-The following is an example of a catalogue record encoded as GeoJSON:
+The following is an example of a record encoded as GeoJSON:
 
 ```
     {
@@ -177,11 +177,12 @@ The records of a catalog are usually referenced using links in the `links` and/o
 
 However, records may also be encoded in-line in a catalog using an array whose name is declared using the `recordsArrayName` property.  The default value of the `recordsArrayName` property is `records` which means that in-line records are (by default) encoded in the `records` array.
 
-The following is an example of a searchable record catalog encoded as JSON:
+The following is an example of a searchable catalog encoded as JSON:
 
 ```
 {
   "id": "metadata:main",
+  "type": "Collection",
   "title": "pycsw Geospatial Catalogue gisdata demo",
   "description": "pycsw is an OARec and OGC CSW server implementation written in Python",
   "links": [
@@ -204,7 +205,7 @@ The following is an example of a searchable record catalog encoded as JSON:
        "href": "https://demo.pycsw.org/gisdata/collections/metadata:main/items"
     }
   ],
-  "itemType": "catalog",
+  "itemType": "record",
   "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
   "keywords": [
      "Catalog","word2","word3","Ag Preserve"
@@ -231,6 +232,7 @@ The following is an example of a crawlable record collection encoded as JSON.  I
 ```
 {
   "id": "radarsat-1",
+  "type": "Collection",
   "title": "RADARSAT-1 Open Data",
   "description": "Launched in November 1995, RADARSAT-1 provided Canada and the world with an operational radar satellite system capable of timely delivery of large amounts of data. RADARSAT-1 used a synthetic aperture radar (SAR) sensor to image the Earth at a single microwave frequency of 5.3 GHz, in the C band (wavelength of 5.6 cm). This was a Canadian-led project involving the Canadian federal government, the Canadian provinces, the United States, and the private sector. RADARSAT-1 reached end of service on March 29, 2013. In order to download RADARSAT-1 datasets, credentials for the Earth Observation Data Management System are required.",
   "extent": {
