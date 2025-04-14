@@ -1,0 +1,12 @@
+[[mediatypes]]
+== Media Types
+
+See https://docs.ogc.org/DRAFTS/20-004r1.html#media-types-section[OGC API - Records - Part 1: Core, Media Types].
+
+The media types for the CREATE, REPLACE and UPDATE requests as well as for the schema documents depend on the representations of the resources.
+
+For GeoJSON features,
+
+- CREATE and REPLACE operations will use `application/geo+json`,
+- UPDATE operations will use `application/merge-patch+json`,
+- schema documents will use `application/schema+json`.

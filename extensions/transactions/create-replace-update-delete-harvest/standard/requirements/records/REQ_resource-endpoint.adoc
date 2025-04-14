@@ -1,0 +1,9 @@
+[[req_resource_endpoint]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/records/resource-endpoint*
+^|A |For records, the resource endpoints SHALL be URIs specified by the URI template `{landingPageUri}/collections/{catalogId}/items/{recordId}`.
+^|B |The parameter `landingPageUri` SHALL be the URI of the Landing Page resource. 
+^|C |The parameter `catalogId` SHALL be each `id` property in the `collections` array of the Collections resource (i.e., the response to a GET request to `{landingPageUri}/collections`) where the collection has an `itemType` with no value or a value `record`.
+^|D |The parameter `record` SHALL be the `id` property of a record obtained by previously having queried the Records resource of the collection (i.e., responses to GET requests to `{landingPageUri}/collections/{catalogId}/items`).
+|===
