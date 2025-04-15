@@ -1,0 +1,10 @@
+[[req_json_catalog-content-profle]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/catalog-content-profile
+condition:: The negotiated profile is `http://www.opengis.net/def/profile/OGC/0/ogc-catalog`.
+part:: The schema of all responses with the media type `application/json` SHALL validate against the OpenAPI 3.0 schema document https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[`catalog.yaml`].
+part:: The response SHALL include, in the `links` section, a profile link (href: `http://www.opengis.net/def/profile/OGC/0/ogc-catalog`, relation: `profile`).
+====

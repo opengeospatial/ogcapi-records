@@ -29,8 +29,10 @@ include::json/ATS_conformance.adoc[]
 
 include::json/ATS_catalog-content.adoc[]
 include::json/ATS_catalog-response.adoc[]
+include::json/ATS_catalog-response-profile.adoc[]
 
 ==== Record
 
 include::json/ATS_record-content.adoc[]
 include::json/ATS_record-response.adoc[]
+include::json/ATS_record-response-profile.adoc[]
