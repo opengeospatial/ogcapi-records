@@ -605,22 +605,21 @@ components:
         - properties
       properties:
         id:
-          type: string
+          type:
+            - string
+            - integer
           description:
             A unique identifier of the catalog record.
         type:
           type: string
-          enum:
-            - Feature
+          const: Feature
         time:
           oneOf:
-            - enum:
-              - null
+            - type: null
             - $ref: '#/components/schemas/time'
         geometry:
           oneOf:
-            - enum:
-              - null
+            - type: null
             - $ref: '#/components/schemas/geometryGeoJSON'
         conformsTo:
           type: array
@@ -629,10 +628,11 @@ components:
           items:
             type: string
         properties:
-          allOf:
-            - $ref: '#/components/schemas/recordCommonProperties'
-            - type:
-                object
+          oneOf:
+            - type: null
+            - allOf:
+              - type: object
+              - $ref: '#/components/schemas/recordCommonProperties'
         links:
           type: array
           items:
