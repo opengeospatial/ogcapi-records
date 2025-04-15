@@ -7,7 +7,9 @@ required:
   - properties
 properties:
   id:
-    type: string
+    type:
+      - string
+      - integer
     description:
       A unique identifier of the catalog record.
   type:
