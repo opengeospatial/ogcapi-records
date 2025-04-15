@@ -22,18 +22,7 @@ description:
 content:
   application/geo+json:
     schema:
-      allOf:
-        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml'
-        - type: object
-          properties:
-            features:
-              type: array
-              items:
-                $ref: '../schemas/recordGeoJSON.yaml'
-            linkTemplates:
-              type: array
-              items:
-                $ref: '../schemas/linkTemplate.yaml'
+      $ref: '../schemas/recordCollectionGeoJSON.yaml'
   text/html:
     schema:
       type: string
