@@ -470,7 +470,7 @@ components:
                 The base URI to which the variable name can be
                 appended to retrieve the definition of the
                 variable as a JSON Schema fragment.
-              format: uri
+              format: uri-reference
             variables:
               type: object
               description:
