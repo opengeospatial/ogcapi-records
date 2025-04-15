@@ -22,9 +22,9 @@ A description of the MIME types is mandatory for any OGC API Standard that speci
 |====
 
 
-A JSON-encoded record can be identified using the media type `application/json` or `application/geo+json`.  Neither media type, however, specifically identifies the content as a record as defined in this Standard.  For this reason, this Standard defines the profile identifier `http://www.opengis.net/def/profile/OGC/0/ogc-record` to more specifically identify JSON-encoded record content using the profiling mechanism defined in https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909, The 'profile' Link Relation Type>>.
+A JSON-encoded record can be identified using the media type `application/json` or `application/geo+json`.  Neither media type, however, specifically identifies the content as a record as defined in this Standard.  For this reason, this Standard defines the profile identifier `http://www.opengis.net/def/profile/OGC/0/ogc-record` to more specifically identify JSON-encoded record content using the profiling mechanism defined in https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909, The 'profile' Link Relation Type].
 
-A JSON-encoded catalog resource can be specifically identified using the media type `application/ogc-catalog+json` but there might be situations where use of the generic media type, `application/json`, is more appropriate.  For these siturations this standard defines the profile identifier `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to more specifically identify JSON-encoded Catalog content using the profiling mechanism defined in https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909, The 'profile' Link Relation Type>>.
+A JSON-encoded catalog resource can be specifically identified using the media type `application/ogc-catalog+json` but there might be situations where use of the generic media type, `application/json`, is more appropriate.  For these siturations this standard defines the profile identifier `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to more specifically identify JSON-encoded Catalog content using the profiling mechanism defined in https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909, The 'profile' Link Relation Type].
 
 [NOTE]
 ======================================================================
@@ -49,14 +49,17 @@ This first response example uses the specific media type, `application/ogc-catal
 ----
    Client                                                                         Server
      |                                                                              |
-     |   GET /collections/dutch_windmills?f=json HTTP/1.1                           |
+     |   GET /collections/dutch_windmills   HTTP/1.1                                |
+     |   Accept: application/ogc-catalog+json                                       |
      |----------------------------------------------------------------------------->|
      |                                                                              |
      |   HTTP/1.1 200 OK                                                            | 
      |   Content-Type: application/ogc-catalog+json                                 |
+     |   Link: <http://www.opengis.net/def/profile/OGC/0/ogc-catalog>; rel="profile"|
      |                                                                              |
      |   {                                                                          |
      |     "id":"dutch_windmills",                                                  |
+     |     "type": "Collection",                                                    |
      |     "title":"Windmills within The Netherlands",                              |
      |     "description":"Locations of windmills within the Netherlands",           |
      |     "itemType":"record",                                                     |
@@ -131,7 +134,8 @@ This second response example uses a generic media type, `application/json`, with
 ----
    Client                                                                         Server
      |                                                                              |
-     |   GET /collections/dutch_windmills?f=json HTTP/1.1                           |
+     |   GET /collections/dutch_windmills?profile=ogc-catalog   HTTP/1.1            |
+     |   Accept: application/json                                                   |
      |----------------------------------------------------------------------------->|
      |                                                                              |
      |   HTTP/1.1 200 OK                                                            | 
@@ -140,6 +144,7 @@ This second response example uses a generic media type, `application/json`, with
      |                                                                              |
      |   {                                                                          |
      |     "id":"dutch_windmills",                                                  |
+     |     "type": "Collection",                                                    |
      |     "title":"Windmills within The Netherlands",                              |
      |     "description":"Locations of windmills within the Netherlands",           |
      |     "itemType":"record",                                                     |
@@ -215,12 +220,12 @@ In both cases the server follows good practice and includes the profile link in 
 
 The following example illustrates how a server might respond to a request for a https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON-encoded] record.
 
-As per https://datatracker.ietf.org/doc/html/rfc6906[RFC 6909] and recommendation <<rec_query-param-profile_link-header,/rec/query-param-profile/link-header>> the response includes a profile link in the response HTTP headers.  The same link is also included in the `links` section of the record for those situations where the response document is dissociated from the server that generated it.
+As per https://datatracker.ietf.org/doc/html/rfc6906[RFC 6906], recommendation <<rec_query-param-profile_link-header,/rec/query-param-profile/link-header>> and recommendation <<rec_json_header-profile-link,/rec/json/header-profile-link>> the response includes a profile link in the response HTTP headers.  The same link is also included in the `links` section of the record for those situations where the response document is dissociated from the server that generated it.
 
 ----
    Client                                                                         Server
      |                                                                              |
-     |   GET /collections/my_catalog/items/record01    HTTP/1.1                     |
+     |   GET /collections/my_catalog/items/r01?profile=ogc-record   HTTP/1.1        |
      |   Accept: application/geo+json                                               |
      |----------------------------------------------------------------------------->|
      |                                                                              |

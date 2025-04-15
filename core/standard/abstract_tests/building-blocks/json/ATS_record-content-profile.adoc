@@ -28,7 +28,7 @@ test-method::
 +
 --
 . Construct a path for a `+collections/items+` page.
-. Negotiate for a JSON-encoded record response.
+. Negoation for a JSON-encoded record response.
 . Issue an HTTP GET request on the path
 . Check that the value of the returned HTTP status header is +200+.
 . Check that the HTTP Content-Type header value is `+application/geo+json+`.
@@ -39,6 +39,6 @@ test-method::
 . Check that the HTTP Content-Type header value is `+application/geo+json+`.
 . Check that the response contains a `+links+` array.
 . Check that the response validates against as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml.
-. Check that the `links` section include a link (href: `http://www.opengis.net/def/profile/OGC/0/ogc-record`, relation: `profile`).
+. Check that the `links` section includes a link (href: `http://www.opengis.net/def/profile/OGC/0/ogc-record`, relation: `profile`).
 --
 ====
