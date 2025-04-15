@@ -1,21 +1,10 @@
-[[ats_json_catalog-content]]
-
-//[width="90%",cols="2,6a"]
-//|===
-//^|*Abstract Test {counter:ats-id}* |*/conf/json/catalog-content*
-//^|Test Purpose |Validate the JSON representation of a catalog.
-//^|Requirement |<<req_json_collection-content,/req/json/catalog-content>>
-//^|Test Method |. Construct a path for a `+catalog+` page.
-//. Issue an HTTP GET request on the path
-//. Check that the media type of the response is `application/ogc-catalog+json`
-//. Check that the response validates against the schema as defined in https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml.
-//|===
+[[ats_json_catalog-content-profile]]
 
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/json/catalog-content
-target:: /req/json/catalog-content
+identifier:: /conf/json/catalog-content-profile
+target:: /req/json/catalog-content-profile
 test-purpose:: Validate the JSON representation of a catalog.
 test-method::
 +

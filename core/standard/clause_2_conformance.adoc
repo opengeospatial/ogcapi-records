@@ -15,6 +15,7 @@ is "Document model".
 The standardization target of the conformance classes:
 
 * <<clause-record-core-query-parameters,Record query parameters>>
+* <<profile-parameter,Profile query parameter>>
 * <<clause-records-api,Records API>>
 * <<clause-sorting,Sorting>>
 * <<clause-filtering,Filtering>>
@@ -44,11 +45,12 @@ The Conformance Classes implemented in an API are advertised through the <<confo
 [[building-block-requirements-classes]]
 === Common components
 
-This standard also identifies ten (10) requirements classes for common components:
+This standard also identifies ten (11) requirements classes for common components:
 
 * <<clause-record-core,Record Core>>
 * <<clause-record-collection,Record collection>>
 * <<clause-record-core-query-parameters,Record query parameters>>
+* <<profile-parameter,Profile query parameter>>
 * <<clause-records-api,Records API>>
 * <<clause-sorting,Sorting>>
 * <<clause-filtering,Filtering>>
@@ -64,6 +66,8 @@ The <<clause-record-core,_Record Core_>> conformance class defines the requireme
 The <<clause-record-collection,_Record Collection_>> conformance class defines requirements for the metadata used to describe a collection of related records referred to as a _catalog_ in this Standard.
 
 The <<clause-record-core-query-parameters,_Record query parameters_>> conformance class defines a minimum set of query parameters that all queryable catalogs should provide.
+
+The <<profile-parameter,_Profile query parameter_>> conformance class add support for the `profile` parameter which allows a client to request one or more variations of a resource representation (e.g. requesting a GeoJSON document that is a catalog record).
 
 The <<clause-records-api,_Records API_>> conformance class defines the requirements for an API implementation for searching catalogs based on logically connected predicates that can include spatial and/or temporal predicates.  The Records API Standard is based on http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Feature - Part 1: Core] with <<records-access,extensions>> specific to OGC API - Records.  https://docs.opengeospatial.org/is/17-069r4/17-069r4.html[OGC API - Features] provides a common foundation for other OGC API Standards for feature access. Therefore, this conformance class should be viewed as an extension to OGC API - Features. Conformance to this class requires demonstrated conformance to the applicable Conformance Classes define in the of https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#_conformance[OGC API - Features] Standard.
 
@@ -111,6 +115,7 @@ The <<clause-local-resources-catalog,Local Resources Catalog>>, <<clause-local-r
 |<<clause-record-core,Record Core>> |Mandatory |Mandatory |Mandatory
 |<<clause-record-collection,Record collection>> |Mandatory |Mandatory |Mandatory
 |<<clause-record-core-query-parameters,Record query parameters>> |N/A |Mandatory |Optional
+|<<profile-parameter,Profile query parameter>> |N/A |Optional |Optional
 |<<clause-records-api,Records API>> |N/A |Mandatory |N/A
 |<<clause-sorting,Sorting>> |N/A |Optional |Optional
 |<<clause-filtering,Filtering>> |N/A |Optional |Optional
@@ -155,6 +160,7 @@ OGC Compliance Testing web site.
 |<<ats_record-core,Record Core>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
 |<<ats_record-collection,Record Collection>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
 |<<ats_record-core-query-parameters,Record Core Query Parameters>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters
+|<<ats_query-param-profile,Profile Query Parameter>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/query-param-profile
 |<<ats_records-api,Records API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api
 |<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
 |<<ats_cql-filter,Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/filtering
