@@ -10,8 +10,7 @@ allOf:
           Fixed to "Collection" for collections of records and/or subordinate
           catalogs.
         type: string
-        enum:
-          - Collection
+        const: Collection
       conformsTo:
         type: array
         description:
