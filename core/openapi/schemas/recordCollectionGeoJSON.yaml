@@ -1,0 +1,12 @@
+allOf:
+  - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml'
+  - type: object
+    properties:
+      features:
+        type: array
+        items:
+          $ref: 'recordGeoJSON.yaml'
+      linkTemplates:
+        type: array
+        items:
+          $ref: 'linkTemplate.yaml'
