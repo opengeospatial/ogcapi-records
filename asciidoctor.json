@@ -18,7 +18,7 @@
                 "OGC_doc_number": "20-004r1",
                 "urn":"http://www.opengis.net/doc/is/ogcapi-records-1/1.0",
                 "title":"OGC API - Records - Part 1: Core",
-                "path":"core/standard/20-004.adoc",
+                "path":"core/standard/document.adoc",
                 "options": ["--trace"],
                 "a":[
                         "data-uri",
