@@ -19,7 +19,6 @@ explode: false
 style: form
 ----
 
-part:: An empty list of identifiers is a valid value for the `ids` parameter and indicates that the result set SHALL be empty.
 part:: Each item SHALL be one of the following:
 +
 * A HTTP(S) URI of a profile, e.g., in the OGC Profile Register (\http://www.opengis.net/def/profile);
