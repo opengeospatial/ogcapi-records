@@ -13,6 +13,6 @@ requirements.
 
 * ISO 19115 contact roles (`+CI_RoleCode`+) footnote:[https://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode]
 * ISO 19115-3 contact roles (`+CI_RoleCode`+) footnote:[https://schemas.isotc211.org/schemas/19115/resources/Codelist/cat/codelists.xml#CI_RoleCode]
-* STAC Item Provider roles footnote:[https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#provider-object]
+* STAC i.e., Provider roles footnote:[https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#provider-object]
 * DCAT 2 https://www.w3.org/TR/vocab-dcat-2/#Class:Role
 * DCAT 3 https://www.w3.org/TR/vocab-dcat-3/#Class:Role

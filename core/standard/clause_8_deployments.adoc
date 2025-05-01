@@ -50,7 +50,7 @@ include::requirements/crawlable-catalog/REQ_conformance.adoc[]
 [[crawlable-collections]]
 ==== Organizing crawlable catalogs
 
-In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g. series, hierarchy, etc.) a catalog can also provide information about and access to related catalogs.  As such, the <<clause-record-collection,Record Collection object>> can be used as a common entry point for crawling to multiple related catalogs, sub-catalogs, records and other resources.  
+In order to provide flexibility with regard to how crawlable catalogs can be organized (e.g., series, hierarchy, etc.) a catalog can also provide information about and access to related catalogs.  As such, the <<clause-record-collection,Record Collection object>> can be used as a common entry point for crawling to multiple related catalogs, sub-catalogs, records and other resources.  
 
 The relationships among catalogs and records are expressed as links in the <<catalog-links-section,links section>> of the catalog and the <<record-links-section,links section>> of the record.
 
@@ -122,23 +122,23 @@ The <<ogc-api-resource-tree,set of OGC API Standards>> define a number of resour
 Refers to the path from which a catalog of local resources can be retrieved.
 
 * _**<<local-resources-catalog-def,local_resources_catalog>>**_ +
-Refers to an instance of the resource that can be retrieved from the _local resources endpoint_ (i.e. the catalog).
+Refers to an instance of the resource that can be retrieved from the _local resources endpoint_ (i.e., the catalog).
 
 * _**<<local-resources-item-def,local_resources_item>>**_ +
-Each local resources catalog includes an array member.  The items of that array are objects (i.e. records) that contain summary metadata about resources retrievable via the server's API.  These objects are referred to as _**local resources items**_.
+Each local resources catalog includes an array member.  The items of that array are objects (i.e., records) that contain summary metadata about resources retrievable via the server's API.  These objects are referred to as _**local resources items**_.
 ==================================================
 
-The `/collections` endpoint is an example of a _local resources endpoint_.  Doing a GET operation at the local resources endpoint (i.e. `GET /collections`) returns a document that is an example of a _local resources catalog_.  This document contains an array member named `collections` and the items of that array are the _local resources items_.  Each of these _local resources items_ provides metadata about some resource (e.g. a feature collection) that is accessible via the server's API.
+The `/collections` endpoint is an example of a _local resources endpoint_.  Doing a GET operation at the local resources endpoint (i.e., `GET /collections`) returns a document that is an example of a _local resources catalog_.  This document contains an array member named `collections` and the items of that array are the _local resources items_.  Each of these _local resources items_ provides metadata about some resource (e.g., a feature collection) that is accessible via the server's API.
 
 Other _local resources endpoints_ available in the <<ogc-api-resource-tree,OGC API resource tree>> include the `/processes` endpoint which provides summary metadata about processes and the `/collections/{collectionId}/scenes` endpoint which provides metadata about the source images of a coverage.
 
 In order to enable catalog-like searching at these local resources endpoints, this requirements class:
 
-1. Extends the information content of the local resources catalog to satisfy the requirements of the <<clause-record-collection,Record Collection>> common component.
+1. extends the information content of the local resources catalog to satisfy the requirements of the <<clause-record-collection,Record Collection>> common component;
 
-2. Extends the information content of the local resources item to satisfy the requirements of the <<clause-record-core,Record Core>> common component.
+2. extends the information content of the local resources i.e., to satisfy the requirements of the <<clause-record-core,Record Core>> common component; and
 
-3. Optionally extends the local resources endpoint with a set of query parameters that support a basic capability.
+3. optionally extends the local resources endpoint with a set of query parameters that support a basic capability.
 
 The Local Resources Catalog requirements class does not define the specific endpoints in the <<ogc-api-resource-tree,OGC API resource tree>> that should be enabled with catalog-like query capabilities.  It only defines how those endpoints should be enhanced should the requirement for catalog-like searching be identified by the responsible OGC Standard.  It is anticipated that the responsible OGC standard will define a requirements class or extension to enable local resources catalog capabilities at that endpoint.
 
@@ -195,7 +195,7 @@ include::recommendations/local-resources-catalog/PER_additional-catalog-properti
 
 include::recommendations/local-resources-catalog/PER_other-catalog-properties.adoc[]
 
-In practice the responsible standard would define how the two sets of properties are merged into the local resources catalog.  In this example it is straight forward since the collections object (path: `/collections`) is sparse and most catalog properties can be added without issue.  It should further be noted that for the collections object (path: `/collections`) the name of the array containing the local resources items (i.e. the records) is **"collections"** and so the value of the <<req_record-collection_records-array-name,`recordsArrayName`>> property would be set to **"collections"**.
+In practice the responsible standard would define how the two sets of properties are merged into the local resources catalog.  In this example it is straight forward since the collections object (path: `/collections`) is sparse and most catalog properties can be added without issue.  It should further be noted that for the collections object (path: `/collections`) the name of the array containing the local resources items (i.e., the records) is **"collections"** and so the value of the <<req_record-collection_records-array-name,`recordsArrayName`>> property would be set to **"collections"**.
 
 ==== Extending the local resources item
 
@@ -240,7 +240,7 @@ include::recommendations/local-resources-catalog/PER_additional-record-propertie
 
 include::recommendations/local-resources-catalog/PER_other-record-properties.adoc[]
 
-In practice the responsible standard would define how the two sets of properties are merged into the local resources item.  In this case it is straight forward since the collection object (path: `/collections/{collectionID}`) and the record share a large number of properties.  Where there is a difference, `extent` versus `geometry` and `time`, can be handled by including both sets of properties in the local resources item and ensuring that their values are consistent.
+In practice the responsible standard would define how the two sets of properties are merged into the local resources item.  In this case it is straight forward since the collection object (path: `/collections/{collectionID}`) and the record share a large number of properties.  Where there is a difference, `extent` versus `geometry` and `time`, can be handled by including both sets of properties in the local resources i.e., and ensuring that their values are consistent.
 
 ==== Examples
 

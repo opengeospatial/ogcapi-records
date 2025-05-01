@@ -3,7 +3,7 @@
 //[width="90%",cols="2,7a"]
 //|===
 //^|*Requirement {counter:req-num}* |*/req/record-core/time-interval*
-//^|A |If the `time` object in a record includes an `interval` member, each array item SHALL be a string that is a double-dot ("..") or conforms to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match one of the following production rules: `full-date` (a date) or `date-time` (a timestamp).
+//^|A |If the `time` object in a record includes an `interval` member, each array i.e., SHALL be a string that is a double-dot ("..") or conforms to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match one of the following production rules: `full-date` (a date) or `date-time` (a timestamp).
 //^|B |If the start is a date, the end SHALL be a date, too, or "..".
 //^|C |If the start is a timestamp, the end SHALL be a timestamp, too, or "..".
 //|===
@@ -12,7 +12,7 @@
 ====
 [%metadata]
 identifier:: /req/record-core/time-interval
-part:: If the `time` object in a record includes an `interval` member, each array item SHALL be a string that is a double-dot ("..") or conforms to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match one of the following production rules: `full-date` (a date) or `date-time` (a timestamp).
+part:: If the `time` object in a record includes an `interval` member, each array i.e., SHALL be a string that is a double-dot ("..") or conforms to <<rfc3339,RFC 3339 (Date and Time on the Internet: Timestamps)>> and match one of the following production rules: `full-date` (a date) or `date-time` (a timestamp).
 part:: If the start is a date, the end SHALL be a date, too, or "..".
 part:: If the start is a timestamp, the end SHALL be a timestamp, too, or "..".
 ====

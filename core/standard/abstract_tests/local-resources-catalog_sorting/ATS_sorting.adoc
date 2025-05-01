@@ -5,7 +5,7 @@
 //^|*Abstract Test {counter:ats-id}* |*/conf/local-resources-catalog/building-blocks/sorting*
 //^|Test Purpose |Validate sorting.
 //^|Requirement |<<req_local-resources-catalog_sorting,/req/local-resources-catalog/sorting>>
-//^|Test Method |. Demonstrate conformance to <<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the local resources catalog endpoint (e.g. `/collections`) using the test <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>>.
+//^|Test Method |. Demonstrate conformance to <<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the local resources catalog endpoint (e.g., `/collections`) using the test <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>>.
 //|===
 
 
@@ -18,6 +18,6 @@ test-purpose:: Validate sorting.
 test-method::
 +
 --
-. Demonstrate conformance to <<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the local resources catalog endpoint (e.g. `/collections`) using the test <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>>.
+. Demonstrate conformance to <<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>> at the local resources catalog endpoint (e.g., `/collections`) using the test <<ats_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>>.
 --
 ====

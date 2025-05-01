@@ -6,6 +6,7 @@
 The OGC API - Records Standard does not mandate any particular encoding for a <<clause-record-core,record>> or a <<clause-record-collection,catalog>>.  However, it does provide requirements classes for encodings that are commonly used in implementations of OGC API Standards. These encodings include <<requirements-class-json-clause,JSON>> and <<requirements-class-html-clause,HTML>>.  This clause indicates the media that to be used for these encodings of the resources defined in this Standard.
 
 === Media types
+
 A description of the MIME types is mandatory for any OGC API Standard that specifies requirements for data encoding(s). <<media-types-table>> provides a list of suitable MIME types for <<clause-record-core,records>> and <<clause-record-collection,catalogs>>.
 
 [#media-types-table,reftext='{table-caption} {counter:table-num}']

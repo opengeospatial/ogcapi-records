@@ -23,7 +23,7 @@ The following https://www.iana.org/assignments/link-relations/link-relations.xht
 
 * **collection**: The target IRI points to a resource which represents the collection resource for the context IRI.
 
-* **describes**: Refers to a resource that is described by this context (i.e. the record).
+* **describes**: Refers to a resource that is described by this context (i.e., the record).
 
 * **icon**: Refers to an icon representing this context.
 
@@ -67,9 +67,9 @@ Each resource representation includes an array of links. Implementations are fre
 
 The following profile URIs are defined and used in this document.
 
-* **http://www.opengis.net/def/profile/OGC/0/ogc-catalog**: Refers to a profile of a base resource type (e.g. `application/json`) that is a catalog.
+* **http://www.opengis.net/def/profile/OGC/0/ogc-catalog**: Refers to a profile of a base resource type (e.g., `application/json`) that is a catalog.
 
-* **http://www.opengis.net/def/profile/OGC/0/ogc-record**: Refers to a profile of a base resource type (e.g. `application/geo+json`) that is a record of a catalg.
+* **http://www.opengis.net/def/profile/OGC/0/ogc-record**: Refers to a profile of a base resource type (e.g., `application/geo+json`) that is a record of a catalg.
 
 === Examples
 

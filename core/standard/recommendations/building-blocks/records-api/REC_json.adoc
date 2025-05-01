@@ -4,14 +4,14 @@
 //|===
 //^|*Recommendation {counter:rec-id}* |*/rec/records-api/json*
 //
-//^|A |If the records can be represented for the intended use in GeoJSON, implementations SHOULD consider supporting <<rc_json,GeoJSON>> as an encoding for records and catalogs (i.e. record collections).
-//^|B |If a catalog (i.e. record collection) can be represented for the intended use in JSON, implementations SHOULD consider supporting <<rc_json,JSON>> as an encoding for a catalog (i.e. record collection).
+//^|A |If the records can be represented for the intended use in GeoJSON, implementations SHOULD consider supporting <<rc_json,GeoJSON>> as an encoding for records and catalogs (i.e., record collections).
+//^|B |If a catalog (i.e., record collection) can be represented for the intended use in JSON, implementations SHOULD consider supporting <<rc_json,JSON>> as an encoding for a catalog (i.e., record collection).
 //|===
 
 [recommendation]
 ====
 [%metadata]
 identifier:: /rec/records-api/json
-part:: If the records can be represented for the intended use in GeoJSON, implementations SHOULD consider supporting <<rc_json,GeoJSON>> as an encoding for records and catalogs (i.e. record collections).
-part:: If a catalog (i.e. record collection) can be represented for the intended use in JSON, implementations SHOULD consider supporting <<rc_json,JSON>> as an encoding for a catalog (i.e. record collection).
+part:: If the records can be represented for the intended use in GeoJSON, implementations SHOULD consider supporting <<rc_json,GeoJSON>> as an encoding for records and catalogs (i.e., record collections).
+part:: If a catalog (i.e., record collection) can be represented for the intended use in JSON, implementations SHOULD consider supporting <<rc_json,JSON>> as an encoding for a catalog (i.e., record collection).
 ====

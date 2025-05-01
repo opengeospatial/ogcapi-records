@@ -21,5 +21,5 @@ part:: The value of the `href` member SHALL point to the access endpoint of the 
 ====================================================
 * For a <<clause-crawlable-catalog,crawlable catalog>> the access endpoint is the URL of the <<clause-record-collection,catalog>>.
 * For a <<clause-searchable-catalog,searchable catalog>> the access endpoint is the URL of the `/collections/{catalogId}/items` endpoint.
-* For a <<clause-local-resources-catalog,local resource catalog>> the access endpoint is the URL of the local resources endpoint (e.g. `/processes`).
+* For a <<clause-local-resources-catalog,local resource catalog>> the access endpoint is the URL of the local resources endpoint (e.g., `/processes`).
 ====================================================

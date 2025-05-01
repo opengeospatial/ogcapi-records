@@ -27,7 +27,7 @@
 //. Check that the `+defaultSortOrder+` attribute exists.
 //. Using one sortable, construct a path for an `+.../items+` query with `+sortby+` using explicit ascending order (`+`).
 //. Issue an HTTP GET request on the path.
-//. Using the same sortable, construct a path for an `+.../items+` query with `+sortby+` using implicit ascending order (i.e. no `+`).
+//. Using the same sortable, construct a path for an `+.../items+` query with `+sortby+` using implicit ascending order (i.e., no `+`).
 //. Issue an HTTP GET request on the path.
 //. Verify that the records returned in both responses are identical.
 //|===
@@ -77,7 +77,7 @@ Sequence 3:
 . Check that the `+defaultSortOrder+` attribute exists.
 . Using one sortable, construct a path for an `+.../items+` query with `+sortby+` using explicit ascending order (`+`).
 . Issue an HTTP GET request on the path.
-. Using the same sortable, construct a path for an `+.../items+` query with `+sortby+` using implicit ascending order (i.e. no `+`).
+. Using the same sortable, construct a path for an `+.../items+` query with `+sortby+` using implicit ascending order (i.e., no `+`).
 . Issue an HTTP GET request on the path.
 . Verify that the records returned in both responses are identical.
 --

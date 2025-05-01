@@ -4,12 +4,12 @@
 //|===
 //^|*Permission {counter:per-id}* |*/per/local-resources-catalog/additional-record-properties*
 //
-//<<local-resources-additional-properties>> table contains a list of recommended additional properties that MAY be added to the information model of a local resources item to enhance its searchability.
+//<<local-resources-additional-properties>> table contains a list of recommended additional properties that MAY be added to the information model of a local resources i.e., to enhance its searchability.
 //|===
 
 [permission]
 ====
 [%metadata]
 identifier:: /per/local-resources-catalog/additional-record-properties
-part:: <<local-resources-additional-properties>> table contains a list of recommended additional properties that MAY be added to the information model of a local resources item to enhance its searchability.
+part:: <<local-resources-additional-properties>> table contains a list of recommended additional properties that MAY be added to the information model of a local resources i.e., to enhance its searchability.
 ====

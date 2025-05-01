@@ -18,7 +18,7 @@ The `Record` Requirements Class defines the requirements for a catalog record wh
 
 It is expected that the information necessary to populate the fields/properties of a catalog record is readily available for any resource that is being registered in the catalog.
 
-The expectation is that the schema of a record will be extended to describe specific resource types (e.g. datasets, services, etc.) as well as also extended by information communities wishing to enrich the information content of the record to suit their needs.
+The expectation is that the schema of a record will be extended to describe specific resource types (e.g., datasets, services, etc.) as well as also extended by information communities wishing to enrich the information content of the record to suit their needs.
 
 Although this Standard does not mandate any particular encoding for a record, this document does define conformance classes for two encodings:
 
@@ -41,7 +41,7 @@ Other encodings are allowed but are not described in this document.
 |created |optional |The date this record was created in the server. |`properties.created`
 |updated |optional |The most recent date on which the record was changed. |`properties.updated`
 |conformsTo |optional |The extensions/conformance classes used in this record. |`conformsTo`
-|language |optional |The language used for textual values (i.e. titles, descriptions, etc.) of this record. |`properties.language`
+|language |optional |The language used for textual values (i.e., titles, descriptions, etc.) of this record. |`properties.language`
 |languages |optional |The list of other languages in which this record is available. |`properties.languages`
 |[[record-links-section]]links |optional |A list of links related to this record.|`links`
 |linkTemplates |optional |A list of link templates related to this record. |`linkTemplates`
@@ -112,7 +112,7 @@ The spatial characteristic of the resource described by a record is specified us
 
 include::recommendations/building-blocks/record-core/PER_record-geometry.adoc[]
 
-For example, the <<rc_json,JSON>> requirements class makes the `geometry` member mandatory because the record encoding (i.e. https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON]) requires that the `geometry` member be mandatory.
+For example, the <<rc_json,JSON>> requirements class makes the `geometry` member mandatory because the record encoding (i.e., https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON]) requires that the `geometry` member be mandatory.
 
 [[sc_temporal_information]]
 ==== Temporal information
@@ -127,7 +127,7 @@ Records can have multiple properties that describe the temporal characteristics 
 
 * In many records all temporal properties are instants (represented by a date or a timestamp) and intervals are described using two temporal instants, one for the start and one for the end.
 
-* Multiple temporal properties are sometimes used to describe different temporal characteristics of the resource(s) the record describes. For example, the time instant or interval when the information in the record is valid (sometimes called "valid time") and the time when the record was recorded in the catalog (sometimes called "transaction time"). Another example is the https://www.ogc.org/standards/om[Observations & Measurements standard], where an observation has multiple temporal properties including "phenomenon time", "result time" and "valid time".
+* Multiple temporal properties are sometimes used to describe different temporal characteristics of the resource(s) the record describes. For example, the time instant or interval when the information in the record is valid (sometimes called "valid time") and the time when the record was recorded in the catalog (sometimes called "transaction time"). Another example is the https://www.ogc.org/standards/om[Observations & Measurements standard], where an observation has multiple temporal properties including "phenomenon time," "result time," and "valid time."
 
 This Standard does not place any constraints on the number of additional temporal properties that may be added to a record to characterize temporal aspects of the resource being described by a record.  This can make it difficult for a naive client to recognize and utilize temporal information stored in the record.  For this reason, this Standard includes the `time` property in a record.  
 
@@ -259,11 +259,11 @@ include::requirements/building-blocks/record-core/REQ_time-zone.adoc[]
 [[sc_keywords_and_themes]]
 ==== Keywords and Themes
 
-A record allows for one `keywords` and one to many `themes` properties.  Keywords are free form terms or tags associated with the resource(s) that the record describes.  Themes are concepts associated with the resource(s) that a record describes taken from one or more formal knowledge organization systems or schemes.  The list of knowledge organization systems or schemes used in a <<clause-searchable-catalog,searchable>> or <<clause-local-resources-catalog,local resources>> catalog can be determined by inspecting the server's OpenAPI document or, if the server implements CQL2, by exposing a queryable (e.g. named `scheme`) and enumerating the list of schemes used in the queryable's schema definition.
+A record allows for one `keywords` and one to many `themes` properties.  Keywords are free form terms or tags associated with the resource(s) that the record describes.  Themes are concepts associated with the resource(s) that a record describes taken from one or more formal knowledge organization systems or schemes.  The list of knowledge organization systems or schemes used in a <<clause-searchable-catalog,searchable>> or <<clause-local-resources-catalog,local resources>> catalog can be determined by inspecting the server's OpenAPI document or, if the server implements CQL2, by exposing a queryable (e.g., named `scheme`) and enumerating the list of schemes used in the queryable's schema definition.
 
 include::recommendations/building-blocks/record-core/REC_record-keywords-themes.adoc[]
 
-The following provides an example of using keywords for free form terms (e.g. tags) as well as themes to articulate terms from formal vocabularies or classification systems.
+The following provides an example of using keywords for free form terms (e.g., tags) as well as themes to articulate terms from formal vocabularies or classification systems.
 
 [#keywords-themes-example,reftext=`Keywords and themes Example`]
 .Keywords and themes Example
@@ -299,8 +299,8 @@ include::recommendations/building-blocks/record-core/REC_format.adoc[]
 
 A catalog record can include language information about:
 
-* The resource that the record describes.
-* The language used for text values in the current record representation.
+* The resource that the record describes;
+* The language used for text values in the current record representation; and
 * Alternate languages in which the current record can be represented.
 
 ===== Language of the record
@@ -316,14 +316,14 @@ A server that wants to use language-specific links will have to support a mechan
 ======================================================================
 Two common approaches are:
 
-* An additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language-specific path element like `.../en-ca/...`);
+* An additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language-specific path element like `.../en-ca/...`); and
 
 * An additional query parameter (for example, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/parameters/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
 ======================================================================
 
 [NOTE]
 ======================================================================
-There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g. multiple titles in different languages).  To obtain a record in multiple languages would require multiple requests to the server each negotiating to a desired language.
+There is no provision in the record schema to allow a response containing text fields simultaneously presented in multiple languages (e.g., multiple titles in different languages).  To obtain a record in multiple languages would require multiple requests to the server each negotiating to a desired language.
 ======================================================================
 
 ===== Language of the resource
@@ -349,7 +349,7 @@ include::requirements/building-blocks/record-core/REQ_record-license.adoc[]
 
 A record must contain a `links` section and may contain a <<sc_templated_links_with_variables,`linkTemplates`>> section.  These sections contain navigation links and/or association links.
 
-Navigation links are meant to encode relationships between catalog entities (i.e. <<clause-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (relation: `collection`) of which a record is a member, alternative representations (relation: `alternate`) of the record, and -- in the context of an API -- navigation links to previous (relation: `prev` or `previous`) or next (relation: `next`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (relation: `root`, relation: `parent`, relation: `child`).
+Navigation links are meant to encode relationships between catalog entities (i.e., <<clause-record-collection,collections>> and <<clause-record-core,records>>).  Navigation links in the `links` section can include links to the collection (relation: `collection`) of which a record is a member, alternative representations (relation: `alternate`) of the record, and -- in the context of an API -- navigation links to previous (relation: `prev` or `previous`) or next (relation: `next`) records in a chain of records.  Links in the `links` section may also be used to organize records in a hierarchy (relation: `root`, relation: `parent`, relation: `child`).
 
 include::requirements/building-blocks/record-core/REQ_record-links.adoc[]
 
@@ -369,7 +369,7 @@ Finally, association links are meant to point to other resources external to the
 
 include::recommendations/building-blocks/record-core/REC_record-associations_relate.adoc[]
 
-In some instances, additional context may be desirable or required to access (or bind to) the resource(s) being described by a record.  This is the case when, for example, access to the resource is through a service interface that requires mandatory parameters to be provided.  An implementation of the OGC Web Map Service (WMS) Standard is an example of such a service.  It may also be the case that efficient access to the resource would be facilitated by providing additional context.  Accessing data from a large data repository such as a data cube would be more efficient if the context of the query used to discover the resource (e.g. bbox, datetime) were passed down to the link used to access the data.
+In some instances, additional context may be desirable or required to access (or bind to) the resource(s) being described by a record.  This is the case when, for example, access to the resource is through a service interface that requires mandatory parameters to be provided.  An implementation of the OGC Web Map Service (WMS) Standard is an example of such a service.  It may also be the case that efficient access to the resource would be facilitated by providing additional context.  Accessing data from a large data repository such as a data cube would be more efficient if the context of the query used to discover the resource (e.g., bbox, datetime) were passed down to the link used to access the data.
 
 include::recommendations/building-blocks/record-core/REC_record-associations_templated.adoc[]
 
@@ -409,7 +409,7 @@ NOTE: Care should be exercised when there is a large number of links that need t
 
 The OGC API - Records Standard uses links to express associations between resources including links that bind to the resource(s) being described by a record.  In some situations, a static link does not adequately express all the information necessary to retrieve the referenced resource OR does not allow for the resource to be retrieved in an efficient manner.
 
-Consider the case where a record describing a coverage resource is discovered by searching the catalog using a spatial constraint (e.g. a bbox).  Further consider that the found record contains a link to retrieve the coverage.  Using a static link would only allow for retrieval of the entire coverage or a subset unrelated to the user's original catalog query.  Using a templated link, however, would allow the context of the catalog query (i.e. the bbox) to be passed to the retrieval link as a substitution variable.  The templated link with all substitution variables resolved would thus retrieve the subset of the coverage that corresponds to the spatial constraint used to discover the record in the first place which presumably represents the area of interest.
+Consider the case where a record describing a coverage resource is discovered by searching the catalog using a spatial constraint (e.g., a bbox).  Further consider that the found record contains a link to retrieve the coverage.  Using a static link would only allow for retrieval of the entire coverage or a subset unrelated to the user's original catalog query.  Using a templated link, however, would allow the context of the catalog query (i.e., the bbox) to be passed to the retrieval link as a substitution variable.  The templated link with all substitution variables resolved would thus retrieve the subset of the coverage that corresponds to the spatial constraint used to discover the record in the first place which presumably represents the area of interest.
 
 Templated links may also be used to bind to resources that may require additional information in order to access the resources.  For example, simply knowing the URL of a legacy OGC service instance such as for https://portal.ogc.org/files/?artifact_id=14416[WMS] or https://docs.ogc.org/is/09-025r2/09-025r2.html[WFS] implementations is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values is required in order to have a complete link to a resource.  A templated link with variables can provide this additional context.
 
@@ -489,7 +489,7 @@ A _record collection_ is an object that provides information about and access to
 
 The schema for the catalog is an extension of the collection schema defined in http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features Standard].
 
-While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the catalog in the <<clause-records-api,Records API>> conformance class.  Otherwise, the catalog resource can live anywhere the provider wishes to place it including as a static file in web space (e.g. a web-accessible directory or an S3 bucket).
+While http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API - Features - Part 1: Core] defines a specific location for the collection resource (path: `/collections/{collectionId}`), OGC API - Records only fixes the location of the catalog in the <<clause-records-api,Records API>> conformance class.  Otherwise, the catalog resource can live anywhere the provider wishes to place it including as a static file in web space (e.g., a web-accessible directory or an S3 bucket).
 
 Although this Standard does not mandate any particular encoding for a catalog, two conformance classes are defined:
 
@@ -520,7 +520,7 @@ Other encodings are allowed but are not described in this document.
 |crs |optional |A list of coordinate reference systems used for spatiotemporal values.
 |keywords |optional |A list of free-form keywords or tags associated with this collection.
 |themes |optional |A knowledge organization system used to classify this collection.
-|language |optional |The language used for textual values (i.e. titles, descriptions, etc.) of this collection object. 
+|language |optional |The language used for textual values (i.e., titles, descriptions, etc.) of this collection object. 
 |languages |optional |The list of other languages in which this collection object is available. 
 |recordLanguages |optional |The list of languages in which records from the collection can be represented.
 |contacts |optional |A list of contacts qualified by their role(s).
@@ -549,7 +549,7 @@ In the case where all the records of a catalog use the same set of extensions, a
 
 See <<sc_record_extensions,Record extensions>>.
 
-==== Item type
+==== i.e., type
 
 A catalog can include references to records, other catalogs or both.  A catalog can also contain an array of catalog records.
 
@@ -656,7 +656,7 @@ include::recommendations/building-blocks/record-collection/PER_catalogs.adoc[]
 Related catalogs may be organized as:
 
 * an unorganized set of related catalogs,
-* as a series of related catalogs (e.g. for paging),
+* as a series of related catalogs (e.g., for paging),
 * as a hierarchy of related catalogs.
 
 ===== Related catalogs
@@ -852,7 +852,7 @@ The <<media-types-section,Media Types>> sub-clause includes guidance on media ty
 
 Note that any server that supports multiple encodings will have to support a mechanism to mint encoding specific URIs for resources to express links, for example, to alternate representations of the same resource. This document does not mandate any particular approach as to how this is supported by the server.
 
-As clients simply need to dereference the URI of the link, the implementation details and the mechanism as to how the encoding is included in the URI of the link are not important. Developers interested in the approach of a particular implementation, for example, to manipulate ("hack") URIs in the browser address bar, can study the API definition document (e.g. the OpenAPI definition).
+As clients simply need to dereference the URI of the link, the implementation details and the mechanism as to how the encoding is included in the URI of the link are not important. Developers interested in the approach of a particular implementation, for example, to manipulate ("hack") URIs in the browser address bar, can study the API definition document (e.g., the OpenAPI definition).
 
 [NOTE]
 ======================================================================
@@ -1031,14 +1031,14 @@ include::../examples/json/sortables.json[]
 ----
 
 [#sortby-extent-example,reftext=`SortBy Extent Example`]
-.sortby Example of an ascending sort by extent (i.e. smallest area first)
+.sortby Example of an ascending sort by extent (i.e., smallest area first)
 [source]
 ----
 .../collections/mycat/items?...&sortby=%2Bextent&...
 ----
 
 [#sortby-relevance-example,reftext=`SortBy Relevance Example`]
-.sortby Example of a descending sort by relevance (i.e. most relevant first)
+.sortby Example of a descending sort by relevance (i.e., most relevant first)
 [source]
 ----
 .../collections/mycat/items?...&sortby=%2Drelevance&...
@@ -1260,7 +1260,7 @@ This Standard defines two requirements classes, <<requirements-class-html-clause
 
 HTML is the core language of the World Wide Web. An API that supports HTML supports browsing resources with a web browser and also enables search engines to crawl and index those resources.
 
-JSON is a language-independent file format that uses human-readable text to store and transmit data objects consisting of key-value pairs and arrays.  It is a commonly used data format in machine-to-machine communication including that between web applications and servers.  It is well supported by numerous tools and sofware libraries.
+JSON is a language-independent file format that uses human-readable text to store and transmit data objects consisting of key-value pairs and arrays.  It is a commonly used data format in machine-to-machine communication including that between web applications and servers.  It is well supported by numerous tools and software libraries.
 
 "GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the way they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees." <<GeoJSON,IETF RFC 7946>>
 
@@ -1282,7 +1282,7 @@ https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON] is a commonly used format
 
 The following requirements apply when:
 
-. The Records API endpoint advertises conformance to the JSON Conformance Class.
+. The Records API endpoint advertises conformance to the JSON Conformance Class; and
 . The client negotiates that the content of the server's response be https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON].
 
 include::requirements/building-blocks/json/REQ_record-response.adoc[]
@@ -1332,11 +1332,11 @@ This standard does not define a normative schema for a record encoding that is n
 [[clause-catalog-encoding]]
 ===== Catalog encoding
 
-https://datatracker.ietf.org/doc/html/rfc8259[JSON] is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values).  JSON is a commonly used data encoding with diverse uses in electronic data interchange, including that of web applications with servers.  Therefore, the recommendation is to use the JSON encoding if the catalog (i.e. a collection of record) data can be represented in JSON for the intended use.
+https://datatracker.ietf.org/doc/html/rfc8259[JSON] is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values).  JSON is a commonly used data encoding with diverse uses in electronic data interchange, including that of web applications with servers.  Therefore, the recommendation is to use the JSON encoding if the catalog (i.e., a collection of record) data can be represented in JSON for the intended use.
 
 The following requirements apply when:
 
-. The Records API endpoint advertises conformance to the JSON Conformance Class
+. The Records API endpoint advertises conformance to the JSON Conformance Class; and
 . The client negotiates that the content of the server's response be JSON.
 
 include::requirements/building-blocks/json/REQ_catalog-response.adoc[]
@@ -1375,9 +1375,9 @@ include::requirements/building-blocks/html/REQ_conformance.adoc[]
 Catalog information that is only accessible in formats primarily intended to
 be read by machines, such as JSON or XML, have two issues:
 
-* The data is not discoverable using the most common mechanism for discovering information, the Web search engines.
+* the data is not discoverable using the most common mechanism for discovering information, the Web search engines; and
 
-* The data cannot be viewed directly in a browser (additional tools are required to view the data).
+* the data cannot be viewed directly in a browser (additional tools are required to view the data).
 
 Therefore, sharing catalog data on the Web should include publication in HTML. To be consistent with the Web, it should be done in a way that enables users and search engines to access all data.
 

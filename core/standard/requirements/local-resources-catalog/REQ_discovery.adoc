@@ -4,7 +4,7 @@
 //|===
 //^|*Requirement {counter:req-id}* |*/req/local-resources-catalog/discovery*
 //
-//The 'links` section of a server's landing page SHALL include one link (relation: `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`) for each API endpoint (e.g. `/collections`) that has been instrumented to be a local resources catalog.
+//The 'links` section of a server's landing page SHALL include one link (relation: `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`) for each API endpoint (e.g., `/collections`) that has been instrumented to be a local resources catalog.
 //|===
 
 
@@ -12,5 +12,5 @@
 ====
 [%metadata]
 identifier:: /req/local-resources-catalog/discovery
-part:: The `links` section of a server's landing page SHALL include one link (relation: `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`) for each API endpoint (e.g. `/collections`) that has been instrumented to be a local resources catalog.
+part:: The `links` section of a server's landing page SHALL include one link (relation: `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog`) for each API endpoint (e.g., `/collections`) that has been instrumented to be a local resources catalog.
 ====

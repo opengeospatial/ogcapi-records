@@ -4,7 +4,7 @@
 //|===
 //^|*Requirement {counter:req-id}* |*/req/record-core/default-mediatype*
 //
-//^|A |If the <<rc_json,JSON conformance class>> is advertised, then the default media type for record content SHALL be GeoJSON (i.e. `application/geo+json; application=ogc-record`).
+//^|A |If the <<rc_json,JSON conformance class>> is advertised, then the default media type for record content SHALL be GeoJSON (i.e., `application/geo+json; application=ogc-record`).
 //^|B |If the <<rc_json,JSON conformance class>> is not advertised, then the default media type for record content SHALL be HTML (i.e `text/html`).
 //|===
 
@@ -13,6 +13,6 @@
 ====
 [%metadata]
 identifier:: /req/record-core/default-mediatype
-part:: If the <<rc_json,JSON conformance class>> is advertised, then the default media type for record content SHALL be GeoJSON (i.e. `application/geo+json; application=ogc-record`).
+part:: If the <<rc_json,JSON conformance class>> is advertised, then the default media type for record content SHALL be GeoJSON (i.e., `application/geo+json; application=ogc-record`).
 part:: If the <<rc_json,JSON conformance class>> is not advertised, then the default media type for record content SHALL be HTML (i.e `text/html`).
 ====

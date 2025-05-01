@@ -19,7 +19,7 @@ explode: false
 style: form
 ----
 
-part:: Each item SHALL be one of the following:
+part:: Each i.e., SHALL be one of the following:
 +
 * A HTTP(S) URI of a profile, e.g., in the OGC Profile Register (\http://www.opengis.net/def/profile);
 * A Safe CURIE of a profile in the OGC Profile Register (e.g., `[ogc-profile:my-profile]`);

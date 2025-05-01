@@ -4,11 +4,11 @@
 [[records-role]]
 === Role of catalogs
 
-Historically, catalogs have been used as large repositories of formal metadata such as ISO 19115, ISO 19119, FGDC, etc. More recently, catalogs are migrating to a more distributed model where the metadata is closely coupled with the resource that it describes. A current example is https://stacspec.org/en[STAC] which relies on well-defined common components that can be integrated in different ways.
+Historically, catalogs have been used as large repositories of formal metadata such as ISO 19115, ISO 19119, FGDC, etc. More recently, catalogs are migrating to a more distributed model where the metadata is closely coupled with the resource that it describes. A current example is https://stacspec.org/en[SpatioTemporal Asset Catalogs (STAC)] which relies on well-defined common components that can be integrated in different ways.
 
 Although OGC API - Records is built upon the legacy of the https://docs.ogc.org/is/12-176r7/12-176r7.html[OGC Catalog Service Web (CSW) Standard], which was primarily focused on accessing a large repository of metadata documents, this Standard also supports other catalog deployment patterns such as a catalog composed of a distributed set of static records.
 
-In the modern scenario, the catalog records can be distributed and linked together so that they can be crawled, or they can be harvested into a service endpoint to make them searchable. In addition, a searchable catalog can harvest not only a metadata document describing the resource but, in some cases, the resource itself (e.g. harvesting the collections object from an OGC API). The implications of this are subtle yet important. In the traditional cataloging approach (e.g. based on CSW) a client could find the record and the record might include binding information to access the resource. Using the new approach, a client interacts more intimately with the catalog and the catalog becomes integral to accessing the resource. An example is the cloud native ecosystem: HTTP range requests to Cloud Optimized GeoTIFF (COG) data cannot be used properly unless there is a STAC item telling the client in what ranges the bands exists. Therefore the catalog becomes an integral component (discovery, evaluation) in the process of accessing a resource.
+In the modern scenario, the catalog records can be distributed and linked together so that they can be crawled, or they can be harvested into a service endpoint to make them searchable. In addition, a searchable catalog can harvest not only a metadata document describing the resource but, in some cases, the resource itself (e.g., harvesting the collections object from an OGC API). The implications of this are subtle yet important. In the traditional cataloging approach (e.g., based on CSW) a client could find the record and the record might include binding information to access the resource. Using the new approach, a client interacts more intimately with the catalog and the catalog becomes integral to accessing the resource. An example is the cloud native ecosystem: HTTP range requests to Cloud Optimized GeoTIFF (COG) data cannot be used properly unless there is a STAC i.e., telling the client in what ranges the bands exists. Therefore the catalog becomes an integral component (discovery, evaluation) in the process of accessing a resource.
 
 [[general-overview]]
 === Records and catalogs
@@ -21,17 +21,17 @@ A record provides a summary description (metadata) of a resource that a provider
 
 === Common components
 
-This Standard defines the following common components that may be used to deploy a catalog:
+This Standard defines the following common components that may be used to deploy a catalog.
 
 . The _core_ schema of a record.
-. The definition of a _collection_ resource that groups and describes a set of related records (i.e. a catalog).
+. The definition of a _collection_ resource that groups and describes a set of related records (i.e., a catalog).
 . The definition of a core set of query parameters for searchable catalogs.
 . An API that allows a catalog to be searched using logically connected predicates that can include spatial and/or temporal predicates.
 
 Using these common components a catalog can be deployed as:
 
-* A set of web-accessible records that can be crawled by a search engine crawler, using (for example) a web browser, or by using automated tools.
-* A searchable catalog with records accessible through an API endpoint.
+* a set of web-accessible records that can be crawled by a search engine crawler, using (for example) a web browser, or by using automated tools; or
+* a searchable catalog with records accessible through an API endpoint.
 
 A special use case of the _searchable catalog_ is the _**local resources catalog**_.  The <<ogc-api-resource-tree,OGC API resource tree>> has several endpoints that provide lists of resources.  Examples of such endpoints include the `/collections` and the `/processes` endpoints.  One can readily imagine a large deployment of APIs implementing https://ogcapi.ogc.org/[OGC API building blocks] with thousands of collections where the ability to search would enhance the client's interaction with the server.  Using the common components defined in this Standard, these endpoints can be extended to support catalog-like searching using filter expressions that may also include spatial and/or temporal predicates.  Implementations of OGC API endpoints extended in this way behave like a catalog of local resources.
 
@@ -44,12 +44,12 @@ A complete definition of a record can be found in clause <<core-properties,Core 
 
 The choice of which properties to include in the set of core properties was primarily informed by the following record models:
 
-* The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalog schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards,
+* The http://docs.opengeospatial.org/is/12-168r6/12-168r6.html#17[core catalog schema] from the https://www.ogc.org/standards/cat[OGC® Catalogue Services 3.0] suite of standards; and
 * The https://www.w3.org/TR/vocab-dcat-2/[Data Catalog Vocabulary (DCAT) version 2] and the https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/geodcat-application-profile-data-portals-europe/release/300[GeoDCAT-AP version 3.0.0] specifications.
 
 It is expected that the information necessary to populate this core set of properties is readily available for any resource that is being made discoverable by a record.
 
-The expectation is that this _core_ set of properties will be extended to describe specific resource types (e.g. datasets, dataset series, Earth observation products, machine models, services, etc.).  The core can also be extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suit specific needs is allowed, expected, and encouraged by this Specification.
+The expectation is that this _core_ set of properties will be extended to describe specific resource types (e.g., datasets, dataset series, Earth observation products, machine models, services, etc.).  The core can also be extended by information communities wishing to enrich the information content of the record to suit their needs.  Extending the information content of a record to suit specific needs is allowed, expected, and encouraged by this Specification.
 
 Although this Standard does not mandate any particular encoding for a record or a catalog, it does define conformance classes for two encodings:
 
@@ -82,13 +82,13 @@ An implementation of the Records API Standard enables retrieving a subset of rec
 
 The Records API extends the http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard to:
 
-. Provide API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web.
+. Provide API patterns and encodings to facilitate further lowering the barrier to finding the existence of spatial resources on the Web; and
 . Provide functionality comparable to that of the http://docs.opengeospatial.org/is/12-176r7/12-176r7.html[OGC Catalogue Service (CSW)] Standard so that a facade can be created over legacy services thus allowing them to participate in the new OGC API Standards ecosystem.
 
 To facilitate access to records in a catalog, the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Feature - Part 1: Core] Standard has been:
 
-* Extended with <<clause-record-core-query-parameters,additional parameters>> at the `/collections/{collectionId}/items` endpoint, 
-* Constrained to a single information model (i.e. the <<record-model,record>>).
+* Extended with <<clause-record-core-query-parameters,additional parameters>> at the `/collections/{collectionId}/items` endpoint, and
+* Constrained to a single information model (i.e., the <<record-model,record>>).
 
 <<record-api-paths>> summarizes the access paths and relation types defined in this Standard.
 
@@ -111,7 +111,7 @@ To facilitate access to records in a catalog, the https://docs.ogc.org/is/17-069
 
 Where:
 
-* `{catalogId}` = An identifier for a specific catalog.
+* `{catalogId}` = An identifier for a specific catalog; and
 * `{recordId}` = An identifier for a specific record within a collection.
 
 [[api-behavior-model-overview]]
@@ -131,7 +131,7 @@ The first or core level of search capability is based on <<OAFeat-1,OGC API - Fe
 
 * bounding box searches,
 * time instant or time period searches, and
-* equality predicates (i.e. _property_=_value_).
+* equality predicates (i.e., _property_=_value_).
 
 The Records API Standard extends these core search capabilities to include:
 

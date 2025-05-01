@@ -3,7 +3,7 @@
 //|===
 //^|*Requirement {counter:req-id}* |*/req/record-core/contact*
 //^|A |If the `contacts` property is present and the `logo` property is included in the contact object then the link relation SHALL be `icon` and the media type SHALL be an `image` media type.
-//^|A |If the `contacts` property is included and the `links` property is included in the contact object then the link relation `about` SHOULD be used for each listed link and the media type SHALL indicate the content type of the link (e.g. `text/html` for a company's web page versus `text/vcard` for a virtual contact file).
+//^|A |If the `contacts` property is included and the `links` property is included in the contact object then the link relation `about` SHOULD be used for each listed link and the media type SHALL indicate the content type of the link (e.g., `text/html` for a company's web page versus `text/vcard` for a virtual contact file).
 //|===
 
 [requirement]
@@ -11,5 +11,5 @@
 [%metadata]
 identifier:: /req/record-core/contact
 part:: If the `contacts` property is present and the `logo` property is included in the contact object then the link relation SHALL be `icon` and the media type SHALL be an `image` media type.
-part:: If the `contacts` property is included and the `links` property is included in the contact object then the link relation `about` SHOULD be used for each listed link and the media type SHALL indicate the content type of the link (e.g. `text/html` for a company's web page versus `text/vcard` for a virtual contact file).
+part:: If the `contacts` property is included and the `links` property is included in the contact object then the link relation `about` SHOULD be used for each listed link and the media type SHALL indicate the content type of the link (e.g., `text/html` for a company's web page versus `text/vcard` for a virtual contact file).
 ====

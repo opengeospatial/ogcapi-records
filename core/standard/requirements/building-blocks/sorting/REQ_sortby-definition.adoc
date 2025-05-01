@@ -21,7 +21,7 @@
 //style: form
 //----
 //
-//^|B |The default sort order SHALL be ascending (i.e. `+`).
+//^|B |The default sort order SHALL be ascending (i.e., `+`).
 //|===
 
 [requirement]
@@ -45,5 +45,5 @@ explode: false
 style: form
 ----
 
-part:: The default sort order SHALL be ascending (i.e. `+`).
+part:: The default sort order SHALL be ascending (i.e., `+`).
 ====

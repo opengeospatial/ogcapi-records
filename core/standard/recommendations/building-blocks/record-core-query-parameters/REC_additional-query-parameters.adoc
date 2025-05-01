@@ -4,7 +4,7 @@
 //|===
 //^|*Recommendation {counter:rec-id}* |*/rec/record-core-query-parameters/additional-query-parameters*
 //^|A |If any additional property (see <<per_core_additional-properties,additional record properties>>) is expected to be useful for applications using at a searchable catalog endpoint, a parameter with the name of that property SHOULD be supported.
-//^|B |If the parameter has a simple value (e.g. a string or integer) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+//^|B |If the parameter has a simple value (e.g., a string or integer) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 //
 //[source,YAML]
 //----
@@ -35,7 +35,7 @@
 [%metadata]
 identifier:: /rec/record-core-query-parameters/additional-query-parameters
 part:: If any additional property (see <<per_core_additional-properties,additional record properties>>) is expected to be useful for applications using at a searchable catalog endpoint, a parameter with the name of that property SHOULD be supported.
-part:: If the parameter has a simple value (e.g. a string or integer) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
+part:: If the parameter has a simple value (e.g., a string or integer) then it SHOULD have the following characteristics (using an OpenAPI Specification 3.0 fragment):
 +
 [source,YAML]
 ----

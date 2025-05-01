@@ -4,12 +4,12 @@
 //|===
 //^|*Permission {counter:per-id}* |*/per/record-collection/links*
 //
-//The links in the `links` section of a catalog may be typed (i.e. include the `type` member) to allow for the possibility of alternate representations for each record and/or subordinate catalog.
+//The links in the `links` section of a catalog may be typed (i.e., include the `type` member) to allow for the possibility of alternate representations for each record and/or subordinate catalog.
 //|===
 
 [permission]
 ====
 [%metadata]
 identifier:: /per/record-collection/links
-part:: The links in the `links` section of a catalog may be typed (i.e. include the `type` member) to allow for the possibility of alternate representations for each record and/or subordinate catalog.
+part:: The links in the `links` section of a catalog may be typed (i.e., include the `type` member) to allow for the possibility of alternate representations for each record and/or subordinate catalog.
 ====

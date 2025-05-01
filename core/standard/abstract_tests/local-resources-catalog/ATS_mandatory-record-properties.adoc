@@ -8,7 +8,7 @@
 //^|Test Method |. Construct a path for a record from local resources catalog.
 //. Issue an HTTP GET request on the path
 //. Check that the value of the returned HTTP status header is +200+.
-//. Check that the response conforms to the requirements of the local resource object (e.g. /collection/{collectionId}) extended.
+//. Check that the response conforms to the requirements of the local resource object (e.g., /collection/{collectionId}) extended.
 //. Check that the response includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>
 //|===
 
@@ -24,7 +24,7 @@ test-method::
 . Construct a path for a record from local resources catalog.
 . Issue an HTTP GET request on the path
 . Check that the value of the returned HTTP status header is +200+.
-. Check that the response conforms to the requirements of the local resource object (e.g. /collection/{collectionId}) extended.
+. Check that the response conforms to the requirements of the local resource object (e.g., /collection/{collectionId}) extended.
 . Check that the response includes all the mandatory properties listed in <<core-properties-record-table>> and <<core-properties-resource-table>>
 --
 ====

@@ -6,7 +6,7 @@ a collection of related <<record-def,records>>
 === conformance module; conformance test module
 set of related tests, all within a single conformance test class (<<ogc08-131,OGC 08-131>>)
 
-NOTE: When no ambiguity is possible, the word `test` may be omitted. i.e. conformance test module is the same as conformance module. Conformance modules may be nested in a hierarchical way.
+NOTE: When no ambiguity is possible, the word `test` may be omitted. i.e., conformance test module is the same as conformance module. Conformance modules may be nested in a hierarchical way.
 
 === conformance class; conformance test class
 set of conformance test modules that must be applied to receive a single certificate of conformance (<<ogc08-131,OGC 08-131>>)
@@ -29,11 +29,11 @@ represents an accessible form of a *dataset* (<<DCAT>>)
 EXAMPLE: a downloadable file, an RSS feed or a web service that provides the data
 
 === executable test suite (ETS)
-set of code (e.g. Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.ogc.org/files/?artifact_id=55234[(OGC 08-134)]
+set of code (e.g., Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.ogc.org/files/?artifact_id=55234[(OGC 08-134)]
 
 [[local-resources-endpoint-def]]
 === local resources endpoint
-the path from which a catalog of local resources can be retrieved (e.g. `/collections`)
+the path from which a catalog of local resources can be retrieved (e.g., `/collections`)
 
 [[local-resources-catalog-def]]
 === local resources catalog
@@ -41,7 +41,7 @@ an instance of the document or resource that is retrieved from a <<local-resourc
 
 [[local-resources-item-def]]
 === local resources item
-an instance of an object that provides summary information about a discoverable local resource retrieved from a <<local-resources-catalog-def,local resources catalog>> (e.g. `/collections{/collectionID}`)
+an instance of an object that provides summary information about a discoverable local resource retrieved from a <<local-resources-catalog-def,local resources catalog>> (e.g., `/collections{/collectionID}`)
 
 [[ogc-api-resource-tree]]
 === OGC API resource tree
@@ -49,7 +49,7 @@ a collection of resources defined by the set of https://ogcapi.ogc.org/[OGC API 
 
 [[record-def]]
 === record
-atomic unit of information of a catalog that is used to provide information (i.e. metadata) about a particular resource that the publisher of that resources wishes to make discoverable
+atomic unit of information of a catalog that is used to provide information (i.e., metadata) about a particular resource that the publisher of that resources wishes to make discoverable
 
 === recommendation
 expression in the content of a document conveying that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is deprecated but not prohibited (<<ogc08-131,OGC 08-131>>) 
@@ -64,7 +64,7 @@ aggregate of all requirement modules that must all be satisfied to satisfy a con
 aggregate of requirements and recommendations of a specification against a single standardization target type (<<ogc08-131,OGC 08-131>>)
 
 === resource
-an asset of interest that may be described by metadata (i.e. a <<record-def,record>>) in a catalog for the purpose of discovery and access (i.e. binding)
+an asset of interest that may be described by metadata (i.e., a <<record-def,record>>) in a catalog for the purpose of discovery and access (i.e., binding)
 
 === searchable catalog endpoint
 an endpoint in the OGC API resource tree that is designed to support catalog queries

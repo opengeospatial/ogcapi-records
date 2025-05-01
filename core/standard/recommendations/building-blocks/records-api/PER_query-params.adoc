@@ -4,7 +4,7 @@
 //|===
 //^|*Permission {counter:per-id}* |*/per/records-api/query-params* 
 //
-//Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> MAY be specified on the operation for the purpose of selecting a subset of catalog records (i.e. filtering).
+//Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> MAY be specified on the operation for the purpose of selecting a subset of catalog records (i.e., filtering).
 //|===
 
 
@@ -12,5 +12,5 @@
 ====
 [%metadata]
 identifier:: /per/records-api/query-params
-part:: Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> MAY be specified on the operation for the purpose of selecting a subset of catalog records (i.e. filtering).
+part:: Any combination of query parameters from the <<core-query-parameters-table,Table of Query Parameters>> and any <<additional-query-parameters,additional query parameters>> MAY be specified on the operation for the purpose of selecting a subset of catalog records (i.e., filtering).
 ====

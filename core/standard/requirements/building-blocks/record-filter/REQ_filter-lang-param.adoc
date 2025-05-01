@@ -5,7 +5,7 @@
 //^|*Requirement {counter:req-id}* |*/req/record-filter/filter-lang-param*
 //^|A |The HTTP GET operation SHALL support the `filter-lang` parameter as defined in https://portal.ogc.org/files/96288#filter-lang-param[Parameter filter-lang].
 //^|B |For searchable catalogs, the path for which this parameter is supported SHALL be `/collections/{collectionId}/items`.
-//^|C |For local resources catalogs, the path for which this parameter is supported SHALL be whichever path is being extended for catalog-like search capabilities (e.g. `/collections`).
+//^|C |For local resources catalogs, the path for which this parameter is supported SHALL be whichever path is being extended for catalog-like search capabilities (e.g., `/collections`).
 //|===
 
 
@@ -15,5 +15,5 @@
 identifier:: /req/record-filter/filter-lang-param
 part:: The HTTP GET operation SHALL support the `filter-lang` parameter as defined in https://portal.ogc.org/files/96288#filter-lang-param[Parameter filter-lang].
 part:: For searchable catalogs, the path for which this parameter is supported SHALL be `/collections/{collectionId}/items`.
-part:: For local resources catalogs, the path for which this parameter is supported SHALL be whichever path is being extended for catalog-like search capabilities (e.g. `/collections`).
+part:: For local resources catalogs, the path for which this parameter is supported SHALL be whichever path is being extended for catalog-like search capabilities (e.g., `/collections`).
 ====

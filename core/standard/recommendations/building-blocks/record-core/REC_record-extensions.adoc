@@ -6,7 +6,7 @@
 //
 //^|A |If the core record is extended with additional properties, the requirements of the extension SHOULD be formally published.
 //^|B |The formal publication SHOULD define an identifier that can be included in the `conformsTo` list to allow clients to identify that the record has been extended according to the requirements defined in the publication.
-//^|C |The identifier SHOULD be an active identifier (e.g. an URL) that resolves to this publication or eventually leads to it through intermediate resources.
+//^|C |The identifier SHOULD be an active identifier (e.g., an URL) that resolves to this publication or eventually leads to it through intermediate resources.
 //^|D |The formal publication SHOULD include requirements about any formal vocabularies that SHOULD be used to populate core and extension record properties.
 //|===
 
@@ -16,6 +16,6 @@
 identifier:: /rec/record-core/extensions
 part:: If the core record is extended with additional properties, the requirements of the extension SHOULD be formally published.
 part:: The formal publication SHOULD define an identifier that can be included in the `conformsTo` list to allow clients to identify that the record has been extended according to the requirements defined in the publication.
-part:: The identifier SHOULD be an active identifier (e.g. an URL) that resolves to this publication or eventually leads to it through intermediate resources.
+part:: The identifier SHOULD be an active identifier (e.g., an URL) that resolves to this publication or eventually leads to it through intermediate resources.
 part:: The formal publication SHOULD include requirements about any formal vocabularies that SHOULD be used to populate core and extension record properties.
 ====

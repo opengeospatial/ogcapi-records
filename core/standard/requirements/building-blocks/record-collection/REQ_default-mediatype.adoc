@@ -4,14 +4,14 @@
 //|===
 //^|*Requirement {counter:req-id}* |*/req/record-collection/default-mediatype*
 //
-//^|A |If the <<rc_json,JSON conformance class>> is advertised, then the default media type for catalog content SHALL be JSON (i.e. `application/ogc-catalog+json`).
-//^|B |If the <<rc_json,JSON conformance class>> is not advertised, then the default media type for catalog content SHALL be HTML (i.e. `text.html`). 
+//^|A |If the <<rc_json,JSON conformance class>> is advertised, then the default media type for catalog content SHALL be JSON (i.e., `application/ogc-catalog+json`).
+//^|B |If the <<rc_json,JSON conformance class>> is not advertised, then the default media type for catalog content SHALL be HTML (i.e., `text.html`). 
 //|===
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/record-collection/default-mediatype
-part:: If the <<rc_json,JSON conformance class>> is advertised, then the default media type for catalog content SHALL be JSON (i.e. `application/ogc-catalog+json`).
-part:: If the <<rc_json,JSON conformance class>> is not advertised, then the default media type for catalog content SHALL be HTML (i.e. `text.html`). 
+part:: If the <<rc_json,JSON conformance class>> is advertised, then the default media type for catalog content SHALL be JSON (i.e., `application/ogc-catalog+json`).
+part:: If the <<rc_json,JSON conformance class>> is not advertised, then the default media type for catalog content SHALL be HTML (i.e., `text.html`). 
 ====
