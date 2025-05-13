@@ -6,7 +6,6 @@
 ^|B |The response SHALL have the following characteristics:
 
 * The response contains a `facets` object, and each property is a facet object.
-* The `facets` object contains named objects, each with a `type` property identifying a `term`, `histogram`, or `filter` facet.
 * The `facets` object contains named objects, each with:
 ** a `type` property identifying a `term`, `histogram`, or `filter` facet.
 ** a `property` property identifying the property name on which the facet was computed against.
