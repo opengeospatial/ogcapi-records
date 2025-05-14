@@ -8,8 +8,7 @@ allOf:
       type:
         description: |-
           Fixed to "Collection" for collections of records and/or subordinate
-          catalogs.  Wanted to use the JSON-Schema const key work but all the
-          swagger validators tried complained about it.
+          catalogs.
         type: string
         enum:
           - Collection
