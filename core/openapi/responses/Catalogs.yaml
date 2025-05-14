@@ -1,5 +1,5 @@
 ---
-description:
+description: |-
   Information about the list of catalogs offered by this service.
 content:
   application/json:

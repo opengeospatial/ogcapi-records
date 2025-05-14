@@ -1,5 +1,5 @@
 ---
-description:
+description: |-
   The landing page provides links to the API definition (link relations
   `service-desc` and `service-doc`), the Conformance declaration (path
   `/conformance`, link relation `conformance`), and the Record Collections

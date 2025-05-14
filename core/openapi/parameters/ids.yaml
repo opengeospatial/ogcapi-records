@@ -1,7 +1,7 @@
 ---
 name: ids
 in: query
-description: 
+description: |-
   The optional ids parameter allows a specific list of records, identified
   by their identifiers, to be fetched from a catalog.  Only records whose
   identifier matches one of the values listed for this parameter shall appear

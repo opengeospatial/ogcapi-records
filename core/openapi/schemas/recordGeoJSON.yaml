@@ -10,28 +10,28 @@ properties:
     type:
       - string
       - integer
-    description:
+    description: |-
       A unique identifier of the catalog record.
   type:
     type: string
     const: Feature
   time:
     oneOf:
-      - type: null
+      - type: "null"
       - $ref: 'time.yaml'
   geometry:
     oneOf:
-      - type: null
+      - type: "null"
       - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
   conformsTo:
     type: array
-    description:
+    description: |-
       The extensions/conformance classes used in this record.
     items:
       type: string
   properties:
     oneOf:
-      - type: null
+      - type: "null"
       - allOf:
         - type: object
         - $ref: 'recordCommonProperties.yaml'

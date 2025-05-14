@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: "OGC API - Records - Part 1: Core"
   version: '1.0.0'
@@ -115,6 +115,14 @@ paths:
       operationId: describeCollection
       parameters:
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/bbox'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/datetime'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalIds'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Catalog'
@@ -170,7 +178,7 @@ paths:
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalIds'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
       responses:

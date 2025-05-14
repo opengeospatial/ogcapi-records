@@ -8,38 +8,36 @@ allOf:
     properties:
       id:
         type: string
-        description:
+        description: |-
           The unique identifier for this record.
       time:
-        description:
+        description: |-
           A characteristic time or time interval associated
           with the resource that this record described.
         oneOf:
-          - enum:
-            - null
+          - type: "null"
           - $ref: 'time.yaml'
       geometry:
-        description:
+        description: |-
           A characteristic spatial extent association with
           the resource that this record described.
         oneOf:
-          - enum:
-            - null
+          - type: "null"
           - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
       conformsTo:
         type: array
-        description:
+        description: |-
           The extensions/conformance classes used in this record.
         items:
           type: string
       links:
-        description:
+        description: |-
           A list of static links associated with this record.
         type: array
         items:
           $ref: 'link.yaml'
       linkTemplates:
-        description:
+        description: |-
           A list of dynamic links associated with this record.
         type: array
         items:

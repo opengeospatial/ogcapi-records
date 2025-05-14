@@ -19,15 +19,15 @@ properties:
       The name of the responsible person.
   position:
     type: string
-    description:
+    description: |-
       The name of the role or position of the responsible person taken
       from the organization's formal organizational hierarchy or chart.
   organization:
     type: string
-    description:
+    description: |-
       Organization/affiliation of the contact.
   logo:
-    description:
+    description: |-
       Graphic identifying a contact. The link relation should be `icon`
       and the media type should be an image media type.
     allOf:
@@ -94,9 +94,10 @@ properties:
           description: ZIP or other postal code.
         country:
           type: string
-          description: Country of the physical address.  ISO 3166-1 is recommended.
+          description: |-
+            Country of the physical address.  ISO 3166-1 is recommended.
         roles:
-          description:
+          description: |-
             The type of address (e.g. office, home, etc.).
           $ref: 'roles.yaml'
   links:
@@ -117,7 +118,7 @@ properties:
       Supplemental instructions on how or when to contact the
       responsible party.
   roles:
-    description:
+    description: |-
       The set of named duties, job functions and/or permissions
       associated with this contact.
       (e.g. developer, administrator, etc.).

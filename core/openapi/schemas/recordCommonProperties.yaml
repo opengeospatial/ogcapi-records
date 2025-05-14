@@ -3,17 +3,17 @@ type: object
 properties:
   created:
     type: string
-    description:
+    description: |-
       The date this record was created in the server.
     format: date-time
   updated:
     type: string
-    description:
+    description: |-
       The most recent date on which the record was changed.
     format: date-time
   type:
     type: string
-    description:
+    description: |-
       The nature or genre of the resource. The value
       should be a code, convenient for filtering
       records. Where available, a link to the canonical
@@ -21,15 +21,15 @@ properties:
       the 'links' property.
   title:
     type: string
-    description:
+    description: |-
       A human-readable name given to the resource.
   description:
     type: string
-    description:
+    description: |-
       A free-text account of the resource.
   keywords:
     type: array
-    description:
+    description: |-
       The topic or topics of the resource. Typically
       represented using free-form keywords, tags, key
       phrases, or classification codes.
@@ -37,34 +37,34 @@ properties:
       type: string
   themes:
     type: array
-    description:
+    description: |-
       A knowledge organization system used to classify
       the resource.
     minItems: 1
     items:
       $ref: 'theme.yaml'
   language:
-    description:
+    description: |-
       The language used for textual values in this
       record representation.
     $ref: 'language.yaml'
   languages:
     type: array
-    description:
+    description: |-
       This list of languages in which this record is
       available.
     items:
       $ref: 'language.yaml'
   resourceLanguages:
     type: array
-    description:
+    description: |-
       The list of languages in which the resource
       described by this record is available.
     items:
       $ref: 'language.yaml'
   externalIds:
     type: array
-    description:
+    description: |-
       An identifier for the resource assigned by an
       external (to the catalog) entity.
     items:
@@ -72,7 +72,7 @@ properties:
       properties:
         scheme:
           type: string
-          description:
+          description: |-
             A reference to an authority or identifier
             for a knowledge organization system from
             which the external identifier was obtained.
@@ -85,13 +85,13 @@ properties:
         - value
   formats:
     type: array
-    description:
+    description: |-
       A list of available distributions of the resource.
     items:
       $ref: 'format.yaml'
   contacts:
     type: array
-    description:
+    description: |-
       A list of contacts qualified by their role(s) in
       association to the record or the resource described
       by the record.
@@ -101,6 +101,6 @@ properties:
     $ref: 'license.yaml'
   rights:
     type: string
-    description:
+    description: |-
       A statement that concerns all rights not addressed
       by the license such as a copyright statement.

@@ -1,6 +1,5 @@
 ---
 type: object
-nullable: true
 properties:
   date:
     type: string
@@ -23,5 +22,5 @@ properties:
             - ".."
   resolution:
     type: string
-    description:
+    description: |-
       Minimum time period resolvable in the dataset, as an ISO 8601 duration
