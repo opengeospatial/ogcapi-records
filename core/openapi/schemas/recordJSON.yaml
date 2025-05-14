@@ -15,16 +15,14 @@ allOf:
           A characteristic time or time interval associated
           with the resource that this record described.
         oneOf:
-          - enum:
-            - null
+          - type: "null"
           - $ref: 'time.yaml'
       geometry:
         description: |-
           A characteristic spatial extent association with
           the resource that this record described.
         oneOf:
-          - enum:
-            - null
+          - type: "null"
           - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
       conformsTo:
         type: array
