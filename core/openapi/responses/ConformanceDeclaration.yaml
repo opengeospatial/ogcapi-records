@@ -1,5 +1,5 @@
 ---
-description:
+description: |-
   The URIs of all conformance classes supported by the server.
 content:
   application/json:

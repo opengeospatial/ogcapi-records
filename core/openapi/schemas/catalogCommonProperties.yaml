@@ -6,19 +6,21 @@ allOf:
       - type
     properties:
       type:
-        description:
+        description: |-
           Fixed to "Collection" for collections of records and/or subordinate
-          catalogs.
+          catalogs.  Wanted to use the JSON-Schema const key work but all the
+          swagger validators tried complained about it.
         type: string
-        const: Collection
+        enum:
+          - Collection
       conformsTo:
         type: array
-        description:
+        description: |-
           The extensions/conformance classes used in this collection.
         items:
           type: string
       recordsArrayName:
-        description:
+        description: |-
           If records are encoded in-line within the catalog object,
           this member advertises the name of the array member that 
           contains the catalog records.  By default the name of the
@@ -33,7 +35,7 @@ allOf:
         default: records
       records:
         type: array
-        description: 
+        description:  |-
           An array of records that are part of this catalog that
           are encoded in-line within the catalog object.
           The items schema is intentionally general (i.e. object)
@@ -51,7 +53,7 @@ allOf:
           $ref: 'linkTemplate.yaml'
       schemes:
         type: array
-        description:
+        description: |-
           A list of schemes used in this context.
         items:
           $ref: 'scheme.yaml'

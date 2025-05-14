@@ -115,6 +115,14 @@ paths:
       operationId: describeCollection
       parameters:
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/bbox'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/datetime'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalIds'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Catalog'
@@ -170,7 +178,7 @@ paths:
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalIds'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
       responses:

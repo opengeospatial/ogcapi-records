@@ -10,7 +10,7 @@ properties:
     type:
       - string
       - integer
-    description:
+    description: |-
       A unique identifier of the catalog record.
   type:
     type: string
@@ -25,7 +25,7 @@ properties:
       - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
   conformsTo:
     type: array
-    description:
+    description: |-
       The extensions/conformance classes used in this record.
     items:
       type: string

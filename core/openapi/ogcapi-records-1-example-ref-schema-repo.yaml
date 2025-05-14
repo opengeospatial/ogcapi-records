@@ -114,6 +114,14 @@ paths:
       operationId: describeCollection
       parameters:
         - $ref: 'parameters/catalogId.yaml'
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/bbox.yaml'
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/datetime.yaml'
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/limit.yaml'
+        - $ref: 'parameters/q.yaml'
+        - $ref: 'parameters/type.yaml'
+        - $ref: 'parameters/externalIds.yaml'
+        - $ref: 'parameters/ids.yaml'
+        - $ref: 'parameters/sortby.yaml'
       responses:
         '200':
           $ref: 'responses/Catalog.yaml'

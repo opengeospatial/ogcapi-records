@@ -1,27 +1,27 @@
 ---
 type: object
-description:
+description: |-
   The language used for textual values in this record.
 required:
   - code
 properties:
   code:
     type: string
-    description:
+    description: |-
       The language tag as per RFC-5646.
   name:
     type: string
     minLength: 1
-    description:
+    description: |-
       The untranslated name of the language.
   alternate:
     type: string
-    description:
+    description: |-
       The name of the language in another well-understood language,
       usually English.
   dir:
     type: string
-    description:
+    description: |-
       The direction for text in this language. The default, `ltr`
       (left-to-right), represents the most common situation.
       However, care should be taken to set the value of `dir`

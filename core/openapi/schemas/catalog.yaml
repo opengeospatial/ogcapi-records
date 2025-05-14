@@ -5,7 +5,7 @@ allOf:
   - type: object
     properties:
       itemType:
-        description:
+        description: |-
           If this catalog is a homogenous collection
           of records then itemType is a string of fixed
           value of record.

@@ -1,6 +1,6 @@
 ---
 type: string
-description:
+description: |-
   A legal document under which the resource is made available.
   If the resource is being made available under a common license
   then use an SPDX license id (https://spdx.org/licenses/).

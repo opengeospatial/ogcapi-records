@@ -6,16 +6,16 @@ required:
 properties:
   scheme-id:
     type: string
-    description:
+    description: |-
       An identifier for this namespace.  The identifier can be used as a 
       short-form for the namespace.
   namespace:
     type: string
-    description:
+    description: |-
       A declarative region that provides a scope to the identifiers inside it.
       It is recommended that the value of namespace be a URI.
   resolver:
-    description:
+    description: |-
       An extensible description of a mechanism that resolves a scheme
       identifier (scheme-id) to its namespace.
     type: object
