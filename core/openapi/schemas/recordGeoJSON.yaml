@@ -7,22 +7,19 @@ required:
   - properties
 properties:
   id:
-    type:
-      - string
-      - integer
+    oneOf:
+      - type: string
+      - type: integer
     description: |-
       A unique identifier of the catalog record.
   type:
     type: string
-    const: Feature
+    enum:
+      - Feature
   time:
-    oneOf:
-      - type: "null"
-      - $ref: 'time.yaml'
+    $ref: 'time.yaml'
   geometry:
-    oneOf:
-      - type: "null"
-      - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
+    $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
   conformsTo:
     type: array
     description: |-
@@ -30,11 +27,10 @@ properties:
     items:
       type: string
   properties:
-    oneOf:
-      - type: "null"
-      - allOf:
-        - type: object
-        - $ref: 'recordCommonProperties.yaml'
+    nullable: true
+    allOf:
+      - type: object
+      - $ref: 'recordCommonProperties.yaml'
   links:
     type: array
     items:

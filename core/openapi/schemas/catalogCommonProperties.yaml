@@ -10,11 +10,12 @@ allOf:
           Fixed to "Collection" for collections of records and/or subordinate
           catalogs.
         type: string
-        const: Collection
+        enum:
+          - Collection
       conformsTo:
-        type: array
         description: |-
           The extensions/conformance classes used in this collection.
+        type: array
         items:
           type: string
       recordsArrayName:
@@ -32,13 +33,13 @@ allOf:
         type: string
         default: records
       records:
-        type: array
         description:  |-
           An array of records that are part of this catalog that
           are encoded in-line within the catalog object.
           The items schema is intentionally general (i.e. object)
           to accomodate records that have been extended beyond
           the core record schema.
+        type: array
         items:
           type: object
       links:
@@ -49,6 +50,8 @@ allOf:
         type: array
         items:
           $ref: 'linkTemplate.yaml'
+      defaultSortOrder:
+          $ref: 'defaultSortOrder.yaml'
       schemes:
         type: array
         description: |-

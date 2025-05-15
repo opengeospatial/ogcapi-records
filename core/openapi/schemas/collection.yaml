@@ -8,4 +8,5 @@ allOf:
           For a collection of records, the itemType is
           fixed to "record".
         type: string
-        const: record
+        enum:
+          - record

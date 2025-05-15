@@ -7,23 +7,15 @@ allOf:
       - id
     properties:
       id:
-        type: string
         description: |-
           The unique identifier for this record.
+        oneOf:
+          - type: string
+          - type: integer
       time:
-        description: |-
-          A characteristic time or time interval associated
-          with the resource that this record described.
-        oneOf:
-          - type: "null"
-          - $ref: 'time.yaml'
+        $ref: 'time.yaml'
       geometry:
-        description: |-
-          A characteristic spatial extent association with
-          the resource that this record described.
-        oneOf:
-          - type: "null"
-          - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
+        $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
       conformsTo:
         type: array
         description: |-

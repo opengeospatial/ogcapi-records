@@ -44,9 +44,6 @@ properties:
     items:
       $ref: 'theme.yaml'
   language:
-    description: |-
-      The language used for textual values in this
-      record representation.
     $ref: 'language.yaml'
   languages:
     type: array
