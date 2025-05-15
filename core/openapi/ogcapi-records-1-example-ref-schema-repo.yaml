@@ -64,13 +64,13 @@ paths:
       operationId: getLandingPage
       responses:
         '200':
-          $ref: './responses/LandingPage.yaml'
+          $ref: 'responses/LandingPage.yaml'
         '4XX':
-          $ref: './responses/BadRequest.yaml'
+          $ref: 'responses/BadRequest.yaml'
         '406':
-          $ref: './responses/NotAcceptable.yaml'
+          $ref: 'responses/NotAcceptable.yaml'
         '5XX':
-          $ref: './responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/conformance':
     get:
       tags:
@@ -82,13 +82,13 @@ paths:
       operationId: getConformanceDeclaration
       responses:
         '200':
-          $ref: './responses/ConformanceDeclaration.yaml'
+          $ref: 'responses/ConformanceDeclaration.yaml'
         '4XX':
-          $ref: './responses/BadRequest.yaml'
+          $ref: 'responses/BadRequest.yaml'
         '406':
-          $ref: './responses/NotAcceptable.yaml'
+          $ref: 'responses/NotAcceptable.yaml'
         '5XX':
-          $ref: './responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections':
     get:
       tags:
@@ -99,13 +99,13 @@ paths:
       operationId: getCollections
       responses:
         '200':
-          $ref: './responses/Catalogs.yaml'
+          $ref: 'responses/Catalogs.yaml'
         '4XX':
-          $ref: './responses/BadRequest.yaml'
+          $ref: 'responses/BadRequest.yaml'
         '406':
-          $ref: './responses/NotAcceptable.yaml'
+          $ref: 'responses/NotAcceptable.yaml'
         '500':
-          $ref: './responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}':
     get:
       tags:
@@ -116,26 +116,26 @@ paths:
         Fetch a detailed description of the catalog with id `catalogId`.
       operationId: describeCollection
       parameters:
-        - $ref: './parameters/catalogId.yaml'
+        - $ref: 'parameters/catalogId.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/./parameters/bbox.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/./parameters/datetime.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/./parameters/limit.yaml'
-        - $ref: './parameters/q.yaml'
-        - $ref: './parameters/type.yaml'
-        - $ref: './parameters/externalIds.yaml'
-        - $ref: './parameters/ids.yaml'
-        - $ref: './parameters/sortby.yaml'
+        - $ref: 'parameters/q.yaml'
+        - $ref: 'parameters/type.yaml'
+        - $ref: 'parameters/externalIds.yaml'
+        - $ref: 'parameters/ids.yaml'
+        - $ref: 'parameters/sortby.yaml'
       responses:
         '200':
-          $ref: './responses/Catalog.yaml'
+          $ref: 'responses/Catalog.yaml'
         '4XX':
-          $ref: './responses/BadRequest.yaml'
+          $ref: 'responses/BadRequest.yaml'
         '404':
-          $ref: './responses/NotFound.yaml'
+          $ref: 'responses/NotFound.yaml'
         '406':
-          $ref: './responses/NotAcceptable.yaml'
+          $ref: 'responses/NotAcceptable.yaml'
         '5XX':
-          $ref: './responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/sortables':
     get:
       tags:
@@ -147,18 +147,18 @@ paths:
         response.
       operationId: getSortables
       parameters:
-        - $ref: './parameters/catalogId.yaml'
+        - $ref: 'parameters/catalogId.yaml'
       responses:
         '200':
-          $ref: './responses/Sortables.yaml'
+          $ref: 'responses/Sortables.yaml'
         '4XX':
-          $ref: './responses/BadRequest.yaml'
+          $ref: 'responses/BadRequest.yaml'
         '404':
-          $ref: './responses/NotFound.yaml'
+          $ref: 'responses/NotFound.yaml'
         '406':
-          $ref: './responses/NotAcceptable.yaml'
+          $ref: 'responses/NotAcceptable.yaml'
         '5XX':
-          $ref: './responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/items':
     get:
       tags:
@@ -177,23 +177,23 @@ paths:
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/./parameters/bbox.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/./parameters/datetime.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/./parameters/limit.yaml'
-        - $ref: './parameters/catalogId.yaml'
-        - $ref: './parameters/q.yaml'
-        - $ref: './parameters/type.yaml'
-        - $ref: './parameters/externalIds.yaml'
-        - $ref: './parameters/ids.yaml'
-        - $ref: './parameters/sortby.yaml'
+        - $ref: 'parameters/catalogId.yaml'
+        - $ref: 'parameters/q.yaml'
+        - $ref: 'parameters/type.yaml'
+        - $ref: 'parameters/externalIds.yaml'
+        - $ref: 'parameters/ids.yaml'
+        - $ref: 'parameters/sortby.yaml'
       responses:
         '200':
-          $ref: './responses/Records.yaml'
+          $ref: 'responses/Records.yaml'
         '4XX':
-          $ref: './responses/BadRequest.yaml'
+          $ref: 'responses/BadRequest.yaml'
         '404':
-          $ref: './responses/NotFound.yaml'
+          $ref: 'responses/NotFound.yaml'
         '406':
-          $ref: './responses/NotAcceptable.yaml'
+          $ref: 'responses/NotAcceptable.yaml'
         '5XX':
-          $ref: './responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
   '/collections/{catalogId}/items/{recordId}':
     get:
       tags:
@@ -206,19 +206,19 @@ paths:
         Use content negotiation to request HTML or GeoJSON.
       operationId: getRecord
       parameters:
-        - $ref: './parameters/catalogId.yaml'
-        - $ref: './parameters/recordId.yaml'
+        - $ref: 'parameters/catalogId.yaml'
+        - $ref: 'parameters/recordId.yaml'
       responses:
         '200':
-          $ref: './responses/Record.yaml'
+          $ref: 'responses/Record.yaml'
         '4XX':
-          $ref: './responses/BadRequest.yaml'
+          $ref: 'responses/BadRequest.yaml'
         '404':
-          $ref: './responses/NotFound.yaml'
+          $ref: 'responses/NotFound.yaml'
         '406':
-          $ref: './responses/NotAcceptable.yaml'
+          $ref: 'responses/NotAcceptable.yaml'
         '5XX':
-          $ref: './responses/ServerError.yaml'
+          $ref: 'responses/ServerError.yaml'
 components:
   securitySchemes:
     openIdConnect:
