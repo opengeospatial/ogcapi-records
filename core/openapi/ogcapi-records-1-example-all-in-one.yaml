@@ -417,7 +417,7 @@ components:
               items:
                 $ref: '#/components/schemas/linkTemplate'
             defaultSortOrder:
-                $ref: '#/components/schemas/defaultSortOrder'
+              $ref: '#/components/schemas/defaultSortOrder'
             schemes:
               type: array
               description: |-
