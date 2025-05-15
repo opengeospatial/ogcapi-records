@@ -1,20 +1,23 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   title: "OGC API - Records - Part 1: Core"
   version: '1.0.0'
   description: |-
     This is a sample OpenAPI definition that conforms to the conformance
-    classes "Core", "GeoJSON", "HTML" and "OpenAPI 3.0" of the draft
-    standard "OGC API - Records - Part 1: Core".
+    classes of the  "OGC API - Records - Part 1: Core" standard:
 
-    This example is a generic OGC API - Records definition that uses path
-    parameters to describe all record collections and all records.
-    The generic OpenAPI definition does not provide any details on the
-    collections or the record content. This information is only available
-    from accessing the record collection resources.
+    * Searchable Catalog
+    * Searchable Catalog - Sorting
+    * Local Resources Catalog
+    * Local Resources Catalog - Query Parameters
+    * Local Resources Catalog - Sorting
+    * OpenAPI 3.0
 
-    There is [another example](ogcapi-records-1-example2.yaml)
-    that specifies each collection explicitly.
+    This example is a generic definition that uses path parameters to
+    describe all catalogs and records.  The generic OpenAPI definition
+    does not provide any details on the catalogs or the record content.
+    This information is only available by accessing the catalog and its
+    records.
   contact:
     name: CubeWerx Inc.
     email: pvretano@cubewerx.com

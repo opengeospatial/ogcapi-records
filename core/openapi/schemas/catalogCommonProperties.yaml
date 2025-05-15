@@ -10,7 +10,8 @@ allOf:
           Fixed to "Collection" for collections of records and/or subordinate
           catalogs.
         type: string
-        const: Collection
+        enum:
+          - Collection
       conformsTo:
         type: array
         description: |-
@@ -49,6 +50,8 @@ allOf:
         type: array
         items:
           $ref: 'linkTemplate.yaml'
+      defaultSortOrder:
+          $ref: 'defaultSortOrder.yaml'
       schemes:
         type: array
         description: |-

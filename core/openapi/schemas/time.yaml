@@ -1,4 +1,5 @@
 ---
+nullable: true
 type: object
 properties:
   date:

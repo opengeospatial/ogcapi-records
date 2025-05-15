@@ -1,16 +1,12 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   title: "Building Blocks specified in OGC API - Features - Part 1: Core"
   description: |-
-    Common components used in the
-    [OGC standard "OGC API - Records - Part 1: Core"](https://docs.opengeospatial.org/is/20-004r1/20-004r1.html).
-
-    OGC API - Records - Part 1: Core 1.0 is an OGC Standard.
+    Common components used in the [OGC standard "OGC API - Records - Part 1: Core"](https://docs.opengeospatial.org/is/20-004r1/20-004r1.html).
+    OGC API - Records - Part 1: Core is an OGC Standard.
     Copyright (c) 2019 Open Geospatial Consortium.
     To obtain additional rights of use, visit https://www.ogc.org/about-ogc/policies.
-
-    This document is also available on
-    [OGC](https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/ogcapi-records-1.yaml).
+    This document is also available on [OGC](https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/ogcapi-records-1-building-blocks.yaml).
   version: '1.0.0'
   contact:
     name: Panagiotis Vretanos
@@ -174,7 +170,8 @@ components:
                 key work but all the swagger validators tried complained
                 about it.
               type: string
-              const: Collection
+              enum:
+                - Collection
             conformsTo:
               type: array
               description: |-
@@ -263,18 +260,6 @@ components:
                     enum: 
                       - record
                       - catalog
-    collection:
-      allOf:
-        - $ref: '#/components/schemas/catalog'
-        - type: object
-          properties:
-            itemType:
-              description: |-
-                For a collection of records, the itemType is
-                fixed to "record".
-              type: string
-              enum:
-                - record
     contact:
       type: object
       description: |-
@@ -699,25 +684,20 @@ components:
           enum:
             - Feature
         time:
-          oneOf:
-            - type: "null"
-            - $ref: '#/components/schemas/time'
+          $ref: '#/components/schemas/time'
         geometry:
-          oneOf:
-            - type: "null"
-            - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
+          $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
         conformsTo:
+          type: array
           description: |-
             The extensions/conformance classes used in this record.
-          type: array
           items:
             type: string
         properties:
-          oneOf:
-            - type: "null"
-            - allOf:
-              - type: object
-              - $ref: '#/components/schemas/recordCommonProperties'
+          nullable: true
+          allOf:
+            - type: object
+            - $ref: '#/components/schemas/recordCommonProperties'
         links:
           type: array
           items:
@@ -798,6 +778,7 @@ components:
             enumerating the list of schemes in the queryable's schema
             definition.
     time:
+      nullable: true
       type: object
       properties:
         date:
