@@ -510,17 +510,6 @@ components:
             Most recent date on which the resource pointed
             to by the link was changed.
           format: date-time
-    link:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/linkBase'
-        - type: object
-          required:
-            - href
-          properties:
-            href:
-              type: string
-              format: uri
     linkTemplate:
       allOf:
         - $ref: '#/components/schemas/linkBase'
@@ -549,6 +538,17 @@ components:
                 JSON Schema fragment and can thus include things
                 like the data type of the variable, enumerations,
                 minimum values, maximum values, etc.
+    link:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/linkBase'
+        - type: object
+          required:
+            - href
+          properties:
+            href:
+              type: string
+              format: uri
     recordCollectionGeoJSON:
       allOf:
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml'
