@@ -716,7 +716,6 @@ components:
             Most recent date on which the resource pointed
             to by the link was changed.
           format: date-time
-              format: uri
     linkTemplate:
       allOf:
         - $ref: '#/components/schemas/linkBase'
@@ -755,6 +754,7 @@ components:
           properties:
             href:
               type: string
+              format: uri
     recordCollectionGeoJSON:
       allOf:
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml'
