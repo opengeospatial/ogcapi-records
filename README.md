@@ -7,7 +7,7 @@ This GitHub repository contains the OGC API - Records for discovering geospatial
 The standard is on the OGC website:
 
 * OGC API - Records - Part 1: Core
-  * [Version 1.0.0](https://docs.ogc.org/DRAFTS/20-004r1.html)
+  * [Version 1.0.0](https://docs.ogc.org/is/20-004r1/20-004r1.html)
   * Editor's draft [HTML](https://docs.ogc.org/DRAFTS/20-004r1.html) or [PDF](https://docs.ogc.org/DRAFTS/20-004r1.pdf).
 
 Draft(s) are built daily based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file.

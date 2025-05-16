@@ -13,7 +13,7 @@ The following normative documents contain provisions that, through reference in 
 * [[rfc8288]] Nottingham, M.: IETF RFC 8288, *Web Linking*, https://tools.ietf.org/rfc/rfc8288.txt[RFC 8288]
 * [[link-template]] Nottingham, M.: IETF, *The Link-Template HTTP Header Field*, https://ietf-wg-httpapi.github.io/link-template/draft-ietf-httpapi-link-template.html[draft-ietf-httpapi-link-template-latest]
 * [[OAFeat-1]] OGC 17-069r3: *OGC API - Features - Part 1: Core*, http://docs.opengeospatial.org/is/17-069r3/17-069r3.html 
-* [[OARec-1]] OGC 20-004: *OGC API - Records - Part 1: Core*, https://docs.ogc.org/DRAFTS/20-004.html
+* [[OARec-1]] OGC 20-004: *OGC API - Records - Part 1: Core*, https://docs.ogc.org/is/20-004r1/20-004r1.html
 * [[OAFeat-3]] OGC 19-079: *OGC API - Features - Part 3: Filtering*, https://docs.ogc.org/DRAFTS/19-079r1.html
 * [[CQL2]] OGC 21-065: *Common Query Language (CQL2)*, https://docs.ogc.org/DRAFTS/21-065.html
 * [[OpenAPI]] Open API Initiative: *OpenAPI Specification 3.0.3*, https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md[OpenAPI]
