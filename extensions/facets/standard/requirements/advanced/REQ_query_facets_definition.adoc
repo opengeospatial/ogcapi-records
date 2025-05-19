@@ -14,19 +14,40 @@ schema:
     type: array
     items:
       type: string
+      pattern: '[A-Za-z_]+(:[0-9]*(:(value_asc\|value_desc\|count_asc\|count_desc)?)?)?'
 explode: false
 style: form
 ----
-^|C |The `facets` parameter SHALL be represented by a comma-separated list of values (`,`), delimited by colons (`:`), with the following tokens:
+^|C |The `facets` parameter SHALL be represented by a comma-separated list of values (`,`), each value being composed of three tokens delimited by colons (`:`) with the following structure:
 
-* property name: name of the property on which facets were computed against
-* count: the number of buckets to return
-* direction: whether to sort buckets ascending or descending (default descending)
+----
+property-name:[bucket-size]:[sorting]
+----
+
+The tokens composing a value are:
+
+* `property-name`: mandatory; the name of the facet to be included in the search response, matching one of the facets advertised in the <<req_simple_query_response,/req/simple/query_response>> requirement;
+* `bucket-count`: optional; the maximum number of buckets to return for that facet (defaults to the number advertised in the `facets` definition); note that the actual number of buckets might be lower than the requested number;
+* `sorting`: optional; one of the following values: `value_asc`, `value_desc`, `count_asc`, or `count_desc` (defaults to the value advertised in the `facets` definition);
 
 Example:
 
 [source,bash]
 ----
-GET /collections/wis2-discovery-metadata/items?facets=keywords:20:value_asc,organization:10
+GET /collections/wis2-discovery-metadata/items?facets=keywords:20:value_asc,organization:10,theme::count_desc,
 ----
+
+Note that both optional tokens can be left out but the `:` delimiter should still be included, unless it is the last character of the value. This means that both `theme:10:` and `theme:10` are valid values, but `theme:value_asc` is not and should be `theme::value_asc` instead.
+
+Leaving the `facets` query parameter empty will result in a response without any facet, which can bring a performance improvement.
+
+Example:
+
+[source,bash]
+----
+GET /collections/wis2-discovery-metadata/items?facets=
+----
+
+Not including the `facets` query parameter will fall back to the behaviour specified in
+<<req_simple_response,/req/simple/response>>.
 |===
