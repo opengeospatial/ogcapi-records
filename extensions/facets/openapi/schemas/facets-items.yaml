@@ -54,8 +54,8 @@ allOf:
                       required:
                         - count
               more:
-                type: integer
-                description: The number of additional facets
+                type: boolean
+                description: Whether additional buckets were left out of the response
             required:
               - type
               - property

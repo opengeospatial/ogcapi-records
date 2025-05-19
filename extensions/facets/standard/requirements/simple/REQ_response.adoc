@@ -12,7 +12,7 @@
 ** a `property` property identifying the property name on which the facet will be computed against.
 ** a `sortedBy` property indicating whether buckets for that facet will be sorted by `value` or `count` (number of occurrences)
 * Facets of type `term` contain the following additional properties:
-** a `minimumOccurrenceCount` indicating the cutoff number of occurrence below which buckets will not be reported in this facet
+** a `minOccurs` property indicating the cutoff number of occurrence below which buckets will not be reported in this facet
 * Facets of type `bucket` contain the following additional properties:
 ** a `bucketType` property indicating whether buckets are computed using fixed intervales (`fixedInterval`) or a fixed amount of resulting buckets (`fixedBucketCount`)
 * Facets of type `filter` contain the following additional properties:
@@ -20,4 +20,6 @@
 *** each entry in this dictionary will result in exactly one bucket for this facet
 *** the key of the entry will be the `value` of the corresponding bucket in the facet result
 *** the value of the entry is the search filter used to compute the bucket
+
+* The response contains a `defaultBucketCount` property which contains the maximum number of buckets returned for each facet; note that the actual amount of buckets returned can be lower than this number
 |===

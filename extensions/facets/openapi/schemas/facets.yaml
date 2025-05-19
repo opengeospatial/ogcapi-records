@@ -18,28 +18,36 @@ properties:
               - term
               - histogram
               - filter
+          property:
+            type: string
+            description: the property that the facet is computed against
           sortedBy:
-              type: string
-              description: the manner in which the facet is optionally sorted by
-              enum:
-                - count
-                - value
+            type: string
+            description: the manner in which the facet is optionally sorted by
+            enum:
+              - count
+              - value
           bucketType:
-              type: string
-              description: the type of bucket
-              enum:
-                - fixedInterval
+            type: string
+            description: the type of bucket
+            enum:
+              - fixedInterval
+              - fixedBucketCount
           minOccurs:
-              type: integer
-              description: the minimum number of occurences provided by the facet
-              enum:
-                - fixedInterval
-                - fixedBucketCount
+            type: integer
+            description: the minimum number of occurrences below which buckets will not be reported by the facet
+          filters:
+            type: object
+            description: the list of filters to generate buckets from
+            patternProperties:
+              "^.*":
+                type: string
+                description: query filter used for the facet
         required:
           - type
   defaultBucketCount:
     type: integer
-    description: default bucket count (10)
+    description: default maximum bucket count that will be returned for each facet
     default: 10
 
 required:

@@ -35,7 +35,7 @@ GET /collections/wis2-discovery-metadata/facets
             "type": "term",
             "property": "contacts.organization",
             "sortedBy": "count",
-            "minimumOccurrenceCount": 50
+            "minOccurs": 50
         },
         "created": {
             "type": "histogram",
@@ -46,7 +46,7 @@ GET /collections/wis2-discovery-metadata/facets
             "type": "terms",
             "property": "links.format",
             "sortedBy": "value",
-            "minimumOccurrenceCount": 10
+            "minOccurs": 10
         },
         "usage": {
             "type": "filter",
