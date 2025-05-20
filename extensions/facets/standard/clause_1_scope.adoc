@@ -2,4 +2,4 @@
 
 The OGC Records API Standard specifies requirements classes for a set of common components that can be assembled in various ways to deploy a collection of related descriptive information (metadata) about resources called a catalog.  The atomic unit of information in a catalog is the record.
 
-This Standard specifies the behaviour of representing facets.  A server implements one or more facets to selected properties of a record.  Facets can be based on terms, geometries, or time.
+This Standard specifies an extension that allows querying facets (also known as aggregations) as a complement to search results. A server advertises one or more facets tied to various properties of its records. Facets can be used to show term occurrences, distributions of numeric or temporal values and matches for specific queries inside results sets.

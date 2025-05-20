@@ -5,7 +5,7 @@ include::requirements/requirements_class_simple.adoc[]
 
 This requirements class defines the Facets resource for discovering a list of resource properties onto which facets are applicable and may be computed on.
 
-In addition, a publisher may want to support facets that are not directly represented as resource properties iun the content schema of the record.  Or the publisher may choose to restrict facets on certain properties, in support of managing high-performance queries and computations on a given metadata repository backend.
+In addition, a publisher may want to support facets that are not directly represented as resource properties in the content schema of the record.  Or the publisher may choose to restrict facets on certain properties, in support of managing high-performance queries and computations on a given metadata repository backend.
 
 include::requirements/simple/REQ_conformance.adoc[]
 
@@ -13,36 +13,47 @@ include::requirements/simple/REQ_media_type.adoc[]
 
 include::requirements/simple/REQ_response.adoc[]
 
+[source,bash]
+----
+GET /collections/wis2-discovery-metadata/items
+----
+
 .Example encoding of a facets response for a given collection
 [source,json]
 ----
+GET /collections/wis2-discovery-metadata/facets
 {
     "id": "wis2-discovery-metadata",
     "title": "WIS2 Discovery Metadata",
     "facets": {
         "date": {
-            "name": "updateDate",
             "type": "histogram",
+            "property": "updated",
             "bucketType": "fixedInterval"
         },
         "organization": {
             "type": "term",
+            "property": "contacts.organization",
             "sortedBy": "count",
-            "minimumOccurrenceCount": 50
+            "minOccurs": 50
         },
         "created": {
             "type": "histogram",
+            "property": "created",
             "bucketType": "fixedBucketCount"
         },
         "format": {
             "type": "terms",
+            "property": "links.format",
             "sortedBy": "value",
-            "minimumOccurrenceCount": 10
+            "minOccurs": 10
         },
         "usage": {
             "type": "filter",
-            "view": "link.type = 'wms'",
-            "download": "link.type = 'wfs'"
+            "filters": {
+                "view": "links.type = 'wms'",
+                "download": "links.type = 'wfs'"
+            }
         }
     },
     "defaultBucketCount": 10
@@ -51,17 +62,18 @@ include::requirements/simple/REQ_response.adoc[]
 
 === Extending queryables
 
-As part of <<OAFeat-3, OGC API - Features - Part 3: Filtering>>, a queryables response can optionally advertise whether facets can be applied on a queryable, which a client can use to assess whether to invoke or skip a facets request:
+As part of <<OAFeat-3, OGC API - Features - Part 3: Filtering>>, a queryables response can optionally advertise whether a facet can be produced for a given queryable using the `facet` boolean flag. This lets the client assess whether to invoke or skip a facets request.
 
 .Example queryable with facets enabled
 [source,json]
 ----
+GET /collections/wis2-discovery-metadata/queryables
 {
     "properties": {
         "organization": {
             "title": "organization",
             "type": "string",
-            "facets": true
+            "facet": true
         }
     }
 }
@@ -78,9 +90,7 @@ As part of <<OARec-1, OGC API - Records - Part 1: Core>>, a catalogue query resp
 GET /collections/wis2-discovery-metadata/items
 ----
 
-The response includes a facets object. The content represents an object of all facets available for that response, each containing various buckets describing different facets of the search result.  A facet is identified by a property identifier and contains the top number of buckets with their respective count. A bucket is a number of results in the result set matching the property.  The facets object may also indicate how many buckets were omitted in order to keep the response size low (e.g. 0 if all buckets were included in the overview), via the `more` property.
-
-TODO: clarify `more` data type (integer? boolean?  Both)?
+The response includes a `facets` object. The content represents an object of all facets available for that response, each containing various buckets describing different facets of the search result.  A facet is identified by a property identifier and contains the top number of buckets with their respective count. A bucket is a number of results in the result set matching the property.  The facets object may also indicate if additional buckets were omitted in order to keep the response size low via the `more` boolean property.
 
 .Example search results / response
 [source,json]
@@ -90,18 +100,22 @@ TODO: clarify `more` data type (integer? boolean?  Both)?
     "facets": {
         "keywords": {
             "type": "terms",
-            "property": "keyword",
+            "property": "tag",
             "buckets": [
                 {
-                    "value": "Greece",
+                    "value": "Environment",
                     "count": "202"
                 },
                 {
-                    "value": "Germany",
+                    "value": "Atmosphere",
                     "count": "150"
+                },
+                {
+                    "value": "Open-data",
+                    "count": "47"
                 }
             ],
-            "more": 0
+            "more": false
         },
         "created": {
             "type": "histogram",
@@ -118,7 +132,7 @@ TODO: clarify `more` data type (integer? boolean?  Both)?
                     "count": 220
                 }
             ],
-            "more": 12
+            "more": true
         }
     },
     "features": [],

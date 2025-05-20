@@ -2,16 +2,17 @@
 name: facets
 in: query
 description: |
-   The facets parameter is represented by a comma-separated list of values (,), delimited by colons (:), with the following tokens:
+  The facets parameter is represented by a comma-separated list of values (,), delimited by colons (:), with the following tokens:
 
-    - `property name`: name of the property on which facets were computed against
-    - `count`: the number of buckets to return
-    - `direction`: whether to sort buckets ascending or descending (default descending)
+   - `property-name`: mandatory; the name of the facet to be included in the search response, matching one of the facets advertised in the `facets` definition
+   - `bucket-count`: optional; the maximum number of buckets to return for that facet
+   - `sorting`: optional; one of the following values: `value_asc`, `value_desc`, `count_asc`, or `count_desc` (defaults to the value advertised in the `facets` definition)
 required: false
 schema:
-    type: array
-    items:
-      type: string
+  type: array
+  items:
+    type: string
+    pattern: '[A-Za-z_]+(:[0-9]*(:(value_asc\|value_desc\|count_asc\|count_desc)?)?)?'
 explode: false
 style: form
-example: keywords:20:value_asc,organization:10
+example: facets=keywords:20:value_asc,organization:10,theme::count_desc,format

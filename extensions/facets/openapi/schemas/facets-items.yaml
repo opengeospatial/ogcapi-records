@@ -44,18 +44,26 @@ allOf:
                             - number
                             - string
                             - boolean
+                        count:
+                          type: integer
+                          description: count of records matching this bucket
                       required:
                         - min
                         - max
+                        - count
                     - properties:
+                        value:
+                          type: string
+                          description: unique value for this bucket
                         count:
                           type: integer
-                          description: facet count
+                          description: count of records matching this bucket
                       required:
+                        - value
                         - count
               more:
-                type: integer
-                description: The number of additional facets
+                type: boolean
+                description: Whether additional buckets were left out of the response
             required:
               - type
               - property
