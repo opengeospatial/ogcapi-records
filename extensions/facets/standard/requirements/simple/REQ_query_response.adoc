@@ -9,8 +9,9 @@
 * The `facets` object contains named objects, each with:
 ** a `type` property identifying a `term`, `histogram`, or `filter` facet.
 ** a `property` property identifying the property name on which the facet was computed against.
-** a `buckets` property (array) that contains:
+** a `buckets` property (array) where each item contains:
 *** a `count` property identifying the number of matches for a property name on which the facet was computed against.
-*** a `value` property identify the name of the bucket or the range of values (`min` and `max`).
-* The key of each entry will act as an identifier for the facet in further uses
+*** either:
+**** a `value` property identify the name of the bucket
+**** or a set of `min` and `max` properties identifying the range of values in that bucket.
 |===

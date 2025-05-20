@@ -16,10 +16,11 @@
 * Facets of type `bucket` contain the following additional properties:
 ** a `bucketType` property indicating whether buckets are computed using fixed intervales (`fixedInterval`) or a fixed amount of resulting buckets (`fixedBucketCount`)
 * Facets of type `filter` contain the following additional properties:
-** a `filters` property containing a dictionary:
-*** each entry in this dictionary will result in exactly one bucket for this facet
-*** the key of the entry will be the `value` of the corresponding bucket in the facet result
+** a `filters` property containing an object:
+*** each entry in this object will result in exactly one bucket for this facet
+*** the name of the entry will be the `value` of the corresponding bucket in the facet result
 *** the value of the entry is the search filter used to compute the bucket
+* The name of each entry in the `facets` object will act as an identifier for the facet in further uses
 
 * The response contains a `defaultBucketCount` property which contains the maximum number of buckets returned for each facet; note that the actual amount of buckets returned can be lower than this number
 |===

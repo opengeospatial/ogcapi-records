@@ -9,6 +9,6 @@
 . Check that the response HTTP status code is `200`.
 . Check that the response HTTP `Content-Type` header is `application/facets+json`.
 . Check that the response contains a `facets` object with at least one property.
-. Foreach facet property, check that a `type` property exists, Check that the response contains a `facets` object with at least one property.
+. For each facet property, check that a `type` property exists, Check that the response contains a `facets` object with at least one property.
 |===
 
