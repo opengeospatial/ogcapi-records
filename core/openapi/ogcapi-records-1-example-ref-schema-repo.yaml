@@ -62,6 +62,9 @@ paths:
         The landing page provides links to the API definition, the conformance
         statements and to the record collections in this dataset.
       operationId: getLandingPage
+      parameters:
+        - $ref: 'parameters/language.yaml'
+        - $ref: 'parameters/profile.yaml'
       responses:
         '200':
           $ref: 'responses/LandingPage.yaml'
@@ -97,6 +100,17 @@ paths:
       description: |-
         Fetch list of catalogs offered by this API
       operationId: getCollections
+      parameters:
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/bbox.yaml'
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/datetime.yaml'
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/limit.yaml'
+        - $ref: 'parameters/q.yaml'
+        - $ref: 'parameters/type.yaml'
+        - $ref: 'parameters/externalIds.yaml'
+        - $ref: 'parameters/ids.yaml'
+        - $ref: 'parameters/sortby.yaml'
+        - $ref: 'parameters/language.yaml'
+        - $ref: 'parameters/profile.yaml'
       responses:
         '200':
           $ref: 'responses/Catalogs.yaml'
@@ -117,14 +131,8 @@ paths:
       operationId: describeCollection
       parameters:
         - $ref: 'parameters/catalogId.yaml'
-        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/bbox.yaml'
-        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/datetime.yaml'
-        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/limit.yaml'
-        - $ref: 'parameters/q.yaml'
-        - $ref: 'parameters/type.yaml'
-        - $ref: 'parameters/externalIds.yaml'
-        - $ref: 'parameters/ids.yaml'
-        - $ref: 'parameters/sortby.yaml'
+        - $ref: 'parameters/language.yaml'
+        - $ref: 'parameters/profile.yaml'
       responses:
         '200':
           $ref: 'responses/Catalog.yaml'
@@ -148,6 +156,8 @@ paths:
       operationId: getSortables
       parameters:
         - $ref: 'parameters/catalogId.yaml'
+        - $ref: 'parameters/language.yaml'
+        - $ref: 'parameters/profile.yaml'
       responses:
         '200':
           $ref: 'responses/Sortables.yaml'
@@ -174,15 +184,17 @@ paths:
         Use content negotiation to request HTML or GeoJSON.
       operationId: getRecords
       parameters:
+        - $ref: 'parameters/catalogId.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/bbox.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/datetime.yaml'
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/parameters/limit.yaml'
-        - $ref: 'parameters/catalogId.yaml'
         - $ref: 'parameters/q.yaml'
         - $ref: 'parameters/type.yaml'
         - $ref: 'parameters/externalIds.yaml'
         - $ref: 'parameters/ids.yaml'
         - $ref: 'parameters/sortby.yaml'
+        - $ref: 'parameters/language.yaml'
+        - $ref: 'parameters/profile.yaml'
       responses:
         '200':
           $ref: 'responses/Records.yaml'
@@ -208,6 +220,8 @@ paths:
       parameters:
         - $ref: 'parameters/catalogId.yaml'
         - $ref: 'parameters/recordId.yaml'
+        - $ref: 'parameters/language.yaml'
+        - $ref: 'parameters/profile.yaml'
       responses:
         '200':
           $ref: 'responses/Record.yaml'

@@ -62,6 +62,9 @@ paths:
         The landing page provides links to the API definition, the conformance
         statements and to the record collections in this dataset.
       operationId: getLandingPage
+      parameters:
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/language'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/profile'
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/LandingPage'
@@ -97,6 +100,17 @@ paths:
       description: |-
         Fetch list of catalogs offered by this API
       operationId: getCollections
+      parameters:
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/bbox'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/datetime'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalIds'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/language'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/profile'
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Catalogs'
@@ -118,14 +132,8 @@ paths:
       operationId: describeCollection
       parameters:
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/bbox'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/datetime'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/limit'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/q'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/type'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalIds'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
-        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/language'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/profile'
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Catalog'
@@ -149,6 +157,8 @@ paths:
       operationId: getSortables
       parameters:
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/language'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/profile'
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Sortables'
@@ -184,6 +194,8 @@ paths:
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/externalIds'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/ids'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/sortby'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/language'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/profile'
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Records'
@@ -209,6 +221,8 @@ paths:
       parameters:
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/catalogId'
         - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/recordId'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/language'
+        - $ref: 'ogcapi-records-1-building-blocks.yaml#/components/parameters/profile'
       responses:
         '200':
           $ref: 'ogcapi-records-1-building-blocks.yaml#/components/responses/Record'
