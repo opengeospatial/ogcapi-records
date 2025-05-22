@@ -27,14 +27,15 @@ test-method::
 +
 --
 . Construct a path (`/collections/{catalogId}/items/{recordId}`) to retrieve records from a catalog.
-. Issue an HTTP GET request on that path and negotiate a GeoJSON (accept: `application/geo+json application=ogc-record`) response.
+. Issue an HTTP GET request on that path and negotiate a GeoJSON (accept: `application/geo+json`) response.
 . Check that the value of the returned HTTP status header is +200+.
-. Validate that the value of the `Content-Type` HTTP header is `application/geo+json application=ogc-record`.
+. Validate that the value of the `Content-Type` HTTP header is `application/geo+json`.
 . Validate the content of the response using the schema https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml[recordGeoJSON.yaml].
 . Verify that all links in the `links` section include a `rel` parameter.
 . Check that the `links` section of the record contains the following links:
 * a link to this response document (relation: `self`),
 * a typed link to the response document in every other media type supported by the service (relation: `alternate`), and
 * a link to the catalog that contains this record (relation: `collection`).
+* a profile link (href="http://www.opengis.net/def/profile/OGC/0/ogc-record", rel="profile") 
 --
 ====
