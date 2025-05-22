@@ -684,9 +684,15 @@ components:
           enum:
             - Feature
         time:
-          $ref: '#/components/schemas/time'
+          oneOf:
+            - type: object
+              nullable: true
+            - $ref: '#/components/schemas/time'
         geometry:
-          $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
+          oneOf:
+            - type: object
+              nullable: true
+            - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
         conformsTo:
           type: array
           description: |-
@@ -694,10 +700,12 @@ components:
           items:
             type: string
         properties:
-          nullable: true
-          allOf:
+          oneOf:
             - type: object
-            - $ref: '#/components/schemas/recordCommonProperties'
+              nullable: true
+            - allOf:
+              - type: object
+              - $ref: '#/components/schemas/recordCommonProperties'
         links:
           type: array
           items:
@@ -778,7 +786,6 @@ components:
             enumerating the list of schemes in the queryable's schema
             definition.
     time:
-      nullable: true
       type: object
       properties:
         date:
@@ -863,16 +870,6 @@ components:
         application/json:
           schema:
             $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/confClasses.yaml'
-        text/html:
-          schema:
-            type: string
-    InvalidParameter:
-      description: |-
-        A query parameter has an invalid value.
-      content:
-        application/json:
-          schema:
-            $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/exception.yaml'
         text/html:
           schema:
             type: string

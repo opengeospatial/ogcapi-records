@@ -24,7 +24,7 @@ test-method::
 . Construct a path for a given catalog record.
 . Issue a HTTP GET request on that path.
 . Check if the <<rc_json,JSON conformance class>> is advertised for the catalog.
-. If yes, then check that the media type for content is `application/geo+json; application=ogc-record`.
+. If yes, then check that the media type for content is `application/geo+json` and the record content contains a link (href="http://www.opengis.net/def/profile/OGC/0/ogc-record", rel="profile") in the "links" section.
 . If no, then check that the media type for content is HTML.
 --
 ====
