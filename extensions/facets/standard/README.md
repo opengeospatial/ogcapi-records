@@ -7,7 +7,7 @@ This directory contains the OGC API - Records - Part 2: Facets Specification. Th
 
 The latest drafts of each standard in this repository are built daily (based on the configuration contained in the [asciidoctor.json](https://github.com/opengeospatial/ogcapi-records/blob/master/asciidoctor.json) file):
 
-* [Part 1: Core](https://docs.ogc.org/DRAFTS/20-004.html)
+* [Part 1: Core](TBD)
 
 To generate HTML and PDF representations of the standard yourself, asciidoctor is required.  To install:
 

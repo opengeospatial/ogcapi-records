@@ -1,6 +1,6 @@
 == Security Considerations
 
-See https://docs.ogc.org/DRAFTS/20-004r1.html#_security_considerations[OGC API - Records - Part 1: Core, Security Considerations].
+See https://docs.ogc.org/is/20-004r1/20-004r1.html#_security_considerations[OGC API - Records - Part 1: Core, Security Considerations].
 
 Since CREATE, REPLACE, DELETE and UPDATE operations will change the resources and not "just" query them, servers will in almost all cases restrict the access to these operations.
 
