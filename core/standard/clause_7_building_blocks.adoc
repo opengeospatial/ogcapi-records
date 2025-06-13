@@ -82,7 +82,7 @@ In <<core-properties-record-table>> and <<core-properties-resource-table>> this 
 
 include::recommendations/building-blocks/record-core/REC_record-extensions.adoc[]
 
-In the case where all the records of a catalog use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` property at the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog level] that may be used to declare which extensions are used in all records of the catalog.  
+In the case where all the records of a catalog use the same set of extensions, and to prevent unnecessary duplication, there is also a `conformsTo` property at the https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[catalog level] that may be used to declare which extensions are used in all records of the catalog.  
 
 NOTE: Extensions listed at the catalog and record levels are cumulative.
 
@@ -307,7 +307,7 @@ A catalog record can include language information about:
 
 include::recommendations/building-blocks/record-core/REC_record-lang.adoc[]
 
-The https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link object] and the https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[templated link object] are based on https://datatracker.ietf.org/doc/html/rfc8288[RFC 8288 (Web Linking)] which includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languages. 
+The https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[link object] and the https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/linkTemplate.yaml[templated link object] are based on https://datatracker.ietf.org/doc/html/rfc8288[RFC 8288 (Web Linking)] which includes a `hreflang` attribute that can be used to state the language of a referenced resource.  This can be used to include links to the same record in different languages. 
 
 [[minting-language-specific-uris]]
 A server that wants to use language-specific links will have to support a mechanism to mint language-specific URIs to express links to the same record in other languages or to express links to the resource described by record in multiple languages.  This document does not mandate any approach how such a capability is supported by a server. 
@@ -318,7 +318,7 @@ Two common approaches are:
 
 * An additional path element for each language-specific encoding of a record or resource (this can be expressed, for example, using a language-specific path element like `.../en-ca/...`); and
 
-* An additional query parameter (for example, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/parameters/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
+* An additional query parameter (for example, https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/parameters/language.yaml["language"] or "l") that overrides the Accept-Language header of the HTTP request.
 ======================================================================
 
 [NOTE]
@@ -413,7 +413,7 @@ Consider the case where a record describing a coverage resource is discovered by
 
 Templated links may also be used to bind to resources that may require additional information in order to access the resources.  For example, simply knowing the URL of a legacy OGC service instance such as for https://portal.ogc.org/files/?artifact_id=14416[WMS] or https://docs.ogc.org/is/09-025r2/09-025r2.html[WFS] implementations is not sufficient to access resources offered by those services.  Additional information in the form of request parameters and values is required in order to have a complete link to a resource.  A templated link with variables can provide this additional context.
 
-This Standard defines a new schema, https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml],  based on the https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[schema for a link] that includes substitution variables who's values are filled in at runtime prior to resolving the link.  
+This Standard defines a new schema, https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml],  based on the https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml[schema for a link] that includes substitution variables who's values are filled in at runtime prior to resolving the link.  
 
 Information about the substitution variables can be obtained in one of two ways.  The `variable` property may be used to encode the definitions of substitution variables in-line in the link.  Alternatively, the `varBase` property can be used to specify a base URI to which a variable name may be appended to retrieve the definition of the specified substitution variable.
 
@@ -983,7 +983,7 @@ include::recommendations/building-blocks/sorting/REC_sortables-schema.adoc[]
 In an OpenAPI 3.0 document, the Sortables resource has the following schema:
 
 [[schema_sortables]]
-.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/responses/Sortables.yaml[Schema for the list of sortable properties (Sortables.yaml)]
+.link:https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/responses/Sortables.yaml[Schema for the list of sortable properties (Sortables.yaml)]
 [source,YAML]
 ----
 include::../openapi/responses/Sortables.yaml[]
@@ -1296,13 +1296,13 @@ NOTE: It should be noted that the `recordGeoJSON.yaml` schema makes the `geometr
 include::recommendations/building-blocks/json/REC_header-profile-link.adoc[]
 
 [[schema_json_record]]
-.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml[Schema for a catalog record encoded as GeoJSON (recordGeoJSON.yaml)]
+.link:https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordGeoJSON.yaml[Schema for a catalog record encoded as GeoJSON (recordGeoJSON.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/recordGeoJSON.yaml[]
 ----
 
-.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[Common record properties schema (recordCommonProperties.yaml)]
+.link:https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordCommonProperties.yaml[Common record properties schema (recordCommonProperties.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/recordCommonProperties.yaml[]
@@ -1312,21 +1312,21 @@ include::../openapi/schemas/recordCommonProperties.yaml[]
 ======================================================================
 Referenced schemas can be found at:
 
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/time.yaml[time.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/time.yaml[time.yaml],
 * https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml[geometryGeoJSON.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/format.yaml[format.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/common/linkBase.yaml[linkBase.yaml].
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/language.yaml[language.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/theme.yaml[theme.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/format.yaml[format.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/contact.yaml[contact.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/license.yaml[license.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/common/linkBase.yaml[linkBase.yaml].
 ======================================================================
 
 include::recommendations/building-blocks/json/PER_time.adoc[]
 
 [NOTE]
 =================================================
-This standard does not define a normative schema for a record encoding that is not GeoJSON.  However, this https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordJSON.yaml[informative schema] is offered as an example of what a plain JSON record schema might look like.
+This standard does not define a normative schema for a record encoding that is not GeoJSON.  However, this https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordJSON.yaml[informative schema] is offered as an example of what a plain JSON record schema might look like.
 =================================================
 
 [[clause-catalog-encoding]]
@@ -1348,7 +1348,7 @@ include::requirements/building-blocks/json/REQ_catalog-content-profile.adoc[]
 See also recommendation: <<ec_json_header-profile-link,/rec/json/header-profile-link>>.
 
 [[schema_json_collection]]
-.link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[Schema for a catalog encoded as JSON(catalog.yaml)]
+.link:https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[Schema for a catalog encoded as JSON(catalog.yaml)]
 [source,YAML]
 ----
 include::../openapi/schemas/catalog.yaml[]
@@ -1359,10 +1359,10 @@ include::../openapi/schemas/catalog.yaml[]
 Referenced schemas can be found at:
 
 * https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/language.yaml[language.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/theme.yaml[theme.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml[contact.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/license.yaml[license.yaml].
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/language.yaml[language.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/theme.yaml[theme.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/contact.yaml[contact.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/license.yaml[license.yaml].
 ======================================================================
 
 [[requirements-class-html-clause]]

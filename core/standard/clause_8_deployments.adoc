@@ -264,10 +264,10 @@ Referenced schemas can be found at:
 
 * https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collections.yaml[collections.yaml],
 * https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml[collection.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkBase.yaml[linkBase.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml].
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[catalog.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/linkBase.yaml[linkBase.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml].
 ======================================================================
 
 ===== Processes example
@@ -290,10 +290,10 @@ Referenced schemas can be found at:
 
 * https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/processList.yaml[processList.yaml],
 * https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/processSummary.yaml[processSummary.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/catalog.yaml[catalog.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkBase.yaml[linkBase.yaml],
-* https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml].
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/catalog.yaml[catalog.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordCommonProperties.yaml[recordCommonProperties.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/linkBase.yaml[linkBase.yaml],
+* https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/linkTemplate.yaml[linkTemplate.yaml].
 ======================================================================
 
 NOTE: T.D.B.  Should add an instance example of a collection object.
