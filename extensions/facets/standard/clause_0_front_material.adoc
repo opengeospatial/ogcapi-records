@@ -6,7 +6,7 @@ This document defines the OGC API - Records - Part 2: Facets Standard.  In this 
 
 An implementation of a search API allows collections of records to be searched using logically connected spatial, temporal and scalar predicates.  As part of a given search response, additional information in the form of aggregations (facets) can provide enhanced navigation as well as valuable information about the spatio-temporal distribution of a given result set.
 
-This Standard uses the https://docs.ogc.org/DRAFTS/20-004.html[OGC API - Records - Part 1: Core] Standard for specifying requirements of Records search API faceting.
+This Standard uses the https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API - Records - Part 1: Core] Standard for specifying requirements of Records search API faceting.
 
 [[keywords]]
 [big]*ii.    Keywords*
