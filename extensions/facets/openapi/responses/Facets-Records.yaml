@@ -11,7 +11,7 @@ content:
   application/geo+json: &pResponse
     schema:
       allOf:
-        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-records/refs/heads/master/core/openapi/responses/Records.yaml'
+        - $ref: 'https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/responses/Records.yaml'
         - type: object
           properties:
             facets:
