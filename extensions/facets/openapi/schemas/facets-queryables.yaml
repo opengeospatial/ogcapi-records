@@ -10,7 +10,7 @@ properties:
       "^.*":
         type: object
         properties:
-          facets:
+          facet:
             type: boolean
             default: false
             description: Whether facets can be applied to the property.

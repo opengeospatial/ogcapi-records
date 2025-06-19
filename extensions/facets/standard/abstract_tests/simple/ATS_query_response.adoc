@@ -11,6 +11,6 @@
 . Foreach facet property:
 .. check that a `type` property exists.
 .. check that a `property` property exists.
-.. check that a `buckets` property exists, contains either a `value` property or both of `min` and `max` properties.
+.. check that a `buckets` property exists and contains an array of 0 or more items; each item should have a `value` and `count` property.
 |===
 

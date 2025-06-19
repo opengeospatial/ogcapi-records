@@ -3,9 +3,24 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/simple/response*
 ^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code of 200.
-^|B |For responses that use application/schema+json as the `Content-Type` of the response, the response SHALL have the following characteristics:
+^|B |For responses that use `application/schema+json` as the `Content-Type` of the response, the response SHALL have the following characteristics:
 
 * The response contains an `id` (the identifier of the collection).
 * The response contains a `facets` object, and each property is a facet definition object.
-* Each facet definition object is a named object with a `type` property identifying a `term`, `histogram`, or `filter` facet.
+* Each facet definition object is a named object with:
+** a `type` property identifying a `term`, `histogram`, or `filter` facet.
+** a `property` property identifying the property name on which the facet will be computed against.
+** a `sortedBy` property indicating whether buckets for that facet will be sorted by `value` or `count` (number of occurrences)
+* Facets of type `term` contain the following additional properties:
+** a `minOccurs` property indicating the cutoff number of occurrence below which buckets will not be reported in this facet
+* Facets of type `bucket` contain the following additional properties:
+** a `bucketType` property indicating whether buckets are computed using fixed intervales (`fixedInterval`) or a fixed amount of resulting buckets (`fixedBucketCount`)
+* Facets of type `filter` contain the following additional properties:
+** a `filters` property containing an object:
+*** each entry in this object will result in exactly one bucket for this facet
+*** the name of the entry will be the `value` of the corresponding bucket in the facet result
+*** the value of the entry is the search filter used to compute the bucket
+* The name of each entry in the `facets` object will act as an identifier for the facet in further uses
+
+* The response contains a `defaultBucketCount` property which contains the maximum number of buckets returned for each facet; note that the actual amount of buckets returned can be lower than this number
 |===
