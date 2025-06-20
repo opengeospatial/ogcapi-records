@@ -15,21 +15,6 @@
                 ]
         },
         "1":  {
-                "OGC_doc_number": "20-004r1",
-                "urn":"http://www.opengis.net/doc/is/ogcapi-records-1/1.0",
-                "title":"OGC API - Records - Part 1: Core",
-                "path":"core/standard/document.adoc",
-                "options": ["--trace"],
-                "a":[
-                        "data-uri",
-                        "stylesdir=./resources/stylesheets",
-                        "dot=/usr/bin/dot"
-                ],
-                "r":[
-                        "asciidoctor-diagram"
-                ]
-        },
-        "2":  {
                 "OGC_doc_number": "25-015",
                 "urn":"http://www.opengis.net/doc/is/ogcapi-records-3/1.0",
                 "title":"OGC API - Records - Part 3: Create, Replace, Update, Delete, Harvest",
