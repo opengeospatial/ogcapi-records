@@ -1,6 +1,6 @@
 # OGC API - Records - Part 2: Facets
 
-This folder contains the content for the OGC API - Records - Part 1: Facets standard.
+This folder contains the content for the OGC API - Records - Part 2: Facets standard.
 
 The repo is organized as follows:
 

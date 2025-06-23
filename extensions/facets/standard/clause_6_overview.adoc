@@ -3,38 +3,40 @@
 
 A **facet** refers to a high-level piece of information that is computed over a set of records in a given collection.  A facet differs from a search; it is used as a means to provide a better understanding of the composition of search results, and aids the users to refine and narrow their search.
 
+A useful function of facets is to allow users to "drill-down" on the values they report, thus offering an easy way to refine a search request and narrow down results. This is done by advertising to the client which property was used to compute the facet; by combining the property and desired value, a new search filter can be produced by the client.
+
 A facet can be represented by several mechanisms, as described below.
 
 === Term facet
 
-A term facet can be applied to any text property and produces a list of values appearing for a specific property across all matching records, as well as the count of records containing each value.
+A term facet can be applied to any text property and produces a list of unique values appearing for a specific property across all matching records, as well as the count of records containing each value.
 
 ==== Example
 
-A common use case for a term facet involves identifying results by organizations.  A term facet applies against contact organizations would provides term facet list per below:
+A common use case for a term facet involves identifying results by organizations.  A term facet applied against a `properties.contacts[].organization` property would provide a term facet list per below:
 
-* `Meteorological Service of Canada` (52 results)
-* `National Oceanic and Atmospheric Administration` (45 results)
-* `UK Met Office` (33 results)
+* "Meteorological Service of Canada" (52 records)
+* "National Oceanic and Atmospheric Administration" (45 records)
+* "UK Met Office" (33 records)
 
 A catalogue may also return a search result of records containing properties describing the country of origin of a given resource.  A term facet computed over a `properties.country` property would return a list of buckets as follows:
 
-* `Canada` (36 records)
-* `Greece` (24 records)
-* `Germany` (12 records)
-* `England` (5 records)
+* "Canada" (36 records)
+* "Greece" (24 records)
+* "Germany" (12 records)
+* "England" (5 records)
 
 === Histogram facet
 
-A histogram facet can be applied to any temporal or numeric property to distribute item values over ranges or intervals.
+A histogram facet can be applied to any temporal or numeric property to indicate distribution of unique values over ranges or intervals.
 
 ==== Example
 
-A catalogue may return search results with  a histogram facet applied against `properties.created` as follows:
+A catalogue may return search results with a histogram facet applied against `properties.created` as follows:
 
-* `2020-01-01` to `2020-02-01` (18 records)
-* `2020-02-01` to `2020-03-01` (22 records)
-* `2020-03-01` to `2020-04-01` (43 records)
+* "2020-01-01 to 2020-02-01" (18 records)
+* "2020-02-01 to 2020-03-01" (22 records)
+* "2020-03-01 to 2020-04-01" (43 records)
 
 === Filter facet
 
@@ -44,10 +46,9 @@ A filter facet produces a count of matching records for one or more predefined q
 
 A catalogue may return a filter facet that delineates search results by service type.
 
+- "Download service" returns the amount of records which have at least 1 distribution of a download type (CSV, Excel...):
+- "Visualization service" returns the amount of records which have at least 1 distribution of a map service type (WMS, WMTS...):
 
-- `Download service` returns the amount of records which have at least 1 distribution of a download type (CSV, Excel...):
-- `Visualization service` returns the amount of records which have at least 1 distribution of a type (WMS, WMTS...):
-
-* `Download service` (300 records)
-* `Visualization service` (243 records)
-* `Subsetting service` (35 records)
+* "Download service" (300 records)
+* "Visualization service" (243 records)
+* "Subsetting service" (35 records)

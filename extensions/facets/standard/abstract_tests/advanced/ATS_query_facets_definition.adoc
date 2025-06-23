@@ -16,6 +16,7 @@ schema:
     type: array
     items:
       type: string
+      pattern: '[A-Za-z_]+(:[0-9]*(:(value_asc\|value_desc\|count_asc\|count_desc)?)?)?'
 explode: false
 style: form
 ----

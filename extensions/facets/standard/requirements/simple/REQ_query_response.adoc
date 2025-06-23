@@ -6,11 +6,12 @@
 ^|B |The response SHALL have the following characteristics:
 
 * The response contains a `facets` object, and each property is a facet object.
-* The `facets` object contains named objects, each with a `type` property identifying a `term`, `histogram`, or `filter` facet.
 * The `facets` object contains named objects, each with:
 ** a `type` property identifying a `term`, `histogram`, or `filter` facet.
 ** a `property` property identifying the property name on which the facet was computed against.
-** a `buckets` property (array) that contains:
+** a `buckets` property (array) where each item contains:
 *** a `count` property identifying the number of matches for a property name on which the facet was computed against.
-*** a `value` property identify the name of the bucket or the range of values (`min` and `max`).
+*** either:
+**** a `value` property identify the name of the bucket
+**** or a set of `min` and `max` properties identifying the range of values in that bucket.
 |===

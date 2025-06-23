@@ -3,8 +3,9 @@ This document uses the terms defined in Sub-clause 5 of https://docs.ogc.org/DRA
 
 For the purposes of this document, the following additional terms, definitions and abbreviated terms apply in addition to those defined in <<OARec-1,OGC API - Records - Part 1: Core>>.
 
-=== bucket
-A means to partition a domain of terms, ranges or queries into logical groups.
+[[bucket-def]]
+=== Bucket
+A means to partition a domain of terms, ranges or queries results into logical groups of similar nature.
 
-=== facet
-A high-level piece of information that is computed over a set of records in a collection.
+=== Facet; Aggregation
+A high-level piece of information that is computed over a set of records in a collection. The result of this computation is given as <<bucket-def,buckets>>.
