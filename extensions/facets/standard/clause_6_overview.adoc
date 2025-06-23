@@ -15,9 +15,9 @@ A term facet can be applied to any text property and produces a list of unique v
 
 A common use case for a term facet involves identifying results by organizations.  A term facet applied against a `properties.contacts[].organization` property would provide a term facet list per below:
 
-* "Meteorological Service of Canada" (52 results)
-* "National Oceanic and Atmospheric Administration" (45 results)
-* "UK Met Office" (33 results)
+* "Meteorological Service of Canada" (52 records)
+* "National Oceanic and Atmospheric Administration" (45 records)
+* "UK Met Office" (33 records)
 
 A catalogue may also return a search result of records containing properties describing the country of origin of a given resource.  A term facet computed over a `properties.country` property would return a list of buckets as follows:
 
