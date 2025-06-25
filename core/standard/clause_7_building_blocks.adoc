@@ -522,7 +522,7 @@ Other encodings are allowed but are not described in this document.
 |themes |optional |A knowledge organization system used to classify this collection.
 |language |optional |The language used for textual values (i.e., titles, descriptions, etc.) of this collection object. 
 |languages |optional |The list of other languages in which this collection object is available. 
-|recordLanguages |optional |The list of languages in which records from the collection can be represented.
+|resourceLanguages |optional |The list of languages in which records from the collection can be represented.
 |contacts |optional |A list of contacts qualified by their role(s).
 |license |optional |The legal provisions under which this collection is made available.
 |rights |optional |A statement that concerns all rights not addressed by the license such as a copyright statement.

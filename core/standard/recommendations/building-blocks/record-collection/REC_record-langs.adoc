@@ -4,12 +4,12 @@
 //|===
 //^|*Recommendation {counter:rec-id}* |*/rec/record-collection/record-langs*
 //
-//The languages in which the records of the catalog can be represented SHOULD be listed using the <<collection-properties-table,`recordLanguages`>> property.
+//The languages in which the records of the catalog can be represented SHOULD be listed using the <<collection-properties-table,`resourceLanguages`>> property.
 //|===
 
 [recommendation]
 ====
 [%metadata]
 identifier:: /rec/record-collection/record-langs
-part:: The languages in which the records of the catalog can be represented SHOULD be listed using the <<collection-properties-table,`recordLanguages`>> property.
+part:: The languages in which the records of the catalog can be represented SHOULD be listed using the <<collection-properties-table,`resourceLanguages`>> property.
 ====
