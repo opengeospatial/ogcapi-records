@@ -549,7 +549,7 @@ In the case where all the records of a catalog use the same set of extensions, a
 
 See <<sc_record_extensions,Record extensions>>.
 
-==== i.e., type
+==== Item type
 
 A catalog can include references to records, other catalogs or both.  A catalog can also contain an array of catalog records.
 
