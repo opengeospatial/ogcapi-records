@@ -16,8 +16,8 @@
 [%metadata]
 identifier:: /per/searchable-catalog/additional-conformance
 statement:: Implementations of this conformance class MAY, additionally, implement the following common components:
-part:: <<rc_oas30,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/oas30>>
-part:: <<rc_json,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json>>
-part:: <<rc_html,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html>>
-part:: <<rc_autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscover>>
+part:: See <<rc_oas30,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/oas30>>
+part:: See <<rc_json,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/json>>
+part:: See <<rc_html,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/html>>
+part:: See <<rc_autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/autodiscover>>
 ====

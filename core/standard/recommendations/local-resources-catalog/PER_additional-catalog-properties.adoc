@@ -12,7 +12,7 @@
 ====
 [%metadata]
 identifier:: /per/local-resources-catalog/additional-catalog-properties
-part:: <<local-resources-additional-properties>> contains a list of recommended additional properties that MAY be added to the information model of a local resources catalog.
+part:: See <<local-resources-additional-properties>> contains a list of recommended additional properties that MAY be added to the information model of a local resources catalog.
 ====
 
 
