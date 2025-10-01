@@ -13,5 +13,5 @@
 [%metadata]
 identifier:: /req/searchable-catalog/filtering
 statement:: Implementations that offer enhanced filtering SHALL implement the following requirements class at the searchable catalog enpoint of `/collections/{collectionId}/items` where the `itemType` property of the collection with id `{collectionId}` (JSONPath: `$.collections[*].itemType`) is a string with the value `record`.
-part:: <<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
+part:: See <<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
 ====

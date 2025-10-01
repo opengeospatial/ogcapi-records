@@ -13,5 +13,5 @@
 [%metadata]
 identifier:: /req/local-resources-catalog/sorting
 statement:: Implementations of sorting of record responses SHALL, at the local resources endpoint (e.g., `/collections`), implement the following requirements class.
-part:: <<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
+part:: See <<rc_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/sorting>>
 ====

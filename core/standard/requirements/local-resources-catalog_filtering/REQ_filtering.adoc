@@ -13,5 +13,5 @@
 [%metadata]
 identifier:: /req/local-resources-catalog/filtering
 statement:: Implementations that offer enhanced filtering SHALL, at the local resources catalog endpoint (e.g., `/collections`), implement the following requirements class.
-part:: <<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
+part:: See <<rc_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/req/filtering>>
 ====
