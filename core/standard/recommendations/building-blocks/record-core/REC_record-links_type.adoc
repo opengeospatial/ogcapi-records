@@ -4,12 +4,12 @@
 //|===
 //^|*Recommendation {counter:rec-id}* |*/rec/record-core/links-type*
 //
-//If there is a cannonical URI for the value of the `type` property of a record, a link (relation: `type`) to that canonical URI SHOULD be included in the `links` section of the record.
+//If there is a canonical URI for the value of the `type` property of a record, a link (relation: `type`) to that canonical URI SHOULD be included in the `links` section of the record.
 //|===
 
 [recommendation]
 ====
 [%metadata]
 identifier:: /rec/record-core/links-type
-part:: If there is a cannonical URI for the value of the `type` property of a record, a link (relation: `type`) to that canonical URI SHOULD be included in the `links` section of the record.
+part:: If there is a canonical URI for the value of the `type` property of a record, a link (relation: `type`) to that canonical URI SHOULD be included in the `links` section of the record.
 ====
