@@ -1,0 +1,9 @@
+[[ats_core_api-definition-op]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/core/map-response
+target:: /req/req-class-a/req-name-1
+test-purpose:: Verify that the implementation's response for the map retrieval operation is correct
+test-method:: A single step test method can be documented as a single line.
+====

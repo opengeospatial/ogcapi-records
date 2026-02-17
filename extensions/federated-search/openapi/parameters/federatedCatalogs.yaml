@@ -1,0 +1,17 @@
+---
+name: federatedCatalogs
+description: |-
+  Without this parameter a search will be distributed to all configured
+  federated catalogs.
+  This parameter can be used to restrict the catalogs, from the complete
+  lost of configured catalogs, to which a federated search will be
+  distributed.
+in: query
+required: false
+schema: 
+  type: array
+  items:
+    type: string
+    pattern: (fid[,timeout])
+explode: true
+style: form

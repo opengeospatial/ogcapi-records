@@ -1,0 +1,109 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-02-16</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information </title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Data quality</title>
+  <title type="main" format="text/plain" language="en" script="Latn">Geographic information  - Data quality</title>
+  <title type="title-intro" format="text/plain" language="fr" script="Latn">Information géographique</title>
+  <title type="title-main" format="text/plain" language="fr" script="Latn">Qualité des données</title>
+  <title type="main" format="text/plain" language="fr" script="Latn">Information géographique - Qualité des données</title>
+  <uri type="src">https://www.iso.org/standard/32575.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:32575:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/03/25/32575.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19157:2013</docidentifier>
+  <docidentifier type="iso-reference">ISO 19157:2013(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19157:stage-90.92</docidentifier>
+  <docnumber>19157</docnumber>
+  <date type="published">
+    <on>2013-12</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Organization for Standardization</name>
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">﻿
+ISO 19157:2013 establishes the principles for describing the quality of geographic data. It
+-   defines components for describing data quality;
+-   specifies components and content structure of a register for data quality measures;
+-   describes general procedures for evaluating the quality of geographic data;
+-   establishes principles for reporting data quality.
+ISO 19157:2013 also defines a set of data quality measures for use in evaluating and reporting data quality. It is applicable to data producers providing quality information to describe and assess how well a data set conforms to its product specification and to data users attempting to determine whether or not specific geographic data are of sufficient quality for their particular application.
+ISO 19157:2013 does not attempt to define minimum acceptable levels of quality for geographic data.</abstract>
+  <abstract format="text/plain" language="fr" script="Latn">﻿
+L'ISO 19157:2013 établit les principes de description de la qualité des données géographiques. Elle
+-      définit des composants destinés à décrire la qualité de données;
+-      spécifie des composants et la structure du contenu d'un registre de mesures de qualité des données;
+-      décrit des procédures générales d'évaluation de la qualité des données géographique;
+-      pose les principes de la description de la qualité des données dans des rapports.
+L'ISO 19157:2013 définit également un ensemble de mesures de qualité des données destinées à l'évaluation et à la mise en place de rapports sur la qualité de données. Elle s'applique aux producteurs de données fournissant des informations de qualité pour décrire et évaluer la façon dont un jeu de données répond à sa spécification de produit et aux utilisateurs cherchant à déterminer si des données géographiques spécifiques sont ou non de qualité suffisante pour leur application particulière.
+L'ISO 19157:2013 ne cherche pas à définir des niveaux minimums acceptables de qualité en matière de données géographiques.</abstract>
+  <status>
+    <stage>90</stage>
+    <substage>92</substage>
+  </status>
+  <copyright>
+    <from>2013</from>
+    <owner>
+      <organization>
+        <name>ISO</name>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19113:2002</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19113:2002</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19114:2003</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19114:2003</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/TS 19138:2006</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/TS 19138:2006</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19157-1:2023</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19157-1:2023</docidentifier>
+      <date type="circulated">
+        <on>2023-06-08</on>
+      </date>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19157:2013/Amd 1:2018</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19157:2013/Amd 1:2018</docidentifier>
+      <date type="circulated">
+        <on>2023-06-08</on>
+      </date>
+    </bibitem>
+  </relation>
+  <place>Geneva</place>
+  <ext schema-version="v1.0.3">
+    <doctype>international-standard</doctype>
+    <editorialgroup>
+      <technical-committee number="211" type="TC" identifier="ISO/TC 211">Geographic information/Geomatics</technical-committee>
+    </editorialgroup>
+    <ics>
+      <code>35.240.70</code>
+      <text>IT applications in science</text>
+    </ics>
+    <structuredidentifier type="ISO">
+      <project-number>32575</project-number>
+    </structuredidentifier>
+  </ext>
+</bibdata>

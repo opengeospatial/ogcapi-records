@@ -1,0 +1,8 @@
+[[req_class_a_name_1]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/req-class-a/req-name-1
+part:: Requirement 'shall' statement
+====

@@ -1,0 +1,8 @@
+[[rc_federated-search]]
+[requirements_class]
+====
+[%metadata]
+identifier:: https://www.opengis.net/spec/ogcapi-records-4/1.0/req/federated-search
+subject:: Web API
+inherit:: https://www.opengis.net/spec/ogcapi-records-1/1.0/req/core
+====

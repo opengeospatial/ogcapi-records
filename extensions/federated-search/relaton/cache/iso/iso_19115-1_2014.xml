@@ -1,0 +1,115 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-02-16</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Metadata</title>
+  <title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Fundamentals</title>
+  <title type="main" format="text/plain" language="en" script="Latn">Geographic information - Metadata - Part 1: Fundamentals</title>
+  <title type="title-intro" format="text/plain" language="fr" script="Latn">Information géographique</title>
+  <title type="title-main" format="text/plain" language="fr" script="Latn">Métadonnées</title>
+  <title type="title-part" format="text/plain" language="fr" script="Latn">Partie 1: Principes de base</title>
+  <title type="main" format="text/plain" language="fr" script="Latn">Information géographique - Métadonnées - Partie 1: Principes de base</title>
+  <uri type="src">https://www.iso.org/standard/53798.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:53798:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/05/37/53798.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19115-1:2014</docidentifier>
+  <docidentifier type="iso-reference">ISO 19115-1:2014(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19115:-1:stage-90.92</docidentifier>
+  <docnumber>19115</docnumber>
+  <date type="published">
+    <on>2014-04</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Organization for Standardization</name>
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">ISO 19115-1:2014 defines the schema required for describing geographic information and services by means of metadata. It provides information about the identification, the extent, the quality, the spatial and temporal aspects, the content, the spatial reference, the portrayal, distribution, and other properties of digital geographic data and services.
+ISO 19115-1:2014 is applicable to:
+-the cataloguing of all types of resources, clearinghouse activities, and the full description of datasets and services;
+-geographic services, geographic datasets, dataset series, and individual geographic features and feature properties.
+ISO 19115-1:2014 defines:
+-mandatory and conditional metadata sections, metadata entities, and metadata elements;
+-the minimum set of metadata required to serve most metadata applications (data discovery, determining data fitness for use, data access, data transfer, and use of digital data and services);
+-optional metadata elements to allow for a more extensive standard description of resources, if required;
+-a method for extending metadata to fit specialized needs.
+Though ISO 19115-1:2014 is applicable to digital data and services, its principles can be extended to many other types of resources such as maps, charts, and textual documents as well as non-geographic data. Certain conditional metadata elements might not apply to these other forms of data.</abstract>
+  <abstract format="text/plain" language="fr" script="Latn">L'ISO 19115-1:2014 définit le schéma requis pour décrire des informations géographiques et des services au moyen de métadonnées. Elle fournit des informations concernant l'identification, l'étendue, la qualité, les aspects spatiaux et temporels, le contenu, la référence spatiale, la représentation des données, la distribution et d'autres propriétés des données géographiques numériques et des services.
+L'ISO 19115-1:2014 est applicable:
+-au catalogage de tous les types de ressources, des activités des centres d'informations et à la description complète des jeux de données et des services,
+-aux services géographiques, jeux de données géographiques, séries de jeux de données, entités géographiques individuelles et propriétés d'entités.
+L'ISO 19115-1:2014 définit:
+-des sections relatives aux métadonnées obligatoires et facultatives, aux entités de métadonnées et aux éléments de métadonnées,
+-le jeu minimal de métadonnées requis pour répondre au besoin de la plupart des applications des métadonnées (la découverte des données, la détermination de l'adéquation des données à une utilisation, l'accès aux données, le transfert des données et l'utilisation des données numériques et des services),
+-les éléments de métadonnées facultatifs pour permettre une description standard plus poussée des ressources, si cela est nécessaire,
+-un procédé d'extension des métadonnées pour s'adapter aux besoins spéciaux.
+L'ISO 19115-1:2014 est applicable aux données numériques et services, ses principes peuvent être étendus à bien d'autres types de ressources telles que les cartes, les graphes et les documents textes, de même qu'à des données non géographiques. Certains éléments de métadonnées conditionnels peuvent ne pas s'appliquer à ces autres formes de données.</abstract>
+  <status>
+    <stage>90</stage>
+    <substage>92</substage>
+  </status>
+  <copyright>
+    <from>2014</from>
+    <owner>
+      <organization>
+        <name>ISO</name>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19115:2003</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19115:2003</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19115:2003/Cor 1:2006</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19115:2003/Cor 1:2006</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/AWI 19115-1</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/AWI 19115-1</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19115-1:2014/Amd 1:2018</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19115-1:2014/Amd 1:2018</docidentifier>
+      <date type="circulated">
+        <on>2025-03-07</on>
+      </date>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19115-1:2014/Amd 2:2020</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19115-1:2014/Amd 2:2020</docidentifier>
+      <date type="circulated">
+        <on>2025-03-07</on>
+      </date>
+    </bibitem>
+  </relation>
+  <place>Geneva</place>
+  <ext schema-version="v1.0.3">
+    <doctype>international-standard</doctype>
+    <editorialgroup>
+      <technical-committee number="211" type="TC" identifier="ISO/TC 211">Geographic information/Geomatics</technical-committee>
+    </editorialgroup>
+    <ics>
+      <code>35.240.70</code>
+      <text>IT applications in science</text>
+    </ics>
+    <structuredidentifier type="ISO">
+      <project-number>53798</project-number>
+    </structuredidentifier>
+  </ext>
+</bibdata>

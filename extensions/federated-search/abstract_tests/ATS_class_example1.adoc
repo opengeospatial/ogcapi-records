@@ -1,0 +1,18 @@
+[[ats_example1,/conf/example1]]
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/name-of-standard/1.0/conf/example1
+target:: http://www.opengis.net/spec/ABCD/m.n/req/req-class-a
+classification:: Target Type:Web API
+abstract-test:: /conf/core/map-response
+abstract-test:: /conf/core/http
+====
+
+==== Example 1
+
+include::./ATS_test_example1.adoc[]
+
+==== Example 2
+
+include::./ATS_test_example2.adoc[]

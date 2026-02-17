@@ -1,0 +1,14 @@
+---
+type: object
+required:
+  - id
+  - catalogURL
+properties:
+  id:
+    type: string
+  catalogURL:
+    type: string
+    format: uri
+  timeout:
+    type: integer
+    default: 600
