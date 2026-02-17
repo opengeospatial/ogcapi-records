@@ -1,0 +1,124 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-02-16</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Metadata</title>
+  <title type="title-part" format="text/plain" language="en" script="Latn">Part 3: XML schema implementation for fundamental concepts</title>
+  <title type="main" format="text/plain" language="en" script="Latn">Geographic information - Metadata - Part 3: XML schema implementation for fundamental concepts</title>
+  <title type="title-intro" format="text/plain" language="fr" script="Latn">Information géographique</title>
+  <title type="title-main" format="text/plain" language="fr" script="Latn">Métadonnées</title>
+  <title type="title-part" format="text/plain" language="fr" script="Latn">Partie 3: Mise en oeuvre par des schémas XML</title>
+  <title type="main" format="text/plain" language="fr" script="Latn">Information géographique - Métadonnées - Partie 3: Mise en oeuvre par des schémas XML</title>
+  <uri type="src">https://www.iso.org/standard/80874.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:80874:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/08/08/80874.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19115-3</docidentifier>
+  <docidentifier type="iso-reference">ISO 19115-3(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19115:-3:stage-60.60</docidentifier>
+  <docnumber>19115</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Organization for Standardization</name>
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <status>
+    <stage>60</stage>
+    <substage>60</substage>
+  </status>
+  <copyright>
+    <from>2023</from>
+    <owner>
+      <organization>
+        <name>ISO</name>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/TS 19115-3:2016</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/TS 19115-3:2016</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      <fetched>2026-02-16</fetched>
+      <title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Metadata</title>
+      <title type="title-part" format="text/plain" language="en" script="Latn">Part 3: XML schema implementation for fundamental concepts</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Geographic information - Metadata - Part 3: XML schema implementation for fundamental concepts</title>
+      <title type="title-intro" format="text/plain" language="fr" script="Latn">Information géographique</title>
+      <title type="title-main" format="text/plain" language="fr" script="Latn">Métadonnées</title>
+      <title type="title-part" format="text/plain" language="fr" script="Latn">Partie 3: Mise en oeuvre par des schémas XML</title>
+      <title type="main" format="text/plain" language="fr" script="Latn">Information géographique - Métadonnées - Partie 3: Mise en oeuvre par des schémas XML</title>
+      <uri type="src">https://www.iso.org/standard/80874.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:80874:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/08/08/80874.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19115-3:2023</docidentifier>
+      <docidentifier type="iso-reference">ISO 19115-3:2023(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso:19115:-3:stage-60.60</docidentifier>
+      <docnumber>19115</docnumber>
+      <date type="published">
+        <on>2023-08</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          <name>International Organization for Standardization</name>
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <edition>1</edition>
+      <language>en</language>
+      <language>fr</language>
+      <script>Latn</script>
+      <abstract format="text/plain" language="en" script="Latn">This document defines an integrated XML implementation of ISO 19115-1 and ISO 19115-2 by defining the following artefacts:
+—     a set of XML schema required to validate metadata instance documents conforming to conceptual model elements defined in ISO 19115-1 and ISO 19115-2; and
+—     a set of ISO/IEC 19757-3 (Schematron) rules that implement validation constraints in the ISO 19115-1 and ISO 19115-2 UML models that are not validated by the XML schema.
+This document describes the procedure used to generate XML schemas from ISO geographic information conceptual models related to metadata. The XML schemas are generated directly from the conceptual UML model (8.5).</abstract>
+      <abstract format="text/plain" language="fr" script="Latn">Le présent document définit une implémentation XML intégrée des normes ISO 19115-1 et ISO 19115-2 en précisant les artefacts suivants:
+—     un ensemble de schémas XML requis pour valider les documents d'instance de métadonnées conformes aux éléments de modèle conceptuel définis dans l'ISO 19115-1 et l'ISO 19115-2; et
+—     un ensemble de règles basées sur l'ISO/IEC 19757-3 (Schematron) qui, dans les modèles UML de l'ISO 19115-1 et l'ISO 19115-2, implémentent des contraintes de validation qui ne sont pas validées par le schéma XML.
+Le présent document décrit la procédure utilisée pour générer des schémas XML à partir de modèles ISO conceptuels d'information géographique. Les schémas XML sont générés directement à partir du modèle UML conceptuel (8.5).</abstract>
+      <status>
+        <stage>60</stage>
+        <substage>60</substage>
+      </status>
+      <copyright>
+        <from>2023</from>
+        <owner>
+          <organization>
+            <name>ISO</name>
+          </organization>
+        </owner>
+      </copyright>
+      <relation type="obsoletes">
+        <bibitem type="standard">
+          <formattedref format="text/plain">ISO/TS 19115-3:2016</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/TS 19115-3:2016</docidentifier>
+        </bibitem>
+      </relation>
+      <place>Geneva</place>
+    </bibitem>
+  </relation>
+  <place>Geneva</place>
+  <ext schema-version="v1.0.3">
+    <doctype>international-standard</doctype>
+    <editorialgroup>
+      <technical-committee number="211" type="TC" identifier="ISO/TC 211">Geographic information/Geomatics</technical-committee>
+    </editorialgroup>
+    <ics>
+      <code>35.240.70</code>
+      <text>IT applications in science</text>
+    </ics>
+    <structuredidentifier type="ISO">
+      <project-number>80874</project-number>
+    </structuredidentifier>
+  </ext>
+</bibdata>

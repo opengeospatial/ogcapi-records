@@ -1,0 +1,13 @@
+---
+name: hopCount
+description: |-
+  The maximum number of message hops before the search is terminated.  Each
+  catalog decrements the value by one when the search request is received
+  and does not propagate the search to the next federated catalog if the
+  hopCount is zero.
+in: query
+required: false
+schema: 
+  type: integer
+explode: true
+style: form

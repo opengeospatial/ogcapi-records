@@ -1,0 +1,69 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-02-16</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Reference model</title>
+  <title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Fundamentals</title>
+  <title type="main" format="text/plain" language="en" script="Latn">Geographic information - Reference model - Part 1: Fundamentals</title>
+  <title type="title-intro" format="text/plain" language="fr" script="Latn">Information géographique</title>
+  <title type="title-main" format="text/plain" language="fr" script="Latn">Modèle de référence</title>
+  <title type="title-part" format="text/plain" language="fr" script="Latn">Partie 1: Principes de base</title>
+  <title type="main" format="text/plain" language="fr" script="Latn">Information géographique - Modèle de référence - Partie 1: Principes de base</title>
+  <uri type="src">https://www.iso.org/standard/59164.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:59164:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/05/91/59164.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19101-1:2014</docidentifier>
+  <docidentifier type="iso-reference">ISO 19101-1:2014(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19101:-1:stage-90.20</docidentifier>
+  <docnumber>19101</docnumber>
+  <date type="published">
+    <on>2014-11</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Organization for Standardization</name>
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">ISO 19101-1:2014 defines the reference model for standardization in the field of geographic information. This reference model describes the notion of interoperability and sets forth the fundamentals by which this standardization takes place.
+Although structured in the context of information technology and information technology standards, ISO 19101-1:2014 is independent of any application development method or technology implementation approach.</abstract>
+  <abstract format="text/plain" language="fr" script="Latn">l'ISO 19101-1:2014 définit le modèle de référence pour la normalisation dans le domaine de l'information géographique. Ce modèle de référence décrit la notion d'interopérabilité et établit les principes de base sur lesquels s'appuiera la normalisation.
+Bien que l'ISO 19101-1:2014 soit définie dans le contexte des technologies de l'information et des normes s'y rapportant, elle ne dépend d'aucune méthode de développement d'applications, ni d'aucune approche de mise en ?uvre de technologie.</abstract>
+  <status>
+    <stage>90</stage>
+    <substage>20</substage>
+  </status>
+  <copyright>
+    <from>2014</from>
+    <owner>
+      <organization>
+        <name>ISO</name>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19101:2002</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19101:2002</docidentifier>
+    </bibitem>
+  </relation>
+  <place>Geneva</place>
+  <ext schema-version="v1.0.3">
+    <doctype>international-standard</doctype>
+    <editorialgroup>
+      <technical-committee number="211" type="TC" identifier="ISO/TC 211">Geographic information/Geomatics</technical-committee>
+    </editorialgroup>
+    <ics>
+      <code>35.240.70</code>
+      <text>IT applications in science</text>
+    </ics>
+    <structuredidentifier type="ISO">
+      <project-number>59164</project-number>
+    </structuredidentifier>
+  </ext>
+</bibdata>

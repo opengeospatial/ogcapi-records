@@ -1,0 +1,242 @@
+== Requirements Class "Federated Search"
+
+=== Request 
+
+==== Configured federated catalogs
+
+The following table defines the resources and operations related to the configured federated catalogs.
+
+[#resources,reftext='{table-caption} {counter:table-num}']
+.Federated Catalog Resources
+[cols="30,17,17,17,17",options="header"]
+|===
+|Resource path|GET |POST |PUT |DELETE
+|/collections/{catalogId}/federatedCatalogs
+|Get the list of configured federated catalogs.
+|Add a new catalog to the list of configured federated catalogs.
+|N/A
+|N/A
+|/collections/{catalogId}/federatedCatalogs/{fedCatId}
+|Get the description of the federated catalog with id {fedCatId}.
+|N/A
+|Update an existing federated catalog entry with id {fedCatId}.
+|Remove an existing federated catalog entry with id {fedCatId}.
+|===
+
+NOTE: Access control is recommended for the POST, PUT and DELETE operations.
+
+The following schema defines the description of federated catalog:
+
+.federatedCatalog.yaml
+----
+type: object
+required:
+  - id
+  - catalogURL
+properties:
+  id:
+    type: string
+  catalogURL:
+    type: string
+    format: uri
+  timeout:
+    type: integer
+    default: 600
+----
+
+The following schema defines schema for the list of federated catalogs:
+
+.federatedCatalogs.yaml
+----
+type: array
+items:
+  $ref: 'federatedCatalog.yaml'
+----
+
+==== Query parameters
+
+These are the query parameter that can be appended to the `items` endpoing to trigger a distributed search.
+
+===== Parameter distributedSearch
+
+----
+name: distributedSearch
+description: |-
+  Indicated whether the query should be distributed or not.  If the value is
+  true then the other distributed search parameters are taken into account.
+  Otherwise they are ignored.
+in: query
+required: false
+schema: 
+  type: boolean
+  default: false
+explode: true
+style: form
+----
+
+===== Parameter hopCount
+
+----
+name: hopCount
+description: |-
+  The maximum number of message hops before the search is terminated.  Each
+  catalog decrements the value by one when the search request is received
+  and does not propagate the search to the next federated catalog if the
+  hopCount is zero.
+in: query
+required: false
+schema: 
+  type: integer
+explode: true
+style: form
+----
+
+===== Parameter clientId
+
+----
+name: clientId
+description: |-
+  An identifier that uniquely identifies the requestor.
+in: query
+required: false
+schema: 
+  type: string
+  format: uri
+explode: true
+style: form
+----
+
+===== Parameter distributedSearchId
+
+----
+name: distributedSearchId
+description: |-
+  An identifier that uniquely identifies a complete client initiated
+  distributed search sequence/session.
+in: query
+required: false
+schema: 
+  type: string
+  format: uri
+explode: true
+style: form
+----
+
+===== Parameter distributedSearchIdTimeout
+
+----
+name: distributedSearchIdTimeout
+description: |-
+  Defines how long (in seconds) the distributedSearchId should be valid,
+  meaning how long a server involved in a distributed search should minimally
+  store information related to the distributedSearchId.
+in: query
+required: false
+schema: 
+  type: integer
+  default: 600
+explode: true
+style: form
+----
+
+===== Parameter federatedCatalogs
+
+----
+name: federatedCatalogs
+description: |-
+  Without this parameter a search will be distributed to all configured
+  federated catalogs.
+  This parameter can be used to restrict the catalogs, from the complete
+  lost of configured catalogs, to which a federated search will be
+  distributed.
+in: query
+required: false
+schema: 
+  type: array
+  items:
+    type: string
+    pattern: (fid[,timeout])
+explode: true
+style: form
+----
+
+=== Response
+
+.federatedSearchResults.yaml
+----
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - FederatedSearchResults
+  additionalProperties:
+    oneOf:
+      - allOf:
+          - $ref: "https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordJSON.yaml"
+          - type: object
+            properties:
+              elapsedTime:
+                type: integer
+                minimum: 0
+      - $ref: "https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/exception.yaml"
+----
+
+Example:
+
+----
+{
+  "type": "FederatedSearchResults"
+  "fedCat01": {
+    "type": "FeatureCollection",
+    "elapsedTime": 230,
+    "features": [
+      { ... },
+      { ... },
+      .
+      .
+      .
+      { ... }
+    ],
+    "links": [
+      { ... },
+      { ... },
+      .
+      .
+      .
+      { ... }
+    ]
+  },
+  "fedCat02": {
+    "type": "FeatureCollection",
+    "elapsedTime": 137,
+    "features": [
+      { ... },
+      { ... },
+      .
+      .
+      .
+      { ... }
+    ],
+    "links": [
+      { ... },
+      { ... },
+      .
+      .
+      .
+      { ... }
+    ]
+  },
+  "fedCat03": {
+    "elapsedTime": 23,
+    "exceptionReport: {
+      .
+      .
+      .
+    }
+  },
+  .
+  .
+  .
+}
+----

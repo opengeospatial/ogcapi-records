@@ -1,0 +1,62 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-02-16</fetched>
+  <title type="title-main" format="text/plain" language="en" script="Latn">OGC City Geography Markup Language (CityGML) Encoding Standard</title>
+  <title type="main" format="text/plain" language="en" script="Latn">OGC City Geography Markup Language (CityGML) Encoding Standard</title>
+  <uri type="src">http://www.opengis.net/spec/citygml/2.0</uri>
+  <uri type="pdf">https://portal.ogc.org/files/?artifact_id=47842</uri>
+  <docidentifier type="OGC" primary="true">12-019</docidentifier>
+  <date type="published">
+    <on>2012-04-04</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Gerhard Gröger</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Thomas H. Kolbe</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Claus Nagel</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Karl-Heinz Häfele</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Open Geospatial Consortium</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">CityGML is an open data model and XML-based format for the storage and exchange of virtual 3D city models. It is an application schema for the Geography Markup Language version 3.1.1 (GML3), the extendible international standard for spatial data exchange issued by the Open Geospatial Consortium (OGC) and the ISO TC211.
+
+The aim of the development of CityGML is to reach a common definition of the basic entities, attributes, and relations of a 3D city model. This is especially important with respect to the cost-effective sustainable maintenance of 3D city models, allowing the reuse of the same data in different application fields. 
+</abstract>
+  <ext schema-version="v1.0.1">
+    <doctype>standard</doctype>
+    <subdoctype>implementation</subdoctype>
+    <editorialgroup>
+      <committee>technical</committee>
+    </editorialgroup>
+  </ext>
+</bibdata>

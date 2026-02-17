@@ -1,0 +1,5 @@
+== Scope
+
+This document defines federated search capabilities for OARec and/or STAC catalogs.
+
+This document defined extensions to the GetRecords operation to support federated searches.

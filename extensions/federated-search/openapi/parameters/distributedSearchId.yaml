@@ -1,0 +1,12 @@
+---
+name: distributedSearchId
+description: |-
+  An identifier that uniquely identifies a complete client initiated
+  distributed search sequence/session.
+in: query
+required: false
+schema: 
+  type: string
+  format: uri
+explode: true
+style: form
