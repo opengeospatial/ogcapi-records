@@ -669,7 +669,7 @@ include::requirements/building-blocks/record-collection/REQ_links-catalog-series
 
 include::recommendations/building-blocks/record-collection/REC_links-catalog-series.adoc[]
 
-===== Hierarchy if related catalog
+===== Hierarchy of related catalog
 
 include::requirements/building-blocks/record-collection/REQ_links-catalog-hierarchy.adoc[]
 
