@@ -1,0 +1,10 @@
+[appendix,obligation=normative]
+[[annex_ats]]
+== Conformance Class Abstract Test Suite (Normative)
+
+[[ats_stac-extensions]]
+=== STAC Extensions
+
+[[ats_stac-items]]
+=== STAC Items
+

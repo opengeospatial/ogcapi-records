@@ -1,0 +1,10 @@
+[[rc_stac-items]]
+[requirements_class]
+====
+[%metadata]
+identifier:: https://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac-items
+subject:: Web API
+inherit:: https://www.opengis.net/spec/ogcapi-records-1/1.0/req/core
+inherit:: https://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac-extensions
+requirement:: /req/stac-items/conformance
+====

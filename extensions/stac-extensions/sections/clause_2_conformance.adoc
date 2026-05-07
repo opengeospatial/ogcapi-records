@@ -1,0 +1,30 @@
+== Conformance
+
+=== Overview
+
+Conformance with this Standard shall be checked using the tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to claim conformance, are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+
+This standard defines 4 conformance classes:
+
+* <<rc_stac-extensions,STAC Extensions>>,
+* <<rc_stac-items,STAC Items>>.
+
+The standardization target of these conformance classes is "Document model."
+
+The "STAC Extensions" conformance class indicates that a server is capable of generating OGC API Records records that include the necessary elements of a STAC extension but the record itself is not a fully compliant STAC entity.  In this way a OGC API Records server can take advantange of the large ecosystem of STAC extensions without having to generate fully compliant STAC items.
+
+The "STAC Items" conformance class indicates that a server is capable of generating OGC API Records records that a fully compliant STAC entities and include all the necessary members that a STAC client would expect to see in a server response.
+
+=== Conformance testing
+
+Conformance with this Standard shall be checked using all the relevant tests specified in <<annex_ats,Annex A>> of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+
+[#deployment_conf_class_uris,reftext='{table-caption} {counter:table-num}']
+.Conformance class URIs
+[cols="30,70",options="header"]
+|===
+|Conformance class |URI
+|<<ats_stac-extensions,STAC Extensions>> |http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions
+|<<ats_stac-items,STAC Items>> |http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-items
+|===
+

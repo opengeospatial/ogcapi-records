@@ -1,0 +1,85 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="main" format="text/plain">URI Template</title>
+  <uri type="src">https://www.rfc-editor.org/info/rfc6570</uri>
+  <docidentifier type="IETF" primary="true">RFC 6570</docidentifier>
+  <docidentifier type="DOI">10.17487/RFC6570</docidentifier>
+  <docnumber>RFC6570</docnumber>
+  <date type="published">
+    <on>2012-03</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">J. Gregorio</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">R. Fielding</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">M. Hadley</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">M. Nottingham</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">D. Orchard</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>RFC Publisher</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="authorizer"/>
+    <organization>
+      <name>RFC Series</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/html" language="en" script="Latn">
+    <p>A URI Template is a compact sequence of characters for describing a range of Uniform Resource Identifiers through variable expansion. This specification defines the URI Template syntax and the process for expanding a URI Template into a URI reference, along with guidelines for the use of URI Templates on the Internet. [STANDARDS-TRACK]</p>
+  </abstract>
+  <series>
+    <title format="text/plain">RFC</title>
+    <number>6570</number>
+  </series>
+  <series type="stream">
+    <title format="text/plain">IETF</title>
+  </series>
+  <keyword>template</keyword>
+  <keyword>Uniform Resource Identifier</keyword>
+  <keyword>URI</keyword>
+  <keyword>URI Template</keyword>
+  <keyword>Internationalized Resource Identifier</keyword>
+  <keyword>IRI</keyword>
+  <keyword>IRI Template</keyword>
+  <ext schema-version="v1.0.1">
+    <stream>IETF</stream>
+  </ext>
+</bibdata>

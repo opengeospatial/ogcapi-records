@@ -1,0 +1,89 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="main" format="text/plain">The GeoJSON Format</title>
+  <uri type="src">https://www.rfc-editor.org/info/rfc7946</uri>
+  <docidentifier type="IETF" primary="true">RFC 7946</docidentifier>
+  <docidentifier type="DOI">10.17487/RFC7946</docidentifier>
+  <docnumber>RFC7946</docnumber>
+  <date type="published">
+    <on>2016-08</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">H. Butler</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">M. Daly</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">A. Doyle</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">S. Gillies</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">S. Hagen</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">T. Schaub</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>RFC Publisher</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="authorizer"/>
+    <organization>
+      <name>RFC Series</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/html" language="en" script="Latn">
+    <p>GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the manner in which they are combined to represent data about geographic features, their properties, and their spatial extents. GeoJSON uses a geographic coordinate reference system, World Geodetic System 1984, and units of decimal degrees.</p>
+  </abstract>
+  <series>
+    <title format="text/plain">RFC</title>
+    <number>7946</number>
+  </series>
+  <series type="stream">
+    <title format="text/plain">IETF</title>
+  </series>
+  <keyword>JSON</keyword>
+  <keyword>Geospatial</keyword>
+  <keyword>JavaScript Object Notation</keyword>
+  <ext schema-version="v1.0.1">
+    <stream>IETF</stream>
+  </ext>
+</bibdata>

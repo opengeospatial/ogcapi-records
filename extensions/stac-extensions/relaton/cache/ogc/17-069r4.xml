@@ -1,0 +1,58 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">OGC API</title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Features</title>
+  <title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Core corrigendum</title>
+  <title type="main" format="text/plain" language="en" script="Latn">OGC API - Features - Part 1: Core corrigendum</title>
+  <uri type="src">http://www.opengis.net/doc/IS/ogcapi-features-1/1.0.1</uri>
+  <uri type="html">https://docs.ogc.org/is/17-069r4/17-069r4.html</uri>
+  <docidentifier type="OGC" primary="true">17-069r4</docidentifier>
+  <date type="published">
+    <on>2022-05-11</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Clemens Portele</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Panagiotis (Peter) A. Vretanos</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Charles Heazel</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Open Geospatial Consortium</name>
+    </organization>
+  </contributor>
+  <edition>4</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This document specifies the behavior of Web APIs that provide access to features in a dataset in a manner independent of the underlying data store. This standard defines discovery and query operations.
+
+Discovery operations enable clients to interrogate the API, including the API definition and metadata about the feature collections provided by the API, to determine the capabilities of the API and retrieve information about available distributions of the dataset.
+
+Query operations enable clients to retrieve features from the underlying data store based upon simple selection criteria, defined by the client.</abstract>
+  <ext schema-version="v1.0.1">
+    <doctype>standard</doctype>
+    <subdoctype>implementation</subdoctype>
+    <editorialgroup>
+      <committee>technical</committee>
+    </editorialgroup>
+  </ext>
+</bibdata>

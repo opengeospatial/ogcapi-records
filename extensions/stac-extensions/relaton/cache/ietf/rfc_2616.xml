@@ -1,0 +1,135 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="main" format="text/plain">Hypertext Transfer Protocol -- HTTP/1.1</title>
+  <uri type="src">https://www.rfc-editor.org/info/rfc2616</uri>
+  <docidentifier type="IETF" primary="true">RFC 2616</docidentifier>
+  <docidentifier type="DOI">10.17487/RFC2616</docidentifier>
+  <docnumber>RFC2616</docnumber>
+  <date type="published">
+    <on>1999-06</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">R. Fielding</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">J. Gettys</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">J. Mogul</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">H. Frystyk</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">L. Masinter</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">P. Leach</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">T. Berners-Lee</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>RFC Publisher</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="authorizer"/>
+    <organization>
+      <name>RFC Series</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/html" language="en" script="Latn">
+    <p>HTTP has been in use by the World-Wide Web global information initiative since 1990. This specification defines the protocol referred to as "HTTP/1.1", and is an update to RFC 2068. [STANDARDS-TRACK]</p>
+  </abstract>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref format="text/plain">RFC7230</formattedref>
+      <docidentifier type="IETF" primary="true">RFC7230</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref format="text/plain">RFC7231</formattedref>
+      <docidentifier type="IETF" primary="true">RFC7231</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref format="text/plain">RFC7232</formattedref>
+      <docidentifier type="IETF" primary="true">RFC7232</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref format="text/plain">RFC7233</formattedref>
+      <docidentifier type="IETF" primary="true">RFC7233</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref format="text/plain">RFC7234</formattedref>
+      <docidentifier type="IETF" primary="true">RFC7234</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref format="text/plain">RFC7235</formattedref>
+      <docidentifier type="IETF" primary="true">RFC7235</docidentifier>
+    </bibitem>
+  </relation>
+  <series>
+    <title format="text/plain">RFC</title>
+    <number>2616</number>
+  </series>
+  <series type="stream">
+    <title format="text/plain">IETF</title>
+  </series>
+  <keyword>HTTP</keyword>
+  <keyword>Hypertext Transfer Protocol</keyword>
+  <keyword>World Wide Web</keyword>
+  <keyword>WWW</keyword>
+  <keyword>hypermedia</keyword>
+  <ext schema-version="v1.0.1">
+    <stream>IETF</stream>
+  </ext>
+</bibdata>

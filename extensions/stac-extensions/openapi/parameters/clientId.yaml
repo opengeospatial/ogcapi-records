@@ -1,0 +1,11 @@
+---
+name: clientId
+description: |-
+  An identifier that uniquely identifies the requestor.
+in: query
+required: false
+schema: 
+  type: string
+  format: uri
+explode: true
+style: form

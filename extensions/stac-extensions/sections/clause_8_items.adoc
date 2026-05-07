@@ -1,0 +1,13 @@
+[[clause_stac-items]]
+
+== Requirements Class "STAC Items"
+
+=== Overview
+  
+include::../requirements/requirements_class_stac-items.adoc[]
+
+=== Generating valid STAC items 
+
+include::../requirements/stac-items/REQ_conformance.adoc[]
+
+=== Examples

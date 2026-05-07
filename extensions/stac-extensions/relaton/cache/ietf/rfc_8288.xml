@@ -1,0 +1,48 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="main" format="text/plain">Web Linking</title>
+  <uri type="src">https://www.rfc-editor.org/info/rfc8288</uri>
+  <docidentifier type="IETF" primary="true">RFC 8288</docidentifier>
+  <docidentifier type="DOI">10.17487/RFC8288</docidentifier>
+  <docnumber>RFC8288</docnumber>
+  <date type="published">
+    <on>2017-10</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">M. Nottingham</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>RFC Publisher</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="authorizer"/>
+    <organization>
+      <name>RFC Series</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/html" language="en" script="Latn">
+    <p>This specification defines a model for the relationships between resources on the Web ("links") and the type of those relationships ("link relation types").</p>
+    <p>It also defines the serialisation of such links in HTTP headers with the Link header field.</p>
+  </abstract>
+  <series>
+    <title format="text/plain">RFC</title>
+    <number>8288</number>
+  </series>
+  <series type="stream">
+    <title format="text/plain">IETF</title>
+  </series>
+  <keyword>link relation</keyword>
+  <ext schema-version="v1.0.1">
+    <stream>IETF</stream>
+  </ext>
+</bibdata>

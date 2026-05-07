@@ -1,0 +1,36 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">The Specification Model</title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Standard for Modular specifications</title>
+  <title type="main" format="text/plain" language="en" script="Latn">The Specification Model - Standard for Modular specifications</title>
+  <uri type="pdf">https://docs.ogc.org/pol/08-131r3/08-131r3/pdf</uri>
+  <docidentifier type="OGC" primary="true">08-131r3</docidentifier>
+  <date type="published">
+    <on>2009-10-19</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Policy SWG</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Open Geospatial Consortium</name>
+    </organization>
+  </contributor>
+  <edition>3</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This standard contains requirements for writing standards to be used for any document whose
+eventual purpose is the specification of requirements for software, services or data structures. </abstract>
+  <ext schema-version="v1.0.1">
+    <doctype>standard</doctype>
+    <editorialgroup>
+      <committee>technical</committee>
+    </editorialgroup>
+  </ext>
+</bibdata>

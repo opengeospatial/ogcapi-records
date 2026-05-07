@@ -1,0 +1,64 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">OGC API</title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Records</title>
+  <title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Core</title>
+  <title type="main" format="text/plain" language="en" script="Latn">OGC API - Records - Part 1: Core</title>
+  <uri type="src">http://www.opengis.net/doc/IS/ogcapi-records-1/1.0</uri>
+  <uri type="html">https://docs.ogc.org/is/20-004r1/20-004r1.html</uri>
+  <docidentifier type="OGC" primary="true">20-004r1</docidentifier>
+  <date type="published">
+    <on>2025-05-02</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Panagiotis (Peter) A. Vretanos</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Tom Kralidis</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Angelos Tzotsos</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Charles Heazel </completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Open Geospatial Consortium</name>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">The content of a Record makes a resource discoverable by providing summary information (metadata) about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, styles, assets, machine models, services, processes, widgets, notebooks etc.
+
+</abstract>
+  <ext schema-version="v1.0.1">
+    <doctype>standard</doctype>
+    <subdoctype>implementation</subdoctype>
+    <editorialgroup>
+      <committee>technical</committee>
+    </editorialgroup>
+  </ext>
+</bibdata>

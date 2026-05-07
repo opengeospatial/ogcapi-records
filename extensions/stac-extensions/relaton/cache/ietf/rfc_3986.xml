@@ -1,0 +1,78 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="main" format="text/plain">Uniform Resource Identifier (URI): Generic Syntax</title>
+  <uri type="src">https://www.rfc-editor.org/info/rfc3986</uri>
+  <docidentifier type="IETF" primary="true">RFC 3986</docidentifier>
+  <docidentifier type="DOI">10.17487/RFC3986</docidentifier>
+  <docnumber>RFC3986</docnumber>
+  <date type="published">
+    <on>2005-01</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">T. Berners-Lee</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">R. Fielding</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">L. Masinter</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>RFC Publisher</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="authorizer"/>
+    <organization>
+      <name>RFC Series</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/html" language="en" script="Latn">
+    <p>A Uniform Resource Identifier (URI) is a compact sequence of characters that identifies an abstract or physical resource. This specification defines the generic URI syntax and a process for resolving URI references that might be in relative form, along with guidelines and security considerations for the use of URIs on the Internet. The URI syntax defines a grammar that is a superset of all valid URIs, allowing an implementation to parse the common components of a URI reference without knowing the scheme-specific requirements of every possible identifier. This specification does not define a generative grammar for URIs; that task is performed by the individual specifications of each URI scheme. [STANDARDS-TRACK]</p>
+  </abstract>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain">RFC1738</formattedref>
+      <docidentifier type="IETF" primary="true">RFC1738</docidentifier>
+    </bibitem>
+  </relation>
+  <series>
+    <title format="text/plain">STD</title>
+    <number>66</number>
+  </series>
+  <series>
+    <title format="text/plain">RFC</title>
+    <number>3986</number>
+  </series>
+  <series type="stream">
+    <title format="text/plain">IETF</title>
+  </series>
+  <keyword>Internet protocol</keyword>
+  <keyword>IP</keyword>
+  <keyword>uniform resource identifier</keyword>
+  <keyword>URI</keyword>
+  <keyword>www</keyword>
+  <keyword>world wide web</keyword>
+  <ext schema-version="v1.0.1">
+    <stream>IETF</stream>
+  </ext>
+</bibdata>

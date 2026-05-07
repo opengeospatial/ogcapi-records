@@ -1,0 +1,8 @@
+[[req_stac-extensions_stac-extensions-conformance]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac-extensisons/stac-extensions-conformance
+part:: A record SHALL conform to all requirements of each STAC extension listed in the "stac_extensions" member.
+====

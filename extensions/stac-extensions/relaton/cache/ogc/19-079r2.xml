@@ -1,0 +1,50 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">OGC API</title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Features</title>
+  <title type="title-part" format="text/plain" language="en" script="Latn">Part 3: Filtering</title>
+  <title type="main" format="text/plain" language="en" script="Latn">OGC API - Features - Part 3: Filtering</title>
+  <uri type="src">http://www.opengis.net/doc/IS/ogcapi-features-3/1.0</uri>
+  <uri type="html">https://docs.ogc.org/is/19-079r2/19-079r2.html</uri>
+  <docidentifier type="OGC" primary="true">19-079r2</docidentifier>
+  <date type="published">
+    <on>2024-07-26</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Panagiotis (Peter) A. Vretanos</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Clemens Portele</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Open Geospatial Consortium</name>
+    </organization>
+  </contributor>
+  <edition>2</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">OGC API Standards define modular API building blocks to spatially enable Web APIs in a consistent way. The OpenAPI specification is used to define the API building blocks.
+
+OGC API - Features provides API building blocks to create, modify and query features on the Web. OGC API - Features is comprised of multiple parts. Each part is a separate standard.
+
+A fundamental operation performed on a collection of features is that of filtering in order to obtain a subset of the data which contains feature instances that satisfy some filtering criteria. Part three of the OGC API - Features Standard defines query parameters (filter, filter-lang, filter-crs) to specify filter criteria in a request to an API and the Queryables resource that declares the properties of data in a collection that can be used in filter expressions.</abstract>
+  <ext schema-version="v1.0.1">
+    <doctype>standard</doctype>
+    <subdoctype>implementation</subdoctype>
+    <editorialgroup>
+      <committee>technical</committee>
+    </editorialgroup>
+  </ext>
+</bibdata>
