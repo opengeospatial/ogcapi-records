@@ -1,0 +1,23 @@
+== Scope
+
+The Spatial-Temporal Asset Catalog standard defines a rich ecosystem of extensions.  Since STAC items and OGC API Records records are closely related it would be substantion benefit if an OARec implementation could also support STAC extensions.  Some relevant STAC extensions include:
+
+* Classification
+* Datacube
+* EO
+* File Info
+* Forecast
+* Grid
+* MLM
+* Point Cloud
+* Product
+* Projection (somewhat in conflict with JSON-FG, I guess)
+* Raster
+* Scientific
+* Table
+* Versioning
+
+This standard defines the requirements that allow an OARec implementation to
+make use of STAC extensions.
+
+This standard further defines requirements for allowing an OARec server to generate fully valid STAC items.

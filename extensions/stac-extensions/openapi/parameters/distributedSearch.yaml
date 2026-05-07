@@ -1,0 +1,13 @@
+---
+name: distributedSearch
+description: |-
+  Indicated whether the query should be distributed or not.  If the value is
+  true then the other distributed search parameters are taken into account.
+  Otherwise they are ignored.
+in: query
+required: false
+schema: 
+  type: boolean
+  default: false
+explode: true
+style: form

@@ -1,0 +1,62 @@
+= OGC API - Records - Part 5: STAC Extensions
+:doctype: standard
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 1.0
+:external-id: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
+:docnumber: 26-026
+:received-date: 2029-03-30
+:issued-date: 2029-03-30
+:published-date: 2029-03-30
+:fullname: Matthias Mohr
+:fullname_2: Panagiotis (Peter) A. Vretanos
+:fullname_3: Angelos Tzotsos
+:fullname_4: Tom Kralidis
+:docsubtype: Interface
+:keywords: ogcdoc, OGC document, API, openapi, html, STAC, extension
+:submitting-organizations: moreGeo GmbH; CubeWerx Inc.; Open Source Geospatial Foundation; Environment and Climate Change Canada
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf
+:local-cache-only:
+:data-uri-image:
+:pdf-uri: ./document.pdf
+:xml-uri: ./document.xml
+:doc-uri: ./document.doc
+:edition: 1.0
+
+////
+Make sure to complete each included document
+////
+
+include::sections/clause_0_front_material.adoc[]
+
+include::sections/clause_1_scope.adoc[]
+
+include::sections/clause_2_conformance.adoc[]
+
+include::sections/clause_3_references.adoc[]
+
+include::sections/clause_4_terms_and_definitions.adoc[]
+
+include::sections/clause_5_conventions.adoc[]
+
+include::sections/clause_6_overview.adoc[]
+
+include::sections/clause_7_extensions.adoc[]
+
+include::sections/clause_8_items.adoc[]
+
+////
+add or remove annexes after "A" as necessary
+////
+include::sections/annex_ats.adoc[]
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+include::sections/annex_history.adoc[]
+
+include::sections/annex_bibliography.adoc[]

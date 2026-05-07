@@ -1,0 +1,9 @@
+[[req_stac-extensions_member]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac-extensions/member
+part:: Each record that includes STAC extensions SHALL, include the "stac_extensions" member.
+part:: The "stac_extensions" member SHALL include the URI of each extension used in the containing record.
+====

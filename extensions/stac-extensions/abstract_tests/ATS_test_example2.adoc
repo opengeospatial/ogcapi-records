@@ -1,0 +1,21 @@
+[[ats_core_http]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/core/http
+target:: /req/req-class-a/req-name-2
+test-purpose:: Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.
+
+[.component,class=test method]
+=====
+[.component,class=step]
+--
+A sequential multi-step test method can be documented as shown here. This is the first step.
+--
+
+[.component,class=step]
+--
+This is the second step.
+--
+=====
+====

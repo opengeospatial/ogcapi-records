@@ -1,0 +1,109 @@
+[[clause_stac-extensions]]
+== Requirements Class "STAC Extensions"
+
+=== Overview
+
+include::../requirements/requirements_class_stac-extensions.adoc[]
+
+This conformance class defines the requirements for extending an OARec record to use https://stac-extensions.github.io/[STAC Extensions].
+
+=== Using STAC extensions in an OARec record
+
+include::../requirements/stac-extensions/REQ_conformance.adoc[]
+
+include::../requirements/stac-extensions/REQ_member.adoc[]
+
+include::../requirements/stac-extensions/REQ_stac-extensions-conformance.adoc[]
+
+=== Examples
+
+----
+{
+  "id": "b7d2fd24-8cd8-4965-a997-69eb1a987b5a",
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions"
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/contacts/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/external-ids/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "time": {
+    "interval": [null, null]
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [3.37087, 50.7539],
+        [3.37087, 53.4658],
+        [7.21097, 53.4658],
+        [7.21097, 50.7539],
+        [3.37087, 50.7539]
+      ]
+    ]
+  },
+  "properties": {
+    "proj:code": "EPSG:4326",
+    "created": "2019-04-16Z",
+    "updated": "2025-06-16T12:39:58Z",
+    "type": "dataset",
+    "title": "Zonpotentie velden",
+    "description": "...",
+    "contacts": [
+      {
+        "name": null,
+        "organization": "Atlas Leefomgeving",
+        "emails": [
+          {
+            "value": "atlasleefomgeving@rivm.nl"
+          }
+        ],
+        "roles": ["resourceProvider"]
+      }
+    ],
+    "externalIds": [
+      {
+        "scheme": "default",
+        "value": "b7d2fd24-8cd8-4965-a997-69eb1a987b5a"
+      }
+    ],
+    "themes": [
+      {
+        "concepts": [
+          {"id": "zonnepanelen" },
+          {"id": "energie"}
+        ],
+        "scheme": null
+      }
+    ]
+  },
+  "links": [
+    {
+      "type": "application/json",
+      "rel": "root",
+      "title": "The landing page of this server as JSON",
+      "href": "https://demo.pygeoapi.io/master?f=json"
+    },
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "title": "This document as JSON",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=json"
+    },
+    {
+      "rel": "data",
+        "type": "image/tiff; application=geotiff",
+        "title": "The data as GeoTIFF",
+        "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a/data?f=geotiff",
+        "file:size": 123456789,
+        "file:checksum": "12209cbc07c3f991725836a3aa2a581ca2029198aa420b9d99bc0e131d9f3e2cbe47",
+        "file:local_path": "example.tif"
+    }
+  ]
+}
+----

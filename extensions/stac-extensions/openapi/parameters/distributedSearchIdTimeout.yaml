@@ -1,0 +1,13 @@
+---
+name: distributedSearchIdTimeout
+description: |-
+  Defines how long (in seconds) the distributedSearchId should be valid,
+  meaning how long a server involved in a distributed search should minimally
+  store information related to the distributedSearchId.
+in: query
+required: false
+schema: 
+  type: integer
+  default: 600
+explode: true
+style: form

@@ -1,0 +1,58 @@
+{
+  "type": "FederatedSearchResults",
+  "fid01": {
+    "type": "FeatureCollection",
+    "elapsedTime": 230,
+    "numberMatched": 300,
+    "numberReturned": 300,
+    "features": [
+      { ... },
+      { ... },
+      .
+      .
+      .
+      { ... }
+    ],
+    "links": [
+      { ... },
+      { ... },
+      .
+      .
+      .
+      { ... }
+    ]
+  },
+  "fid02": {
+    "type": "FeatureCollection",
+    "numberMatched": 1310,
+    "numberReturned": 1310,
+    "elapsedTime": 137,
+    "features": [
+      { ... },
+      { ... },
+      .
+      .
+      .
+      { ... }
+    ],
+    "links": [
+      { ... },
+      { ... },
+      .
+      .
+      .
+      { ... }
+    ]
+  },
+  "fid03": {
+    "elapsedTime": 23,
+    "exceptionReport": {
+      .
+      .
+      .
+    }
+  },
+  .
+  .
+  .
+}

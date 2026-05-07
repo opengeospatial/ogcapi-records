@@ -1,0 +1,18 @@
+---
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - FederatedSearchResults
+  additionalProperties: 
+    oneOf:
+      - allOf:
+          - $ref: "https://schemas.opengis.net/ogcapi/records/part1/1.0/openapi/schemas/recordJSON.yaml"
+          - type: object
+            properties:
+              elapsedTime:
+                type: integer
+                minimum: 0
+      - $ref: "https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/exception.yaml"
+

@@ -1,0 +1,53 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-05-06</fetched>
+  <title type="main" format="text/plain">The JavaScript Object Notation (JSON) Data Interchange Format</title>
+  <uri type="src">https://www.rfc-editor.org/info/rfc7159</uri>
+  <docidentifier type="IETF" primary="true">RFC 7159</docidentifier>
+  <docidentifier type="DOI">10.17487/RFC7159</docidentifier>
+  <docnumber>RFC7159</docnumber>
+  <date type="published">
+    <on>2014-03</on>
+  </date>
+  <contributor>
+    <role type="editor"/>
+    <person>
+      <name>
+        <completename language="en" script="Latn">T. Bray</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>RFC Publisher</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="authorizer"/>
+    <organization>
+      <name>RFC Series</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/html" language="en" script="Latn">
+    <p>JavaScript Object Notation (JSON) is a lightweight, text-based, language-independent data interchange format. It was derived from the ECMAScript Programming Language Standard. JSON defines a small set of formatting rules for the portable representation of structured data.</p>
+    <p>This document removes inconsistencies with other specifications of JSON, repairs specification errors, and offers experience-based interoperability guidance.</p>
+  </abstract>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref format="text/plain">RFC8259</formattedref>
+      <docidentifier type="IETF" primary="true">RFC8259</docidentifier>
+    </bibitem>
+  </relation>
+  <series>
+    <title format="text/plain">RFC</title>
+    <number>7159</number>
+  </series>
+  <series type="stream">
+    <title format="text/plain">IETF</title>
+  </series>
+  <ext schema-version="v1.0.1">
+    <stream>IETF</stream>
+  </ext>
+</bibdata>
