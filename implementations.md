@@ -199,7 +199,16 @@ Single record:
 
 * https://demo.pycsw.org/gisdata/collections/metadata:main/items/urn:uuid:dc9e3c58-932a-11ea-ad6f-823cf448c401
 
-Federated search (Part 4) early implementation is available: https://docs.pycsw.org/en/latest/distributedsearching.html#ogc-api-records
+**Part 4: Federated Search (draft)**
+
+Federated Catalogues:
+
+* https://demo.pycsw.org/cite/collections/metadata:main/federatedCatalogs
+* https://demo.pycsw.org/cite/collections/metadata:main/federatedCatalogs/fedcat01
+
+Federated Catalogue search:
+
+* https://demo.pycsw.org/cite/collections/metadata:main/items?distributedSearch=true&f=json
 
 ## QGIS
 [QGIS](https://qgis.org) is a free and open-source cross-platform desktop geographic information system application that supports viewing, editing, and analysis of geospatial data.  The QGIS MetaSearch core plugin supports OGC API - Records as a search client.
