@@ -5,6 +5,75 @@
 
 include::requirements/requirements_class_harvest.adoc[]
 
-This clause defines requirements for a harvesting operation when the resource type is a record.
+This Standard defines the transaction operation which may be used to “push” records into the catalog in order to make resources discoverable. 
 
-T.B.D.
+This subclause defines the _Harvest_ operation, which is an operation that “pulls” data into the catalog.  This operation only references the resource to be made discoverable and it is the job of the catalog to inspect that resource and create and/or modify the necessary records in the catalog to make that resource discoverable.
+
+The _Harvest_ operation may be performed only once or periodically depending on how the operation is invoked.
+
+The _Harvest_ operation also supports a light-weight mechanism for triggering ansynchronous execution.  Once completed the server can notify the entities specified in the harvest request using protocol such as email, web hooks, etc.
+
+=== Harvest operation
+
+==== Overview
+
+[#harvest_path_summary,reftext='{table-caption} {counter:table-num}']
+.Harvest Operations Paths and Methods
+[cols="40,20,20,20,20",options="header"]
+|===
+|PATH |GET |POST |PUT |DELETE
+|/collections/{collectionId}/harvest |List of harvest requests |Execute a harvest operation |N/A |N/A
+|/collections/{collectionId}/harvest/{hid} |Get text of operation |N/A |Modify harvest parameters |UnHarvest
+|===
+
+==== Harvest a resource
+
+===== Operation
+
+include::requirements/harvest/REQ_post-op.adoc[]
+
+include::requirements/harvest/REQ_post-body.adoc[]
+
+The `source` member can be a reference to any Web-accessible resource including a reference to another catalog.
+
+The `harvestInterval` member is a ISO 8601 duration that indicates to the server that the specified resource should be periodically reharvested.
+
+The `responseHandler` member is an array of URIs to which the harvest response will be sent once the operation has completed.
+
+===== Synchronous response
+
+include::requirements/harvest/REQ_post-response-sync.adoc[]
+
+===== Asynchronous response
+
+Asynchronous operation is triggerd by specifying a values for the `responseHandlers` parameter or by specifying the `response-async` preference using the https://datatracker.ietf.org/doc/html/rfc7240[HTTP Prefer] header.
+
+include::requirements/harvest/REQ_post-response-async.adoc[]
+
+See also: https://docs.ogc.org/is/18-062r2/18-062r2.html#toc33["Retrieve status information about a job"].
+
+=== Get a list of harvest requests
+
+include::requirements/harvest/REQ_get-op.adoc[]
+
+include::requirements/harvest/REQ_get-response.adoc[]
+
+=== Modify an existing harvest request
+
+include::requirements/harvest/REQ_put-op.adoc[]
+
+include::requirements/harvest/REQ_put-body.adoc[]
+
+Depending on the specific parameter changed, this operation may trigger the
+addition, modification or removal of one or more records previously created
+by the harvest operation.
+
+include::requirements/harvest/REQ_put-response.adoc[]
+
+=== Deleting a harvest request
+
+include::requirements/harvest/REQ_delete-op.adoc[]
+
+The act of deleting a harvest request also trigers the removal of all catalog records created by that harvest request. 
+
+include::requirements/harvest/REQ_delete-response.adoc[]

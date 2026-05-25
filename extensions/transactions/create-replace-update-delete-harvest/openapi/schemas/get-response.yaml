@@ -1,0 +1,13 @@
+---
+type: object
+properties:
+  harvestRequests:
+    type: array
+    items:
+      oneOf:
+        - $ref: 'harvest.yaml'
+        - $ref: 'link.yaml'
+  links:
+    type: array
+    items:
+      $ref: 'link.yaml'

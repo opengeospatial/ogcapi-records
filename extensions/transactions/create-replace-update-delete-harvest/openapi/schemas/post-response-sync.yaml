@@ -1,0 +1,34 @@
+---
+type: object
+properties:
+  semantic:
+    type: string
+    const: "atomic"
+  summary:
+    type: object
+    properties:
+      totalInserted:
+        type: integer
+      totalUpdated:
+        type: integer
+      totalReplaced:
+        type: integer
+      totalDeleted:
+        type: integer
+  exceptions:
+    description: 
+      An optional array of OGC exception reports; mostly meant for use with BATCH transactions.
+    type: array
+    items:
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/exception.yaml'
+  insertResults:
+    type: array
+    items:
+      $ref: recordBrief.yaml
+      format: uri
+  links:
+    description: |-
+      A list of static links associated with this record.
+    type: array
+    items:
+      $ref: 'link.yaml'

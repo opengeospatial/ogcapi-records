@@ -1,0 +1,68 @@
+allOf:
+  - $ref: "descriptionType.yaml"
+  - type: object
+    required:
+      - id
+      - status
+      - processingEntityType
+    properties:
+      id:
+        type: string
+      processID:
+        type: string
+        format: uri
+      processingEntityType:
+        description: |-
+          The type of entity that created the job and is doing the processing.
+          This includes all the data access apis listed in "apis.yaml" plus
+          the processing APIs of OGC API Processes and OpenEO.
+        anyOf:
+          - $ref: "apis.yaml"
+          - type: string
+            enum:
+              - ogc-api-processes
+              - ogc-api-records
+              - openeo
+      profileEntityType:
+        description: |-
+          The type of entity requesting this status information.  This may
+          be differernt than the processing entity.  For example, the
+          processing entity may be OGC API Processes but the status
+          information is requested via the OpenEO API.
+        anyOf:
+          - $ref: "apis.yaml"
+          - type: string
+            enum:
+              - ogc-api-processes
+              - openeo
+      request:
+        oneOf:
+          - type: string
+          - type: object
+          - $ref: "link.yaml"
+      status:
+        $ref: "statusCode.yaml"
+      message:
+        type: string
+      exception:
+        $ref: "../common-core/exception.yaml"
+      created:
+        type: string
+        format: date-time
+      started:
+        type: string
+        format: date-time
+      finished:
+        type: string
+        format: date-time
+      updated:
+        type: string
+        format: date-time
+      progress:
+        type: integer
+        minimum: 0
+        maximum: 100
+      links:
+        type: array
+        items:
+          $ref: "link.yaml"

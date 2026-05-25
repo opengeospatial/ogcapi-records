@@ -1,0 +1,11 @@
+[[req_harvest_post-body]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/harvest/post-body*
+^|A |The body of a POST request SHALL conform to the following JSON-Schema fragment:
+
+[source,yaml]
+----
+include::../../../openapi/schemas/harvest.yaml[]
+----
+|===

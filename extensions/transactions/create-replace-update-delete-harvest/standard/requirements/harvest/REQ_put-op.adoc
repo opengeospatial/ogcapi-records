@@ -1,0 +1,6 @@
+[[req_harvest_put-op]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/harvest/put-op*
+^|A |For every catalog (path: `/collections/{collectionId}`) where the `itemType` is `record`, the server SHALL support the HTTP PUT operation at the path `/collections/{catalogId}/harvest/{harvestReqId}`.
+|===
