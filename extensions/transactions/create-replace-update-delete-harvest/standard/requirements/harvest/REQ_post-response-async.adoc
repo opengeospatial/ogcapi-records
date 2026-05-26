@@ -9,8 +9,8 @@
 
 [source,yaml]
 ----
-include::https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/statusInfo.yaml[]
+include::../../../openapi/schemas/statusInfo.yaml[]
 ----
 
-^|D |That value of the `type` member in the https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/statusInfo.yaml[statusInfo.yaml] response SHALL be `ogc-catalog`.
+^|D |That value of the `processingEntityType` member in the https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/statusInfo.yaml[statusInfo.yaml] response SHALL be `ogc-api-records`.
 |===

@@ -34,9 +34,9 @@ include::requirements/harvest/REQ_post-op.adoc[]
 
 include::requirements/harvest/REQ_post-body.adoc[]
 
-The `source` member can be a reference to any Web-accessible resource including a reference to another catalog.
+The `source` member is a reference to any Web-accessible resource which can be a reference to another catalog.  The `href` sub-member is the URI of the resource to be harvest.  The `type` sub-member is token indicating the type of resource being harvested.  The value of the `type` sub-member can be a URI or some other token denoting the type of resource being harvested.
 
-The `harvestInterval` member is a ISO 8601 duration that indicates to the server that the specified resource should be periodically reharvested.
+The `harvestInterval` member is an ISO 8601 duration that indicates to the server that the specified resource should be periodically reharvested.
 
 The `responseHandler` member is an array of URIs to which the harvest response will be sent once the operation has completed.
 
