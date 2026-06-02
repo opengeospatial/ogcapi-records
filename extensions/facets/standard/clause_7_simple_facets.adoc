@@ -43,7 +43,7 @@ GET /collections/wis2-discovery-metadata/facets
             "bucketType": "fixedBucketCount"
         },
         "format": {
-            "type": "terms",
+            "type": "term",
             "property": "links.format",
             "sortedBy": "value",
             "minOccurs": 10
@@ -99,7 +99,7 @@ The response includes a `facets` object. The content represents an object of all
     "type": "FeatureCollection",
     "facets": {
         "keywords": {
-            "type": "terms",
+            "type": "term",
             "property": "tag",
             "buckets": [
                 {

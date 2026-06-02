@@ -5,6 +5,12 @@ description: 'OGC API - Records - Part 2: Facets description'
 
 type: object
 properties:
+  id:
+    type: string
+    description: collection identifier
+  title:
+    type: string
+    description: collection title
   facets:
     patternProperties:
       "^.*":
