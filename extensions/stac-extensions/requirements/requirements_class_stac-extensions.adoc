@@ -4,8 +4,8 @@
 [%metadata]
 identifier:: https://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac-extensions
 subject:: Web API
-inherit:: https://www.opengis.net/spec/ogcapi-records-1/1.0/req/core
-requirement:: /req/stac-extensisons/conformance
-requirement:: /req/stac-extensisons/member
-requirement:: /req/stac-extensisons/stac-extensions-conformance
+inherit:: https://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
+requirement:: /req/stac-extensions/conformance
+requirement:: /req/stac-extensions/member
+requirement:: /req/stac-extensions/stac-extensions-conformance
 ====

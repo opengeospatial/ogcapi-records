@@ -25,10 +25,11 @@ All questions regarding this submission should be directed to the editor or the 
 
 |===
 |*Name* |*Affiliation*
-|Matthias Mohr (editor) | moreGeo GmbH 
+|Matthias Mohr (editor) | moreGeo GmbH
 |Panagiotis (Peter) A. Vretanos (editor) | CubeWerx Inc.
 |Angelos Tzotsos | Open Source Geospatial Foundation
 |Tom Kralidis | Environment and Climate Change Canada
+|Francis Charette-Migneault | Technologies Luqia
 |===
 
 == Contributors
