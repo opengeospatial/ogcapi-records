@@ -16,7 +16,20 @@ include::../recommendations/stac-items/REC_stac-item-conformsto.adoc[]
 
 === Examples
 
-.A STAC Item with explicit indication of its STAC extensions and OARec record conformance
+The following example illustrates how a record that simultaneously conforms to the _OGC API Records - Core_
+conformance class, which also happens to be a valid STAC Item definition supplemented by more STAC extensions
+requirements, can explicitly indicate both dependencies through the `conformsTo` field. This provides an indication
+to clients that the server returning this definition accommodates both representations simultaneously, and that the
+entire set of `stac_extensions` requirements also applies to the fields found under a _OGC API Records_ representation.
+
+The advantage of the below representation, in contrast to <<req_stac-items_conformance,/req/stac-items/conformance>>
+that indicates "_when a server **has the ability to** support_" STAC extensions, is that the below indication explicitly
+tells "_when a specific record **relies on**_" STAC extensions. This allows the server to simultaneously support and
+document the generation of records that employ STAC extensions or not. A Core-only _OGC API Records_ definition could
+instead omit `https://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions` from the `conformsTo` field to
+communicate that it only supports the Core conformance class, contrary to a STAC-enabled record.
+
+.An OGC API Record with additional STAC extensions requirements and explicit indication of its record conformance
 ====
 [source,json]
 ----

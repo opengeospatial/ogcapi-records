@@ -1,7 +1,7 @@
 == Scope
 
 The Spatial-Temporal Asset Catalog standard defines a rich ecosystem of extensions.
-Since STAC items and OGC API Records records are closely related it would be substantial benefit if an
+Since STAC Items and OGC API Records records are closely related it would be substantial benefit if an
 OARec implementation could also support STAC extensions.  Some relevant STAC extensions include:
 
 * https://github.com/stac-extensions/classification[Classification] (`classification:`)
