@@ -141,14 +141,14 @@ OGC Compliance Testing web site.
 [cols="30,70",options="header"]
 |===
 |Conformance class |URI
-|<<ats_crawlable_catalog,Crawlable Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog
-|<<ats_searchable-catalog,Searchable Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog
-|<<ats_searchable_catalog_filtering,Searchable Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-filtering
-|<<ats_searchable-catalog_sorting,Searchable Catalog - Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-sorting
-|<<ats_local-resources-catalog,Local Resources Catalog>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog
-|<<ats_local-resources-catalog_query-parameters,Local Resources Catalog - Query Parameters>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-query-parameters
-|<<ats_local-resources-catalog_filtering,Local Resources Catalog - Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-filtering
-|<<ats_local-resources-catalog_sorting,Local Resources Catalog - Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-sorting
+|<<ats_crawlable_catalog,Crawlable Catalog>> |<<clause-crawlable-catalog,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog>>
+|<<ats_searchable-catalog,Searchable Catalog>> |<<clause-searchable-catalog,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog>>
+|<<ats_searchable_catalog_filtering,Searchable Catalog - Filtering>> |<<clause-searchable-catalog_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-filtering>>
+|<<ats_searchable-catalog_sorting,Searchable Catalog - Sorting>> |<<clause-searchable-catalog_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog-sorting>>
+|<<ats_local-resources-catalog,Local Resources Catalog>> |<<clause-local-resources-catalog,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog>>
+|<<ats_local-resources-catalog_query-parameters,Local Resources Catalog - Query Parameters>> |<<clause-local-resources-catalog_query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-query-parameters>>
+|<<ats_local-resources-catalog_filtering,Local Resources Catalog - Filtering>> |<<clause-local-resources-catalog_filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-filtering>>
+|<<ats_local-resources-catalog_sorting,Local Resources Catalog - Sorting>> |<<clause-local-resources-catalog_sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/local-resources-catalog-sorting>>
 |===
 
 
@@ -157,15 +157,15 @@ OGC Compliance Testing web site.
 [cols="30,70",options="header"]
 |===
 |Conformance class |URI
-|<<ats_record-core,Record Core>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
-|<<ats_record-collection,Record Collection>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
-|<<ats_record-core-query-parameters,Record Core Query Parameters>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters
-|<<ats_query-param-profile,Profile Query Parameter>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/query-param-profile
-|<<ats_records-api,Records API>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api
-|<<ats_sorting,Sorting>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting
-|<<ats_cql-filter,Filtering>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/filtering
-|<<ats_json,JSON>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
-|<<ats_html,HTML>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html
-|<<ats_oas30,OpenAPI 3.0>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30
-|<<ats_autodiscovery,Autodiscovery>> |http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery
+|<<ats_record-core,Record Core>> |<<clause-record-core,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core>>
+|<<ats_record-collection,Record Collection>> |<<clause-record-collection,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection>>
+|<<ats_record-core-query-parameters,Record Core Query Parameters>> |<<clause-record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core-query-parameters>>
+|<<ats_query-param-profile,Profile Query Parameter>> |<<clause-record-core-query-parameters,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/query-param-profile>>
+|<<ats_records-api,Records API>> |<<clause-records-api,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-api>>
+|<<ats_sorting,Sorting>> |<<clause-sorting,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/sorting>>
+|<<ats_cql-filter,Filtering>> |<<clause-filtering,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/filtering>>
+|<<ats_json,JSON>> |<<requirements-class-json-clause,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json>>
+|<<ats_html,HTML>> |<<requirements-class-html-clause,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html>>
+|<<ats_oas30,OpenAPI 3.0>> |<<clause-oas30,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30>>
+|<<ats_autodiscovery,Autodiscovery>> |<<clause-autodiscovery,http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/autodiscovery>>
 |===
