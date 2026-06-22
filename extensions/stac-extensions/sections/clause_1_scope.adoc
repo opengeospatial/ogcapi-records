@@ -1,21 +1,27 @@
 == Scope
 
-The Spatial-Temporal Asset Catalog standard defines a rich ecosystem of extensions.  Since STAC items and OGC API Records records are closely related it would be substantion benefit if an OARec implementation could also support STAC extensions.  Some relevant STAC extensions include:
+The Spatial-Temporal Asset Catalog standard defines a rich ecosystem of extensions.
+Since STAC Items and OGC API Records records are closely related it would be substantial benefit if an
+OARec implementation could also support STAC extensions.  Some relevant STAC extensions include:
 
-* Classification
-* Datacube
-* EO
-* File Info
-* Forecast
-* Grid
-* MLM
-* Point Cloud
-* Product
-* Projection (somewhat in conflict with JSON-FG, I guess)
-* Raster
-* Scientific
-* Table
-* Versioning
+* https://github.com/stac-extensions/classification[Classification] (`classification:`)
+* https://github.com/stac-extensions/datacube[Datacube] (`cube:`)
+* https://github.com/stac-extensions/eo[Electro-Optical (EO)] (`eo:`)
+* https://github.com/stac-extensions/file[File Info] (`file:`)
+* https://github.com/stac-extensions/forecast[Forecast] (`forecast:`)
+* https://github.com/stac-extensions/grid[Grid] (`grid:`)
+* https://github.com/stac-extensions/mlm[Machine Learning Model (MLM)] (`mlm:`)
+* https://github.com/stac-extensions/pointcloud[Point Cloud] (`pc:`)
+* https://github.com/stac-extensions/processing[Processing] (`processing:`)
+* https://github.com/stac-extensions/product[Product] (`product:`)
+* https://github.com/stac-extensions/projection[Projection] (`proj:`)
+* https://github.com/stac-extensions/raster[Raster] (`raster:`)
+* https://github.com/stac-extensions/scientific[Scientific] (`sci:`)
+* https://github.com/stac-extensions/table[Table] (`table:`)
+* https://github.com/stac-extensions/versioning[Versioning] (`version:`)
+
+The exhaustive list of registered extensions can be found at https://stac-extensions.github.io/[].
+Other self-hosted extensions are also possible.
 
 This standard defines the requirements that allow an OARec implementation to
 make use of STAC extensions.

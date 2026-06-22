@@ -3,6 +3,7 @@
 [requirement]
 ====
 [%metadata]
-identifier:: /req/stac-extensisons/stac-extensions-conformance
-part:: A record SHALL conform to all requirements of each STAC extension listed in the "stac_extensions" member.
+identifier:: /req/stac-extensions/stac-extensions-conformance
+part:: An implementation of a server that supports the generation of OGC API Records that happen to simultaneously
+be valid STAC Items SHALL conform to all requirements of each STAC extension listed in the `stac_extensions` member.
 ====

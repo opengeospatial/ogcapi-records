@@ -4,5 +4,8 @@
 [width="90%",options="header"]
 |===
 |Date |Release |Editor | Primary clauses modified |Description
-|2016-04-28 |0.1 |G. Editor |all |initial version
+|2026-05-06 |0.1 |Panagiotis (Peter) A. Vretanos |all |Initial version
+|2026-06-02 |0.1 |Francis Charette-Migneault |all |Update STAC Example (missing `datetime`)
+|2026-06-02 |0.1 |Francis Charette-Migneault |all |Add `/rec/stac-items/conformsto` to include `conformsTo` in STAC Item
+|2026-06-02 |0.1 |Francis Charette-Migneault |all |Fix links to registered STAC Extensions and Record conformance classes
 |===

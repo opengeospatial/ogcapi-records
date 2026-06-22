@@ -1,0 +1,12 @@
+[[rec_stac-items_conformsto]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac-items/conformsto
+part:: Each record that happens to be a valid STAC Item SHOULD include the `conformsTo` member.
+part:: The `conformsTo` member SHOULD include the the following URI to advertise conformance:
++
+* https://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions
+part:: The `conformsTo` member SHOULD omit the STAC extension URI if it does not apply to this specific record.
+====
