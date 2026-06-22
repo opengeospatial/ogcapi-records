@@ -1,0 +1,60 @@
+---
+allOf:
+  - $ref: "descriptionType.yaml"
+  - type: object
+    required:
+      - id
+      - status
+      - processingEntityType
+    properties:
+      id:
+        type: string
+      processID:
+        type: string
+        format: uri
+      processingEntityType:
+        anyOf:
+          - $ref: "apis.yaml"
+          - type: string
+            enum:
+              - ogc-api-processes
+              - ogc-api-records
+              - openeo
+      profileEntityType:
+        anyOf:
+          - $ref: "apis.yaml"
+          - type: string
+            enum:
+              - ogc-api-processes
+              - openeo
+      request:
+        oneOf:
+          - type: string
+          - type: object
+          - $ref: "link.yaml"
+      status:
+        $ref: "statusCode.yaml"
+      message:
+        type: string
+      exception:
+        $ref: "../common-core/exception.yaml"
+      created:
+        type: string
+        format: date-time
+      started:
+        type: string
+        format: date-time
+      finished:
+        type: string
+        format: date-time
+      updated:
+        type: string
+        format: date-time
+      progress:
+        type: integer
+        minimum: 0
+        maximum: 100
+      links:
+        type: array
+        items:
+          $ref: "link.yaml"

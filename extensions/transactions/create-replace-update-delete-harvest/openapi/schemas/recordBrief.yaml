@@ -1,0 +1,28 @@
+---
+type: object
+required: id
+properties:
+  id:
+    description: |-
+      The unique identifier for this record.
+    oneOf:
+      - type: string
+      - type: integer
+  type:
+    type: string
+    description: |-
+      The nature or genre of the resource. The value
+      should be a code, convenient for filtering
+      records. Where available, a link to the canonical
+      URI of the record type resource will be added to
+      the 'links' property.
+  title:
+    type: string
+    description: |-
+      A human-readable name given to the resource.
+  links:
+    description: |-
+      A list of static links associated with this record.
+    type: array
+    items:
+      $ref: 'link.yaml'
