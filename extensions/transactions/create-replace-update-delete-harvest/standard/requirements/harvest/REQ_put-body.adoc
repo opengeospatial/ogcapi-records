@@ -1,0 +1,11 @@
+[[req_harvest_put-body]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/harvest/put-body*
+^|A |The body of a PUT request SHALL conform to the following JSON-Schema fragment:
+
+[source,yaml]
+----
+include::../../../openapi/schemas/harvest.yaml[]
+----
+|===

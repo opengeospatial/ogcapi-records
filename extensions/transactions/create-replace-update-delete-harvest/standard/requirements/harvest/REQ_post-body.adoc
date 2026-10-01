@@ -1,0 +1,72 @@
+[[req_harvest_post-body]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/harvest/post-body*
+^|A |The body of a POST request SHALL conform to the following JSON-Schema fragment:
+
+[source,yaml]
+----
+include::../../../openapi/schemas/harvest.yaml[]
+----
+|===
+
+
+---
+type: object
+required: source
+properties:
+  source:
+    type: object
+    required: href
+    properties:
+      href:
+        type: string
+        format: uri-reference
+      type:
+        type: string
+        enum:
+          - http://www.opengis.net/def/serviceType/ogc/csw
+          - http://www.opengis.net/def/serviceType/ogc/wcs
+          - http://www.opengis.net/def/serviceType/ogc/wcps
+          - http://www.opengis.net/def/serviceType/ogc/wfs
+          - http://www.opengis.net/def/serviceType/ogc/wms
+          - http://www.opengis.net/def/serviceType/ogc/wmts
+          - http://www.opengis.net/def/serviceType/ogc/wps
+          - http://www.opengis.net/def/serviceType/ogc/tjs
+          - http://www.opengis.net/def/interface/ogcapi-features
+          - http://www.opengis.net/def/interface/ogcapi-coverages
+          - http://www.opengis.net/def/interface/ogcapi-environmental-data-retrieval
+          - http://www.opengis.net/def/interface/ogcapi-maps
+          - http://www.opengis.net/def/interface/ogcapi-processes
+          - http://www.opengis.net/def/interface/ogcapi-records
+          - http://www.opengis.net/def/interface/ogcapi-styles
+          - http://www.opengis.net/def/interface/ogcapi-tiles
+          - sentinel-1
+          - sentinel-1-rtc
+          - sentinel-2
+          - sentinel-3
+          - sentinel-5p
+          - sentinel-6
+          - landsat-5
+          - landsat-7
+          - landsat-8
+          - landsat-9
+          - rcm
+          - radarsat-1
+          - radarsat-2
+          - iso19139
+          - iso19115-3
+          - fgdc-csdgm
+          - dcat
+          - geo-dcat
+          - stac-item
+          - stac-catalog
+          - stac-collection
+          - stac-api
+  harvestInterval:
+    type: string
+    format: duration
+  responseHandlers:
+    type: array
+    items:
+      type: string
