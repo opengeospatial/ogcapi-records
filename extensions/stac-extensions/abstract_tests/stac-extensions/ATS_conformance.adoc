@@ -1,0 +1,15 @@
+[[ats_stac-extensions_conformance]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac-extensions/conformance
+target:: /req/stac-extensions/conformance
+test-purpose:: Validate conformance identification.
+test-method::
++
+--
+. If the deployment provides records through an API and any record or catalog uses STAC extensions, issue an HTTP GET request on the `/conformance` path and verify that the `conformsTo` array contains the value `+http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions+`.
+. If the deployment is a crawlable catalog, verify for each catalog that uses STAC extensions, or whose records use them, that the `conformsTo` member of the catalog contains the value `+http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions+`.
+--
+====

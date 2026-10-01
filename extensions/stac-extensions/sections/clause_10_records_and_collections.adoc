@@ -1,0 +1,161 @@
+[[clause_records-and-stac-collections]]
+[obligation=informative]
+== Catalogs and STAC Collections
+
+This clause compares catalogs (record collections) with STAC Collections and explains how to create documents that are both. The normative provisions are in the <<clause_stac,Requirements Class "STAC">>.
+
+=== Common foundation
+
+Catalogs and STAC Collections both extend the collection object of OGC API - Features - Part 1: Core. They share the members `id`, `title`, `description`, `extent`, and `links` from OGC API - Features, and both add `keywords` and `license`. In both, `license` is an SPDX license identifier, an SPDX license expression, or `other`. The `type` member of a catalog has the value `Collection`, which is the same value that STAC Collections use. Both use `child` links for sub-catalogs and `item` links for records or STAC Items.
+
+STAC defines two kinds of catalog objects: the STAC Catalog (`"type": "Catalog"`) and the STAC Collection (`"type": "Collection"`). OGC API - Records requires `"type": "Collection"` for all catalogs, so a catalog can only ever be a STAC Collection. A STAC Collection requires `description`, `license`, and `extent`, which are optional for catalogs. This applies to every catalog in a hierarchy, including catalogs that only group other catalogs and would be STAC Catalogs in a pure STAC implementation (see <<sc_stac_structuring-catalogs>>).
+
+=== Differences
+
+<<collection-crosswalk>> lists the members that differ between catalogs and STAC Collections. <<sc_records-and-stac-collections_creating>> describes what these differences mean in practice, and its steps can be used as a checklist to check whether a catalog is also a valid STAC Collection.
+
+[#collection-crosswalk,reftext='{table-caption} {counter:table-num}']
+.Differences between catalogs of OGC API - Records and STAC Collections
+[cols="20,40,40",options="header"]
+|===
+|Member |Catalog of OGC API - Records |STAC Collection
+|`id` |Required. |Required. Unique across all STAC Collections in the root STAC Catalog.
+|`stac_version` |Not defined. |Required.
+|`stac_extensions` |Defined by this Standard. |Optional.
+|`conformsTo` |Optional. Applies to the catalog and all of its records. |Not defined. Allowed as an additional member.
+|`description` |Optional. |Required.
+|`license` |Optional. The license under which the catalog is made available. |Required. The license of the data.
+|`extent` |Optional. As defined by OGC API - Features: the first bounding box and the first interval describe the overall extent, further ones describe more precise extents. Optional `crs` and `trs` members. |Required. Same meaning. Exactly two bounding boxes are not allowed. Always WGS 84 and the Gregorian calendar, timestamps in UTC.
+|`itemType` |Optional. `record`, `catalog`, or both. A catalog in a Records API requires `record`. |Not defined. Allowed as an additional member.
+|`crs` |Optional. The coordinate reference systems used for the spatiotemporal values of the catalog and its records, for example their geometries. |Not defined. The Projection extension describes the coordinate reference system of the data instead, for example with `proj:code` in `summaries` or assets.
+|`created`, `updated` |Optional. |Optional, as STAC common metadata.
+|`contacts`, `themes`, `language`, `languages` |Optional. |Available through STAC extensions, see <<overlapping-extensions>>.
+|`resourceLanguages`, `rights` |Optional. |Not defined.
+|`providers` |Not defined. |Optional. Organizations that produced, processed, licensed, or host the data.
+|`summaries` |Not defined. Allowed by this Standard, see <<per_stac-extensions_summaries,/per/stac-extensions/summaries>>. |Strongly recommended. Summaries of the members of the STAC Items.
+|`assets`, `item_assets` |Not defined. Allowed by this Standard, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>. |Optional.
+|`records`, `recordsArrayName` |Optional. Records encoded in the catalog. |Not defined. STAC clients only find STAC Items through `item` links or an API.
+|`schemes` |Optional. |Not defined.
+|`links` |Required. `self` and `alternate` links are required. Records are referenced with `item` links or an `items` link to an API. Sub-catalogs are referenced with `child`, `related`, or `next` links. Sub-catalogs should have `parent` and `root` links. |Required. `self` and `root` links are strongly recommended. Other STAC Collections should have a `parent` link. STAC Items are referenced with `item` links and sub-catalogs with `child` links. `related` links can reference other STAC entities, but not sub-catalogs.
+|===
+
+Temporal intervals in the `extent` of both catalogs and STAC Collections use `null` for an open start or end. This is different from the `time` member of a record, which uses `..`.
+
+The `license` member of a catalog and of a STAC Collection describe different things. OGC API - Records - Part 1: Core applies the license requirement for records to the catalog itself (`/req/record-collection/license`), while the `license` of a STAC Collection is the license of the data. The `license` of a record and of a STAC Item both describe the data. If the data and the catalog are available under the same license, one value serves both ecosystems. Otherwise, the `license` member of a combined catalog cannot express both. In this case, it is recommended to use `license` for the license of the data, which is how STAC clients present it and what the `license` members of the records describe, and to describe the license of the catalog itself in the `rights` member.
+
+[[sc_records-and-stac-collections_creating]]
+=== Creating a catalog that is also a STAC Collection
+
+. Add `stac_version`.
+. Add `description`, `license`, and `extent`. For a catalog that only groups other catalogs, see <<sc_stac_structuring-catalogs>>.
+. In `extent`, do not use exactly two bounding boxes, use UTC timestamps, and leave out `crs` and `trs` or use their defaults.
+. If `license` is not a single SPDX license identifier, add links with the relation type `license`, as recommended by <<rec_stac_license,/rec/stac/license>>.
+. Provide `providers` in addition to `contacts`. STAC clients typically show `providers`, and clients of OGC API - Records show `contacts`. Alternatively, list the Contacts extension in `stac_extensions`.
+. Add `root` and `parent` links, and set the media types of hierarchical links as required by <<req_stac_link-media-types,/req/stac/link-media-types>>. Use `child` links for sub-catalogs, because STAC clients only crawl `child` links as part of the hierarchy.
+. Do not rely on records encoded in the `records` member. STAC clients do not read them.
+. Add `summaries` for the most important members of the records, for example `type` or `proj:code`.
+. Keep `conformsTo` and add the conformance classes of this Standard.
+
+A catalog in JSON is served as `application/ogc-catalog+json` by default. STAC clients expect `application/json`. OGC API - Records - Part 1: Core also allows `application/json` for catalogs, with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to identify the content. Serving catalogs as `application/json` with a `profile` link works for both ecosystems.
+
+=== Example
+
+The following catalog is also a valid STAC Collection. It is the catalog of the record shown in the <<clause_stac,Requirements Class "STAC">>. The data and the catalog are available under the same license, so its `license` means the same in both ecosystems. `providers` lists the producer for STAC clients. The `profile` link identifies the document as a catalog for clients of OGC API - Records.
+
+.A catalog that is also a STAC Collection
+====
+[source,json]
+----
+{
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "id": "dutch-metadata",
+  "itemType": "record",
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac"
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/contacts/v1.0.1/schema.json"
+  ],
+  "title": "Dutch metadata",
+  "description": "Metadata of Dutch geospatial datasets, harvested from the Nationaal Georegister.",
+  "keywords": ["Netherlands", "datasets"],
+  "license": "CC-BY-4.0",
+  "extent": {
+    "spatial": {
+      "bbox": [[3.37087, 50.7539, 7.21097, 53.4658]]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2010-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "Rijksinstituut voor Volksgezondheid en Milieu (RIVM)",
+      "roles": ["producer", "licensor"],
+      "url": "https://www.rivm.nl"
+    }
+  ],
+  "contacts": [
+    {
+      "organization": "Rijksinstituut voor Volksgezondheid en Milieu (RIVM)",
+      "emails": [
+        {
+          "value": "info@rivm.nl"
+        }
+      ],
+      "roles": ["pointOfContact"]
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/json",
+      "title": "This document as JSON",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata?f=json"
+    },
+    {
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "This document as HTML",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata?f=html"
+    },
+    {
+      "rel": "profile",
+      "href": "http://www.opengis.net/def/profile/OGC/0/ogc-catalog"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "title": "The landing page of this server as JSON",
+      "href": "https://demo.pygeoapi.io/master?f=json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "title": "The landing page of this server as JSON",
+      "href": "https://demo.pygeoapi.io/master?f=json"
+    },
+    {
+      "rel": "items",
+      "type": "application/geo+json",
+      "title": "The records of this catalog",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json"
+    },
+    {
+      "rel": "license",
+      "type": "text/html",
+      "title": "Creative Commons Attribution 4.0 International",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+}
+----
+====

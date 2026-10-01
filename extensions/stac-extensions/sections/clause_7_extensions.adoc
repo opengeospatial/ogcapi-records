@@ -5,14 +5,193 @@
 
 include::../requirements/requirements_class_stac-extensions.adoc[]
 
-This conformance class defines the requirements for extending an OARec record to use https://stac-extensions.github.io/[STAC Extensions].
+This requirements class defines how records and catalogs use https://stac-extensions.github.io/[STAC extensions]. The records and catalogs remain records and catalogs as defined by OGC API - Records - Part 1: Core. They do not need to be STAC Items or STAC Collections. Records and catalogs that are also valid STAC entities are covered by the <<clause_stac,Requirements Class "STAC">>.
 
-=== Using STAC extensions in an OARec record
-
-include::../requirements/stac-extensions/REQ_conformance.adoc[]
+=== Using STAC extensions
 
 include::../requirements/stac-extensions/REQ_member.adoc[]
 
-include::../requirements/stac-extensions/REQ_stac-extensions-conformance.adoc[]
+include::../requirements/stac-extensions/REQ_extension-conformance.adoc[]
 
-=== Examples
+STAC extensions describe where their members are placed in STAC entities. <<extension-member-locations>> shows the corresponding locations in records and catalogs. Where OGC API - Records has no corresponding structure, the STAC structure can be reused, as noted in brackets.
+
+[#extension-member-locations,reftext='{table-caption} {counter:table-num}']
+.Location of STAC extension members in records and catalogs
+[cols="40,60",options="header"]
+|===
+|Location in STAC |Location in OGC API - Records
+|Item Properties (`properties` of a STAC Item) |`properties` of a record
+|Top level of a STAC Collection |Top level of a catalog
+|Summaries (`summaries` of a STAC Collection) |None (the STAC `summaries` member can be reused in catalogs, see <<per_stac-extensions_summaries,/per/stac-extensions/summaries>>)
+|Asset (`assets` of a STAC Item or STAC Collection) |Association links in `links` of a record or catalog, for example with the link relation type `describes` or `enclosure` (the STAC `assets` member can be reused in records and catalogs, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>)
+|Item Asset Definition (`item_assets` of a STAC Collection) |None (the STAC `item_assets` member can be reused in catalogs, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>)
+|Link (`links`) |`links` of a record or catalog
+|===
+
+include::../recommendations/stac-extensions/PER_summaries.adoc[]
+
+=== Assets
+
+STAC Items and STAC Collections reference their data files through _assets_. Records reference the resources they describe through links, for example with the link relation type `describes` or `enclosure`. Many STAC extensions define members for assets, and several extension schemas currently still expect an `assets` member in every GeoJSON Feature. This requirements class therefore allows assets in records and catalogs.
+
+include::../recommendations/stac-extensions/PER_assets.adoc[]
+
+include::../recommendations/stac-extensions/REC_assets.adoc[]
+
+[[sc_stac-extensions_known-issues]]
+=== Known issues with STAC extension schemas
+
+Several STAC extension schemas were written for STAC entities only. The following issues affect records that use these extensions. They are tracked in https://github.com/radiantearth/stac-spec/issues/1397[stac-spec#1397] and do not occur with extensions that are based on the current https://github.com/stac-extensions/template[STAC extension template].
+
+[#known-extension-issues,reftext='{table-caption} {counter:table-num}']
+.Known issues with STAC extension schemas and workarounds
+[cols="50,50",options="header"]
+|===
+|Issue |Workaround
+|The schema requires an `assets` member in every GeoJSON Feature, even if no member of the extension is used in an asset. Records without `assets` fail validation. This affects, for example, Projection v2.0.0 and File Info v2.1.0. |Include an empty `assets` object, see <<rec_stac-extensions_assets,/rec/stac-extensions/assets>>.
+|The schema does not validate members in links. Members that an extension defines for assets can be placed in links, but invalid values are not detected. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
+|The schema requires at least one of its members in `properties` or in an asset, for example Raster v2.0.0 and Point Cloud v2.0.0. A record that only uses these members in links fails validation. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
+|===
+
+Once the affected extensions are updated, the workarounds are no longer needed, but they remain valid.
+
+=== Declaring conformance
+
+include::../requirements/stac-extensions/REQ_conformance.adoc[]
+
+include::../recommendations/stac-extensions/REC_conformsto.adoc[]
+
+=== Extensions aligned with OGC API - Records
+
+Several STAC extensions were written to match members that OGC API - Records - Part 1: Core defines. Listing these extensions in `stac_extensions` is optional, because OGC API - Records already allows the members. Listing an extension enables validation against its schema. <<overlapping-extensions>> lists the remaining differences.
+
+[#overlapping-extensions,reftext='{table-caption} {counter:table-num}']
+.STAC extensions aligned with OGC API - Records
+[cols="22,26,52",options="header"]
+|===
+|Record member |STAC extension |Differences
+|`contacts` |https://github.com/stac-extensions/contacts[Contacts] v1.0.1 |STAC adds `description`. OGC API - Records adds `hoursOfService`.
+|`externalIds` |https://github.com/stac-extensions/external-ids[External IDs] v1.0.0 |None.
+|`themes` |https://github.com/stac-extensions/themes[Themes] v1.0.0 |None.
+|`language`, `languages` |https://github.com/stac-extensions/language[Language] v1.0.0 |None. The extension adds `hreflang` for assets.
+|`resourceLanguages` |None |The Language extension derives the languages of the resource from the `hreflang` members of assets and links.
+|`linkTemplates` |https://github.com/stac-extensions/link-templates[Link Templates] v1.0.0 |None.
+|===
+
+=== STAC common metadata
+
+The https://github.com/radiantearth/stac-spec/blob/v1.1.0/commons/common-metadata.md[STAC common metadata] defines members that are not part of any extension, for example `gsd`, `platform`, `instruments`, `constellation`, `mission`, and `bands`. Records can use these members as well. The STAC specification publishes JSON Schemas for them, for example `instrument.json`, but these are not STAC extensions and are not listed in `stac_extensions`. They are fragments that validate the members at the top level of the object they are applied to. Listed in `stac_extensions`, they would be applied to the whole record and would not check the members in `properties` or in assets. A validator can apply them to `properties`, to each asset, and to the top level of a catalog. In STAC Items and STAC Collections, the STAC JSON Schemas apply them automatically, see the <<clause_stac,Requirements Class "STAC">>.
+
+=== Example
+
+The following record uses five STAC extensions. It lists the schema URIs in `stac_extensions` and declares the "STAC Extensions" conformance class in `conformsTo`. The record is not a STAC Item: it has no `stac_version`, `bbox`, `properties.datetime`, or `collection` member. `proj:code` gives the coordinate reference system of the described dataset. The `file:size` and `file:checksum` members describe the GeoTIFF file referenced by the `enclosure` link, where the File Info v2.1.0 schema validates them. The empty `assets` member is needed because the Projection and File Info schemas require it (see <<sc_stac-extensions_known-issues>>).
+
+.A record using STAC extensions
+====
+[source,json]
+----
+{
+  "id": "b7d2fd24-8cd8-4965-a997-69eb1a987b5a",
+  "type": "Feature",
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions"
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/contacts/v1.0.1/schema.json",
+    "https://stac-extensions.github.io/external-ids/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "time": {
+    "date": "2019-04-16"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [3.37087, 50.7539],
+        [3.37087, 53.4658],
+        [7.21097, 53.4658],
+        [7.21097, 50.7539],
+        [3.37087, 50.7539]
+      ]
+    ]
+  },
+  "properties": {
+    "created": "2019-04-16T00:00:00Z",
+    "updated": "2025-06-16T12:39:58Z",
+    "type": "dataset",
+    "title": "Zonpotentie velden",
+    "description": "Solar energy potential of agricultural fields in the Netherlands.",
+    "proj:code": "EPSG:28992",
+    "contacts": [
+      {
+        "organization": "Atlas Leefomgeving",
+        "emails": [
+          {
+            "value": "atlasleefomgeving@rivm.nl"
+          }
+        ],
+        "roles": ["resourceProvider"]
+      }
+    ],
+    "externalIds": [
+      {
+        "scheme": "default",
+        "value": "b7d2fd24-8cd8-4965-a997-69eb1a987b5a"
+      }
+    ],
+    "themes": [
+      {
+        "concepts": [
+          {
+            "id": "zonnepanelen"
+          },
+          {
+            "id": "energie"
+          }
+        ],
+        "scheme": "https://www.atlasleefomgeving.nl/thema"
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "title": "This document as GeoJSON",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=json"
+    },
+    {
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "This document as HTML",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=html"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "title": "Dutch metadata",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata?f=json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "title": "The landing page of this server as JSON",
+      "href": "https://demo.pygeoapi.io/master?f=json"
+    },
+    {
+      "rel": "enclosure",
+      "type": "image/tiff; application=geotiff",
+      "title": "The data as GeoTIFF",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a/data?f=geotiff",
+      "file:size": 123456789,
+      "file:checksum": "12209cbc07c3f991725836a3aa2a581ca2029198aa420b9d99bc0e131d9f3e2cbe47"
+    }
+  ],
+  "assets": {}
+}
+----
+====

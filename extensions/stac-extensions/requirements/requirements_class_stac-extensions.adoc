@@ -2,10 +2,11 @@
 [requirements_class]
 ====
 [%metadata]
-identifier:: https://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac-extensions
-subject:: Web API
-inherit:: https://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
-requirement:: /req/stac-extensions/conformance
+identifier:: http://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac-extensions
+subject:: Document model
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
 requirement:: /req/stac-extensions/member
-requirement:: /req/stac-extensions/stac-extensions-conformance
+requirement:: /req/stac-extensions/extension-conformance
+requirement:: /req/stac-extensions/conformance
 ====

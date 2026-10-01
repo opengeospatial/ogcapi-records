@@ -11,3 +11,12 @@
 * [[[rss-autodiscovery,rss-autodiscovery]]], RSS Advisory Board: RSS Autodiscovery [online, viewed 2024-12-09], https://www.rssboard.org/rss-autodiscovery
 * [[[atompub,atompub]]], M. Pilgrim, M., Ringnalda, P.: Atom Feed Autodiscovery [online, viewed 2024-12-09], https://datatracker.ietf.org/doc/html/draft-ietf-atompub-autodiscovery
 * [[[DCAT2,DCAT2]]], W3C: Data Catalog Vocabulary - Version 2, W3C Recommendation 4 February 2020, https://www.w3.org/TR/vocab-dcat-2/
+* [[[STAC-API,nofetch(STAC API)]]], STAC Project Steering Committee: STAC API specification, version 1.0.0, https://github.com/radiantearth/stac-api-spec/tree/v1.0.0
+* [[[STAC-BP,nofetch(STAC Best Practices)]]], STAC Project Steering Committee: STAC Best Practices [online, viewed 2026-09-29], https://github.com/radiantearth/stac-best-practices
+* [[[STAC-EXT,nofetch(STAC Extensions)]]], STAC Community: STAC Extensions [online, viewed 2026-09-29], https://stac-extensions.github.io/
+* [[[STAC-EXT-TEMPLATE,nofetch(STAC Extension Template)]]], STAC Community: Template for STAC extensions [online, viewed 2026-09-29], https://github.com/stac-extensions/template
+* [[[STAC-API-COLLECTION-SEARCH,nofetch(STAC API Collection Search)]]], STAC Community: STAC API - Collection Search extension, https://github.com/stac-api-extensions/collection-search
+* [[[STAC-API-FREETEXT,nofetch(STAC API Free-text Search)]]], STAC Community: STAC API - Free-text Search extension, https://github.com/stac-api-extensions/freetext-search
+* [[[STAC-API-SORT,nofetch(STAC API Sort)]]], STAC Community: STAC API - Sort extension, https://github.com/stac-api-extensions/sort
+* [[[STAC-API-CHILDREN,nofetch(STAC API Children)]]], STAC Community: STAC API - Children extension, https://github.com/stac-api-extensions/children
+* [[[STAC-API-TRANSACTION,nofetch(STAC API Transaction)]]], STAC Community: STAC API - Transaction extension, https://github.com/stac-api-extensions/transaction

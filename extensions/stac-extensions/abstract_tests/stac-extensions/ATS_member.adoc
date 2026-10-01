@@ -1,0 +1,18 @@
+[[ats_stac-extensions_member]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac-extensions/member
+target:: /req/stac-extensions/member
+test-purpose:: Validate that records and catalogs that use STAC extensions list them in the `stac_extensions` member.
+test-method::
++
+--
+. Retrieve each record and each catalog.
+. Identify the members that are defined by STAC extensions. Members of STAC extensions usually have a name with a prefix followed by a colon, for example `proj:code`.
+. If such members exist, verify that the record or catalog includes a `stac_extensions` member at the top level.
+. Verify that the value of the `stac_extensions` member is an array of strings without duplicates.
+. Verify that the array contains the schema URI of each STAC extension whose members are used.
+--
+====

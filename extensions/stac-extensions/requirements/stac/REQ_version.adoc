@@ -1,0 +1,11 @@
+[[req_stac_version]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac/version
+part:: Each record and each catalog SHALL include the `stac_version` member at the top level of the object.
+part:: The value of the `stac_version` member SHALL be `1.0.0` or a later version 1.x.x of the <<STAC,STAC specification>>.
+====
+
+NOTE: STAC clients recognize STAC entities by the `stac_version` member. A document without it is ignored by common STAC libraries, even if it is otherwise valid.

@@ -1,0 +1,202 @@
+[[clause_stac]]
+== Requirements Class "STAC"
+
+=== Overview
+
+include::../requirements/requirements_class_stac.adoc[]
+
+This requirements class defines requirements for records and catalogs that are valid STAC entities at the same time:
+
+* A record is also a valid https://github.com/radiantearth/stac-spec/blob/v1.1.0/item-spec/item-spec.md[STAC Item].
+* A catalog is also a valid https://github.com/radiantearth/stac-spec/blob/v1.1.0/collection-spec/collection-spec.md[STAC Collection].
+
+Clients of OGC API - Records and STAC clients can use such documents without any conversion. The informative clauses <<clause_records-and-stac-items,Records and STAC Items>> and <<clause_records-and-stac-collections,Catalogs and STAC Collections>> explain the differences between the two data models and how to satisfy both in one document.
+
+A declaration of this conformance class applies at different levels:
+
+* In a record, it states that this record is a STAC Item.
+* In a catalog, it states that the catalog is a STAC Collection and that all of its records are STAC Items.
+* At the `/conformance` endpoint of a server, it states that all records and catalogs that the server provides in a JSON encoding are STAC entities.
+
+If only some of the records and catalogs of a server are STAC entities, the server does not declare this conformance class at its `/conformance` endpoint. Instead, the records and catalogs that are STAC entities declare it in their `conformsTo` member.
+
+=== STAC entities
+
+include::../requirements/stac/REQ_entity.adoc[]
+
+include::../requirements/stac/REQ_version.adoc[]
+
+[[sc_stac_structuring-catalogs]]
+=== Catalogs that only structure a hierarchy
+
+Static STAC catalogs often use STAC Catalogs to structure a hierarchy, for example by year or by region, without describing any data themselves. Such a catalog cannot be a STAC Catalog in a document that is also a catalog of OGC API - Records, because OGC API - Records - Part 1: Core fixes the `type` of catalogs to `Collection`. Leaving these nodes out of the Records hierarchy is not an option either, because clients of OGC API - Records follow `child` links only to catalogs.
+
+These catalogs are therefore STAC Collections as well. STAC allows STAC Collections to contain other STAC Collections, and the STAC best practices recommend using the same structural element on each level of a hierarchy. Compared to a STAC Catalog, such a catalog needs a few more members:
+
+* `extent`: the union of the extents of its sub-catalogs.
+* `license`: the license that all of its sub-catalogs share. If they have different licenses, use `other` and add a link with the relation type `license` for each license. An SPDX license expression such as `CC-BY-4.0 AND CC0-1.0` is not suitable, because it states that all licenses apply to all of the data.
+* `description`: a short description of the content, for example of the years or regions it contains.
+* `itemType`: `catalog`, as it only has `child` links and no `item` links.
+
+The `summaries` member is optional and can be left out. STAC clients present these catalogs as STAC Collections instead of as STAC Catalogs, for example with their extent.
+
+=== Temporal information
+
+Records describe their temporal extent in the `time` member at the top level. STAC Items use the `datetime`, `start_datetime`, and `end_datetime` members in `properties`. A document that is both needs both, and they need to agree.
+
+include::../requirements/stac/REQ_time.adoc[]
+
+include::../recommendations/stac/REC_time.adoc[]
+
+=== Links
+
+include::../requirements/stac/REQ_link-media-types.adoc[]
+
+include::../recommendations/stac/REC_links.adoc[]
+
+=== License
+
+Both ecosystems allow an SPDX license identifier, an SPDX license expression, or `other` in the `license` member. They differ in when links to the license texts are needed.
+
+include::../recommendations/stac/REC_license.adoc[]
+
+=== Declaring conformance
+
+include::../requirements/stac/REQ_conformance.adoc[]
+
+include::../recommendations/stac/REC_conformsto.adoc[]
+
+=== Example
+
+The following record is also a valid STAC Item. Compared to the example of the <<clause_stac-extensions,Requirements Class "STAC Extensions">>, it adds or changes these members:
+
+* `stac_version` is added.
+* `collection` is added, because the record has a link with the relation type `collection`. OGC API - Records requires this link for every record in a Records API.
+* `bbox` is added, because `geometry` is not `null`.
+* The `time` member contains a date. `properties.start_datetime` and `properties.end_datetime` describe the same day, and `properties.datetime` is `null`.
+* The GeoTIFF file is also available as an asset. The `file:` members are placed on the asset. The `enclosure` link stays in place for clients of OGC API - Records.
+* `conformsTo` also lists `http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac`.
+
+.A record that is also a STAC Item
+====
+[source,json]
+----
+{
+  "id": "b7d2fd24-8cd8-4965-a997-69eb1a987b5a",
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac"
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/contacts/v1.0.1/schema.json",
+    "https://stac-extensions.github.io/external-ids/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "collection": "dutch-metadata",
+  "time": {
+    "date": "2019-04-16"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [3.37087, 50.7539],
+        [3.37087, 53.4658],
+        [7.21097, 53.4658],
+        [7.21097, 50.7539],
+        [3.37087, 50.7539]
+      ]
+    ]
+  },
+  "bbox": [3.37087, 50.7539, 7.21097, 53.4658],
+  "properties": {
+    "datetime": null,
+    "start_datetime": "2019-04-16T00:00:00Z",
+    "end_datetime": "2019-04-16T23:59:59Z",
+    "created": "2019-04-16T00:00:00Z",
+    "updated": "2025-06-16T12:39:58Z",
+    "type": "dataset",
+    "title": "Zonpotentie velden",
+    "description": "Solar energy potential of agricultural fields in the Netherlands.",
+    "proj:code": "EPSG:28992",
+    "contacts": [
+      {
+        "organization": "Atlas Leefomgeving",
+        "emails": [
+          {
+            "value": "atlasleefomgeving@rivm.nl"
+          }
+        ],
+        "roles": ["resourceProvider"]
+      }
+    ],
+    "externalIds": [
+      {
+        "scheme": "default",
+        "value": "b7d2fd24-8cd8-4965-a997-69eb1a987b5a"
+      }
+    ],
+    "themes": [
+      {
+        "concepts": [
+          {
+            "id": "zonnepanelen"
+          },
+          {
+            "id": "energie"
+          }
+        ],
+        "scheme": "https://www.atlasleefomgeving.nl/thema"
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "title": "This document as GeoJSON",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=json"
+    },
+    {
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "This document as HTML",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=html"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "title": "Dutch metadata",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata?f=json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "title": "The landing page of this server as JSON",
+      "href": "https://demo.pygeoapi.io/master?f=json"
+    },
+    {
+      "rel": "enclosure",
+      "type": "image/tiff; application=geotiff",
+      "title": "The data as GeoTIFF",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a/data?f=geotiff"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a/data?f=geotiff",
+      "type": "image/tiff; application=geotiff",
+      "title": "The data as GeoTIFF",
+      "roles": ["data"],
+      "file:size": 123456789,
+      "file:checksum": "12209cbc07c3f991725836a3aa2a581ca2029198aa420b9d99bc0e131d9f3e2cbe47"
+    }
+  }
+}
+----
+====

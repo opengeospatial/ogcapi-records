@@ -1,0 +1,14 @@
+[[rec_stac-extensions_assets]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac-extensions/assets
+part:: For broad compatibility with STAC extensions, a record that includes the `stac_extensions` member SHOULD include the `assets` member. If the record has no assets, the value SHOULD be an empty object (`{}`).
+part:: Each resource that is available as an asset of a record SHOULD also be available through a link in the `links` member of the record, for example, with the link relation type `describes` or `enclosure`.
+part:: Such a link SHOULD only contain the basic members of a link, such as `href`, `rel`, `type`, and `title`. Further metadata about the resource, for example members of STAC extensions such as `file:checksum` or `proj:shape`, SHOULD only be provided in the asset and SHOULD NOT be repeated in the link.
+====
+
+NOTE: The first part is a workaround for a known issue of several STAC extension schemas (for example, Projection v2.0.0 and File Info v2.1.0): they currently still require the `assets` member in every GeoJSON Feature, even if no extension member is used in an asset. Without it, a record fails validation against these schemas. An empty `assets` object is enough to pass. See <<sc_stac-extensions_known-issues>> and https://github.com/radiantearth/stac-spec/issues/1397[stac-spec#1397].
+
+NOTE: Clients of OGC API - Records do not know about assets. A basic link for each asset keeps the resources accessible for them. Repeating the full metadata of an asset in the link would make the record larger and would let the two copies diverge over time, while clients of OGC API - Records would not use most of it.

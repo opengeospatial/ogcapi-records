@@ -1,0 +1,84 @@
+[[clause_links]]
+[obligation=informative]
+== Links and URL resolution
+
+Records, catalogs, and STAC entities all use links, and both ecosystems allow relative URIs in the `href` member. The baseline for both is https://datatracker.ietf.org/doc/html/rfc3986[RFC 3986], which defines how the base URI of a document is determined (section 5.1) and how a relative URI is resolved against it (section 5.2). The ecosystems differ in which base URI they use, and neither ecosystem uses trailing slashes consistently with how relative URIs are resolved. This is a common source of broken links, especially for clients that support both static catalogs and APIs. This clause compares the specifications and recommends practices that give the same result in both ecosystems.
+
+=== What the specifications say
+
+[#link-resolution-differences,reftext='{table-caption} {counter:table-num}']
+.Link resolution in OGC API Standards and STAC
+[cols="20,40,40",options="header"]
+|===
+|Aspect |OGC API - Common, Features, and Records |STAC and STAC API
+|Relative URIs |Allowed. OGC API - Common - Part 1 states that the `href` value is not restricted to absolute links. |Allowed. The STAC best practices recommend relative links for static catalogs and absolute links for APIs.
+|Base URI |Not specified. https://datatracker.ietf.org/doc/html/rfc3986#section-5.1[RFC 3986, section 5.1] then applies: JSON has no way to embed a base URI, so the base URI is the URI from which the document was retrieved. |The "Consistent URIs" section of the STAC best practices defines the absolute URI of the `self` link as the base URI. Only if there is no `self` link is the URI from which the document was retrieved used, after following redirects. The `self` link should match this URI.
+|Trailing slashes |Not specified. Path templates are written without a trailing slash, for example `/collections/{collectionId}`. It is not specified whether `/collections/123/` identifies the same resource. |Significant, as stated for the `href` of the link object. In static catalogs, the best practices recommend linking to files instead of folders, and a trailing slash for URLs that point to a folder. STAC API uses the path templates of OGC API - Features.
+|`self` links |Required in catalogs, in single features and records (`/req/core/f-links` of OGC API - Features, `/req/records-api/record-response` of OGC API - Records), and in feature collection responses. Not required for the features or records inside a feature collection response. |Strongly recommended in all STAC entities and always absolute. Required for STAC Items at `/collections/{collectionId}/items/{itemId}`. STAC Items inside an ItemCollection only need to be valid STAC Items, so their `self` link is strongly recommended but not required.
+|===
+
+Many STAC clients do not follow the STAC best practices in this respect. They resolve relative links against the URI from which they retrieved the document, as defined by RFC 3986, even if a `self` link is provided. The two rules only give different results if the `self` link differs from the URI under which the document is served. The STAC best practices therefore recommend that the `self` link matches this URI, and that a preferred location is given in a link with the relation type `canonical` instead.
+
+=== Where resolution breaks
+
+Relative URIs are resolved as defined in https://datatracker.ietf.org/doc/html/rfc3986#section-5.2[RFC 3986, section 5.2]. Without a trailing slash, the last path segment of the base URI is replaced. With the path templates of OGC API Standards, this often produces unexpected results:
+
+[#link-resolution-examples,reftext='{table-caption} {counter:table-num}']
+.Examples of resolving relative URIs
+[cols="40,20,40",options="header"]
+|===
+|Base URI |Relative URI |Resolved URI
+|`https://example.com/api` (landing page) |`collections` |`https://example.com/collections`
+|`https://example.com/api/` (landing page) |`collections` |`https://example.com/api/collections`
+|`https://example.com/collections` |`123` |`https://example.com/123`
+|`https://example.com/collections/123` |`items` |`https://example.com/collections/items`
+|`https://example.com/collections/123` |`123/items` |`https://example.com/collections/123/items`
+|`https://example.com/collections/123/` |`items` |`https://example.com/collections/123/items`
+|`https://example.com/collections/123?f=json` |`items?f=json` |`https://example.com/collections/items?f=json`
+|`https://example.com/atlas/energy/collection.json` |`../collection.json` |`https://example.com/atlas/collection.json`
+|===
+
+The last example shows why static catalogs are less affected: file names end in `.json`, so the base URI never has an ambiguous last segment.
+
+=== The same document at two URIs
+
+If the base URI is the URI from which a document was retrieved, the result of resolving a relative URI depends on how the document was requested. A server that returns the same document at `https://example.com/stac/test` and at `https://example.com/stac/test/` cannot use relative URIs of the usual form in it, because they resolve differently for the two requests:
+
+[#link-resolution-trailing-slash,reftext='{table-caption} {counter:table-num}']
+.Resolving relative URIs in a document served with and without a trailing slash
+[cols="28,36,36",options="header"]
+|===
+|Relative URI |Retrieved from `https://example.com/stac/test` |Retrieved from `https://example.com/stac/test/`
+|`items` or `./items` |`https://example.com/stac/items` (wrong) |`https://example.com/stac/test/items`
+|`test/items` |`https://example.com/stac/test/items` |`https://example.com/stac/test/test/items` (wrong)
+|`/stac/test/items` |`https://example.com/stac/test/items` |`https://example.com/stac/test/items`
+|`https://example.com/stac/test/items` |`https://example.com/stac/test/items` |`https://example.com/stac/test/items`
+|===
+
+Only absolute URIs and relative URIs that start with `/` resolve the same way in both cases. Relative URIs that start with `/` only depend on the scheme and host of the base URI. However, they break if the API is made available under a different path, for example behind a proxy, or if a static catalog is moved to another folder.
+
+Alternatively, the server can redirect the URI with a trailing slash to the URI without one, for example with the HTTP status code `308`. Redirecting in the other direction, to a URI with a trailing slash, has caused problems for clients in the past. According to https://datatracker.ietf.org/doc/html/rfc3986#section-5.1.3[RFC 3986, section 5.1.3], the base URI after a redirect is the URI that was redirected to. The document then has only one base URI, and relative URIs work. The `Content-Location` HTTP header cannot be used for this purpose, because HTTP no longer defines it as a base URI.
+
+Using the `self` link as the base URI, as described in the STAC best practices, avoids the problem as well: the base URI is the same, no matter how the document was requested. This only works if the `self` link is absolute and correct, and if clients follow this rule, which many do not.
+
+=== Other situations in which links break
+
+* The `self` link differs from the retrieval URI, for example because a catalog was copied to a mirror, because a server behind a proxy uses an internal host name in its `self` links, or because the `self` link points to a preferred location elsewhere. A client following the STAC best practices then resolves relative links against a different base URI than a client following RFC 3986. A preferred location belongs in a link with the relation type `canonical` (https://datatracker.ietf.org/doc/html/rfc6596[RFC 6596]), which both ecosystems use for this purpose.
+* A record or STAC Item in a response of `/collections/{collectionId}/items` or `/search` has no `self` link. A client that wants to open the record has to construct the URI from path templates. This only works for APIs, not for static catalogs, where URIs can have any structure. It also depends on whether the URI of the collection ends with a slash. The draft of version 1.1 of OGC API - Features therefore recommends a link template with the relation type `item` in each collection (`/rec/core/fc-md-item-link-templates`), for example with the `uriTemplate` `https://example.com/collections/123/items/{featureId}`. Catalogs of OGC API - Records and STAC entities (through the https://github.com/stac-extensions/link-templates[Link Templates] extension) use a compatible `linkTemplates` member. As long as such templates are only recommended, clients cannot rely on them and still need to be able to construct the URI.
+* The format is selected with a query parameter such as `?f=json`. Resolving a relative URI drops the query of the base URI, so a relative link has to repeat the parameter.
+
+=== Recommendations
+
+For documents that are used in both ecosystems, the following practices avoid these problems:
+
+. Use absolute URIs in all links of API responses. The STAC best practices recommend this for APIs anyway.
+. Give every record and catalog a `self` link whose `href` is the absolute URI under which the document is actually served, including in responses of `/collections/{collectionId}/items` and `/search`. Then the base URI is the same under both rules, and clients never need to construct URIs.
+. If a document has a preferred location that differs from the URI under which it is served, for example a copy on a mirror or an API response generated from a static catalog, provide this location in a link with the relation type `canonical` and keep the `self` link pointing to the URI under which the document is served.
+. Configure servers behind proxies so that `self` links use the public URI.
+. In static catalogs, point relative links to files, for example `./energy/collection.json`, and not to folders. If a link points to a folder, end it with a slash.
+. Serve API resources under the paths of the path templates, without a trailing slash. If a server also accepts a trailing slash, it either redirects to the path without one, or only uses absolute URIs and relative URIs that start with `/` in the response (see <<link-resolution-trailing-slash>>).
+. Include the `type` member in links and support content negotiation with the `Accept` header, so that relative links do not depend on format query parameters.
+
+Clients that support both ecosystems resolve relative URIs against the URI from which the document was retrieved, after following redirects, as defined by RFC 3986. For HTTP clients in web browsers, this is for example the `responseURL` of the request. They only use the `self` link as the base URI if the retrieval URI is not known. To get the URI of a record or STAC Item, they use its `self` link. Only if there is none, they construct the URI from the URI of the catalog and the path templates. Removing a trailing slash from the URI of the catalog before appending `/items/` and the `id` gives the same result for both variants of the URI.
+
+<<rec_stac_links,/rec/stac/links>> in the <<clause_stac,Requirements Class "STAC">> turns the most important of these practices into recommendations.
