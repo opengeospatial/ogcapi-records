@@ -29,8 +29,8 @@ The differences are grouped into the landing page and conformance (<<api-differe
 |===
 |Resource |Aspect |OGC API - Records |STAC API
 .2+|Landing page |Document |The landing page of OGC API - Features. |A STAC Catalog with the additional member `conformsTo`.
-|Required links |`service-desc` or `service-doc`, `conformance`, and `data`. |`root`, `self`, and `service-desc`. Also `conformance` and `data` for "STAC API - Collections" and "STAC API - Features", and `search` for "STAC API - Item Search".
-|Conformance declaration |Location |At `/conformance`. |In the `conformsTo` member of the landing page. Also at `/conformance` for "STAC API - Collections" and "STAC API - Features".
+|Required links |`service-desc` or `service-doc`, `conformance`, and `data`. |`root`, `self`, and `service-desc`. Also `data` for "STAC API - Collections" and "STAC API - Features", `conformance` for "STAC API - Features", and `search` for "STAC API - Item Search".
+|Conformance declaration |Location |At `/conformance`. |In the `conformsTo` member of the landing page. Also at `/conformance` for "STAC API - Features".
 |===
 
 [#api-differences-documents,reftext='{table-caption} {counter:table-num}']
@@ -39,17 +39,17 @@ The differences are grouped into the landing page and conformance (<<api-differe
 |===
 |Resource |Aspect |OGC API - Records |STAC API
 .2+|`/collections` |Entries |Catalogs (`"itemType": "record"`) and any other kind of collection. |STAC Collections only.
-|Paging |Not defined. |With `next` links.
+|Paging |Not defined. The "Local Resources Catalog - Query Parameters" requirements class allows `limit`, but defines no paging links. |With `next` links.
 .2+|Catalogs and STAC Collections |Required links |`alternate` for each other representation, for example HTML. |`root`.
 |Media type |`application/ogc-catalog+json` by default, `application/json` with the `ogc-catalog` profile. |`application/json`.
 .3+|Records and STAC Items |Required links in a single record |`alternate` for each other representation. |`root`.
-|Required links in the records at `/items` |None. `self` is recommended. |`root` and `self`.
+|Required links in the records at `/items` |`collection`, as in every record. `self` is recommended. |None. The response document itself needs `root`, `self`, and `collection`.
 |`collection` member |Not defined. The catalog is only referenced by the `collection` link. |Required, with the `id` of the STAC Collection.
 |Responses of `/items` |`numberMatched` |The exact number of matches. |Can be an estimate.
 |All links |`type` member |Required for most links, as defined by OGC API - Features. |Strongly recommended.
 |===
 
-Both ecosystems require `self` and `items` links in catalogs, `self` and `collection` links in a single record, and `collection` links in the records at `/collections/{collectionId}/items`. The rows on required links only list the links that one ecosystem requires and the other does not. Both allow the other links, for example `alternate` links in STAC.
+Both ecosystems require `self` and `items` links in catalogs and `self` and `collection` links in a single record. The rows on required links only list the links that one ecosystem requires and the other does not. Both allow the other links, for example `alternate` links in STAC.
 
 [#api-differences-search,reftext='{table-caption} {counter:table-num}']
 .Differences in searching
@@ -58,7 +58,7 @@ Both ecosystems require `self` and `items` links in catalogs, `self` and `collec
 |Resource |Aspect |OGC API - Records |STAC API
 |`/search` |Search across collections |Not defined. Records are searched per catalog. |Additional parameters `ids`, `collections`, and `intersects`.
 .7+|`/collections/{collectionId}/items` |Query parameters |`bbox`, `datetime`, `limit`, `q`, `type`, `ids`, and `externalIds`. Other queryables as `name=value`. |`bbox`, `datetime`, and `limit`. Optionally also the parameters of `/search`.
-|`datetime` |Compared with the `time` member. Records without temporal information match every query. |The server decides which temporal properties are compared, usually `datetime`, or `start_datetime` and `end_datetime`.
+|`datetime` |Compared with the `time` member. Records without temporal information match every query. |Compared with the temporal properties in `properties`. If there are several, the server decides which of them are compared.
 |`q` |Comma-separated terms are combined with OR. Terms separated by spaces are a phrase. |https://github.com/stac-api-extensions/freetext-search[Free-text Search] extension. Its "basic" free-text search is the equivalent. The "advanced" free-text search is a separate conformance class with a different syntax.
 |`filter` |"Filtering" requirements classes, based on OGC API - Features - Part 3. |https://github.com/stac-api-extensions/filter[Filter] extension, based on OGC API - Features - Part 3 as well.
 |Queryables |At `/collections/{collectionId}/queryables`. |Also at `/queryables` for `/search`.
@@ -113,7 +113,7 @@ The `type` query parameter of OGC API - Records filters by the `type` member, wh
 
 === Implementing both APIs
 
-This subclause describes what an implementation of one of the APIs needs to do to also conform to the other one, so that it is a Records API and a STAC API at the same time. Both APIs build on OGC API - Features, so the work is mainly to align the landing page, the collections, and the documents. For STAC API, "STAC API - Core" together with "STAC API - Features" is sufficient. "STAC API - Item Search" (`/search`) is not needed.
+This subclause describes what an implementation of one of the APIs needs to do to also conform to the other one, so that it is a Records API and a STAC API at the same time. Both APIs build on OGC API - Features, so the work is mainly to align the landing page, the collections, and the documents. For STAC API, "STAC API - Core" together with "STAC API - Collections" and "STAC API - Features" is sufficient. "STAC API - Item Search" (`/search`) is not needed.
 
 ==== In both directions
 
@@ -129,12 +129,13 @@ This subclause describes what an implementation of one of the APIs needs to do t
 . Make every collection at `/collections` a STAC Collection. If the API also provides collections that cannot be STAC Collections, provide the STAC API under a separate landing page.
 . Add the links that STAC API requires in the responses of `/collections`, `/collections/{collectionId}`, `/collections/{collectionId}/items`, and `/collections/{collectionId}/items/{recordId}`, in particular `root` and `self` (see <<api-differences-documents>>).
 . Respond with `application/json` for catalogs if the client asks for it, and include the `profile` link for the `ogc-catalog` profile.
-. Declare `https://api.stacspec.org/v1.0.0/core` and `https://api.stacspec.org/v1.0.0/ogcapi-features`. If the API supports `q`, `filter`, or `sortby`, also declare the conformance classes of the corresponding STAC API extensions. The `q` parameter of OGC API - Records corresponds to the "basic" variant of the Free-text Search extension.
+. Declare `https://api.stacspec.org/v1.0.0/core`, `https://api.stacspec.org/v1.0.0/collections`, and `https://api.stacspec.org/v1.0.0/ogcapi-features`. If the API supports `q`, `filter`, or `sortby`, also declare the conformance classes of the corresponding STAC API extensions. The `q` parameter of OGC API - Records corresponds to the "basic" variant of the Free-text Search extension.
 
 ==== Making a STAC API conform to OGC API - Records
 
 . Extend the STAC Items and STAC Collections as described in <<sc_records-and-stac-items_from-item>> and <<sc_records-and-stac-collections_from-collection>>, for example with the top-level members `time` in records and `itemType` in catalogs.
 . Add links with the relation type `alternate` for each other representation, for example HTML, as required by OGC API - Records.
+. Add a link with the relation type `profile` to `http://www.opengis.net/def/profile/OGC/0/ogc-record` to each record, and to `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to each catalog that is served as `application/json`, as required by the "JSON" requirements class of OGC API - Records.
 . Include the `type` member in all links, as OGC API - Features requires it for most of them.
 . Support `application/ogc-catalog+json` for catalogs, as required by the "JSON" requirements class of OGC API - Records. It becomes the default media type for catalogs, so STAC clients need to request `application/json` (see <<sc_apis_interoperability>>).
 . Support the query parameters that the "Searchable Catalog" requirements class requires at `/collections/{collectionId}/items`: `bbox`, `datetime`, `limit`, `q`, `type`, `ids`, and `externalIds`. If the API also supports the "advanced" variant of the Free-text Search extension, `q` cannot have both meanings at the same time.

@@ -11,6 +11,6 @@ test-method::
 --
 . Retrieve the records and catalogs determined in the first step of <<ats_stac_entity,/conf/stac/entity>>.
 . Verify that each of them includes a `stac_version` member at the top level of the object.
-. Verify that the value of the `stac_version` member is `1.0.0` or a later version 1.x.x of the STAC specification.
+. Verify that the value of the `stac_version` member is `1.1.0` or a later version 1.x.x of the STAC specification.
 --
 ====

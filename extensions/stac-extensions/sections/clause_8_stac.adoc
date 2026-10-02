@@ -70,7 +70,7 @@ include::../recommendations/stac/REC_conformsto.adoc[]
 
 The following record is also a valid STAC Item. Compared to the example of the <<clause_stac-extensions,Requirements Class "STAC Extensions">>, it adds or changes these members:
 
-* `stac_version` is added.
+* `stac_version` is added with the value `1.1.0`.
 * `collection` is added, because the record has a link with the relation type `collection`. OGC API - Records requires this link for every record in a Records API.
 * `bbox` is added, because `geometry` is not `null`.
 * The `time` member contains a date. `properties.start_datetime` and `properties.end_datetime` describe the same day, and `properties.datetime` is `null`.
@@ -167,6 +167,10 @@ The following record is also a valid STAC Item. Compared to the example of the <
       "type": "text/html",
       "title": "This document as HTML",
       "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=html"
+    },
+    {
+      "rel": "profile",
+      "href": "http://www.opengis.net/def/profile/OGC/0/ogc-record"
     },
     {
       "rel": "collection",

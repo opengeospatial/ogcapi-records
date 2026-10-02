@@ -21,9 +21,9 @@ NOTE: When no ambiguity is possible, the word `test` may be omitted, so conforma
 
 [[crawlable-catalog-def]]
 === crawlable catalog
-a catalog composed of static, web-accessible files that can only be crawled by following the links embedded in the files (OGC API - Records - Part 1: Core)
+a catalog composed of web-accessible files that exist at fixed URLs and can be retrieved without query parameters, so that the catalog is accessed by following the links in the files
 
-NOTE: STAC calls this deployment pattern a _static catalog_.
+NOTE: This term is used, but not formally defined, in OGC API - Records - Part 1: Core. STAC calls this deployment pattern a _static catalog_.
 
 === dataset
 collection of data, published or curated by a single agent, and available for access or download in one or more serializations or formats (<<DCAT>>)

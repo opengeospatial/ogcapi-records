@@ -50,7 +50,7 @@ Several STAC extension schemas were written for STAC entities only. The followin
 |Issue |Workaround
 |The schema requires an `assets` member in every GeoJSON Feature, even if no member of the extension is used in an asset. Records without `assets` fail validation. This affects, for example, Projection v2.0.0 and File Info v2.1.0. |Include an empty `assets` object, see <<rec_stac-extensions_assets,/rec/stac-extensions/assets>>.
 |The schema does not validate members in links. Members that an extension defines for assets can be placed in links, but invalid values are not detected. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
-|The schema requires at least one of its members in `properties` or in an asset, for example Raster v2.0.0 and Point Cloud v2.0.0. A record that only uses these members in links fails validation. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
+|The schema requires at least one of its members in `properties` or in an asset, for example Raster v2.0.0. A record that only uses these members in links fails validation. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
 |===
 
 Once the affected extensions are updated, the workarounds are no longer needed, but they remain valid.
@@ -63,19 +63,19 @@ include::../recommendations/stac-extensions/REC_conformsto.adoc[]
 
 === Extensions aligned with OGC API - Records
 
-Several STAC extensions were written to match members that OGC API - Records - Part 1: Core defines. Listing these extensions in `stac_extensions` is optional, because OGC API - Records already allows the members. Listing an extension enables validation against its schema. <<overlapping-extensions>> lists the remaining differences.
+Several STAC extensions were written to match members that OGC API - Records - Part 1: Core defines. Listing these extensions in `stac_extensions` is optional, because OGC API - Records already allows the members. Listing an extension enables validation against its schema. Once listed, the member is mandatory in records, because each of these extensions requires its member to be present. <<overlapping-extensions>> lists the remaining differences.
 
 [#overlapping-extensions,reftext='{table-caption} {counter:table-num}']
 .STAC extensions aligned with OGC API - Records
 [cols="22,26,52",options="header"]
 |===
 |Record member |STAC extension |Differences
-|`contacts` |https://github.com/stac-extensions/contacts[Contacts] v1.0.1 |STAC adds `description`. OGC API - Records adds `hoursOfService`.
+|`contacts` |https://github.com/stac-extensions/contacts[Contacts] v1.0.1 |STAC adds `description`. OGC API - Records adds `hoursOfService`. STAC requires `rel` in the links of a contact.
 |`externalIds` |https://github.com/stac-extensions/external-ids[External IDs] v1.0.0 |None.
 |`themes` |https://github.com/stac-extensions/themes[Themes] v1.0.0 |None.
-|`language`, `languages` |https://github.com/stac-extensions/language[Language] v1.0.0 |None. The extension adds `hreflang` for assets.
-|`resourceLanguages` |None |The Language extension derives the languages of the resource from the `hreflang` members of assets and links.
-|`linkTemplates` |https://github.com/stac-extensions/link-templates[Link Templates] v1.0.0 |None.
+|`language`, `languages` |https://github.com/stac-extensions/language[Language] v1.0.0 |STAC validates `code` against the pattern of RFC 5646 and only allows `ltr` and `rtl` as `dir`. The extension adds `hreflang` for assets and links.
+|`resourceLanguages` |None |The Language extension derives the languages of the resource from the `hreflang` members of the assets.
+|`linkTemplates` |https://github.com/stac-extensions/link-templates[Link Templates] v1.0.0 |STAC requires `rel`, does not allow `href`, and adds `method`, `headers`, and `body`.
 |===
 
 === STAC common metadata
@@ -84,7 +84,7 @@ The https://github.com/radiantearth/stac-spec/blob/v1.1.0/commons/common-metadat
 
 === Example
 
-The following record uses five STAC extensions. It lists the schema URIs in `stac_extensions` and declares the "STAC Extensions" conformance class in `conformsTo`. The record is not a STAC Item: it has no `stac_version`, `bbox`, `properties.datetime`, or `collection` member. `proj:code` gives the coordinate reference system of the described dataset. The `file:size` and `file:checksum` members describe the GeoTIFF file referenced by the `enclosure` link, where the File Info v2.1.0 schema validates them. The empty `assets` member is needed because the Projection and File Info schemas require it (see <<sc_stac-extensions_known-issues>>).
+The following record uses five STAC extensions. It lists the schema URIs in `stac_extensions` and declares the "STAC Extensions" conformance class in `conformsTo`. The record is not a STAC Item: it has no `stac_version`, `bbox`, `properties.datetime`, or `collection` member. `proj:code` gives the coordinate reference system of the described dataset. The `file:size` and `file:checksum` members describe the GeoTIFF file referenced by the `enclosure` link, where the File Info v2.1.0 schema validates them. The empty `assets` member is needed because the Projection and File Info schemas require it (see <<sc_stac-extensions_known-issues>>). The `profile` link identifies the document as a record, as required by OGC API - Records - Part 1: Core for records in JSON if the "JSON" conformance class is declared.
 
 .A record using STAC extensions
 ====
@@ -169,6 +169,10 @@ The following record uses five STAC extensions. It lists the schema URIs in `sta
       "type": "text/html",
       "title": "This document as HTML",
       "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=html"
+    },
+    {
+      "rel": "profile",
+      "href": "http://www.opengis.net/def/profile/OGC/0/ogc-record"
     },
     {
       "rel": "collection",

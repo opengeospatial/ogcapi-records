@@ -49,7 +49,7 @@ The `license` member of a catalog and of a STAC Collection describe different th
 [[sc_records-and-stac-collections_creating]]
 === Creating a catalog that is also a STAC Collection
 
-. Add `stac_version`.
+. Add `stac_version` with the value `1.1.0` or a later version 1.x.x, as required by <<req_stac_version,/req/stac/version>>.
 . Add `description`, `license`, and `extent`. For a catalog that only groups other catalogs, see <<sc_stac_structuring-catalogs>>.
 . In `extent`, do not use exactly two bounding boxes, use UTC timestamps, and leave out `crs` and `trs` or use their defaults.
 . If `license` is not a single SPDX license identifier, add links with the relation type `license`, as recommended by <<rec_stac_license,/rec/stac/license>>.
@@ -59,7 +59,7 @@ The `license` member of a catalog and of a STAC Collection describe different th
 . Add `summaries` for the most important members in the `properties` of the records, for example `type` or `proj:code`. The keys in `summaries` are the member names without the prefix `properties.`.
 . Keep `conformsTo` and add the conformance classes of this Standard.
 
-A catalog in JSON is served as `application/ogc-catalog+json` by default. STAC clients expect `application/json`. OGC API - Records - Part 1: Core also allows `application/json` for catalogs, with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to identify the content. Serving catalogs as `application/json` with a `profile` link works for both ecosystems.
+A catalog in JSON is served as `application/ogc-catalog+json` by default. STAC clients expect `application/json`. OGC API - Records - Part 1: Core also allows `application/json` for catalogs, with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to identify the content. Serving catalogs as `application/json` with a `profile` link works for both ecosystems. Records are served as `application/geo+json` in both ecosystems and carry a `profile` link to `http://www.opengis.net/def/profile/OGC/0/ogc-record`, which STAC clients ignore.
 
 [[sc_records-and-stac-collections_from-collection]]
 === Creating a catalog from a STAC Collection

@@ -5,7 +5,9 @@
 [%metadata]
 identifier:: /req/stac/version
 part:: Each record and each catalog SHALL include the `stac_version` member at the top level of the object.
-part:: The value of the `stac_version` member SHALL be `1.0.0` or a later version 1.x.x of the <<STAC,STAC specification>>.
+part:: The value of the `stac_version` member SHALL be `1.1.0` or a later version 1.x.x of the <<STAC,STAC specification>>.
 ====
 
 NOTE: STAC clients recognize STAC entities by the `stac_version` member. A document without it is ignored by common STAC libraries, even if it is otherwise valid.
+
+NOTE: Version 1.1.0 is the first version of STAC that allows SPDX license expressions and the value `other` in the `license` member, which <<rec_stac_license,/rec/stac/license>> relies on.

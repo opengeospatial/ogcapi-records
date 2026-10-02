@@ -5,7 +5,7 @@
 [%metadata]
 identifier:: /req/stac/time
 part:: If a record includes a `time` member that is not `null`, the members `datetime`, `start_datetime`, and `end_datetime` in the `properties` of the record SHALL describe the same instant or interval as the `time` member.
-part:: A date in the `time` member, either as `date` or as the start or end of an `interval`, SHALL be represented by timestamps that cover the complete day in UTC.
+part:: A date in the `time` member, either as `date` or as the start or end of an `interval`, SHALL be represented by the start of the day in UTC (`T00:00:00Z`) as start and by the end of the day in UTC (`T23:59:59Z`) as end.
 part:: An open start of an `interval` in the `time` member SHALL be represented by `"start_datetime": "0001-01-01T00:00:00Z"`, and an open end by `"end_datetime": "9999-12-31T23:59:59Z"`.
 ====
 
