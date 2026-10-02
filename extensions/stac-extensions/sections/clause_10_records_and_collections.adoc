@@ -36,8 +36,11 @@ STAC defines two kinds of catalog objects: the STAC Catalog (`"type": "Catalog"`
 |`assets`, `item_assets` |Not defined. Allowed by this Standard, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>. |Optional.
 |`records`, `recordsArrayName` |Optional. Records encoded in the catalog. |Not defined. STAC clients only find STAC Items through `item` links or an API.
 |`schemes` |Optional. |Not defined.
-|`links` |Required. `self` and `alternate` links are required. Records are referenced with `item` links or an `items` link to an API. Sub-catalogs are referenced with `child`, `related`, or `next` links. Sub-catalogs should have `parent` and `root` links. |Required. `self` and `root` links are strongly recommended. Other STAC Collections should have a `parent` link. STAC Items are referenced with `item` links and sub-catalogs with `child` links. `related` links can reference other STAC entities, but not sub-catalogs.
+|Required links |`self`, and `alternate` for each other representation. |None. `self` and `root` are strongly recommended.
+|Links to sub-catalogs |`child`, and also `related` for sets of catalogs and `next` for series. |`child` only. `related` links are not part of the hierarchy.
 |===
+
+Both ecosystems require the `links` member, reference an API endpoint for records or STAC Items with an `items` link, and recommend `parent` and `root` links in sub-catalogs.
 
 Temporal intervals in the `extent` of both catalogs and STAC Collections use `null` for an open start or end. This is different from the `time` member of a record, which uses `..`.
 
@@ -53,10 +56,23 @@ The `license` member of a catalog and of a STAC Collection describe different th
 . Provide `providers` in addition to `contacts`. STAC clients typically show `providers`, and clients of OGC API - Records show `contacts`. Alternatively, list the Contacts extension in `stac_extensions`.
 . Add `root` and `parent` links, and set the media types of hierarchical links as required by <<req_stac_link-media-types,/req/stac/link-media-types>>. Use `child` links for sub-catalogs, because STAC clients only crawl `child` links as part of the hierarchy.
 . Do not rely on records encoded in the `records` member. STAC clients do not read them.
-. Add `summaries` for the most important members of the records, for example `type` or `proj:code`.
+. Add `summaries` for the most important members in the `properties` of the records, for example `type` or `proj:code`. The keys in `summaries` are the member names without the prefix `properties.`.
 . Keep `conformsTo` and add the conformance classes of this Standard.
 
 A catalog in JSON is served as `application/ogc-catalog+json` by default. STAC clients expect `application/json`. OGC API - Records - Part 1: Core also allows `application/json` for catalogs, with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to identify the content. Serving catalogs as `application/json` with a `profile` link works for both ecosystems.
+
+[[sc_records-and-stac-collections_from-collection]]
+=== Creating a catalog from a STAC Collection
+
+A STAC Collection is already very close to a catalog. To make it useful for clients of OGC API - Records:
+
+. Start from a STAC Collection. A STAC Catalog cannot be a catalog of OGC API - Records, because its `type` is `Catalog`. It can be turned into a STAC Collection, see <<sc_stac_structuring-catalogs>>.
+. Add `itemType` with the value `record` if the collection references STAC Items, `catalog` if it only references other collections, or both.
+. Add a `conformsTo` member with `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection` and the conformance classes of this Standard. In a static catalog, also add `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog`.
+. Make sure that the collection has a `self` link, and add a link with the relation type `alternate` for each other representation, for example HTML.
+. Check the meaning of `license`. In a STAC Collection, it is the license of the data, while OGC API - Records applies it to the catalog itself. If the two differ, describe the license of the catalog in the `rights` member.
+. Add `contacts` in addition to `providers`. Clients of OGC API - Records show `contacts`, and STAC clients typically show `providers`.
+. Consider adding other members of a catalog that STAC does not define, for example `themes` or `language`.
 
 === Example
 

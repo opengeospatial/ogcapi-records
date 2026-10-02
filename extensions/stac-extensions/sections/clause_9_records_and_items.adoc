@@ -10,7 +10,7 @@ Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/ht
 
 === Differences
 
-<<record-item-crosswalk>> lists the members that differ between records and STAC Items. <<sc_records-and-stac-items_creating>> describes what these differences mean in practice, and its steps can be used as a checklist to check whether a record is also a valid STAC Item.
+<<record-item-crosswalk>> lists the members that differ between records and STAC Items. <<sc_records-and-stac-items_creating>> describes what these differences mean in practice, and its steps can be used as a checklist to check whether a record is also a valid STAC Item. In this clause, members inside `properties` are written with the prefix `properties.`, and all other members are top-level members.
 
 [#record-item-crosswalk,reftext='{table-caption} {counter:table-num}']
 .Differences between records and STAC Items
@@ -33,7 +33,9 @@ Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/ht
 |`properties.formats` |Optional. The formats in which the resource is available. |Not defined. The `type` of each asset gives its media type.
 |`properties.contacts`, `properties.themes`, `properties.externalIds`, `properties.language`, `properties.languages`, `linkTemplates` |Optional. |Available through STAC extensions, see <<overlapping-extensions>>.
 |`properties.resourceLanguages` |Optional. |Not defined. Assets and links can have `hreflang`.
-|`links` |Optional in the "Record Core" requirements class. A record that is a member of a catalog requires a `collection` link. In a Records API, `self`, `alternate`, and `collection` links are required. |Required. `self` and `collection` links are strongly recommended. The `self` link is absolute.
+|`links` |Optional. |Required.
+|Required links |`collection` if the record is a member of a catalog. In a Records API, also `self`, and `alternate` for each other representation. |None. `self` and `collection` are strongly recommended.
+|`self` link |Not restricted, but a relative `self` link adds no information, because it is resolved against the URI from which the record was retrieved. |Absolute.
 |`collection` |Not defined. The catalog is referenced by the `collection` link. |The `id` of the STAC Collection. Required if a `collection` link is present, not allowed otherwise.
 |`assets` |Not defined. Allowed by this Standard, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>. |Required. Can be empty.
 |===
@@ -86,11 +88,12 @@ The following steps turn a record into a document that is also a valid STAC Item
 . Leave out members instead of setting them to `null` where STAC does not allow `null`, for example the `name` of a contact.
 . Keep `conformsTo` and add `http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac`.
 
+[[sc_records-and-stac-items_from-item]]
 === Creating a record from a STAC Item
 
 A STAC Item is already very close to a record. To make it useful for clients of OGC API - Records:
 
-. Add a `time` member, as recommended by <<rec_stac_time,/rec/stac/time>>.
+. Add the top-level member `time`, as recommended by <<rec_stac_time,/rec/stac/time>>.
 . Add links for the most important assets, for example with the link relation type `enclosure`. Clients of OGC API - Records do not read assets. The links only need the basic members such as `href`, `rel`, `type`, and `title`. Further metadata stays in the asset.
 . Add `properties.type`. A STAC Item usually describes a dataset or a part of the dataset that its STAC Collection describes, so `dataset` is often suitable. Other resources need other values, for example a machine learning model that is described with the Machine Learning Model extension. OGC API - Records - Part 1: Core lists common resource types in an informative annex.
 . Add `properties.formats` with one object for each media type of the assets that contain the data, usually the assets with the role `data`. A `name` can be added for formats that are better known by their name, for example `"formats": [{"name": "Cloud Optimized GeoTIFF", "mediaType": "image/tiff; application=geotiff; profile=cloud-optimized"}]`.
