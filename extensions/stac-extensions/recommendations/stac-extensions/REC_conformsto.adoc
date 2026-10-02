@@ -1,0 +1,13 @@
+[[rec_stac-extensions_conformsto]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac-extensions/conformsto
+part:: A record that uses one or more STAC extensions SHOULD include the following URI in its `conformsTo` member:
++
+* http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions
+part:: A catalog that uses one or more STAC extensions SHOULD include the URI listed above in its `conformsTo` member.
+====
+
+NOTE: In OGC API - Records - Part 1: Core, the `conformsTo` members of a catalog and of its records are cumulative: a URI listed in the catalog applies to all of its records. The requirements of this requirements class only apply to records that actually use STAC extensions, so a catalog-level declaration does not mean that every record uses one. The record-level declaration lets a client tell from the record alone that it uses STAC extensions. A record that does not use STAC extensions omits both the `stac_extensions` member and the URI above.

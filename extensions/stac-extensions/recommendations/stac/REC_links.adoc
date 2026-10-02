@@ -1,0 +1,13 @@
+[[rec_stac_links]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac/links
+part:: The `href` of the `self` link of a record or catalog SHOULD be the absolute URI under which the record or catalog is served.
+part:: If a record or catalog has a preferred location that differs from the URI under which it is served, this location SHOULD be provided in a link with the relation type `canonical` and not in the `self` link.
+part:: Each record SHOULD include a `self` link, also if it is part of the response of an operation that returns several records, for example at `/collections/{collectionId}/items`.
+part:: All links in the responses of an API SHOULD use absolute URIs.
+====
+
+NOTE: OGC API Standards do not specify the base URI for resolving relative URIs, so RFC 3986 applies and the base URI is the URI from which the document was retrieved. The STAC best practices use the `self` link as the base URI instead. The two only lead to the same result if the `self` link is the URI under which the document is served. See <<clause_links,Links and URL resolution>>.

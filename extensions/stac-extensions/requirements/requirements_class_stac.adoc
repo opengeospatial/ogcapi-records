@@ -1,0 +1,15 @@
+[[rc_stac]]
+[requirements_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac
+subject:: Document model
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
+inherit:: http://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac-extensions
+requirement:: /req/stac/entity
+requirement:: /req/stac/version
+requirement:: /req/stac/time
+requirement:: /req/stac/link-media-types
+requirement:: /req/stac/conformance
+====

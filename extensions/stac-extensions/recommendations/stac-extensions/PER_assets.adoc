@@ -1,0 +1,10 @@
+[[per_stac-extensions_assets]]
+
+[permission]
+====
+[%metadata]
+identifier:: /per/stac-extensions/assets
+part:: A record MAY include an `assets` member at the top level of the record object. If present, its value SHALL be an object that maps unique keys to https://github.com/radiantearth/stac-spec/blob/v1.1.0/commons/assets.md[STAC Asset Objects].
+part:: A catalog MAY include an `assets` member and an `item_assets` member as defined for https://github.com/radiantearth/stac-spec/blob/v1.1.0/collection-spec/collection-spec.md[STAC Collections].
+part:: Members that a STAC extension defines for assets MAY be placed on the Asset Objects of a record or catalog.
+====

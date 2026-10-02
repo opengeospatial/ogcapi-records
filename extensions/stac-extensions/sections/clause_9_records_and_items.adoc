@@ -1,0 +1,102 @@
+[[clause_records-and-stac-items]]
+[obligation=informative]
+== Records and STAC Items
+
+This clause compares records with STAC Items and explains how to create documents that are both. The normative provisions are in the <<clause_stac,Requirements Class "STAC">>.
+
+=== Common foundation
+
+Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/html/rfc7946[RFC 7946]). Both have the members `id`, `type` (with the value `Feature`), `geometry`, and `properties`, and both use `links` with link objects that consist of `href`, `rel`, `type`, and `title`. Metadata about the described resource is in `properties`, and many members in `properties` have the same name and meaning, for example `title`, `description`, `keywords`, `created`, and `updated`. In both, `license` is an SPDX license identifier, an SPDX license expression, or `other`.
+
+=== Differences
+
+<<record-item-crosswalk>> lists the members that differ between records and STAC Items. <<sc_records-and-stac-items_creating>> describes what these differences mean in practice, and its steps can be used as a checklist to check whether a record is also a valid STAC Item. In this clause, members inside `properties` are written with the prefix `properties.`, and all other members are top-level members.
+
+[#record-item-crosswalk,reftext='{table-caption} {counter:table-num}']
+.Differences between records and STAC Items
+[cols="20,40,40",options="header"]
+|===
+|Member |Record |STAC Item
+|`id` |Required. A string or an integer. |Required. A string, which should be unique within the containing STAC Collection.
+|`stac_version` |Not defined. |Required.
+|`stac_extensions` |Defined by this Standard. |Optional.
+|`conformsTo` |Optional. Lists the conformance classes of the record. |Not defined. Allowed as an additional member.
+|`bbox` |Optional. |Required if `geometry` is not `null`, not allowed otherwise.
+|`time` |Optional. `null`, or an object with a `date`, a `timestamp`, and/or an `interval`. Intervals can be open (`..`). Timestamps use UTC. |Not defined. Temporal information is in `properties`.
+|`properties` |Required. Can be `null`. |Required. An object.
+|`properties.datetime` |Not defined. |Required. Can be `null` if `start_datetime` and `end_datetime` are given.
+|`properties.start_datetime`, `properties.end_datetime` |Not defined. |Optional, but required if `datetime` is `null`. Always used together. Timestamps only, so an open start or end is represented by a placeholder, see <<req_stac_time,/req/stac/time>>.
+|`properties.created`, `properties.updated` |Optional. The time the record was created and last changed. |Optional. In `properties`, the time the metadata was created and last changed. In assets and links, the time the data was created and last changed.
+|`properties.type` |Optional. The nature or genre of the resource, for example `dataset`. |Not defined. Not to be confused with the GeoJSON `type` member.
+|`properties.license` |Optional. `license` links are required for `other`. |Optional. `license` links are recommended for all values that are not a single SPDX license identifier.
+|`properties.rights` |Optional. |Not defined.
+|`properties.formats` |Optional. The formats in which the resource is available. |Not defined. The `type` of each asset gives its media type.
+|`properties.contacts`, `properties.themes`, `properties.externalIds`, `properties.language`, `properties.languages`, `linkTemplates` |Optional. |Available through STAC extensions, see <<overlapping-extensions>>.
+|`properties.resourceLanguages` |Optional. |Not defined. Assets and links can have `hreflang`.
+|`links` |Optional. |Required.
+|Required links |`collection` if the record is a member of a catalog. In a Records API, also `self`, and `alternate` for each other representation. |None. `self` and `collection` are strongly recommended.
+|`self` link |Not restricted, but a relative `self` link adds no information, because it is resolved against the URI from which the record was retrieved. |Absolute.
+|`collection` |Not defined. The catalog is referenced by the `collection` link. |The `id` of the STAC Collection. Required if a `collection` link is present, not allowed otherwise.
+|`assets` |Not defined. Allowed by this Standard, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>. |Required. Can be empty.
+|===
+
+=== Temporal information
+
+The two data models express time differently. <<time-mapping>> shows how to derive the STAC members from the `time` member of a record, following <<req_stac_time,/req/stac/time>>.
+
+[#time-mapping,reftext='{table-caption} {counter:table-num}']
+.Deriving STAC temporal members from the time member of a record
+[cols="40,60",options="header"]
+|===
+|`time` in the record |Members in `properties` of the STAC Item
+|`{"timestamp": "2019-04-16T10:15:00Z"}` |`"datetime": "2019-04-16T10:15:00Z"`
+|`{"date": "2019-04-16"}` |`"datetime": null`, `"start_datetime": "2019-04-16T00:00:00Z"`, `"end_datetime": "2019-04-16T23:59:59Z"`
+|`{"interval": ["2019-04-16T10:15:00Z", "2019-04-16T11:00:00Z"]}` |`"datetime": null`, `"start_datetime": "2019-04-16T10:15:00Z"`, `"end_datetime": "2019-04-16T11:00:00Z"`
+|`{"interval": ["2019-04-01", "2019-04-30"]}` |`"datetime": null`, `"start_datetime": "2019-04-01T00:00:00Z"`, `"end_datetime": "2019-04-30T23:59:59Z"`
+|An interval and a timestamp |`datetime` from the timestamp, `start_datetime` and `end_datetime` from the interval.
+|`{"interval": ["2014-04-24T10:50:18Z", ".."]}` |`"datetime": null`, `"start_datetime": "2014-04-24T10:50:18Z"`, `"end_datetime": "9999-12-31T23:59:59Z"`
+|`{"interval": ["..", "2019-04-30"]}` |`"datetime": null`, `"start_datetime": "0001-01-01T00:00:00Z"`, `"end_datetime": "2019-04-30T23:59:59Z"`
+|`null`, or no `time` member |Cannot be expressed.
+|===
+
+A date in a record has the granularity of a day, independent of any time zone. The table uses the bounds of the day in UTC, which is an approximation.
+
+For the other direction, <<rec_stac_time,/rec/stac/time>> recommends adding a `time` member to STAC Items. Both use UTC, so the timestamps can be copied. Only timestamps with the offset `+00:00`, which STAC also allows, need to be rewritten with `Z`, for example from `2019-04-16T10:15:00+00:00` to `2019-04-16T10:15:00Z`. The placeholders `0001-01-01T00:00:00Z` and `9999-12-31T23:59:59Z` become an open start or end (`..`).
+
+=== Records that cannot be STAC Items
+
+Some records cannot become valid STAC Items without changing what they state:
+
+* Records without any temporal information, because a STAC Item always has temporal information.
+* Records that describe a complete dataset, for example one that is continuously updated. In STAC, a dataset is usually described by a STAC Collection, and the STAC Items of the collection describe its parts.
+
+For such records, it is often better to describe the resource as a STAC Collection, which allows open temporal intervals in its `extent` without placeholders. <<clause_apis,Records APIs and STAC APIs>> explains how STAC Collections can be searched like records. Otherwise, the records can stay plain records that do not declare the "STAC" conformance class.
+
+[[sc_records-and-stac-items_creating]]
+=== Creating a record that is also a STAC Item
+
+The following steps turn a record into a document that is also a valid STAC Item. OGC API - Records allows additional members, so none of these steps makes the record invalid.
+
+. Add `stac_version` with the value `1.1.0` or a later version 1.x.x, as required by <<req_stac_version,/req/stac/version>>.
+. Make sure that `id` is a string and that `properties` is an object, not `null`.
+. Add `bbox` if `geometry` is not `null`.
+. Add `datetime`, `start_datetime`, and `end_datetime` to `properties`, as shown in <<time-mapping>>.
+. Add the `assets` member. For each link that points to data of the resource, for example with the link relation type `enclosure` or `describes`, add an asset with the same `href`, `type`, and `title`, and a suitable role such as `data`, `metadata`, `thumbnail`, or `overview`. Keep the links for clients of OGC API - Records, but only with their basic members such as `href`, `rel`, `type`, and `title`. Place members that STAC extensions define for assets, such as `file:size`, on the asset and remove them from the link, see <<rec_stac-extensions_assets,/rec/stac-extensions/assets>>. If the record has no data that can be retrieved, use an empty object.
+. Add the `collection` member with the `id` of the catalog if the record has a `collection` link.
+. Use an absolute URI in the `self` link, and set the media types of hierarchical links as required by <<req_stac_link-media-types,/req/stac/link-media-types>>.
+. If `license` is not a single SPDX license identifier, add links with the relation type `license`, as recommended by <<rec_stac_license,/rec/stac/license>>. Replace the deprecated STAC values `proprietary` and `various` with `other`.
+. Leave out members instead of setting them to `null` where STAC does not allow `null`, for example the `name` of a contact.
+. Keep `conformsTo` and add `http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac`.
+
+[[sc_records-and-stac-items_from-item]]
+=== Creating a record from a STAC Item
+
+A STAC Item is already very close to a record. To make it useful for clients of OGC API - Records:
+
+. Add the top-level member `time`, as recommended by <<rec_stac_time,/rec/stac/time>>.
+. Add links for the most important assets, for example with the link relation type `enclosure`. Clients of OGC API - Records do not read assets. The links only need the basic members such as `href`, `rel`, `type`, and `title`. Further metadata stays in the asset.
+. Add a link with the relation type `profile` to `http://www.opengis.net/def/profile/OGC/0/ogc-record`, which OGC API - Records - Part 1: Core requires for records in JSON if the "JSON" conformance class is declared.
+. Add `properties.type`. A STAC Item usually describes a dataset or a part of the dataset that its STAC Collection describes, so `dataset` is often suitable. Other resources need other values, for example a machine learning model that is described with the Machine Learning Model extension. OGC API - Records - Part 1: Core lists common resource types in an informative annex.
+. Add `properties.formats` with one object for each media type of the assets that contain the data, usually the assets with the role `data`. A `name` can be added for formats that are better known by their name, for example `"formats": [{"name": "Cloud Optimized GeoTIFF", "mediaType": "image/tiff; application=geotiff; profile=cloud-optimized"}]`.
+. Consider adding other record members that STAC does not define, for example `properties.contacts` or `properties.themes`.
+. Add a `conformsTo` member with `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core` and the conformance classes of this Standard.

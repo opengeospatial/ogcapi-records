@@ -1,0 +1,11 @@
+[[rec_stac_time]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac/time
+part:: A record SHOULD include a `time` member that describes the same instant or interval as the `datetime`, `start_datetime`, and `end_datetime` members in its `properties`.
+part:: If `properties.start_datetime` is `0001-01-01T00:00:00Z` or `properties.end_datetime` is `9999-12-31T23:59:59Z`, the corresponding start or end of the `interval` in the `time` member SHOULD be open (`..`).
+====
+
+NOTE: This recommendation is most relevant when records are generated from existing STAC Items. Both use UTC, but timestamps in the `time` member always end with `Z`, while STAC also allows the offset `+00:00`. Such timestamps need to be rewritten with `Z`. The placeholders for an open start or end are defined in <<req_stac_time,/req/stac/time>>.

@@ -1,0 +1,17 @@
+[[ats_stac-extensions_extension-conformance]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac-extensions/extension-conformance
+target:: /req/stac-extensions/extension-conformance
+test-purpose:: Validate that records and catalogs conform to the STAC extensions they list.
+test-method::
++
+--
+. Retrieve each record and each catalog that includes a `stac_extensions` member.
+. For each URI in the `stac_extensions` array, retrieve the JSON Schema from the URI.
+. Validate the record or catalog against each retrieved JSON Schema and verify that validation succeeds.
+. Verify that the record or catalog fulfills the requirements of each listed extension that cannot be validated with JSON Schema.
+--
+====

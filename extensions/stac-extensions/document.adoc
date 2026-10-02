@@ -1,4 +1,4 @@
-= OGC API - Records - Part 5: STAC Extensions
+= OGC API - Records - Part 5: STAC
 :doctype: standard
 :encoding: utf-8
 :lang: en
@@ -46,7 +46,17 @@ include::sections/clause_6_overview.adoc[]
 
 include::sections/clause_7_extensions.adoc[]
 
-include::sections/clause_8_items.adoc[]
+include::sections/clause_8_stac.adoc[]
+
+include::sections/clause_9_records_and_items.adoc[]
+
+include::sections/clause_10_records_and_collections.adoc[]
+
+include::sections/clause_11_static_catalogs.adoc[]
+
+include::sections/clause_12_apis.adoc[]
+
+include::sections/clause_13_links.adoc[]
 
 ////
 add or remove annexes after "A" as necessary

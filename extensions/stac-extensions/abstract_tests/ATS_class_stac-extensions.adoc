@@ -1,0 +1,26 @@
+[[ats_stac-extensions]]
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions
+target:: http://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac-extensions
+classification:: Target Type:Document model
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
+abstract-test:: /conf/stac-extensions/member
+abstract-test:: /conf/stac-extensions/extension-conformance
+abstract-test:: /conf/stac-extensions/conformance
+====
+
+==== The stac_extensions member
+
+include::stac-extensions/ATS_member.adoc[]
+
+==== Conformance to the listed extensions
+
+include::stac-extensions/ATS_extension-conformance.adoc[]
+
+==== Conformance declaration
+
+include::stac-extensions/ATS_conformance.adoc[]

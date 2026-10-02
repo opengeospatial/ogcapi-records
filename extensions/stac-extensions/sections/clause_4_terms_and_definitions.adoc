@@ -1,5 +1,11 @@
 == Terms and Definitions
 
+[[asset-def]]
+=== asset
+an object that references data of a STAC Item or STAC Collection that can usually be downloaded or streamed, together with metadata about the data, for example its media type and roles (<<STAC>>)
+
+NOTE: STAC separates assets from <<link-def,links>>. Assets reference the data that a STAC Item or STAC Collection describes, for example the files of a satellite scene. They are usually downloadable, and clients load them to access and process the data. Links reference related resources, for example the parent STAC Collection, related STAC Items, or a license text. Clients usually do not download them, but navigate to them or use them in other ways. Members that STAC extensions define for data, such as `file:size` or `proj:shape`, are therefore often defined in the asset metadata.
+
 === catalog; record collection
 a collection of related <<record-def,records>>
 
@@ -12,6 +18,12 @@ NOTE: When no ambiguity is possible, the word `test` may be omitted. i.e., confo
 set of conformance test modules that must be applied to receive a single certificate of conformance (<<ogc08-131,OGC 08-131>>)
 
 NOTE: When no ambiguity is possible, the word `test` may be omitted, so conformance test class may be called a conformance class.
+
+[[crawlable-catalog-def]]
+=== crawlable catalog
+a catalog composed of web-accessible files that exist at fixed URLs and can be retrieved without query parameters, so that the catalog is accessed by following the links in the files
+
+NOTE: This term is used, but not formally defined, in OGC API - Records - Part 1: Core. STAC calls this deployment pattern a _static catalog_.
 
 === dataset
 collection of data, published or curated by a single agent, and available for access or download in one or more serializations or formats (<<DCAT>>)
@@ -30,6 +42,12 @@ EXAMPLE: a downloadable file, an RSS feed or a web service that provides the dat
 
 === executable test suite (ETS)
 set of code (e.g., Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.ogc.org/files/?artifact_id=55234[(OGC 08-134)]
+
+[[link-def]]
+=== link
+an object that describes a relationship between the containing document and another resource, consisting of the URI of the resource (`href`), the relation type (`rel`), and optional hints such as the media type (`type`) and a title (<<rfc8288,RFC 8288>>)
+
+NOTE: In STAC, links reference related resources that clients navigate to or use in other ways than assets, while the data that clients load for access and processing is referenced by <<asset-def,assets>>. In OGC API - Records, links serve both purposes: navigation links express relationships between catalogs and records, and association links reference the resources described by a record.
 
 [[local-resources-endpoint-def]]
 === local resources endpoint
@@ -70,3 +88,17 @@ an asset of interest that may be described by metadata (i.e., a <<record-def,rec
 entity to which some requirements of a standard apply (<<ogc08-131,OGC 08-131>>)
 
 NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
+
+[[stac-def]]
+=== STAC; SpatioTemporal Asset Catalog
+a specification for describing geospatial resources and their assets with JSON-based catalogs (<<STAC>>)
+
+[[stac-entity-def]]
+=== STAC entity
+a STAC Catalog, a STAC Collection, or a STAC Item (<<STAC>>)
+
+[[stac-extension-def]]
+=== STAC extension
+an extension to the <<stac-def,STAC>> specification that defines additional members for <<stac-entity-def,STAC entities>> and is identified by the URI of the JSON Schema that validates those members
+
+NOTE: A list of registered STAC extensions is available at https://stac-extensions.github.io/[stac-extensions.github.io].
