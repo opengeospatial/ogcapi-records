@@ -14,6 +14,7 @@ abstract-test:: /conf/stac/version
 abstract-test:: /conf/stac/time
 abstract-test:: /conf/stac/link-media-types
 abstract-test:: /conf/stac/conformance
+abstract-test:: /conf/stac/crawlable-catalog
 ====
 
 ==== STAC entities
@@ -33,3 +34,5 @@ include::stac/ATS_link-media-types.adoc[]
 ==== Conformance declaration
 
 include::stac/ATS_conformance.adoc[]
+
+include::stac/ATS_crawlable-catalog.adoc[]

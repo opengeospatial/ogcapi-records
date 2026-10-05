@@ -10,4 +10,5 @@ requirement:: /req/stac-extensions/member
 requirement:: /req/stac-extensions/extension-conformance
 requirement:: /req/stac-extensions/assets
 requirement:: /req/stac-extensions/conformance
+requirement:: /req/stac-extensions/crawlable-catalog
 ====

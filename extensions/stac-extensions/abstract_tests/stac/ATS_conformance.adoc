@@ -9,7 +9,6 @@ test-purpose:: Validate conformance identification.
 test-method::
 +
 --
-. If the deployment provides records through an API and all of its records and catalogs pass the tests of this conformance class, issue an HTTP GET request on the `/conformance` path and verify that the `conformsTo` array contains the value `+http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac+`.
-. If the deployment is a crawlable catalog, verify for each catalog that passes the tests of this conformance class, together with all of its records, that the `conformsTo` member of the catalog contains the value `+http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac+`.
+. If the deployment provides records through an API and all of its records and catalogs pass the other tests of this conformance class (<<ats_stac_entity,/conf/stac/entity>>, <<ats_stac_version,/conf/stac/version>>, <<ats_stac_time,/conf/stac/time>>, and <<ats_stac_link-media-types,/conf/stac/link-media-types>>), issue an HTTP GET request on the `/conformance` path and verify that the `conformsTo` array contains the value `+http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac+`.
 --
 ====

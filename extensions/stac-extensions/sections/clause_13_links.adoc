@@ -45,7 +45,7 @@ The last example shows why static catalogs are less affected: file names end in 
 [[sc_links_the-same-document-at-two-uris]]
 === The same document at two URIs
 
-If the base URI is the URI from which a document was retrieved, the result of resolving a relative URI depends on how the document was requested. A server that returns the same document at `https://example.com/stac/test` and at `https://example.com/stac/test/` cannot use relative URIs of the usual form in it, because they resolve differently for the two requests:
+If the base URI is the URI from which the client retrieved a document, after following redirects, the result of resolving a relative URI depends on how the document was requested. Rewrites on the server side, for example by a proxy, are not visible to the client and do not change its base URI. A server that returns the same document at `https://example.com/stac/test` and at `https://example.com/stac/test/` cannot use relative URIs of the usual form in it, because they resolve differently for the two requests:
 
 [#link-resolution-trailing-slash,reftext='{table-caption} {counter:table-num}']
 .Resolving relative URIs in a document served with and without a trailing slash
@@ -80,7 +80,7 @@ For documents that are used in both ecosystems, the following practices avoid th
 . If a document has a preferred location that differs from the URI under which it is served, for example a copy on a mirror or an API response generated from a static catalog, provide this location in a link with the relation type `canonical` and keep the `self` link pointing to the URI under which the document is served (<<rec_stac_links,/rec/stac/links>>, part B).
 . Configure servers behind proxies so that `self` links use the public URI.
 . In static catalogs, point relative links to files, for example `./energy/collection.json`, and not to folders. If a link points to a folder, end it with a slash.
-. Serve API resources under the paths of the path templates, without a trailing slash. If a server also accepts a trailing slash, it either redirects to the path without one, or only uses absolute URIs and relative URIs that start with `/` in the response (see <<link-resolution-trailing-slash>>).
+. Serve API resources under the paths of the path templates, without a trailing slash. If a server also accepts a trailing slash, it either redirects to the path without one, or only uses absolute URIs and relative URIs that start with `/` in the response (see <<link-resolution-trailing-slash>> and <<rec_stac_links,/rec/stac/links>>, part E).
 . Include the `type` member in links and support content negotiation with the `Accept` header.
 
 For clients that support both ecosystems, it is recommended to:

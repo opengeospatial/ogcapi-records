@@ -28,19 +28,7 @@ include::../requirements/stac/REQ_entity.adoc[]
 
 include::../requirements/stac/REQ_version.adoc[]
 
-[[sc_stac_structuring-catalogs]]
-=== Catalogs that only structure a hierarchy
-
-Static STAC catalogs often use STAC Catalogs to structure a hierarchy, for example by year or by region, without describing any data themselves. Such a catalog cannot be a STAC Catalog in a document that is also a catalog of OGC API - Records, because <<OGC20-004r1,OGC API - Records - Part 1: Core>> fixes the `type` of catalogs to `Collection`. Leaving these nodes out of the Records hierarchy is not an option either, because clients of OGC API - Records follow `child` links only to catalogs.
-
-These catalogs are therefore STAC Collections as well. STAC allows STAC Collections to contain other STAC Collections, and the STAC best practices recommend using the same structural element on each level of a hierarchy. Compared to a STAC Catalog, such a catalog needs a few more members:
-
-* `extent`: the union of the extents of its sub-catalogs.
-* `license`: the license that all of its sub-catalogs share. If they have different licenses, use `other` and add a link with the relation type `license` for each license. An SPDX license expression such as `CC-BY-4.0 AND CC0-1.0` is not suitable, because it states that all licenses apply to all of the data.
-* `description`: a short description of the content, for example of the years or regions it contains.
-* `itemType`: `catalog`, as it only has `child` links and no `item` links.
-
-The `summaries` member is optional and can be left out. STAC clients present these catalogs as STAC Collections instead of as STAC Catalogs, for example with their extent.
+This also applies to catalogs that only structure a hierarchy and would be STAC Catalogs in a pure STAC implementation, see <<sc_records-and-stac-collections_structuring-catalogs>>.
 
 [[sc_stac_temporal-information]]
 === Temporal information
@@ -48,6 +36,25 @@ The `summaries` member is optional and can be left out. STAC clients present the
 Records describe their temporal extent in the `time` member at the top level. STAC Items use the `datetime`, `start_datetime`, and `end_datetime` members in `properties`. A document that is both needs both, and they need to agree.
 
 include::../requirements/stac/REQ_time.adoc[]
+
+<<time-mapping>> shows how to derive the members in `properties` from the `time` member of a record.
+
+[#time-mapping,reftext='{table-caption} {counter:table-num}']
+.Deriving STAC temporal members from the time member of a record
+[cols="31,23,23,23",options="header"]
+|===
+|`time` in the record |`datetime` |`start_datetime` |`end_datetime`
+|`{"timestamp": "2019-04-16T10:15:00Z"}` |`"2019-04-16T10:15:00Z"` |Not set |Not set
+|`{"date": "2019-04-16"}` |`null` |`"2019-04-16T00:00:00Z"` |`"2019-04-16T23:59:59Z"`
+|`{"interval": ["2019-04-16T10:15:00Z", "2019-04-16T11:00:00Z"]}` |`null` |`"2019-04-16T10:15:00Z"` |`"2019-04-16T11:00:00Z"`
+|`{"interval": ["2019-04-01", "2019-04-30"]}` |`null` |`"2019-04-01T00:00:00Z"` |`"2019-04-30T23:59:59Z"`
+|An interval and a timestamp |From the timestamp |From the start of the interval |From the end of the interval
+|`{"interval": ["2014-04-24T10:50:18Z", ".."]}` |`null` |`"2014-04-24T10:50:18Z"` |`"9999-12-31T23:59:59Z"`
+|`{"interval": ["..", "2019-04-30"]}` |`null` |`"0001-01-01T00:00:00Z"` |`"2019-04-30T23:59:59Z"`
+|`null`, or no `time` member 3+|Cannot be expressed.
+|===
+
+A date in a record has the granularity of a day, independent of any time zone. The table uses the bounds of the day in UTC, which is an approximation.
 
 include::../recommendations/stac/REC_time.adoc[]
 
@@ -71,6 +78,8 @@ include::../recommendations/stac/REC_license.adoc[]
 === Declaring conformance
 
 include::../requirements/stac/REQ_conformance.adoc[]
+
+include::../requirements/stac/REQ_crawlable-catalog.adoc[]
 
 include::../recommendations/stac/REC_conformsto.adoc[]
 

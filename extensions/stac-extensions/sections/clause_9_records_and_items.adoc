@@ -45,24 +45,7 @@ Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/ht
 [[sc_records-and-stac-items_temporal-information]]
 === Temporal information
 
-The two data models express time differently. <<time-mapping>> shows how to derive the STAC members from the `time` member of a record, following <<req_stac_time,/req/stac/time>>.
-
-[#time-mapping,reftext='{table-caption} {counter:table-num}']
-.Deriving STAC temporal members from the time member of a record
-[cols="40,60",options="header"]
-|===
-|`time` in the record |Members in `properties` of the STAC Item
-|`{"timestamp": "2019-04-16T10:15:00Z"}` |`"datetime": "2019-04-16T10:15:00Z"`
-|`{"date": "2019-04-16"}` |`"datetime": null`, `"start_datetime": "2019-04-16T00:00:00Z"`, `"end_datetime": "2019-04-16T23:59:59Z"`
-|`{"interval": ["2019-04-16T10:15:00Z", "2019-04-16T11:00:00Z"]}` |`"datetime": null`, `"start_datetime": "2019-04-16T10:15:00Z"`, `"end_datetime": "2019-04-16T11:00:00Z"`
-|`{"interval": ["2019-04-01", "2019-04-30"]}` |`"datetime": null`, `"start_datetime": "2019-04-01T00:00:00Z"`, `"end_datetime": "2019-04-30T23:59:59Z"`
-|An interval and a timestamp |`datetime` from the timestamp, `start_datetime` and `end_datetime` from the interval.
-|`{"interval": ["2014-04-24T10:50:18Z", ".."]}` |`"datetime": null`, `"start_datetime": "2014-04-24T10:50:18Z"`, `"end_datetime": "9999-12-31T23:59:59Z"`
-|`{"interval": ["..", "2019-04-30"]}` |`"datetime": null`, `"start_datetime": "0001-01-01T00:00:00Z"`, `"end_datetime": "2019-04-30T23:59:59Z"`
-|`null`, or no `time` member |Cannot be expressed.
-|===
-
-A date in a record has the granularity of a day, independent of any time zone. The table uses the bounds of the day in UTC, which is an approximation.
+The two data models express time differently. <<time-mapping>> in <<sc_stac_temporal-information>> shows how to derive the STAC members from the `time` member of a record, following <<req_stac_time,/req/stac/time>>.
 
 For the other direction, <<rec_stac_time,/rec/stac/time>> recommends adding a `time` member to STAC Items. Both use UTC, so the timestamps can be copied. Only timestamps with the offset `+00:00`, which STAC also allows, need to be rewritten with `Z`, for example from `2019-04-16T10:15:00+00:00` to `2019-04-16T10:15:00Z`. The placeholders `0001-01-01T00:00:00Z` and `9999-12-31T23:59:59Z` become an open start or end (`..`).
 

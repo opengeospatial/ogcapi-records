@@ -9,7 +9,21 @@ This clause compares catalogs (record collections) with STAC Collections and exp
 
 Catalogs and STAC Collections both extend the collection object of <<OGC17-069r4,OGC API - Features - Part 1: Core>>. They share the members `id`, `title`, `description`, `extent`, and `links` from OGC API - Features, and both add `keywords` and `license`. In both, `license` is an SPDX license identifier, an SPDX license expression, or `other`. The `type` member of a catalog has the value `Collection`, which is the same value that STAC Collections use. Both use `child` links for sub-catalogs and `item` links for records or STAC Items.
 
-STAC defines two kinds of catalog objects: the STAC Catalog (`"type": "Catalog"`) and the STAC Collection (`"type": "Collection"`). OGC API - Records requires `"type": "Collection"` for all catalogs, so a catalog can only ever be a STAC Collection. A STAC Collection requires `description`, `license`, and `extent`, which are optional for catalogs. This applies to every catalog in a hierarchy, including catalogs that only group other catalogs and would be STAC Catalogs in a pure STAC implementation (see <<sc_stac_structuring-catalogs>>).
+STAC defines two kinds of catalog objects: the STAC Catalog (`"type": "Catalog"`) and the STAC Collection (`"type": "Collection"`). OGC API - Records requires `"type": "Collection"` for all catalogs, so a catalog can only ever be a STAC Collection. A STAC Collection requires `description`, `license`, and `extent`, which are optional for catalogs. This applies to every catalog in a hierarchy, including catalogs that only group other catalogs and would be STAC Catalogs in a pure STAC implementation (see <<sc_records-and-stac-collections_structuring-catalogs>>).
+
+[[sc_records-and-stac-collections_structuring-catalogs]]
+=== Catalogs that only structure a hierarchy
+
+Static STAC catalogs often use STAC Catalogs to structure a hierarchy, for example by year or by region, without describing any data themselves. Such a catalog cannot be a STAC Catalog in a document that is also a catalog of OGC API - Records, because <<OGC20-004r1,OGC API - Records - Part 1: Core>> fixes the `type` of catalogs to `Collection`. Leaving these nodes out of the Records hierarchy is not an option either, because clients of OGC API - Records follow `child` links only to catalogs.
+
+These catalogs are therefore STAC Collections as well. STAC allows STAC Collections to contain other STAC Collections, and the STAC best practices recommend using the same structural element on each level of a hierarchy. Compared to a STAC Catalog, such a catalog needs a few more members:
+
+* `extent`: the union of the extents of its sub-catalogs.
+* `license`: the license that all of its sub-catalogs share. If they have different licenses, use `other` and add a link with the relation type `license` for each license. An SPDX license expression such as `CC-BY-4.0 AND CC0-1.0` is not suitable, because it states that all licenses apply to all of the data.
+* `description`: a short description of the content, for example of the years or regions it contains.
+* `itemType`: `catalog`, as it only has `child` links and no `item` links.
+
+The `summaries` member is optional and can be left out. STAC clients present these catalogs as STAC Collections instead of as STAC Catalogs, for example with their extent.
 
 [[sc_records-and-stac-collections_differences]]
 === Differences
@@ -52,7 +66,7 @@ The `license` member of a catalog and of a STAC Collection describe different th
 === Creating a catalog that is also a STAC Collection
 
 . Add `stac_version` with the value `1.1.0` or a later version 1.x.x, as required by <<req_stac_version,/req/stac/version>>.
-. Add `description`, `license`, and `extent`. For a catalog that only groups other catalogs, see <<sc_stac_structuring-catalogs>>.
+. Add `description`, `license`, and `extent`. For a catalog that only groups other catalogs, see <<sc_records-and-stac-collections_structuring-catalogs>>.
 . In `extent`, do not use exactly two bounding boxes, use UTC timestamps, and leave out `crs` and `trs` or use their defaults.
 . If `license` is not a single SPDX license identifier, add links with the relation type `license`, as recommended by <<rec_stac_license,/rec/stac/license>>.
 . Provide `providers` in addition to `contacts`. STAC clients typically show `providers`, and clients of OGC API - Records show `contacts`. Alternatively, list the Contacts extension in `stac_extensions`.
@@ -61,14 +75,14 @@ The `license` member of a catalog and of a STAC Collection describe different th
 . Add `summaries` for the most important members in the `properties` of the records, for example `type` or `proj:code`. The keys in `summaries` are the member names without the prefix `properties.`.
 . Keep `conformsTo` and add the conformance classes of this Standard.
 
-A catalog in JSON is served as `application/ogc-catalog+json` by default. STAC clients expect `application/json`. <<OGC20-004r1,OGC API - Records - Part 1: Core>> also allows `application/json` for catalogs, with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to identify the content. Serving catalogs as `application/json` with a `profile` link works for both ecosystems. Records are served as `application/geo+json` in both ecosystems and carry a `profile` link to `http://www.opengis.net/def/profile/OGC/0/ogc-record`, which STAC clients ignore.
+A catalog in JSON is served as `application/ogc-catalog+json` by default. STAC clients expect `application/json`. <<OGC20-004r1,OGC API - Records - Part 1: Core>> also allows `application/json` for catalogs, with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to identify the content. Serving catalogs as `application/json` with a `profile` link works for both ecosystems. In an API that declares the "JSON" conformance class, `application/json` is only available through content negotiation, because `application/ogc-catalog+json` stays the default media type for catalogs (see <<sc_apis_interoperability>>). Crawlable catalogs only need to declare the "Crawlable Catalog" conformance class and can serve their catalogs as `application/json`. Records are served as `application/geo+json` in both ecosystems and carry a `profile` link to `http://www.opengis.net/def/profile/OGC/0/ogc-record`, which STAC clients ignore.
 
 [[sc_records-and-stac-collections_from-collection]]
 === Creating a catalog from a STAC Collection
 
 A STAC Collection is already very close to a catalog. To make it useful for clients of OGC API - Records:
 
-. Start from a STAC Collection. A STAC Catalog cannot be a catalog of OGC API - Records, because its `type` is `Catalog`. It can be turned into a STAC Collection, see <<sc_stac_structuring-catalogs>>.
+. Start from a STAC Collection. A STAC Catalog cannot be a catalog of OGC API - Records, because its `type` is `Catalog`. It can be turned into a STAC Collection, see <<sc_records-and-stac-collections_structuring-catalogs>>.
 . Add `itemType` with the value `record` if the collection references STAC Items, `catalog` if it only references other collections, or both.
 . Add a `conformsTo` member with `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection` and the conformance classes of this Standard. In a static catalog, also add `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog`.
 . Make sure that the collection has a `self` link, and add a link with the relation type `alternate` for each other representation, for example HTML.

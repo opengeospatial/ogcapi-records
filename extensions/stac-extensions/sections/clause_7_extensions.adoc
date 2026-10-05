@@ -65,6 +65,8 @@ Once the affected extensions are updated, the workarounds are no longer needed, 
 
 include::../requirements/stac-extensions/REQ_conformance.adoc[]
 
+include::../requirements/stac-extensions/REQ_crawlable-catalog.adoc[]
+
 include::../recommendations/stac-extensions/REC_conformsto.adoc[]
 
 [[sc_stac-extensions_extensions-aligned-with-ogc-api-records]]

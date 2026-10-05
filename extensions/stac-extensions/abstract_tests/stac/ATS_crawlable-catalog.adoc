@@ -1,0 +1,14 @@
+[[ats_stac_crawlable-catalog]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac/crawlable-catalog
+target:: /req/stac/crawlable-catalog
+test-purpose:: Validate the conformance declaration in crawlable catalogs.
+test-method::
++
+--
+. If the deployment is a crawlable catalog, verify for each catalog that passes the other tests of this conformance class (<<ats_stac_entity,/conf/stac/entity>>, <<ats_stac_version,/conf/stac/version>>, <<ats_stac_time,/conf/stac/time>>, and <<ats_stac_link-media-types,/conf/stac/link-media-types>>), together with all of its records, that the `conformsTo` member of the catalog contains the value `+http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac+`.
+--
+====

@@ -15,7 +15,7 @@ Both APIs build on <<OGC17-069r4,OGC API - Features - Part 1: Core>>:
 
 * `/collections` lists the collections and `/collections/{collectionId}` returns a single collection.
 * `/collections/{collectionId}/items` returns records or STAC Items as a GeoJSON FeatureCollection, with paging through `next` links and the query parameters `bbox`, `datetime`, and `limit`.
-* `/collections/{collectionId}/items/{itemId}` returns a single record or STAC Item.
+* `/collections/{collectionId}/items/{featureId}` returns a single record or STAC Item.
 * Catalogs and STAC Collections reference sub-catalogs with `child` links.
 
 A Records API that provides records that are STAC Items, and catalogs that are STAC Collections, is therefore already close to an implementation of "STAC API - Features".
@@ -93,10 +93,10 @@ The following situations often prevent an API from working with the clients of o
 
 * *Other collections:* `/collections` lists collections that are not STAC Collections, for example feature collections of OGC API - Features or catalogs whose records are not STAC Items. STAC clients expect every entry to be a STAC Collection.
 * *Media type of catalogs:* The server responds with `application/ogc-catalog+json` to a request with `Accept: application/json`, or links to catalogs with this media type. STAC clients do not recognize the media type.
-* *Requests without `Accept` header:* A STAC client requests a catalog without an `Accept` header, or with `+Accept: */*+`. If the API supports JSON, OGC API - Records requires `application/ogc-catalog+json` as the default media type for catalogs, which STAC clients do not recognize.
+* *Default media type of catalogs:* A Searchable Catalog that supports JSON has to declare the "JSON" conformance class of OGC API - Records, which makes `application/ogc-catalog+json` the default media type for catalogs (`/req/record-collection/default-mediatype`). A STAC client that requests a catalog without an `Accept` header, or with `+Accept: */*+`, therefore receives a media type that it does not recognize. Content negotiation solves this for clients that send `Accept: application/json`, which returns `application/json` with the `ogc-catalog` profile, valid in both ecosystems. A default that is valid in both ecosystems does not exist for catalogs. For records, it does: the default `application/geo+json` with a `profile` link to `http://www.opengis.net/def/profile/OGC/0/ogc-record` is valid in both ecosystems.
 * *Landing page:* The landing page is not a STAC Catalog, or conformance is only declared at the `/conformance` endpoint. STAC clients read the `conformsTo` member of the landing page.
 * *Temporal information:* The `time` member of a record and the temporal members in `properties` disagree. The `datetime` parameter then returns different results for the same query in the two APIs.
-* *Free-text search:* The API supports "advanced" free-text search of STAC API. A query such as `q=climate model` then means "climate" or "model" for STAC clients, but the phrase "climate model" for clients of OGC API - Records.
+* *Free-text search:* The `q` parameter of OGC API - Records and the "basic" free-text search of STAC API have the same meaning. Only the "advanced" free-text search differs: a query such as `q=climate model` means "climate" or "model" for STAC clients, but the phrase "climate model" for clients of OGC API - Records. An API that supports the advanced variant can therefore not serve both ecosystems with the same `q` parameter.
 * *Required by STAC API only:* `root` links or the `collection` member are missing. OGC API - Records does not require them, but STAC API does.
 * *Link types:* Links have no `type` member. STAC API allows this, but OGC API - Features requires it for the `self`, `alternate`, `next`, `prev`, `items`, and `collection` links of an API.
 * *Relative links:* Responses use relative links, or records in `/collections/{collectionId}/items` have no `self` link. Depending on trailing slashes and on the base URI a client uses, links then resolve to wrong URIs, see <<clause_links,Links and URL resolution>>.

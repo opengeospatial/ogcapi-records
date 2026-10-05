@@ -7,7 +7,7 @@ identifier:: /rec/stac/conformsto
 part:: A record that is a valid STAC Item SHOULD include the following URI in its `conformsTo` member:
 +
 * http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac
-part:: A catalog that is a valid STAC Collection, and whose records are all valid STAC Items, SHOULD include the URI listed above in its `conformsTo` member.
+part:: A catalog that is a valid STAC Collection, whose records are all valid STAC Items, and that is not part of a crawlable catalog, SHOULD include the URI listed above in its `conformsTo` member. For catalogs in a crawlable catalog, <<req_stac_crawlable-catalog,/req/stac/crawlable-catalog>> applies.
 ====
 
 NOTE: The `conformsTo` member is not part of the STAC data model. STAC allows additional members in all entities, so it does not affect the validity of a STAC entity, and STAC clients ignore it.

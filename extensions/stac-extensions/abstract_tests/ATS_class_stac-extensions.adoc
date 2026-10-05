@@ -12,6 +12,7 @@ abstract-test:: /conf/stac-extensions/member
 abstract-test:: /conf/stac-extensions/extension-conformance
 abstract-test:: /conf/stac-extensions/assets
 abstract-test:: /conf/stac-extensions/conformance
+abstract-test:: /conf/stac-extensions/crawlable-catalog
 ====
 
 ==== The stac_extensions member
@@ -29,3 +30,5 @@ include::stac-extensions/ATS_assets.adoc[]
 ==== Conformance declaration
 
 include::stac-extensions/ATS_conformance.adoc[]
+
+include::stac-extensions/ATS_crawlable-catalog.adoc[]

@@ -12,4 +12,5 @@ requirement:: /req/stac/version
 requirement:: /req/stac/time
 requirement:: /req/stac/link-media-types
 requirement:: /req/stac/conformance
+requirement:: /req/stac/crawlable-catalog
 ====
