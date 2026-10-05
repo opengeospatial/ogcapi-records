@@ -1,10 +1,82 @@
 [obligation=informative]
-== Clauses not containing normative material
+== Overview
 
-Paragraph
+[[sc_overview_stac-and-ogc-api-records]]
+=== STAC and OGC API - Records
 
-=== Clauses not containing normative material sub-clause 1
+The https://stacspec.org[SpatioTemporal Asset Catalog (STAC)] specification and https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API - Records] both make resources discoverable through catalogs of metadata. They were developed in close exchange and share a lot:
 
-Paragraph
+* Records and STAC Items are GeoJSON Features. Most metadata is in the `properties` member.
+* Catalogs and STAC Collections extend the collection object of <<OGC17-069r4,OGC API - Features - Part 1: Core>>.
+* Both can be published as static files and through APIs, and both APIs build on OGC API - Features.
+* Several members were aligned on purpose. `contacts`, `themes`, `externalIds`, `language`, `languages`, and `linkTemplates` are part of OGC API - Records and are available in STAC through extensions.
 
-=== Clauses not containing normative material sub-clause 2
+The two specifications differ in focus. STAC describes spatiotemporal data and gives direct access to its files through <<def_asset,assets>>. A STAC Item usually describes a single scene, granule, or tile, and a STAC Collection describes a <<def_dataset,dataset>>. OGC API - Records describes any kind of <<def_resource,resource>>, and a <<def_record,record>> often describes a complete dataset, service, or document. As a result, a record for a dataset often corresponds to a STAC Collection rather than to a STAC Item. This is important when deciding how to publish metadata for both ecosystems.
+
+[[sc_overview_stac-extensions]]
+=== How STAC extensions work
+
+STAC extensions add members to STAC entities. Each extension is identified by the URI of a JSON Schema, for example `https://stac-extensions.github.io/projection/v2.0.0/schema.json`. The URI contains the version of the extension. A STAC entity lists the schema URI of each extension it uses in the `stac_extensions` member. The <<clause_stac-extensions,Requirements Class "STAC Extensions">> defines how records and catalogs use them.
+
+Some extensions describe how to access resources, for example https://github.com/stac-extensions/authentication[Authentication] and https://github.com/stac-extensions/storage[Storage]. Others were written to match members that <<OGC20-004r1,OGC API - Records - Part 1: Core>> already defines, for example https://github.com/stac-extensions/contacts[Contacts] and https://github.com/stac-extensions/themes[Themes]. A list of registered extensions is available at https://stac-extensions.github.io/. Extensions can also be hosted elsewhere.
+
+The JSON Schema of an extension validates the members that the extension defines. It also checks that its own URI is listed in the `stac_extensions` member. The schema contains separate rules for STAC Items (`"type": "Feature"`), STAC Catalogs (`"type": "Catalog"`), and STAC Collections (`"type": "Collection"`). Records and catalogs of OGC API - Records use the same `type` values as STAC Items and STAC Collections, so the rules for STAC Items apply to records and the rules for STAC Collections apply to catalogs.
+
+The `stac_extensions` member and the `conformsTo` member of OGC API - Records serve different purposes. The URIs in `stac_extensions` are JSON Schemas that a validator can apply directly. The URIs in `conformsTo` identify conformance classes, which can also contain rules that a JSON Schema cannot express, so they are not input for a JSON Schema validator. In a STAC entity, the `stac_extensions` member is defined by the STAC specification itself. In a record or catalog, it only has a defined meaning if the "STAC Extensions" conformance class (`http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions`) is declared.
+
+This has a few consequences for records:
+
+* The member that lists the extensions has to be named `stac_extensions`. This is required by the STAC ecosystem, because the extension schemas check that their own URI is listed in a member with this name.
+* Several extension schemas currently still require an `assets` member in every GeoJSON Feature, which is a technicality of how they were written. A record that lists such an extension needs an `assets` member, even if it is empty. Extensions that actually depend on assets, for example the Machine Learning Model extension, which requires an asset with a model role, need these assets as well.
+* Extensions define some members mainly for assets, for example `raster:scale` and `raster:offset` of the Raster extension, which describe the values of an asset or of its `bands`. Records do not have assets, so these members are often placed in links instead. Only some extension schemas (for example, https://github.com/stac-extensions/file/tree/v2.1.0[File Info v2.1.0]) validate members in links. Extensions that require at least one of their members to be present, such as https://github.com/stac-extensions/raster/tree/v2.0.0[Raster v2.0.0], fail validation if their members are only used in links.
+
+The <<clause_stac-extensions,Requirements Class "STAC Extensions">> addresses these points, and <<sc_stac-extensions_known-issues>> describes workarounds until the affected extensions are updated (see https://github.com/radiantearth/stac-spec/issues/1397[stac-spec#1397]). Extensions created from the current https://github.com/stac-extensions/template[STAC extension template] do not require `assets` and also validate members in links and link templates, which makes them easier to use in records.
+
+[[sc_overview_correspondence]]
+=== Corresponding objects
+
+<<fig-correspondence>> shows how the objects of OGC API - Records correspond to STAC entities when a document is valid in both ecosystems.
+
+[#fig-correspondence]
+.Corresponding objects of OGC API - Records and STAC
+....
+OGC API - Records                          STAC
+------------------------------------       ------------------------------------
+(no equivalent)                            STAC Catalog ("type": "Catalog")
+
+catalog ("type": "Collection")       <-->  STAC Collection ("type": "Collection")
+  top-level members                  <-->    top-level members
+  (no equivalent)                            summaries
+  links: child, item                 <-->    links: child, item
+
+record ("type": "Feature")           <-->  STAC Item ("type": "Feature")
+  properties                         <-->    properties
+  time                               <-->    properties.datetime,
+                                               properties.start_datetime,
+                                               properties.end_datetime
+  links, e.g. describes, enclosure   <-->    assets
+  links: collection                  <-->    links: collection, and collection
+....
+
+Where OGC API - Records has no equivalent, this Standard allows reusing the STAC structure, for example `summaries` and `assets` (see <<clause_stac-extensions,Requirements Class "STAC Extensions">>).
+
+[[sc_overview_structure-of-this-document]]
+=== Structure of this document
+
+This document defines two requirements classes:
+
+* The <<clause_stac-extensions,Requirements Class "STAC Extensions">> defines how records and catalogs use STAC extensions. They do not need to be STAC Items or STAC Collections.
+* The <<clause_stac,Requirements Class "STAC">> defines requirements for records and catalogs that are valid STAC Items and STAC Collections.
+
+Five informative clauses compare the two ecosystems and give guidance for implementing both:
+
+* <<clause_records-and-stac-items,Records and STAC Items>>,
+* <<clause_records-and-stac-collections,Catalogs and STAC Collections>>,
+* <<clause_static-catalogs,Crawlable catalogs and static STAC catalogs>>,
+* <<clause_apis,Records APIs and STAC APIs>>, and
+* <<clause_links,Links and URL resolution>>.
+
+[[sc_overview_extensions-for-ogc-api-records]]
+=== Extensions for OGC API - Records
+
+This Standard focuses on STAC extensions. A general mechanism to declare JSON Schemas for validating records, independent of STAC, has been discussed. Such a mechanism would ideally be defined for all OGC API Standards, for example in OGC API - Common. Until it exists, new extensions for OGC API - Records can be written as STAC extensions based on the https://github.com/stac-extensions/template[STAC extension template]. The `stac_extensions` member then serves both ecosystems. A STAC extension is defined by a JSON Schema, so the `stac_extensions` member only covers the validation of records. Other aspects that have been discussed for extensions of OGC API Standards, for example the semantics of members or JSON-LD contexts, are not covered.

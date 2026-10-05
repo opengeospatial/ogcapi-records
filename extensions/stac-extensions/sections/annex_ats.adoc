@@ -2,9 +2,10 @@
 [[annex_ats]]
 == Conformance Class Abstract Test Suite (Normative)
 
-[[ats_stac-extensions]]
-=== STAC Extensions
+=== Conformance Class "STAC Extensions"
 
-[[ats_stac-items]]
-=== STAC Items
+include::../abstract_tests/ATS_class_stac-extensions.adoc[]
 
+=== Conformance Class "STAC"
+
+include::../abstract_tests/ATS_class_stac.adoc[]

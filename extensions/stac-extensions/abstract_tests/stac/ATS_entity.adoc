@@ -1,0 +1,17 @@
+[[ats_stac_entity]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac/entity
+target:: /req/stac/entity
+test-purpose:: Validate that records are valid STAC Items and catalogs are valid STAC Collections.
+test-method::
++
+--
+. Determine the records and catalogs to test. If the server declares `+http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac+` at its `/conformance` endpoint, these are all records and catalogs that the server provides in a JSON encoding. Otherwise, these are the records and catalogs that include this URI in their `conformsTo` member, and the records of such catalogs.
+. Verify that each record validates against the STAC Item JSON Schema of the STAC version given in its `stac_version` member.
+. Verify that each catalog validates against the STAC Collection JSON Schema of the STAC version given in its `stac_version` member.
+. Verify that the records and catalogs fulfill the requirements of the STAC specification that cannot be validated with JSON Schema.
+--
+====

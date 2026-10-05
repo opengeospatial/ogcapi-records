@@ -1,0 +1,12 @@
+[[req_stac_conformance]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac/conformance
+part:: A server that provides records through an API, and whose records and catalogs all conform to this requirements class, SHALL declare the following conformance class in the conformance declaration retrieved from the `/conformance` endpoint, as defined in the http://docs.ogc.org/is/17-069r4/17-069r4.html#_declaration_of_conformance_classes[Declaration of conformance classes] clause of http://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core]:
++
+* http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac
+====
+
+NOTE: If only some of the records and catalogs of a server are STAC entities, the server does not declare this conformance class at its `/conformance` endpoint. Instead, the records and catalogs that are STAC entities declare it in their `conformsTo` member (see <<rec_stac_conformsto,/rec/stac/conformsto>>).

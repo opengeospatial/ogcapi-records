@@ -1,0 +1,14 @@
+[[ats_stac_conformance]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac/conformance
+target:: /req/stac/conformance
+test-purpose:: Validate conformance identification.
+test-method::
++
+--
+. If the deployment provides records through an API and all of its records and catalogs pass the other tests of this conformance class (<<ats_stac_entity,/conf/stac/entity>>, <<ats_stac_version,/conf/stac/version>>, <<ats_stac_time,/conf/stac/time>>, and <<ats_stac_link-media-types,/conf/stac/link-media-types>>), issue an HTTP GET request on the `/conformance` path and verify that the `conformsTo` array contains the value `+http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac+`.
+--
+====

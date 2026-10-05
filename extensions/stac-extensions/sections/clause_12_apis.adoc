@@ -1,0 +1,233 @@
+[[clause_apis]]
+[obligation=informative]
+== Records APIs and STAC APIs
+
+This clause compares the APIs of OGC API - Records with https://github.com/radiantearth/stac-api-spec/tree/v1.0.0[STAC API] and explains how to implement both in one API. Documents that are valid in both ecosystems are described in the previous clauses.
+
+The comparison covers <<OGC20-004r1,OGC API - Records - Part 1: Core>>, including the parts of OGC API - Features that it builds on, and the specifications of STAC API version 1.0.0: "STAC API - Core", "STAC API - Collections", "STAC API - Features", and "STAC API - Item Search". STAC API extensions and other parts of OGC API Standards are only included if the other ecosystem defines the same functionality in its core specifications, for example free-text search, which OGC API - Records - Part 1 defines and STAC API provides through an extension. <<sc_apis_beyond-core>> lists further functionality that is only defined in extensions or other parts.
+
+The APIs differ in several places, for example in the required links and in the meaning of some query parameters. Requirements for combined APIs may be added to a future version of this Standard.
+
+[[sc_apis_common-foundation]]
+=== Common foundation
+
+Both APIs build on <<OGC17-069r4,OGC API - Features - Part 1: Core>>:
+
+* `/collections` lists the collections and `/collections/{collectionId}` returns a single collection.
+* `/collections/{collectionId}/items` returns records or STAC Items as a GeoJSON FeatureCollection, with paging through `next` links and the query parameters `bbox`, `datetime`, and `limit`.
+* `/collections/{collectionId}/items/{featureId}` returns a single record or STAC Item.
+* Catalogs and STAC Collections reference sub-catalogs with `child` links.
+
+A Records API that provides records that are STAC Items, and catalogs that are STAC Collections, is therefore already close to an implementation of "STAC API - Features".
+
+[[sc_apis_differences]]
+=== Differences
+
+The differences are grouped into the landing page and conformance (<<api-differences-landing>>), the collections and documents (<<api-differences-documents>>), and searching (<<api-differences-search>>).
+
+[#api-differences-landing,reftext='{table-caption} {counter:table-num}']
+.Differences in the landing page and the conformance declaration
+[cols="16,20,32,32",options="header"]
+|===
+|Resource |Aspect |OGC API - Records |STAC API
+.2+|Landing page |Document |The landing page of OGC API - Features. |A STAC Catalog with the additional member `conformsTo`.
+|Required links |`service-desc` or `service-doc`, `conformance`, and `data`. OGC API - Common - Part 1: Core uses the relation type `http://www.opengis.net/def/rel/ogc/1.0/conformance` instead of `conformance`. A landing page can include links with both relation types. |`root`, `self`, and `service-desc`. Also `data` for "STAC API - Collections" and "STAC API - Features", `conformance` for "STAC API - Features", and `search` for "STAC API - Item Search".
+|Conformance declaration |Location |At `/conformance`. |In the `conformsTo` member of the landing page. Also at `/conformance` for "STAC API - Features".
+|===
+
+[#api-differences-documents,reftext='{table-caption} {counter:table-num}']
+.Differences in the collections and documents
+[cols="16,20,32,32",options="header"]
+|===
+|Resource |Aspect |OGC API - Records |STAC API
+.2+|`/collections` |Entries |Catalogs (`"itemType": "record"`) and any other kind of collection. |STAC Collections only.
+|Paging |Not defined. The "Local Resources Catalog - Query Parameters" requirements class allows `limit`, but defines no paging links. |With `next` links.
+.2+|Catalogs and STAC Collections |Required links |`alternate` for each other representation, for example HTML. |`root`.
+|Media type |`application/ogc-catalog+json` by default, `application/json` with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog`. |`application/json`.
+.3+|Records and STAC Items |Required links in a single record |`alternate` for each other representation. |`root`.
+|Required links in the records at `/items` |`collection`, as in every record. `self` is recommended. |None. The response document itself needs `root`, `self`, and `collection`.
+|`collection` member |Not defined. The catalog is only referenced by the `collection` link. |Required, with the `id` of the STAC Collection.
+|Responses of `/items` |`numberMatched` |The exact number of matches. |Can be an estimate.
+|All links |`type` member |Required for the `self`, `alternate`, `next`, `prev`, `items`, and `collection` links of an API, as defined by OGC API - Features. Recommended for all links by OGC API - Records (https://docs.ogc.org/is/20-004r1/20-004r1.html#rec_record-core_links-type[`/rec/record-core/links-type`]). |Strongly recommended.
+|===
+
+Both ecosystems require `self` and `items` links in catalogs and `self` and `collection` links in a single record. The rows on required links only list the links that one ecosystem requires and the other does not. Both allow the other links, for example `alternate` links in STAC.
+
+[#api-differences-search,reftext='{table-caption} {counter:table-num}']
+.Differences in searching
+[cols="16,20,32,32",options="header"]
+|===
+|Resource |Aspect |OGC API - Records |STAC API
+|`/search` |Search across collections |Not defined. Records are searched per catalog. |Additional parameters `ids`, `collections`, and `intersects`.
+.7+|`/collections/{collectionId}/items` |Query parameters |`bbox`, `datetime`, `limit`, `q`, `type`, `ids`, and `externalIds`. Other queryables as `name=value`. |`bbox`, `datetime`, and `limit`. Optionally also the parameters of `/search`.
+|`datetime` |Compared with the `time` member. Records without temporal information match every query. |Compared with the temporal properties in `properties`. If there are several, the server decides which of them are compared.
+|`q` |Comma-separated terms are combined with OR. Terms separated by spaces are a phrase. |https://github.com/stac-api-extensions/freetext-search[Free-text Search] extension. Its "basic" free-text search is the equivalent. The "advanced" free-text search is a separate conformance class with a different syntax.
+|`filter` |"Filtering" requirements classes, based on OGC API - Features - Part 3. |https://github.com/stac-api-extensions/filter[Filter] extension, based on OGC API - Features - Part 3 as well.
+|Queryables |At `/collections/{collectionId}/queryables`. |Also at `/queryables` for `/search`.
+|`sortby` |"Sorting" requirements classes. |https://github.com/stac-api-extensions/sort[Sort] extension. Property names can require the prefix `properties.`.
+|Sortables |At `/collections/{collectionId}/sortables`. |Also at `/sortables` for `/search`.
+|`/collections` |Searching collections |"Local Resources Catalog" requirements classes. |https://github.com/stac-api-extensions/collection-search[Collection Search] extension.
+|===
+
+Some differences need more explanation:
+
+* *Unknown query parameters:* OGC API - Features requires an error response for query parameters that are not defined in the API definition. An API for both ecosystems therefore needs to declare the query parameters of both in its API definition.
+* *Queryables:* The queryables are a JSON Schema, and their `additionalProperties` member states whether properties that are not listed can be used in filters. If the member is missing, OGC API - Features - Part 3 allows any property, while the Filter extension only allows the listed queryables. It is therefore recommended that queryables for both ecosystems include `additionalProperties`, with the value `true` to allow any property or `false` to allow only the listed queryables.
+* *Sorting in POST requests:* The Sort extension also allows `sortby` in POST requests, as an array of objects with `field` and an optional `direction`. The `defaultSortOrder` member of a catalog uses the same structure, but requires `direction`.
+* *Paging of POST requests:* The links to further pages of POST requests to `/search` have the additional members `method`, `headers`, `body`, and `merge`, which clients of OGC API - Features do not understand.
+* *Searching collections:* The "Local Resources Catalog" and the Collection Search extension are compared in <<sc_apis_collection-search>>.
+
+[[sc_apis_beyond-core]]
+=== Beyond the core specifications
+
+Some functionality is only defined in STAC API extensions and in other parts of OGC API Standards. It is not compared in this clause, for example:
+
+* *Transactions:* OGC API - Records - Part 3: Create, Replace, Update, Delete, Harvest, and the https://github.com/stac-api-extensions/transaction[Transaction] and https://github.com/stac-api-extensions/collection-transaction[Collection Transaction] extensions of STAC API. Similar, but currently not fully aligned and with plans to align in the future.
+* *Browsing an API:* the https://github.com/stac-api-extensions/browseable[Browseable] and https://github.com/stac-api-extensions/children[Children] extensions of STAC API.
+* *Property selection:* the https://github.com/stac-api-extensions/fields[Fields] extension of STAC API.
+
+[[sc_apis_interoperability]]
+=== Common pitfalls
+
+The following situations often prevent an API from working with the clients of one of the ecosystems:
+
+* *Other collections:* `/collections` lists collections that are not STAC Collections, for example feature collections of OGC API - Features or catalogs whose records are not STAC Items. STAC clients expect every entry to be a STAC Collection.
+* *Media type of catalogs:* The server responds with `application/ogc-catalog+json` to a request with `Accept: application/json`, or links to catalogs with this media type. STAC clients do not recognize the media type.
+* *Default media type of catalogs:* A Searchable Catalog that supports JSON has to declare the "JSON" conformance class of OGC API - Records, which makes `application/ogc-catalog+json` the default media type for catalogs (`/req/record-collection/default-mediatype`). A STAC client that requests a catalog without an `Accept` header, or with `+Accept: */*+`, therefore receives a media type that it does not recognize. Content negotiation solves this for clients that send `Accept: application/json`, which returns `application/json` with the `ogc-catalog` profile, valid in both ecosystems. A default that is valid in both ecosystems does not exist for catalogs. For records, it does: the default `application/geo+json` with a `profile` link to `http://www.opengis.net/def/profile/OGC/0/ogc-record` is valid in both ecosystems.
+* *Landing page:* The landing page is not a STAC Catalog, or conformance is only declared at the `/conformance` endpoint. STAC clients read the `conformsTo` member of the landing page.
+* *Temporal information:* The `time` member of a record and the temporal members in `properties` disagree. The `datetime` parameter then returns different results for the same query in the two APIs.
+* *Free-text search:* The `q` parameter of OGC API - Records and the "basic" free-text search of STAC API have the same meaning. Only the "advanced" free-text search differs: a query such as `q=climate model` means "climate" or "model" for STAC clients, but the phrase "climate model" for clients of OGC API - Records. An API that supports the advanced variant can therefore not serve both ecosystems with the same `q` parameter.
+* *Required by STAC API only:* `root` links or the `collection` member are missing. OGC API - Records does not require them, but STAC API does.
+* *Link types:* Links have no `type` member. STAC API allows this, but OGC API - Features requires it for the `self`, `alternate`, `next`, `prev`, `items`, and `collection` links of an API.
+* *Relative links:* Responses use relative links, or records in `/collections/{collectionId}/items` have no `self` link. Depending on trailing slashes and on the base URI a client uses, links then resolve to wrong URIs, see <<clause_links,Links and URL resolution>>.
+
+[[sc_apis_collection-search]]
+=== Records of datasets and STAC Collection Search
+
+Records of complete datasets usually correspond to STAC Collections, not to STAC Items (see <<clause_records-and-stac-items,Records and STAC Items>>). Both ecosystems allow searching the `/collections` endpoint:
+
+* *OGC API - Records:* The "Local Resources Catalog" requirements classes make `/collections` a catalog, allow extending each collection with the members of a record, for example `keywords`, `themes`, and `contacts`, and add query parameters for records to `/collections`.
+* *STAC API:* The Collection Search extension adds the query parameters `bbox`, `datetime`, and `limit` to `/collections`, and in further conformance classes `q`, `filter`, `sortby`, and `fields`.
+
+An API can implement both. The collections are then STAC Collections that also carry the members of a record, and the same query parameters work for both ecosystems. Declare the conformance classes of both, and add a link with the relation type `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog` to `/collections` on the landing page. OGC API - Records requires the response of `/collections` to also be a catalog, which means it has an `id`, a `type` member with the value `Collection`, `self` and `alternate` links, and `"recordsArrayName": "collections"`. The response has no `stac_version` member, but STAC clients that detect STAC entities by their `type` member can still mistake it for a single STAC Collection. It is therefore recommended that clients that support both ecosystems check for `stac_version` before they rely on `type`.
+
+The `type` query parameter of OGC API - Records filters by the `type` member, which describes the resource type of a record. At `/collections`, the `type` member of every STAC Collection is `Collection`, so this parameter cannot filter collections by resource type.
+
+[[sc_apis_implementing-both-apis]]
+=== Implementing both APIs
+
+This subclause describes what an implementation of one of the APIs needs to do to also conform to the other one, so that it is a Records API and a STAC API at the same time. Both APIs build on OGC API - Features, so the work is mainly to align the landing page, the collections, and the documents. For STAC API, "STAC API - Core" together with "STAC API - Collections" and "STAC API - Features" is sufficient. "STAC API - Item Search" (`/search`) is not needed.
+
+[[sc_apis_in-both-directions]]
+==== In both directions
+
+. Serve records that are STAC Items and catalogs that are STAC Collections, as required by the <<clause_stac,Requirements Class "STAC">>.
+. Declare the conformance classes of both ecosystems at the `/conformance` endpoint and in the `conformsTo` member of the landing page.
+. Use one representation for each resource that is valid in both ecosystems. The "Profile query parameter" requirements class of OGC API - Records - Part 1: Core allows serving different representations of the same resource, but STAC clients do not request profiles. The default representation therefore needs to be the one that is also valid STAC.
+. Follow the recommendations for links in <<clause_links,Links and URL resolution>>, in particular absolute URIs and a `self` link in each record and STAC Item.
+
+[[sc_apis_making-a-records-api-conform-to-stac-api]]
+==== Making a Records API conform to STAC API
+
+. Extend the records and catalogs as described in <<sc_records-and-stac-items_creating>> and <<sc_records-and-stac-collections_creating>>.
+. Make the landing page a STAC Catalog by adding `type`, `stac_version`, `id`, `description`, `conformsTo`, and the links that STAC API requires, for example `root` and `self` (see <<api-differences-landing>>). None of these conflict with OGC API - Records.
+. Make every collection at `/collections` a STAC Collection. If the API also provides collections that cannot be STAC Collections, provide the STAC API under a separate landing page.
+. Add the links that STAC API requires in the responses of `/collections`, `/collections/{collectionId}`, `/collections/{collectionId}/items`, and `/collections/{collectionId}/items/{recordId}`, in particular `root` and `self` (see <<api-differences-documents>>).
+. Respond with `application/json` for catalogs if the client asks for it, and include a link with the relation type `profile` to `http://www.opengis.net/def/profile/OGC/0/ogc-catalog`.
+. Declare `https://api.stacspec.org/v1.0.0/core`, `https://api.stacspec.org/v1.0.0/collections`, and `https://api.stacspec.org/v1.0.0/ogcapi-features`. If the API supports `q`, `filter`, or `sortby`, also declare the conformance classes of the corresponding STAC API extensions. The `q` parameter of OGC API - Records corresponds to the https://github.com/stac-api-extensions/freetext-search#basic["basic" free-text search] of the Free-text Search extension, which uses the same syntax. Implementing it is sufficient, there is no choice to be made between the variants.
+
+[[sc_apis_making-a-stac-api-conform-to-ogc-api-records]]
+==== Making a STAC API conform to OGC API - Records
+
+. Extend the STAC Items and STAC Collections as described in <<sc_records-and-stac-items_from-item>> and <<sc_records-and-stac-collections_from-collection>>, for example with the top-level members `time` in records and `itemType` in catalogs.
+. Add links with the relation type `alternate` for each other representation, for example HTML, as required by OGC API - Records.
+. Add a link with the relation type `profile` to `http://www.opengis.net/def/profile/OGC/0/ogc-record` to each record, and to `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to each catalog that is served as `application/json`, as required by the "JSON" requirements class of OGC API - Records.
+. Include the `type` member in all links. OGC API - Features requires it for the `self`, `alternate`, `next`, `prev`, `items`, and `collection` links, and OGC API - Records recommends it for all links.
+. Support `application/ogc-catalog+json` for catalogs, as required by the "JSON" requirements class of OGC API - Records. It becomes the default media type for catalogs, so STAC clients need to request `application/json` (see <<sc_apis_interoperability>>).
+. Support the query parameters that the "Searchable Catalog" requirements class requires at `/collections/{collectionId}/items`: `bbox`, `datetime`, `limit`, `q`, `type`, `ids`, and `externalIds`. If the API also supports the https://github.com/stac-api-extensions/freetext-search#advanced["advanced" free-text search] of the Free-text Search extension, `q` cannot have both meanings at the same time, because the advanced variant uses a different syntax that is not compatible with `q` of OGC API - Records.
+. Declare the conformance classes of OGC API - Records, for example `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog`, together with `http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core`, and `.../conf/oas30` and `.../conf/html` if the API provides an OpenAPI 3.0 definition or HTML.
+
+[[sc_apis_example]]
+=== Example
+
+The following landing page is also a STAC Catalog. It declares the conformance classes of OGC API - Features, OGC API - Records, this Standard, and STAC API. The link with the relation type `http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog` points to the searchable catalog `dutch-metadata`, whose access endpoint is its `items` endpoint.
+
+.A landing page for OGC API - Records and STAC API
+====
+[source,json]
+----
+{
+  "type": "Catalog",
+  "stac_version": "1.1.0",
+  "id": "pygeoapi-demo",
+  "title": "pygeoapi demo",
+  "description": "A server that implements OGC API - Records and STAC API.",
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson",
+    "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/html",
+    "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/html",
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/oas30",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac",
+    "https://api.stacspec.org/v1.0.0/core",
+    "https://api.stacspec.org/v1.0.0/collections",
+    "https://api.stacspec.org/v1.0.0/ogcapi-features",
+    "https://api.stacspec.org/v1.0.0/item-search"
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://demo.pygeoapi.io/master?f=json"
+    },
+    {
+      "rel": "alternate",
+      "type": "text/html",
+      "href": "https://demo.pygeoapi.io/master?f=html"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://demo.pygeoapi.io/master?f=json"
+    },
+    {
+      "rel": "service-desc",
+      "type": "application/vnd.oai.openapi+json;version=3.0",
+      "href": "https://demo.pygeoapi.io/master/openapi?f=json"
+    },
+    {
+      "rel": "conformance",
+      "type": "application/json",
+      "href": "https://demo.pygeoapi.io/master/conformance?f=json"
+    },
+    {
+      "rel": "data",
+      "type": "application/json",
+      "href": "https://demo.pygeoapi.io/master/collections?f=json"
+    },
+    {
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/ogc-catalog",
+      "type": "application/geo+json",
+      "title": "Search the Dutch metadata",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items?f=json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Dutch metadata",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata?f=json"
+    },
+    {
+      "rel": "search",
+      "type": "application/geo+json",
+      "method": "GET",
+      "href": "https://demo.pygeoapi.io/master/search"
+    }
+  ]
+}
+----
+====

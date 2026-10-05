@@ -1,0 +1,9 @@
+[[req_stac-extensions_assets]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac-extensions/assets
+condition:: The record or catalog includes an `assets` member.
+part:: The value of the `assets` member SHALL be an object that maps unique keys to https://github.com/radiantearth/stac-spec/blob/v1.1.0/commons/assets.md[STAC Asset Objects].
+====

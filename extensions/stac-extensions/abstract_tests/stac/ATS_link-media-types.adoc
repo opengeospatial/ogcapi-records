@@ -1,0 +1,18 @@
+[[ats_stac_link-media-types]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac/link-media-types
+target:: /req/stac/link-media-types
+test-purpose:: Validate the media types of hierarchical links and the `self` link.
+test-method::
++
+--
+. Retrieve the records and catalogs determined in the first step of <<ats_stac_entity,/conf/stac/entity>>.
+. For each link with the relation type `root`, `parent`, `child`, `collection`, or `item`, verify that it includes a `type` member.
+. For each link with the relation type `root`, `parent`, `child`, or `collection` whose target is the JSON encoding of a catalog or of another STAC Catalog or STAC Collection, verify that the value of `type` is `application/json`.
+. For each link with the relation type `item` whose target is the JSON encoding of a record, verify that the value of `type` is `application/geo+json` or `application/json`.
+. Verify that the `href` of the `self` link is an absolute URI.
+--
+====

@@ -1,0 +1,18 @@
+[[ats_stac_time]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac/time
+target:: /req/stac/time
+test-purpose:: Validate that the `time` member and the STAC temporal members describe equivalent instants or intervals.
+test-method::
++
+--
+. Retrieve the records determined in the first step of <<ats_stac_entity,/conf/stac/entity>> that include a `time` member that is not `null`.
+. If the `time` member includes a `timestamp`, verify that `properties.datetime` has the same value.
+. If the `time` member includes a `date` and no `interval`, verify that `properties.start_datetime` is the start and `properties.end_datetime` is the end of this day in UTC.
+. If the `time` member includes an `interval`, verify that `properties.start_datetime` and `properties.end_datetime` describe an equivalent interval. A date as start is compared with the start of the day in UTC, and a date as end with the end of the day in UTC.
+. If the start of the `interval` is open (`..`), verify that `properties.start_datetime` is `0001-01-01T00:00:00Z`. If the end of the `interval` is open, verify that `properties.end_datetime` is `9999-12-31T23:59:59Z`.
+--
+====

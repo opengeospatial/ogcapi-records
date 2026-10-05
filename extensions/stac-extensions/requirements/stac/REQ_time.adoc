@@ -1,0 +1,17 @@
+[[req_stac_time]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac/time
+condition:: The record includes a `time` member that is not `null`.
+part:: The members `datetime`, `start_datetime`, and `end_datetime` in the `properties` of the record SHALL describe an instant or interval that is equivalent to the one of the `time` member.
+part:: A date in the `time` member, either as `date` or as the start or end of an `interval`, SHALL be represented by the start of the day in UTC (`T00:00:00Z`) as start and by the end of the day in UTC (`T23:59:59Z`) as end.
+part:: An open start of an `interval` in the `time` member SHALL be represented by `"start_datetime": "0001-01-01T00:00:00Z"`, and an open end by `"end_datetime": "9999-12-31T23:59:59Z"`.
+====
+
+NOTE: Clients of OGC API - Records read the `time` member and the `datetime` query parameter of a Records API applies to it. STAC clients read `properties.datetime`, `properties.start_datetime`, and `properties.end_datetime`, and the `datetime` query parameter of a STAC API applies to those. If the two disagree, the same search returns different results in the two ecosystems. <<time-mapping>> shows how to derive the STAC members from the `time` member.
+
+NOTE: STAC Items cannot describe an open start or end, so this requirements class uses the earliest and the latest timestamp that common tools can process as placeholders. Temporal searches in a STAC API then return the record for any time after its start or before its end, as for an open interval. STAC does not define these placeholders, so STAC clients present them as regular timestamps, for example as an end on 31 December 9999. The year 0001 is used instead of 0000, because some widely used libraries do not support the year 0000.
+
+NOTE: A STAC Item always has temporal information. A record whose `time` member is `null` therefore cannot conform to this requirements class. <<clause_records-and-stac-items,Records and STAC Items>> discusses alternatives.

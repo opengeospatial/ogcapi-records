@@ -5,7 +5,15 @@
 |===
 |Date |Release |Editor | Primary clauses modified |Description
 |2026-05-06 |0.1 |Panagiotis (Peter) A. Vretanos |all |Initial version
-|2026-06-02 |0.1 |Francis Charette-Migneault |all |Update STAC Example (missing `datetime`)
-|2026-06-02 |0.1 |Francis Charette-Migneault |all |Add `/rec/stac-items/conformsto` to include `conformsTo` in STAC Item
-|2026-06-02 |0.1 |Francis Charette-Migneault |all |Fix links to registered STAC Extensions and Record conformance classes
+|2026-06-02 |0.2 |Francis Charette-Migneault |all |Add `datetime` to the STAC example, add `/rec/stac-items/conformsto` for `conformsTo` in STAC Items, fix links to the registered STAC extensions and the Records conformance classes
+|2026-10-01 |0.3 |Matthias Mohr |all a|
+* Rename the document to "STAC"
+* Merge the "STAC Items" requirements class into the "STAC" requirements class (`/conf/stac`), see issue #445
+* Define the meaning of conformance declarations in records, catalogs, and at `/conformance`, and require them in crawlable catalogs
+* Allow STAC extensions in catalogs, allow `assets` in records and catalogs as well as `item_assets` and `summaries` in catalogs, recommend basic links for assets without duplicating their metadata, and list known issues of STAC extension schemas with workarounds
+* Restrict catalogs to STAC Collections, including catalogs that only structure a hierarchy, and add requirements for temporal consistency, with placeholder timestamps for open intervals, and for the media types of hierarchical links
+* Add recommendations for `self`, `canonical`, and `license` links
+* Add informative clauses on records and STAC Items, catalogs and STAC Collections, static catalogs, APIs, and URL resolution
+* Add the abstract test suite
+* Fix the examples and validate them against the OGC API - Records and STAC schemas
 |===

@@ -1,0 +1,224 @@
+[[clause_stac]]
+== Requirements Class "STAC"
+
+[[sc_stac_overview]]
+=== Overview
+
+include::../requirements/requirements_class_stac.adoc[]
+
+This requirements class defines requirements for records and catalogs that are valid STAC entities at the same time:
+
+* A record is also a valid https://github.com/radiantearth/stac-spec/blob/v1.1.0/item-spec/item-spec.md[STAC Item].
+* A catalog is also a valid https://github.com/radiantearth/stac-spec/blob/v1.1.0/collection-spec/collection-spec.md[STAC Collection].
+
+Clients of OGC API - Records and STAC clients can use such documents without any conversion. The informative clauses <<clause_records-and-stac-items,Records and STAC Items>> and <<clause_records-and-stac-collections,Catalogs and STAC Collections>> explain the differences between the two data models and how to satisfy both in one document.
+
+A declaration of this conformance class applies at different levels:
+
+* In a record, it states that this record is a STAC Item.
+* In a catalog, it states that the catalog is a STAC Collection and that all of its records are STAC Items.
+* At the `/conformance` endpoint of a server, it states that all records and catalogs that the server provides in a JSON encoding are STAC entities.
+
+If only some of the records and catalogs of a server are STAC entities, the server does not declare this conformance class at its `/conformance` endpoint. Instead, the records and catalogs that are STAC entities declare it in their `conformsTo` member.
+
+[[sc_stac_stac-entities]]
+=== STAC entities
+
+include::../requirements/stac/REQ_entity.adoc[]
+
+include::../requirements/stac/REQ_version.adoc[]
+
+This also applies to catalogs that only structure a hierarchy and would be STAC Catalogs in a pure STAC implementation, see <<sc_records-and-stac-collections_structuring-catalogs>>.
+
+[[sc_stac_temporal-information]]
+=== Temporal information
+
+Records describe their temporal extent in the `time` member at the top level. STAC Items use the `datetime`, `start_datetime`, and `end_datetime` members in `properties`. A document that is both needs both, and they need to agree.
+
+include::../requirements/stac/REQ_time.adoc[]
+
+<<time-mapping>> shows how to derive the members in `properties` from the `time` member of a record.
+
+[#time-mapping,reftext='{table-caption} {counter:table-num}']
+.Deriving STAC temporal members from the time member of a record
+[cols="31,23,23,23",options="header"]
+|===
+|`time` in the record |`datetime` |`start_datetime` |`end_datetime`
+|`{"timestamp": "2019-04-16T10:15:00Z"}` |`"2019-04-16T10:15:00Z"` |Not set |Not set
+|`{"date": "2019-04-16"}` |`null` |`"2019-04-16T00:00:00Z"` |`"2019-04-16T23:59:59Z"`
+|`{"interval": ["2019-04-16T10:15:00Z", "2019-04-16T11:00:00Z"]}` |`null` |`"2019-04-16T10:15:00Z"` |`"2019-04-16T11:00:00Z"`
+|`{"interval": ["2019-04-01", "2019-04-30"]}` |`null` |`"2019-04-01T00:00:00Z"` |`"2019-04-30T23:59:59Z"`
+|An interval and a timestamp |From the timestamp |From the start of the interval |From the end of the interval
+|`{"interval": ["2014-04-24T10:50:18Z", ".."]}` |`null` |`"2014-04-24T10:50:18Z"` |`"9999-12-31T23:59:59Z"`
+|`{"interval": ["..", "2019-04-30"]}` |`null` |`"0001-01-01T00:00:00Z"` |`"2019-04-30T23:59:59Z"`
+|`null`, or no `time` member 3+|Cannot be expressed.
+|===
+
+A date in a record has the granularity of a day, independent of any time zone. The table uses the bounds of the day in UTC, which is an approximation.
+
+include::../recommendations/stac/REC_time.adoc[]
+
+[[sc_stac_links]]
+=== Links
+
+include::../requirements/stac/REQ_link-media-types.adoc[]
+
+include::../recommendations/stac/REC_links.adoc[]
+
+[[sc_stac_license]]
+=== License
+
+Both ecosystems allow an SPDX license identifier, an SPDX license expression, or `other` in the `license` member. They differ in when links to the license texts are needed.
+
+The `license` member of a catalog and of a STAC Collection describe different things. OGC API - Records - Part 1: Core applies the license requirement for records to the catalog itself (`/req/record-collection/license`), while the `license` of a STAC Collection is the license of the data. The `license` of a record and of a STAC Item both describe the data. If the data and the catalog are available under the same license, one value serves both ecosystems. Otherwise, the `license` member of a combined catalog cannot express both. In this case, it is recommended to use `license` for the license of the data, which is how STAC clients present it and what the `license` members of the records describe, and to describe the license of the catalog itself in the `rights` member.
+
+include::../recommendations/stac/REC_license.adoc[]
+
+[[sc_stac_declaring-conformance]]
+=== Declaring conformance
+
+include::../requirements/stac/REQ_conformance.adoc[]
+
+include::../requirements/stac/REQ_crawlable-catalog.adoc[]
+
+include::../recommendations/stac/REC_conformsto.adoc[]
+
+[[sc_stac_example]]
+=== Example
+
+The following record is also a valid STAC Item. Compared to the example of the <<clause_stac-extensions,Requirements Class "STAC Extensions">>, it adds or changes these members:
+
+* `stac_version` is added with the value `1.1.0`.
+* `collection` is added, because the record has a link with the relation type `collection`. OGC API - Records requires this link for every record in a Records API.
+* `bbox` is added, because `geometry` is not `null`.
+* The `time` member contains a date. `properties.start_datetime` and `properties.end_datetime` describe the same day, and `properties.datetime` is `null`.
+* The GeoTIFF file is also available as an asset. The `file:` members are placed on the asset. The `enclosure` link stays in place for clients of OGC API - Records.
+* `conformsTo` also lists `http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac`.
+
+.A record that is also a STAC Item
+====
+[source,json]
+----
+{
+  "id": "b7d2fd24-8cd8-4965-a997-69eb1a987b5a",
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions",
+    "http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac"
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/contacts/v1.0.1/schema.json",
+    "https://stac-extensions.github.io/external-ids/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "collection": "dutch-metadata",
+  "time": {
+    "date": "2019-04-16"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [3.37087, 50.7539],
+        [3.37087, 53.4658],
+        [7.21097, 53.4658],
+        [7.21097, 50.7539],
+        [3.37087, 50.7539]
+      ]
+    ]
+  },
+  "bbox": [3.37087, 50.7539, 7.21097, 53.4658],
+  "properties": {
+    "datetime": null,
+    "start_datetime": "2019-04-16T00:00:00Z",
+    "end_datetime": "2019-04-16T23:59:59Z",
+    "created": "2019-04-16T00:00:00Z",
+    "updated": "2025-06-16T12:39:58Z",
+    "type": "dataset",
+    "title": "Zonpotentie velden",
+    "description": "Solar energy potential of agricultural fields in the Netherlands.",
+    "proj:code": "EPSG:28992",
+    "contacts": [
+      {
+        "organization": "Atlas Leefomgeving",
+        "emails": [
+          {
+            "value": "atlasleefomgeving@rivm.nl"
+          }
+        ],
+        "roles": ["resourceProvider"]
+      }
+    ],
+    "externalIds": [
+      {
+        "scheme": "default",
+        "value": "b7d2fd24-8cd8-4965-a997-69eb1a987b5a"
+      }
+    ],
+    "themes": [
+      {
+        "concepts": [
+          {
+            "id": "zonnepanelen"
+          },
+          {
+            "id": "energie"
+          }
+        ],
+        "scheme": "https://www.atlasleefomgeving.nl/thema"
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "title": "This document as GeoJSON",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=json"
+    },
+    {
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "This document as HTML",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a?f=html"
+    },
+    {
+      "rel": "profile",
+      "href": "http://www.opengis.net/def/profile/OGC/0/ogc-record"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "title": "Dutch metadata",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata?f=json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "title": "The landing page of this server as JSON",
+      "href": "https://demo.pygeoapi.io/master?f=json"
+    },
+    {
+      "rel": "enclosure",
+      "type": "image/tiff; application=geotiff",
+      "title": "The data as GeoTIFF",
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a/data?f=geotiff"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata/items/b7d2fd24-8cd8-4965-a997-69eb1a987b5a/data?f=geotiff",
+      "type": "image/tiff; application=geotiff",
+      "title": "The data as GeoTIFF",
+      "roles": ["data"],
+      "file:size": 123456789,
+      "file:checksum": "12209cbc07c3f991725836a3aa2a581ca2029198aa420b9d99bc0e131d9f3e2cbe47"
+    }
+  }
+}
+----
+====

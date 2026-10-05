@@ -1,0 +1,9 @@
+[[per_stac-extensions_summaries]]
+
+[permission]
+====
+[%metadata]
+identifier:: /per/stac-extensions/summaries
+part:: A catalog MAY include a `summaries` member as defined for https://github.com/radiantearth/stac-spec/blob/v1.1.0/collection-spec/collection-spec.md[STAC Collections].
+part:: Members that a STAC extension defines for summaries MAY be placed in the `summaries` member of a catalog.
+====

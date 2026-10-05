@@ -4,8 +4,9 @@
 ====
 [%metadata]
 identifier:: /req/stac-extensions/conformance
-part:: A server's conformance declaration SHALL be retrieved from the `/conformance` endpoint as defined in the http://docs.ogc.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes[Declaration of conformance classes] clause of the http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC API - Features - Part 1: Core] Standard.
-part:: An implementation of a server that supports the use of STAC extensions in records SHALL declare the following conformance classes in the conformance declaration:
+part:: A server that provides records through an API, and whose records or catalogs use STAC extensions, SHALL declare the following conformance class in the conformance declaration retrieved from the `/conformance` endpoint, as defined in the http://docs.ogc.org/is/17-069r4/17-069r4.html#_declaration_of_conformance_classes[Declaration of conformance classes] clause of http://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core]:
 +
-* https://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions
+* http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions
 ====
+
+NOTE: The requirements of this requirements class only apply to records and catalogs that use STAC extensions, so all other records and catalogs conform to it as well. Unlike the "STAC" requirements class (see <<req_stac_conformance,/req/stac/conformance>>), a server therefore declares it as soon as any of its records or catalogs uses STAC extensions.

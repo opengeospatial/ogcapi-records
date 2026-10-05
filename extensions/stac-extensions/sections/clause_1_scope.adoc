@@ -1,29 +1,34 @@
 == Scope
 
-The Spatial-Temporal Asset Catalog standard defines a rich ecosystem of extensions.
-Since STAC Items and OGC API Records records are closely related it would be substantial benefit if an
-OARec implementation could also support STAC extensions.  Some relevant STAC extensions include:
+Records of OGC API - Records and STAC Items are both GeoJSON Features that describe resources, and catalogs of OGC API - Records and STAC Collections both build on the collection object of OGC API - Features. Because of this common ground, the extensions developed by the https://stacspec.org[SpatioTemporal Asset Catalog (STAC)] community can also be used in records. Examples of STAC extensions that are useful for records include:
 
 * https://github.com/stac-extensions/classification[Classification] (`classification:`)
 * https://github.com/stac-extensions/datacube[Datacube] (`cube:`)
-* https://github.com/stac-extensions/eo[Electro-Optical (EO)] (`eo:`)
+* https://github.com/stac-extensions/eo[Electro-Optical] (`eo:`)
 * https://github.com/stac-extensions/file[File Info] (`file:`)
 * https://github.com/stac-extensions/forecast[Forecast] (`forecast:`)
 * https://github.com/stac-extensions/grid[Grid] (`grid:`)
-* https://github.com/stac-extensions/mlm[Machine Learning Model (MLM)] (`mlm:`)
+* https://github.com/stac-extensions/mlm[Machine Learning Model] (`mlm:`)
 * https://github.com/stac-extensions/pointcloud[Point Cloud] (`pc:`)
 * https://github.com/stac-extensions/processing[Processing] (`processing:`)
 * https://github.com/stac-extensions/product[Product] (`product:`)
 * https://github.com/stac-extensions/projection[Projection] (`proj:`)
 * https://github.com/stac-extensions/raster[Raster] (`raster:`)
-* https://github.com/stac-extensions/scientific[Scientific] (`sci:`)
+* https://github.com/stac-extensions/scientific[Scientific Citation] (`sci:`)
 * https://github.com/stac-extensions/table[Table] (`table:`)
-* https://github.com/stac-extensions/versioning[Versioning] (`version:`)
+* https://github.com/stac-extensions/version[Versioning Indicators]
 
-The exhaustive list of registered extensions can be found at https://stac-extensions.github.io/[].
-Other self-hosted extensions are also possible.
+<<sc_overview_stac-extensions>> explains how STAC extensions work.
 
-This standard defines the requirements that allow an OARec implementation to
-make use of STAC extensions.
+This Standard defines:
 
-This standard further defines requirements for allowing an OARec server to generate fully valid STAC items.
+* how records and catalogs use STAC extensions, in the <<clause_stac-extensions,Requirements Class "STAC Extensions">>, and
+* the requirements for records and catalogs that are also valid STAC Items and STAC Collections, in the <<clause_stac,Requirements Class "STAC">>.
+
+This Standard also provides informative guidance for implementing OGC API - Records and STAC together:
+
+* <<clause_records-and-stac-items,Records and STAC Items>>,
+* <<clause_records-and-stac-collections,Catalogs and STAC Collections>>,
+* <<clause_static-catalogs,Crawlable catalogs and static STAC catalogs>>,
+* <<clause_apis,Records APIs and STAC APIs>>, and
+* <<clause_links,Links and URL resolution>>.

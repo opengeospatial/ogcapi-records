@@ -1,0 +1,11 @@
+[[req_stac-extensions_extension-conformance]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac-extensions/extension-conformance
+part:: A record or catalog SHALL conform to the requirements of each STAC extension listed in its `stac_extensions` member. Requirements that an extension states for STAC Items apply to records, and requirements that it states for STAC Collections apply to catalogs.
+part:: A record or catalog SHALL validate against the JSON Schema of each STAC extension listed in its `stac_extensions` member.
+====
+
+NOTE: This requirement applies whether or not the record is also a complete STAC Item. Most STAC extensions only define members and their allowed values, so they can be used in records that are not STAC Items. Several extension schemas currently still require an `assets` member in any GeoJSON Feature, though. <<rec_stac-extensions_assets,/rec/stac-extensions/assets>> explains how to handle this requirement for such extensions.

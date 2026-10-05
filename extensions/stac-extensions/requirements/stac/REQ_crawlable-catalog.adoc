@@ -1,0 +1,10 @@
+[[req_stac_crawlable-catalog]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac/crawlable-catalog
+part:: In a crawlable catalog, each catalog object that conforms to this requirements class, and whose records all conform to it, SHALL include the URI `http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac` in its `conformsTo` member.
+====
+
+NOTE: A crawlable catalog has no `/conformance` endpoint. This requirement therefore follows the pattern of the `/req/crawlable-catalog/conformance` requirement in https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API - Records - Part 1: Core], which places the conformance declaration in the catalog object.

@@ -1,0 +1,38 @@
+[[ats_stac]]
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac
+target:: http://www.opengis.net/spec/ogcapi-records-5/1.0/req/stac
+classification:: Target Type:Document model
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
+inherit:: http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions
+abstract-test:: /conf/stac/entity
+abstract-test:: /conf/stac/version
+abstract-test:: /conf/stac/time
+abstract-test:: /conf/stac/link-media-types
+abstract-test:: /conf/stac/conformance
+abstract-test:: /conf/stac/crawlable-catalog
+====
+
+==== STAC entities
+
+include::stac/ATS_entity.adoc[]
+
+include::stac/ATS_version.adoc[]
+
+==== Temporal information
+
+include::stac/ATS_time.adoc[]
+
+==== Links
+
+include::stac/ATS_link-media-types.adoc[]
+
+==== Conformance declaration
+
+include::stac/ATS_conformance.adoc[]
+
+include::stac/ATS_crawlable-catalog.adoc[]

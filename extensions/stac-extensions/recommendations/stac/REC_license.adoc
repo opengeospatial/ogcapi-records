@@ -1,0 +1,12 @@
+[[rec_stac_license]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac/license
+part:: A record or catalog whose `license` member is not a single SPDX license identifier SHOULD include a link with the relation type `license` to the text of each license that applies.
+====
+
+NOTE: OGC API - Records requires `license` links for the value `other`. STAC recommends them for every value that is not a single SPDX license identifier, i.e. also for SPDX license expressions such as `MIT OR Apache-2.0`. This recommendation satisfies both.
+
+NOTE: The values `proprietary` and `various` are deprecated in STAC and not allowed in OGC API - Records. Use `other` instead.

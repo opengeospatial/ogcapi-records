@@ -1,7 +1,20 @@
 == Terms and Definitions
 
+[[def_asset]]
+=== asset
+an object that references data of a STAC Item or STAC Collection that can usually be downloaded or streamed, together with metadata about the data, for example its media type and roles (<<STAC>>)
+
+NOTE: STAC separates assets from <<def_link,links>>. Assets reference the data that a STAC Item or STAC Collection describes, for example the files of a satellite scene. They are usually downloadable, and clients load them to access and process the data. Links reference related resources, for example the parent STAC Collection, related STAC Items, or a license text. Clients usually do not download them, but navigate to them or use them in other ways. Members that STAC extensions define for data, such as `file:size` or `proj:shape`, are therefore often defined in the asset metadata.
+
+[[def_catalog]]
 === catalog; record collection
-a collection of related <<record-def,records>>
+a <<def_collection,collection>> of related <<def_record,records>> (<<OGC20-004r1,OGC 20-004r1>>)
+
+NOTE: In JSON, a catalog has the `type` value `Collection`. It is not the same as a <<def_stac-catalog,STAC Catalog>>, but a catalog can also be a <<def_stac-collection,STAC Collection>>.
+
+[[def_collection]]
+=== collection
+a set of resources, for example features or records, that is described by a collection object as defined by OGC API - Features - Part 1: Core (<<OGC17-069r4,OGC 17-069r4>>)
 
 === conformance module; conformance test module
 set of related tests, all within a single conformance test class (<<ogc08-131,OGC 08-131>>)
@@ -13,6 +26,13 @@ set of conformance test modules that must be applied to receive a single certifi
 
 NOTE: When no ambiguity is possible, the word `test` may be omitted, so conformance test class may be called a conformance class.
 
+[[def_crawlable-catalog]]
+=== crawlable catalog
+a catalog composed of web-accessible files that exist at fixed URLs and can be retrieved without query parameters, so that the catalog is accessed by following the links in the files
+
+NOTE: This term is used, but not formally defined, in OGC API - Records - Part 1: Core. STAC calls this deployment pattern a _static catalog_.
+
+[[def_dataset]]
 === dataset
 collection of data, published or curated by a single agent, and available for access or download in one or more serializations or formats (<<DCAT>>)
 
@@ -31,25 +51,33 @@ EXAMPLE: a downloadable file, an RSS feed or a web service that provides the dat
 === executable test suite (ETS)
 set of code (e.g., Java and CTL) that provides runtime tests for the assertions defined by the ATS. Test data required to do the tests are part of the ETS https://portal.ogc.org/files/?artifact_id=55234[(OGC 08-134)]
 
-[[local-resources-endpoint-def]]
+[[def_link]]
+=== link
+an object that describes a relationship between the containing document and another resource, consisting of the URI of the resource (`href`), the relation type (`rel`), and optional hints such as the media type (`type`) and a title (<<rfc8288,RFC 8288>>)
+
+NOTE: In STAC, links reference related resources that clients navigate to or use in other ways than assets, while the data that clients load for access and processing is referenced by <<def_asset,assets>>. In OGC API - Records, links serve both purposes: navigation links express relationships between catalogs and records, and association links, for example with the relation type `describes` or `enclosure`, reference the resources described by a record.
+
+[[def_local-resources-endpoint]]
 === local resources endpoint
 the path from which a catalog of local resources can be retrieved (e.g., `/collections`)
 
-[[local-resources-catalog-def]]
+[[def_local-resources-catalog]]
 === local resources catalog
-an instance of the document or resource that is retrieved from a <<local-resources-endpoint-def,local resources endpoint>>
+an instance of the document or resource that is retrieved from a <<def_local-resources-endpoint,local resources endpoint>>
 
-[[local-resources-item-def]]
+[[def_local-resources-item]]
 === local resources item
-an instance of an object that provides summary information about a discoverable local resource retrieved from a <<local-resources-catalog-def,local resources catalog>> (e.g., `/collections{/collectionID}`)
+an instance of an object that provides summary information about a discoverable local resource retrieved from a <<def_local-resources-catalog,local resources catalog>> (e.g., `/collections{/collectionID}`)
 
-[[ogc-api-resource-tree]]
+[[def_ogc-api-resource-tree]]
 === OGC API resource tree
 a collection of resources defined by the set of https://ogcapi.ogc.org/[OGC API Standards] that are hierarchically organized and exposed by implementations of the https://ogcapi.ogc.org/[OGC API Standards] through a root node that is common to all OGC APIs
 
-[[record-def]]
+[[def_record]]
 === record
 atomic unit of information of a catalog that is used to provide information (i.e., metadata) about a particular resource that the publisher of that resources wishes to make discoverable
+
+NOTE: In JSON, a record is a GeoJSON Feature. It is not necessarily a <<def_stac-item,STAC Item>>.
 
 === recommendation
 expression in the content of a document conveying that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is deprecated but not prohibited (<<ogc08-131,OGC 08-131>>) 
@@ -63,10 +91,37 @@ aggregate of all requirement modules that must all be satisfied to satisfy a con
 === requirements module
 aggregate of requirements and recommendations of a specification against a single standardization target type (<<ogc08-131,OGC 08-131>>)
 
+[[def_resource]]
 === resource
-an asset of interest that may be described by metadata (i.e., a <<record-def,record>>) in a catalog for the purpose of discovery and access (i.e., binding)
+an asset of interest that may be described by metadata (i.e., a <<def_record,record>>) in a catalog for the purpose of discovery and access (i.e., binding)
 
 === standardization target
 entity to which some requirements of a standard apply (<<ogc08-131,OGC 08-131>>)
 
 NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
+
+[[def_stac]]
+=== STAC; SpatioTemporal Asset Catalog
+a specification for describing geospatial resources and their assets with JSON-based catalogs (<<STAC>>)
+
+[[def_stac-catalog]]
+=== STAC Catalog
+a <<def_stac-entity,STAC entity>> with the `type` value `Catalog` that groups other STAC entities through links (<<STAC>>)
+
+[[def_stac-collection]]
+=== STAC Collection
+a <<def_stac-entity,STAC entity>> with the `type` value `Collection` that describes a group of STAC Items or of other STAC Collections, together with their common metadata such as the extent and the license (<<STAC>>)
+
+[[def_stac-entity]]
+=== STAC entity
+a STAC Catalog, a STAC Collection, or a STAC Item (<<STAC>>)
+
+[[def_stac-extension]]
+=== STAC extension
+an extension to the <<def_stac,STAC>> specification that defines additional members for <<def_stac-entity,STAC entities>> and is identified by the URI of the JSON Schema that validates those members
+
+NOTE: A list of registered STAC extensions is available at https://stac-extensions.github.io/[stac-extensions.github.io].
+
+[[def_stac-item]]
+=== STAC Item
+a <<def_stac-entity,STAC entity>> encoded as a GeoJSON Feature that describes a spatiotemporal resource, for example a scene, a granule, or a tile, and references its data through <<def_asset,assets>> (<<STAC>>)
