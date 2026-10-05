@@ -53,9 +53,9 @@ Several STAC extension schemas were written for STAC entities only. The followin
 [cols="50,50",options="header"]
 |===
 |Issue |Workaround
-|The schema requires an `assets` member in every GeoJSON Feature, even if no member of the extension is used in an asset. Records without `assets` fail validation. This affects, for example, Projection v2.0.0 and File Info v2.1.0. |Include an empty `assets` object, see <<rec_stac-extensions_assets,/rec/stac-extensions/assets>>. This does not help for extensions that actually depend on assets, for example the Machine Learning Model extension, which requires an asset with a model role. Such records need these assets.
+|The schema requires an `assets` member in every GeoJSON Feature, even if no member of the extension is used in an asset. Records without `assets` fail validation. This affects, for example, https://github.com/stac-extensions/projection/tree/v2.0.0[Projection v2.0.0] and https://github.com/stac-extensions/file/tree/v2.1.0[File Info v2.1.0]. |Include an empty `assets` object, see <<rec_stac-extensions_assets,/rec/stac-extensions/assets>>. This does not help for extensions that actually depend on assets, for example the Machine Learning Model extension, which requires an asset with a model role. Such records need these assets.
 |The schema does not validate members in links, or only some of them. There is no general correspondence between the validation of assets and of links: each extension decides which of its members it validates in links. Members that an extension defines for assets can be placed in links, but invalid values are not always detected. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
-|The schema requires at least one of its members in `properties` or in an asset, for example Raster v2.0.0. A record that only uses these members in links fails validation. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
+|The schema requires at least one of its members in `properties` or in an asset, for example https://github.com/stac-extensions/raster/tree/v2.0.0[Raster v2.0.0]. A record that only uses these members in links fails validation. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
 |===
 
 Once the affected extensions are updated, the workarounds are no longer needed, but they remain valid.
@@ -79,12 +79,12 @@ Several STAC extensions were written to match members that OGC API - Records - P
 [cols="22,26,52",options="header"]
 |===
 |Record member |STAC extension |Differences
-|`contacts` |https://github.com/stac-extensions/contacts[Contacts] v1.0.1 |STAC adds `description`. OGC API - Records adds `hoursOfService`. STAC requires `rel` in the links of a contact.
-|`externalIds` |https://github.com/stac-extensions/external-ids[External IDs] v1.0.0 |None.
-|`themes` |https://github.com/stac-extensions/themes[Themes] v1.0.0 |None.
-|`language`, `languages` |https://github.com/stac-extensions/language[Language] v1.0.0 |STAC validates `code` against the pattern of RFC 5646 and only allows `ltr` and `rtl` as `dir`. The extension adds `hreflang` for assets and links.
+|`contacts` |https://github.com/stac-extensions/contacts/tree/v1.0.1[Contacts v1.0.1] |STAC adds `description`. OGC API - Records adds `hoursOfService`. STAC requires `rel` in the links of a contact.
+|`externalIds` |https://github.com/stac-extensions/external-ids/tree/v1.0.0[External IDs v1.0.0] |None.
+|`themes` |https://github.com/stac-extensions/themes/tree/v1.0.0[Themes v1.0.0] |None.
+|`language`, `languages` |https://github.com/stac-extensions/language/tree/v1.0.0[Language v1.0.0] |STAC validates `code` against the pattern of RFC 5646 and only allows `ltr` and `rtl` as `dir`. The extension adds `hreflang` for assets and links.
 |`resourceLanguages` |None |The Language extension derives the languages of the resource from the `hreflang` members of the assets.
-|`linkTemplates` |https://github.com/stac-extensions/link-templates[Link Templates] v1.0.0 |STAC requires `rel`, does not allow `href`, and adds `method`, `headers`, and `body`.
+|`linkTemplates` |https://github.com/stac-extensions/link-templates/tree/v1.0.0[Link Templates v1.0.0] |STAC requires `rel`, does not allow `href`, and adds `method`, `headers`, and `body`.
 |===
 
 [[sc_stac-extensions_stac-common-metadata]]
@@ -95,7 +95,7 @@ The https://github.com/radiantearth/stac-spec/blob/v1.1.0/commons/common-metadat
 [[sc_stac-extensions_example]]
 === Example
 
-The following record uses five STAC extensions. It lists the schema URIs in `stac_extensions` and declares the "STAC Extensions" conformance class in `conformsTo`. The record is not a STAC Item: it has no `stac_version`, `bbox`, `properties.datetime`, or `collection` member. `proj:code` gives the coordinate reference system of the described dataset. The `file:size` and `file:checksum` members describe the GeoTIFF file referenced by the `enclosure` link, where the File Info v2.1.0 schema validates them. The empty `assets` member is needed because the Projection and File Info schemas require it (see <<sc_stac-extensions_known-issues>>). The `profile` link identifies the document as a record, as required by OGC API - Records - Part 1: Core for records in JSON if the "JSON" conformance class is declared.
+The following record uses five STAC extensions. It lists the schema URIs in `stac_extensions` and declares the "STAC Extensions" conformance class in `conformsTo`. The record is not a STAC Item: it has no `stac_version`, `bbox`, `properties.datetime`, or `collection` member. `proj:code` gives the coordinate reference system of the described dataset. The `file:size` and `file:checksum` members describe the GeoTIFF file referenced by the `enclosure` link, where the https://github.com/stac-extensions/file/tree/v2.1.0[File Info v2.1.0] schema validates them. The empty `assets` member is needed because the Projection and File Info schemas require it (see <<sc_stac-extensions_known-issues>>). The `profile` link identifies the document as a record, as required by OGC API - Records - Part 1: Core for records in JSON if the "JSON" conformance class is declared.
 
 .A record using STAC extensions
 ====
