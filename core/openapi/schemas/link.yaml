@@ -8,3 +8,4 @@ allOf:
     properties:
       href:
         type: string
+        format: uri-reference
