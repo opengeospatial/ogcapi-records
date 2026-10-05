@@ -4,16 +4,19 @@
 
 This clause compares crawlable catalogs of OGC API - Records with static STAC catalogs and explains how to publish one set of static files for both ecosystems.
 
+[[sc_static-catalogs_terminology]]
 === Terminology
 
-Both ecosystems support catalogs that consist only of static files, without an API. OGC API - Records calls them _crawlable catalogs_ ("Crawlable Catalog" requirements class). STAC calls them _static catalogs_.
+Both ecosystems support catalogs that consist only of static files, without an API. OGC API - Records calls them <<def_crawlable-catalog,crawlable catalogs>> (https://docs.ogc.org/is/20-004r1/20-004r1.html#clause-crawlable-catalog["Crawlable Catalog" requirements class] of <<OGC20-004r1,OGC API - Records - Part 1: Core>>). STAC calls them _static catalogs_.
 
-OGC API - Records also defines a _local resources catalog_ ("Local Resources Catalog" requirements class). Despite the similar name, it is not a static catalog. A local resources catalog is an API endpoint such as `/collections` that can be searched like a catalog, see <<clause_apis,Records APIs and STAC APIs>>.
+OGC API - Records also defines a <<def_local-resources-catalog,local resources catalog>> (https://docs.ogc.org/is/20-004r1/20-004r1.html#clause-local-resources-catalog["Local Resources Catalog" requirements class]). Despite the similar name, it is not a static catalog. A local resources catalog is an API endpoint such as `/collections` that can be searched like a catalog, see <<clause_apis,Records APIs and STAC APIs>>.
 
+[[sc_static-catalogs_common-foundation]]
 === Common foundation
 
 A crawlable catalog consists of catalogs that reference their records with `item` links and their sub-catalogs with `child` links. A static STAC catalog consists of STAC Catalogs and STAC Collections that reference their STAC Items with `item` links and their sub-catalogs with `child` links. Crawlers of both ecosystems can therefore traverse the same files, as long as each file is valid in both.
 
+[[sc_static-catalogs_differences]]
 === Differences
 
 [#static-differences,reftext='{table-caption} {counter:table-num}']
@@ -21,10 +24,10 @@ A crawlable catalog consists of catalogs that reference their records with `item
 [cols="20,40,40",options="header"]
 |===
 |Aspect |Crawlable catalog |Static STAC catalog
-|Catalog objects |Catalogs (`"type": "Collection"`). |STAC Catalogs or STAC Collections.
+|Catalog objects |Catalogs (`"type": "Collection"`). |STAC Catalogs (`"type": "Catalog"`) or STAC Collections (`"type": "Collection"`).
 |Conformance |The `conformsTo` member of the catalog contains `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog`. |Not declared. `stac_version` identifies STAC entities. STAC only defines `conformsTo` for the landing page of a STAC API.
 |`self` links |Required in catalogs, recommended in records. Not required to be absolute. |Strongly recommended and absolute. Not in the root of a catalog that is meant to be copied (formerly called _self-contained_ catalog).
-|Relative links |Resolved against the URI from which the file was retrieved, after following redirects (RFC 3986). |Recommended, preferably to files such as `catalog.json` instead of folders. Resolved against the `self` link, or against the URI from which the file was retrieved if there is none (see <<clause_links,Links and URL resolution>>).
+|Relative links |Resolved against the URI from which the file was retrieved, after following redirects (<<rfc3986,RFC 3986>>). |Recommended, preferably to files such as `catalog.json` instead of folders. Resolved against the `self` link, or against the URI from which the file was retrieved if there is none (see <<clause_links,Links and URL resolution>>).
 |Links to sub-catalogs |`child`, and also `related` for sets of catalogs and `next` for series. |`child` only. `related` links are not part of the hierarchy.
 |Records or STAC Items |Also an `items` link to an API, or records encoded in the catalog. |`item` links only.
 |File names |`{id}.json` recommended for records. |`catalog.json` or `collection.json` for catalogs, `{id}.json` for STAC Items. Each STAC Item in its own folder if it has files next to it.
@@ -34,9 +37,10 @@ A crawlable catalog consists of catalogs that reference their records with `item
 
 Both ecosystems allow relative and absolute links, reference sub-catalogs with `child` links and records or STAC Items with `item` links, and recommend `root` and `parent` links in sub-catalogs.
 
-=== Where interoperability breaks
+[[sc_static-catalogs_common-pitfalls]]
+=== Common pitfalls
 
-The following situations make a static catalog work in one ecosystem but not in the other:
+The following situations often prevent a static catalog from working with the clients of one of the ecosystems:
 
 * *Missing `stac_version`:* A catalog or record without `stac_version`. STAC clients do not recognize the document as a STAC entity and stop crawling at this point. A hierarchy is only fully usable by STAC clients if every catalog and record in it is a STAC entity.
 * *Media type of links to sub-catalogs:* Links to sub-catalogs with the media type `application/ogc-catalog+json`. STAC clients do not follow them, see <<req_stac_link-media-types,/req/stac/link-media-types>>.
@@ -45,6 +49,7 @@ The following situations make a static catalog work in one ecosystem but not in 
 * *Moved catalogs:* A `self` link that points to another location than the one the file is served from, for example after copying the catalog to a mirror. Clients then resolve relative links against different base URIs, see <<clause_links,Links and URL resolution>>.
 * *`conformsTo` in catalogs:* A `conformsTo` member in a catalog. OGC API - Records requires it in crawlable catalogs, but in STAC, `conformsTo` usually indicates the landing page of a STAC API. STAC clients may therefore present the root of a static catalog as an API, or try to use API endpoints that do not exist.
 
+[[sc_static-catalogs_detecting-static-catalogs-and-apis-in-clients]]
 === Detecting static catalogs and APIs in clients
 
 Clients that support both ecosystems cannot rely on the presence of a `conformsTo` member to tell a static catalog from an API:
@@ -55,10 +60,12 @@ Clients that support both ecosystems cannot rely on the presence of a `conformsT
 
 It is therefore recommended that clients check for specific conformance classes instead, for example `https://api.stacspec.org/v1.0.0/core` for a STAC API or `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/searchable-catalog` for a Records API, and only use the API functionality that the declared conformance classes describe.
 
+[[sc_static-catalogs_publishing-a-static-catalog-for-both-ecosystems]]
 === Publishing a static catalog for both ecosystems
 
 A static catalog can serve both ecosystems in two ways. In the first, every file is valid in both ecosystems. In the second, a hierarchy combines files that are only valid in one of the ecosystems, and each ecosystem only follows the links to the files it can read.
 
+[[sc_static-catalogs_files-that-are-valid-in-both-ecosystems]]
 ==== Files that are valid in both ecosystems
 
 . Make every catalog a STAC Collection and every record a STAC Item, as described in <<clause_records-and-stac-collections,Catalogs and STAC Collections>> and <<clause_records-and-stac-items,Records and STAC Items>>, and follow the <<clause_stac,Requirements Class "STAC">>.
@@ -70,6 +77,7 @@ A static catalog can serve both ecosystems in two ways. In the first, every file
 . Optionally, add the `profile` member with the value `["http://www.opengis.net/def/profile/OGC/0/ogc-catalog"]` to the links to catalogs. Clients of OGC API - Records then know that the target is a catalog before they retrieve it, while STAC clients ignore the member.
 . Follow the STAC file naming conventions: `collection.json` for catalogs, as they are STAC Collections, and `{id}.json` for records, each in its own folder next to the data it describes. They are consistent with the `{id}.json` recommendation of OGC API - Records for record files. OGC API - Records does not prescribe file names for catalogs.
 
+[[sc_static-catalogs_mixed-hierarchies]]
 ==== Mixed hierarchies
 
 A hierarchy can also combine catalogs and records of OGC API - Records that are not STAC entities with STAC Catalogs, STAC Collections, and STAC Items that are not records. The media types of the links tell the clients which links to follow:
@@ -80,6 +88,7 @@ A hierarchy can also combine catalogs and records of OGC API - Records that are 
 * *Records and STAC Items:* Both use the media type `application/geo+json`, so the media type cannot tell them apart. Clients of OGC API - Records can identify a record by its `profile` link to the `ogc-record` profile after retrieving it, but STAC clients have no way to recognize a record that is not a STAC Item. Records that are not STAC Items are therefore only linked from catalogs of OGC API - Records, and STAC Items that are not records only from STAC Catalogs and STAC Collections.
 * *Conformance:* Each catalog declares only the conformance classes that it and its records conform to. A catalog that is valid in both ecosystems but links to catalogs of OGC API - Records that are not STAC Collections still declares the "STAC" conformance class, because the declaration covers the catalog and its records, not its sub-catalogs (see <<req_stac_conformance,/req/stac/conformance>>).
 
+[[sc_static-catalogs_example]]
 === Example
 
 The following sub-catalog `energy/collection.json` is part of a crawlable catalog and a static STAC catalog. It has an absolute `self` link, as required by OGC API - Records, and relative links to the other files.

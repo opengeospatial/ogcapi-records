@@ -4,7 +4,7 @@
 ====
 [%metadata]
 identifier:: /rec/stac/time
-part:: A record SHOULD include a `time` member that describes the same instant or interval as the `datetime`, `start_datetime`, and `end_datetime` members in its `properties`.
+part:: A record SHOULD include a `time` member that describes an instant or interval that is equivalent to the one of the `datetime`, `start_datetime`, and `end_datetime` members in its `properties`.
 part:: If `properties.start_datetime` is `0001-01-01T00:00:00Z` or `properties.end_datetime` is `9999-12-31T23:59:59Z`, the corresponding start or end of the `interval` in the `time` member SHOULD be open (`..`).
 ====
 

@@ -5,12 +5,12 @@
 [%metadata]
 identifier:: /req/stac-extensions/member
 part:: A record or catalog that contains members defined by one or more STAC extensions, other than members that OGC API - Records - Part 1: Core defines, SHALL include the `stac_extensions` member at the top level of the record or catalog object.
-part:: The value of the `stac_extensions` member SHALL be an array of strings that contains the schema URI of each STAC extension whose members are used in the record or catalog, except for extensions whose members are all defined by OGC API - Records - Part 1: Core as well.
+part:: The value of the `stac_extensions` member SHALL be an array of strings that contains the schema URI of each STAC extension whose members are used in the record or catalog. This does not apply to extensions whose members are all defined by OGC API - Records - Part 1: Core as well. Such extensions MAY be listed.
 part:: Each schema URI SHALL be listed at most once.
 ====
 
 NOTE: The schema URI of a STAC extension is also its identifier, for example `https://stac-extensions.github.io/projection/v2.0.0/schema.json`. The member has to be named `stac_extensions` because the extension schemas check that their own URI is listed in a member with exactly this name. With any other name, every record would fail validation against the extension schemas.
 
-NOTE: Members such as `contacts`, `themes`, `externalIds`, `language`, `languages`, and `linkTemplates` are defined by OGC API - Records - Part 1: Core and also by STAC extensions. Listing these extensions is optional, see <<overlapping-extensions>>. If one of them is listed, its requirements apply (see <<req_stac-extensions_extension-conformance,/req/stac-extensions/extension-conformance>>).
+NOTE: Members such as `contacts`, `themes`, `externalIds`, `language`, `languages`, and `linkTemplates` are defined by OGC API - Records - Part 1: Core and also by STAC extensions. Listing these extensions is optional, see <<overlapping-extensions>>. Listing them lets STAC clients and validators recognize the members. If one of them is listed, its requirements apply (see <<req_stac-extensions_extension-conformance,/req/stac-extensions/extension-conformance>>).
 
 NOTE: The `/rec/record-core/extensions` recommendation of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API - Records - Part 1: Core] suggests listing the identifiers of record extensions in the `conformsTo` member. This Standard follows it with the conformance class `http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac-extensions` (see <<rec_stac-extensions_conformsto,/rec/stac-extensions/conformsto>>), which assigns the listing of the individual STAC extensions to the `stac_extensions` member. The schema URIs therefore do not need to be repeated in `conformsTo`.

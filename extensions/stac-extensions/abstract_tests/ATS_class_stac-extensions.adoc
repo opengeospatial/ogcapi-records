@@ -10,6 +10,7 @@ inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-core
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/record-collection
 abstract-test:: /conf/stac-extensions/member
 abstract-test:: /conf/stac-extensions/extension-conformance
+abstract-test:: /conf/stac-extensions/assets
 abstract-test:: /conf/stac-extensions/conformance
 ====
 
@@ -20,6 +21,10 @@ include::stac-extensions/ATS_member.adoc[]
 ==== Conformance to the listed extensions
 
 include::stac-extensions/ATS_extension-conformance.adoc[]
+
+==== Assets
+
+include::stac-extensions/ATS_assets.adoc[]
 
 ==== Conformance declaration
 

@@ -1,5 +1,6 @@
 == Conformance
 
+[[sc_conformance_overview]]
 === Overview
 
 This Standard defines two requirements classes:
@@ -7,7 +8,7 @@ This Standard defines two requirements classes:
 * <<rc_stac-extensions,STAC Extensions>>, and
 * <<rc_stac,STAC>>.
 
-The standardization targets of both requirements classes are records and catalogs as defined in OGC API - Records - Part 1: Core. Conformance is declared in two places:
+The standardization targets of both requirements classes are records and catalogs as defined in <<OGC20-004r1,OGC API - Records - Part 1: Core>>. Conformance is declared in two places:
 
 * A server that provides records through an API declares conformance at its `/conformance` endpoint.
 * A record or catalog declares conformance in its `conformsTo` member. This is the only option for crawlable catalogs, which have no `/conformance` endpoint.
@@ -16,6 +17,7 @@ Records that conform to the "STAC Extensions" requirements class use members fro
 
 Records and catalogs that conform to the "STAC" requirements class are also valid STAC Items and STAC Collections. Clients of OGC API - Records and STAC clients can both use them without any conversion.
 
+[[sc_conformance_conformance-testing]]
 === Conformance testing
 
 Conformance with this Standard shall be checked using all the relevant tests specified in <<annex_ats,Annex A>> of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.

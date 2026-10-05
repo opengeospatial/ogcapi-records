@@ -8,5 +8,6 @@ inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
 requirement:: /req/stac-extensions/member
 requirement:: /req/stac-extensions/extension-conformance
+requirement:: /req/stac-extensions/assets
 requirement:: /req/stac-extensions/conformance
 ====

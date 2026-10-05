@@ -18,7 +18,7 @@ Records of OGC API - Records and STAC Items are both GeoJSON Features that descr
 * https://github.com/stac-extensions/table[Table] (`table:`)
 * https://github.com/stac-extensions/version[Versioning Indicators]
 
-Some extensions describe how to access resources, for example https://github.com/stac-extensions/authentication[Authentication] and https://github.com/stac-extensions/storage[Storage]. Others were written to match members that OGC API - Records - Part 1: Core already defines, for example https://github.com/stac-extensions/contacts[Contacts] and https://github.com/stac-extensions/themes[Themes]. A list of registered extensions is available at https://stac-extensions.github.io/. Extensions can also be hosted elsewhere.
+<<sc_overview_stac-extensions>> explains how STAC extensions work.
 
 This Standard defines:
 

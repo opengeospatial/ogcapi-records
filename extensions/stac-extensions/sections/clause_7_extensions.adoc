@@ -1,66 +1,73 @@
 [[clause_stac-extensions]]
 == Requirements Class "STAC Extensions"
 
+[[sc_stac-extensions_overview]]
 === Overview
 
 include::../requirements/requirements_class_stac-extensions.adoc[]
 
-This requirements class defines how records and catalogs use https://stac-extensions.github.io/[STAC extensions]. The records and catalogs remain records and catalogs as defined by OGC API - Records - Part 1: Core. They do not need to be STAC Items or STAC Collections. Records and catalogs that are also valid STAC entities are covered by the <<clause_stac,Requirements Class "STAC">>.
+This requirements class defines how <<def_record,records>> and <<def_catalog,catalogs>> use <<def_stac-extension,STAC extensions>>. The records and catalogs remain records and catalogs as defined by <<OGC20-004r1,OGC API - Records - Part 1: Core>>. They do not need to be <<def_stac-item,STAC Items>> or <<def_stac-collection,STAC Collections>>. Records and catalogs that are also valid STAC entities are covered by the <<clause_stac,Requirements Class "STAC">>.
 
+[[sc_stac-extensions_using-stac-extensions]]
 === Using STAC extensions
 
 include::../requirements/stac-extensions/REQ_member.adoc[]
 
 include::../requirements/stac-extensions/REQ_extension-conformance.adoc[]
 
-STAC extensions describe where their members are placed in STAC entities. <<extension-member-locations>> shows the corresponding locations in records and catalogs. Where OGC API - Records has no corresponding structure, the STAC structure can be reused, as noted in brackets.
+Each STAC extension specifies where its members are placed in STAC entities, for example in the `properties` of a STAC Item, at the top level of a STAC Collection, or in assets. <<extension-member-locations>> shows the corresponding locations in records and catalogs. Where OGC API - Records has no corresponding structure, the STAC structure can be reused, as noted in brackets.
 
 [#extension-member-locations,reftext='{table-caption} {counter:table-num}']
 .Location of STAC extension members in records and catalogs
 [cols="40,60",options="header"]
 |===
-|Location in STAC |Location in OGC API - Records
+|Location in STAC entities |Location in OGC API - Records
 |Item Properties (`properties` of a STAC Item) |`properties` of a record
 |Top level of a STAC Collection |Top level of a catalog
 |Summaries (`summaries` of a STAC Collection) |None (the STAC `summaries` member can be reused in catalogs, see <<per_stac-extensions_summaries,/per/stac-extensions/summaries>>)
 |Asset (`assets` of a STAC Item or STAC Collection) |Association links in `links` of a record or catalog, for example with the link relation type `describes` or `enclosure` (the STAC `assets` member can be reused in records and catalogs, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>)
-|Item Asset Definition (`item_assets` of a STAC Collection) |None (the STAC `item_assets` member can be reused in catalogs, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>)
+|Item Asset Definition (`item_assets` of a STAC Collection) |None (the STAC `item_assets` member can be reused in catalogs, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>). This is only useful if the records of the catalog include `assets` as well.
 |Link (`links`) |`links` of a record or catalog
 |===
 
 include::../recommendations/stac-extensions/PER_summaries.adoc[]
 
+[[sc_stac-extensions_assets]]
 === Assets
 
-STAC Items and STAC Collections reference their data files through _assets_. Records reference the resources they describe through links, for example with the link relation type `describes` or `enclosure`. Many STAC extensions define members for assets, and several extension schemas currently still expect an `assets` member in every GeoJSON Feature. This requirements class therefore allows assets in records and catalogs.
+STAC Items and STAC Collections reference their data files through <<def_asset,assets>>. Records reference the resources they describe through links, for example with the link relation type `describes` or `enclosure`. Many STAC extensions define members for assets, and some extension schemas expect an `assets` member (see <<sc_stac-extensions_known-issues>>). This requirements class therefore allows assets in records and catalogs.
 
 include::../recommendations/stac-extensions/PER_assets.adoc[]
+
+include::../requirements/stac-extensions/REQ_assets.adoc[]
 
 include::../recommendations/stac-extensions/REC_assets.adoc[]
 
 [[sc_stac-extensions_known-issues]]
 === Known issues with STAC extension schemas
 
-Several STAC extension schemas were written for STAC entities only. The following issues affect records that use these extensions. They are tracked in https://github.com/radiantearth/stac-spec/issues/1397[stac-spec#1397] and do not occur with extensions that are based on the current https://github.com/stac-extensions/template[STAC extension template].
+Several STAC extension schemas were written for STAC entities only. The following issues affect records that use such extensions. Whether an extension is affected depends on its schema. For the extensions registered at https://stac-extensions.github.io/[stac-extensions.github.io], the issues are tracked in https://github.com/radiantearth/stac-spec/issues/1397[stac-spec#1397], and extensions based on the current https://github.com/stac-extensions/template[STAC extension template] are not affected. Extensions hosted elsewhere do not necessarily follow the template, and any JSON Schema can be listed in `stac_extensions`. Implementers therefore check the schema of each extension they use.
 
 [#known-extension-issues,reftext='{table-caption} {counter:table-num}']
 .Known issues with STAC extension schemas and workarounds
 [cols="50,50",options="header"]
 |===
 |Issue |Workaround
-|The schema requires an `assets` member in every GeoJSON Feature, even if no member of the extension is used in an asset. Records without `assets` fail validation. This affects, for example, Projection v2.0.0 and File Info v2.1.0. |Include an empty `assets` object, see <<rec_stac-extensions_assets,/rec/stac-extensions/assets>>.
-|The schema does not validate members in links. Members that an extension defines for assets can be placed in links, but invalid values are not detected. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
+|The schema requires an `assets` member in every GeoJSON Feature, even if no member of the extension is used in an asset. Records without `assets` fail validation. This affects, for example, Projection v2.0.0 and File Info v2.1.0. |Include an empty `assets` object, see <<rec_stac-extensions_assets,/rec/stac-extensions/assets>>. This does not help for extensions that actually depend on assets, for example the Machine Learning Model extension, which requires an asset with a model role. Such records need these assets.
+|The schema does not validate members in links, or only some of them. There is no general correspondence between the validation of assets and of links: each extension decides which of its members it validates in links. Members that an extension defines for assets can be placed in links, but invalid values are not always detected. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
 |The schema requires at least one of its members in `properties` or in an asset, for example Raster v2.0.0. A record that only uses these members in links fails validation. |Place the members in assets, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>.
 |===
 
 Once the affected extensions are updated, the workarounds are no longer needed, but they remain valid.
 
+[[sc_stac-extensions_declaring-conformance]]
 === Declaring conformance
 
 include::../requirements/stac-extensions/REQ_conformance.adoc[]
 
 include::../recommendations/stac-extensions/REC_conformsto.adoc[]
 
+[[sc_stac-extensions_extensions-aligned-with-ogc-api-records]]
 === Extensions aligned with OGC API - Records
 
 Several STAC extensions were written to match members that OGC API - Records - Part 1: Core defines. Listing these extensions in `stac_extensions` is optional, because OGC API - Records already allows the members. Listing an extension enables validation against its schema. Once listed, the member is mandatory in records, because each of these extensions requires its member to be present. <<overlapping-extensions>> lists the remaining differences.
@@ -78,10 +85,12 @@ Several STAC extensions were written to match members that OGC API - Records - P
 |`linkTemplates` |https://github.com/stac-extensions/link-templates[Link Templates] v1.0.0 |STAC requires `rel`, does not allow `href`, and adds `method`, `headers`, and `body`.
 |===
 
+[[sc_stac-extensions_stac-common-metadata]]
 === STAC common metadata
 
 The https://github.com/radiantearth/stac-spec/blob/v1.1.0/commons/common-metadata.md[STAC common metadata] defines members that are not part of any extension, for example `gsd`, `platform`, `instruments`, `constellation`, `mission`, and `bands`. Records can use these members as well. The STAC specification publishes JSON Schemas for them, for example `instrument.json`, but these are not STAC extensions and are not listed in `stac_extensions`. They are fragments that validate the members at the top level of the object they are applied to. Listed in `stac_extensions`, they would be applied to the whole record and would not check the members in `properties` or in assets. A validator can apply them to `properties`, to each asset, and to the top level of a catalog. In STAC Items and STAC Collections, the STAC JSON Schemas apply them automatically, see the <<clause_stac,Requirements Class "STAC">>.
 
+[[sc_stac-extensions_example]]
 === Example
 
 The following record uses five STAC extensions. It lists the schema URIs in `stac_extensions` and declares the "STAC Extensions" conformance class in `conformsTo`. The record is not a STAC Item: it has no `stac_version`, `bbox`, `properties.datetime`, or `collection` member. `proj:code` gives the coordinate reference system of the described dataset. The `file:size` and `file:checksum` members describe the GeoTIFF file referenced by the `enclosure` link, where the File Info v2.1.0 schema validates them. The empty `assets` member is needed because the Projection and File Info schemas require it (see <<sc_stac-extensions_known-issues>>). The `profile` link identifies the document as a record, as required by OGC API - Records - Part 1: Core for records in JSON if the "JSON" conformance class is declared.

@@ -4,12 +4,14 @@
 
 This clause compares catalogs (record collections) with STAC Collections and explains how to create documents that are both. The normative provisions are in the <<clause_stac,Requirements Class "STAC">>.
 
+[[sc_records-and-stac-collections_common-foundation]]
 === Common foundation
 
-Catalogs and STAC Collections both extend the collection object of OGC API - Features - Part 1: Core. They share the members `id`, `title`, `description`, `extent`, and `links` from OGC API - Features, and both add `keywords` and `license`. In both, `license` is an SPDX license identifier, an SPDX license expression, or `other`. The `type` member of a catalog has the value `Collection`, which is the same value that STAC Collections use. Both use `child` links for sub-catalogs and `item` links for records or STAC Items.
+Catalogs and STAC Collections both extend the collection object of <<OGC17-069r4,OGC API - Features - Part 1: Core>>. They share the members `id`, `title`, `description`, `extent`, and `links` from OGC API - Features, and both add `keywords` and `license`. In both, `license` is an SPDX license identifier, an SPDX license expression, or `other`. The `type` member of a catalog has the value `Collection`, which is the same value that STAC Collections use. Both use `child` links for sub-catalogs and `item` links for records or STAC Items.
 
 STAC defines two kinds of catalog objects: the STAC Catalog (`"type": "Catalog"`) and the STAC Collection (`"type": "Collection"`). OGC API - Records requires `"type": "Collection"` for all catalogs, so a catalog can only ever be a STAC Collection. A STAC Collection requires `description`, `license`, and `extent`, which are optional for catalogs. This applies to every catalog in a hierarchy, including catalogs that only group other catalogs and would be STAC Catalogs in a pure STAC implementation (see <<sc_stac_structuring-catalogs>>).
 
+[[sc_records-and-stac-collections_differences]]
 === Differences
 
 <<collection-crosswalk>> lists the members that differ between catalogs and STAC Collections. <<sc_records-and-stac-collections_creating>> describes what these differences mean in practice, and its steps can be used as a checklist to check whether a catalog is also a valid STAC Collection.
@@ -44,7 +46,7 @@ Both ecosystems require the `links` member, reference an API endpoint for record
 
 Temporal intervals in the `extent` of both catalogs and STAC Collections use `null` for an open start or end. This is different from the `time` member of a record, which uses `..`.
 
-The `license` member of a catalog and of a STAC Collection describe different things. OGC API - Records - Part 1: Core applies the license requirement for records to the catalog itself (`/req/record-collection/license`), while the `license` of a STAC Collection is the license of the data. The `license` of a record and of a STAC Item both describe the data. If the data and the catalog are available under the same license, one value serves both ecosystems. Otherwise, the `license` member of a combined catalog cannot express both. In this case, it is recommended to use `license` for the license of the data, which is how STAC clients present it and what the `license` members of the records describe, and to describe the license of the catalog itself in the `rights` member.
+The `license` member of a catalog and of a STAC Collection describe different things, see <<sc_stac_license>>.
 
 [[sc_records-and-stac-collections_creating]]
 === Creating a catalog that is also a STAC Collection
@@ -59,7 +61,7 @@ The `license` member of a catalog and of a STAC Collection describe different th
 . Add `summaries` for the most important members in the `properties` of the records, for example `type` or `proj:code`. The keys in `summaries` are the member names without the prefix `properties.`.
 . Keep `conformsTo` and add the conformance classes of this Standard.
 
-A catalog in JSON is served as `application/ogc-catalog+json` by default. STAC clients expect `application/json`. OGC API - Records - Part 1: Core also allows `application/json` for catalogs, with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to identify the content. Serving catalogs as `application/json` with a `profile` link works for both ecosystems. Records are served as `application/geo+json` in both ecosystems and carry a `profile` link to `http://www.opengis.net/def/profile/OGC/0/ogc-record`, which STAC clients ignore.
+A catalog in JSON is served as `application/ogc-catalog+json` by default. STAC clients expect `application/json`. <<OGC20-004r1,OGC API - Records - Part 1: Core>> also allows `application/json` for catalogs, with the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to identify the content. Serving catalogs as `application/json` with a `profile` link works for both ecosystems. Records are served as `application/geo+json` in both ecosystems and carry a `profile` link to `http://www.opengis.net/def/profile/OGC/0/ogc-record`, which STAC clients ignore.
 
 [[sc_records-and-stac-collections_from-collection]]
 === Creating a catalog from a STAC Collection
@@ -74,6 +76,7 @@ A STAC Collection is already very close to a catalog. To make it useful for clie
 . Add `contacts` in addition to `providers`. Clients of OGC API - Records show `contacts`, and STAC clients typically show `providers`.
 . Consider adding other members of a catalog that STAC does not define, for example `themes` or `language`.
 
+[[sc_records-and-stac-collections_example]]
 === Example
 
 The following catalog is also a valid STAC Collection. It is the catalog of the record shown in the <<clause_stac,Requirements Class "STAC">>. The data and the catalog are available under the same license, so its `license` means the same in both ecosystems. `providers` lists the producer for STAC clients. The `profile` link identifies the document as a catalog for clients of OGC API - Records.

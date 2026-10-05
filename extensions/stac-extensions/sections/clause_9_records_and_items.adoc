@@ -4,10 +4,12 @@
 
 This clause compares records with STAC Items and explains how to create documents that are both. The normative provisions are in the <<clause_stac,Requirements Class "STAC">>.
 
+[[sc_records-and-stac-items_common-foundation]]
 === Common foundation
 
 Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/html/rfc7946[RFC 7946]). Both have the members `id`, `type` (with the value `Feature`), `geometry`, and `properties`, and both use `links` with link objects that consist of `href`, `rel`, `type`, and `title`. Metadata about the described resource is in `properties`, and many members in `properties` have the same name and meaning, for example `title`, `description`, `keywords`, `created`, and `updated`. In both, `license` is an SPDX license identifier, an SPDX license expression, or `other`.
 
+[[sc_records-and-stac-items_differences]]
 === Differences
 
 <<record-item-crosswalk>> lists the members that differ between records and STAC Items. <<sc_records-and-stac-items_creating>> describes what these differences mean in practice, and its steps can be used as a checklist to check whether a record is also a valid STAC Item. In this clause, members inside `properties` are written with the prefix `properties.`, and all other members are top-level members.
@@ -40,6 +42,7 @@ Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/ht
 |`assets` |Not defined. Allowed by this Standard, see <<per_stac-extensions_assets,/per/stac-extensions/assets>>. |Required. Can be empty.
 |===
 
+[[sc_records-and-stac-items_temporal-information]]
 === Temporal information
 
 The two data models express time differently. <<time-mapping>> shows how to derive the STAC members from the `time` member of a record, following <<req_stac_time,/req/stac/time>>.
@@ -63,6 +66,7 @@ A date in a record has the granularity of a day, independent of any time zone. T
 
 For the other direction, <<rec_stac_time,/rec/stac/time>> recommends adding a `time` member to STAC Items. Both use UTC, so the timestamps can be copied. Only timestamps with the offset `+00:00`, which STAC also allows, need to be rewritten with `Z`, for example from `2019-04-16T10:15:00+00:00` to `2019-04-16T10:15:00Z`. The placeholders `0001-01-01T00:00:00Z` and `9999-12-31T23:59:59Z` become an open start or end (`..`).
 
+[[sc_records-and-stac-items_records-that-cannot-be-stac-items]]
 === Records that cannot be STAC Items
 
 Some records cannot become valid STAC Items without changing what they state:
@@ -95,7 +99,7 @@ A STAC Item is already very close to a record. To make it useful for clients of 
 
 . Add the top-level member `time`, as recommended by <<rec_stac_time,/rec/stac/time>>.
 . Add links for the most important assets, for example with the link relation type `enclosure`. Clients of OGC API - Records do not read assets. The links only need the basic members such as `href`, `rel`, `type`, and `title`. Further metadata stays in the asset.
-. Add a link with the relation type `profile` to `http://www.opengis.net/def/profile/OGC/0/ogc-record`, which OGC API - Records - Part 1: Core requires for records in JSON if the "JSON" conformance class is declared.
+. Add a link with the relation type `profile` to `http://www.opengis.net/def/profile/OGC/0/ogc-record`, which <<OGC20-004r1,OGC API - Records - Part 1: Core>> requires for records in JSON if the "JSON" conformance class is declared.
 . Add `properties.type`. A STAC Item usually describes a dataset or a part of the dataset that its STAC Collection describes, so `dataset` is often suitable. Other resources need other values, for example a machine learning model that is described with the Machine Learning Model extension. OGC API - Records - Part 1: Core lists common resource types in an informative annex.
 . Add `properties.formats` with one object for each media type of the assets that contain the data, usually the assets with the role `data`. A `name` can be added for formats that are better known by their name, for example `"formats": [{"name": "Cloud Optimized GeoTIFF", "mediaType": "image/tiff; application=geotiff; profile=cloud-optimized"}]`.
 . Consider adding other record members that STAC does not define, for example `properties.contacts` or `properties.themes`.

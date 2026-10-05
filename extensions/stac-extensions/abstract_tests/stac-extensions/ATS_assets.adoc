@@ -1,0 +1,16 @@
+[[ats_stac-extensions_assets]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac-extensions/assets
+target:: /req/stac-extensions/assets
+test-purpose:: Validate that the `assets` member of a record or catalog contains STAC Asset Objects.
+test-method::
++
+--
+. Retrieve each record and each catalog that includes an `assets` member.
+. Verify that the value of the `assets` member is an object.
+. Verify that each value in this object is a valid STAC Asset Object.
+--
+====

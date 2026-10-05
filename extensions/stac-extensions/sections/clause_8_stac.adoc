@@ -1,6 +1,7 @@
 [[clause_stac]]
 == Requirements Class "STAC"
 
+[[sc_stac_overview]]
 === Overview
 
 include::../requirements/requirements_class_stac.adoc[]
@@ -20,6 +21,7 @@ A declaration of this conformance class applies at different levels:
 
 If only some of the records and catalogs of a server are STAC entities, the server does not declare this conformance class at its `/conformance` endpoint. Instead, the records and catalogs that are STAC entities declare it in their `conformsTo` member.
 
+[[sc_stac_stac-entities]]
 === STAC entities
 
 include::../requirements/stac/REQ_entity.adoc[]
@@ -29,7 +31,7 @@ include::../requirements/stac/REQ_version.adoc[]
 [[sc_stac_structuring-catalogs]]
 === Catalogs that only structure a hierarchy
 
-Static STAC catalogs often use STAC Catalogs to structure a hierarchy, for example by year or by region, without describing any data themselves. Such a catalog cannot be a STAC Catalog in a document that is also a catalog of OGC API - Records, because OGC API - Records - Part 1: Core fixes the `type` of catalogs to `Collection`. Leaving these nodes out of the Records hierarchy is not an option either, because clients of OGC API - Records follow `child` links only to catalogs.
+Static STAC catalogs often use STAC Catalogs to structure a hierarchy, for example by year or by region, without describing any data themselves. Such a catalog cannot be a STAC Catalog in a document that is also a catalog of OGC API - Records, because <<OGC20-004r1,OGC API - Records - Part 1: Core>> fixes the `type` of catalogs to `Collection`. Leaving these nodes out of the Records hierarchy is not an option either, because clients of OGC API - Records follow `child` links only to catalogs.
 
 These catalogs are therefore STAC Collections as well. STAC allows STAC Collections to contain other STAC Collections, and the STAC best practices recommend using the same structural element on each level of a hierarchy. Compared to a STAC Catalog, such a catalog needs a few more members:
 
@@ -40,6 +42,7 @@ These catalogs are therefore STAC Collections as well. STAC allows STAC Collecti
 
 The `summaries` member is optional and can be left out. STAC clients present these catalogs as STAC Collections instead of as STAC Catalogs, for example with their extent.
 
+[[sc_stac_temporal-information]]
 === Temporal information
 
 Records describe their temporal extent in the `time` member at the top level. STAC Items use the `datetime`, `start_datetime`, and `end_datetime` members in `properties`. A document that is both needs both, and they need to agree.
@@ -48,24 +51,30 @@ include::../requirements/stac/REQ_time.adoc[]
 
 include::../recommendations/stac/REC_time.adoc[]
 
+[[sc_stac_links]]
 === Links
 
 include::../requirements/stac/REQ_link-media-types.adoc[]
 
 include::../recommendations/stac/REC_links.adoc[]
 
+[[sc_stac_license]]
 === License
 
 Both ecosystems allow an SPDX license identifier, an SPDX license expression, or `other` in the `license` member. They differ in when links to the license texts are needed.
 
+The `license` member of a catalog and of a STAC Collection describe different things. OGC API - Records - Part 1: Core applies the license requirement for records to the catalog itself (`/req/record-collection/license`), while the `license` of a STAC Collection is the license of the data. The `license` of a record and of a STAC Item both describe the data. If the data and the catalog are available under the same license, one value serves both ecosystems. Otherwise, the `license` member of a combined catalog cannot express both. In this case, it is recommended to use `license` for the license of the data, which is how STAC clients present it and what the `license` members of the records describe, and to describe the license of the catalog itself in the `rights` member.
+
 include::../recommendations/stac/REC_license.adoc[]
 
+[[sc_stac_declaring-conformance]]
 === Declaring conformance
 
 include::../requirements/stac/REQ_conformance.adoc[]
 
 include::../recommendations/stac/REC_conformsto.adoc[]
 
+[[sc_stac_example]]
 === Example
 
 The following record is also a valid STAC Item. Compared to the example of the <<clause_stac-extensions,Requirements Class "STAC Extensions">>, it adds or changes these members:

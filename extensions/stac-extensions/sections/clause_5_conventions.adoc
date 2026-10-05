@@ -1,19 +1,23 @@
 == Conventions
 
+[[sc_conventions_identifiers]]
 === Identifiers
 
 The normative provisions in this Standard are denoted by the URI `http://www.opengis.net/spec/ogcapi-records-5/1.0`.
 
 All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
 
+[[sc_conventions_terminology-of-ogc-api-records-and-stac]]
 === Terminology of OGC API - Records and STAC
 
-This document uses the terms of OGC API - Records - Part 1: Core (_record_, _catalog_) for the objects that it constrains, and the terms of STAC (_STAC Item_, _STAC Catalog_, _STAC Collection_) for the corresponding STAC entities. The JSON object members of both specifications are called _members_, in line with https://datatracker.ietf.org/doc/html/rfc7946[RFC 7946]. STAC documentation calls them _fields_.
+This document uses the terms of <<OGC20-004r1,OGC API - Records - Part 1: Core>> (<<def_record,record>>, <<def_catalog,catalog>>) for the objects that it constrains, and the terms of STAC (<<def_stac-item,STAC Item>>, <<def_stac-catalog,STAC Catalog>>, <<def_stac-collection,STAC Collection>>) for the corresponding <<def_stac-entity,STAC entities>>. The JSON object members of both specifications are called _members_, in line with <<rfc7946,RFC 7946>>. STAC documentation calls them _fields_.
 
+[[sc_conventions_versions]]
 === Versions
 
-Unless stated otherwise, this document refers to version 1.1.0 of the <<STAC,STAC specification>>, version 1.0.0 of https://github.com/radiantearth/stac-api-spec/tree/v1.0.0[STAC API], and the STAC extension versions given in the examples.
+Unless stated otherwise, this document refers to version 1.1.0 of the <<STAC,STAC specification>>, version 1.0.0 of https://github.com/radiantearth/stac-api-spec/tree/v1.0.0[STAC API], and the STAC extension versions given in the examples. Records and catalogs that are STAC entities use STAC 1.1.0 or later (see <<req_stac_version,/req/stac/version>>), because earlier versions conflict with OGC API - Records, for example in the values allowed for `license`.
 
+[[sc_conventions_use-of-https]]
 === Use of HTTPS
 
 For simplicity, this document in general only refers to the HTTP protocol. This is not meant to exclude the use of HTTPS and simply is a shorthand notation for "HTTP or HTTPS." In fact, most servers are expected to use https://www.rfc-editor.org/rfc/rfc2818.html[HTTPS], not HTTP.
