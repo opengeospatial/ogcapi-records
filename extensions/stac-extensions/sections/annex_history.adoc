@@ -11,7 +11,7 @@
 * Merge the "STAC Items" requirements class into the "STAC" requirements class (`/conf/stac`), see issue #445
 * Define the meaning of conformance declarations in records, catalogs, and at `/conformance`, and require them in crawlable catalogs
 * Allow STAC extensions in catalogs, allow `assets` in records and catalogs as well as `item_assets` and `summaries` in catalogs, recommend basic links for assets without duplicating their metadata, and list known issues of STAC extension schemas with workarounds
-* Restrict catalogs to STAC Collections, including catalogs that only structure a hierarchy, and add requirements for temporal consistency, with placeholder timestamps for open intervals, and for the media types of hierarchical links
+* Restrict catalogs to STAC Collections, including catalogs that only structure a hierarchy, and add requirements for temporal consistency and for the media types of hierarchical links
 * Add recommendations for `self`, `canonical`, and `license` links
 * Add informative clauses on records and STAC Items, catalogs and STAC Collections, static catalogs, APIs, and URL resolution
 * Add the abstract test suite
