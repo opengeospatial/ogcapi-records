@@ -4,12 +4,12 @@
 ====
 [%metadata]
 identifier:: /req/stac/link-media-types
-part:: A link with the relation type `root`, `parent`, `child`, or `collection` that points to the JSON encoding of a catalog, or of another STAC Catalog or STAC Collection, SHALL have the `type` member set to `application/json`.
-part:: A link with the relation type `item` that points to the JSON encoding of a record SHALL have the `type` member set to `application/geo+json` or `application/json`.
+part:: For each catalog, STAC Catalog, or STAC Collection that a link with the relation type `root`, `parent`, `child`, or `collection` points to, the record or catalog SHALL include a link with the same relation type to the JSON encoding of the target whose `type` member is `application/json`.
+part:: For each record that a link with the relation type `item` points to, the catalog SHALL include a link with the relation type `item` to the JSON encoding of the record whose `type` member is `application/geo+json` or `application/json`.
 part:: The `self` link of a record or catalog SHALL have an absolute URI in its `href` member.
 part:: A link with one of the relation types listed above that points to another encoding, for example HTML, SHALL include the `type` member.
 ====
 
 NOTE: STAC clients decide by the media type whether to follow a hierarchical link. Common STAC clients only follow `child` and `item` links with the media type `application/json` or `application/geo+json`, or without a `type` member. They ignore links with the media type `application/ogc-catalog+json`, which OGC API - Records - Part 1: Core defines for catalogs. A catalog served as `application/json` can still be identified as a catalog by clients of OGC API - Records, using the profile `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` as described in the Media Types clause of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API - Records - Part 1: Core].
 
-NOTE: Additional links with the same relation type and a different media type, for example `application/ogc-catalog+json` or `text/html`, are allowed. STAC clients skip them.
+NOTE: Additional links with the same relation type and target, but another media type, are allowed, see <<per_stac_link-media-types,/per/stac/link-media-types>>.

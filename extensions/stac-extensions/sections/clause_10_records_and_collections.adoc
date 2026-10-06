@@ -70,7 +70,7 @@ The `license` member of a catalog and of a STAC Collection describe different th
 . In `extent`, do not use exactly two bounding boxes, use UTC timestamps, and leave out `crs` and `trs` or use their defaults.
 . If `license` is not a single SPDX license identifier, add links with the relation type `license`, as recommended by <<rec_stac_license,/rec/stac/license>>.
 . Provide `providers` in addition to `contacts`. STAC clients typically show `providers`, and clients of OGC API - Records show `contacts`. Alternatively, list the Contacts extension in `stac_extensions`.
-. Add `root` and `parent` links, and set the media types of hierarchical links as required by <<req_stac_link-media-types,/req/stac/link-media-types>>. Use `child` links for sub-catalogs, because STAC clients only crawl `child` links as part of the hierarchy.
+. Add `root` and `parent` links, and provide hierarchical links with the media types required by <<req_stac_link-media-types,/req/stac/link-media-types>>. Links with `application/ogc-catalog+json` can be added (<<per_stac_link-media-types,/per/stac/link-media-types>>), and the `profile` member identifies the targets (<<rec_stac_link-profiles,/rec/stac/link-profiles>>). Use `child` links for sub-catalogs, because STAC clients only crawl `child` links as part of the hierarchy.
 . Do not rely on records encoded in the `records` member. STAC clients do not read them.
 . Add `summaries` for the most important members in the `properties` of the records, for example `type` or `proj:code`. The keys in `summaries` are the member names without the prefix `properties.`.
 . Keep `conformsTo` and add the conformance classes of this Standard.
