@@ -1,0 +1,14 @@
+[[req_harvest_get-response]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/harvest/get-response* 
+^|A |A successful execution of the operation SHALL be reported as a response with a HTTP status code `200`.
+^|B |The body of the response SHALL conform to the following JSON-Schema fragment:
+
+[source,yaml]
+----
+include::../../../openapi/schemas/get-response.yaml[]
+----
+|===
+
+
