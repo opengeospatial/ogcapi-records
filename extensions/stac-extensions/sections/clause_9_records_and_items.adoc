@@ -27,7 +27,7 @@ Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/ht
 |`time` |Optional. `null`, or an object with a `date`, a `timestamp`, and/or an `interval`. Intervals can be open (`..`). Timestamps use UTC. |Not defined. Temporal information is in `properties`.
 |`properties` |Required. Can be `null`. |Required. An object.
 |`properties.datetime` |Not defined. |Required. Can be `null` if `start_datetime` and `end_datetime` are given.
-|`properties.start_datetime`, `properties.end_datetime` |Not defined. |Optional, but required if `datetime` is `null`. Always used together. Timestamps only, so an open start or end is represented by a placeholder, see <<req_stac_time,/req/stac/time>>.
+|`properties.start_datetime`, `properties.end_datetime` |Not defined. |Optional, but required if `datetime` is `null`. Always used together. Both are timestamps, so they always describe a closed interval. Open intervals are not possible.
 |`properties.created`, `properties.updated` |Optional. The time the record was created and last changed. |Optional. In `properties`, the time the metadata was created and last changed. In assets and links, the time the data was created and last changed.
 |`properties.type` |Optional. The nature or genre of the resource, for example `dataset`. |Not defined. Not to be confused with the GeoJSON `type` member.
 |`properties.license` |Optional. `license` links are required for `other`. |Optional. `license` links are recommended for all values that are not a single SPDX license identifier.
@@ -47,17 +47,17 @@ Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/ht
 
 The two data models express time differently. <<time-mapping>> in <<sc_stac_temporal-information>> shows how to derive the STAC members from the `time` member of a record, following <<req_stac_time,/req/stac/time>>.
 
-For the other direction, <<rec_stac_time,/rec/stac/time>> recommends adding a `time` member to STAC Items. Both use UTC, so the timestamps can be copied. Only timestamps with the offset `+00:00`, which STAC also allows, need to be rewritten with `Z`, for example from `2019-04-16T10:15:00+00:00` to `2019-04-16T10:15:00Z`. The placeholders `0001-01-01T00:00:00Z` and `9999-12-31T23:59:59Z` become an open start or end (`..`).
+For the other direction, <<rec_stac_time,/rec/stac/time>> recommends adding a `time` member to STAC Items. Both use UTC, so the timestamps can be copied. Only timestamps with the offset `+00:00`, which STAC also allows, need to be rewritten with `Z`, for example from `2019-04-16T10:15:00+00:00` to `2019-04-16T10:15:00Z`.
 
 [[sc_records-and-stac-items_records-that-cannot-be-stac-items]]
 === Records that cannot be STAC Items
 
 Some records cannot become valid STAC Items without changing what they state:
 
-* Records without any temporal information, because a STAC Item always has temporal information.
+* Records without any temporal information, or with an open interval in `time`, because a STAC Item always has a timestamp or a closed interval.
 * Records that describe a complete dataset, for example one that is continuously updated. In STAC, a dataset is usually described by a STAC Collection, and the STAC Items of the collection describe its parts.
 
-For such records, it is often better to describe the resource as a STAC Collection, which allows open temporal intervals in its `extent` without placeholders. <<clause_apis,Records APIs and STAC APIs>> explains how STAC Collections can be searched like records. Otherwise, the records can stay plain records that do not declare the "STAC" conformance class.
+For such records, it is often better to describe the resource as a STAC Collection, which allows open temporal intervals in its `extent`. <<clause_apis,Records APIs and STAC APIs>> explains how STAC Collections can be searched like records. Otherwise, the records can stay plain records that do not declare the "STAC" conformance class.
 
 [[sc_records-and-stac-items_creating]]
 === Creating a record that is also a STAC Item
