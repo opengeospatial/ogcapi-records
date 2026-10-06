@@ -73,14 +73,29 @@ Using the `self` link as the base URI, as described in the STAC best practices, 
 [[sc_links_recommendations]]
 === Recommendations
 
+<<link-problems>> lists the problems described above and the provisions of the <<clause_stac,Requirements Class "STAC">> that avoid them.
+
+[#link-problems,reftext='{table-caption} {counter:table-num}']
+.Link problems and the provisions that avoid them
+[cols="55,45",options="header"]
+|===
+|Problem |Provision
+|Relative URIs resolve to wrong targets for clients that follow RFC 3986 |<<req_stac_link-resolution,/req/stac/link-resolution>>
+|The `self` link differs from the URI under which the document is served, for example after copying a catalog to a mirror |<<rec_stac_links,/rec/stac/links>>, parts A and B
+|A record in `/collections/{collectionId}/items` or `/search` has no `self` link |https://docs.ogc.org/is/20-004r1/20-004r1.html#rec_record-core_links[`/rec/record-core/links`] of <<OGC20-004r1,OGC API - Records - Part 1: Core>>
+|Relative links in API responses depend on the base URI |<<rec_stac_links,/rec/stac/links>>, part C
+|A document is served with and without a trailing slash (<<link-resolution-trailing-slash>>) |<<req_stac_link-resolution,/req/stac/link-resolution>>, part B, and <<rec_stac_links,/rec/stac/links>>, part D
+|Relative links in a static catalog point to folders without a trailing slash |<<req_stac_link-resolution,/req/stac/link-resolution>>
+|===
+
 For documents that are used in both ecosystems, the following practices avoid these problems. The practices that <<rec_stac_links,/rec/stac/links>> also states as recommendations are marked.
 
-. Use absolute URIs in all links of API responses. The STAC best practices recommend this for APIs anyway (<<rec_stac_links,/rec/stac/links>>, part D).
-. Give every record and catalog a `self` link whose `href` is the absolute URI under which the document is actually served, including in responses of `/collections/{collectionId}/items` and `/search`. Then the base URI is the same under both rules, and clients never need to construct URIs (<<rec_stac_links,/rec/stac/links>>, parts A and C).
+. Use absolute URIs in all links of API responses. The STAC best practices recommend this for APIs anyway (<<rec_stac_links,/rec/stac/links>>, part C).
+. Give every record and catalog a `self` link whose `href` is the absolute URI under which the document is actually served, including in responses of `/collections/{collectionId}/items` and `/search`. Then the base URI is the same under both rules, and clients never need to construct URIs (<<rec_stac_links,/rec/stac/links>>, part A, and https://docs.ogc.org/is/20-004r1/20-004r1.html#rec_record-core_links[`/rec/record-core/links`] of <<OGC20-004r1,OGC API - Records - Part 1: Core>>).
 . If a document has a preferred location that differs from the URI under which it is served, for example a copy on a mirror or an API response generated from a static catalog, provide this location in a link with the relation type `canonical` and keep the `self` link pointing to the URI under which the document is served (<<rec_stac_links,/rec/stac/links>>, part B).
 . Configure servers behind proxies so that `self` links use the public URI.
 . In static catalogs, point relative links to files, for example `./energy/collection.json`, and not to folders. If a link points to a folder, end it with a slash.
-. Serve API resources under the paths of the path templates, without a trailing slash. If a server also accepts a trailing slash, it either redirects to the path without one, or only uses absolute URIs and relative URIs that start with `/` in the response (see <<link-resolution-trailing-slash>> and <<rec_stac_links,/rec/stac/links>>, part E).
+. Serve API resources under the paths of the path templates, without a trailing slash. If a server also accepts a trailing slash, it either redirects to the path without one, or only uses absolute URIs and relative URIs that start with `/` in the response (see <<link-resolution-trailing-slash>> and <<rec_stac_links,/rec/stac/links>>, part D).
 . Include the `type` member in links and support content negotiation with the `Accept` header.
 
 For clients that support both ecosystems, it is recommended to:
