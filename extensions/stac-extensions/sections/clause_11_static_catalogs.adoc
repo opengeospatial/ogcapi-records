@@ -28,7 +28,7 @@ A crawlable catalog consists of catalogs that reference their records with `item
 |Conformance |The `conformsTo` member of the catalog contains `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog`. |Not declared. `stac_version` identifies STAC entities. STAC only defines `conformsTo` for the landing page of a STAC API.
 |`self` links |Required in catalogs, recommended in records. Not required to be absolute. |Strongly recommended and absolute. Not in the root of a catalog that is meant to be copied (formerly called _self-contained_ catalog).
 |Relative links |Resolved against the URI from which the file was retrieved, after following redirects (<<rfc3986,RFC 3986>>). |Recommended, preferably to files such as `catalog.json` instead of folders. Resolved against the `self` link, or against the URI from which the file was retrieved if there is none (see <<clause_links,Links and URL resolution>>).
-|Links to sub-catalogs |`child`, and also `related` for sets of catalogs and `next` for series. |`child` only. `related` links are not part of the hierarchy.
+|Links to sub-catalogs |`child`, and also `related` for sets of catalogs and `next` for series. |`child` only. `related` links reference related STAC entities, which are usually elsewhere in the hierarchy, and are not crawled as sub-catalogs.
 |Records or STAC Items |Also an `items` link to an API, or records encoded in the catalog. |`item` links only.
 |File names |`{id}.json` recommended for records. |`catalog.json` or `collection.json` for catalogs, `{id}.json` for STAC Items. Each STAC Item in its own folder if it has files next to it.
 |Media types |`application/geo+json` for records, with a `profile` link to the `ogc-record` profile. `application/ogc-catalog+json` for catalogs in the JSON encoding, or `application/json` with the `ogc-catalog` profile. |`application/geo+json` for STAC Items. `application/json` for STAC Catalogs and STAC Collections.
@@ -71,7 +71,7 @@ A static catalog can serve both ecosystems in two ways. In the first, every file
 . Make every catalog a STAC Collection and every record a STAC Item, as described in <<clause_records-and-stac-collections,Catalogs and STAC Collections>> and <<clause_records-and-stac-items,Records and STAC Items>>, and follow the <<clause_stac,Requirements Class "STAC">>.
 . Publish the catalog at a fixed location. Give every catalog and every record a `self` link with an absolute URI. Other links can be relative. If the catalog moves, update the `self` links.
 . Add `root` and `parent` links to all catalogs and records.
-. Use `child` links for sub-catalogs and `item` links for records.
+. Use `child` links for sub-catalogs (<<rec_stac_child-links,/rec/stac/child-links>>) and `item` links for records.
 . Declare conformance in the `conformsTo` member of each catalog: `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog` and the conformance classes of this Standard.
 . Configure the web server or object storage to serve records as `application/geo+json` and catalogs as `application/json`. Add a `profile` link with `http://www.opengis.net/def/profile/OGC/0/ogc-record` to each record and a `profile` link with `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to each catalog.
 . Optionally, add the `profile` member with the value `["http://www.opengis.net/def/profile/OGC/0/ogc-catalog"]` to the links to catalogs. Clients of OGC API - Records then know that the target is a catalog before they retrieve it, while STAC clients ignore the member.

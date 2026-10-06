@@ -1,0 +1,10 @@
+[[rec_stac_child-links]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac/child-links
+part:: A catalog SHOULD reference its sub-catalogs with links with the relation type `child`.
+====
+
+NOTE: OGC API - Records also references catalogs with `related` links (sets of catalogs) and `next` links (series of catalogs), which can be added in addition. In STAC, `related` links reference related STAC Catalogs, STAC Collections, or STAC Items, which are usually part of the hierarchy elsewhere, but not along the path from the root to the leaves. `next` links are used for paging. STAC clients only crawl `child` links to build the hierarchy, so `related` and `next` links do not replace the `child` links.

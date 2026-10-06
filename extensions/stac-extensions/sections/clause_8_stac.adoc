@@ -63,6 +63,10 @@ include::../recommendations/stac/REC_time.adoc[]
 
 include::../requirements/stac/REQ_link-media-types.adoc[]
 
+include::../requirements/stac/REQ_link-resolution.adoc[]
+
+include::../recommendations/stac/REC_child-links.adoc[]
+
 include::../recommendations/stac/REC_links.adoc[]
 
 [[sc_stac_license]]
