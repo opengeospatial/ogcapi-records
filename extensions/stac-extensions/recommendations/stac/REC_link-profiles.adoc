@@ -1,0 +1,11 @@
+[[rec_stac_link-profiles]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac/link-profiles
+part:: A link with the media type `application/json` that points to a catalog SHOULD include the `profile` member with the value `["http://www.opengis.net/def/profile/OGC/0/ogc-catalog"]`.
+part:: A link that points to a record SHOULD include the `profile` member with the value `["http://www.opengis.net/def/profile/OGC/0/ogc-record"]`.
+====
+
+NOTE: The `profile` member of a link is defined by https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API - Records - Part 1: Core] and is allowed as an additional member of links in STAC. It tells clients of OGC API - Records what the target of a link is before they retrieve it, even if the link uses a generic media type such as `application/json`. As the value is an array, further profiles can be added.

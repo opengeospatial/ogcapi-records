@@ -43,7 +43,7 @@ Both ecosystems allow relative and absolute links, reference sub-catalogs with `
 The following situations often prevent a static catalog from working with the clients of one of the ecosystems:
 
 * *Missing `stac_version`:* A catalog or record without `stac_version`. STAC clients do not recognize the document as a STAC entity and stop crawling at this point. A hierarchy is only fully usable by STAC clients if every catalog and record in it is a STAC entity.
-* *Media type of links to sub-catalogs:* Links to sub-catalogs with the media type `application/ogc-catalog+json`. STAC clients do not follow them, see <<req_stac_link-media-types,/req/stac/link-media-types>>.
+* *Media type of links to sub-catalogs:* Sub-catalogs are only linked with the media type `application/ogc-catalog+json`. STAC clients do not follow such links, so a link with `application/json` is required as well, see <<req_stac_link-media-types,/req/stac/link-media-types>>.
 * *Records and catalogs outside the hierarchy:* Records that are encoded in the `records` member, or catalogs that are only connected through `related` or `next` links. STAC clients do not crawl them as part of the hierarchy.
 * *Missing `self` link:* A catalog without a `self` link. This is allowed in STAC, and recommended for catalogs that are meant to be copied, but not in OGC API - Records. STAC tools may remove `self` links from sub-catalogs when saving a catalog, unless it is saved as a catalog with absolute links.
 * *Moved catalogs:* A `self` link that points to another location than the one the file is served from, for example after copying the catalog to a mirror. Clients then resolve relative links against different base URIs, see <<clause_links,Links and URL resolution>>.
@@ -73,8 +73,8 @@ A static catalog can serve both ecosystems in two ways. In the first, every file
 . Add `root` and `parent` links to all catalogs and records.
 . Use `child` links for sub-catalogs and `item` links for records.
 . Declare conformance in the `conformsTo` member of each catalog: `http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/crawlable-catalog` and the conformance classes of this Standard.
-. Configure the web server or object storage to serve records as `application/geo+json` and catalogs as `application/json`. Add a `profile` link with `http://www.opengis.net/def/profile/OGC/0/ogc-record` to each record and a `profile` link with `http://www.opengis.net/def/profile/OGC/0/ogc-catalog` to each catalog.
-. Optionally, add the `profile` member with the value `["http://www.opengis.net/def/profile/OGC/0/ogc-catalog"]` to the links to catalogs. Clients of OGC API - Records then know that the target is a catalog before they retrieve it, while STAC clients ignore the member.
+. Configure the web server or object storage to serve records as `application/geo+json` and catalogs as `application/json`, and add the corresponding `profile` links to them, see <<rec_stac_crawlable-catalog-media-types,/rec/stac/crawlable-catalog-media-types>>.
+. Add the `profile` member to the links to catalogs and records, see <<rec_stac_link-profiles,/rec/stac/link-profiles>>. Clients of OGC API - Records then know what the target is before they retrieve it, while STAC clients ignore the member.
 . Follow the STAC file naming conventions: `collection.json` for catalogs, as they are STAC Collections, and `{id}.json` for records, each in its own folder next to the data it describes. They are consistent with the `{id}.json` recommendation of OGC API - Records for record files. OGC API - Records does not prescribe file names for catalogs.
 
 [[sc_static-catalogs_mixed-hierarchies]]
@@ -83,7 +83,7 @@ A static catalog can serve both ecosystems in two ways. In the first, every file
 A hierarchy can also combine catalogs and records of OGC API - Records that are not STAC entities with STAC Catalogs, STAC Collections, and STAC Items that are not records. The media types of the links tell the clients which links to follow:
 
 * *Catalogs that are valid in both ecosystems:* The root and every catalog that links to both kinds of sub-catalogs need to be valid in both ecosystems, as described above. Otherwise, the clients of one ecosystem cannot enter the hierarchy or reach the sub-catalogs.
-* *Links to catalogs of OGC API - Records:* Links to catalogs that are not STAC Collections use the media type `application/ogc-catalog+json`. STAC clients skip them, and clients of OGC API - Records know that the target is a catalog.
+* *Links to catalogs of OGC API - Records:* Links to catalogs that are not STAC Collections only use the media type `application/ogc-catalog+json`. STAC clients skip them, and clients of OGC API - Records know that the target is a catalog.
 * *Links to STAC Catalogs and STAC Collections:* Links to STAC entities that are not catalogs of OGC API - Records use the media type `application/json` without the `ogc-catalog` profile. STAC clients follow them. Clients of OGC API - Records can tell from the missing profile that the target is not a catalog.
 * *Records and STAC Items:* Both use the media type `application/geo+json`, so the media type cannot tell them apart. Clients of OGC API - Records can identify a record by its `profile` link to the `ogc-record` profile after retrieving it, but STAC clients have no way to recognize a record that is not a STAC Item. Records that are not STAC Items are therefore only linked from catalogs of OGC API - Records, and STAC Items that are not records only from STAC Catalogs and STAC Collections.
 * *Conformance:* Each catalog declares only the conformance classes that it and its records conform to. A catalog that is valid in both ecosystems but links to catalogs of OGC API - Records that are not STAC Collections still declares the "STAC" conformance class, because the declaration covers the catalog and its records, not its sub-catalogs (see <<req_stac_crawlable-catalog,/req/stac/crawlable-catalog>>).
@@ -130,12 +130,14 @@ The following sub-catalog `energy/collection.json` is part of a crawlable catalo
     {
       "rel": "root",
       "type": "application/json",
+      "profile": ["http://www.opengis.net/def/profile/OGC/0/ogc-catalog"],
       "title": "Atlas Leefomgeving",
       "href": "../collection.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
+      "profile": ["http://www.opengis.net/def/profile/OGC/0/ogc-catalog"],
       "title": "Atlas Leefomgeving",
       "href": "../collection.json"
     },
@@ -152,6 +154,7 @@ The following sub-catalog `energy/collection.json` is part of a crawlable catalo
     {
       "rel": "item",
       "type": "application/geo+json",
+      "profile": ["http://www.opengis.net/def/profile/OGC/0/ogc-record"],
       "title": "Zonpotentie velden",
       "href": "./b7d2fd24-8cd8-4965-a997-69eb1a987b5a/b7d2fd24-8cd8-4965-a997-69eb1a987b5a.json"
     },
