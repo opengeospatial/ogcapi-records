@@ -1481,14 +1481,12 @@ components:
           enum:
             - Feature
         time:
-          oneOf:
-            - type: object
-              nullable: true
-            - $ref: '#/components/schemas/time'
+          $ref: '#/components/schemas/time'
         geometry:
           oneOf:
-            - type: object
-              nullable: true
+            - nullable: true
+              enum:
+                - null
             - $ref: '#/components/schemas/geometryGeoJSON'
         conformsTo:
           type: array
@@ -1498,8 +1496,9 @@ components:
             type: string
         properties:
           oneOf:
-            - type: object
-              nullable: true
+            - nullable: true
+              enum:
+                - null
             - allOf:
               - type: object
               - $ref: '#/components/schemas/recordCommonProperties'
