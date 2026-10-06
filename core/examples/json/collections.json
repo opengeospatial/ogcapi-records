@@ -23,7 +23,9 @@
           "direction": "desc"
         }
       ],
-      "language": "en-CA",
+      "language": {
+        "code": "en-CA"
+      },
       "links": [
         {
           "href": "https://www.someserver.com/ogcapi/collections/tepcat/items",
