@@ -1345,7 +1345,7 @@ components:
           properties:
             href:
               type: string
-              format: uri
+              format: uri-reference
     recordCollectionGeoJSON:
       allOf:
         - $ref: '#/components/schemas/featureCollectionGeoJSON'
@@ -1569,7 +1569,7 @@ components:
                 description: A human readable description for the concept.
               url:
                 type: string
-                format: uri
+                format: uri-reference
                 description: A URI providing further description of the concept.
         scheme:
           type: string
