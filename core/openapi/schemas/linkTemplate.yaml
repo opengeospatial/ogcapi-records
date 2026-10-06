@@ -10,6 +10,7 @@ allOf:
         description: |-
           Supplies a resolvable URI to a remote resource
           (or resource fragment).
+        format: uri-template
       varBase:
         type: string
         description: |-

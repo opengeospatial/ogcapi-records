@@ -27,8 +27,8 @@ properties:
           description: A human readable description for the concept.
         url:
           type: string
-          format: uri
-          description: A URI providing further description of the concept.
+          format: uri-reference
+          description: A URI reference providing further description of the concept.
   scheme:
     type: string
     description: |-

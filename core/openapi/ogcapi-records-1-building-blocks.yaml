@@ -548,7 +548,7 @@ components:
           properties:
             href:
               type: string
-              format: uri
+              format: uri-reference
     recordCollectionGeoJSON:
       allOf:
         - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml'
@@ -772,7 +772,7 @@ components:
                 description: A human readable description for the concept.
               url:
                 type: string
-                format: uri
+                format: uri-reference
                 description: A URI providing further description of the concept.
         scheme:
           type: string

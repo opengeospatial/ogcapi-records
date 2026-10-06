@@ -38,7 +38,7 @@ properties:
     type: string
   catalogURL:
     type: string
-    format: uri
+    format: uri-reference
   timeout:
     type: integer
     default: 600
