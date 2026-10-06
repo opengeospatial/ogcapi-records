@@ -11,8 +11,8 @@ test-method::
 --
 . Retrieve the records and catalogs determined in the first step of <<ats_stac_entity,/conf/stac/entity>>.
 . For each link with the relation type `root`, `parent`, `child`, `collection`, or `item`, verify that it includes a `type` member.
-. For each link with the relation type `root`, `parent`, `child`, or `collection` whose target is the JSON encoding of a catalog or of another STAC Catalog or STAC Collection, verify that the value of `type` is `application/json`.
-. For each link with the relation type `item` whose target is the JSON encoding of a record, verify that the value of `type` is `application/geo+json` or `application/json`.
+. For each target of a link with the relation type `root`, `parent`, `child`, or `collection` that is a catalog or another STAC Catalog or STAC Collection, verify that there is a link with the same relation type to the JSON encoding of the target whose `type` is `application/json`.
+. For each record that a link with the relation type `item` points to, verify that there is a link with the relation type `item` to the JSON encoding of the record whose `type` is `application/geo+json` or `application/json`.
 . Verify that the `href` of the `self` link is an absolute URI.
 --
 ====

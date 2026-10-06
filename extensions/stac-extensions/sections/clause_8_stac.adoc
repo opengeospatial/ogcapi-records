@@ -63,6 +63,12 @@ include::../recommendations/stac/REC_time.adoc[]
 
 include::../requirements/stac/REQ_link-media-types.adoc[]
 
+include::../recommendations/stac/PER_link-media-types.adoc[]
+
+include::../recommendations/stac/REC_link-profiles.adoc[]
+
+include::../recommendations/stac/REC_crawlable-catalog-media-types.adoc[]
+
 include::../recommendations/stac/REC_links.adoc[]
 
 [[sc_stac_license]]
@@ -193,6 +199,7 @@ The following record is also a valid STAC Item. Compared to the example of the <
     {
       "rel": "collection",
       "type": "application/json",
+      "profile": ["http://www.opengis.net/def/profile/OGC/0/ogc-catalog"],
       "title": "Dutch metadata",
       "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata?f=json"
     },
