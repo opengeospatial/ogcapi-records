@@ -12,8 +12,7 @@
 :published-date: 2029-03-30
 :fullname: Matthias Mohr
 :fullname_2: Panagiotis (Peter) A. Vretanos
-:fullname_3: Angelos Tzotsos
-:fullname_4: Tom Kralidis
+:fullname_3: Francis Charette-Migneault
 :docsubtype: Interface
 :keywords: ogcdoc, OGC document, API, openapi, html, STAC, extension
 :submitting-organizations: moreGeo GmbH; CubeWerx Inc.; Open Source Geospatial Foundation; Environment and Climate Change Canada
