@@ -18,6 +18,8 @@ Records of OGC API - Records and STAC Items are both GeoJSON Features that descr
 * https://github.com/stac-extensions/table[Table] (`table:`)
 * https://github.com/stac-extensions/version[Versioning Indicators]
 
+Some of these extensions describe aspects that OGC API - Records - Part 1: Core does not address, for example the Datacube extension, which describes the dimensions and variables of a data cube.
+
 <<sc_overview_stac-extensions>> explains how STAC extensions work.
 
 This Standard defines:

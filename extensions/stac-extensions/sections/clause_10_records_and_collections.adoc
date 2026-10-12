@@ -39,7 +39,7 @@ The `summaries` member is optional and can be left out. STAC clients present the
 |`stac_version` |Not defined. |Required.
 |`stac_extensions` |Defined by this Standard. |Optional.
 |`conformsTo` |Optional. Applies to the catalog and all of its records. |Not defined. Allowed as an additional member.
-|`description` |Optional. |Required.
+|`description` |Optional. Can be an empty string. |Required. The STAC JSON Schemas do not allow an empty string.
 |`license` |Optional. The license under which the catalog is made available. |Required. The license of the data.
 |`extent` |Optional. As defined by OGC API - Features: the first bounding box and the first interval describe the overall extent, further ones describe more precise extents. Optional `crs` and `trs` members. |Required. Same meaning. Exactly two bounding boxes are not allowed. Always WGS 84 and the Gregorian calendar, timestamps in UTC.
 |`itemType` |Optional. `record`, `catalog`, or both. A catalog in a Records API requires `record`. |Not defined. Allowed as an additional member.
@@ -66,7 +66,7 @@ The `license` member of a catalog and of a STAC Collection describe different th
 === Creating a catalog that is also a STAC Collection
 
 . Add `stac_version` with the value `1.1.0` or a later version 1.x.x, as required by <<req_stac_version,/req/stac/version>>.
-. Add `description`, `license`, and `extent`. For a catalog that only groups other catalogs, see <<sc_records-and-stac-collections_structuring-catalogs>>.
+. Add `description`, `license`, and `extent`. `description` cannot be an empty string. For a catalog that only groups other catalogs, see <<sc_records-and-stac-collections_structuring-catalogs>>.
 . In `extent`, do not use exactly two bounding boxes, use UTC timestamps, and leave out `crs` and `trs` or use their defaults.
 . If `license` is not a single SPDX license identifier, add links with the relation type `license`, as recommended by <<rec_stac_license,/rec/stac/license>>.
 . Provide `providers` in addition to `contacts`. STAC clients typically show `providers`, and clients of OGC API - Records show `contacts`. Alternatively, list the Contacts extension in `stac_extensions`.

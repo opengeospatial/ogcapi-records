@@ -23,6 +23,7 @@ Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/ht
 |`stac_version` |Not defined. |Required.
 |`stac_extensions` |Defined by this Standard. |Optional.
 |`conformsTo` |Optional. Lists the conformance classes of the record. |Not defined. Allowed as an additional member.
+|`geometry` |Required. A GeoJSON geometry of any type, including `GeometryCollection`, or `null`. |Required. A GeoJSON geometry of any type except `GeometryCollection`, or `null`.
 |`bbox` |Optional. |Required if `geometry` is not `null`, not allowed otherwise.
 |`time` |Optional. `null`, or an object with a `date`, a `timestamp`, and/or an `interval`. Intervals can be open (`..`). Timestamps use UTC. |Not defined. Temporal information is in `properties`.
 |`properties` |Required. Can be `null`. |Required. An object.
@@ -31,6 +32,7 @@ Records and STAC Items are GeoJSON Features (https://datatracker.ietf.org/doc/ht
 |`properties.created`, `properties.updated` |Optional. The time the record was created and last changed. |Optional. In `properties`, the time the metadata was created and last changed. In assets and links, the time the data was created and last changed.
 |`properties.type` |Optional. The nature or genre of the resource, for example `dataset`. |Not defined. Not to be confused with the GeoJSON `type` member.
 |`properties.license` |Optional. `license` links are required for `other`. |Optional. `license` links are recommended for all values that are not a single SPDX license identifier.
+|`properties.description` |Optional. Can be an empty string. |Optional. The STAC JSON Schemas do not allow an empty string, also not in the `description` of assets.
 |`properties.rights` |Optional. |Not defined.
 |`properties.formats` |Optional. The formats in which the resource is available. |Not defined. The `type` of each asset gives its media type.
 |`properties.contacts`, `properties.themes`, `properties.externalIds`, `properties.language`, `properties.languages`, `linkTemplates` |Optional. |Available through STAC extensions, see <<overlapping-extensions>>.
@@ -66,13 +68,14 @@ The following steps turn a record into a document that is also a valid STAC Item
 
 . Add `stac_version` with the value `1.1.0` or a later version 1.x.x, as required by <<req_stac_version,/req/stac/version>>.
 . Make sure that `id` is a string and that `properties` is an object, not `null`.
+. Replace a `geometry` of the type `GeometryCollection`. If it only contains points, only lines, or only polygons, including their multi-part types, combine them into a `MultiPoint`, `MultiLineString`, or `MultiPolygon`. Otherwise, use a geometry that covers all of them, for example the polygon of their bounding box.
 . Add `bbox` if `geometry` is not `null`.
 . Add `datetime`, `start_datetime`, and `end_datetime` to `properties`, as shown in <<time-mapping>>.
 . Add the `assets` member. For each link that points to data of the resource, for example with the link relation type `enclosure` or `describes`, add an asset with the same `href`, `type`, and `title`, and a suitable role such as `data`, `metadata`, `thumbnail`, or `overview`. Keep the links for clients of OGC API - Records, but only with their basic members such as `href`, `rel`, `type`, and `title`. Place members that STAC extensions define for assets, such as `file:size`, on the asset and remove them from the link, see <<rec_stac-extensions_assets,/rec/stac-extensions/assets>>. If the record has no data that can be retrieved, use an empty object.
 . Add the `collection` member with the `id` of the catalog if the record has a `collection` link.
 . Use an absolute URI in the `self` link, and set the media types of hierarchical links as required by <<req_stac_link-media-types,/req/stac/link-media-types>>.
 . If `license` is not a single SPDX license identifier, add links with the relation type `license`, as recommended by <<rec_stac_license,/rec/stac/license>>. Replace the deprecated STAC values `proprietary` and `various` with `other`.
-. Leave out members instead of setting them to `null` where STAC does not allow `null`, for example the `name` of a contact.
+. Leave out members instead of setting them to `null` where STAC does not allow `null`, for example the `name` of a contact. Also leave out `description` members that are empty strings, in `properties` and in assets.
 . Keep `conformsTo` and add `http://www.opengis.net/spec/ogcapi-records-5/1.0/conf/stac`.
 
 [[sc_records-and-stac-items_from-item]]

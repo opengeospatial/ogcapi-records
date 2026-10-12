@@ -16,4 +16,5 @@
 * Add informative clauses on records and STAC Items, catalogs and STAC Collections, static catalogs, APIs, and URL resolution
 * Add the abstract test suite
 * Fix the examples and validate them against the OGC API - Records and STAC schemas
+* List that STAC does not allow `GeometryCollection` geometries and empty `description` members
 |===
