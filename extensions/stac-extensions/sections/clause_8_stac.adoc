@@ -49,8 +49,7 @@ include::../requirements/stac/REQ_time.adoc[]
 |`{"interval": ["2019-04-16T10:15:00Z", "2019-04-16T11:00:00Z"]}` |`null` |`"2019-04-16T10:15:00Z"` |`"2019-04-16T11:00:00Z"`
 |`{"interval": ["2019-04-01", "2019-04-30"]}` |`null` |`"2019-04-01T00:00:00Z"` |`"2019-04-30T23:59:59Z"`
 |An interval and a timestamp |From the timestamp |From the start of the interval |From the end of the interval
-|`{"interval": ["2014-04-24T10:50:18Z", ".."]}` |`null` |`"2014-04-24T10:50:18Z"` |`"9999-12-31T23:59:59Z"`
-|`{"interval": ["..", "2019-04-30"]}` |`null` |`"0001-01-01T00:00:00Z"` |`"2019-04-30T23:59:59Z"`
+|An open interval, for example `{"interval": ["2014-04-24T10:50:18Z", ".."]}` 3+|Cannot be expressed.
 |`null`, or no `time` member 3+|Cannot be expressed.
 |===
 
