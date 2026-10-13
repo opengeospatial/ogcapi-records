@@ -85,6 +85,7 @@ Some functionality is only defined in STAC API extensions and in other parts of 
 * *Transactions:* OGC API - Records - Part 3: Create, Replace, Update, Delete, Harvest, and the https://github.com/stac-api-extensions/transaction[Transaction] and https://github.com/stac-api-extensions/collection-transaction[Collection Transaction] extensions of STAC API. Similar, but currently not fully aligned and with plans to align in the future.
 * *Browsing an API:* the https://github.com/stac-api-extensions/browseable[Browseable] and https://github.com/stac-api-extensions/children[Children] extensions of STAC API.
 * *Property selection:* the https://github.com/stac-api-extensions/fields[Fields] extension of STAC API.
+* *Coordinate reference systems:* <<OGC18-058r1,OGC API - Features - Part 2: Coordinate Reference Systems by Reference>> allows serving records in other coordinate reference systems on request. STAC API has no equivalent, and such responses are not valid STAC Items, so only clients of OGC APIs can use them.
 
 [[sc_apis_interoperability]]
 === Common pitfalls

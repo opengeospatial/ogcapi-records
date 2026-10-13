@@ -20,3 +20,4 @@
 * [[[STAC-API-SORT,nofetch(STAC API Sort)]]], STAC Community: STAC API - Sort extension, https://github.com/stac-api-extensions/sort
 * [[[STAC-API-CHILDREN,nofetch(STAC API Children)]]], STAC Community: STAC API - Children extension, https://github.com/stac-api-extensions/children
 * [[[STAC-API-TRANSACTION,nofetch(STAC API Transaction)]]], STAC Community: STAC API - Transaction extension, https://github.com/stac-api-extensions/transaction
+* [[[OGC18-058r1,OGC 18-058r1]]],
