@@ -12,5 +12,5 @@ part:: Every 200-response with the media type `application/geo+json` SHALL be
 
 part:: The schema of records in all responses SHALL validate against the OpenAPI 3.0 schema document `recordGeoJSON.yaml`.
 part:: The links specified in the requirements <<req_core_rc-links,/req/core/rc-links>> and <<req_core_record-links,/req/core/record-links>> SHALL be added in an extension property (foreign member) with the name `links`.
-part:: The response SHALL include, in the `links` section, a profile link (href: `http://www.opengis.net/def/profile/OGC/0/ogc-catalog`, relation: `profile`).
+part:: The response SHALL include, in the `links` section, a profile link (href: `http://www.opengis.net/def/profile/OGC/0/ogc-record`, relation: `profile`).
 ====
