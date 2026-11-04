@@ -1,4 +1,4 @@
-= OGC API - Records - Part 4: Federated Search
+= [DRAFT] OGC API - Records - Part 4: Federated Search
 :doctype: standard
 :encoding: utf-8
 :lang: en

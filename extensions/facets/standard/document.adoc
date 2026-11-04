@@ -1,4 +1,4 @@
-:Title: OGC API - Records - Part 2: Facets
+:Title: [DRAFT] OGC API - Records - Part 2: Facets
 :titletext: OGC API - Records - Part 2: Facets
 :doctype: standard
 :encoding: utf-8
