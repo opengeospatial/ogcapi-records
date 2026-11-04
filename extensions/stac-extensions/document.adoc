@@ -1,4 +1,4 @@
-= OGC API - Records - Part 5: STAC
+= [DRAFT] OGC API - Records - Part 5: STAC
 :doctype: standard
 :encoding: utf-8
 :lang: en

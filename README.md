@@ -17,6 +17,8 @@ Draft(s) are built daily based on the configuration contained in the [asciidocto
 ## Extensions
 * [OGC API - Records - Part 2: Facets](https://docs.ogc.org/DRAFTS/25-013.html)
 * [OGC API - Records - Part 3: Create, Replace, Update, Delete, Harvest](https://docs.ogc.org/DRAFTS/25-015.html)
+* [OGC API - Records - Part 4: Federated Search](https://docs.ogc.org/DRAFTS/26-006.html)
+* [OGC API - Records - Part 5: Spatio Temporal Assect Catalog (STAC)](https://docs.ogc.org/DRAFTS/26-026.html)
 
 ## Implementations
 
