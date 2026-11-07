@@ -147,13 +147,13 @@ The third level of search capability, defined by the <<clause-filtering,_Filteri
 [[dependencies-overview]]
 ==== Dependencies
 
-The search API requirements and conformance classes defined in this Standard for accessing records from a searchable catalog is an extension of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core Standard].  An implementation of a searchable catalog API must first satisfy the appropriate Requirements Classes from https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core].  <<req-mappings>>, identifies these requirements. 
+The search API requirements and conformance classes defined in this Standard for accessing records from a searchable catalog is an extension of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core Standard].  An implementation of a searchable catalog API must first satisfy the appropriate Requirements Classes from https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core].  The <<req_records-api_features-api,_Records API_ requirements class>> requires the complete _Core_ requirements class of OGC API - Features - Part 1. The following two tables are informative and only highlight the requirements of this requirements class that are most relevant for accessing the records of a catalog (<<records-to-features>>) and for accessing a single record (<<record-to-features>>).
 
 [#records-to-features,reftext='{table-caption} {counter:table-num}']
-.Required OGC API - Features - Part 1: Core Requirements Classes for Records Access
+.Requirements of OGC API - Features - Part 1: Core for accessing the records of a catalog (`/collections/{catalogId}/items`)
 [width="90%"]
 |====
-|*API - Features Requirements Classes*
+|*OGC API - Features requirement*
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-op
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-bbox-definition
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-bbox-response
@@ -164,17 +164,18 @@ The search API requirements and conformance classes defined in this Standard for
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/query-param-invalid
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/query-param-unknown
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-response
-| http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-links/req/core/fc-rel-type
+| http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-links
+| http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-rel-type
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-timeStamp
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-numberMatches
-| http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-numberReturned,
+| http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/fc-numberReturned
 |====
 
 [#record-to-features,reftext='{table-caption} {counter:table-num}']
-.Required OGC API - Features - Part 1: Core Requirements Classes for Record Access
+.Requirements of OGC API - Features - Part 1: Core for accessing a single record (`/collections/{catalogId}/items/{recordId}`)
 [width="90%"]
 |====
-|*API - Features Requirements Classes*
+|*OGC API - Features requirement*
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/f-op
 | http://www.opengis.net/spec/ogcapi_features-1/1.0/req/core/f-success
 |====
