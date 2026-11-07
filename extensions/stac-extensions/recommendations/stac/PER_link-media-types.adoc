@@ -1,0 +1,10 @@
+[[per_stac_link-media-types]]
+
+[permission]
+====
+[%metadata]
+identifier:: /per/stac/link-media-types
+part:: In addition to the links required by <<req_stac_link-media-types,/req/stac/link-media-types>>, a record or catalog MAY include links with the same relation type and target and another media type, for example `application/ogc-catalog+json` or `text/html`.
+====
+
+NOTE: STAC clients skip links with the media type `application/ogc-catalog+json`, while clients of OGC API - Records can use them to identify catalogs before retrieving them.

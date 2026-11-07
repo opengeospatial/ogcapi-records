@@ -1,0 +1,11 @@
+[[rec_stac_crawlable-catalog-media-types]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/stac/crawlable-catalog-media-types
+part:: In a crawlable catalog, catalogs SHOULD be served with the media type `application/json` and include a link with the relation type `profile` to `http://www.opengis.net/def/profile/OGC/0/ogc-catalog`.
+part:: In a crawlable catalog, records SHOULD be served with the media type `application/geo+json` and include a link with the relation type `profile` to `http://www.opengis.net/def/profile/OGC/0/ogc-record`.
+====
+
+NOTE: A crawlable catalog only needs to declare the "Crawlable Catalog" conformance class of OGC API - Records. The default media type `application/ogc-catalog+json` for catalogs only applies if the "JSON" conformance class is declared, so crawlable catalogs can use the media types that STAC clients expect. A Records API that supports JSON cannot do this for its default media type, see <<clause_apis,Records APIs and STAC APIs>>.

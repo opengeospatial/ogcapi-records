@@ -188,6 +188,7 @@ The following record uses five STAC extensions. It lists the schema URIs in `sta
     {
       "rel": "collection",
       "type": "application/json",
+      "profile": ["http://www.opengis.net/def/profile/OGC/0/ogc-catalog"],
       "title": "Dutch metadata",
       "href": "https://demo.pygeoapi.io/master/collections/dutch-metadata?f=json"
     },
