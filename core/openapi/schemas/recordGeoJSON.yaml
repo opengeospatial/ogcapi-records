@@ -17,14 +17,12 @@ properties:
     enum:
       - Feature
   time:
-    oneOf:
-      - type: object
-        nullable: true
-      - $ref: 'time.yaml'
+    $ref: 'time.yaml'
   geometry:
     oneOf:
-      - type: object
-        nullable: true
+      - nullable: true
+        enum:
+          - null
       - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
   conformsTo:
     type: array
@@ -34,8 +32,9 @@ properties:
       type: string
   properties:
     oneOf:
-      - type: object
-        nullable: true
+      - nullable: true
+        enum:
+          - null
       - allOf:
         - type: object
         - $ref: 'recordCommonProperties.yaml'
