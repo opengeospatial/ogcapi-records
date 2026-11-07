@@ -53,7 +53,7 @@ The `summaries` member is optional and can be left out. STAC clients present the
 |`records`, `recordsArrayName` |Optional. Records encoded in the catalog. |Not defined. STAC clients only find STAC Items through `item` links or an API.
 |`schemes` |Optional. |Not defined.
 |Required links |`self`, and `alternate` for each other representation. |None. `self` and `root` are strongly recommended.
-|Links to sub-catalogs |`child`, and also `related` for sets of catalogs and `next` for series. |`child` only. `related` links are not part of the hierarchy.
+|Links to sub-catalogs |`child`, and also `related` for sets of catalogs and `next` for series. |`child` only. `related` links reference related STAC entities, which are usually elsewhere in the hierarchy, and are not crawled as sub-catalogs.
 |===
 
 Both ecosystems require the `links` member, reference an API endpoint for records or STAC Items with an `items` link, and recommend `parent` and `root` links in sub-catalogs.

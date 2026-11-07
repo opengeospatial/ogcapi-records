@@ -13,6 +13,7 @@ abstract-test:: /conf/stac/entity
 abstract-test:: /conf/stac/version
 abstract-test:: /conf/stac/time
 abstract-test:: /conf/stac/link-media-types
+abstract-test:: /conf/stac/link-resolution
 abstract-test:: /conf/stac/conformance
 abstract-test:: /conf/stac/crawlable-catalog
 ====
@@ -30,6 +31,8 @@ include::stac/ATS_time.adoc[]
 ==== Links
 
 include::stac/ATS_link-media-types.adoc[]
+
+include::stac/ATS_link-resolution.adoc[]
 
 ==== Conformance declaration
 
