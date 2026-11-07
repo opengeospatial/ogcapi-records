@@ -288,6 +288,11 @@ components:
           type: string
           description: |-
             Organization/affiliation of the contact.
+        description:
+          type: string
+          description: |-
+            A free-text description of the contact, for example information
+            that the other members of the contact cannot express.
         logo:
           description: |-
             Graphic identifying a contact. The link relation should be `icon`
