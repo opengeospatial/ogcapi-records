@@ -159,11 +159,31 @@ User documentation:
 
 ## GeoNetwork opensource
 
-[GeoNetwork](https://geonetwork-opensource.org) is a java/xml oriented catalogue application. As part of an ongoing effort, the GeoNetwork API component is extended to support OGC API - Records. The work in progress is available at https://github.com/geonetwork/geonetwork-microservices/pull/23.
+[GeoNetwork](https://geonetwork-opensource.org) is a Java/XML oriented catalogue application. GeoNetwork 5 implements OGC API - Records. The source code is available at https://github.com/geonetwork/geonetwork/tree/dev.
 
-GeoNetwork has a concept of [sub-portals](https://geonetwork-opensource.org/manuals/trunk/en/administrator-guide/configuring-the-catalog/portal-configuration.html). In the OGC API - Records implementation these subportals are available as collections of records. GeoNetwork uses an [Elastic Search](https://elastic.co) backend, supporting a configurable set of queryables. Records are available in various encodings, such as text/html, application/geo+json, application/dcat.ld+json, application/iso19139+xml, application/iso19115-3+xml, application/dublin-core+xml, application/datacite+xml, through the accept-header mechanism. The html encoding of records contains an embedded schema-org json-ld snippet to facilitate search engines. A [Sitemap](https://sitemaps.org) endpoint is available to notify the search engine of available records.
+GeoNetwork has a concept of [sub-portals](https://geonetwork-opensource.org/manuals/trunk/en/administrator-guide/configuring-the-catalog/portal-configuration.html). In the OGC API - Records implementation these sub-portals are available as collections of records. GeoNetwork uses an [Elasticsearch](https://elastic.co) backend, supporting a configurable set of queryables.
 
-GeoNetwork supports basic authentication, but can also be set up with alternative authentication mechanisms to facilitate autorisation on subsets of records.
+Records are available in various encodings, selected with the `f` query parameter and, for records, an optional `profile` parameter (for example `?f=application/rdf+xml&profile=http://geonetwork.net/def/profile/eu-dcat-ap`):
+
+* `text/html`
+* `application/geo+json` (OGC API - Records record)
+* `application/json` (profile `elastic-json-index`)
+* `application/rdf+xml` (DCAT profiles such as `dcat` and `eu-dcat-ap`)
+* `application/xml` (profiles such as `raw-xml`, `iso19115-3` and `datacite`)
+
+The profiles available for a record depend on its metadata schema.
+
+The items of a collection are also available as a [Sitemap](https://sitemaps.org) (`f=sitemap`) to notify search engines of available records.
+
+GeoNetwork supports basic authentication, but can also be set up with alternative authentication mechanisms (form login, OAuth2) to facilitate authorisation on subsets of records.
+
+A demo server based on GeoNetwork 5, provided by [GeoCat BV](https://www.geocat.com), is available at:
+
+* https://geocat-live-next-mvp.geocat.live/catalogue/ogcapi-records
+
+Sitemap of the main collection:
+
+* https://geocat-live-next-mvp.geocat.live/catalogue/ogcapi-records/collections/3bef299d-cf82-4033-871b-875f6936b2e2/items?f=sitemap&limit=-1
 
 ## pycsw
 
