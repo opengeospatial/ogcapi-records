@@ -23,7 +23,7 @@
 //. Parse the response to capture the sortable property for each record returned.
 //. Verify that reverse sorting the list of sortable properties in descending order is consistent with the response of the server.
 //^|Test Method |. Construct a path for a collection page.
-//. Check that the specific set of keys that may be used for sorting are specified by the `/collections/{collectionId}/sortables` resource
+//. Check that the specific set of keys that may be used for sorting are specified by the sortables resource that is referenced with a link with the link relation type `http://www.opengis.net/def/rel/ogc/1.0/sortables`
 //|===
 
 
@@ -68,6 +68,6 @@ test-method::
 Sequence 3:
 
 . Construct a path for a collection page.
-. Check that the specific set of keys that may be used for sorting are specified by the `/collections/{collectionId}/sortables` resource
+. Check that the specific set of keys that may be used for sorting are specified by the sortables resource that is referenced with a link with the link relation type `http://www.opengis.net/def/rel/ogc/1.0/sortables`
 --
 ====

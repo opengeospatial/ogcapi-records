@@ -955,6 +955,11 @@ include::requirements/building-blocks/sorting/REQ_sortby-definition.adoc[]
 
 [NOTE]
 ======================================================================
+In a query string, a `+` that is not percent-encoded is decoded as a space. Clients therefore need to encode the `+` sign as `%2B` (e.g., `sortby=%2Btitle`) or omit it, as ascending is the default. A sort key that starts with a space is not valid.
+======================================================================
+
+[NOTE]
+======================================================================
 The core definition of the `sortby` parameter only defines a single directive that controls the sort order of the corresponding property.  It is anticipated extensions would add additional search facets such as directives for:
 
 . Handling missing values,
@@ -1014,7 +1019,7 @@ A server implementing relevance ranking might include, in its list of sortables,
 include::../examples/json/defaultSortOrder.json[]
 ----
 
-The following examples assume the following set of sortables retrieved from the servers `/collection/{catalogId}/sortables` endpoint:
+The following examples assume the following set of sortables retrieved from the sortables resource of the catalog:
 
 [#sortables-example,reftext=`Sortables Example`]
 .List of sortables
