@@ -99,7 +99,7 @@ The following situations often prevent an API from working with the clients of o
 * *Free-text search:* The `q` parameter of OGC API - Records and the "basic" free-text search of STAC API have the same meaning. Only the "advanced" free-text search differs: a query such as `q=climate model` means "climate" or "model" for STAC clients, but the phrase "climate model" for clients of OGC API - Records. An API that supports the advanced variant can therefore not serve both ecosystems with the same `q` parameter.
 * *Required by STAC API only:* `root` links or the `collection` member are missing. OGC API - Records does not require them, but STAC API does.
 * *Link types:* Links have no `type` member. STAC API allows this, but OGC API - Features requires it for the `self`, `alternate`, `next`, `prev`, `items`, and `collection` links of an API.
-* *Relative links:* Responses use relative links, or records in `/collections/{collectionId}/items` have no `self` link. Depending on trailing slashes and on the base URI a client uses, links then resolve to wrong URIs, see <<clause_links,Links and URL resolution>>.
+* *Relative links:* Responses use relative links, or records in `/collections/{collectionId}/items` have no `self` link. Depending on trailing slashes and on the base URI a client uses, links then resolve to wrong URIs, see <<clause_links,Links and URL resolution>> and <<req_stac_link-resolution,/req/stac/link-resolution>>.
 
 [[sc_apis_collection-search]]
 === Records of datasets and STAC Collection Search

@@ -1,0 +1,17 @@
+[[ats_stac_link-resolution]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/stac/link-resolution
+target:: /req/stac/link-resolution
+test-purpose:: Validate that relative URIs in links resolve correctly against the retrieval URI.
+test-method::
++
+--
+. Retrieve the records and catalogs determined in the first step of <<ats_stac_entity,/conf/stac/entity>> and note the URI from which each of them was retrieved, after following redirects.
+. For each link with a relative URI in its `href` member, resolve the URI against this retrieval URI as defined by RFC 3986.
+. Issue an HTTP GET request on the resolved URI and verify that it is successful. If the link includes a `type` member, verify that the media type of the response corresponds to it.
+. If a record or catalog is also available from another URI, for example with or without a trailing slash, repeat the previous steps with this URI.
+--
+====

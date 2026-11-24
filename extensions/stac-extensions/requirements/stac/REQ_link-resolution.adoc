@@ -1,0 +1,11 @@
+[[req_stac_link-resolution]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/stac/link-resolution
+part:: Each relative URI in the `href` member of a link of a record or catalog SHALL resolve to the resource that the link references when it is resolved as defined by <<rfc3986,RFC 3986>> against the URI from which the record or catalog is retrieved, after following redirects.
+part:: If a record or catalog can be retrieved from several URIs, for example with and without a trailing slash, the first part SHALL be fulfilled for each of these URIs.
+====
+
+NOTE: OGC API - Records and the STAC specification allow relative URIs, but neither defines a base URI, so RFC 3986 applies. The STAC best practices resolve relative URIs against the `self` link instead. Both give the same result if the `self` link is the URI under which the document is served, as recommended by <<rec_stac_links,/rec/stac/links>>. Absolute URIs always fulfil this requirement. See <<clause_links,Links and URL resolution>> for typical problems and how to avoid them.
