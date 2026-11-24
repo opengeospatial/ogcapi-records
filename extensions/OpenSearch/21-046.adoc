@@ -1,5 +1,5 @@
-:Title: DRAFT OGC API - Records - Part 2: OpenSearch
-:titletext: DRAFT OGC API - Records - Part 2: OpenSearch
+:Title: DRAFT OGC API - Records - Part 6: OpenSearch
+:titletext: DRAFT OGC API - Records - Part 6: OpenSearch
 :doctype: book
 :encoding: utf-8
 :lang: en

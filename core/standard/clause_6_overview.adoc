@@ -140,7 +140,7 @@ The Records API Standard extends these core search capabilities to include:
 * searches based on one or more record identifiers, and
 * searches based on one or more external identifiers of a resource.
 
-The second level of search capability extends the search API so that it is compatible with the https://portal.opengeospatial.org/files/?artifact_id=56866[OGC OpenSearch Geo and Time Extensions] (OpenSearch Geo).  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.  https://fix.me[OGC API - Records - Part 2: OpenSearch] will define the requirements for a catalog that supports OpenSearch.
+The second level of search capability extends the search API so that it is compatible with the https://portal.opengeospatial.org/files/?artifact_id=56866[OGC OpenSearch Geo and Time Extensions] (OpenSearch Geo).  OpenSearch Geo gives the user more control over the kinds of geometries, beyond a bounding box, that can be used to define an area of interest.  OGC API - Records - Part 6: OpenSearch will define the requirements for a catalog that supports OpenSearch.
 
 The third level of search capability, defined by the <<clause-filtering,_Filtering_>> requirements class, supports complex filter expressions using a rich set of logically connected query predicates.
 
