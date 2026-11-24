@@ -28,20 +28,5 @@
                 "r":[
                         "asciidoctor-diagram"
                 ]
-        },          
-        "2":  {
-                "OGC_doc_number": "26-026",
-                "urn":"http://www.opengis.net/doc/is/ogcapi-records-5/1.0",
-                "title":"OGC API - Records - Part 5: Spatio-Temporal Asset Catalog (STAC)",
-                "path": "/extensions/stac-extensions",
-                "options": ["--trace"],
-                "a":[
-                        "data-uri",
-                        "stylesdir=./resources/stylesheets",
-                        "dot=/usr/bin/dot"
-                ],
-                "r":[
-                        "asciidoctor-diagram"
-                ]
         }
 }
