@@ -953,10 +953,7 @@ The `Sorting` Requirements Class defines the requirements for specifying how rec
 
 include::requirements/building-blocks/sorting/REQ_sortby-definition.adoc[]
 
-[NOTE]
-======================================================================
-In a query string, a `+` that is not percent-encoded is decoded as a space. Clients therefore need to encode the `+` sign as `%2B` (e.g., `sortby=%2Btitle`) or omit it, as ascending is the default. A sort key that starts with a space is not valid.
-======================================================================
+CAUTION: Query string parsers intended for Web forms decode a `+` that is not percent-encoded as a space (following `application/x-www-form-urlencoded`). Many toolkits also offer decoders for generic URIs that pass the `+` through as data, for example https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent[`decodeURIComponent()`] in JavaScript and https://docs.python.org/3/library/urllib.parse.html#urllib.parse.unquote[`urllib.parse.unquote()`] in Python. To ensure broad interoperability, clients ideally encode the `+` sign as `%2B` (e.g., `sortby=%2Btitle`) or omit it, as ascending is the default.
 
 [NOTE]
 ======================================================================
